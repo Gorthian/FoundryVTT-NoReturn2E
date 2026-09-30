@@ -78,7 +78,7 @@
       <div class="nr-skill-groups">
         {{#each skillGroups as |g|}}
         <div class="nr-skill-group">
-          <h4><a data-action="rollAttribute" data-attr="{{g.key}}">{{g.label}} <span class="nr-badge">{{g.attr.total}}</span></a></h4>
+          <h4 class="nr-subhead"><a data-action="rollAttribute" data-attr="{{g.key}}">{{g.label}} <span class="nr-badge">{{g.attr.total}}</span></a></h4>
           <ol class="nr-list">
             {{#each g.skills as |s|}}
             <li class="nr-skill-row {{#unless s.trained}}untrained{{/unless}}">

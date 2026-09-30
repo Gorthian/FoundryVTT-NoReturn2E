@@ -1,6 +1,7 @@
 <header class="nr-header">
   <img class="nr-portrait" src="{{actor.img}}" data-action="editImage" data-edit="img" alt="{{actor.name}}" data-tooltip="{{localize 'NR.Sheet.Portrait'}}">
   <div class="nr-header-main">
+    <div class="nr-brand" aria-hidden="true">NORETURN <span>Das Endzeit Rollenspiel</span></div>
     <input class="nr-name" type="text" name="name" value="{{actor.name}}" placeholder="{{localize 'NR.Sheet.Name'}}">
     <div class="nr-header-line">
       <label>{{localize "NR.Detail.species"}}
@@ -15,11 +16,11 @@
       </label>
       {{/if}}
     </div>
-    <div class="nr-status-strip">
+    <div class="nr-status-strip nr-vitals">
       <div class="nr-stat" data-tooltip="{{localize 'NR.Status.HealthHint'}}">
         <span class="nr-stat-label">{{localize "NR.Status.Health"}}</span>
         <div class="nr-bar"><div class="nr-bar-fill hp" style="width: {{nrPct system.health.value system.health.max}}%"></div></div>
-        <span class="nr-stat-value">{{system.health.value}}/{{system.health.max}}</span>
+        <span class="nr-stat-value nr-stat-big">{{system.health.value}}<small>/{{system.health.max}}</small></span>
       </div>
       <div class="nr-stat nr-adrenalin">
         <span class="nr-stat-label">{{localize "NR.Special.adrenalin"}}</span>
@@ -31,19 +32,19 @@
       </div>
       <div class="nr-stat {{#if system.malus.total}}nr-warn{{/if}}" data-tooltip="{{localize 'NR.Status.MalusHint'}}">
         <span class="nr-stat-label">{{localize "NR.Status.Malus"}}</span>
-        <span class="nr-stat-value">−{{system.malus.total}}W</span>
+        <span class="nr-stat-value nr-stat-big">−{{system.malus.total}}<small>W</small></span>
       </div>
       <div class="nr-stat">
         <span class="nr-stat-label">{{localize "NR.Status.Movement"}}</span>
-        <span class="nr-stat-value">{{system.movement}} m</span>
+        <span class="nr-stat-value nr-stat-big">{{system.movement}}<small>m</small></span>
       </div>
       <div class="nr-stat" data-tooltip="{{system.org.band.label}}">
         <span class="nr-stat-label">{{localize "NR.Status.Organism"}}</span>
-        <span class="nr-stat-value">{{system.org.value}}</span>
+        <span class="nr-stat-value nr-stat-big">{{system.org.value}}</span>
       </div>
       <div class="nr-stat" data-tooltip="{{system.psy.band.label}}">
         <span class="nr-stat-label">{{localize "NR.Status.Psyche"}}</span>
-        <span class="nr-stat-value">{{system.psy.value}}</span>
+        <span class="nr-stat-value nr-stat-big">{{system.psy.value}}</span>
       </div>
       <a class="nr-btn small" data-action="rest" data-tooltip="{{localize 'NR.Sheet.RestHint'}}"><i class="fa-solid fa-bed"></i> {{localize "NR.Sheet.Rest"}}</a>
     </div>
