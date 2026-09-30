@@ -1,0 +1,107 @@
+<section class="tab nr-tab-combat {{tab.cssClass}}" data-group="primary" data-tab="combat">
+  <div class="nr-columns">
+    <div class="nr-col nr-body-col">
+      <h3 class="nr-section-title">{{localize "NR.Section.Body"}}
+        <a class="nr-add" data-action="hitZone" data-tooltip="{{localize 'NR.Combat.HitZone'}}"><i class="fa-solid fa-dice"></i></a>
+      </h3>
+      <div class="nr-body">
+        <div class="nr-body-row">{{> "systems/noreturn/templates/actor/parts/zone.hbs" zone=body.head}}</div>
+        <div class="nr-body-row">
+          {{> "systems/noreturn/templates/actor/parts/zone.hbs" zone=body.armR}}
+          {{> "systems/noreturn/templates/actor/parts/zone.hbs" zone=body.torsoR}}
+          {{> "systems/noreturn/templates/actor/parts/zone.hbs" zone=body.torsoL}}
+          {{> "systems/noreturn/templates/actor/parts/zone.hbs" zone=body.armL}}
+        </div>
+        <div class="nr-body-row">{{> "systems/noreturn/templates/actor/parts/zone.hbs" zone=body.belly}}</div>
+        <div class="nr-body-row">{{> "systems/noreturn/templates/actor/parts/zone.hbs" zone=body.pelvis}}</div>
+        <div class="nr-body-row">
+          {{> "systems/noreturn/templates/actor/parts/zone.hbs" zone=body.thighR}}
+          {{> "systems/noreturn/templates/actor/parts/zone.hbs" zone=body.thighL}}
+        </div>
+        <div class="nr-body-row">
+          {{> "systems/noreturn/templates/actor/parts/zone.hbs" zone=body.legR}}
+          {{> "systems/noreturn/templates/actor/parts/zone.hbs" zone=body.legL}}
+        </div>
+      </div>
+      <div class="nr-body-meta">
+        <label>{{localize "NR.Sheet.TpBase"}} <input type="number" name="system.tpBase" value="{{system.tpBase}}" min="1"></label>
+        <span>{{localize "NR.Sheet.Threshold"}}: {{system.threshold}}</span>
+      </div>
+      <div class="nr-button-row">
+        <a class="nr-btn" data-action="manualDamage"><i class="fa-solid fa-heart-crack"></i> {{localize "NR.Damage.Manual"}}</a>
+        <a class="nr-btn" data-action="heal"><i class="fa-solid fa-kit-medical"></i> {{localize "NR.Heal.Title"}}</a>
+        {{#if system.hasRegeneration}}<a class="nr-btn" data-action="regenerate"><i class="fa-solid fa-dna"></i> {{localize "NR.Sheet.Regenerate"}}</a>{{/if}}
+      </div>
+    </div>
+
+    <div class="nr-col">
+      <h3 class="nr-section-title">{{localize "NR.Section.Condition"}}</h3>
+      <div class="nr-grid-2 nr-condition">
+        <label>{{localize "NR.Malus.wounds"}}</label><span class="nr-derived">−{{system.malus.wounds}}W</span>
+        <label>{{localize "NR.Malus.nonLethal"}}</label><span><input type="number" name="system.nonLethal" value="{{system.nonLethal}}" min="0"> <span class="nr-derived">−{{system.malus.nonLethal}}W</span></span>
+        <label>{{localize "NR.Malus.temp"}}</label><span><input type="number" name="system.tempMalus" value="{{system.tempMalus}}"></span>
+        <label>{{localize "NR.Malus.psi"}}</label><span class="nr-derived">−{{system.malus.psiCollect}}W / −{{system.malus.hold}}W</span>
+        <label>{{localize "NR.Malus.total"}}</label><span class="nr-derived strong">−{{system.malus.total}}W</span>
+        <label>{{localize "NR.Combat.Defenses"}}</label><span><span class="nr-derived">{{system.combat.defenses}}</span> <a data-action="resetDefenses" data-tooltip="{{localize 'NR.Combat.ResetDefenses'}}"><i class="fa-solid fa-rotate-left"></i></a></span>
+        <label>{{localize "NR.Status.Movement"}}</label><span class="nr-derived">{{system.movement}} m ({{localize "NR.Sheet.RunHint"}})</span>
+        <label>{{localize "NR.Sheet.Komfort"}}</label><span class="nr-derived {{#if komfortMalus}}nr-bad{{/if}}">{{komfort}}{{#if komfortMalus}} → −{{komfortMalus}}W Bewegung{{/if}}</span>
+        {{#if system.hasRegeneration}}
+        <label>{{localize "NR.Sheet.Regeneration"}}</label><span class="nr-derived">{{system.reg.speed}}/Runde · Pool {{system.reg.left}}/{{system.reg.pool}}</span>
+        {{/if}}
+        <label>{{localize "NR.Sheet.Alcohol"}}</label><span><input type="number" name="system.alcohol" value="{{system.alcohol}}" min="0"></span>
+      </div>
+
+      <h3 class="nr-section-title">{{localize "NR.Section.Weapons"}}
+        <a class="nr-add" data-action="createItem" data-type="weapon"><i class="fa-solid fa-plus"></i></a>
+      </h3>
+      <ol class="nr-list nr-weapons">
+        {{#each weapons as |w|}}
+        <li class="nr-item-row draggable {{#if w.item.system.equipped}}equipped{{/if}}" data-item-id="{{w.item.id}}">
+          <div class="nr-item-main">
+            <img src="{{w.item.img}}" alt="">
+            <a class="nr-item-name" data-action="toggleDescription">{{w.item.name}}</a>
+            <a class="nr-btn tiny attack" data-action="useItem" data-tooltip="{{localize 'NR.Combat.Attack'}}"><i class="fa-solid fa-crosshairs"></i> {{w.skill.pool}}W{{#if w.item.system.attackDice}}+{{w.item.system.attackDice}}{{/if}}</a>
+            <span class="nr-item-stat">{{w.damage}}</span>
+            {{#if w.item.system.ammo.max}}
+            <span class="nr-item-stat ammo"><input type="number" data-item-field="system.ammo.value" value="{{w.item.system.ammo.value}}" min="0">/{{w.item.system.ammo.max}}
+              <a data-action="reload" data-tooltip="{{localize 'NR.Combat.Reload'}}"><i class="fa-solid fa-rotate"></i></a></span>
+            {{/if}}
+            <a data-action="toggleEquip" data-tooltip="{{localize 'NR.Sheet.Equip'}}"><i class="fa-solid fa-hand-fist {{#unless w.item.system.equipped}}nr-dim{{/unless}}"></i></a>
+            <a data-action="editItem"><i class="fa-solid fa-pen"></i></a>
+            <a data-action="deleteItem"><i class="fa-solid fa-trash"></i></a>
+          </div>
+          <div class="nr-item-details">
+            <span>{{w.category}}</span> · <span>{{w.skill.label}}</span>
+            {{#if w.modes}} · <span>{{localize "NR.Weapon.Modes"}}: {{w.modes}}</span> · <span>RD {{w.item.system.rd}}</span>{{/if}}
+            {{#if w.item.system.parryDice}} · <span>Parade +{{w.item.system.parryDice}}W</span>{{/if}}
+            {{#if w.item.system.blockDice}} · <span>Blocken +{{w.item.system.blockDice}}W</span>{{/if}}
+            {{#if w.item.system.features}}<div>{{w.item.system.features}}</div>{{/if}}
+          </div>
+        </li>
+        {{else}}<li class="nr-empty">{{localize "NR.Sheet.DropWeapons"}}</li>
+        {{/each}}
+      </ol>
+
+      <h3 class="nr-section-title">{{localize "NR.Section.Armor"}}
+        <a class="nr-add" data-action="createItem" data-type="armor"><i class="fa-solid fa-plus"></i></a>
+      </h3>
+      <ol class="nr-list">
+        {{#each armor as |a|}}
+        <li class="nr-item-row draggable {{#if a.item.system.equipped}}equipped{{/if}}" data-item-id="{{a.item.id}}">
+          <div class="nr-item-main">
+            <img src="{{a.item.img}}" alt="">
+            <a class="nr-item-name" data-action="toggleDescription">{{a.item.name}}</a>
+            <span class="nr-item-stat">{{a.item.system.rw}}p. {{a.mk}}</span>
+            <span class="nr-item-stat" data-tooltip="{{localize 'NR.Armor.Zones'}}">Z {{a.zones}}</span>
+            <span class="nr-item-stat" data-tooltip="{{localize 'NR.Armor.Komfort'}}">K {{a.item.system.komfort}}</span>
+            <a data-action="toggleEquip" data-tooltip="{{localize 'NR.Sheet.Wear'}}"><i class="fa-solid fa-shirt {{#unless a.item.system.equipped}}nr-dim{{/unless}}"></i></a>
+            <a data-action="editItem"><i class="fa-solid fa-pen"></i></a>
+            <a data-action="deleteItem"><i class="fa-solid fa-trash"></i></a>
+          </div>
+        </li>
+        {{else}}<li class="nr-empty">{{localize "NR.Sheet.DropArmor"}}</li>
+        {{/each}}
+      </ol>
+    </div>
+  </div>
+</section>

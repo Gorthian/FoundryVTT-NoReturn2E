@@ -1,0 +1,43 @@
+<div class="nr-card nr-psi {{#if success}}success{{else}}failure{{/if}}">
+  <header class="nr-card-head">
+    <img class="nr-card-icon" src="{{app.img}}" alt="">
+    <div>
+      <h3>{{app.name}}</h3>
+      <div class="nr-card-sub">{{power.name}} {{power.system.value}} · {{localize "NR.Psi.Pool"}} {{pool}}</div>
+    </div>
+  </header>
+  <div class="nr-card-pool">
+    <span class="nr-chip psi">KS {{ks}}</span>
+    <span class="nr-chip">{{localize "NR.Psi.Probe"}} {{probe}}W{{#if malus}} (−{{malus}}W){{/if}}</span>
+    <span class="nr-chip">{{localize "NR.Psi.Comp"}} {{comp}}</span>
+    <span class="nr-chip">{{localize "NR.Psi.Target"}} {{lo}}–{{hi}}</span>
+  </div>
+  <div class="nr-dice-row">
+    {{#each dice as |d|}}<span class="nr-die {{d.kind}} {{#if d.max}}max{{/if}}" {{#if d.chain}}data-tooltip="Hazard-Di: {{d.chain}}"{{/if}}>{{d.value}}</span>{{/each}}
+  </div>
+  <div class="nr-total">
+    <span class="nr-total-value">{{total}}</span>
+    {{#if success}}<span class="nr-result good">{{localize "NR.Psi.Success"}}</span>{{else}}<span class="nr-result bad">{{localize "NR.Psi.Failure"}}</span>{{/if}}
+  </div>
+  {{#if success}}
+    {{#if effectHtml}}<div class="nr-psi-effect">{{{effectHtml}}}</div>{{/if}}
+    {{#if description}}<div class="nr-psi-effect">{{{description}}}</div>{{/if}}
+    {{#if held}}<p class="nr-hint"><i class="fa-solid fa-hourglass-half"></i> {{localize "NR.Psi.HeldNote"}} (−{{hold}}W)</p>{{/if}}
+    {{#if damage}}
+    <p><strong>{{localize "NR.Combat.Damage"}}: {{damage.amount}}</strong></p>
+    <div class="nr-targets">
+      {{#each targets as |t|}}
+      <div class="nr-target"><span class="nr-target-name">{{t.name}}</span>
+        <button type="button" data-nr-action="psiDamage" data-token-uuid="{{t.uuid}}"><i class="fa-solid fa-shield-heart"></i> {{localize "NR.Combat.ResistFor"}} {{t.name}}</button></div>
+      {{/each}}
+    </div>
+    {{/if}}
+  {{else}}
+    {{#if fail}}
+    <div class="nr-psi-fail">
+      <h4><i class="fa-solid fa-burst"></i> {{localize "NR.Psi.FailTable"}} (KS {{fail.ks}})</h4>
+      <ul>{{#each fail.results as |r|}}<li class="{{#if r.echo}}echo{{/if}}"><strong>{{r.roll}}</strong> {{r.text}}</li>{{/each}}</ul>
+    </div>
+    {{/if}}
+  {{/if}}
+</div>

@@ -1,0 +1,431 @@
+[
+ {
+  "_id": "aGVHdn3XlDUo1yFI",
+  "_key": "!items!aGVHdn3XlDUo1yFI",
+  "name": "Babel (Muttersprache)",
+  "type": "skill",
+  "img": "icons/svg/sound.svg",
+  "system": {
+   "category": "sprache",
+   "attribute": "",
+   "value": 5,
+   "defensive": false,
+   "native": true,
+   "description": "<p>Weltweite Verkehrssprache des Zentrums. Muttersprache kostenlos auf Stufe 5 (bei WI 1 nur Stufe 2). <em class=\"nr-ref\">(NoReturn 2E, S. 112)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 1000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "JZdWpb4Fi9jYYRYb",
+  "_key": "!items!JZdWpb4Fi9jYYRYb",
+  "name": "Verbotene Sprache",
+  "type": "skill",
+  "img": "icons/svg/sound.svg",
+  "system": {
+   "category": "sprache",
+   "attribute": "",
+   "value": 1,
+   "defensive": false,
+   "native": false,
+   "description": "<p>Vom Zentrum verbotene, in Familien überlieferte Sprache (in Absprache mit der SL). 2 GP je Stufe. <em class=\"nr-ref\">(NoReturn 2E, S. 112)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 2000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "oJheWF9RfvvdcPIo",
+  "_key": "!items!oJheWF9RfvvdcPIo",
+  "name": "Fliegen",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "category": "besondere",
+   "attribute": "be",
+   "value": 1,
+   "defensive": false,
+   "native": false,
+   "description": "<p>Durch Flügel. MW 5 zum Fliegen, Geschwindigkeit = Wurf × 2 m/KR. <em class=\"nr-ref\">(NoReturn 2E, S. 162)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 3000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "3zLejmfm5fhb1wb5",
+  "_key": "!items!3zLejmfm5fhb1wb5",
+  "name": "Gleiten",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "category": "besondere",
+   "attribute": "be",
+   "value": 1,
+   "defensive": false,
+   "native": false,
+   "description": "<p>Durch Flughäute/Schwingen. MW 5, Wurf × 2 m/KR. <em class=\"nr-ref\">(NoReturn 2E, S. 163)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 4000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "tuugotkMOc9XCqqO",
+  "_key": "!items!tuugotkMOc9XCqqO",
+  "name": "Instinkt",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "category": "besondere",
+   "attribute": "",
+   "value": 6,
+   "defensive": false,
+   "native": false,
+   "description": "<p>CT-Virus: Instinkt der Bestie (CT3/4: 6, CT5/6: 5). <em class=\"nr-ref\">(NoReturn 2E, S. 151)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 5000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "dZrKqIsNc5xpd4Rk",
+  "_key": "!items!dZrKqIsNc5xpd4Rk",
+  "name": "Elektroschock (Schaden)",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "category": "besondere",
+   "attribute": "",
+   "value": 2,
+   "defensive": false,
+   "native": false,
+   "description": "<p>Schadenswert des Elektroschocks (ohne Attribut). <em class=\"nr-ref\">(NoReturn 2E, S. 165)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 6000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "5tw3k2zhnkBPfAX8",
+  "_key": "!items!5tw3k2zhnkBPfAX8",
+  "name": "Spinnenseide (Werfen)",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "category": "besondere",
+   "attribute": "ge",
+   "value": 1,
+   "defensive": false,
+   "native": false,
+   "description": "<p>Angriffswurf mit Spinnenseide wie Schießen, bis 30 m. <em class=\"nr-ref\">(NoReturn 2E, S. 168)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 7000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "8ADtJeFEc8HEQIco",
+  "_key": "!items!8ADtJeFEc8HEQIco",
+  "name": "Spinnenseide (Stabilität)",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "category": "besondere",
+   "attribute": "st",
+   "value": 1,
+   "defensive": false,
+   "native": false,
+   "description": "<p>Klebekraft und Reißfestigkeit. <em class=\"nr-ref\">(NoReturn 2E, S. 168)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 8000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "pcTayQ98WV1Gzp9O",
+  "_key": "!items!pcTayQ98WV1Gzp9O",
+  "name": "Körpergeschosse",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "category": "besondere",
+   "attribute": "",
+   "value": 2,
+   "defensive": false,
+   "native": false,
+   "description": "<p>Schaden der Stachelgeschosse (ohne Attribut, je Treffer neu). <em class=\"nr-ref\">(NoReturn 2E, S. 169)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 9000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "k9pwcHv6pcIW0LAo",
+  "_key": "!items!k9pwcHv6pcIW0LAo",
+  "name": "Odemwaffe (Feuer)",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "category": "besondere",
+   "attribute": "ge",
+   "value": 1,
+   "defensive": false,
+   "native": false,
+   "description": "<p>Angriffswurf mit der Odemwaffe wie Sprühwaffen (SP 6/6). <em class=\"nr-ref\">(NoReturn 2E, S. 168)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 10000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "mpybmGkgszSAaiXN",
+  "_key": "!items!mpybmGkgszSAaiXN",
+  "name": "Odemwaffe (Säure)",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "category": "besondere",
+   "attribute": "ge",
+   "value": 1,
+   "defensive": false,
+   "native": false,
+   "description": "<p>Angriffswurf mit der Odemwaffe wie Sprühwaffen (SP 6/6). <em class=\"nr-ref\">(NoReturn 2E, S. 168)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 11000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "lHBmo3CM2La3LX6y",
+  "_key": "!items!lHBmo3CM2La3LX6y",
+  "name": "Ambrosia",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "category": "fertigkeit",
+   "attribute": "ha",
+   "value": 1,
+   "defensive": false,
+   "native": false,
+   "description": "<p>Durch Mixology: Getränke mit Inspirieren-Bonus. <em class=\"nr-ref\">(NoReturn 2E, S. 182)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 12000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "m4Z0vd3g9Cg9Vf7g",
+  "_key": "!items!m4Z0vd3g9Cg9Vf7g",
+  "name": "Kochen",
+  "type": "skill",
+  "img": "icons/svg/book.svg",
+  "system": {
+   "category": "fertigkeit",
+   "attribute": "ha",
+   "value": 1,
+   "defensive": false,
+   "native": false,
+   "description": "<p>Durch Sterne-Küche: Speisen mit Inspirieren-Bonus. <em class=\"nr-ref\">(NoReturn 2E, S. 185)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 13000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ }
+]

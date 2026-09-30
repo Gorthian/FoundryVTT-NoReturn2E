@@ -1,0 +1,73 @@
+<div class="nr-dialog">
+  <div class="nr-dialog-summary">
+    <img src="{{weapon.img}}" alt="" class="nr-dialog-icon">
+    <span><strong>{{weapon.name}}</strong><br>{{skill.label}}: <span class="nr-chip big">{{skill.pool}}W</span>
+      {{#if weapon.system.attackDice}}<span class="nr-chip good">+{{weapon.system.attackDice}}W</span>{{/if}}
+      {{#if woundMalus}}<span class="nr-chip bad">−{{woundMalus}}W</span>{{/if}}</span>
+  </div>
+  {{#if targets.length}}
+  <p class="nr-hint"><i class="fa-solid fa-bullseye"></i> {{#each targets as |t|}}{{t.name}}{{#unless @last}}, {{/unless}}{{/each}}{{#if distance}} · {{distance}} m{{/if}}</p>
+  {{else}}
+  <p class="nr-hint">{{localize "NR.Combat.NoTargets"}}</p>
+  {{/if}}
+
+  {{#if modes.length}}
+  <div class="form-group">
+    <label>{{localize "NR.Weapon.Mode"}}</label>
+    <select name="mode">{{#each modes as |m|}}<option value="{{m.key}}">{{m.label}}</option>{{/each}}</select>
+  </div>
+  {{/if}}
+
+  <div class="form-group">
+    <label>{{localize "NR.Combat.Aim"}}</label>
+    <select name="aim">
+      {{#each aiming as |a key|}}<option value="{{key}}">{{a.label}} ({{#if ../melee}}−{{a.melee}}W{{else}}−{{a.ranged}}W{{/if}})</option>{{/each}}
+    </select>
+  </div>
+  <div class="form-group">
+    <label>{{localize "NR.Combat.TargetZone"}}</label>
+    <select name="zone">{{#each zones as |z key|}}<option value="{{key}}" {{#if (eq key "7")}}selected{{/if}}>{{key}}: {{z.label}}</option>{{/each}}</select>
+  </div>
+  <div class="form-group">
+    <label>{{localize "NR.Combat.Half"}}</label>
+    <select name="half"><option value="oben">oben</option><option value="unten">unten</option><option value="links">links</option><option value="rechts">rechts</option></select>
+  </div>
+
+  {{#if hasRange}}
+  <div class="form-group">
+    <label>{{localize "NR.Combat.RangeMw"}}</label>
+    <select name="rangeMw">
+      <option value="0">≤ 1 m / {{localize "NR.Combat.NoRangeMw"}}</option>
+      {{#each rangeBands as |b|}}<option value="{{b.mw}}" {{#if (eq ../band.mw b.mw)}}selected{{/if}}>{{b.label}} (MW {{b.mw}})</option>{{/each}}
+    </select>
+  </div>
+  {{#if band}}<p class="nr-hint">{{localize "NR.Combat.AutoRange"}}: {{band.label}}{{#if band.max}} (bis {{band.max}} m){{/if}}</p>{{/if}}
+  {{/if}}
+
+  {{#if ammoItems.length}}
+  <div class="form-group">
+    <label>{{localize "NR.Combat.SpecialAmmo"}}</label>
+    <select name="ammoId"><option value="">{{localize "NR.Combat.StandardAmmo"}}</option>{{#each ammoItems as |a|}}<option value="{{a.id}}">{{a.name}} ({{a.system.quantity}})</option>{{/each}}</select>
+  </div>
+  {{/if}}
+  {{#if hasAmmo}}<p class="nr-hint">{{localize "NR.Weapon.Ammo"}}: {{ammo.value}}/{{ammo.max}}</p>{{/if}}
+
+  {{#unless melee}}
+  <div class="form-group">
+    <label data-tooltip="{{localize 'NR.Combat.BracedHint'}}">{{localize "NR.Combat.Braced"}}</label>
+    <select name="braced"><option value="0">–</option><option value="1">Unterlaufgriff (+1 RD)</option><option value="2">Zweibein (+2 RD)</option><option value="3">Dreibein (+3 RD)</option></select>
+  </div>
+  {{#if triggerFinger}}<div class="form-group"><label>Trigger Finger (+2W, +2 Rückstoß, +1 Schuss)</label><input type="checkbox" name="triggerFinger"></div>{{/if}}
+  {{/unless}}
+
+  <div class="form-group">
+    <label data-tooltip="{{localize 'NR.Combat.MultiHint'}}">{{localize "NR.Combat.MultiAttack"}}</label>
+    <input type="number" name="multi" value="1" min="1" max="4">
+  </div>
+  <div class="form-group"><label>{{localize "NR.Roll.BonusDice"}}</label><input type="number" name="bonusDice" value="0"></div>
+  <div class="form-group"><label>{{localize "NR.Roll.MalusDice"}}</label><input type="number" name="malusDice" value="0" min="0"></div>
+  <div class="form-group"><label data-tooltip="{{localize 'NR.Roll.DisadvantageHint'}}">{{localize "NR.Roll.Disadvantages"}}</label><input type="number" name="disadvantages" value="0" min="0"></div>
+  <div class="form-group"><label>{{localize "NR.Roll.Points"}}</label><input type="number" name="points" value="0"></div>
+  {{#if adrenalinLeft}}<div class="form-group"><label>{{localize "NR.Roll.Adrenalin"}} (+{{adrenalinBonus}}W, {{adrenalinLeft}} {{localize "NR.Combat.Left"}})</label><input type="checkbox" name="useAdrenalin"></div>{{/if}}
+  {{#if meditationLeft}}<div class="form-group"><label>{{localize "NR.Special.meditation"}}</label><input type="checkbox" name="useMeditation"></div>{{/if}}
+</div>

@@ -1,0 +1,15 @@
+<div class="nr-card nr-item-card">
+  <header class="nr-card-head">
+    <img class="nr-card-icon" src="{{item.img}}" alt="">
+    <div>
+      <h3>{{item.name}}</h3>
+      <div class="nr-card-sub">{{localize (concat "TYPES.Item." item.type)}}</div>
+    </div>
+  </header>
+  {{#if stats.length}}<div class="nr-card-pool">{{#each stats as |s|}}<span class="nr-chip">{{s}}</span>{{/each}}</div>{{/if}}
+  {{#if system.effect}}<div class="nr-psi-effect">{{system.effect}}</div>{{/if}}
+  {{#if system.levels.length}}
+  <ol class="nr-levels-chat">{{#each system.levels as |l|}}<li><em>{{l.prerequisites}}</em><br>{{l.effect}}</li>{{/each}}</ol>
+  {{/if}}
+  {{#if description}}<div class="nr-card-desc">{{{description}}}</div>{{/if}}
+</div>

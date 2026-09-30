@@ -1,0 +1,366 @@
+[
+ {
+  "_id": "z9quBaFy8EfzaLNU",
+  "_key": "!items!z9quBaFy8EfzaLNU",
+  "name": "Mensch",
+  "type": "species",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+   "gp": 0,
+   "tp": 30,
+   "irDice": 1,
+   "irPoints": 0,
+   "adrenalin": 2,
+   "psyche": 80,
+   "organismus": 100,
+   "psi": true,
+   "freePsi": 0,
+   "bioGp": 0,
+   "identification": "Spezieswissen MW 0",
+   "special": "Darf PSI-Kräfte der Kategorie A erwerben.",
+   "modifiers": [],
+   "description": "<p>Vorherrschende Spezies (ca. 74 % der Weltbevölkerung), beim Zentrum registriert. Schnelle Heilung und erhöhte Strahlungsresistenz; Potenzial zu PSI. <em class=\"nr-ref\">(NoReturn 2E, S. 140)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 1000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "wnEPnh4o1Qv6hqWu",
+  "_key": "!items!wnEPnh4o1Qv6hqWu",
+  "name": "Evo",
+  "type": "species",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+   "gp": 10,
+   "tp": 30,
+   "irDice": 2,
+   "irPoints": 0,
+   "adrenalin": 2,
+   "psyche": 80,
+   "organismus": 100,
+   "psi": false,
+   "freePsi": 0,
+   "bioGp": 0,
+   "identification": "Spezieswissen MW 10",
+   "special": "Konstitution +1, Charisma +1. Nicht PSI-begabt.",
+   "modifiers": [
+    {
+     "target": "attributes.ko",
+     "value": 1
+    },
+    {
+     "target": "attributes.ch",
+     "value": 1
+    }
+   ],
+   "description": "<p>Genetisch optimierte Weiterentwicklung des Menschen, rechtlich gleichgestellt. Robust, makellos, neigen nicht zu Fettleibigkeit. <em class=\"nr-ref\">(NoReturn 2E, S. 140)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 2000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "3Et1LuaX1S8QYBYu",
+  "_key": "!items!3Et1LuaX1S8QYBYu",
+  "name": "Adivasi",
+  "type": "species",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+   "gp": 40,
+   "tp": 30,
+   "irDice": 2,
+   "irPoints": 0,
+   "adrenalin": 2,
+   "psyche": 100,
+   "organismus": 100,
+   "psi": false,
+   "freePsi": 0,
+   "bioGp": 0,
+   "identification": "Spezieswissen MW 10",
+   "special": "Beweglichkeit +1; Rennen +6; kostenlos „Common Sense“, Giftresistenz 2 und 360°-Ultraschallsicht (Ohren frei beweglich).",
+   "modifiers": [
+    {
+     "target": "attributes.be",
+     "value": 1
+    },
+    {
+     "target": "skills.rennen",
+     "value": 6
+    },
+    {
+     "target": "psyche",
+     "value": 10
+    }
+   ],
+   "description": "<p>„Ureinwohner“ aus der Region Götterfall. Nicht PSI-begabt. (Psyche +10 durch Common Sense ist bereits als Modifikator enthalten.) <em class=\"nr-ref\">(NoReturn 2E, S. 141)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 3000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "qBEx3J77xJtq9Xk2",
+  "_key": "!items!qBEx3J77xJtq9Xk2",
+  "name": "Blendling ®842.74.RD",
+  "type": "species",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+   "gp": 30,
+   "tp": 30,
+   "irDice": 2,
+   "irPoints": 0,
+   "adrenalin": 2,
+   "psyche": 90,
+   "organismus": 100,
+   "psi": true,
+   "freePsi": 0,
+   "bioGp": 0,
+   "identification": "Spezieswissen MW 15",
+   "special": "Beweglichkeit +1; Rennen +4; Giftresistenz 1. Darf PSI der Kategorie A erwerben. Illegal laut Zentrum.",
+   "modifiers": [
+    {
+     "target": "attributes.be",
+     "value": 1
+    },
+    {
+     "target": "skills.rennen",
+     "value": 4
+    }
+   ],
+   "description": "<p>Spitzohrige Hybridspezies, gemäß Zentrumsgesetz illegal. <em class=\"nr-ref\">(NoReturn 2E, S. 142)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 4000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "Nkk0lxMBUBNcm8Uo",
+  "_key": "!items!Nkk0lxMBUBNcm8Uo",
+  "name": "Mutant",
+  "type": "species",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+   "gp": 0,
+   "tp": 30,
+   "irDice": 1,
+   "irPoints": 0,
+   "adrenalin": 3,
+   "psyche": 70,
+   "organismus": 100,
+   "psi": false,
+   "freePsi": 0,
+   "bioGp": 120,
+   "identification": "Variabel (sichtbare Auffälligkeiten ohne Probe)",
+   "special": "Zwei Attribute nach Wahl +1 (als Modifikatoren ergänzen). Bis zu 120 GP in biologische Eigenschaften; bis auf eine müssen alle zum gleichen Tier passen.",
+   "modifiers": [],
+   "description": "<p>Nicht PSI-begabt. Mutanten verfügen über vielerlei biologische Eigenschaften. <em class=\"nr-ref\">(NoReturn 2E, S. 143)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 5000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "KOwZqD3PJyQuTeIL",
+  "_key": "!items!KOwZqD3PJyQuTeIL",
+  "name": "Zeneritone",
+  "type": "species",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+   "gp": 25,
+   "tp": 30,
+   "irDice": 1,
+   "irPoints": -2,
+   "adrenalin": 2,
+   "psyche": 50,
+   "organismus": 100,
+   "psi": true,
+   "freePsi": 7,
+   "bioGp": 0,
+   "identification": "Spezieswissen MW 25",
+   "special": "Sieben kostenlose PSI-Kräfte auf Stufe 3. Erhält „Schwaches Attribut Stärke“ und „Schwaches Attribut Konstitution“ ohne Vorteilsmarker.",
+   "modifiers": [],
+   "description": "<p>Wirken wie Menschenkinder; bei Entdeckung illegal, das Zentrum strebt Gefangenschaft an. <em class=\"nr-ref\">(NoReturn 2E, S. 144)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 6000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "B8Sz3LROHpnefkIq",
+  "_key": "!items!B8Sz3LROHpnefkIq",
+  "name": "Prodigy",
+  "type": "species",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+   "gp": 15,
+   "tp": 30,
+   "irDice": 1,
+   "irPoints": -1,
+   "adrenalin": 2,
+   "psyche": 60,
+   "organismus": 100,
+   "psi": true,
+   "freePsi": 3,
+   "bioGp": 0,
+   "identification": "Spezieswissen MW 30",
+   "special": "Drei kostenlose PSI-Kräfte auf Stufe 3.",
+   "modifiers": [],
+   "description": "<p>Extrem selten, schlank und menschenähnlich – Unterscheidung nur für wahre Experten. <em class=\"nr-ref\">(NoReturn 2E, S. 145)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 7000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "4XaVrrwdVljHIteh",
+  "_key": "!items!4XaVrrwdVljHIteh",
+  "name": "Erwachter",
+  "type": "species",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+   "gp": 100,
+   "tp": 70,
+   "irDice": 0,
+   "irPoints": 0,
+   "adrenalin": 0,
+   "psyche": 80,
+   "organismus": 100,
+   "psi": false,
+   "freePsi": 0,
+   "bioGp": 0,
+   "identification": "–",
+   "special": "GE, ST, KO, BE starten mit 2 (Steigerung über Robotik-Upgrades), WI/CH/HA mit 1, WA 3 (Cybersense). Schmerztoleranz 10. Infektionsresistenz, Adrenalin und Organismus entfallen. Robotik-Overdrive möglich.",
+   "modifiers": [
+    {
+     "target": "schmerztoleranz",
+     "value": 7
+    }
+   ],
+   "description": "<p>Neuralprojektion in einem robotischen Körper – ein Mythos für viele Fleischwesen. <em class=\"nr-ref\">(NoReturn 2E, S. 145)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 8000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ }
+]

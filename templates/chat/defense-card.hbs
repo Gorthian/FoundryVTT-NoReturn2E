@@ -1,0 +1,30 @@
+<div class="nr-card nr-defense {{#if hit}}failure{{else}}success{{/if}}">
+  <header class="nr-card-head">
+    <h3>{{localize "NR.Combat.Defense"}}: {{defender.name}}</h3>
+    <div class="nr-card-sub">{{defLabel}} {{localize "NR.Roll.Vs"}} {{weaponName}}</div>
+  </header>
+  {{#if dice.length}}
+  <div class="nr-dice-row">
+    {{#each dice as |d|}}<span class="nr-die {{d.kind}} {{#if d.max}}max{{/if}}" {{#if d.chain}}data-tooltip="Hazard-Di: {{d.chain}}"{{/if}}>{{d.value}}</span>{{/each}}
+  </div>
+  {{/if}}
+  <div class="nr-versus">
+    <div><span class="nr-hint">{{localize "NR.Combat.Attack"}}</span><span class="nr-total-value">{{attackTotal}}</span></div>
+    <div class="nr-vs">vs</div>
+    <div><span class="nr-hint">{{localize "NR.Combat.Defense"}}</span><span class="nr-total-value">{{defTotal}}</span></div>
+  </div>
+  {{#if attack.rangeFail}}
+    <p class="nr-result good">{{localize "NR.Combat.RangeFail"}}</p>
+  {{else if hit}}
+    <p class="nr-result bad">{{localize "NR.Combat.Hit"}} ({{nrSigned diff}}){{#if goodHits}} · <strong>{{goodHits}} {{localize "NR.Combat.GoodHits"}}</strong>{{/if}}</p>
+  {{else if blocked}}
+    <p class="nr-result">{{blockNote}}</p>
+  {{else}}
+    <p class="nr-result good">{{localize "NR.Combat.Miss"}}</p>
+  {{/if}}
+  {{#if damageAllowed}}
+  <div class="nr-card-buttons">
+    <button type="button" data-nr-action="damage"><i class="fa-solid fa-burst"></i> {{localize "NR.Combat.RollDamage"}}</button>
+  </div>
+  {{/if}}
+</div>

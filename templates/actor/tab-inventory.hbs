@@ -1,0 +1,13 @@
+<section class="tab nr-tab-inventory {{tab.cssClass}}" data-group="primary" data-tab="inventory">
+  <div class="nr-money">
+    <label><i class="fa-solid fa-coins"></i> {{localize "NR.Sheet.Money"}}</label>
+    <input type="number" name="system.money" value="{{system.money}}">
+    <span>N$</span>
+  </div>
+
+  <h3 class="nr-section-title">{{localize "NR.Section.Gear"}} <a class="nr-add" data-action="createItem" data-type="gear"><i class="fa-solid fa-plus"></i></a></h3>
+  <ol class="nr-list">{{#each gear as |r|}}{{> "systems/noreturn/templates/actor/parts/item-row.hbs" item=r.item stats=r.stats qty=true equip=true}}{{else}}<li class="nr-empty">{{localize "NR.Sheet.DropGear"}}</li>{{/each}}</ol>
+
+  <h3 class="nr-section-title">{{localize "NR.Section.Ammo"}} <a class="nr-add" data-action="createItem" data-type="ammo"><i class="fa-solid fa-plus"></i></a></h3>
+  <ol class="nr-list">{{#each ammo as |r|}}{{> "systems/noreturn/templates/actor/parts/item-row.hbs" item=r.item stats=r.stats qty=true}}{{else}}<li class="nr-empty">–</li>{{/each}}</ol>
+</section>

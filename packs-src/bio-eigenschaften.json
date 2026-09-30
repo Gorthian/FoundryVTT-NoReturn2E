@@ -1,0 +1,2285 @@
+[
+ {
+  "_id": "wTfe2M06Tow6MFxg",
+  "_key": "!items!wTfe2M06Tow6MFxg",
+  "name": "Amphibie",
+  "type": "bioTrait",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "kind": "sichtbar",
+   "gp": 5,
+   "level": 1,
+   "maxLevel": 1,
+   "perLevel": false,
+   "covers": 0,
+   "conspicuity": "Offensichtliche Kiemen",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Kiemen – atmet unter Wasser. <em class=\"nr-ref\">(NoReturn 2E, S. 162)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 1000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "bjydeeRVBN5qyFEA",
+  "_key": "!items!bjydeeRVBN5qyFEA",
+  "name": "Cuteness overload",
+  "type": "bioTrait",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "kind": "sichtbar",
+   "gp": 5,
+   "level": 1,
+   "maxLevel": 1,
+   "perLevel": false,
+   "covers": 0,
+   "conspicuity": "Unerträglich süß",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [
+    {
+     "target": "attributes.ch",
+     "value": 2
+    }
+   ],
+   "description": "<p>Charisma +2; eigene Einschüchtern-Proben werden halbiert. <em class=\"nr-ref\">(NoReturn 2E, S. 162)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 2000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "iBTam3kUid28k9Hc",
+  "_key": "!items!iBTam3kUid28k9Hc",
+  "name": "Dicke Haut / dickes Fell",
+  "type": "bioTrait",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "kind": "sichtbar",
+   "gp": 5,
+   "level": 1,
+   "maxLevel": 5,
+   "perLevel": true,
+   "covers": 0,
+   "conspicuity": "20 % Körperbedeckung je Stufe",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Je Stufe +1W gegen Kälte (Fell) bzw. Hitze (Haut). Max. 5. <em class=\"nr-ref\">(NoReturn 2E, S. 162)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 3000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "6IpzVUVkraR2VvGQ",
+  "_key": "!items!6IpzVUVkraR2VvGQ",
+  "name": "Flügel",
+  "type": "bioTrait",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "kind": "sichtbar",
+   "gp": 20,
+   "level": 1,
+   "maxLevel": 1,
+   "perLevel": false,
+   "covers": 0,
+   "conspicuity": "Offensichtliche Flügel",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Fertigkeit „Fliegen“ (BE) Stufe 1, MW 5; Geschwindigkeit = Wurf × 2. Schweben nur mit Rüttelflug. <em class=\"nr-ref\">(NoReturn 2E, S. 162)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 4000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "OTF0Yp9GhRxXp7jq",
+  "_key": "!items!OTF0Yp9GhRxXp7jq",
+  "name": "Flughäute oder Schwingen",
+  "type": "bioTrait",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "kind": "sichtbar",
+   "gp": 10,
+   "level": 1,
+   "maxLevel": 1,
+   "perLevel": false,
+   "covers": 0,
+   "conspicuity": "Flughäute",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Gleitflug: besondere Fertigkeit „Gleiten“ (BE) 1, MW 5, Wurf × 2 m/KR; verdoppelt Springen. <em class=\"nr-ref\">(NoReturn 2E, S. 162)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 5000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "fcXHJkvrcraWJtxg",
+  "_key": "!items!fcXHJkvrcraWJtxg",
+  "name": "Gifthaut (toxisch)",
+  "type": "bioTrait",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "kind": "sichtbar",
+   "gp": 30,
+   "level": 1,
+   "maxLevel": 1,
+   "perLevel": false,
+   "covers": 0,
+   "conspicuity": "Feuchter Film (Wahrnehmung 15)",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Nässende Giftschicht wirkt bei Berührung ohne Kleidung/Rüstung wie Giftdrüsen (toxisch). <em class=\"nr-ref\">(NoReturn 2E, S. 163)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 6000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "GDiCOWV8mjyYvfMH",
+  "_key": "!items!GDiCOWV8mjyYvfMH",
+  "name": "Gifthaut (narkotisch)",
+  "type": "bioTrait",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "kind": "sichtbar",
+   "gp": 40,
+   "level": 1,
+   "maxLevel": 1,
+   "perLevel": false,
+   "covers": 0,
+   "conspicuity": "Feuchter Film (Wahrnehmung 15)",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Wie oben mit narkotischem Gift. <em class=\"nr-ref\">(NoReturn 2E, S. 163)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 7000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "lmemt9YJhk2YMUbg",
+  "_key": "!items!lmemt9YJhk2YMUbg",
+  "name": "Horn, Hörner oder Stoßzähne",
+  "type": "bioTrait",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "kind": "sichtbar",
+   "gp": 10,
+   "level": 1,
+   "maxLevel": 1,
+   "perLevel": false,
+   "covers": 0,
+   "conspicuity": "Offensichtlich",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Schaden ST+30p., durch Anlauf (Rennen) erhöht. <em class=\"nr-ref\">(NoReturn 2E, S. 163)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 8000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "EM5hM9Y6Ms1WpWqB",
+  "_key": "!items!EM5hM9Y6Ms1WpWqB",
+  "name": "Krallen, Klauen oder scharfe Nägel",
+  "type": "bioTrait",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "kind": "sichtbar",
+   "gp": 10,
+   "level": 1,
+   "maxLevel": 1,
+   "perLevel": false,
+   "covers": 0,
+   "conspicuity": "1–2 cm Krallen",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Klettern +1W; Nahkampf +1W; Schaden ST+20p. <em class=\"nr-ref\">(NoReturn 2E, S. 163)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 9000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "BvJAhVRf8yXY9YD5",
+  "_key": "!items!BvJAhVRf8yXY9YD5",
+  "name": "Mehrgliedrig",
+  "type": "bioTrait",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "kind": "sichtbar",
+   "gp": 10,
+   "level": 1,
+   "maxLevel": 2,
+   "perLevel": true,
+   "covers": 0,
+   "conspicuity": "Zusätzliche Gliedmaßen",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Je Stufe ein zusätzliches Paar Arme (+4W Stärke wenn alle beteiligt) oder Beine (+4W Rennen). Max. 2. <em class=\"nr-ref\">(NoReturn 2E, S. 163)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 10000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "cePxChKDDulaGij9",
+  "_key": "!items!cePxChKDDulaGij9",
+  "name": "Panzer (flexibel)",
+  "type": "bioTrait",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "kind": "sichtbar",
+   "gp": 5,
+   "level": 1,
+   "maxLevel": 4,
+   "perLevel": true,
+   "covers": 0,
+   "conspicuity": "Horn-/Knochenschicht",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Je Stufe drei Zonen mit 20p. MK:A (Modifikator „Körperpanzer“ je Zone setzen). Weichteile ungeschützt. <em class=\"nr-ref\">(NoReturn 2E, S. 163)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 11000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "MLDzbdJW23NSgWMi",
+  "_key": "!items!MLDzbdJW23NSgWMi",
+  "name": "Panzer (massiv)",
+  "type": "bioTrait",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "kind": "sichtbar",
+   "gp": 5,
+   "level": 1,
+   "maxLevel": 5,
+   "perLevel": true,
+   "covers": 0,
+   "conspicuity": "Chitin-/Knochenplatten",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Je Stufe zwei Zonen mit 30p. MK:B (Modifikator „Körperpanzer“ je Zone). Weichteile ungeschützt. <em class=\"nr-ref\">(NoReturn 2E, S. 163)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 12000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "sKRsFi6Sg5p0nqPQ",
+  "_key": "!items!sKRsFi6Sg5p0nqPQ",
+  "name": "Rundumsicht",
+  "type": "bioTrait",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "kind": "sichtbar",
+   "gp": 15,
+   "level": 1,
+   "maxLevel": 1,
+   "perLevel": false,
+   "covers": 0,
+   "conspicuity": "Seitliche Augen / große Ohren",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Augen seitlich – sieht auch hinter sich. Ultraschall-Rundumsicht: 25 GP. <em class=\"nr-ref\">(NoReturn 2E, S. 163)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 13000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "HmQfmIl4CdKC54eL",
+  "_key": "!items!HmQfmIl4CdKC54eL",
+  "name": "Scharfe Zähne oder Schnabel",
+  "type": "bioTrait",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "kind": "sichtbar",
+   "gp": 10,
+   "level": 1,
+   "maxLevel": 1,
+   "perLevel": false,
+   "covers": 0,
+   "conspicuity": "Offensichtlich",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Biss ST+30p. (mit zermalmendem Kiefer ST+40p.). <em class=\"nr-ref\">(NoReturn 2E, S. 164)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 14000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "1dBg1pPJAGX1DOSa",
+  "_key": "!items!1dBg1pPJAGX1DOSa",
+  "name": "Schwimmflossen oder Schwimmhäute",
+  "type": "bioTrait",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "kind": "sichtbar",
+   "gp": 5,
+   "level": 1,
+   "maxLevel": 3,
+   "perLevel": true,
+   "covers": 0,
+   "conspicuity": "Häute/Flossen",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Je Stufe +10 Punkte auf Schwimmen. <em class=\"nr-ref\">(NoReturn 2E, S. 164)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 15000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "zSKR3O5WilagRaxe",
+  "_key": "!items!zSKR3O5WilagRaxe",
+  "name": "Selektive Entwicklung",
+  "type": "bioTrait",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "kind": "sichtbar",
+   "gp": 5,
+   "level": 1,
+   "maxLevel": 4,
+   "perLevel": true,
+   "covers": 0,
+   "conspicuity": "Unproportionierte Muskeln",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Nur Demigod: je 5 GP fünf Stufen ST/KO/BE frei auf Körperzonen verteilen. Max. 4×. <em class=\"nr-ref\">(NoReturn 2E, S. 164)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 16000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "ocr8XFgWO3SyJKFx",
+  "_key": "!items!ocr8XFgWO3SyJKFx",
+  "name": "Stachel(n)",
+  "type": "bioTrait",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "kind": "sichtbar",
+   "gp": 10,
+   "level": 1,
+   "maxLevel": 1,
+   "perLevel": false,
+   "covers": 0,
+   "conspicuity": "Schwer zu verbergen",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Verteidigend KO+15p. gegen Angreifer, ein großer Stachel ST+30p. <em class=\"nr-ref\">(NoReturn 2E, S. 164)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 17000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "cR5nMCY4zZqmBjd6",
+  "_key": "!items!cR5nMCY4zZqmBjd6",
+  "name": "Zehengänger",
+  "type": "bioTrait",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "kind": "sichtbar",
+   "gp": 10,
+   "level": 1,
+   "maxLevel": 1,
+   "perLevel": false,
+   "covers": 0,
+   "conspicuity": "Deformierte Unterschenkel",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [
+    {
+     "target": "skills.rennen",
+     "value": 4
+    }
+   ],
+   "description": "<p>Rennen +4. <em class=\"nr-ref\">(NoReturn 2E, S. 164)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 18000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "FTU2dgGxjCDPH4Bo",
+  "_key": "!items!FTU2dgGxjCDPH4Bo",
+  "name": "Adrenalinkammern",
+  "type": "bioTrait",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "kind": "verborgen",
+   "gp": 10,
+   "level": 1,
+   "maxLevel": 2,
+   "perLevel": true,
+   "covers": 0,
+   "conspicuity": "",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [
+    {
+     "target": "adrenalin",
+     "value": 1
+    }
+   ],
+   "description": "<p>Je Stufe Adrenalin +1. Max. 2. <em class=\"nr-ref\">(NoReturn 2E, S. 165)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 19000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "sMeB3RXq5Sf8aVgr",
+  "_key": "!items!sMeB3RXq5Sf8aVgr",
+  "name": "Einziehbar",
+  "type": "bioTrait",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "kind": "verborgen",
+   "gp": 5,
+   "level": 1,
+   "maxLevel": 1,
+   "perLevel": false,
+   "covers": 0,
+   "conspicuity": "",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>+5 GP auf eine sichtbare Eigenschaft bis 15 GP – wird dadurch verborgen. <em class=\"nr-ref\">(NoReturn 2E, S. 165)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 20000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "VjqGJWmdG1miqxia",
+  "_key": "!items!VjqGJWmdG1miqxia",
+  "name": "Elektroschock",
+  "type": "bioTrait",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "kind": "verborgen",
+   "gp": 20,
+   "level": 1,
+   "maxLevel": 1,
+   "perLevel": false,
+   "covers": 0,
+   "conspicuity": "",
+   "charges": {
+    "value": 20,
+    "max": 20
+   },
+   "modifiers": [],
+   "description": "<p>Einmal je KR ohne Aktion per Berührung: Hitzeschaden = besondere Fertigkeit „Elektroschock (Schaden)“ (Start 2). 20 Ladungen (+5 je 5 GP). Nicht mit Super Charge. <em class=\"nr-ref\">(NoReturn 2E, S. 165)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 21000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "Z4PzAgYFFBxHpDgZ",
+  "_key": "!items!Z4PzAgYFFBxHpDgZ",
+  "name": "Erschütterungssinn",
+  "type": "bioTrait",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "kind": "verborgen",
+   "gp": 10,
+   "level": 1,
+   "maxLevel": 1,
+   "perLevel": false,
+   "covers": 0,
+   "conspicuity": "",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Ortet alles mit Bodenkontakt in Wahrnehmung × 2 m; Heimlichkeit dagegen halbiert, optische Tarnung wirkungslos. <em class=\"nr-ref\">(NoReturn 2E, S. 166)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 22000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "jMlIsHn4lrbiKlbi",
+  "_key": "!items!jMlIsHn4lrbiKlbi",
+  "name": "Farbliche & Struktur-Tarnung",
+  "type": "bioTrait",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "kind": "verborgen",
+   "gp": 20,
+   "level": 1,
+   "maxLevel": 2,
+   "perLevel": true,
+   "covers": 0,
+   "conspicuity": "",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Stufe 1: +20 Heimlichkeit (optisch), −2 je verdeckte Zone. Stufe 2: +40, −4 je Zone. <em class=\"nr-ref\">(NoReturn 2E, S. 166)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 23000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "l0VVYokHk3Q5WnJF",
+  "_key": "!items!l0VVYokHk3Q5WnJF",
+  "name": "Geräusch-Mimikry",
+  "type": "bioTrait",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "kind": "verborgen",
+   "gp": 15,
+   "level": 1,
+   "maxLevel": 1,
+   "perLevel": false,
+   "covers": 0,
+   "conspicuity": "",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>+2W auf Einschüchtern, Inspirieren, Schauspiel (für sich oder andere). <em class=\"nr-ref\">(NoReturn 2E, S. 166)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 24000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "uX49y2jTonkaelRP",
+  "_key": "!items!uX49y2jTonkaelRP",
+  "name": "Gesteigerte Fertigkeit",
+  "type": "bioTrait",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "kind": "verborgen",
+   "gp": 5,
+   "level": 1,
+   "maxLevel": 5,
+   "perLevel": true,
+   "covers": 0,
+   "conspicuity": "",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Je Stufe +2 auf Heimlichkeit, Klettern, Rennen, Schwimmen, Springen oder Stemmen (Modifikator anpassen). <em class=\"nr-ref\">(NoReturn 2E, S. 166)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 25000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "GffR9vrO1c5BDh9K",
+  "_key": "!items!GffR9vrO1c5BDh9K",
+  "name": "Giftdrüsen (narkotisch)",
+  "type": "bioTrait",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "kind": "verborgen",
+   "gp": 20,
+   "level": 1,
+   "maxLevel": 1,
+   "perLevel": false,
+   "covers": 0,
+   "conspicuity": "",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Kontakt: −3W auf alle Attribute für 20 KR (Giftresistenz je Stufe −1W); KO ≤ 0 → bewusstlos. <em class=\"nr-ref\">(NoReturn 2E, S. 166)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 26000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "dELBmT0AAqGqykaE",
+  "_key": "!items!dELBmT0AAqGqykaE",
+  "name": "Giftdrüsen (toxisch)",
+  "type": "bioTrait",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "kind": "verborgen",
+   "gp": 15,
+   "level": 1,
+   "maxLevel": 1,
+   "perLevel": false,
+   "covers": 0,
+   "conspicuity": "",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Kontakt: 3 KR je 6 Schaden am Herzen oder Kopf ohne Widerstand (Giftresistenz −2 je Stufe). <em class=\"nr-ref\">(NoReturn 2E, S. 167)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 27000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "QD8WIBTJUwBKdeYV",
+  "_key": "!items!QD8WIBTJUwBKdeYV",
+  "name": "Giftresistenz",
+  "type": "bioTrait",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "kind": "verborgen",
+   "gp": 5,
+   "level": 1,
+   "maxLevel": 3,
+   "perLevel": true,
+   "covers": 0,
+   "conspicuity": "",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Je Stufe Resistenz gegen Gifte; +2W gegen Alkohol je Stufe. Max. 3. <em class=\"nr-ref\">(NoReturn 2E, S. 167)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 28000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "xZHgkwk28pVV3wgE",
+  "_key": "!items!xZHgkwk28pVV3wgE",
+  "name": "Hauttaschen",
+  "type": "bioTrait",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "kind": "verborgen",
+   "gp": 5,
+   "level": 1,
+   "maxLevel": 1,
+   "perLevel": false,
+   "covers": 0,
+   "conspicuity": "",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Bis zu drei Liter Stauraum. <em class=\"nr-ref\">(NoReturn 2E, S. 167)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 29000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "x4RWZCp0oO8mAPuO",
+  "_key": "!items!x4RWZCp0oO8mAPuO",
+  "name": "Nachtsicht",
+  "type": "bioTrait",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "kind": "verborgen",
+   "gp": 10,
+   "level": 1,
+   "maxLevel": 1,
+   "perLevel": false,
+   "covers": 0,
+   "conspicuity": "",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Keine Erschwernis bei optischer Wahrnehmung im Dunkeln. <em class=\"nr-ref\">(NoReturn 2E, S. 167)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 30000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "p0Rw8tq9KQC9dn6b",
+  "_key": "!items!p0Rw8tq9KQC9dn6b",
+  "name": "Regeneration",
+  "type": "bioTrait",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "kind": "verborgen",
+   "gp": 30,
+   "level": 1,
+   "maxLevel": 1,
+   "perLevel": false,
+   "covers": 0,
+   "conspicuity": "",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [
+    {
+     "target": "regSpeed",
+     "value": 10
+    },
+    {
+     "target": "regPool",
+     "value": 100
+    }
+   ],
+   "description": "<p>Regenerationsgeschwindigkeit 10, Pool 100. <em class=\"nr-ref\">(NoReturn 2E, S. 167)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 31000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "Pbq6sz2BJJLFI6GB",
+  "_key": "!items!Pbq6sz2BJJLFI6GB",
+  "name": "Roar",
+  "type": "bioTrait",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "kind": "verborgen",
+   "gp": 10,
+   "level": 1,
+   "maxLevel": 1,
+   "perLevel": false,
+   "covers": 0,
+   "conspicuity": "",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>+5W auf Einschüchtern mit Stärke. <em class=\"nr-ref\">(NoReturn 2E, S. 167)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 32000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "iPMqDdkZHrMa3egr",
+  "_key": "!items!iPMqDdkZHrMa3egr",
+  "name": "Roh und Blutig",
+  "type": "bioTrait",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "kind": "verborgen",
+   "gp": 5,
+   "level": 1,
+   "maxLevel": 1,
+   "perLevel": false,
+   "covers": 0,
+   "conspicuity": "",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [
+    {
+     "target": "irPoints",
+     "value": 1
+    }
+   ],
+   "description": "<p>Verdaut rohe Nahrung; +1 auf Infektionsresistenz. <em class=\"nr-ref\">(NoReturn 2E, S. 167)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 33000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "HkX2uLqcR6DjHjLj",
+  "_key": "!items!HkX2uLqcR6DjHjLj",
+  "name": "Odemwaffe",
+  "type": "bioTrait",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "kind": "verborgen",
+   "gp": 20,
+   "level": 1,
+   "maxLevel": 1,
+   "perLevel": false,
+   "covers": 0,
+   "conspicuity": "",
+   "charges": {
+    "value": 1,
+    "max": 1
+   },
+   "modifiers": [],
+   "description": "<p>Feuer- oder Säurestoß SP 6/6 alle 6 h; Fertigkeit „Odemwaffe“ (GE) 1; Schaden = doppelter Stärkewurf, andauernd 1W6 KR. +5 GP je Ladung (max. 5). <em class=\"nr-ref\">(NoReturn 2E, S. 167)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 34000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "N2FtxIzsNcvGhQfC",
+  "_key": "!items!N2FtxIzsNcvGhQfC",
+  "name": "Schmerzresistenz",
+  "type": "bioTrait",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "kind": "verborgen",
+   "gp": 15,
+   "level": 1,
+   "maxLevel": 2,
+   "perLevel": true,
+   "covers": 0,
+   "conspicuity": "",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [
+    {
+     "target": "schmerztoleranz",
+     "value": 2
+    }
+   ],
+   "description": "<p>Je Stufe Schmerztoleranz +2. Max. 2. <em class=\"nr-ref\">(NoReturn 2E, S. 168)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 35000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "rBfeqq3ff40pBGoN",
+  "_key": "!items!rBfeqq3ff40pBGoN",
+  "name": "Sechster Sinn",
+  "type": "bioTrait",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "kind": "verborgen",
+   "gp": 20,
+   "level": 1,
+   "maxLevel": 1,
+   "perLevel": false,
+   "covers": 0,
+   "conspicuity": "",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Darf immer eine Defensivaktion durchführen, auch gegen nicht wahrnehmbare Angriffe. <em class=\"nr-ref\">(NoReturn 2E, S. 168)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 36000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "DsG2y3I5FkVyaEZ1",
+  "_key": "!items!DsG2y3I5FkVyaEZ1",
+  "name": "Spinnenseide",
+  "type": "bioTrait",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "kind": "verborgen",
+   "gp": 20,
+   "level": 1,
+   "maxLevel": 1,
+   "perLevel": false,
+   "covers": 0,
+   "conspicuity": "",
+   "charges": {
+    "value": 20,
+    "max": 20
+   },
+   "modifiers": [],
+   "description": "<p>Netz oder Seil bis 30 m. Fertigkeiten „Spinnenseide (Werfen)“ (GE) und „(Stabilität)“ (ST) je 1. 20 Ladungen. <em class=\"nr-ref\">(NoReturn 2E, S. 168)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 37000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "TwE3nVWuCmgg9GJO",
+  "_key": "!items!TwE3nVWuCmgg9GJO",
+  "name": "Stachelgeschosse",
+  "type": "bioTrait",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "kind": "verborgen",
+   "gp": 20,
+   "level": 1,
+   "maxLevel": 1,
+   "perLevel": false,
+   "covers": 0,
+   "conspicuity": "",
+   "charges": {
+    "value": 20,
+    "max": 20
+   },
+   "modifiers": [],
+   "description": "<p>Bis 50 m, Angriff mit Projektilwaffen, Schaden = besondere Fertigkeit „Körpergeschosse“ (2). 20 Ladungen. <em class=\"nr-ref\">(NoReturn 2E, S. 168)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 38000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "YbCQSEK0ARgBmmPY",
+  "_key": "!items!YbCQSEK0ARgBmmPY",
+  "name": "Superschallschrei",
+  "type": "bioTrait",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "kind": "verborgen",
+   "gp": 30,
+   "level": 1,
+   "maxLevel": 1,
+   "perLevel": false,
+   "covers": 0,
+   "conspicuity": "",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Druckwelle SP 10/20, 20 Schaden (+10 je weiterem Adrenalin), kostet 1 Adrenalin; Opfer mit Gehör: je 10 Punkte der Hörprobe −1W für 10 KR. Kopfgeld +500 N$. <em class=\"nr-ref\">(NoReturn 2E, S. 169)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 39000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "2xtmD9jhyCjHboWk",
+  "_key": "!items!2xtmD9jhyCjHboWk",
+  "name": "Thermalsicht",
+  "type": "bioTrait",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "kind": "verborgen",
+   "gp": 10,
+   "level": 1,
+   "maxLevel": 1,
+   "perLevel": false,
+   "covers": 0,
+   "conspicuity": "",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Sieht Wärme, auch durch dünne Wände (ersetzt keine Nachtsicht). <em class=\"nr-ref\">(NoReturn 2E, S. 169)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 40000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "xj2sw9e7zE5G24ga",
+  "_key": "!items!xj2sw9e7zE5G24ga",
+  "name": "Toxische Anpassung",
+  "type": "bioTrait",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "kind": "verborgen",
+   "gp": 5,
+   "level": 1,
+   "maxLevel": 1,
+   "perLevel": false,
+   "covers": 0,
+   "conspicuity": "",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Immun gegen toxische Gewässer. <em class=\"nr-ref\">(NoReturn 2E, S. 170)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 41000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "YllX4SRPjK3aIsl5",
+  "_key": "!items!YllX4SRPjK3aIsl5",
+  "name": "Ultraschallortung",
+  "type": "bioTrait",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "kind": "verborgen",
+   "gp": 20,
+   "level": 1,
+   "maxLevel": 1,
+   "perLevel": false,
+   "covers": 0,
+   "conspicuity": "",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Biosonar: farbloses Abbild, unbeeinträchtigt von Licht, Rauch oder Tarnung. <em class=\"nr-ref\">(NoReturn 2E, S. 170)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 42000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "AFbLO2ZFyGNjbYcA",
+  "_key": "!items!AFbLO2ZFyGNjbYcA",
+  "name": "Verbesserte Wahrnehmung",
+  "type": "bioTrait",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "kind": "verborgen",
+   "gp": 5,
+   "level": 1,
+   "maxLevel": 3,
+   "perLevel": true,
+   "covers": 0,
+   "conspicuity": "",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Je Stufe +2W für einen Sinn (Sehen, Riechen, Schmecken, Hören oder Tasten). Max. 3 je Sinn. <em class=\"nr-ref\">(NoReturn 2E, S. 170)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 43000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "RFTvpTaqpcgYxfBI",
+  "_key": "!items!RFTvpTaqpcgYxfBI",
+  "name": "Verdichtete Muskulatur",
+  "type": "bioTrait",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "kind": "verborgen",
+   "gp": 20,
+   "level": 1,
+   "maxLevel": 3,
+   "perLevel": true,
+   "covers": 0,
+   "conspicuity": "",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [
+    {
+     "target": "attributes.st",
+     "value": 1
+    },
+    {
+     "target": "attributes.ko",
+     "value": 1
+    }
+   ],
+   "description": "<p>Je Stufe Stärke +1 und Konstitution +1. Max. 3. <em class=\"nr-ref\">(NoReturn 2E, S. 170)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 44000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "bWUcI40aL7l51Sai",
+  "_key": "!items!bWUcI40aL7l51Sai",
+  "name": "Wechselgänger",
+  "type": "bioTrait",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "kind": "verborgen",
+   "gp": 15,
+   "level": 1,
+   "maxLevel": 1,
+   "perLevel": false,
+   "covers": 0,
+   "conspicuity": "",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Auf vier Beinen: Rennen-Ergebnis × 2. <em class=\"nr-ref\">(NoReturn 2E, S. 170)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 45000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "l36UwKNQiEzc3DhG",
+  "_key": "!items!l36UwKNQiEzc3DhG",
+  "name": "Zermalmender Kiefer",
+  "type": "bioTrait",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "kind": "verborgen",
+   "gp": 10,
+   "level": 1,
+   "maxLevel": 1,
+   "perLevel": false,
+   "covers": 0,
+   "conspicuity": "",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Biss ST+30p. (mit scharfen Zähnen ST+40p.). <em class=\"nr-ref\">(NoReturn 2E, S. 170)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 46000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "5bSWeFnovXftt5dT",
+  "_key": "!items!5bSWeFnovXftt5dT",
+  "name": "Animalische Sprache",
+  "type": "bioTrait",
+  "img": "icons/svg/eye.svg",
+  "system": {
+   "kind": "auffaelligkeit",
+   "gp": 0,
+   "level": 1,
+   "maxLevel": 1,
+   "perLevel": false,
+   "covers": 50,
+   "conspicuity": "",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Veränderte Stimmbänder – keine menschliche Sprache. Deckt 50 GP verborgener Eigenschaften. <em class=\"nr-ref\">(NoReturn 2E, S. 170)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 47000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "sJpWfU0d14zMtq6U",
+  "_key": "!items!sJpWfU0d14zMtq6U",
+  "name": "Animalische Augen (Farbe/Iris)",
+  "type": "bioTrait",
+  "img": "icons/svg/eye.svg",
+  "system": {
+   "kind": "auffaelligkeit",
+   "gp": 0,
+   "level": 1,
+   "maxLevel": 1,
+   "perLevel": false,
+   "covers": 5,
+   "conspicuity": "",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Unnatürliche Farbe oder verformte Iris. Deckt 5 GP verborgener Eigenschaften. <em class=\"nr-ref\">(NoReturn 2E, S. 170)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 48000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "nhKkA6Bcpej2pmLK",
+  "_key": "!items!nhKkA6Bcpej2pmLK",
+  "name": "Animalische Augen (Form/Anzahl)",
+  "type": "bioTrait",
+  "img": "icons/svg/eye.svg",
+  "system": {
+   "kind": "auffaelligkeit",
+   "gp": 0,
+   "level": 1,
+   "maxLevel": 1,
+   "perLevel": false,
+   "covers": 10,
+   "conspicuity": "",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Form, Position oder Anzahl weicht ab. Deckt 10 GP verborgener Eigenschaften. <em class=\"nr-ref\">(NoReturn 2E, S. 170)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 49000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "euE0H7TnjcvacAAO",
+  "_key": "!items!euE0H7TnjcvacAAO",
+  "name": "Animalische Geschlechtsmerkmale (sekundär)",
+  "type": "bioTrait",
+  "img": "icons/svg/eye.svg",
+  "system": {
+   "kind": "auffaelligkeit",
+   "gp": 0,
+   "level": 1,
+   "maxLevel": 1,
+   "perLevel": false,
+   "covers": 20,
+   "conspicuity": "",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Sekundäre Merkmale. Deckt 20 GP verborgener Eigenschaften. <em class=\"nr-ref\">(NoReturn 2E, S. 170)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 50000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "2AQPO232EEatzv3o",
+  "_key": "!items!2AQPO232EEatzv3o",
+  "name": "Animalische Geschlechtsmerkmale (primär)",
+  "type": "bioTrait",
+  "img": "icons/svg/eye.svg",
+  "system": {
+   "kind": "auffaelligkeit",
+   "gp": 0,
+   "level": 1,
+   "maxLevel": 1,
+   "perLevel": false,
+   "covers": 30,
+   "conspicuity": "",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Primäre Merkmale. Deckt 30 GP verborgener Eigenschaften. <em class=\"nr-ref\">(NoReturn 2E, S. 170)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 51000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "HYW0JG2TrMdaCGBX",
+  "_key": "!items!HYW0JG2TrMdaCGBX",
+  "name": "Animalische Hände/Füße (je Paar)",
+  "type": "bioTrait",
+  "img": "icons/svg/eye.svg",
+  "system": {
+   "kind": "auffaelligkeit",
+   "gp": 0,
+   "level": 1,
+   "maxLevel": 1,
+   "perLevel": false,
+   "covers": 25,
+   "conspicuity": "",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Tierische Extremitäten. Deckt 25 GP verborgener Eigenschaften. <em class=\"nr-ref\">(NoReturn 2E, S. 170)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 52000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "fNCNOcU8M0XB4jX5",
+  "_key": "!items!fNCNOcU8M0XB4jX5",
+  "name": "Animalischer Kopf (mit Mimik)",
+  "type": "bioTrait",
+  "img": "icons/svg/eye.svg",
+  "system": {
+   "kind": "auffaelligkeit",
+   "gp": 0,
+   "level": 1,
+   "maxLevel": 1,
+   "perLevel": false,
+   "covers": 30,
+   "conspicuity": "",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Tierschädel, der menschliche Mimik zulässt. Deckt 30 GP verborgener Eigenschaften. <em class=\"nr-ref\">(NoReturn 2E, S. 170)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 53000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "PkOSOkK873EcIdSG",
+  "_key": "!items!PkOSOkK873EcIdSG",
+  "name": "Animalischer Kopf (gänzlich)",
+  "type": "bioTrait",
+  "img": "icons/svg/eye.svg",
+  "system": {
+   "kind": "auffaelligkeit",
+   "gp": 0,
+   "level": 1,
+   "maxLevel": 1,
+   "perLevel": false,
+   "covers": 40,
+   "conspicuity": "",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Völlig tierischer Kopf. Deckt 40 GP verborgener Eigenschaften. <em class=\"nr-ref\">(NoReturn 2E, S. 170)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 54000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "Q8cl2NjzZlRsIADA",
+  "_key": "!items!Q8cl2NjzZlRsIADA",
+  "name": "Animalische Ohren",
+  "type": "bioTrait",
+  "img": "icons/svg/eye.svg",
+  "system": {
+   "kind": "auffaelligkeit",
+   "gp": 0,
+   "level": 1,
+   "maxLevel": 1,
+   "perLevel": false,
+   "covers": 5,
+   "conspicuity": "",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Spitz, behaart, zu groß/klein. Deckt 5 GP verborgener Eigenschaften. <em class=\"nr-ref\">(NoReturn 2E, S. 170)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 55000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "e1KoKfZS2KQudnCw",
+  "_key": "!items!e1KoKfZS2KQudnCw",
+  "name": "Animalische Ohren (überdimensioniert)",
+  "type": "bioTrait",
+  "img": "icons/svg/eye.svg",
+  "system": {
+   "kind": "auffaelligkeit",
+   "gp": 0,
+   "level": 1,
+   "maxLevel": 1,
+   "perLevel": false,
+   "covers": 10,
+   "conspicuity": "",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Wie Fledermaus- oder Hasenohren. Deckt 10 GP verborgener Eigenschaften. <em class=\"nr-ref\">(NoReturn 2E, S. 170)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 56000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ }
+]

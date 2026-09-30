@@ -1,0 +1,25 @@
+<div class="nr-dialog">
+  <p>{{localize "NR.Combat.IncomingAttack"}}: <strong>{{attack.weaponName}}</strong> — <span class="nr-chip big">{{attack.total}}</span></p>
+  {{#if count}}<p class="nr-hint">{{localize "NR.Combat.DefenseCount"}}: {{count}} → −{{defenseMalus}}W ({{localize "NR.Combat.NoOneDie"}})</p>{{/if}}
+  {{#if woundMalus}}<p class="nr-hint">{{localize "NR.Roll.Malus"}}: −{{woundMalus}}W</p>{{/if}}
+  <div class="form-group">
+    <label>{{localize "NR.Combat.DefenseAction"}}</label>
+    <select name="choice">
+      <optgroup label="{{localize 'NR.Section.Skills'}}">
+        {{#each skills as |s|}}<option value="skill:{{s.key}}" {{#if (eq s.key ../suggested)}}selected{{/if}}>{{s.label}} ({{s.pool}}W)</option>{{/each}}
+      </optgroup>
+      {{#if custom.length}}<optgroup label="{{localize 'NR.Section.CustomSkills'}}">{{#each custom as |c|}}<option value="custom:{{c.id}}">{{c.name}}</option>{{/each}}</optgroup>{{/if}}
+      {{#if psiApps.length}}<optgroup label="PSI">{{#each psiApps as |p|}}<option value="psi:{{p.id}}">{{p.name}}</option>{{/each}}</optgroup>{{/if}}
+    </select>
+  </div>
+  {{#if gear.length}}
+  <div class="form-group">
+    <label>{{localize "NR.Combat.ParryWith"}}</label>
+    <select name="gearId"><option value="">–</option>{{#each gear as |g|}}<option value="{{g.id}}">{{g.name}} (Parade +{{g.system.parryDice}}W / Block +{{g.system.blockDice}}W)</option>{{/each}}</select>
+  </div>
+  {{/if}}
+  <div class="form-group"><label>{{localize "NR.Roll.BonusDice"}}</label><input type="number" name="bonusDice" value="0"></div>
+  <div class="form-group"><label>{{localize "NR.Roll.MalusDice"}}</label><input type="number" name="malusDice" value="0" min="0"></div>
+  {{#if adrenalinLeft}}<div class="form-group"><label>{{localize "NR.Roll.Adrenalin"}} (+{{adrenalinBonus}}W)</label><input type="checkbox" name="useAdrenalin"></div>{{/if}}
+  <p class="nr-hint">{{localize "NR.Combat.DefenseHint"}}</p>
+</div>

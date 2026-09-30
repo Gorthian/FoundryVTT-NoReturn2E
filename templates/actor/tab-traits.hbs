@@ -1,0 +1,95 @@
+<section class="tab nr-tab-traits {{tab.cssClass}}" data-group="primary" data-tab="traits">
+  <div class="nr-columns">
+    <div class="nr-col">
+      <h3 class="nr-section-title">{{localize "TYPES.Item.species"}}</h3>
+      {{#if species}}
+      <div class="nr-species draggable" data-item-id="{{species.id}}">
+        <img src="{{species.img}}" alt="">
+        <div>
+          <a class="nr-item-name" data-action="editItem">{{species.name}}</a>
+          <div class="nr-hint">TP {{species.system.tp}} · IR {{species.system.irDice}}W6{{#if species.system.irPoints}}{{nrSigned species.system.irPoints}}{{/if}} · Adrenalin {{species.system.adrenalin}} · Psyche {{species.system.psyche}} · {{#if species.system.psi}}PSI-begabt{{else}}nicht PSI-begabt{{/if}}</div>
+          {{#if species.system.special}}<div class="nr-hint">{{species.system.special}}</div>{{/if}}
+        </div>
+        <a data-action="deleteItem"><i class="fa-solid fa-trash"></i></a>
+      </div>
+      {{else}}<p class="nr-empty">{{localize "NR.Sheet.DropSpecies"}}</p>{{/if}}
+
+      <h3 class="nr-section-title">{{localize "NR.Section.Organism"}}</h3>
+      <div class="nr-grid-2">
+        <label>{{localize "NR.Status.Organism"}}</label>
+        <span><span class="nr-derived strong">{{system.org.value}}</span> · {{system.org.band.label}}</span>
+        <label>{{localize "NR.Sheet.Base"}} / {{localize "NR.Sheet.Loss"}}</label>
+        <span><input type="number" name="system.organismus.base" value="{{system.organismus.base}}"> / <input type="number" name="system.organismus.loss" value="{{system.organismus.loss}}">{{#if system.org.implantLoss}} <span class="nr-hint">(Implantate −{{system.org.implantLoss}})</span>{{/if}}</span>
+        <label>{{localize "NR.Status.Psyche"}}</label>
+        <span><span class="nr-derived strong">{{system.psy.value}}</span> · {{system.psy.band.label}}</span>
+        <label>{{localize "NR.Sheet.Base"}} / {{localize "NR.Sheet.Loss"}}</label>
+        <span><input type="number" name="system.psyche.base" value="{{system.psyche.base}}"> / <input type="number" name="system.psyche.loss" value="{{system.psyche.loss}}">{{#if system.psy.implantLoss}} <span class="nr-hint">(Implantate −{{system.psy.implantLoss}})</span>{{/if}}</span>
+        <label>{{localize "NR.Sheet.IrMalus"}}</label>
+        <span><input type="number" name="system.infection.malus" value="{{system.infection.malus}}" min="0" max="3"> <span class="nr-hint">(Immunsystemschwäche, je −2)</span></span>
+        <label>{{localize "NR.Sheet.Infection"}}</label>
+        <span><input type="number" name="system.infection.dice" value="{{system.infection.dice}}" min="0">W6 + <input type="number" name="system.infection.points" value="{{system.infection.points}}"></span>
+        <label>{{localize "NR.Sheet.Regeneration"}}</label>
+        <span><input type="number" name="system.regeneration.speed" value="{{system.regeneration.speed}}" min="0"> / Pool <input type="number" name="system.regeneration.pool" value="{{system.regeneration.pool}}" min="0"> · verbraucht <input type="number" name="system.regeneration.poolUsed" value="{{system.regeneration.poolUsed}}" min="0"></span>
+        <label>{{localize "NR.Sheet.Blood"}}</label>
+        <span><input type="number" name="system.blood.value" value="{{system.blood.value}}" min="0"> / <input type="number" name="system.blood.max" value="{{system.blood.max}}" min="0"></span>
+      </div>
+      <p class="nr-hint">{{localize "NR.Sheet.PsycheTraits"}}: {{system.psy.band.traits}}</p>
+      <div class="nr-button-row">
+        <a class="nr-btn" data-action="degeneration" data-table="A"><i class="fa-solid fa-dice-d6"></i> {{localize "NR.Sheet.TableA"}}</a>
+        <a class="nr-btn" data-action="degeneration" data-table="B"><i class="fa-solid fa-dice-d6"></i> {{localize "NR.Sheet.TableB"}}</a>
+        <span class="nr-hint">{{localize "NR.Sheet.DegenHint"}}: {{system.org.band.label}}</span>
+      </div>
+
+      <h3 class="nr-section-title">{{localize "NR.Section.Augments"}} <a class="nr-add" data-action="createItem" data-type="augment"><i class="fa-solid fa-plus"></i></a></h3>
+      <ol class="nr-list">
+        {{#each augments as |r|}}
+        <li class="nr-item-row draggable" data-item-id="{{r.item.id}}">
+          <div class="nr-item-main">
+            <img src="{{r.item.img}}" alt="">
+            <a class="nr-item-name" data-action="toggleDescription">{{r.item.name}}</a>
+            {{#if r.item.system.zone}}<span class="nr-item-stat">Zone {{r.item.system.zone}}</span>{{/if}}
+            <a data-action="toggleEquip" data-tooltip="{{localize 'NR.Sheet.Installed'}}"><i class="fa-solid fa-microchip {{#unless r.item.system.installed}}nr-dim{{/unless}}"></i></a>
+            <a data-action="editItem"><i class="fa-solid fa-pen"></i></a>
+            <a data-action="deleteItem"><i class="fa-solid fa-trash"></i></a>
+          </div>
+          <div class="nr-item-details">{{#each r.stats as |s|}}<span class="nr-chip">{{s}}</span>{{/each}}</div>
+        </li>
+        {{else}}<li class="nr-empty">–</li>{{/each}}
+      </ol>
+    </div>
+
+    <div class="nr-col">
+      <h3 class="nr-section-title">{{localize "NR.Section.Abnormalities"}} <a class="nr-add" data-action="createItem" data-type="abnormality"><i class="fa-solid fa-plus"></i></a></h3>
+      <ol class="nr-list">{{#each abnormalities as |r|}}{{> "systems/noreturn/templates/actor/parts/item-row.hbs" item=r.item stats=r.stats}}{{else}}<li class="nr-empty">–</li>{{/each}}</ol>
+
+      <h3 class="nr-section-title">{{localize "NR.Section.BioTraits"}} <a class="nr-add" data-action="createItem" data-type="bioTrait"><i class="fa-solid fa-plus"></i></a></h3>
+      <ol class="nr-list">{{#each bioTraits as |r|}}{{> "systems/noreturn/templates/actor/parts/item-row.hbs" item=r.item stats=r.stats}}{{else}}<li class="nr-empty">–</li>{{/each}}</ol>
+
+      <h3 class="nr-section-title">{{localize "NR.Section.StyleSkills"}} <a class="nr-add" data-action="createItem" data-type="styleSkill"><i class="fa-solid fa-plus"></i></a></h3>
+      <ol class="nr-list">{{#each styleSkills as |r|}}{{> "systems/noreturn/templates/actor/parts/item-row.hbs" item=r.item stats=r.stats}}{{else}}<li class="nr-empty">–</li>{{/each}}</ol>
+
+      <div class="nr-columns tight">
+        <div class="nr-col">
+          <h3 class="nr-section-title">{{localize "NR.Section.Advantages"}} <a class="nr-add" data-action="createItem" data-type="advantage" data-kind="vorteil"><i class="fa-solid fa-plus"></i></a></h3>
+          <ol class="nr-list">{{#each advantages as |r|}}{{> "systems/noreturn/templates/actor/parts/item-row.hbs" item=r.item stats=r.stats}}{{else}}<li class="nr-empty">–</li>{{/each}}</ol>
+        </div>
+        <div class="nr-col">
+          <h3 class="nr-section-title">{{localize "NR.Section.Disadvantages"}} <a class="nr-add" data-action="createItem" data-type="advantage" data-kind="nachteil"><i class="fa-solid fa-plus"></i></a></h3>
+          <ol class="nr-list">{{#each disadvantages as |r|}}{{> "systems/noreturn/templates/actor/parts/item-row.hbs" item=r.item stats=r.stats}}{{else}}<li class="nr-empty">–</li>{{/each}}</ol>
+        </div>
+      </div>
+      {{#if isCharacter}}<p class="nr-hint">{{localize "NR.Sheet.Markers"}}: {{system.gp.markers.gained}} {{localize "NR.Sheet.MarkersGained"}} / {{system.gp.markers.spent}} {{localize "NR.Sheet.MarkersSpent"}}</p>{{/if}}
+
+      <div class="nr-columns tight">
+        <div class="nr-col">
+          <h3 class="nr-section-title justice">{{localize "NR.Section.Justice"}} <a class="nr-add" data-action="createItem" data-type="trait" data-kind="justice"><i class="fa-solid fa-plus"></i></a></h3>
+          <ol class="nr-list">{{#each traitsJustice as |r|}}{{> "systems/noreturn/templates/actor/parts/item-row.hbs" item=r.item stats=r.stats}}{{else}}<li class="nr-empty">–</li>{{/each}}</ol>
+        </div>
+        <div class="nr-col">
+          <h3 class="nr-section-title chaos">{{localize "NR.Section.Chaos"}} <a class="nr-add" data-action="createItem" data-type="trait" data-kind="chaos"><i class="fa-solid fa-plus"></i></a></h3>
+          <ol class="nr-list">{{#each traitsChaos as |r|}}{{> "systems/noreturn/templates/actor/parts/item-row.hbs" item=r.item stats=r.stats}}{{else}}<li class="nr-empty">–</li>{{/each}}</ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

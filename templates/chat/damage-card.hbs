@@ -1,0 +1,18 @@
+<div class="nr-card nr-damage">
+  <header class="nr-card-head">
+    <h3>{{localize "NR.Combat.Damage"}}: {{weaponName}}</h3>
+    <div class="nr-card-sub">{{label}} · {{describe}}</div>
+  </header>
+  <div class="nr-dice-row">
+    {{#each dice as |d|}}<span class="nr-die {{d.kind}} {{#if d.max}}max{{/if}}" {{#if d.chain}}data-tooltip="Hazard-Di: {{d.chain}}"{{/if}}>{{d.value}}</span>{{/each}}
+  </div>
+  <div class="nr-total">
+    <span class="nr-total-value">{{amount}}</span>
+    <span class="nr-vs">{{#if attack.structure}}SSP{{else}}{{#if attack.nonLethal}}NL{{else}}{{localize "NR.Combat.DamagePoints"}}{{/if}}{{/if}}</span>
+  </div>
+  <p class="nr-zones"><i class="fa-solid fa-person"></i> {{zoneLabels}}</p>
+  {{#if blocked}}<p class="nr-hint">{{localize "NR.Combat.BlockHit"}}</p>{{/if}}
+  <div class="nr-card-buttons">
+    <button type="button" data-nr-action="resist" data-token-uuid="{{target.tokenUuid}}" data-actor-uuid="{{target.actorUuid}}"><i class="fa-solid fa-shield-heart"></i> {{localize "NR.Combat.ResistFor"}} {{target.name}}</button>
+  </div>
+</div>

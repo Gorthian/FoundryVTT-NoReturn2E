@@ -1,0 +1,3970 @@
+[
+ {
+  "_id": "BKKpUCQAWTsHWjEe",
+  "_key": "!items!BKKpUCQAWTsHWjEe",
+  "name": "Abenteuerlustig",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 1000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "tcELLsdxF6zyck3i",
+  "_key": "!items!tcELLsdxF6zyck3i",
+  "name": "Adrett",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "80–61",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 80–61. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 2000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "Ib9FXYAptn2WphaO",
+  "_key": "!items!Ib9FXYAptn2WphaO",
+  "name": "Akribisch",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "80–61",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 80–61. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 3000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "2kAwaU3OCTA57qXj",
+  "_key": "!items!2kAwaU3OCTA57qXj",
+  "name": "Aktiv",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 4000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "gGtF5EAQo0CDswnj",
+  "_key": "!items!gGtF5EAQo0CDswnj",
+  "name": "Albern",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 5000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "igHDsIMxs2a8tLgI",
+  "_key": "!items!igHDsIMxs2a8tLgI",
+  "name": "Analytisch",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "60–41",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 60–41. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 6000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "SNOV2MDeUfEPOeN6",
+  "_key": "!items!SNOV2MDeUfEPOeN6",
+  "name": "Anhänglich",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 7000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "tYF2YNeqO7JslVNz",
+  "_key": "!items!tYF2YNeqO7JslVNz",
+  "name": "Anpassungsfähig",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 8000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "4LEU2aYdJ3u6L06I",
+  "_key": "!items!4LEU2aYdJ3u6L06I",
+  "name": "Aufmerksam",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 9000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "m2ClXy5q7hDGbg9a",
+  "_key": "!items!m2ClXy5q7hDGbg9a",
+  "name": "Bedacht",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "80–61",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 80–61. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 10000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "C22QHxy10fuV9FYB",
+  "_key": "!items!C22QHxy10fuV9FYB",
+  "name": "Besonnen",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "100–81",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 100–81. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 11000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "NBGbslSS5hBOtzKb",
+  "_key": "!items!NBGbslSS5hBOtzKb",
+  "name": "Charmant",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "80–61",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 80–61. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 12000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "VpNzDwQgitowqDwe",
+  "_key": "!items!VpNzDwQgitowqDwe",
+  "name": "Devot",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 13000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "WfvdkIferbMxa6x6",
+  "_key": "!items!WfvdkIferbMxa6x6",
+  "name": "Edelmütig",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "100–81",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 100–81. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 14000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "TDVvTdHt0HNhKkKW",
+  "_key": "!items!TDVvTdHt0HNhKkKW",
+  "name": "Ehrlich",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "80–61",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 80–61. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 15000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "EB1XlkG0rGLSNJ2N",
+  "_key": "!items!EB1XlkG0rGLSNJ2N",
+  "name": "Einfühlsam",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "100–81",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 100–81. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 16000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "V0nu8eVWAWn7umSQ",
+  "_key": "!items!V0nu8eVWAWn7umSQ",
+  "name": "Entschlossen",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "60–41",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 60–41. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 17000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "34C9gIBdqZ4tZqxZ",
+  "_key": "!items!34C9gIBdqZ4tZqxZ",
+  "name": "Experimentierfreudig",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 18000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "SYwckZUVZmXMIpYu",
+  "_key": "!items!SYwckZUVZmXMIpYu",
+  "name": "Familiär",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 19000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "fnndQIrmtRvSOb04",
+  "_key": "!items!fnndQIrmtRvSOb04",
+  "name": "Freizügig",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 20000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "vn7sqNWrw2TExiI1",
+  "_key": "!items!vn7sqNWrw2TExiI1",
+  "name": "Furchtlos",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "60–41",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 60–41. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 21000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "RksvHDpD86NjLDml",
+  "_key": "!items!RksvHDpD86NjLDml",
+  "name": "Genügsam",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "100–81",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 100–81. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 22000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "en7IhfOiuNsQMAJj",
+  "_key": "!items!en7IhfOiuNsQMAJj",
+  "name": "Gesetzestreu",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 23000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "UjfqwENW6ZFDtHks",
+  "_key": "!items!UjfqwENW6ZFDtHks",
+  "name": "Gnädig",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "80–61",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 80–61. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 24000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "vQQZ0II8sgRoHfDF",
+  "_key": "!items!vQQZ0II8sgRoHfDF",
+  "name": "Harmoniebedürftig",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "60–41",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 60–41. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 25000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "tisUj0RSvR2DPxKw",
+  "_key": "!items!tisUj0RSvR2DPxKw",
+  "name": "Hedonistisch",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 26000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "bw5yP9hhunnYajWE",
+  "_key": "!items!bw5yP9hhunnYajWE",
+  "name": "Hilfsbereit",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "100–81",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 100–81. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 27000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "56w6S8C4nKPiQqti",
+  "_key": "!items!56w6S8C4nKPiQqti",
+  "name": "Idealistisch",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "80–61",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 80–61. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 28000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "Vhh82bR5kqSa2iJX",
+  "_key": "!items!Vhh82bR5kqSa2iJX",
+  "name": "Impulsiv",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 29000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "VTWxtTg5J8npDlcy",
+  "_key": "!items!VTWxtTg5J8npDlcy",
+  "name": "Introvertiert",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 30000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "S9ijtYXnOSZUXjoE",
+  "_key": "!items!S9ijtYXnOSZUXjoE",
+  "name": "Keck",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 31000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "ca6UV9lLS3uOSDU0",
+  "_key": "!items!ca6UV9lLS3uOSDU0",
+  "name": "Kommunikativ",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 32000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "Qj9lwVyOrcbOsyTc",
+  "_key": "!items!Qj9lwVyOrcbOsyTc",
+  "name": "Kreativ",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "",
+   "bonus": "+1W auf Kunst (temporär)",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 33000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "uEfQ5d9DCtEqk7Tf",
+  "_key": "!items!uEfQ5d9DCtEqk7Tf",
+  "name": "Loyal",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "100–81",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 100–81. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 34000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "2WIVYJWB9NwijCtz",
+  "_key": "!items!2WIVYJWB9NwijCtz",
+  "name": "Misstrauisch",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "60–41",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 60–41. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 35000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "YxWXSgxalGygYr1Q",
+  "_key": "!items!YxWXSgxalGygYr1Q",
+  "name": "Mutig",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "100–81",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 100–81. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 36000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "jUNdL1bMPxJQsA5r",
+  "_key": "!items!jUNdL1bMPxJQsA5r",
+  "name": "Naiv",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 37000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "YIjD1TOU5Sw5gRr7",
+  "_key": "!items!YIjD1TOU5Sw5gRr7",
+  "name": "Nett",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 38000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "VXQtyjpaGNJmfTFe",
+  "_key": "!items!VXQtyjpaGNJmfTFe",
+  "name": "Neugierig",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 39000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "f3WroblvbtRlQBZs",
+  "_key": "!items!f3WroblvbtRlQBZs",
+  "name": "Optimistisch",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "100–81",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 100–81. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 40000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "ABlcygcBVlu7dmOs",
+  "_key": "!items!ABlcygcBVlu7dmOs",
+  "name": "Ordnungsliebend",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 41000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "23QrgLOs2Kblt8j7",
+  "_key": "!items!23QrgLOs2Kblt8j7",
+  "name": "Organisiert",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 42000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "5PXeMkcXiGgEtlPe",
+  "_key": "!items!5PXeMkcXiGgEtlPe",
+  "name": "Pazifistisch",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 43000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "a4xfFGRcKNsByOKz",
+  "_key": "!items!a4xfFGRcKNsByOKz",
+  "name": "Perfektionistisch",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 44000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "Q4fBgvSvxQnbVP0a",
+  "_key": "!items!Q4fBgvSvxQnbVP0a",
+  "name": "Pragmatisch",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 45000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "FiwPsTATOlPB7X9O",
+  "_key": "!items!FiwPsTATOlPB7X9O",
+  "name": "Prinzipientreu",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "80–61",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 80–61. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 46000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "PCdXzuekH2KQMiDb",
+  "_key": "!items!PCdXzuekH2KQMiDb",
+  "name": "Reizvoll",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 47000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "YsJGrUHbbObJ5mSd",
+  "_key": "!items!YsJGrUHbbObJ5mSd",
+  "name": "Schlagfertig",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 48000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "5Hdem03xjicKypHJ",
+  "_key": "!items!5Hdem03xjicKypHJ",
+  "name": "Schrill",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 49000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "AraC7AZXr6bKTPmX",
+  "_key": "!items!AraC7AZXr6bKTPmX",
+  "name": "Selbstbewusst",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 50000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "u3FEyfPdagfHUeGe",
+  "_key": "!items!u3FEyfPdagfHUeGe",
+  "name": "Sensibel",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 51000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "9JqXZos0zfxqMPsc",
+  "_key": "!items!9JqXZos0zfxqMPsc",
+  "name": "Seriös",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 52000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "r5S6Ze1yhqG0sS3d",
+  "_key": "!items!r5S6Ze1yhqG0sS3d",
+  "name": "Solidarisch",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 53000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "iWgymdOqEA18BOxE",
+  "_key": "!items!iWgymdOqEA18BOxE",
+  "name": "Sozial",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "100–81",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 100–81. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 54000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "JRrv4eP4ofjzaYrb",
+  "_key": "!items!JRrv4eP4ofjzaYrb",
+  "name": "Teamfähig",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 55000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "yfU8oQxYQjFJeSlT",
+  "_key": "!items!yfU8oQxYQjFJeSlT",
+  "name": "Temperamentvoll",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 56000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "lnFBy2zDJscwWhGZ",
+  "_key": "!items!lnFBy2zDJscwWhGZ",
+  "name": "Theatralisch",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 57000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "uZoImWkdYdfbDRfP",
+  "_key": "!items!uZoImWkdYdfbDRfP",
+  "name": "Tolerant",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "100–81",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 100–81. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 58000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "JlMufGF23sX4n7Qe",
+  "_key": "!items!JlMufGF23sX4n7Qe",
+  "name": "Vielschichtig",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 59000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "NosNgJSCUyGYs11E",
+  "_key": "!items!NosNgJSCUyGYs11E",
+  "name": "Wankelmütig",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 60000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "3ePFCHN4ao7afxKy",
+  "_key": "!items!3ePFCHN4ao7afxKy",
+  "name": "Wissenshungrig",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 61000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "VVg35yo6QEyK3SfM",
+  "_key": "!items!VVg35yo6QEyK3SfM",
+  "name": "Weltgewandt",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 62000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "9KJzZVwXZDJ4viqu",
+  "_key": "!items!9KJzZVwXZDJ4viqu",
+  "name": "Zäh",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "40–21",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 40–21. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 63000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "GTseS35xP4feHurL",
+  "_key": "!items!GTseS35xP4feHurL",
+  "name": "Zerstreut",
+  "type": "trait",
+  "img": "icons/svg/heal.svg",
+  "system": {
+   "kind": "justice",
+   "psycheRange": "20–1",
+   "bonus": "",
+   "description": "<p>Justice-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 20–1. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 64000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "KtASM18KQpQlc3i8",
+  "_key": "!items!KtASM18KQpQlc3i8",
+  "name": "Angeberisch",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 65000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "XWfBRr8NMi2um54F",
+  "_key": "!items!XWfBRr8NMi2um54F",
+  "name": "Ängstlich",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 66000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "KtTM5NuHQQl03lpe",
+  "_key": "!items!KtTM5NuHQQl03lpe",
+  "name": "Arrogant",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 67000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "rqtmTT9cmicSPrtf",
+  "_key": "!items!rqtmTT9cmicSPrtf",
+  "name": "Asozial",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "40–21",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 40–21. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 68000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "YhG28cUCdruUDiaI",
+  "_key": "!items!YhG28cUCdruUDiaI",
+  "name": "Autoritär",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "60–41",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 60–41. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 69000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "BJhGYUbLVr2BGPpw",
+  "_key": "!items!BJhGYUbLVr2BGPpw",
+  "name": "Besserwisserisch",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 70000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "FKNHfWbKSm0eYDQZ",
+  "_key": "!items!FKNHfWbKSm0eYDQZ",
+  "name": "Bieder",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 71000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "IkxjvsJ4bPxKCFJj",
+  "_key": "!items!IkxjvsJ4bPxKCFJj",
+  "name": "Boshaft",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "20–1",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 20–1. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 72000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "8pP9VIRNjHyo1YgL",
+  "_key": "!items!8pP9VIRNjHyo1YgL",
+  "name": "Brutal",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "20–1",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 20–1. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 73000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "92ENx6EjaNwEC0Gh",
+  "_key": "!items!92ENx6EjaNwEC0Gh",
+  "name": "Chaotisch",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 74000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "FkFb49m3DxMrIH3I",
+  "_key": "!items!FkFb49m3DxMrIH3I",
+  "name": "Dogmatisch",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "40–21",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 40–21. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 75000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "eugMEvV2obnqMthz",
+  "_key": "!items!eugMEvV2obnqMthz",
+  "name": "Dominant",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 76000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "NEmcpvvQn0KtBjZU",
+  "_key": "!items!NEmcpvvQn0KtBjZU",
+  "name": "Dumm",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 77000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "Uvh8Q5iyCZ69E9yi",
+  "_key": "!items!Uvh8Q5iyCZ69E9yi",
+  "name": "Egoistisch",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 78000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "5rbjl3EX3l4rQjdy",
+  "_key": "!items!5rbjl3EX3l4rQjdy",
+  "name": "Eifersüchtig",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 79000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "0b9BI2nr4KWrQ182",
+  "_key": "!items!0b9BI2nr4KWrQ182",
+  "name": "Eitel",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 80000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "5RVcv1gi7y1OIVkw",
+  "_key": "!items!5RVcv1gi7y1OIVkw",
+  "name": "Extrovertiert",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 81000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "E49o2fiCXIlrHNJY",
+  "_key": "!items!E49o2fiCXIlrHNJY",
+  "name": "Fanatisch",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "20–1",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 20–1. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 82000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "71NvHc5iAjH3mEnz",
+  "_key": "!items!71NvHc5iAjH3mEnz",
+  "name": "Faul",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "60–41",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 60–41. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 83000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "7XkKC05b3glOoXWs",
+  "_key": "!items!7XkKC05b3glOoXWs",
+  "name": "Feige",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "40–21",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 40–21. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 84000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "NJixCOmOaJkerqRt",
+  "_key": "!items!NJixCOmOaJkerqRt",
+  "name": "Geizig",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 85000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "OHAKb2sT5OeaZnPi",
+  "_key": "!items!OHAKb2sT5OeaZnPi",
+  "name": "Gewalttätig",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "40–21",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 40–21. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 86000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "mMefrjcFxD7N2u5F",
+  "_key": "!items!mMefrjcFxD7N2u5F",
+  "name": "Gierig",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "60–41",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 60–41. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 87000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "l257o0E8joo8cpom",
+  "_key": "!items!l257o0E8joo8cpom",
+  "name": "Gnadenlos",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "20–1",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 20–1. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 88000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "OKpQenukPN0pEQqh",
+  "_key": "!items!OKpQenukPN0pEQqh",
+  "name": "Größenwahnsinnig",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 89000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "0AGz4dkEoSDzM4JT",
+  "_key": "!items!0AGz4dkEoSDzM4JT",
+  "name": "Hektisch",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 90000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "mTPE7KmjFqOYK7cP",
+  "_key": "!items!mTPE7KmjFqOYK7cP",
+  "name": "Herzlos",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 91000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "Winwd2UdwB2IJpv3",
+  "_key": "!items!Winwd2UdwB2IJpv3",
+  "name": "Hinterhältig",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 92000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "mJ7vLpHv5tddrx9O",
+  "_key": "!items!mJ7vLpHv5tddrx9O",
+  "name": "Intolerant",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 93000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "vX610X1QSRZ53MFg",
+  "_key": "!items!vX610X1QSRZ53MFg",
+  "name": "Kleptomanisch",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 94000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "EYOlB842G8348JLi",
+  "_key": "!items!EYOlB842G8348JLi",
+  "name": "Konfliktsuchend",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "80–61",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 80–61. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 95000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "UCvf8tqnWKdwTIaQ",
+  "_key": "!items!UCvf8tqnWKdwTIaQ",
+  "name": "Kühl",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 96000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "K4EMENWEkt47b4mt",
+  "_key": "!items!K4EMENWEkt47b4mt",
+  "name": "Kompromisslos",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 97000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "5TkWMerVYZkTHCvx",
+  "_key": "!items!5TkWMerVYZkTHCvx",
+  "name": "Lasziv",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 98000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "8lUdm7tCCYG7YnQ5",
+  "_key": "!items!8lUdm7tCCYG7YnQ5",
+  "name": "Launisch",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 99000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "7vUw2plkZa3TzoUT",
+  "_key": "!items!7vUw2plkZa3TzoUT",
+  "name": "Makaber",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 100000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "yGL7xfIa1pez0spf",
+  "_key": "!items!yGL7xfIa1pez0spf",
+  "name": "Masochistisch",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "40–21",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 40–21. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 101000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "DtBodFx8oyANNwzc",
+  "_key": "!items!DtBodFx8oyANNwzc",
+  "name": "Materialistisch",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "80–61",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 80–61. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 102000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "bSmLOkZW9yJbxq99",
+  "_key": "!items!bSmLOkZW9yJbxq99",
+  "name": "Militant",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "60–41",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 60–41. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 103000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "tnOK4CqymTTbOVod",
+  "_key": "!items!tnOK4CqymTTbOVod",
+  "name": "Mordlustig",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "20–1",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 20–1. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 104000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "iIQJHVOlYeRpvOyS",
+  "_key": "!items!iIQJHVOlYeRpvOyS",
+  "name": "Nachtragend",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "40–21",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 40–21. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 105000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "63muX8q9Dob7KUf6",
+  "_key": "!items!63muX8q9Dob7KUf6",
+  "name": "Neidisch",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 106000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "hrLehMdBYkClpzTv",
+  "_key": "!items!hrLehMdBYkClpzTv",
+  "name": "Nekrophil/Technophil",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "20–1",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 20–1. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 107000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "XeAtYnLE3iFrH8ay",
+  "_key": "!items!XeAtYnLE3iFrH8ay",
+  "name": "Nervös",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 108000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "y7AnPPAVufXIFZmC",
+  "_key": "!items!y7AnPPAVufXIFZmC",
+  "name": "Obszön",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 109000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "0f9cIf9VCu1BC9es",
+  "_key": "!items!0f9cIf9VCu1BC9es",
+  "name": "Paranoid",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "20–1",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 20–1. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 110000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "hoRoktwIc8mxGn4W",
+  "_key": "!items!hoRoktwIc8mxGn4W",
+  "name": "Prokrastinierend",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "40–21",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 40–21. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 111000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "haBS6oBaHXYP9can",
+  "_key": "!items!haBS6oBaHXYP9can",
+  "name": "Psychopathisch",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "20–1",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 20–1. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 112000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "IyI6nJV1FKClcpA6",
+  "_key": "!items!IyI6nJV1FKClcpA6",
+  "name": "Rachsüchtig",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "40–21",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 40–21. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 113000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "7mT22KLMQ9F1GwrL",
+  "_key": "!items!7mT22KLMQ9F1GwrL",
+  "name": "Sadistisch",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 114000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "30aqavC8vgGjX6sy",
+  "_key": "!items!30aqavC8vgGjX6sy",
+  "name": "Salzig",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "60–41",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 60–41. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 115000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "CM9mWfeftv7Zz0ka",
+  "_key": "!items!CM9mWfeftv7Zz0ka",
+  "name": "Sexistisch",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 116000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "T7saLPc0uS2lBVLS",
+  "_key": "!items!T7saLPc0uS2lBVLS",
+  "name": "Skrupellos",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 117000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "f59npqmvbObxiKVp",
+  "_key": "!items!f59npqmvbObxiKVp",
+  "name": "Stur",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 118000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "OEWR1UAudYc2l7uz",
+  "_key": "!items!OEWR1UAudYc2l7uz",
+  "name": "Tollkühn",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 119000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "NTzBHb6h5qysL4gM",
+  "_key": "!items!NTzBHb6h5qysL4gM",
+  "name": "Ungeduldig",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 120000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "aOpOpneiO9hHoCes",
+  "_key": "!items!aOpOpneiO9hHoCes",
+  "name": "Unsicher",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 121000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "0ADe3LxzejvywOTH",
+  "_key": "!items!0ADe3LxzejvywOTH",
+  "name": "Verfressen",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 122000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "n63mGgQ2c5EujRmH",
+  "_key": "!items!n63mGgQ2c5EujRmH",
+  "name": "Verlogen",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 123000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "oQaIamGGcMO0KIiV",
+  "_key": "!items!oQaIamGGcMO0KIiV",
+  "name": "Verrückt",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 124000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "jJwG7WESjjiu7a1g",
+  "_key": "!items!jJwG7WESjjiu7a1g",
+  "name": "Versoffen",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "40–21",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 40–21. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 125000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "tec0JfAvutBGODKK",
+  "_key": "!items!tec0JfAvutBGODKK",
+  "name": "Wahnsinnig",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "20–1",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). Typisch für den Psyche-Bereich 20–1. <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 126000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "gxgyHW96jsb5MGbP",
+  "_key": "!items!gxgyHW96jsb5MGbP",
+  "name": "Willig",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 127000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "P1TLsbkc0Rs8oXGt",
+  "_key": "!items!P1TLsbkc0Rs8oXGt",
+  "name": "Xenophob",
+  "type": "trait",
+  "img": "icons/svg/skull.svg",
+  "system": {
+   "kind": "chaos",
+   "psycheRange": "",
+   "bonus": "",
+   "description": "<p>Chaos-Charaktermerkmal. Wird ausgespielt (+1 EP je Spielrunde, in der es gezeigt wird). <em class=\"nr-ref\">(NoReturn 2E, S. 118)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 128000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ }
+]

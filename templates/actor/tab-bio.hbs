@@ -1,0 +1,69 @@
+<section class="tab nr-tab-bio {{tab.cssClass}}" data-group="primary" data-tab="bio">
+  <div class="nr-columns">
+    <div class="nr-col">
+      <h3 class="nr-section-title">{{localize "NR.Section.Details"}}</h3>
+      <div class="nr-grid-2">
+        {{#each (object occupation="NR.Detail.occupation" age="NR.Detail.age" gender="NR.Detail.gender" height="NR.Detail.height" weight="NR.Detail.weight" eyes="NR.Detail.eyes" hair="NR.Detail.hair" origin="NR.Detail.origin" languages="NR.Detail.languages") as |label key|}}
+        <label>{{localize label}}</label>
+        <input type="text" name="system.details.{{key}}" value="{{lookup ../system.details key}}">
+        {{/each}}
+      </div>
+
+      {{#if isCharacter}}
+      <h3 class="nr-section-title">{{localize "NR.Section.Progress"}}</h3>
+      <div class="nr-grid-3 nr-progress">
+        <span></span><span class="nr-hint">{{localize "NR.Progress.Current"}}</span><span class="nr-hint">{{localize "NR.Progress.Total"}}</span>
+        <label>{{localize "NR.Progress.XP"}}</label>
+        <input type="number" name="system.progress.xp.value" value="{{system.progress.xp.value}}">
+        <input type="number" name="system.progress.xp.total" value="{{system.progress.xp.total}}">
+        <label>{{localize "NR.Progress.JP"}}</label>
+        <input type="number" name="system.progress.jp.value" value="{{system.progress.jp.value}}">
+        <input type="number" name="system.progress.jp.total" value="{{system.progress.jp.total}}">
+        <label>{{localize "NR.Progress.CP"}}</label>
+        <input type="number" name="system.progress.cp.value" value="{{system.progress.cp.value}}">
+        <input type="number" name="system.progress.cp.total" value="{{system.progress.cp.total}}">
+      </div>
+      {{#if (or (gte system.progress.jp.value 30) (gte system.progress.cp.value 30))}}<p class="nr-alert">{{localize "NR.Progress.MustInvest"}}</p>{{/if}}
+      <div class="nr-grid-2">
+        <label>{{localize "NR.Progress.Reputation"}}</label>
+        <select name="system.progress.reputation">{{selectOptions reputationOptions selected=system.progress.reputation}}</select>
+        <label>{{localize "NR.Progress.Butterfly"}}</label>
+        <select name="system.progress.butterfly">{{selectOptions butterflyOptions selected=system.progress.butterfly}}</select>
+        <label>{{localize "NR.Progress.Butterfly2"}}</label>
+        <select name="system.progress.butterfly2">{{selectOptions butterflyOptions selected=system.progress.butterfly2}}</select>
+        <label>{{localize "NR.Progress.Pns"}}</label>
+        <input type="checkbox" name="system.progress.pns" {{checked system.progress.pns}}>
+      </div>
+
+      <h3 class="nr-section-title">{{localize "NR.Section.Creation"}}</h3>
+      <div class="nr-grid-2">
+        <label>{{localize "NR.Creation.PowerLevel"}}</label>
+        <select name="system.progress.powerLevel">{{selectOptions powerLevels selected=system.progress.powerLevel}}</select>
+        <label>{{localize "NR.Creation.GpMoney"}}</label>
+        <span><input type="number" name="system.progress.gpMoney" value="{{system.progress.gpMoney}}" min="0"> GP = {{nrMoney system.gp.money}}</span>
+        <label>{{localize "NR.Creation.GpExtra"}}</label>
+        <input type="number" name="system.progress.gpExtra" value="{{system.progress.gpExtra}}">
+      </div>
+      <table class="nr-gp-table">
+        <tr><td>{{localize "NR.Section.Attributes"}}</td><td>{{system.gp.attributes}}</td></tr>
+        <tr><td>{{localize "NR.Section.Skills"}}</td><td>{{system.gp.skills}}</td></tr>
+        <tr><td>{{localize "NR.Creation.Languages"}}</td><td>{{system.gp.languages}}</td></tr>
+        <tr><td>{{localize "NR.Creation.SpecialSkills"}}</td><td>{{system.gp.special}}</td></tr>
+        <tr><td>{{localize "NR.Creation.Psi"}}</td><td>{{system.gp.psi}}</td></tr>
+        <tr><td>{{localize "NR.Creation.Items"}}</td><td>{{system.gp.items}}</td></tr>
+        <tr><td>{{localize "NR.Creation.Money"}}</td><td>{{system.progress.gpMoney}}</td></tr>
+        <tr class="sum {{#if (lt system.gp.left 0)}}nr-bad{{/if}}"><td>{{localize "NR.Creation.Spent"}}</td><td>{{system.gp.spent}} / {{system.gp.available}} ({{system.gp.left}} {{localize "NR.Creation.Left"}})</td></tr>
+      </table>
+      {{/if}}
+    </div>
+
+    <div class="nr-col">
+      <h3 class="nr-section-title">{{localize "NR.Section.Biography"}}</h3>
+      {{formInput fields.biography value=system.biography enriched=enrichedBiography toggled=true}}
+      <h3 class="nr-section-title">{{localize "NR.Section.Wanted"}}</h3>
+      {{formInput fields.wanted value=system.wanted enriched=enrichedWanted toggled=true}}
+      <h3 class="nr-section-title">{{localize "NR.Section.Notes"}}</h3>
+      {{formInput fields.notes value=system.notes enriched=enrichedNotes toggled=true}}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,85 @@
+<div class="nr-vehicle">
+  <header class="nr-header">
+    <img class="nr-portrait" src="{{actor.img}}" data-action="editImage" data-edit="img" alt="{{actor.name}}">
+    <div class="nr-header-main">
+      <input class="nr-name" type="text" name="name" value="{{actor.name}}">
+      <div class="nr-header-line">
+        <label>{{localize "NR.Vehicle.Category"}}
+          <select name="system.category">{{selectOptions categories selected=system.category}}</select>
+        </label>
+        <label>TS <select name="system.ts">{{selectOptions tsOptions selected=system.ts}}</select></label>
+        <label>{{localize "NR.Sheet.Price"}} <input type="number" name="system.price" value="{{system.price}}"></label>
+      </div>
+      <div class="nr-status-strip">
+        <div class="nr-stat">
+          <span class="nr-stat-label">{{localize "NR.Vehicle.HP"}}</span>
+          <div class="nr-bar"><div class="nr-bar-fill hp" style="width: {{hpPct}}%"></div></div>
+          <input type="number" name="system.hp.value" value="{{system.hp.value}}"> / <input type="number" name="system.hp.max" value="{{system.hp.max}}">
+        </div>
+        {{#if system.damaged}}<span class="nr-chip warn">{{localize "NR.Chat.VehicleCrippled"}}</span>{{/if}}
+      </div>
+    </div>
+  </header>
+
+  <h3 class="nr-section-title">{{localize "NR.Vehicle.Profile"}}</h3>
+  <div class="nr-vehicle-profile">
+    <div><label>{{localize "NR.Vehicle.Handling"}}</label><input type="number" name="system.handling" value="{{system.handling}}"><span class="nr-derived">MW {{system.effHandling}}</span></div>
+    <div><label>{{localize "NR.Vehicle.Speed"}}</label><input type="number" name="system.speed" value="{{system.speed}}"><span class="nr-derived">{{system.effSpeed}} m/KR</span></div>
+    <div><label>{{localize "NR.Vehicle.Maneuver"}}</label><input type="number" name="system.maneuver" value="{{system.maneuver}}"><span class="nr-derived">{{nrSigned system.effManeuver}}W</span></div>
+    <div><label>{{localize "NR.Vehicle.Stability"}}</label><input type="number" name="system.stability" value="{{system.stability}}"></div>
+    <div><label>{{localize "NR.Vehicle.Armor"}}</label><input type="number" name="system.armor" value="{{system.armor}}"><select name="system.mk">{{selectOptions mkOptions selected=system.mk}}</select></div>
+    <div><label>{{localize "NR.Vehicle.Power"}}</label><input type="text" name="system.power" value="{{system.power}}"></div>
+    <div><label>{{localize "NR.Vehicle.Fuel"}}</label><input type="text" name="system.fuel" value="{{system.fuel}}"></div>
+    <div><label>{{localize "NR.Vehicle.Reach"}}</label><input type="text" name="system.reach" value="{{system.reach}}"></div>
+    <div><label>{{localize "NR.Vehicle.Crew"}}</label><input type="text" name="system.crew" value="{{system.crew}}"></div>
+    <div class="wide"><label>{{localize "NR.Vehicle.Equipment"}}</label><input type="text" name="system.equipment" value="{{system.equipment}}"></div>
+  </div>
+
+  <div class="nr-button-row">
+    <a class="nr-btn" data-action="drive"><i class="fa-solid fa-car"></i> {{localize "NR.Vehicle.Drive"}}</a>
+    <a class="nr-btn" data-action="stunt"><i class="fa-solid fa-car-burst"></i> {{localize "NR.Vehicle.Stunt"}}</a>
+    <a class="nr-btn" data-action="crash"><i class="fa-solid fa-triangle-exclamation"></i> {{localize "NR.Vehicle.Crash"}}</a>
+    <a class="nr-btn" data-action="damage"><i class="fa-solid fa-burst"></i> {{localize "NR.Vehicle.Damage"}}</a>
+  </div>
+  <p class="nr-hint">{{localize "NR.Vehicle.DriverHint"}}</p>
+
+  <h3 class="nr-section-title">{{localize "NR.Vehicle.Vitals"}} <a class="nr-add" data-action="addVital"><i class="fa-solid fa-plus"></i></a></h3>
+  <ol class="nr-list">
+    {{#each system.vitals as |v i|}}
+    <li class="nr-vital {{#if v.destroyed}}destroyed{{/if}}">
+      <input type="text" name="system.vitals.{{i}}.name" value="{{v.name}}">
+      <label><input type="checkbox" name="system.vitals.{{i}}.visible" {{checked v.visible}}> {{localize "NR.Vehicle.Visible"}}</label>
+      <label><input type="checkbox" name="system.vitals.{{i}}.destroyed" {{checked v.destroyed}}> {{localize "NR.Vehicle.Destroyed"}}</label>
+      <a data-action="removeVital" data-index="{{i}}"><i class="fa-solid fa-trash"></i></a>
+    </li>
+    {{/each}}
+  </ol>
+
+  <h3 class="nr-section-title">{{localize "NR.Section.Weapons"}}</h3>
+  <ol class="nr-list">
+    {{#each weapons as |w|}}
+    <li class="nr-item-row draggable" data-item-id="{{w.id}}">
+      <div class="nr-item-main">
+        <img src="{{w.img}}" alt="">
+        <a class="nr-btn tiny attack" data-action="useItem"><i class="fa-solid fa-crosshairs"></i></a>
+        <span class="nr-item-name">{{w.name}}</span>
+        <span class="nr-item-stat">{{w.system.damageLabel}}</span>
+        {{#if w.system.ammo.max}}<span class="nr-item-stat">{{w.system.ammo.value}}/{{w.system.ammo.max}}</span>{{/if}}
+        <a data-action="editItem"><i class="fa-solid fa-pen"></i></a>
+        <a data-action="deleteItem"><i class="fa-solid fa-trash"></i></a>
+      </div>
+    </li>
+    {{else}}<li class="nr-empty">{{localize "NR.Sheet.DropWeapons"}}</li>{{/each}}
+  </ol>
+  {{#if otherItems.length}}
+  <h3 class="nr-section-title">{{localize "NR.Section.Gear"}}</h3>
+  <ol class="nr-list">
+    {{#each otherItems as |w|}}
+    <li class="nr-item-row draggable" data-item-id="{{w.id}}"><div class="nr-item-main"><img src="{{w.img}}" alt=""><a class="nr-item-name" data-action="useItem">{{w.name}}</a><a data-action="editItem"><i class="fa-solid fa-pen"></i></a><a data-action="deleteItem"><i class="fa-solid fa-trash"></i></a></div></li>
+    {{/each}}
+  </ol>
+  {{/if}}
+
+  <h3 class="nr-section-title">{{localize "NR.Section.Description"}}</h3>
+  {{formInput fields.description value=system.description enriched=enrichedDescription toggled=true}}
+</div>

@@ -1,0 +1,99 @@
+<section class="tab nr-tab-stats {{tab.cssClass}}" data-group="primary" data-tab="stats">
+  <div class="nr-columns">
+    <div class="nr-col nr-col-attributes">
+      <h3 class="nr-section-title">{{localize "NR.Section.Attributes"}}</h3>
+      <div class="nr-attributes">
+        {{#each system.attr as |a key|}}
+        <div class="nr-attribute {{#if a.leiden}}leiden-{{a.leiden}}{{/if}}">
+          <a class="nr-attr-roll" data-action="rollAttribute" data-attr="{{key}}" data-tooltip="{{a.label}}-Probe">
+            <span class="abbr">{{a.abbr}}</span>
+            <span class="total">{{a.total}}</span>
+          </a>
+          <div class="nr-attr-edit">
+            <label>{{a.label}}</label>
+            <input type="number" name="system.attributes.{{key}}.value" value="{{lookup (lookup ../system.attributes key) 'value'}}" min="0" data-tooltip="{{localize 'NR.Sheet.BaseValue'}}">
+            <input type="number" name="system.attributes.{{key}}.bonus" value="{{lookup (lookup ../system.attributes key) 'bonus'}}" data-tooltip="{{localize 'NR.Sheet.BonusValue'}}">
+            {{#if ../isCharacter}}<a class="nr-advance" data-action="advance" data-type="attribute" data-key="{{key}}" data-tooltip="{{localize 'NR.Advance.Tooltip'}}: {{nrLookup ../attrCosts key}} EP"><i class="fa-solid fa-circle-up"></i></a>{{/if}}
+          </div>
+          <select class="nr-leiden" name="system.attributes.{{key}}.leiden" data-tooltip="{{localize 'NR.Sheet.Leiden'}}">
+            {{selectOptions @root.leidenOptions selected=a.leiden}}
+          </select>
+        </div>
+        {{/each}}
+      </div>
+
+      <h3 class="nr-section-title">{{localize "NR.Section.Special"}}</h3>
+      <div class="nr-special">
+        <div class="nr-special-row">
+          <label>{{localize "NR.Special.adrenalin"}}</label>
+          <input type="number" name="system.special.adrenalin.value" value="{{system.special.adrenalin.value}}" min="0">
+          <span class="nr-derived" data-tooltip="{{localize 'NR.Sheet.AdrenalinHint'}}">{{system.adrenalinLeft}}/{{system.adrenalinMax}}</span>
+          {{#if isCharacter}}<a data-action="advance" data-type="special" data-key="adrenalin" data-tooltip="{{specialCosts.adrenalin}} EP"><i class="fa-solid fa-circle-up"></i></a>{{/if}}
+        </div>
+        <div class="nr-special-row">
+          <label>{{localize "NR.Special.schmerztoleranz"}}</label>
+          <input type="number" name="system.special.schmerztoleranz.value" value="{{system.special.schmerztoleranz.value}}" min="0" max="10">
+          <span class="nr-derived" data-tooltip="{{localize 'NR.Sheet.ThresholdHint'}}">{{system.pain}} · {{localize "NR.Sheet.Threshold"}} {{system.threshold}}</span>
+          {{#if isCharacter}}<a data-action="advance" data-type="special" data-key="schmerztoleranz" data-tooltip="{{specialCosts.schmerztoleranz}} EP"><i class="fa-solid fa-circle-up"></i></a>{{/if}}
+        </div>
+        <div class="nr-special-row">
+          <label>{{localize "NR.Special.meditation"}}</label>
+          <input type="number" name="system.special.meditation.value" value="{{system.special.meditation.value}}" min="0">
+          <span class="nr-derived">{{system.meditationLeft}}/{{system.meditationMax}}
+            <a data-action="adrenalin" data-kind="meditation" data-delta="1"><i class="fa-solid fa-minus"></i></a>
+            <a data-action="adrenalin" data-kind="meditation" data-delta="-1"><i class="fa-solid fa-plus"></i></a>
+          </span>
+          {{#if isCharacter}}<a data-action="advance" data-type="special" data-key="meditation" data-tooltip="{{specialCosts.meditation}} EP"><i class="fa-solid fa-circle-up"></i></a>{{/if}}
+        </div>
+        <div class="nr-special-row">
+          <label>{{localize "NR.Sheet.Infection"}}</label>
+          <span class="nr-derived">{{system.ir.label}}</span>
+          <a class="nr-btn tiny" data-action="rollInfection"><i class="fa-solid fa-virus"></i> {{localize "NR.Roll.Roll"}}</a>
+        </div>
+      </div>
+
+      <h3 class="nr-section-title">{{localize "NR.Section.CustomSkills"}}
+        <a class="nr-add" data-action="createItem" data-type="skill" data-category="sprache" data-tooltip="{{localize 'NR.Sheet.AddLanguage'}}"><i class="fa-solid fa-language"></i></a>
+        <a class="nr-add" data-action="createItem" data-type="skill" data-category="besondere" data-tooltip="{{localize 'NR.Sheet.AddSkill'}}"><i class="fa-solid fa-plus"></i></a>
+      </h3>
+      <ol class="nr-list nr-custom-skills">
+        {{#each customSkills as |c|}}
+        <li class="nr-item-row nr-skill-row draggable" data-item-id="{{c.item.id}}">
+          <a class="nr-skill-name" data-action="useItem" data-tooltip="{{c.category}}">{{c.item.name}}</a>
+          <span class="nr-skill-attr">{{c.attrAbbr}}</span>
+          <input type="number" data-item-field="system.value" value="{{c.item.system.value}}" min="0">
+          <span class="nr-pool">{{c.pool}}W</span>
+          {{#if ../isCharacter}}<a data-action="advance" data-type="custom" data-tooltip="{{c.cost}} EP"><i class="fa-solid fa-circle-up"></i></a>{{/if}}
+          <a data-action="editItem"><i class="fa-solid fa-pen"></i></a>
+          <a data-action="deleteItem"><i class="fa-solid fa-trash"></i></a>
+        </li>
+        {{else}}
+        <li class="nr-empty">{{localize "NR.Sheet.NoCustomSkills"}}</li>
+        {{/each}}
+      </ol>
+    </div>
+
+    <div class="nr-col nr-col-skills">
+      <h3 class="nr-section-title">{{localize "NR.Section.Skills"}}</h3>
+      <div class="nr-skill-groups">
+        {{#each skillGroups as |g|}}
+        <div class="nr-skill-group">
+          <h4><a data-action="rollAttribute" data-attr="{{g.key}}">{{g.label}} <span class="nr-badge">{{g.attr.total}}</span></a></h4>
+          <ol class="nr-list">
+            {{#each g.skills as |s|}}
+            <li class="nr-skill-row {{#unless s.trained}}untrained{{/unless}}">
+              <a class="nr-skill-name" data-action="rollSkill" data-skill="{{s.key}}">
+                {{s.label}}{{#if s.defensive}} <i class="fa-solid fa-shield-halved nr-def" data-tooltip="{{localize 'NR.Sheet.Defensive'}}"></i>{{/if}}
+              </a>
+              <input type="number" name="system.skills.{{s.key}}.value" value="{{s.base}}" min="0">
+              <span class="nr-pool" data-tooltip="{{localize 'NR.Sheet.Pool'}}">{{s.pool}}W</span>
+              {{#if ../../isCharacter}}<a class="nr-advance" data-action="advance" data-type="skill" data-key="{{s.key}}" data-tooltip="{{s.cost}} EP"><i class="fa-solid fa-circle-up"></i></a>{{/if}}
+            </li>
+            {{/each}}
+          </ol>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</section>

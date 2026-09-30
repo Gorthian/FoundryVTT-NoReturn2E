@@ -1,0 +1,199 @@
+import { NR } from "./config.mjs";
+import { rollPool, applyChatMode, diceSummary, postPoolMessage, rollHitZone } from "./dice/pool.mjs";
+
+const { renderTemplate } = foundry.applications.handlebars;
+const { DialogV2 } = foundry.applications.api;
+
+/** Ersetze KS-Ausdrücke im Effekttext durch berechnete Werte. */
+export function resolveKsText(text, ks) {
+  if (!text) return "";
+  const re = /(\d+)\s*[–−-]\s*KS|KS\s*[x×]\s*(\d+)|KS\s*\/\s*2|KS\s*[–−-]\s*(\d+)|\bKS\b/g;
+  return text.replace(re, (m, a, b, c) => {
+    let v;
+    if (a) v = Number(a) - ks;
+    else if (b) v = ks * Number(b);
+    else if (m.includes("/")) v = Math.floor(ks / 2);
+    else if (c) v = Math.max(0, ks - Number(c));
+    else v = ks;
+    return `<strong class="nr-ks" data-tooltip="${m}">${v}</strong>`;
+  });
+}
+
+function powerFor(actor, app) {
+  return actor.items.find(i => i.type === "psiPower" && i.system.key === app.system.power);
+}
+
+/**
+ * PSI-App wirken (S. 194).
+ */
+export async function castPsiApp(actor, app) {
+  const power = powerFor(actor, app);
+  if (!power) return ui.notifications.warn(game.i18n.format("NR.Psi.NoPower", { power: NR.psiPowers[app.system.power]?.label ?? app.system.power }));
+  const level = power.system.value;
+  const collected = actor.system.combat.psiCollected;
+  const s = app.system;
+
+  const content = await renderTemplate("systems/noreturn/templates/dialog/psi-dialog.hbs", {
+    app, power, level, collected, min: s.min, max: s.max, diff: NR.psiDifficulties[s.difficulty]?.label,
+    adrenalinLeft: actor.system.adrenalinLeft, adrenalinBonus: actor.system.adrenalinBonus,
+    meditationLeft: actor.system.meditationLeft, meditationBonus: Math.min(5, actor.system.meditationMax),
+    woundMalus: actor.getMalus({ psi: true }),
+    defaultKs: collected > 0 ? 0 : 1,
+    defaultProbe: Math.min(level, 3),
+    boosterKs: 0
+  });
+
+  const opts = await DialogV2.wait({
+    window: { title: `${game.i18n.localize("NR.Psi.Cast")}: ${app.name}`, icon: "fa-solid fa-brain" },
+    classes: ["noreturn", "nr-roll-dialog", "nr-psi-dialog"],
+    position: { width: 460 },
+    content,
+    buttons: [{
+      action: "cast", label: game.i18n.localize("NR.Psi.Cast"), icon: "fa-solid fa-brain", default: true,
+      callback: (event, button) => {
+        const f = button.form.elements;
+        return {
+          ks: Number(f.ks.value) || 0,
+          probe: Number(f.probe.value) || 0,
+          booster: Number(f.booster.value) || 0,
+          useAdrenalin: f.useAdrenalin?.checked ?? false,
+          useMeditation: f.useMeditation?.checked ?? false
+        };
+      }
+    }, { action: "cancel", label: game.i18n.localize("Cancel") }],
+    render: (event, dialog) => {
+      const el = dialog.element;
+      const update = () => {
+        const f = el.querySelector("form")?.elements ?? {};
+        let pool = level;
+        if (f.useAdrenalin?.checked) pool += actor.system.adrenalinBonus;
+        if (f.useMeditation?.checked) pool += Math.min(5, actor.system.meditationMax);
+        const ks = Number(f.ks?.value) || 0;
+        const probe = Number(f.probe?.value) || 0;
+        const comp = pool - ks - probe;
+        const out = el.querySelector("[data-psi-summary]");
+        const finalKs = ks + collected + (Number(f.booster?.value) || 0);
+        if (out) {
+          out.innerHTML = comp < 0
+            ? `<span class="nr-bad">${game.i18n.format("NR.Psi.TooMany", { pool })}</span>`
+            : game.i18n.format("NR.Psi.Summary", { pool, ks: finalKs, probe, comp, min: s.min - comp, max: s.max + comp });
+        }
+        const btn = el.querySelector("button[data-action=cast]");
+        if (btn) btn.disabled = comp < 0 || finalKs < 1 || probe < 1;
+      };
+      el.querySelectorAll("input").forEach(i => i.addEventListener("input", update));
+      el.querySelectorAll("input[type=checkbox]").forEach(i => i.addEventListener("change", update));
+      update();
+    }
+  }).then(r => (r === "cancel" ? null : r)).catch(() => null);
+  if (!opts) return null;
+
+  let pool = level;
+  if (opts.useAdrenalin && await actor.spendAdrenalin()) pool += actor.system.adrenalinBonus;
+  if (opts.useMeditation && await actor.spendAdrenalin("meditation")) pool += Math.min(5, actor.system.meditationMax);
+  const comp = Math.max(0, pool - opts.ks - opts.probe);
+  const ks = Math.max(1, opts.ks + collected + opts.booster);
+
+  // Probe: gewählte Würfel, ein Hazard-Di, Mali durch Wunden verringern die Probewürfel (1-Würfel-Regel)
+  const malus = actor.getMalus({ psi: true });
+  const res = await rollPool({ actor, label: app.name, dice: opts.probe, malusDice: malus, chat: false });
+  const total = res.total;
+  const lo = s.min - comp;
+  const hi = s.max + comp;
+  const success = total >= lo && total <= hi;
+
+  const updates = { "system.combat.psiCollected": 0 };
+  await actor.update(updates);
+  if (success && s.hold > 0) await app.update({ "system.held": true });
+
+  let fail = null;
+  if (!success) fail = await rollPsiFail(ks, { post: false });
+
+  const effectHtml = success ? resolveKsText(s.effect || "", ks) : "";
+  const damagePayload = success && s.damageMult ? {
+    kind: "damage", amount: ks * s.damageMult, zones: s.allZones ? Object.keys(NR.zones) : null,
+    attack: { pierce: s.pierce || "", damageType: "psi", nonLethal: false, structure: false, continuous: false },
+    weaponName: app.name
+  } : null;
+
+  const content2 = await renderTemplate("systems/noreturn/templates/chat/psi-card.hbs", {
+    app, power, ks, comp, total, lo, hi, success, probe: opts.probe, malus, pool,
+    dice: diceSummary(res.roll), effectHtml, description: s.effect ? "" : await enrich(s.description, app),
+    fail, held: success && s.hold > 0, hold: s.hold, targets: Array.from(game.user.targets).map(t => ({ uuid: t.document.uuid, name: t.name })),
+    damage: damagePayload
+  });
+  const msgData = {
+    speaker: ChatMessage.getSpeaker({ actor }), content: content2, rolls: [res.roll, ...(fail?.rolls ?? [])],
+    flags: { noreturn: { psi: { appId: app.id, ks, success, damage: damagePayload } } }
+  };
+  applyChatMode(msgData);
+  return ChatMessage.create(msgData);
+}
+
+async function enrich(html, doc) {
+  const TE = foundry.applications.ux?.TextEditor?.implementation ?? TextEditor;
+  return TE.enrichHTML(html ?? "", { relativeTo: doc, secrets: doc.isOwner });
+}
+
+/**
+ * Würfle auf der PSI-Fehlschlagtabelle (S. 196).
+ * @returns {{results: {roll: number, text: string}[], rolls: Roll[]}}
+ */
+export async function rollPsiFail(ks, { post = true, actor = null, depth = 0 } = {}) {
+  const rolls = [];
+  const results = [];
+  const r = await new Roll("2d6").evaluate();
+  rolls.push(r);
+  const text = NR.psiFailTable[r.total]
+    .replace("{ks2}", ks * 2).replace("{ks5}", ks * 5).replace("{ks10}", ks * 10).replace("{ks30}", ks * 30).replaceAll("{ks}", ks);
+  results.push({ roll: r.total, text });
+  if (r.total === 2 && depth < 3) {
+    for (let i = 0; i < ks; i++) {
+      const sub = await rollPsiFail(ks, { post: false, depth: depth + 1 });
+      rolls.push(...sub.rolls);
+      results.push(...sub.results.map(x => ({ ...x, echo: true })));
+    }
+  }
+  const out = { results, rolls, ks };
+  if (post) {
+    const content = await renderTemplate("systems/noreturn/templates/chat/psi-fail.hbs", out);
+    await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }), content, rolls });
+  }
+  return out;
+}
+
+/**
+ * Kraft sammeln (S. 194): Willenskraft gegen MW 20 (+10 je bereits gesammelter KS).
+ */
+export async function collectPower(actor) {
+  const collected = actor.system.combat.psiCollected;
+  const concentration = actor.items.some(i => i.type === "advantage" && i.name.toLowerCase().startsWith("konzentration"));
+  const mw = 20 + collected * 10 - (concentration ? 5 : 0);
+  const wk = actor.system.skillList.willenskraft;
+  const res = await rollPool({
+    actor, label: game.i18n.localize("NR.Psi.Collect"), subtitle: `${actor.system.attr.wi.abbr} ${actor.system.attr.wi.total} + Willenskraft ${wk.value}`,
+    dice: wk.pool, malusDice: actor.getMalus({ psi: true }), mw, chat: false, leiden: actor.system.attr.wi.leiden
+  });
+  if (res.success) {
+    await actor.update({ "system.combat.psiCollected": collected + 1 });
+    res.options.extraHtml = `<p class="nr-good">${game.i18n.format("NR.Psi.Collected", { ks: collected + 1 })}</p>`;
+  } else {
+    await actor.update({ "system.combat.psiCollected": 0 });
+    const fail = collected > 0 ? await rollPsiFail(collected, { post: false }) : null;
+    res.options.extraHtml = `<p class="nr-bad">${game.i18n.localize("NR.Psi.Overload")}</p>` +
+      (fail ? await renderTemplate("systems/noreturn/templates/chat/psi-fail.hbs", fail) : "");
+  }
+  return postPoolMessage(res);
+}
+
+/** Schaden einer PSI-App auf ein Ziel anwenden (Button im Chat). */
+export async function applyPsiDamage(message, tokenUuid) {
+  const payload = message.flags.noreturn?.psi?.damage;
+  if (!payload) return;
+  const tokenDoc = await fromUuid(tokenUuid);
+  const actor = tokenDoc?.actor;
+  if (!actor) return;
+  if (!actor.isOwner) return ui.notifications.warn(game.i18n.localize("NR.Notify.NotOwner"));
+  const zones = payload.zones ?? [(await rollHitZone()).zone];
+  return actor.resistDamage({ amount: payload.amount, zones, attack: payload.attack, label: payload.weaponName });
+}

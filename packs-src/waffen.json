@@ -1,0 +1,5934 @@
+[
+ {
+  "_id": "pKgB3d8eB2kfDfKv",
+  "_key": "!items!pKgB3d8eB2kfDfKv",
+  "name": "Waffenloser Angriff",
+  "type": "weapon",
+  "img": "icons/weapons/fist/boxing-gloves.webp",
+  "system": {
+   "category": "unbewaffnet",
+   "skill": "",
+   "damageType": "wucht",
+   "damage": {
+    "strength": true,
+    "points": 0,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [],
+   "rd": 0,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 0,
+    "max": 0,
+    "container": "m",
+    "type": ""
+   },
+   "range": "none",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 0.0,
+   "ts": 0,
+   "price": 0,
+   "equipped": true,
+   "description": "<p>Faust, Tritt oder Kopfstoß. Schaden ist eine reine Stärke-Probe. Körpereigene Waffen (Biss, Krallen) erhalten +10 Punkte (S. 101). <em class=\"nr-ref\">(NoReturn 2E, S. 93)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 1000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "UHg8BteyxcmSzw3Z",
+  "_key": "!items!UHg8BteyxcmSzw3Z",
+  "name": "Klingeneinsatz",
+  "type": "weapon",
+  "img": "icons/weapons/daggers/dagger-black.webp",
+  "system": {
+   "category": "faustkampf",
+   "skill": "",
+   "damageType": "klinge",
+   "damage": {
+    "strength": true,
+    "points": 35,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 1,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [],
+   "rd": 0,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 0,
+    "max": 0,
+    "container": "m",
+    "type": ""
+   },
+   "range": "none",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 0.3,
+   "ts": 3,
+   "price": 2500,
+   "equipped": false,
+   "description": "<p>Ausklappbare Klinge in Handschuh oder Stiefel, bis 30 cm, per Muskelkontraktion ausgelöst. Wird mit Nahkampf geführt, geworfen mit Wurfwaffen. <em class=\"nr-ref\">(NoReturn 2E, S. 226)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 2000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "Ha6McmOiXhIeRqgJ",
+  "_key": "!items!Ha6McmOiXhIeRqgJ",
+  "name": "Messer",
+  "type": "weapon",
+  "img": "icons/weapons/daggers/dagger-black.webp",
+  "system": {
+   "category": "faustkampf",
+   "skill": "",
+   "damageType": "klinge",
+   "damage": {
+    "strength": true,
+    "points": 15,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 1,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [],
+   "rd": 0,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 0,
+    "max": 0,
+    "container": "m",
+    "type": ""
+   },
+   "range": "none",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 0.2,
+   "ts": 1,
+   "price": 60,
+   "equipped": false,
+   "description": "<p>Schlichtes Klapp- oder feststehendes Messer. Wird mit Nahkampf geführt, geworfen mit Wurfwaffen. <em class=\"nr-ref\">(NoReturn 2E, S. 226)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 3000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "bJNYLBhbvvSaRjwp",
+  "_key": "!items!bJNYLBhbvvSaRjwp",
+  "name": "Sai-Gabeln",
+  "type": "weapon",
+  "img": "icons/weapons/daggers/dagger-black.webp",
+  "system": {
+   "category": "faustkampf",
+   "skill": "",
+   "damageType": "stich",
+   "damage": {
+    "strength": true,
+    "points": 30,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 1,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [],
+   "rd": 0,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 0,
+    "max": 0,
+    "container": "m",
+    "type": ""
+   },
+   "range": "none",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 0.5,
+   "ts": 2,
+   "price": 470,
+   "equipped": false,
+   "description": "<p>Seltene Kampfkunstwaffe. Wird mit Nahkampf geführt, geworfen mit Wurfwaffen. <em class=\"nr-ref\">(NoReturn 2E, S. 226)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 4000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "79jzaLLf9DqYGfgi",
+  "_key": "!items!79jzaLLf9DqYGfgi",
+  "name": "Schlagring",
+  "type": "weapon",
+  "img": "icons/weapons/fist/brass-knuckles-spiked.webp",
+  "system": {
+   "category": "faustkampf",
+   "skill": "",
+   "damageType": "wucht",
+   "damage": {
+    "strength": true,
+    "points": 20,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [],
+   "rd": 0,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 0,
+    "max": 0,
+    "container": "m",
+    "type": ""
+   },
+   "range": "none",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 0.1,
+   "ts": 1,
+   "price": 90,
+   "equipped": false,
+   "description": "<p>Schlagring oder Nietenhandschuh. Wird mit Nahkampf geführt, geworfen mit Wurfwaffen. <em class=\"nr-ref\">(NoReturn 2E, S. 226)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 5000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "ozhS2eba1msgcRGU",
+  "_key": "!items!ozhS2eba1msgcRGU",
+  "name": "Überlebensmesser",
+  "type": "weapon",
+  "img": "icons/weapons/daggers/dagger-black.webp",
+  "system": {
+   "category": "faustkampf",
+   "skill": "",
+   "damageType": "klinge",
+   "damage": {
+    "strength": true,
+    "points": 25,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 2,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [],
+   "rd": 0,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 0,
+    "max": 0,
+    "container": "m",
+    "type": ""
+   },
+   "range": "none",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 0.5,
+   "ts": 2,
+   "price": 200,
+   "equipped": false,
+   "description": "<p>25 cm Kampf- und Überlebensmesser mit Sägerücken und Glasbrecher. Wird mit Nahkampf geführt, geworfen mit Wurfwaffen. <em class=\"nr-ref\">(NoReturn 2E, S. 226)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 6000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "6nABENPwtlhxxNm5",
+  "_key": "!items!6nABENPwtlhxxNm5",
+  "name": "Baseballschläger",
+  "type": "weapon",
+  "img": "icons/weapons/clubs/baseball-bat-metal.webp",
+  "system": {
+   "category": "nahkampf",
+   "skill": "",
+   "damageType": "wucht",
+   "damage": {
+    "strength": true,
+    "points": 20,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 1,
+   "parryDice": 1,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [],
+   "rd": 0,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 0,
+    "max": 0,
+    "container": "m",
+    "type": ""
+   },
+   "range": "none",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 1.0,
+   "ts": 1,
+   "price": 100,
+   "equipped": false,
+   "description": "<p>Auch Knüppel und Kampfstöcke. Angriffs-/Paradebonus. <em class=\"nr-ref\">(NoReturn 2E, S. 226)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 7000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "HjVvDt04tTNEHNSu",
+  "_key": "!items!HjVvDt04tTNEHNSu",
+  "name": "Eispickel",
+  "type": "weapon",
+  "img": "icons/weapons/axes/axe-pick-white.webp",
+  "system": {
+   "category": "nahkampf",
+   "skill": "",
+   "damageType": "wucht",
+   "damage": {
+    "strength": true,
+    "points": 35,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 1,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [],
+   "rd": 0,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 0,
+    "max": 0,
+    "container": "m",
+    "type": ""
+   },
+   "range": "none",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 0.7,
+   "ts": 1,
+   "price": 500,
+   "equipped": false,
+   "description": "<p>Wie eine Hacke eingesetzt. <em class=\"nr-ref\">(NoReturn 2E, S. 226)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 8000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "Ala9TiefS9RNUSCH",
+  "_key": "!items!Ala9TiefS9RNUSCH",
+  "name": "Feuerwehraxt",
+  "type": "weapon",
+  "img": "icons/weapons/axes/axe-battle-black.webp",
+  "system": {
+   "category": "nahkampf",
+   "skill": "",
+   "damageType": "wucht",
+   "damage": {
+    "strength": true,
+    "points": 40,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 1,
+   "parryDice": 1,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [],
+   "rd": 0,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 0,
+    "max": 0,
+    "container": "m",
+    "type": ""
+   },
+   "range": "none",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 2.9,
+   "ts": 2,
+   "price": 500,
+   "equipped": false,
+   "description": "<p>Findet sich in verlassenen öffentlichen Gebäuden. Angriffs-/Paradebonus. <em class=\"nr-ref\">(NoReturn 2E, S. 226)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 9000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "7WxBYvARIeyKH53j",
+  "_key": "!items!7WxBYvARIeyKH53j",
+  "name": "Katana",
+  "type": "weapon",
+  "img": "icons/weapons/swords/sword-katana-purple.webp",
+  "system": {
+   "category": "nahkampf",
+   "skill": "",
+   "damageType": "klinge",
+   "damage": {
+    "strength": true,
+    "points": 40,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 2,
+   "parryDice": 2,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [],
+   "rd": 0,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 0,
+    "max": 0,
+    "container": "m",
+    "type": ""
+   },
+   "range": "none",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 1.1,
+   "ts": 2,
+   "price": 1000,
+   "equipped": false,
+   "description": "<p>Katana oder Langschwert – schnell und vorteilhaft. Angriffs-/Paradebonus. <em class=\"nr-ref\">(NoReturn 2E, S. 226)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 10000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "9m7x0bl84fZGMCaO",
+  "_key": "!items!9m7x0bl84fZGMCaO",
+  "name": "Kette",
+  "type": "weapon",
+  "img": "icons/weapons/maces/flail-ball-grey.webp",
+  "system": {
+   "category": "nahkampf",
+   "skill": "",
+   "damageType": "wucht",
+   "damage": {
+    "strength": true,
+    "points": 20,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 1,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [],
+   "rd": 0,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 0,
+    "max": 0,
+    "container": "m",
+    "type": ""
+   },
+   "range": "none",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 2.0,
+   "ts": 1,
+   "price": 100,
+   "equipped": false,
+   "description": "<p>Kette oder Stahlseil. <em class=\"nr-ref\">(NoReturn 2E, S. 226)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 11000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "7Lrw2JK7ODqtdc4v",
+  "_key": "!items!7Lrw2JK7ODqtdc4v",
+  "name": "Kriegshammer",
+  "type": "weapon",
+  "img": "icons/weapons/hammers/hammer-double-bronze.webp",
+  "system": {
+   "category": "nahkampf",
+   "skill": "",
+   "damageType": "wucht",
+   "damage": {
+    "strength": true,
+    "points": 30,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": "A"
+   },
+   "attackDice": 1,
+   "parryDice": 1,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [],
+   "rd": 0,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 0,
+    "max": 0,
+    "container": "m",
+    "type": ""
+   },
+   "range": "none",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 2.5,
+   "ts": 2,
+   "price": 750,
+   "equipped": false,
+   "description": "<p>Brachial, einhändig. Ignoriert Rüstung MK:A. Angriffs-/Paradebonus. <em class=\"nr-ref\">(NoReturn 2E, S. 226)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 12000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "r1y0KjM1DZ3yQa6u",
+  "_key": "!items!r1y0KjM1DZ3yQa6u",
+  "name": "Kurzschwert",
+  "type": "weapon",
+  "img": "icons/weapons/swords/shortsword-broad-blue.webp",
+  "system": {
+   "category": "nahkampf",
+   "skill": "",
+   "damageType": "klinge",
+   "damage": {
+    "strength": true,
+    "points": 30,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 1,
+   "parryDice": 1,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [],
+   "rd": 0,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 0,
+    "max": 0,
+    "container": "m",
+    "type": ""
+   },
+   "range": "none",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 0.9,
+   "ts": 2,
+   "price": 600,
+   "equipped": false,
+   "description": "<p>Auch Florett oder Rapier. Angriffs-/Paradebonus. <em class=\"nr-ref\">(NoReturn 2E, S. 226)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 13000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "9ZtEqC9hyM6A5DdS",
+  "_key": "!items!9ZtEqC9hyM6A5DdS",
+  "name": "Metallstange",
+  "type": "weapon",
+  "img": "icons/weapons/clubs/club-banded-barbed-black.webp",
+  "system": {
+   "category": "nahkampf",
+   "skill": "",
+   "damageType": "wucht",
+   "damage": {
+    "strength": true,
+    "points": 25,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 1,
+   "parryDice": 1,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [],
+   "rd": 0,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 0,
+    "max": 0,
+    "container": "m",
+    "type": ""
+   },
+   "range": "none",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 1.5,
+   "ts": 1,
+   "price": 100,
+   "equipped": false,
+   "description": "<p>Günstigste effektive Nahkampfwaffe. Angriffs-/Paradebonus. <em class=\"nr-ref\">(NoReturn 2E, S. 226)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 14000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "KNPXs628qDXlWcZB",
+  "_key": "!items!KNPXs628qDXlWcZB",
+  "name": "Monofilamentschwert",
+  "type": "weapon",
+  "img": "icons/weapons/swords/greatsword-blue.webp",
+  "system": {
+   "category": "nahkampf",
+   "skill": "",
+   "damageType": "klinge",
+   "damage": {
+    "strength": true,
+    "points": 55,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 2,
+   "parryDice": 2,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [],
+   "rd": 0,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 0,
+    "max": 0,
+    "container": "m",
+    "type": ""
+   },
+   "range": "none",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 1.5,
+   "ts": 5,
+   "price": 15000,
+   "equipped": false,
+   "description": "<p>Zentrums-Hightech. Jede Waffenkampf-Probe unter 15 verletzt den Nutzer selbst. Angriffs-/Paradebonus. <em class=\"nr-ref\">(NoReturn 2E, S. 226)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 15000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "b7vF9Ulic7vcdLO9",
+  "_key": "!items!b7vF9Ulic7vcdLO9",
+  "name": "Morgenstern",
+  "type": "weapon",
+  "img": "icons/weapons/maces/flail-morning-star.webp",
+  "system": {
+   "category": "nahkampf",
+   "skill": "",
+   "damageType": "wucht",
+   "damage": {
+    "strength": true,
+    "points": 35,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 2,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [],
+   "rd": 0,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 0,
+    "max": 0,
+    "container": "m",
+    "type": ""
+   },
+   "range": "none",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 3.6,
+   "ts": 2,
+   "price": 700,
+   "equipped": false,
+   "description": "<p>Stachelkugel an einer Kette. <em class=\"nr-ref\">(NoReturn 2E, S. 226)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 16000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "YiB7TOvyGtXcfS4t",
+  "_key": "!items!YiB7TOvyGtXcfS4t",
+  "name": "Peitsche",
+  "type": "weapon",
+  "img": "icons/weapons/misc/whip-leather.webp",
+  "system": {
+   "category": "nahkampf",
+   "skill": "",
+   "damageType": "wucht",
+   "damage": {
+    "strength": true,
+    "points": 10,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [],
+   "rd": 0,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 0,
+    "max": 0,
+    "container": "m",
+    "type": ""
+   },
+   "range": "none",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 0.8,
+   "ts": 2,
+   "price": 120,
+   "equipped": false,
+   "description": "<p>Geflochtenes Leder. <em class=\"nr-ref\">(NoReturn 2E, S. 226)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 17000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "dW44y0DTicR727U5",
+  "_key": "!items!dW44y0DTicR727U5",
+  "name": "Schwert",
+  "type": "weapon",
+  "img": "icons/weapons/swords/greatsword-blue.webp",
+  "system": {
+   "category": "nahkampf",
+   "skill": "",
+   "damageType": "klinge",
+   "damage": {
+    "strength": true,
+    "points": 35,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 2,
+   "parryDice": 2,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [],
+   "rd": 0,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 0,
+    "max": 0,
+    "container": "m",
+    "type": ""
+   },
+   "range": "none",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 1.2,
+   "ts": 2,
+   "price": 900,
+   "equipped": false,
+   "description": "<p>Der Allrounder für den Alltag. Angriffs-/Paradebonus. <em class=\"nr-ref\">(NoReturn 2E, S. 226)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 18000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "5hDR8HYTSGjJF54Z",
+  "_key": "!items!5hDR8HYTSGjJF54Z",
+  "name": "Speer",
+  "type": "weapon",
+  "img": "icons/weapons/polearms/spear-barbed-silver.webp",
+  "system": {
+   "category": "nahkampf",
+   "skill": "",
+   "damageType": "stich",
+   "damage": {
+    "strength": true,
+    "points": 30,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 2,
+   "parryDice": 2,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [],
+   "rd": 0,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 0,
+    "max": 0,
+    "container": "m",
+    "type": ""
+   },
+   "range": "none",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 2.2,
+   "ts": 1,
+   "price": 500,
+   "equipped": false,
+   "description": "<p>1,5–2 m mit Metallspitze. Angriffs-/Paradebonus. <em class=\"nr-ref\">(NoReturn 2E, S. 226)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 19000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "0bpa3bSQNnL5CyVM",
+  "_key": "!items!0bpa3bSQNnL5CyVM",
+  "name": "Stockdegen",
+  "type": "weapon",
+  "img": "icons/weapons/swords/greatsword-blue.webp",
+  "system": {
+   "category": "nahkampf",
+   "skill": "",
+   "damageType": "stich",
+   "damage": {
+    "strength": true,
+    "points": 30,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 1,
+   "parryDice": 1,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [],
+   "rd": 0,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 0,
+    "max": 0,
+    "container": "m",
+    "type": ""
+   },
+   "range": "none",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 1.0,
+   "ts": 3,
+   "price": 1500,
+   "equipped": false,
+   "description": "<p>Edel, nobel, schweineteuer. Angriffs-/Paradebonus. <em class=\"nr-ref\">(NoReturn 2E, S. 226)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 20000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "5RBkZexP2jwk3X3m",
+  "_key": "!items!5RBkZexP2jwk3X3m",
+  "name": "Streitkolben",
+  "type": "weapon",
+  "img": "icons/weapons/maces/mace-cube-spiked-steel.webp",
+  "system": {
+   "category": "nahkampf",
+   "skill": "",
+   "damageType": "wucht",
+   "damage": {
+    "strength": true,
+    "points": 35,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 1,
+   "parryDice": 1,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [],
+   "rd": 0,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 0,
+    "max": 0,
+    "container": "m",
+    "type": ""
+   },
+   "range": "none",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 2.3,
+   "ts": 2,
+   "price": 650,
+   "equipped": false,
+   "description": "<p>Stachelbewehrte Keule. Angriffs-/Paradebonus. <em class=\"nr-ref\">(NoReturn 2E, S. 226)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 21000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "xNMGKAULpeA2IVB4",
+  "_key": "!items!xNMGKAULpeA2IVB4",
+  "name": "Zweihänder",
+  "type": "weapon",
+  "img": "icons/weapons/swords/greatsword-blue.webp",
+  "system": {
+   "category": "nahkampf",
+   "skill": "",
+   "damageType": "klinge",
+   "damage": {
+    "strength": true,
+    "points": 45,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 2,
+   "parryDice": 2,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [],
+   "rd": 0,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 0,
+    "max": 0,
+    "container": "m",
+    "type": ""
+   },
+   "range": "none",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 3.5,
+   "ts": 2,
+   "price": 1500,
+   "equipped": false,
+   "description": "<p>Extreme Reichweite, zerschmetternder Schaden. Angriffs-/Paradebonus. <em class=\"nr-ref\">(NoReturn 2E, S. 226)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 22000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "m2Mkrv6kbvRmGLRg",
+  "_key": "!items!m2Mkrv6kbvRmGLRg",
+  "name": "Kettensäge",
+  "type": "weapon",
+  "img": "icons/tools/hand/chainsaw-steel-purple.webp",
+  "system": {
+   "category": "nahkampf",
+   "skill": "",
+   "damageType": "klinge",
+   "damage": {
+    "strength": true,
+    "points": 60,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": -2,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [],
+   "rd": 0,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 0,
+    "max": 0,
+    "container": "m",
+    "type": ""
+   },
+   "range": "none",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "Diezin, 0,01 l je KR, 1 l Tank",
+   "quantity": 1,
+   "weight": 6.9,
+   "ts": 3,
+   "price": 1200,
+   "equipped": false,
+   "description": "<p>40 cm Schwert. Schwer und für den bewaffneten Nahkampf schlecht geeignet (−2W auf Angriffe). <em class=\"nr-ref\">(NoReturn 2E, S. 265)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 23000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "CRTm6iBYCWkbmW5e",
+  "_key": "!items!CRTm6iBYCWkbmW5e",
+  "name": "Bajonett",
+  "type": "weapon",
+  "img": "icons/weapons/daggers/dagger-black.webp",
+  "system": {
+   "category": "nahkampf",
+   "skill": "",
+   "damageType": "stich",
+   "damage": {
+    "strength": true,
+    "points": 20,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [],
+   "rd": 0,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 0,
+    "max": 0,
+    "container": "m",
+    "type": ""
+   },
+   "range": "none",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 0.3,
+   "ts": 2,
+   "price": 100,
+   "equipped": false,
+   "description": "<p>Messeraufsatz für Gewehre mit Klickdrehverschluss. <em class=\"nr-ref\">(NoReturn 2E, S. 242)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 24000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "4EoJdBBD29PHAjY4",
+  "_key": "!items!4EoJdBBD29PHAjY4",
+  "name": "Junk Shield",
+  "type": "weapon",
+  "img": "icons/equipment/shield/buckler-boss-iron-wood-brown.webp",
+  "system": {
+   "category": "schild",
+   "skill": "",
+   "damageType": "wucht",
+   "damage": {
+    "strength": false,
+    "points": 0,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 2,
+   "stability": 40,
+   "mk": "B",
+   "modes": [],
+   "rd": 0,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 0,
+    "max": 0,
+    "container": "m",
+    "type": ""
+   },
+   "range": "none",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 4,
+   "ts": 1,
+   "price": 150,
+   "equipped": false,
+   "description": "<p>Aus Müll gebaut, ca. 40 cm. Bonus auf Blocken; ohne 20 Punkte Überschuss leidet die Stabilität, überschüssiger Schaden trifft den Schildarm. Körperliche Aktionen mit Schild: Kampfnachteil. <em class=\"nr-ref\">(NoReturn 2E, S. 229)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 25000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "aKPGMhj0zdhpwZNY",
+  "_key": "!items!aKPGMhj0zdhpwZNY",
+  "name": "Rundschild",
+  "type": "weapon",
+  "img": "icons/equipment/shield/buckler-boss-iron-wood-brown.webp",
+  "system": {
+   "category": "schild",
+   "skill": "",
+   "damageType": "wucht",
+   "damage": {
+    "strength": false,
+    "points": 0,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 2,
+   "stability": 50,
+   "mk": "B",
+   "modes": [],
+   "rd": 0,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 0,
+    "max": 0,
+    "container": "m",
+    "type": ""
+   },
+   "range": "none",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 2,
+   "ts": 1,
+   "price": 650,
+   "equipped": false,
+   "description": "<p>Holz mit Grollhornleder-Riemen, ca. 50 cm. Bonus auf Blocken; ohne 20 Punkte Überschuss leidet die Stabilität, überschüssiger Schaden trifft den Schildarm. Körperliche Aktionen mit Schild: Kampfnachteil. <em class=\"nr-ref\">(NoReturn 2E, S. 229)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 26000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "12uOeIwqE2ljptMN",
+  "_key": "!items!12uOeIwqE2ljptMN",
+  "name": "Ballistisches Schild",
+  "type": "weapon",
+  "img": "icons/equipment/shield/Scutum-steel-worn.webp",
+  "system": {
+   "category": "schild",
+   "skill": "",
+   "damageType": "wucht",
+   "damage": {
+    "strength": false,
+    "points": 0,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 3,
+   "stability": 60,
+   "mk": "B",
+   "modes": [],
+   "rd": 0,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 0,
+    "max": 0,
+    "container": "m",
+    "type": ""
+   },
+   "range": "none",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 10,
+   "ts": 3,
+   "price": 2400,
+   "equipped": false,
+   "description": "<p>Kevlar-Turmschild 1,2 m × 50 cm, schwer. Bonus auf Blocken; ohne 20 Punkte Überschuss leidet die Stabilität, überschüssiger Schaden trifft den Schildarm. Körperliche Aktionen mit Schild: Kampfnachteil. <em class=\"nr-ref\">(NoReturn 2E, S. 229)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 27000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "ZeCdiCQilrA8VIPA",
+  "_key": "!items!ZeCdiCQilrA8VIPA",
+  "name": "TC Sturmschild",
+  "type": "weapon",
+  "img": "icons/equipment/shield/Scutum-steel-worn.webp",
+  "system": {
+   "category": "schild",
+   "skill": "",
+   "damageType": "wucht",
+   "damage": {
+    "strength": false,
+    "points": 0,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 3,
+   "stability": 60,
+   "mk": "C",
+   "modes": [],
+   "rd": 0,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 0,
+    "max": 0,
+    "container": "m",
+    "type": ""
+   },
+   "range": "none",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 5,
+   "ts": 4,
+   "price": 6500,
+   "equipped": false,
+   "description": "<p>Klappbares Hightech-Schild der Zentrumstruppen; Aus-/Einklappen kostet eine Aktion. Bonus auf Blocken; ohne 20 Punkte Überschuss leidet die Stabilität, überschüssiger Schaden trifft den Schildarm. Körperliche Aktionen mit Schild: Kampfnachteil. <em class=\"nr-ref\">(NoReturn 2E, S. 229)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 28000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "SyX93u241S5iSSK6",
+  "_key": "!items!SyX93u241S5iSSK6",
+  "name": "Bola",
+  "type": "weapon",
+  "img": "icons/weapons/thrown/bolas-steel.webp",
+  "system": {
+   "category": "wurf",
+   "skill": "",
+   "damageType": "wucht",
+   "damage": {
+    "strength": true,
+    "points": 20,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [],
+   "rd": 0,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 0,
+    "max": 0,
+    "container": "m",
+    "type": ""
+   },
+   "range": "wurf",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 1.5,
+   "ts": 1,
+   "price": 200,
+   "equipped": false,
+   "description": "<p>Umwickelt die Beine und bringt das Ziel zu Fall. <em class=\"nr-ref\">(NoReturn 2E, S. 229)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 29000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "RvtkXuLZpePgQI6q",
+  "_key": "!items!RvtkXuLZpePgQI6q",
+  "name": "Bumerang",
+  "type": "weapon",
+  "img": "icons/weapons/thrown/boomerang.webp",
+  "system": {
+   "category": "wurf",
+   "skill": "",
+   "damageType": "wucht",
+   "damage": {
+    "strength": true,
+    "points": 15,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [],
+   "rd": 0,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 0,
+    "max": 0,
+    "container": "m",
+    "type": ""
+   },
+   "range": "wurf",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 0.8,
+   "ts": 1,
+   "price": 300,
+   "equipped": false,
+   "description": "<p>Zurückkehrend (Kampfnachteil) oder Jagdversion (Reichweite ST×4/8/11/16 m). <em class=\"nr-ref\">(NoReturn 2E, S. 229)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 30000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "gp9g6aGKEvDyo2cw",
+  "_key": "!items!gp9g6aGKEvDyo2cw",
+  "name": "Klingen-Bumerang",
+  "type": "weapon",
+  "img": "icons/weapons/thrown/boomerang.webp",
+  "system": {
+   "category": "wurf",
+   "skill": "",
+   "damageType": "klinge",
+   "damage": {
+    "strength": true,
+    "points": 30,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [],
+   "rd": 0,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 0,
+    "max": 0,
+    "container": "m",
+    "type": ""
+   },
+   "range": "wurf",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 1.2,
+   "ts": 2,
+   "price": 400,
+   "equipped": false,
+   "description": "<p>Bumerang mit Klingen. <em class=\"nr-ref\">(NoReturn 2E, S. 229)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 31000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "BUBZFGTxmxCS47DK",
+  "_key": "!items!BUBZFGTxmxCS47DK",
+  "name": "Shuriken",
+  "type": "weapon",
+  "img": "icons/weapons/thrown/shuriken-blue.webp",
+  "system": {
+   "category": "wurf",
+   "skill": "",
+   "damageType": "scharf",
+   "damage": {
+    "strength": true,
+    "points": 15,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [],
+   "rd": 0,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 0,
+    "max": 0,
+    "container": "m",
+    "type": ""
+   },
+   "range": "wurf",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 0.1,
+   "ts": 2,
+   "price": 100,
+   "equipped": false,
+   "description": "<p>Mit Kampfnachteil zwei auf dasselbe Ziel: ein Angriffswurf, Schaden zweimal. <em class=\"nr-ref\">(NoReturn 2E, S. 229)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 32000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "fIbA0Avm7V3JsL7O",
+  "_key": "!items!fIbA0Avm7V3JsL7O",
+  "name": "Wurfaxt",
+  "type": "weapon",
+  "img": "icons/weapons/thrown/throwing-axe-steel.webp",
+  "system": {
+   "category": "wurf",
+   "skill": "",
+   "damageType": "wucht",
+   "damage": {
+    "strength": true,
+    "points": 25,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [],
+   "rd": 0,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 0,
+    "max": 0,
+    "container": "m",
+    "type": ""
+   },
+   "range": "wurf",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 1.0,
+   "ts": 1,
+   "price": 100,
+   "equipped": false,
+   "description": "<p>Kopflastig, schnelle Rotation. <em class=\"nr-ref\">(NoReturn 2E, S. 229)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 33000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "UGAPRxCFJzQnG78w",
+  "_key": "!items!UGAPRxCFJzQnG78w",
+  "name": "Wurfmesser",
+  "type": "weapon",
+  "img": "icons/weapons/thrown/dagger-ringed-blue.webp",
+  "system": {
+   "category": "wurf",
+   "skill": "",
+   "damageType": "scharf",
+   "damage": {
+    "strength": true,
+    "points": 15,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [],
+   "rd": 0,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 0,
+    "max": 0,
+    "container": "m",
+    "type": ""
+   },
+   "range": "wurf",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 0.2,
+   "ts": 1,
+   "price": 50,
+   "equipped": false,
+   "description": "<p>Auch im Nahkampf einsetzbar. <em class=\"nr-ref\">(NoReturn 2E, S. 229)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 34000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "XDsfhYplgndGDrZK",
+  "_key": "!items!XDsfhYplgndGDrZK",
+  "name": "Wurfspeer",
+  "type": "weapon",
+  "img": "icons/weapons/thrown/ball-spiked.webp",
+  "system": {
+   "category": "wurf",
+   "skill": "",
+   "damageType": "stich",
+   "damage": {
+    "strength": true,
+    "points": 20,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [],
+   "rd": 0,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 0,
+    "max": 0,
+    "container": "m",
+    "type": ""
+   },
+   "range": "wurf",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 0.5,
+   "ts": 1,
+   "price": 80,
+   "equipped": false,
+   "description": "<p>Köcher für 10 Speere 50 N$. <em class=\"nr-ref\">(NoReturn 2E, S. 229)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 35000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "lorrsxnVlLVDtVdH",
+  "_key": "!items!lorrsxnVlLVDtVdH",
+  "name": "Kreissägenblätter",
+  "type": "weapon",
+  "img": "icons/weapons/thrown/ball-spiked.webp",
+  "system": {
+   "category": "wurf",
+   "skill": "",
+   "damageType": "scharf",
+   "damage": {
+    "strength": true,
+    "points": 20,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [],
+   "rd": 0,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 0,
+    "max": 0,
+    "container": "m",
+    "type": ""
+   },
+   "range": "wurf",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 0.2,
+   "ts": 2,
+   "price": 50,
+   "equipped": false,
+   "description": "<p>Wurfwaffen-Probe unter 15: 20 Schaden an der eigenen Handfläche. <em class=\"nr-ref\">(NoReturn 2E, S. 229)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 36000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "CkGjXmNmElPASxDp",
+  "_key": "!items!CkGjXmNmElPASxDp",
+  "name": "Mauerstein",
+  "type": "weapon",
+  "img": "icons/weapons/thrown/bolas-stone.webp",
+  "system": {
+   "category": "wurf",
+   "skill": "",
+   "damageType": "wucht",
+   "damage": {
+    "strength": true,
+    "points": 20,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [],
+   "rd": 0,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 0,
+    "max": 0,
+    "container": "m",
+    "type": ""
+   },
+   "range": "wurf",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 1.5,
+   "ts": 1,
+   "price": 0,
+   "equipped": false,
+   "description": "<p>Ca. 1,5 kg. Einzeln geschenkt. <em class=\"nr-ref\">(NoReturn 2E, S. 229)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 37000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "opNdoXycJlXNjjht",
+  "_key": "!items!opNdoXycJlXNjjht",
+  "name": "Sprenggranate",
+  "type": "weapon",
+  "img": "icons/weapons/thrown/grenade-chemical-gas.webp",
+  "system": {
+   "category": "wurf",
+   "skill": "",
+   "damageType": "explosiv",
+   "damage": {
+    "strength": false,
+    "points": 100,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": true,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [],
+   "rd": 0,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 0,
+    "max": 0,
+    "container": "m",
+    "type": ""
+   },
+   "range": "wurf",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "Radius 1W6+3 m; Aufprall- oder Zeitzünder (3-Sek.-Stufen)",
+   "quantity": 1,
+   "weight": 0.4,
+   "ts": 2,
+   "price": 50,
+   "equipped": false,
+   "description": "<p>Wurfgranate. Detonationsradius 1W6+3 m.  Schaden trifft alle Körperzonen (Flächeneffekt, Springen/Akrobatik als Defensivaktion). <em class=\"nr-ref\">(NoReturn 2E, S. 242)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 38000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "0HGUlUtacSO7HPuK",
+  "_key": "!items!0HGUlUtacSO7HPuK",
+  "name": "Splittergranate",
+  "type": "weapon",
+  "img": "icons/weapons/thrown/grenade-chemical-gas.webp",
+  "system": {
+   "category": "wurf",
+   "skill": "",
+   "damageType": "explosiv",
+   "damage": {
+    "strength": false,
+    "points": 60,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": true,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [],
+   "rd": 0,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 0,
+    "max": 0,
+    "container": "m",
+    "type": ""
+   },
+   "range": "wurf",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "Radius 3W6 m; Aufprall- oder Zeitzünder (3-Sek.-Stufen)",
+   "quantity": 1,
+   "weight": 0.4,
+   "ts": 2,
+   "price": 50,
+   "equipped": false,
+   "description": "<p>Wurfgranate. Detonationsradius 3W6 m.  Schaden trifft alle Körperzonen (Flächeneffekt, Springen/Akrobatik als Defensivaktion). <em class=\"nr-ref\">(NoReturn 2E, S. 242)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 39000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "81po0e37HLEZ6uZD",
+  "_key": "!items!81po0e37HLEZ6uZD",
+  "name": "Mikrowellengranate",
+  "type": "weapon",
+  "img": "icons/weapons/thrown/grenade-chemical-gas.webp",
+  "system": {
+   "category": "wurf",
+   "skill": "",
+   "damageType": "explosiv",
+   "damage": {
+    "strength": false,
+    "points": 50,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": true,
+    "pierce": "all"
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [],
+   "rd": 0,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 0,
+    "max": 0,
+    "container": "m",
+    "type": ""
+   },
+   "range": "wurf",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "Radius 2W6+10 m; Aufprall- oder Zeitzünder (3-Sek.-Stufen)",
+   "quantity": 1,
+   "weight": 0.4,
+   "ts": 4,
+   "price": 250,
+   "equipped": false,
+   "description": "<p>Wurfgranate. Detonationsradius 2W6+10 m. Ignoriert Rüstung. Schaden trifft alle Körperzonen (Flächeneffekt, Springen/Akrobatik als Defensivaktion). <em class=\"nr-ref\">(NoReturn 2E, S. 242)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 40000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "Nwrix7qdisdGVizZ",
+  "_key": "!items!Nwrix7qdisdGVizZ",
+  "name": "Giftgasgranate",
+  "type": "weapon",
+  "img": "icons/weapons/thrown/grenade-chemical-gas.webp",
+  "system": {
+   "category": "wurf",
+   "skill": "",
+   "damageType": "gift",
+   "damage": {
+    "strength": false,
+    "points": 35,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": true,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [],
+   "rd": 0,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 0,
+    "max": 0,
+    "container": "m",
+    "type": ""
+   },
+   "range": "wurf",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "Radius 5W6+10 m; Aufprall- oder Zeitzünder (3-Sek.-Stufen)",
+   "quantity": 1,
+   "weight": 0.4,
+   "ts": 3,
+   "price": 60,
+   "equipped": false,
+   "description": "<p>Wurfgranate. Detonationsradius 5W6+10 m. Schädigt Zonen 6, 8, 12 ohne Helm/Atemschutz. Schaden trifft alle Körperzonen (Flächeneffekt, Springen/Akrobatik als Defensivaktion). <em class=\"nr-ref\">(NoReturn 2E, S. 242)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 41000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "6r18I8xMFPuaIfB3",
+  "_key": "!items!6r18I8xMFPuaIfB3",
+  "name": "Thermorauchgranate",
+  "type": "weapon",
+  "img": "icons/weapons/thrown/grenade-chemical-gas.webp",
+  "system": {
+   "category": "wurf",
+   "skill": "",
+   "damageType": "explosiv",
+   "damage": {
+    "strength": false,
+    "points": 0,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [],
+   "rd": 0,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 0,
+    "max": 0,
+    "container": "m",
+    "type": ""
+   },
+   "range": "wurf",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "Radius 5W6+10 m; Aufprall- oder Zeitzünder (3-Sek.-Stufen)",
+   "quantity": 1,
+   "weight": 0.4,
+   "ts": 2,
+   "price": 30,
+   "equipped": false,
+   "description": "<p>Wurfgranate. Detonationsradius 5W6+10 m. Geruch und optische Wahrnehmung −4W im Rauch. Schaden trifft alle Körperzonen (Flächeneffekt, Springen/Akrobatik als Defensivaktion). <em class=\"nr-ref\">(NoReturn 2E, S. 242)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 42000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "ShDDm3E4MLM4jjjb",
+  "_key": "!items!ShDDm3E4MLM4jjjb",
+  "name": "Barret 90B",
+  "type": "weapon",
+  "img": "icons/weapons/guns/gun-pistol-brass.webp",
+  "system": {
+   "category": "faustfeuer",
+   "skill": "",
+   "damageType": "projektil",
+   "damage": {
+    "strength": false,
+    "points": 24,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [
+    "HM"
+   ],
+   "rd": 3,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 15,
+    "max": 15,
+    "container": "m",
+    "type": ""
+   },
+   "range": "pistole",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 0.6,
+   "ts": 2,
+   "price": 600,
+   "equipped": false,
+   "description": "<p>Pistole. Evergreen der Kleinkaliber. <em class=\"nr-ref\">(NoReturn 2E, S. 231)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 43000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "7TnfgPXXhP05r9c4",
+  "_key": "!items!7TnfgPXXhP05r9c4",
+  "name": "Kraft P14",
+  "type": "weapon",
+  "img": "icons/weapons/guns/gun-pistol-brass.webp",
+  "system": {
+   "category": "faustfeuer",
+   "skill": "",
+   "damageType": "projektil",
+   "damage": {
+    "strength": false,
+    "points": 30,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [
+    "HM"
+   ],
+   "rd": 1,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 18,
+    "max": 18,
+    "container": "m",
+    "type": ""
+   },
+   "range": "pistole",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 0.7,
+   "ts": 2,
+   "price": 400,
+   "equipped": false,
+   "description": "<p>Pistole. Nachfolger der P11 mit mehr Durchschlagskraft. <em class=\"nr-ref\">(NoReturn 2E, S. 231)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 44000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "wH2mKnzAUXSm7m7t",
+  "_key": "!items!wH2mKnzAUXSm7m7t",
+  "name": "Trueshot F2",
+  "type": "weapon",
+  "img": "icons/weapons/guns/gun-pistol-brass.webp",
+  "system": {
+   "category": "faustfeuer",
+   "skill": "",
+   "damageType": "projektil",
+   "damage": {
+    "strength": false,
+    "points": 24,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [
+    "HM"
+   ],
+   "rd": 3,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 18,
+    "max": 18,
+    "container": "m",
+    "type": ""
+   },
+   "range": "pistole",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "Laufintegrierter Laserpointer",
+   "quantity": 1,
+   "weight": 0.8,
+   "ts": 2,
+   "price": 600,
+   "equipped": false,
+   "description": "<p>Pistole. Präzision mit Laser-Zielmarkierer. <em class=\"nr-ref\">(NoReturn 2E, S. 231)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 45000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "ibNt0KOwWiXkWMjE",
+  "_key": "!items!ibNt0KOwWiXkWMjE",
+  "name": "Walter Combat Pistol",
+  "type": "weapon",
+  "img": "icons/weapons/guns/gun-pistol-brass.webp",
+  "system": {
+   "category": "faustfeuer",
+   "skill": "",
+   "damageType": "projektil",
+   "damage": {
+    "strength": false,
+    "points": 30,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [
+    "HM",
+    "SM"
+   ],
+   "rd": 2,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 12,
+    "max": 12,
+    "container": "m",
+    "type": ""
+   },
+   "range": "pistole",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "Laserpointer, Schalldämpfer",
+   "quantity": 1,
+   "weight": 1.0,
+   "ts": 3,
+   "price": 750,
+   "equipped": false,
+   "description": "<p>Pistole. Verdeckte Operationen, einzigartiger Feuerstoßmodus. <em class=\"nr-ref\">(NoReturn 2E, S. 231)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 46000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "2WSnfDUVD4NTQksV",
+  "_key": "!items!2WSnfDUVD4NTQksV",
+  "name": "Outback Eagle",
+  "type": "weapon",
+  "img": "icons/weapons/guns/gun-pistol-brass.webp",
+  "system": {
+   "category": "faustfeuer",
+   "skill": "",
+   "damageType": "projektil",
+   "damage": {
+    "strength": false,
+    "points": 35,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [
+    "HM"
+   ],
+   "rd": 2,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 16,
+    "max": 16,
+    "container": "m",
+    "type": ""
+   },
+   "range": "pistole",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 1.2,
+   "ts": 3,
+   "price": 990,
+   "equipped": false,
+   "description": "<p>Schwere Pistole. 11-mm-Wüstenadler an der Spitze der Top-10. <em class=\"nr-ref\">(NoReturn 2E, S. 231)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 47000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "etkUr0qPEjL4RMRZ",
+  "_key": "!items!etkUr0qPEjL4RMRZ",
+  "name": "Vulture X",
+  "type": "weapon",
+  "img": "icons/weapons/guns/gun-pistol-brass.webp",
+  "system": {
+   "category": "faustfeuer",
+   "skill": "",
+   "damageType": "projektil",
+   "damage": {
+    "strength": false,
+    "points": 36,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [
+    "HM"
+   ],
+   "rd": 2,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 14,
+    "max": 14,
+    "container": "m",
+    "type": ""
+   },
+   "range": "pistole",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 1.3,
+   "ts": 3,
+   "price": 940,
+   "equipped": false,
+   "description": "<p>Schwere Pistole. Verchromte Neuauflage, höchste Durchschlagskraft. <em class=\"nr-ref\">(NoReturn 2E, S. 231)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 48000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "A6BBHPgWBGvUP7aH",
+  "_key": "!items!A6BBHPgWBGvUP7aH",
+  "name": "Widowmaker 13",
+  "type": "weapon",
+  "img": "icons/weapons/guns/gun-pistol-brass.webp",
+  "system": {
+   "category": "faustfeuer",
+   "skill": "",
+   "damageType": "projektil",
+   "damage": {
+    "strength": false,
+    "points": 33,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [
+    "HM"
+   ],
+   "rd": 2,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 13,
+    "max": 13,
+    "container": "m",
+    "type": ""
+   },
+   "range": "pistole",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "Säureresistent, wasserdicht",
+   "quantity": 1,
+   "weight": 0.9,
+   "ts": 3,
+   "price": 700,
+   "equipped": false,
+   "description": "<p>Schwere Pistole. Rarität in Gold oder Silber. <em class=\"nr-ref\">(NoReturn 2E, S. 231)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 49000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "2fTXwOo3g5d3GFOn",
+  "_key": "!items!2fTXwOo3g5d3GFOn",
+  "name": "Kraft R11",
+  "type": "weapon",
+  "img": "icons/weapons/guns/gun-pistol-brass.webp",
+  "system": {
+   "category": "faustfeuer",
+   "skill": "",
+   "damageType": "projektil",
+   "damage": {
+    "strength": false,
+    "points": 30,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [
+    "HM"
+   ],
+   "rd": 2,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 6,
+    "max": 6,
+    "container": "t",
+    "type": ""
+   },
+   "range": "pistole",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 0.5,
+   "ts": 2,
+   "price": 560,
+   "equipped": false,
+   "description": "<p>Revolver. Klassischer Sechs-Schuss-Trommelrevolver. <em class=\"nr-ref\">(NoReturn 2E, S. 231)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 50000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "C4R3yZRD70F71NY2",
+  "_key": "!items!C4R3yZRD70F71NY2",
+  "name": "Peacemaker",
+  "type": "weapon",
+  "img": "icons/weapons/guns/gun-pistol-brass.webp",
+  "system": {
+   "category": "faustfeuer",
+   "skill": "",
+   "damageType": "projektil",
+   "damage": {
+    "strength": false,
+    "points": 34,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [
+    "HM"
+   ],
+   "rd": 1,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 6,
+    "max": 6,
+    "container": "t",
+    "type": ""
+   },
+   "range": "pistole",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 0.7,
+   "ts": 2,
+   "price": 610,
+   "equipped": false,
+   "description": "<p>Revolver. Beendet Diskussionen mit einem Knall. <em class=\"nr-ref\">(NoReturn 2E, S. 231)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 51000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "tuwBV9i3ufqku84S",
+  "_key": "!items!tuwBV9i3ufqku84S",
+  "name": "New Magnum V8",
+  "type": "weapon",
+  "img": "icons/weapons/guns/gun-pistol-brass.webp",
+  "system": {
+   "category": "faustfeuer",
+   "skill": "",
+   "damageType": "projektil",
+   "damage": {
+    "strength": false,
+    "points": 40,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [
+    "HM"
+   ],
+   "rd": 2,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 8,
+    "max": 8,
+    "container": "t",
+    "type": ""
+   },
+   "range": "pistole",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 1.0,
+   "ts": 2,
+   "price": 1050,
+   "equipped": false,
+   "description": "<p>Revolver. Der dickste Revolver des Marktes, 11 mm. <em class=\"nr-ref\">(NoReturn 2E, S. 231)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 52000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "LW0KNInXgMhxcBhW",
+  "_key": "!items!LW0KNInXgMhxcBhW",
+  "name": "TC Vario",
+  "type": "weapon",
+  "img": "icons/weapons/guns/gun-pistol-brass.webp",
+  "system": {
+   "category": "faustfeuer",
+   "skill": "",
+   "damageType": "projektil",
+   "damage": {
+    "strength": false,
+    "points": 40,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [
+    "HM"
+   ],
+   "rd": 3,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 15,
+    "max": 15,
+    "container": "m",
+    "type": ""
+   },
+   "range": "pistole",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "Säureresistent, wasserdicht, Schalldämpfer, Helm-Zieloptik, 2 Magazine mit Munitionswahl",
+   "quantity": 1,
+   "weight": 1.3,
+   "ts": 4,
+   "price": 5300,
+   "equipped": false,
+   "description": "<p>Schwere Pistole. Einsatzpistole des Zentrums (Ladung 2× 15). <em class=\"nr-ref\">(NoReturn 2E, S. 231)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 53000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "QXk1Fv3EovPMfMbX",
+  "_key": "!items!QXk1Fv3EovPMfMbX",
+  "name": "Coilgun G7",
+  "type": "weapon",
+  "img": "icons/weapons/guns/gun-pistol-brass.webp",
+  "system": {
+   "category": "faustfeuer",
+   "skill": "",
+   "damageType": "projektil",
+   "damage": {
+    "strength": false,
+    "points": 25,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [
+    "SM"
+   ],
+   "rd": 6,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 30,
+    "max": 30,
+    "container": "m",
+    "type": ""
+   },
+   "range": "pistole",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "Helm-Zieloptik (Rotpunkt)",
+   "quantity": 1,
+   "weight": 1.2,
+   "ts": 3,
+   "price": 1200,
+   "equipped": false,
+   "description": "<p>Gauss-Pistole. Gauss-Präzisionspistole, 4,6 mm, hohe Kadenz. <em class=\"nr-ref\">(NoReturn 2E, S. 231)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 54000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "aSeN8ZxaCdgFCyc2",
+  "_key": "!items!aSeN8ZxaCdgFCyc2",
+  "name": "HK J4",
+  "type": "weapon",
+  "img": "icons/weapons/guns/gun-barrel.webp",
+  "system": {
+   "category": "faustfeuer",
+   "skill": "",
+   "damageType": "projektil",
+   "damage": {
+    "strength": false,
+    "points": 27,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [
+    "HM",
+    "SM"
+   ],
+   "rd": 3,
+   "rdFolded": 4,
+   "ammo": {
+    "value": 30,
+    "max": 30,
+    "container": "m",
+    "type": ""
+   },
+   "range": "pistole",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "Laserpointer, ausklappbarer Unterlaufgriff",
+   "quantity": 1,
+   "weight": 0.9,
+   "ts": 3,
+   "price": 550,
+   "equipped": false,
+   "description": "<p>Leichte MP. Dezent mit enormer Feuerrate; 15-Schuss-Magazin möglich (0,7 kg). <em class=\"nr-ref\">(NoReturn 2E, S. 233)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 55000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "iOsR3rfpljm0FRTI",
+  "_key": "!items!iOsR3rfpljm0FRTI",
+  "name": "Furioso 9SSA",
+  "type": "weapon",
+  "img": "icons/weapons/guns/gun-barrel.webp",
+  "system": {
+   "category": "faustfeuer",
+   "skill": "",
+   "damageType": "projektil",
+   "damage": {
+    "strength": false,
+    "points": 30,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [
+    "HM",
+    "SM",
+    "VM"
+   ],
+   "rd": 3,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 40,
+    "max": 40,
+    "container": "m",
+    "type": ""
+   },
+   "range": "pistole",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 3.1,
+   "ts": 2,
+   "price": 510,
+   "equipped": false,
+   "description": "<p>MP. MP der ersten Generation, massiv und effektiv. <em class=\"nr-ref\">(NoReturn 2E, S. 233)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 56000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "OVicO6xzAdFcE0zi",
+  "_key": "!items!OVicO6xzAdFcE0zi",
+  "name": "Mikata 9000",
+  "type": "weapon",
+  "img": "icons/weapons/guns/gun-barrel.webp",
+  "system": {
+   "category": "faustfeuer",
+   "skill": "",
+   "damageType": "projektil",
+   "damage": {
+    "strength": false,
+    "points": 26,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [
+    "HM",
+    "SM"
+   ],
+   "rd": 3,
+   "rdFolded": 4,
+   "ammo": {
+    "value": 50,
+    "max": 50,
+    "container": "m",
+    "type": ""
+   },
+   "range": "pistole",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "Vorderlaufgriff; nie Nachteile von Taped Ware",
+   "quantity": 1,
+   "weight": 3.3,
+   "ts": 2,
+   "price": 900,
+   "equipped": false,
+   "description": "<p>MP. Äußerst robust, beliebt bei Söldnern. <em class=\"nr-ref\">(NoReturn 2E, S. 233)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 57000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "W1J49yd1Mfbq3yzM",
+  "_key": "!items!W1J49yd1Mfbq3yzM",
+  "name": "HMP 25",
+  "type": "weapon",
+  "img": "icons/weapons/guns/gun-barrel.webp",
+  "system": {
+   "category": "faustfeuer",
+   "skill": "",
+   "damageType": "projektil",
+   "damage": {
+    "strength": false,
+    "points": 35,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [
+    "SM",
+    "VM"
+   ],
+   "rd": 3,
+   "rdFolded": 5,
+   "ammo": {
+    "value": 25,
+    "max": 25,
+    "container": "m",
+    "type": ""
+   },
+   "range": "pistole",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "Vorderlaufgriff, ausklappbare Schulterstütze",
+   "quantity": 1,
+   "weight": 3.6,
+   "ts": 3,
+   "price": 1100,
+   "equipped": false,
+   "description": "<p>Schwere MP. Gigantisches Kaliber, klingt wie Donner. <em class=\"nr-ref\">(NoReturn 2E, S. 233)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 58000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "1TLxkbPf2VLrv8vS",
+  "_key": "!items!1TLxkbPf2VLrv8vS",
+  "name": "Robin 17",
+  "type": "weapon",
+  "img": "icons/weapons/crossbows/crossbow-blue.webp",
+  "system": {
+   "category": "projektil",
+   "skill": "",
+   "damageType": "stich",
+   "damage": {
+    "strength": false,
+    "points": 25,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [
+    "HM"
+   ],
+   "rd": 1,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 3,
+    "max": 3,
+    "container": "m",
+    "type": ""
+   },
+   "range": "handarmbrust",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "Vorderlaufgriff, ausklappbare Schulterstütze, Schnelllademagazin",
+   "quantity": 1,
+   "weight": 0.6,
+   "ts": 2,
+   "price": 900,
+   "equipped": false,
+   "description": "<p>Handarmbrust mit Schnellladermagazin, lautlos über weite Distanzen. <em class=\"nr-ref\">(NoReturn 2E, S. 233)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 59000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "ZOJPi8fIRa6CUoHG",
+  "_key": "!items!ZOJPi8fIRa6CUoHG",
+  "name": "Maneater AX",
+  "type": "weapon",
+  "img": "icons/weapons/guns/gun-double-barrel.webp",
+  "system": {
+   "category": "gewehr",
+   "skill": "",
+   "damageType": "projektil",
+   "damage": {
+    "strength": false,
+    "points": 48,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [
+    "HM"
+   ],
+   "rd": 1,
+   "rdFolded": 2,
+   "ammo": {
+    "value": 8,
+    "max": 8,
+    "container": "m",
+    "type": ""
+   },
+   "range": "shotgun",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "Ausklappbare Schulterstütze; darf Schrot als Erstbestückung wählen",
+   "quantity": 1,
+   "weight": 3.6,
+   "ts": 2,
+   "price": 900,
+   "equipped": false,
+   "description": "<p>Shotgun für wenig erfahrene Schützen. <em class=\"nr-ref\">(NoReturn 2E, S. 234)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 60000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "Gn6NyHbR4PHZ4khp",
+  "_key": "!items!Gn6NyHbR4PHZ4khp",
+  "name": "Granit M12",
+  "type": "weapon",
+  "img": "icons/weapons/guns/gun-double-barrel.webp",
+  "system": {
+   "category": "gewehr",
+   "skill": "",
+   "damageType": "projektil",
+   "damage": {
+    "strength": false,
+    "points": 52,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [
+    "HM"
+   ],
+   "rd": 2,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 8,
+    "max": 8,
+    "container": "m",
+    "type": ""
+   },
+   "range": "shotgun",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "Rotpunktvisier, Unterlaufgriff",
+   "quantity": 1,
+   "weight": 4.0,
+   "ts": 2,
+   "price": 1000,
+   "equipped": false,
+   "description": "<p>Kurz geschnittene, brachiale Shotgun. <em class=\"nr-ref\">(NoReturn 2E, S. 234)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 61000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "2mRrBkyFm9Iv36Ya",
+  "_key": "!items!2mRrBkyFm9Iv36Ya",
+  "name": "Shotgunaxt „Five“",
+  "type": "weapon",
+  "img": "icons/weapons/guns/gun-double-barrel.webp",
+  "system": {
+   "category": "gewehr",
+   "skill": "",
+   "damageType": "projektil",
+   "damage": {
+    "strength": false,
+    "points": 54,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [
+    "HM"
+   ],
+   "rd": 1,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 6,
+    "max": 6,
+    "container": "m",
+    "type": ""
+   },
+   "range": "shotgun",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "Axt-Funktion: Angriff +1W, Schaden ST+40p. (Wechsel ohne Aktion)",
+   "quantity": 1,
+   "weight": 5.8,
+   "ts": 3,
+   "price": 1300,
+   "equipped": false,
+   "description": "<p>Schrotflinten-Axt. Brutal. <em class=\"nr-ref\">(NoReturn 2E, S. 234)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 62000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "EpB7Hm3LYFRwami4",
+  "_key": "!items!EpB7Hm3LYFRwami4",
+  "name": "Remington AS 5400",
+  "type": "weapon",
+  "img": "icons/weapons/guns/gun-double-barrel.webp",
+  "system": {
+   "category": "gewehr",
+   "skill": "",
+   "damageType": "projektil",
+   "damage": {
+    "strength": false,
+    "points": 55,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [
+    "SM"
+   ],
+   "rd": 3,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 18,
+    "max": 18,
+    "container": "m",
+    "type": ""
+   },
+   "range": "shotgun",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "Unterlaufgriff, Schulterstütze",
+   "quantity": 1,
+   "weight": 4.5,
+   "ts": 3,
+   "price": 1200,
+   "equipped": false,
+   "description": "<p>Sturmschrotflinte – ein Schlachtschiff. <em class=\"nr-ref\">(NoReturn 2E, S. 234)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 63000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "tsXnu5MeSSGUfN6p",
+  "_key": "!items!tsXnu5MeSSGUfN6p",
+  "name": "Bowser B17",
+  "type": "weapon",
+  "img": "icons/weapons/guns/rifle-assault-bayonet.webp",
+  "system": {
+   "category": "gewehr",
+   "skill": "",
+   "damageType": "projektil",
+   "damage": {
+    "strength": false,
+    "points": 65,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [
+    "HM"
+   ],
+   "rd": 2,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 10,
+    "max": 10,
+    "container": "m",
+    "type": ""
+   },
+   "range": "scharfschuetze",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "Schulterstütze, Zielfernrohr",
+   "quantity": 1,
+   "weight": 11.5,
+   "ts": 3,
+   "price": 950,
+   "equipped": false,
+   "description": "<p>Manuell nachgeladenes Unikat-Scharfschützengewehr. <em class=\"nr-ref\">(NoReturn 2E, S. 234)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 64000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "KuAHEhpUEjNVHH6n",
+  "_key": "!items!KuAHEhpUEjNVHH6n",
+  "name": "Sieg SSG 3000",
+  "type": "weapon",
+  "img": "icons/weapons/guns/rifle-assault-bayonet.webp",
+  "system": {
+   "category": "gewehr",
+   "skill": "",
+   "damageType": "projektil",
+   "damage": {
+    "strength": false,
+    "points": 60,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [
+    "HM"
+   ],
+   "rd": 2,
+   "rdFolded": 3,
+   "ammo": {
+    "value": 12,
+    "max": 12,
+    "container": "m",
+    "type": ""
+   },
+   "range": "scharfschuetze",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "Schulterstütze, Schalldämpfer, Zielfernrohr, Zweibein, demontierbar",
+   "quantity": 1,
+   "weight": 12.9,
+   "ts": 2,
+   "price": 1000,
+   "equipped": false,
+   "description": "<p>Militärisches Scharfschützengewehr. <em class=\"nr-ref\">(NoReturn 2E, S. 234)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 65000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "3TDlQpSc6aLx1oKM",
+  "_key": "!items!3TDlQpSc6aLx1oKM",
+  "name": "TC Sanctum (SSG)",
+  "type": "weapon",
+  "img": "icons/weapons/guns/rifle-assault-bayonet.webp",
+  "system": {
+   "category": "gewehr",
+   "skill": "",
+   "damageType": "projektil",
+   "damage": {
+    "strength": false,
+    "points": 70,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 2,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [
+    "SM"
+   ],
+   "rd": 2,
+   "rdFolded": 3,
+   "ammo": {
+    "value": 30,
+    "max": 30,
+    "container": "m",
+    "type": ""
+   },
+   "range": "scharfschuetze",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "Zielerfassung (+2W bereits enthalten), 20× Zoom, Nacht-/Thermalsicht, Zweibein, 2 Magazine",
+   "quantity": 1,
+   "weight": 13.5,
+   "ts": 4,
+   "price": 15000,
+   "equipped": false,
+   "description": "<p>Hightech-Scharfschützengewehr von TC (Ladung 2× 15). <em class=\"nr-ref\">(NoReturn 2E, S. 234)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 66000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "zkiRzH1IlpCU8pBR",
+  "_key": "!items!zkiRzH1IlpCU8pBR",
+  "name": "Black.Long.Snake",
+  "type": "weapon",
+  "img": "icons/weapons/guns/gun-chain-gatling-heavy.webp",
+  "system": {
+   "category": "gewehr",
+   "skill": "",
+   "damageType": "explosiv",
+   "damage": {
+    "strength": false,
+    "points": 0,
+    "formula": "1d2",
+    "structure": true,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 2,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [
+    "HM"
+   ],
+   "rd": 2,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 5,
+    "max": 5,
+    "container": "m",
+    "type": ""
+   },
+   "range": "scharfschuetze",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "Zielerfassung (+2W), Zielfernrohr, als Rucksack faltbar (2 KR); Munition ARES",
+   "quantity": 1,
+   "weight": 15.5,
+   "ts": 5,
+   "price": 27900,
+   "equipped": false,
+   "description": "<p>Tragbares Panzerabwehrgewehr (Infantry Anti-Tank Rifle). Schaden 1W2 Strukturschaden (1–3 = 1, 4–6 = 2). <em class=\"nr-ref\">(NoReturn 2E, S. 235)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 67000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "ZIoX50RjhKU7xcjs",
+  "_key": "!items!ZIoX50RjhKU7xcjs",
+  "name": "Carbine F22",
+  "type": "weapon",
+  "img": "icons/weapons/guns/gun-barrel.webp",
+  "system": {
+   "category": "schnellfeuer",
+   "skill": "",
+   "damageType": "projektil",
+   "damage": {
+    "strength": false,
+    "points": 40,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [
+    "HM",
+    "SM"
+   ],
+   "rd": 4,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 90,
+    "max": 90,
+    "container": "m",
+    "type": ""
+   },
+   "range": "sturmgewehr",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "Rotpunktvisier, Schulterstütze",
+   "quantity": 1,
+   "weight": 4.0,
+   "ts": 3,
+   "price": 950,
+   "equipped": false,
+   "description": "<p>Hochwertiges Sturmgewehr für verdeckte Operationen. <em class=\"nr-ref\">(NoReturn 2E, S. 235)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 68000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "bBOupbhr6JaiXXOl",
+  "_key": "!items!bBOupbhr6JaiXXOl",
+  "name": "Kalaschnistuff KA17",
+  "type": "weapon",
+  "img": "icons/weapons/guns/gun-barrel.webp",
+  "system": {
+   "category": "schnellfeuer",
+   "skill": "",
+   "damageType": "projektil",
+   "damage": {
+    "strength": false,
+    "points": 37,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [
+    "HM",
+    "SM"
+   ],
+   "rd": 2,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 60,
+    "max": 60,
+    "container": "m",
+    "type": ""
+   },
+   "range": "sturmgewehr",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "Schulterstütze; nie Nachteile von Taped Ware",
+   "quantity": 1,
+   "weight": 3.9,
+   "ts": 2,
+   "price": 810,
+   "equipped": false,
+   "description": "<p>Billig und unkaputtbar. <em class=\"nr-ref\">(NoReturn 2E, S. 235)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 69000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "j063AfTzcOHTZRQo",
+  "_key": "!items!j063AfTzcOHTZRQo",
+  "name": "Military Combat",
+  "type": "weapon",
+  "img": "icons/weapons/guns/gun-barrel.webp",
+  "system": {
+   "category": "schnellfeuer",
+   "skill": "",
+   "damageType": "projektil",
+   "damage": {
+    "strength": false,
+    "points": 40,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [
+    "HM",
+    "SM",
+    "VM"
+   ],
+   "rd": 2,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 60,
+    "max": 60,
+    "container": "m",
+    "type": ""
+   },
+   "range": "sturmgewehr",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "Rotpunktvisier, Schulterstütze, Unterlaufgranatwerfer (HM, RD 1, 2 Granaten)",
+   "quantity": 1,
+   "weight": 4.8,
+   "ts": 3,
+   "price": 1200,
+   "equipped": false,
+   "description": "<p>Das Must-have für Söldner. <em class=\"nr-ref\">(NoReturn 2E, S. 235)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 70000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "MJfi0TlvYy0hwDaz",
+  "_key": "!items!MJfi0TlvYy0hwDaz",
+  "name": "TC-Storm",
+  "type": "weapon",
+  "img": "icons/weapons/guns/gun-barrel.webp",
+  "system": {
+   "category": "schnellfeuer",
+   "skill": "",
+   "damageType": "projektil",
+   "damage": {
+    "strength": false,
+    "points": 45,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [
+    "HM",
+    "SM",
+    "VM"
+   ],
+   "rd": 2,
+   "rdFolded": 6,
+   "ammo": {
+    "value": 60,
+    "max": 60,
+    "container": "m",
+    "type": ""
+   },
+   "range": "sturmgewehr",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "Rotpunkt, Schalldämpfer, Schulterstütze, Unterlaufgriff, Unterlaufgranatwerfer (4 Granaten); nie Taped-Nachteile",
+   "quantity": 1,
+   "weight": 5.3,
+   "ts": 4,
+   "price": 8000,
+   "equipped": false,
+   "description": "<p>Ehemaliges Standard-Kombigewehr der Zentrumsstreitkräfte. <em class=\"nr-ref\">(NoReturn 2E, S. 235)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 71000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "YZCNmSbOIohr3ZFS",
+  "_key": "!items!YZCNmSbOIohr3ZFS",
+  "name": "HKL 45B",
+  "type": "weapon",
+  "img": "icons/weapons/guns/gun-barrel.webp",
+  "system": {
+   "category": "schnellfeuer",
+   "skill": "",
+   "damageType": "projektil",
+   "damage": {
+    "strength": false,
+    "points": 40,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [
+    "SM",
+    "VM"
+   ],
+   "rd": 3,
+   "rdFolded": 4,
+   "ammo": {
+    "value": 200,
+    "max": 200,
+    "container": "k",
+    "type": ""
+   },
+   "range": "sturmgewehr",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "Schulterstütze/Hüftpolster, Zweibein; Kette",
+   "quantity": 1,
+   "weight": 10.5,
+   "ts": 2,
+   "price": 1100,
+   "equipped": false,
+   "description": "<p>Leichtes Maschinengewehr, Feuer aus der Hüfte. <em class=\"nr-ref\">(NoReturn 2E, S. 235)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 72000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "dxRavhF08LK32DZc",
+  "_key": "!items!dxRavhF08LK32DZc",
+  "name": "Frontier B2",
+  "type": "weapon",
+  "img": "icons/weapons/guns/gun-barrel.webp",
+  "system": {
+   "category": "schnellfeuer",
+   "skill": "",
+   "damageType": "projektil",
+   "damage": {
+    "strength": false,
+    "points": 45,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [
+    "VM"
+   ],
+   "rd": 3,
+   "rdFolded": 5,
+   "ammo": {
+    "value": 200,
+    "max": 200,
+    "container": "k",
+    "type": ""
+   },
+   "range": "sturmgewehr",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "Hüftpolster, Zweibein; Kettenmunition",
+   "quantity": 1,
+   "weight": 13.6,
+   "ts": 2,
+   "price": 2500,
+   "equipped": false,
+   "description": "<p>Schweres MG, nur vollautomatisch. <em class=\"nr-ref\">(NoReturn 2E, S. 235)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 73000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "r8nVzKl3Wj5ZwUCE",
+  "_key": "!items!r8nVzKl3Wj5ZwUCE",
+  "name": "Buster Gatling Gun",
+  "type": "weapon",
+  "img": "icons/weapons/guns/gun-chain-gatling-belt.webp",
+  "system": {
+   "category": "gatling",
+   "skill": "",
+   "damageType": "projektil",
+   "damage": {
+    "strength": false,
+    "points": 45,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [
+    "GM"
+   ],
+   "rd": 7,
+   "rdFolded": 10,
+   "ammo": {
+    "value": 900,
+    "max": 900,
+    "container": "k",
+    "type": ""
+   },
+   "range": "gatling",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "Hüftpolster, Haltegriff, Mündungsdämpfer, Dreibein",
+   "quantity": 1,
+   "weight": 17,
+   "ts": 3,
+   "price": 11800,
+   "equipped": false,
+   "description": "<p>Mini-Gun. Eine Aktion zum Warmlaufen, dann zwei Aktionen zum Feuern. Ignoriert MK:A, trifft alle Körperzonen. <em class=\"nr-ref\">(NoReturn 2E, S. 236)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 74000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "cEAbU83WQFE52piR",
+  "_key": "!items!cEAbU83WQFE52piR",
+  "name": "G15",
+  "type": "weapon",
+  "img": "icons/weapons/artillery/cannon-banded.webp",
+  "system": {
+   "category": "schwer",
+   "skill": "",
+   "damageType": "explosiv",
+   "damage": {
+    "strength": false,
+    "points": 0,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": true,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [
+    "HM"
+   ],
+   "rd": 2,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 10,
+    "max": 10,
+    "container": "t",
+    "type": ""
+   },
+   "range": "granatwerfer",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "Schulterstütze; Schaden gemäß Granate/Rakete",
+   "quantity": 1,
+   "weight": 7.2,
+   "ts": 2,
+   "price": 1450,
+   "equipped": false,
+   "description": "<p>Granatwerfer von Wesker mit Trommel für zehn Granaten. Beim Angriff die Granate bzw. Rakete aus dem Inventar wählen – deren Schaden gilt. <em class=\"nr-ref\">(NoReturn 2E, S. 236)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 75000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "hsbpSZ5twArSUdgP",
+  "_key": "!items!hsbpSZ5twArSUdgP",
+  "name": "G8 „Hardy“",
+  "type": "weapon",
+  "img": "icons/weapons/artillery/cannon-banded.webp",
+  "system": {
+   "category": "schwer",
+   "skill": "",
+   "damageType": "explosiv",
+   "damage": {
+    "strength": false,
+    "points": 0,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": true,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [
+    "HM"
+   ],
+   "rd": 1,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 2,
+    "max": 2,
+    "container": "i",
+    "type": ""
+   },
+   "range": "granatwerfer",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "Schulterstütze, Knicklader; Schaden gemäß Granate/Rakete",
+   "quantity": 1,
+   "weight": 1.1,
+   "ts": 2,
+   "price": 850,
+   "equipped": false,
+   "description": "<p>Pistolengroßer Granatwerfer. Beim Angriff die Granate bzw. Rakete aus dem Inventar wählen – deren Schaden gilt. <em class=\"nr-ref\">(NoReturn 2E, S. 236)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 76000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "Mp9XyBCVX5Igcbak",
+  "_key": "!items!Mp9XyBCVX5Igcbak",
+  "name": "Rocky B52",
+  "type": "weapon",
+  "img": "icons/weapons/artillery/cannon-banded.webp",
+  "system": {
+   "category": "schwer",
+   "skill": "",
+   "damageType": "explosiv",
+   "damage": {
+    "strength": false,
+    "points": 0,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": true,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [
+    "HM"
+   ],
+   "rd": 2,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 2,
+    "max": 2,
+    "container": "i",
+    "type": ""
+   },
+   "range": "variabel",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "; Schaden gemäß Granate/Rakete",
+   "quantity": 1,
+   "weight": 2.3,
+   "ts": 3,
+   "price": 1300,
+   "equipped": false,
+   "description": "<p>Raketenwerfer im Faustfeuerwaffen-Format. Beim Angriff die Granate bzw. Rakete aus dem Inventar wählen – deren Schaden gilt. <em class=\"nr-ref\">(NoReturn 2E, S. 236)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 77000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "vzqmBusCDfjowkyq",
+  "_key": "!items!vzqmBusCDfjowkyq",
+  "name": "MARS R2",
+  "type": "weapon",
+  "img": "icons/weapons/artillery/cannon-banded.webp",
+  "system": {
+   "category": "schwer",
+   "skill": "",
+   "damageType": "explosiv",
+   "damage": {
+    "strength": false,
+    "points": 0,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": true,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [
+    "HM"
+   ],
+   "rd": 3,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 10,
+    "max": 10,
+    "container": "m",
+    "type": ""
+   },
+   "range": "variabel",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "Zielerfassung (Zoom 20×), 2 Magazine à 5; Schaden gemäß Granate/Rakete",
+   "quantity": 1,
+   "weight": 6.6,
+   "ts": 3,
+   "price": 8500,
+   "equipped": false,
+   "description": "<p>Eine der schwersten Bewaffnungen der Straße. Beim Angriff die Granate bzw. Rakete aus dem Inventar wählen – deren Schaden gilt. <em class=\"nr-ref\">(NoReturn 2E, S. 236)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 78000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "kAAVxOmAXIhgahBJ",
+  "_key": "!items!kAAVxOmAXIhgahBJ",
+  "name": "Pfefferspray",
+  "type": "weapon",
+  "img": "icons/weapons/guns/gun-chemical-sprayer.webp",
+  "system": {
+   "category": "spruehwaffe",
+   "skill": "",
+   "damageType": "saeure",
+   "damage": {
+    "strength": false,
+    "points": 15,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [
+    "SP"
+   ],
+   "rd": 1,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 10,
+    "max": 10,
+    "container": "i",
+    "type": ""
+   },
+   "range": "variabel",
+   "spray": {
+    "range": 4,
+    "diameter": 1
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 0.1,
+   "ts": 2,
+   "price": 100,
+   "equipped": false,
+   "description": "<p>Treffer in die Augen: zusätzlich 3W6 KR −4W auf optische Wahrnehmung. Weichteilbonus enthalten. <em class=\"nr-ref\">(NoReturn 2E, S. 237)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 79000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "iuU65M12vxwj940Q",
+  "_key": "!items!iuU65M12vxwj940Q",
+  "name": "Burn Barry Flammenwerfer",
+  "type": "weapon",
+  "img": "icons/weapons/guns/flamethrower-spray-fire-orange.webp",
+  "system": {
+   "category": "spruehwaffe",
+   "skill": "",
+   "damageType": "hitze",
+   "damage": {
+    "strength": false,
+    "points": 20,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": true,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [
+    "SP"
+   ],
+   "rd": 1,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 50,
+    "max": 50,
+    "container": "l",
+    "type": ""
+   },
+   "range": "variabel",
+   "spray": {
+    "range": 10,
+    "diameter": 4
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 3.6,
+   "ts": 2,
+   "price": 1500,
+   "equipped": false,
+   "description": "<p>Tragbarer Flammenwerfer, kurze Feuerstöße, 10 m. <em class=\"nr-ref\">(NoReturn 2E, S. 237)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 80000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "xo6ZmndqUrplqHjA",
+  "_key": "!items!xo6ZmndqUrplqHjA",
+  "name": "Phönix 46",
+  "type": "weapon",
+  "img": "icons/weapons/guns/flamethrower-spray-fire-orange.webp",
+  "system": {
+   "category": "spruehwaffe",
+   "skill": "",
+   "damageType": "hitze",
+   "damage": {
+    "strength": false,
+    "points": 40,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": true,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [
+    "SP"
+   ],
+   "rd": 1,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 25,
+    "max": 25,
+    "container": "l",
+    "type": ""
+   },
+   "range": "variabel",
+   "spray": {
+    "range": 30,
+    "diameter": 10
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 29.1,
+   "ts": 2,
+   "price": 9200,
+   "equipped": false,
+   "description": "<p>Schwerer Flammenwerfer mit 25-Liter-Rucksacktank, bis 30 m. <em class=\"nr-ref\">(NoReturn 2E, S. 237)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 81000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "Uv26qBRrT8agUMZJ",
+  "_key": "!items!Uv26qBRrT8agUMZJ",
+  "name": "Langbogen",
+  "type": "weapon",
+  "img": "icons/weapons/bows/longbow-gold-pink.webp",
+  "system": {
+   "category": "projektil",
+   "skill": "",
+   "damageType": "stich",
+   "damage": {
+    "strength": false,
+    "points": 25,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [
+    "HM"
+   ],
+   "rd": 1,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 1,
+    "max": 1,
+    "container": "a",
+    "type": ""
+   },
+   "range": "langbogen",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 3,
+   "features": "Mindeststärke 3 (Schaden bei anderer Mindeststärke anpassen)",
+   "quantity": 1,
+   "weight": 2.5,
+   "ts": 1,
+   "price": 400,
+   "equipped": false,
+   "description": "<p>Schaden = Mindeststärke × 5 + 10. Unterschreitet die Stärke die Mindeststärke: je Punkt −10 Schaden und −2W Angriff. <em class=\"nr-ref\">(NoReturn 2E, S. 237)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 82000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "NjQF1NMsUsx5rL20",
+  "_key": "!items!NjQF1NMsUsx5rL20",
+  "name": "Recurvebogen",
+  "type": "weapon",
+  "img": "icons/weapons/bows/bow-ornamental-carved-brown.webp",
+  "system": {
+   "category": "projektil",
+   "skill": "",
+   "damageType": "stich",
+   "damage": {
+    "strength": false,
+    "points": 20,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [
+    "HM"
+   ],
+   "rd": 1,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 1,
+    "max": 1,
+    "container": "a",
+    "type": ""
+   },
+   "range": "recurve",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 3,
+   "features": "Mindeststärke 3 (Schaden bei anderer Mindeststärke anpassen)",
+   "quantity": 1,
+   "weight": 1.2,
+   "ts": 2,
+   "price": 450,
+   "equipped": false,
+   "description": "<p>Schaden = Mindeststärke × 5 + 5. Unterschreitet die Stärke die Mindeststärke: je Punkt −10 Schaden und −2W Angriff. <em class=\"nr-ref\">(NoReturn 2E, S. 237)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 83000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "1dpV8MqCiqo6DF53",
+  "_key": "!items!1dpV8MqCiqo6DF53",
+  "name": "Compoundbogen",
+  "type": "weapon",
+  "img": "icons/weapons/bows/bow-ornamental-carved-brown.webp",
+  "system": {
+   "category": "projektil",
+   "skill": "",
+   "damageType": "stich",
+   "damage": {
+    "strength": false,
+    "points": 35,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [
+    "HM"
+   ],
+   "rd": 1,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 1,
+    "max": 1,
+    "container": "a",
+    "type": ""
+   },
+   "range": "compound",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 3,
+   "features": "Mindeststärke 3 (Schaden bei anderer Mindeststärke anpassen)",
+   "quantity": 1,
+   "weight": 0.8,
+   "ts": 3,
+   "price": 900,
+   "equipped": false,
+   "description": "<p>Schaden = Mindeststärke × 5 + 20; Mindeststärke nachträglich anpassbar. Unterschreitet die Stärke die Mindeststärke: je Punkt −10 Schaden und −2W Angriff. <em class=\"nr-ref\">(NoReturn 2E, S. 237)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 84000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "qgYyuSt3aummfhGh",
+  "_key": "!items!qgYyuSt3aummfhGh",
+  "name": "Armbrust",
+  "type": "weapon",
+  "img": "icons/weapons/crossbows/crossbow-blue.webp",
+  "system": {
+   "category": "projektil",
+   "skill": "",
+   "damageType": "stich",
+   "damage": {
+    "strength": false,
+    "points": 30,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": false,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [
+    "RM"
+   ],
+   "rd": 1,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 1,
+    "max": 1,
+    "container": "a",
+    "type": ""
+   },
+   "range": "armbrust",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "",
+   "quantity": 1,
+   "weight": 3,
+   "ts": 1,
+   "price": 500,
+   "equipped": false,
+   "description": "<p>Klassische Armbrust (Werte als Richtwert, siehe Reichweitentabelle S. 94). <em class=\"nr-ref\">(NoReturn 2E, S. 94)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 85000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "ydxCkIWrrgOvLSWG",
+  "_key": "!items!ydxCkIWrrgOvLSWG",
+  "name": "MGW 5 „Tombstone“",
+  "type": "weapon",
+  "img": "icons/weapons/artillery/cannon-banded.webp",
+  "system": {
+   "category": "geschuetz",
+   "skill": "",
+   "damageType": "explosiv",
+   "damage": {
+    "strength": false,
+    "points": 0,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": true,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [
+    "SM"
+   ],
+   "rd": 3,
+   "rdFolded": 7,
+   "ammo": {
+    "value": 36,
+    "max": 36,
+    "container": "k",
+    "type": ""
+   },
+   "range": "geschuetz",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "Zielerfassung (Nacht, Thermal, 10× Zoom), Dreibein 15 kg; 40-mm-AF-Granaten",
+   "quantity": 1,
+   "weight": 35,
+   "ts": 4,
+   "price": 69000,
+   "equipped": false,
+   "description": "<p>Maschinengranatwerfer, ursprünglich fahrzeugmontiert. <em class=\"nr-ref\">(NoReturn 2E, S. 238)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 86000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "qmkggRF19IZECAZ6",
+  "_key": "!items!qmkggRF19IZECAZ6",
+  "name": "K30 CMG",
+  "type": "weapon",
+  "img": "icons/weapons/artillery/cannon-banded.webp",
+  "system": {
+   "category": "geschuetz",
+   "skill": "",
+   "damageType": "explosiv",
+   "damage": {
+    "strength": false,
+    "points": 0,
+    "formula": "",
+    "structure": false,
+    "nonLethal": false,
+    "continuous": false,
+    "area": true,
+    "pierce": ""
+   },
+   "attackDice": 0,
+   "parryDice": 0,
+   "blockDice": 0,
+   "stability": 0,
+   "mk": "",
+   "modes": [
+    "HM"
+   ],
+   "rd": 1,
+   "rdFolded": 0,
+   "ammo": {
+    "value": 1,
+    "max": 1,
+    "container": "i",
+    "type": ""
+   },
+   "range": "geschuetz",
+   "spray": {
+    "range": 0,
+    "diameter": 0
+   },
+   "minStrength": 0,
+   "features": "Zielerfassung; K2-Granaten; Reichweite 10× Granatwerfer; getragen +6 Rückstoß",
+   "quantity": 1,
+   "weight": 16.5,
+   "ts": 3,
+   "price": 12900,
+   "equipped": false,
+   "description": "<p>Kompakter Mörser. Montage/Demontage je 2 KR. Angriffe mit Kampfnachteil. Militärische Ausrüstung. <em class=\"nr-ref\">(NoReturn 2E, S. 238)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 87000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ }
+]

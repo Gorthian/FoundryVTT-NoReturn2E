@@ -1,0 +1,28 @@
+<div class="nr-attack-info">
+  <div class="nr-attack-line">
+    <img src="{{weapon.img}}" alt="">
+    <span><strong>{{weapon.name}}</strong> · {{localize "NR.Combat.Damage"}}: {{damageLabel}}</span>
+  </div>
+  <div class="nr-attack-tags">
+    {{#if mode}}<span class="nr-chip">{{mode}}</span>{{/if}}
+    {{#if aimLabel}}<span class="nr-chip">{{aimLabel}}{{#if zoneLabel}}: {{zoneLabel}}{{/if}}{{#if halfLabel}}: {{halfLabel}}{{/if}}{{#if aimMalus}} (−{{aimMalus}}W){{/if}}</span>{{/if}}
+    {{#if recoilInfo}}<span class="nr-chip {{#if recoilMalus}}bad{{/if}}">{{recoilInfo}}{{#if recoilMalus}} → −{{recoilMalus}}W{{/if}}</span>{{/if}}
+    {{#if shots}}<span class="nr-chip">{{shots}} {{localize "NR.Combat.Shots"}} · {{ammoLeft}} {{localize "NR.Combat.Left"}}{{#if ammoName}} ({{ammoName}}){{/if}}</span>{{/if}}
+    {{#if distance}}<span class="nr-chip">{{distance}} m</span>{{/if}}
+    {{#if attackData.rangeMw}}<span class="nr-chip">{{localize "NR.Combat.RangeMw"}} {{attackData.rangeMw}}</span>{{/if}}
+    {{#if (gt attackData.multi 1)}}<span class="nr-chip">{{localize "NR.Combat.MultiAttack"}} ×{{attackData.multi}}</span>{{/if}}
+  </div>
+  {{#if targets.length}}
+  <div class="nr-targets">
+    {{#each targets as |t|}}
+    <div class="nr-target">
+      <span class="nr-target-name"><i class="fa-solid fa-bullseye"></i> {{t.name}}</span>
+      <button type="button" data-nr-action="defend" data-token-uuid="{{t.uuid}}"><i class="fa-solid fa-shield-halved"></i> {{localize "NR.Combat.Defend"}}</button>
+      <button type="button" data-nr-action="noDefense" data-token-uuid="{{t.uuid}}"><i class="fa-solid fa-person-falling"></i> {{localize "NR.Combat.NoDefense"}}</button>
+    </div>
+    {{/each}}
+  </div>
+  {{else}}
+  <p class="nr-hint">{{localize "NR.Combat.NoTargets"}}</p>
+  {{/if}}
+</div>

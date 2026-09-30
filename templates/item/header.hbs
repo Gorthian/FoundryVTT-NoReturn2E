@@ -1,0 +1,11 @@
+<header class="nr-header nr-item-header">
+  <img class="nr-portrait small" src="{{item.img}}" data-action="editImage" data-edit="img" alt="{{item.name}}">
+  <div class="nr-header-main">
+    <input class="nr-name" type="text" name="name" value="{{item.name}}">
+    <div class="nr-header-line">
+      <span class="nr-chip type">{{typeLabel}}</span>
+      {{#each stats as |s|}}<span class="nr-chip">{{s}}</span>{{/each}}
+      <a class="nr-btn tiny" data-action="toChat" data-tooltip="{{localize 'NR.Sheet.ToChat'}}"><i class="fa-solid fa-comment"></i></a>
+    </div>
+  </div>
+</header>

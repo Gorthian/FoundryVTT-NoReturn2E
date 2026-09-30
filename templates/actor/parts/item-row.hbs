@@ -1,0 +1,19 @@
+<li class="nr-item-row draggable {{#if item.system.equipped}}equipped{{/if}}" data-item-id="{{item.id}}">
+  <div class="nr-item-main">
+    <img src="{{item.img}}" alt="">
+    <a class="nr-item-name" data-action="toggleDescription">{{item.name}}</a>
+    {{#if info}}<span class="nr-item-stat">{{info}}</span>{{/if}}
+    {{#if qty}}
+    <span class="nr-item-qty">
+      <a data-action="itemQuantity" data-delta="-1"><i class="fa-solid fa-minus"></i></a>
+      <span>{{item.system.quantity}}</span>
+      <a data-action="itemQuantity" data-delta="1"><i class="fa-solid fa-plus"></i></a>
+    </span>
+    {{/if}}
+    {{#if equip}}<a data-action="toggleEquip" data-tooltip="{{localize 'NR.Sheet.Equip'}}"><i class="fa-solid fa-hand {{#unless item.system.equipped}}nr-dim{{/unless}}"></i></a>{{/if}}
+    <a data-action="useItem" data-tooltip="{{localize 'NR.Sheet.ToChat'}}"><i class="fa-solid fa-comment"></i></a>
+    <a data-action="editItem"><i class="fa-solid fa-pen"></i></a>
+    <a data-action="deleteItem"><i class="fa-solid fa-trash"></i></a>
+  </div>
+  <div class="nr-item-details">{{#each stats as |s|}}<span class="nr-chip">{{s}}</span>{{/each}}</div>
+</li>

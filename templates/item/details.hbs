@@ -1,0 +1,228 @@
+<section class="tab nr-item-details-tab {{tab.cssClass}}" data-group="primary" data-tab="details">
+
+{{#if isType.weapon}}
+  <div class="nr-form-grid">
+    <label>{{localize "NR.Weapon.Category"}}</label><select name="system.category">{{selectOptions options.weaponCategories selected=system.category}}</select>
+    <label>{{localize "NR.Weapon.Skill"}}</label><select name="system.skill">{{selectOptions options.skills selected=system.skill}}</select>
+    <label>{{localize "NR.Weapon.DamageType"}}</label><select name="system.damageType">{{selectOptions options.damageTypes selected=system.damageType}}</select>
+    <label>{{localize "NR.Weapon.StrengthBased"}}</label><input type="checkbox" name="system.damage.strength" {{checked system.damage.strength}}>
+    <label>{{localize "NR.Weapon.DamagePoints"}}</label><input type="number" name="system.damage.points" value="{{system.damage.points}}">
+    <label>{{localize "NR.Weapon.DamageFormula"}}</label><input type="text" name="system.damage.formula" value="{{system.damage.formula}}" placeholder="z. B. 2W6+180">
+    <label>{{localize "NR.Weapon.Pierce"}}</label><select name="system.damage.pierce">{{selectOptions options.pierce selected=system.damage.pierce}}</select>
+    <label>{{localize "NR.Weapon.Flags"}}</label>
+    <span class="nr-inline-checks">
+      <label><input type="checkbox" name="system.damage.nonLethal" {{checked system.damage.nonLethal}}> NL</label>
+      <label><input type="checkbox" name="system.damage.continuous" {{checked system.damage.continuous}}> {{localize "NR.Weapon.Continuous"}}</label>
+      <label><input type="checkbox" name="system.damage.structure" {{checked system.damage.structure}}> SSP</label>
+      <label><input type="checkbox" name="system.damage.area" {{checked system.damage.area}}> {{localize "NR.Weapon.Area"}}</label>
+      <label><input type="checkbox" name="system.twoHanded" {{checked system.twoHanded}}> {{localize "NR.Weapon.TwoHanded"}}</label>
+    </span>
+    <label>{{localize "NR.Weapon.AttackDice"}}</label><input type="number" name="system.attackDice" value="{{system.attackDice}}">
+    <label>{{localize "NR.Weapon.ParryDice"}}</label><input type="number" name="system.parryDice" value="{{system.parryDice}}">
+    <label>{{localize "NR.Weapon.BlockDice"}}</label><input type="number" name="system.blockDice" value="{{system.blockDice}}">
+    <label>{{localize "NR.Weapon.Stability"}}</label><span><input type="number" name="system.stability" value="{{system.stability}}"> <select name="system.mk">{{selectOptions options.mk selected=system.mk}}</select></span>
+    <label>{{localize "NR.Weapon.Modes"}}</label>
+    <span class="nr-inline-checks">{{#each fireModes as |m|}}<label data-tooltip="{{m.label}}"><input type="checkbox" name="mode.{{m.key}}" {{checked m.checked}}> {{m.key}}</label>{{/each}}</span>
+    <label>{{localize "NR.Weapon.RD"}}</label><span><input type="number" name="system.rd" value="{{system.rd}}"> ({{localize "NR.Weapon.RDFolded"}} <input type="number" name="system.rdFolded" value="{{system.rdFolded}}">)</span>
+    <label>{{localize "NR.Weapon.Ammo"}}</label>
+    <span><input type="number" name="system.ammo.value" value="{{system.ammo.value}}"> / <input type="number" name="system.ammo.max" value="{{system.ammo.max}}">
+      <select name="system.ammo.container">{{selectOptions options.containers selected=system.ammo.container}}</select></span>
+    <label>{{localize "NR.Weapon.AmmoType"}}</label><input type="text" name="system.ammo.type" value="{{system.ammo.type}}">
+    <label>{{localize "NR.Weapon.Range"}}</label><select name="system.range">{{selectOptions options.ranges selected=system.range}}</select>
+    <label>{{localize "NR.Weapon.Spray"}}</label><span>SP <input type="number" name="system.spray.range" value="{{system.spray.range}}"> / <input type="number" name="system.spray.diameter" value="{{system.spray.diameter}}"></span>
+    <label>{{localize "NR.Weapon.MinStrength"}}</label><input type="number" name="system.minStrength" value="{{system.minStrength}}">
+    <label>{{localize "NR.Weapon.Features"}}</label><input type="text" name="system.features" value="{{system.features}}">
+  </div>
+{{/if}}
+
+{{#if isType.ammo}}
+  <div class="nr-form-grid">
+    <label>{{localize "NR.Ammo.Type"}}</label><select name="system.ammoType">{{selectOptions options.ammoTypes selected=system.ammoType}}</select>
+    <label>{{localize "NR.Ammo.DamageBonus"}}</label><input type="number" name="system.damageBonus" value="{{system.damageBonus}}">
+    <label>{{localize "NR.Ammo.Damage"}}</label><input type="text" name="system.damage" value="{{system.damage}}" placeholder="z. B. 2W6+180 oder 90">
+    <label>{{localize "NR.Ammo.Radius"}}</label><input type="text" name="system.radius" value="{{system.radius}}">
+    <label>{{localize "NR.Weapon.AttackDice"}}</label><input type="number" name="system.attackDice" value="{{system.attackDice}}">
+    <label>{{localize "NR.Ammo.Recoil"}}</label><input type="number" name="system.recoil" value="{{system.recoil}}">
+    <label>{{localize "NR.Weapon.Pierce"}}</label><select name="system.pierce">{{selectOptions options.pierce selected=system.pierce}}</select>
+    <label>{{localize "NR.Ammo.NoDamageVs"}}</label><select name="system.noDamageVs">{{selectOptions options.mk selected=system.noDamageVs}}</select>
+    <label>{{localize "NR.Weapon.Flags"}}</label>
+    <span class="nr-inline-checks">
+      <label><input type="checkbox" name="system.nonLethal" {{checked system.nonLethal}}> NL</label>
+      <label><input type="checkbox" name="system.continuous" {{checked system.continuous}}> {{localize "NR.Weapon.Continuous"}}</label>
+      <label><input type="checkbox" name="system.structure" {{checked system.structure}}> SSP</label>
+    </span>
+  </div>
+{{/if}}
+
+{{#if isType.armor}}
+  <div class="nr-form-grid">
+    <label>{{localize "NR.Armor.RW"}}</label><span><input type="number" name="system.rw" value="{{system.rw}}"> <select name="system.mk">{{selectOptions options.mk selected=system.mk}}</select></span>
+    <label>{{localize "NR.Armor.Komfort"}}</label><input type="number" name="system.komfort" value="{{system.komfort}}">
+    <label>{{localize "NR.Armor.Stealth"}}</label><input type="number" name="system.stealth" value="{{system.stealth}}">
+    <label>{{localize "NR.Armor.Cold"}}</label><input type="number" name="system.coldDice" value="{{system.coldDice}}">
+    <label>{{localize "NR.Armor.Heat"}}</label><input type="number" name="system.heatDice" value="{{system.heatDice}}">
+    <label>{{localize "NR.Armor.Zones"}}</label>
+    <span class="nr-inline-checks zones">{{#each armorZones as |z|}}<label data-tooltip="{{z.label}}"><input type="checkbox" name="zone.{{z.key}}" {{checked z.checked}}> {{z.key}}</label>{{/each}}</span>
+  </div>
+{{/if}}
+
+{{#if isType.gear}}
+  <div class="nr-form-grid">
+    <label>{{localize "NR.Gear.Uses"}}</label><span><input type="number" name="system.uses.value" value="{{system.uses.value}}"> / <input type="number" name="system.uses.max" value="{{system.uses.max}}"></span>
+    <label>{{localize "NR.Gear.Alk"}}</label><input type="number" name="system.alk" value="{{system.alk}}">
+    <label>{{localize "NR.Gear.ToolQuality"}}</label><select name="system.toolQuality">{{selectOptions options.toolQuality selected=system.toolQuality}}</select>
+    <label>{{localize "NR.Gear.Bonus"}}</label><input type="text" name="system.bonus" value="{{system.bonus}}">
+  </div>
+{{/if}}
+
+{{#if isType.skill}}
+  <div class="nr-form-grid">
+    <label>{{localize "NR.Skill.Category"}}</label><select name="system.category">{{selectOptions options.customSkillCategories selected=system.category}}</select>
+    <label>{{localize "NR.Skill.Attribute"}}</label><select name="system.attribute">{{selectOptions options.attributesOptional selected=system.attribute}}</select>
+    <label>{{localize "NR.Skill.Value"}}</label><input type="number" name="system.value" value="{{system.value}}">
+    <label>{{localize "NR.Sheet.Defensive"}}</label><input type="checkbox" name="system.defensive" {{checked system.defensive}}>
+    <label>{{localize "NR.Skill.Native"}}</label><input type="checkbox" name="system.native" {{checked system.native}}>
+  </div>
+  {{#if (eq system.category "sprache")}}<p class="nr-hint">{{localize "NR.Skill.LanguageHint"}}</p>{{/if}}
+{{/if}}
+
+{{#if isType.psiPower}}
+  <div class="nr-form-grid">
+    <label>{{localize "NR.Psi.Power"}}</label><select name="system.key">{{selectOptions options.psiPowers selected=system.key}}</select>
+    <label>{{localize "NR.Psi.Level"}}</label><input type="number" name="system.value" value="{{system.value}}">
+    <label>{{localize "NR.Psi.FreeLevels"}}</label><input type="number" name="system.free" value="{{system.free}}">
+    <label>{{localize "NR.Psi.Show"}}</label><input type="text" name="system.show" value="{{system.show}}">
+  </div>
+  <p class="nr-hint">{{localize "NR.Psi.PowerHint"}}</p>
+{{/if}}
+
+{{#if isType.psiApp}}
+  <div class="nr-form-grid">
+    <label>{{localize "NR.Psi.Power"}}</label><select name="system.power">{{selectOptions options.psiPowers selected=system.power}}</select>
+    <label>{{localize "NR.Psi.Difficulty"}}</label><select name="system.difficulty">{{selectOptions options.psiDifficulties selected=system.difficulty}}</select>
+    <label>{{localize "NR.Psi.Range"}}</label><span><input type="number" name="system.min" value="{{system.min}}"> – <input type="number" name="system.max" value="{{system.max}}"></span>
+    <label>{{localize "NR.Psi.Hold"}}</label><span><input type="number" name="system.hold" value="{{system.hold}}"> <label><input type="checkbox" name="system.held" {{checked system.held}}> {{localize "NR.Psi.Held"}}</label></span>
+    <label>{{localize "NR.Sheet.Defensive"}}</label><input type="checkbox" name="system.defensive" {{checked system.defensive}}>
+    <label>{{localize "NR.Psi.Resist"}}</label><input type="text" name="system.resist" value="{{system.resist}}">
+    <label>{{localize "NR.Psi.DamageMult"}}</label><span>KS × <input type="number" name="system.damageMult" value="{{system.damageMult}}"> <label><input type="checkbox" name="system.allZones" {{checked system.allZones}}> {{localize "NR.Psi.AllZones"}}</label></span>
+    <label>{{localize "NR.Weapon.Pierce"}}</label><select name="system.pierce">{{selectOptions options.pierce selected=system.pierce}}</select>
+  </div>
+  <label class="nr-block-label">{{localize "NR.Psi.Effect"}}</label>
+  <textarea name="system.effect" rows="5">{{system.effect}}</textarea>
+  <p class="nr-hint">{{localize "NR.Psi.EffectHint"}}</p>
+{{/if}}
+
+{{#if isType.styleSkill}}
+  <div class="nr-form-grid">
+    <label>{{localize "NR.Style.Kind"}}</label><select name="system.kind">{{selectOptions options.styleSkillKinds selected=system.kind}}</select>
+    <label>GP / EP</label><span><input type="number" name="system.gp" value="{{system.gp}}"> / <input type="number" name="system.ep" value="{{system.ep}}"></span>
+    <label>{{localize "NR.Style.Prerequisites"}}</label><input type="text" name="system.prerequisites" value="{{system.prerequisites}}">
+    {{#if (eq system.kind "kampfkunst")}}<label>{{localize "NR.Style.Level"}}</label><input type="number" name="system.level" value="{{system.level}}" min="0" max="3">{{/if}}
+  </div>
+  {{#if (eq system.kind "kampfkunst")}}
+  <h4>{{localize "NR.Style.Levels"}} <a data-action="addLevel"><i class="fa-solid fa-plus"></i></a></h4>
+  <ol class="nr-list nr-levels">
+    {{#each system.levels as |l i|}}
+    <li class="nr-level {{#if (lt i @root.system.level)}}active{{/if}}">
+      <strong>{{localize "NR.Style.Level"}} {{nrAdd i 1}}</strong>
+      <input type="text" name="system.levels.{{i}}.prerequisites" value="{{l.prerequisites}}" placeholder="{{localize 'NR.Style.Prerequisites'}}">
+      <textarea name="system.levels.{{i}}.effect" rows="2">{{l.effect}}</textarea>
+      <a data-action="removeLevel" data-index="{{i}}"><i class="fa-solid fa-trash"></i></a>
+    </li>
+    {{/each}}
+  </ol>
+  {{/if}}
+{{/if}}
+
+{{#if isType.species}}
+  <div class="nr-form-grid">
+    <label>GP</label><input type="number" name="system.gp" value="{{system.gp}}">
+    <label>{{localize "NR.Species.TP"}}</label><input type="number" name="system.tp" value="{{system.tp}}">
+    <label>{{localize "NR.Sheet.Infection"}}</label><span><input type="number" name="system.irDice" value="{{system.irDice}}">W6 + <input type="number" name="system.irPoints" value="{{system.irPoints}}"></span>
+    <label>{{localize "NR.Special.adrenalin"}}</label><input type="number" name="system.adrenalin" value="{{system.adrenalin}}">
+    <label>{{localize "NR.Status.Psyche"}}</label><input type="number" name="system.psyche" value="{{system.psyche}}">
+    <label>{{localize "NR.Status.Organism"}}</label><input type="number" name="system.organismus" value="{{system.organismus}}">
+    <label>{{localize "NR.Species.Psi"}}</label><input type="checkbox" name="system.psi" {{checked system.psi}}>
+    <label>{{localize "NR.Species.FreePsi"}}</label><input type="number" name="system.freePsi" value="{{system.freePsi}}">
+    <label>{{localize "NR.Species.BioGp"}}</label><input type="number" name="system.bioGp" value="{{system.bioGp}}">
+    <label>{{localize "NR.Species.Identification"}}</label><input type="text" name="system.identification" value="{{system.identification}}">
+    <label>{{localize "NR.Species.Special"}}</label><textarea name="system.special" rows="3">{{system.special}}</textarea>
+  </div>
+  <p class="nr-hint">{{localize "NR.Species.Hint"}}</p>
+{{/if}}
+
+{{#if isType.abnormality}}
+  <div class="nr-form-grid">
+    <label>GP</label><input type="number" name="system.gp" value="{{system.gp}}">
+    <label>{{localize "NR.Abnormality.Variant"}}</label><input type="text" name="system.variant" value="{{system.variant}}">
+    <label>{{localize "NR.Abnormality.Heritability"}}</label><input type="text" name="system.heritability" value="{{system.heritability}}">
+    <label>{{localize "NR.Abnormality.Intensity"}}</label><input type="text" name="system.intensity" value="{{system.intensity}}">
+    <label>{{localize "NR.Abnormality.Illegal"}}</label><input type="checkbox" name="system.illegal" {{checked system.illegal}}>
+  </div>
+{{/if}}
+
+{{#if isType.bioTrait}}
+  <div class="nr-form-grid">
+    <label>{{localize "NR.Bio.Kind"}}</label><select name="system.kind">{{selectOptions options.bioTraitKinds selected=system.kind}}</select>
+    <label>GP</label><span><input type="number" name="system.gp" value="{{system.gp}}"> <label><input type="checkbox" name="system.perLevel" {{checked system.perLevel}}> {{localize "NR.Bio.PerLevel"}}</label></span>
+    <label>{{localize "NR.Bio.Level"}}</label><span><input type="number" name="system.level" value="{{system.level}}"> / max <input type="number" name="system.maxLevel" value="{{system.maxLevel}}"></span>
+    <label>{{localize "NR.Bio.Covers"}}</label><input type="number" name="system.covers" value="{{system.covers}}">
+    <label>{{localize "NR.Bio.Conspicuity"}}</label><input type="text" name="system.conspicuity" value="{{system.conspicuity}}">
+    <label>{{localize "NR.Bio.Charges"}}</label><span><input type="number" name="system.charges.value" value="{{system.charges.value}}"> / <input type="number" name="system.charges.max" value="{{system.charges.max}}"></span>
+  </div>
+{{/if}}
+
+{{#if isType.advantage}}
+  <div class="nr-form-grid">
+    <label>{{localize "NR.Advantage.Kind"}}</label><select name="system.kind">{{selectOptions options.advantageKinds selected=system.kind}}</select>
+    <label>{{localize "NR.Advantage.Markers"}}</label><input type="number" name="system.markers" value="{{system.markers}}">
+    <label>{{localize "NR.Advantage.Level"}}</label><input type="number" name="system.level" value="{{system.level}}" min="1">
+  </div>
+{{/if}}
+
+{{#if isType.trait}}
+  <div class="nr-form-grid">
+    <label>{{localize "NR.Trait.Kind"}}</label><select name="system.kind">{{selectOptions options.traitKinds selected=system.kind}}</select>
+    <label>{{localize "NR.Trait.PsycheRange"}}</label><input type="text" name="system.psycheRange" value="{{system.psycheRange}}">
+    <label>{{localize "NR.Trait.Bonus"}}</label><input type="text" name="system.bonus" value="{{system.bonus}}">
+  </div>
+  <p class="nr-hint">{{localize "NR.Trait.Hint"}}</p>
+{{/if}}
+
+{{#if isType.augment}}
+  <div class="nr-form-grid">
+    <label>{{localize "NR.Augment.Kind"}}</label><select name="system.kind">{{selectOptions options.augmentKinds selected=system.kind}}</select>
+    <label>{{localize "NR.Augment.Zone"}}</label><select name="system.zone">{{selectOptions options.zones selected=system.zone}}</select>
+    <label>{{localize "NR.Augment.Installed"}}</label><input type="checkbox" name="system.installed" {{checked system.installed}}>
+    <label>{{localize "NR.Augment.OrgLoss"}}</label><input type="number" name="system.orgLoss" value="{{system.orgLoss}}">
+    <label>{{localize "NR.Augment.PsycheLoss"}}</label><input type="number" name="system.psycheLoss" value="{{system.psycheLoss}}">
+    <label>{{localize "NR.Augment.CapacityCost"}}</label><input type="number" name="system.capacityCost" value="{{system.capacityCost}}" step="0.25">
+    {{#if (eq system.kind "robotik")}}
+    <label>{{localize "NR.Augment.Model"}}</label><input type="text" name="system.model" value="{{system.model}}">
+    <label>{{localize "NR.Augment.RoboticValues"}}</label>
+    <span class="nr-inline-checks">
+      GE <input type="number" name="system.robotic.ge" value="{{system.robotic.ge}}">
+      ST <input type="number" name="system.robotic.st" value="{{system.robotic.st}}">
+      KO <input type="number" name="system.robotic.ko" value="{{system.robotic.ko}}">
+      BE <input type="number" name="system.robotic.be" value="{{system.robotic.be}}">
+      WA <input type="number" name="system.robotic.wa" value="{{system.robotic.wa}}">
+    </span>
+    <label>{{localize "NR.Augment.Capacity"}} / TP</label><span><input type="number" name="system.robotic.capacity" value="{{system.robotic.capacity}}" step="0.25"> / <input type="number" name="system.robotic.tp" value="{{system.robotic.tp}}"></span>
+    <label>{{localize "NR.Augment.Armor"}}</label><span><input type="number" name="system.armor" value="{{system.armor}}"> <select name="system.mk">{{selectOptions options.mk selected=system.mk}}</select></span>
+    {{/if}}
+  </div>
+  {{#if (eq system.kind "robotik")}}<p class="nr-hint">{{localize "NR.Augment.RoboticHint"}}</p>{{/if}}
+{{/if}}
+
+{{#if (or isType.weapon isType.ammo isType.armor isType.gear isType.augment)}}
+  <h4 class="nr-section-title">{{localize "NR.Section.Physical"}}</h4>
+  <div class="nr-form-grid">
+    <label>{{localize "NR.Physical.Quantity"}}</label><input type="number" name="system.quantity" value="{{system.quantity}}">
+    <label>{{localize "NR.Physical.Weight"}}</label><input type="number" name="system.weight" value="{{system.weight}}" step="0.01">
+    <label>TS</label><select name="system.ts">{{selectOptions options.ts selected=system.ts}}</select>
+    <label>{{localize "NR.Sheet.Price"}}</label><input type="number" name="system.price" value="{{system.price}}">
+    <label>{{localize "NR.Physical.Taped"}}</label><input type="checkbox" name="system.taped" {{checked system.taped}}>
+    <label>{{localize "NR.Sheet.Equip"}}</label><input type="checkbox" name="system.equipped" {{checked system.equipped}}>
+  </div>
+{{/if}}
+</section>

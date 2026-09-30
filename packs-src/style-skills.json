@@ -1,0 +1,2140 @@
+[
+ {
+  "_id": "yc7yzzLZj3cEzV4z",
+  "_key": "!items!yc7yzzLZj3cEzV4z",
+  "name": "Aim for the Heart",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "expert",
+   "gp": 7,
+   "ep": 15,
+   "level": 1,
+   "prerequisites": "Fahrzeug-Fertigkeit 4; WA 3",
+   "levels": [],
+   "modifiers": [],
+   "description": "<p>Gezielte Angriffe dürfen auch nicht sichtbare vitale Stellen treffen; der −2W-Malus für gezielte Fahrzeugangriffe entfällt. <em class=\"nr-ref\">(NoReturn 2E, S. 179)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 1000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "povLa6A67NzUzhYd",
+  "_key": "!items!povLa6A67NzUzhYd",
+  "name": "Akimbo",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "expert",
+   "gp": 7,
+   "ep": 15,
+   "level": 1,
+   "prerequisites": "Schießen 5; WA 3",
+   "levels": [],
+   "modifiers": [],
+   "description": "<p>Mehrfachangriff mit zwei Fernkampfwaffen in einem Angriffswurf. <em class=\"nr-ref\">(NoReturn 2E, S. 179)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 2000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "7s1pMGll4gSMZ6kQ",
+  "_key": "!items!7s1pMGll4gSMZ6kQ",
+  "name": "Anonymous",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "expert",
+   "gp": 7,
+   "ep": 15,
+   "level": 1,
+   "prerequisites": "Computer 4; HA 4, WI 5",
+   "levels": [],
+   "modifiers": [],
+   "description": "<p>Computeraktionen sind nicht zurückverfolgbar; Seiteneffekte ohne Probe vermieden (Sicherheitsbarrieren weiterhin). <em class=\"nr-ref\">(NoReturn 2E, S. 179)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 3000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "o7F2zOh0VANhbiEs",
+  "_key": "!items!o7F2zOh0VANhbiEs",
+  "name": "Beastmaster",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "expert",
+   "gp": 5,
+   "ep": 10,
+   "level": 1,
+   "prerequisites": "Dressieren 3; CH 4",
+   "levels": [],
+   "modifiers": [],
+   "description": "<p>Kreaturen greifen zuletzt an; zwei Dressieren-Proben weniger nötig. Unkontrollierte CTs reagieren positiv. <em class=\"nr-ref\">(NoReturn 2E, S. 180)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 4000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "JamdZ8EPOxYsicLw",
+  "_key": "!items!JamdZ8EPOxYsicLw",
+  "name": "Billy the Kid",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "expert",
+   "gp": 5,
+   "ep": 10,
+   "level": 1,
+   "prerequisites": "Schießen 4; GE 4",
+   "levels": [],
+   "modifiers": [],
+   "description": "<p>Einhändige Feuerwaffen in einer Aktion ziehen und abfeuern. <em class=\"nr-ref\">(NoReturn 2E, S. 180)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 5000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "ClC8RbOHiLDVFkWf",
+  "_key": "!items!ClC8RbOHiLDVFkWf",
+  "name": "Blademaster",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "expert",
+   "gp": 7,
+   "ep": 15,
+   "level": 1,
+   "prerequisites": "Reaktion 6, Waffenkampf 6; GE, BE, WA 4",
+   "levels": [],
+   "modifiers": [],
+   "description": "<p>Parade gegen Fernkampf mit Klingenwaffe ≥ 30 cm (mit Nachteil −2W). <em class=\"nr-ref\">(NoReturn 2E, S. 180)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 6000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "Sye2x7GFylDJINNb",
+  "_key": "!items!Sye2x7GFylDJINNb",
+  "name": "CrapGyver",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "expert",
+   "gp": 7,
+   "ep": 15,
+   "level": 1,
+   "prerequisites": "3 Handwerk-Fertigkeiten auf 4",
+   "levels": [],
+   "modifiers": [],
+   "description": "<p>Crafting-Dauer −50 % (außer Computer). <em class=\"nr-ref\">(NoReturn 2E, S. 180)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 7000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "ywWcUDhgBihgKqUl",
+  "_key": "!items!ywWcUDhgBihgKqUl",
+  "name": "Crash-Override",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "expert",
+   "gp": 5,
+   "ep": 10,
+   "level": 1,
+   "prerequisites": "Computer 5; HA 4",
+   "levels": [],
+   "modifiers": [],
+   "description": "<p>Hacken/Programmieren als Crafting mit −50 % Dauer. <em class=\"nr-ref\">(NoReturn 2E, S. 180)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 8000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "KiznTB4488SJyF1G",
+  "_key": "!items!KiznTB4488SJyF1G",
+  "name": "Déjà-vu",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "expert",
+   "gp": 7,
+   "ep": 15,
+   "level": 1,
+   "prerequisites": "PSI-begabt, Willenskraft 5; WA 5",
+   "levels": [],
+   "modifiers": [],
+   "description": "<p>Einmal je Sitzung ein Hinweis der SL auf kommende Ereignisse. <em class=\"nr-ref\">(NoReturn 2E, S. 181)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 9000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "RGz0P0Ef7au0BlUO",
+  "_key": "!items!RGz0P0Ef7au0BlUO",
+  "name": "Der Doktor",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "expert",
+   "gp": 7,
+   "ep": 15,
+   "level": 1,
+   "prerequisites": "Medizin 4; HA 4, WI 4",
+   "levels": [],
+   "modifiers": [],
+   "description": "<p>Behandlung (WI + Medizin) gibt temporäre Bonus- (4 h) oder Maluswürfel (12 h) wie Inspirieren, alternativ Adrenalin auffüllen (ca. 1 h). <em class=\"nr-ref\">(NoReturn 2E, S. 181)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 10000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "XzmKuje7Y397iprQ",
+  "_key": "!items!XzmKuje7Y397iprQ",
+  "name": "Drift King",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "expert",
+   "gp": 5,
+   "ep": 10,
+   "level": 1,
+   "prerequisites": "Bodenfahrzeuge 4; GE 4",
+   "levels": [],
+   "modifiers": [],
+   "description": "<p>Stuntproben +10 Punkte. <em class=\"nr-ref\">(NoReturn 2E, S. 181)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 11000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "e1wYyuCy0n9otgfA",
+  "_key": "!items!e1wYyuCy0n9otgfA",
+  "name": "Dual Wielding",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "expert",
+   "gp": 7,
+   "ep": 15,
+   "level": 1,
+   "prerequisites": "Waffenkampf 5; WA 3",
+   "levels": [],
+   "modifiers": [],
+   "description": "<p>Mehrfachangriff mit zwei Nahkampfwaffen in einem Angriffswurf. <em class=\"nr-ref\">(NoReturn 2E, S. 181)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 12000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "6NBYrAxYrZuGGeAv",
+  "_key": "!items!6NBYrAxYrZuGGeAv",
+  "name": "Fast Talk",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "expert",
+   "gp": 7,
+   "ep": 15,
+   "level": 1,
+   "prerequisites": "Überreden 5; CH 5",
+   "levels": [],
+   "modifiers": [],
+   "description": "<p>Je Aktion +2W auf die folgende Sozialfertigkeit, bis zu dreimal kumulativ. <em class=\"nr-ref\">(NoReturn 2E, S. 181)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 13000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "4IqTTBJA2qBtLeP4",
+  "_key": "!items!4IqTTBJA2qBtLeP4",
+  "name": "Fist of Rage",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "expert",
+   "gp": 7,
+   "ep": 15,
+   "level": 1,
+   "prerequisites": "Nahkampf 4; BE 4, WA 4",
+   "levels": [],
+   "modifiers": [],
+   "description": "<p>Mehrfachangriff mit zwei waffenlosen Extremitäten. <em class=\"nr-ref\">(NoReturn 2E, S. 181)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 14000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "RqTRW49Ji1lKvWgm",
+  "_key": "!items!RqTRW49Ji1lKvWgm",
+  "name": "Goldene Zunge",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "expert",
+   "gp": 7,
+   "ep": 15,
+   "level": 1,
+   "prerequisites": "Inspirieren 4, Überreden 4; CH 5",
+   "levels": [],
+   "modifiers": [],
+   "description": "<p>Soziale Proben auch in unpassenden Situationen; das angesprochene Ziel muss die Interaktion zulassen. <em class=\"nr-ref\">(NoReturn 2E, S. 181)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 15000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "bLfXBvnZrIP5Wb2B",
+  "_key": "!items!bLfXBvnZrIP5Wb2B",
+  "name": "Linguist",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "expert",
+   "gp": 7,
+   "ep": 15,
+   "level": 1,
+   "prerequisites": "WI 4; drei Sprachen auf 4",
+   "levels": [],
+   "modifiers": [],
+   "description": "<p>Drei zusätzliche Sprachen auf Stufe 3 kostenlos. <em class=\"nr-ref\">(NoReturn 2E, S. 181)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 16000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "QXtpi6qOkC9wExwB",
+  "_key": "!items!QXtpi6qOkC9wExwB",
+  "name": "Meditation",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "expert",
+   "gp": 5,
+   "ep": 10,
+   "level": 1,
+   "prerequisites": "Willenskraft 6; WI 4",
+   "levels": [],
+   "modifiers": [
+    {
+     "target": "meditation",
+     "value": 1
+    }
+   ],
+   "description": "<p>Sonderattribut Meditation (Stufe 1, bei Erschaffung 5 GP je Stufe bis 5): wie Adrenalin, auch außerhalb von Stress; nicht kombinierbar. <em class=\"nr-ref\">(NoReturn 2E, S. 182)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 17000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "1LyQZYHQyrBVvha4",
+  "_key": "!items!1LyQZYHQyrBVvha4",
+  "name": "Memorum [PSI-Kraft]",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "expert",
+   "gp": 7,
+   "ep": 15,
+   "level": 1,
+   "prerequisites": "PSI-Kraft 6; Willenskraft 5",
+   "levels": [],
+   "modifiers": [],
+   "description": "<p>Haltungskosten aller Apps der gewählten Kraft −1 (min. 0). Je Kraft einmal. <em class=\"nr-ref\">(NoReturn 2E, S. 182)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 18000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "LrpI8wUU3gLqN94f",
+  "_key": "!items!LrpI8wUU3gLqN94f",
+  "name": "Metamorphose [Element]",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "expert",
+   "gp": 7,
+   "ep": 15,
+   "level": 1,
+   "prerequisites": "Pyro-, Cryo- oder Elektrokinese 6; Willenskraft 6; WI 4",
+   "levels": [],
+   "modifiers": [],
+   "description": "<p>Als Aktion Körper mit dem Element überziehen: 5 Schaden bei Berührung, immun gegen das Element, −1W körperlich, +1 KS für passende Apps. <em class=\"nr-ref\">(NoReturn 2E, S. 182)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 19000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "kjiZr5jSpDuO90RT",
+  "_key": "!items!kjiZr5jSpDuO90RT",
+  "name": "Mixology",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "expert",
+   "gp": 7,
+   "ep": 15,
+   "level": 1,
+   "prerequisites": "GE 4, HA 4, WI 3",
+   "levels": [],
+   "modifiers": [],
+   "description": "<p>Fertigkeit „Ambrosia“ (HA): Getränke mit Inspirieren-Bonus für zwei Stunden. <em class=\"nr-ref\">(NoReturn 2E, S. 182)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 20000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "4PYaxO61D20dFejV",
+  "_key": "!items!4PYaxO61D20dFejV",
+  "name": "Multiple Wielding",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "expert",
+   "gp": 7,
+   "ep": 15,
+   "level": 1,
+   "prerequisites": "Dual Wielding; Mehrgliedrig (Arme)",
+   "levels": [],
+   "modifiers": [],
+   "description": "<p>Mehrfachangriff mit vier Nahkampfwaffen. <em class=\"nr-ref\">(NoReturn 2E, S. 182)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 21000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "Ob9moN9T8ycONfWS",
+  "_key": "!items!Ob9moN9T8ycONfWS",
+  "name": "Neo",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "expert",
+   "gp": 5,
+   "ep": 10,
+   "level": 1,
+   "prerequisites": "Computer 5; HA 3, WI 4",
+   "levels": [],
+   "modifiers": [],
+   "description": "<p>Erfährt vor Computerproben Risiken und Mindestwurf und kann sich entscheiden. <em class=\"nr-ref\">(NoReturn 2E, S. 182)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 22000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "eJurhGiZrYRvpZIq",
+  "_key": "!items!eJurhGiZrYRvpZIq",
+  "name": "Pet Pal",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "expert",
+   "gp": 7,
+   "ep": 15,
+   "level": 1,
+   "prerequisites": "Dressieren 3, Menschenkenntnis 2, Naturkunde 4; WI 4",
+   "levels": [],
+   "modifiers": [],
+   "description": "<p>Versteht animalische Sprache in Grenzen. <em class=\"nr-ref\">(NoReturn 2E, S. 182)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 23000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "AdvUAdd4eVs4eCfZ",
+  "_key": "!items!AdvUAdd4eVs4eCfZ",
+  "name": "Power Nap",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "expert",
+   "gp": 5,
+   "ep": 10,
+   "level": 1,
+   "prerequisites": "Ausdauer 3, Willenskraft 3; KO 3",
+   "levels": [],
+   "modifiers": [],
+   "description": "<p>Halbstündiges Nickerchen erholt vollständig (max. 4 Tage am Stück); füllt den Regenerationspool mit Nahrung. <em class=\"nr-ref\">(NoReturn 2E, S. 183)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 24000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "FPYr5qMavmg3QGz9",
+  "_key": "!items!FPYr5qMavmg3QGz9",
+  "name": "Parkour",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "expert",
+   "gp": 7,
+   "ep": 15,
+   "level": 1,
+   "prerequisites": "Akrobatik 3, Klettern 3, Springen 3; BE 3",
+   "levels": [],
+   "modifiers": [],
+   "description": "<p>Klettern- und Springen-Proben unter MW 30 gelingen automatisch; beim Sprungschaden Springen addieren. <em class=\"nr-ref\">(NoReturn 2E, S. 183)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 25000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "dFMUKZ7BnNztA1JE",
+  "_key": "!items!dFMUKZ7BnNztA1JE",
+  "name": "Psionische Vielfältigkeit",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "expert",
+   "gp": 7,
+   "ep": 15,
+   "level": 1,
+   "prerequisites": "3 PSI-Kräfte auf 3",
+   "levels": [],
+   "modifiers": [],
+   "description": "<p>Weitere Ziele einer App möglich, je Ziel −1 effektive KS. <em class=\"nr-ref\">(NoReturn 2E, S. 183)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 26000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "aS0NDXjdWGV4ytpu",
+  "_key": "!items!aS0NDXjdWGV4ytpu",
+  "name": "Quadruple Akimbo",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "expert",
+   "gp": 7,
+   "ep": 15,
+   "level": 1,
+   "prerequisites": "Akimbo; Mehrgliedrig (Arme)",
+   "levels": [],
+   "modifiers": [],
+   "description": "<p>Mehrfachangriff mit vier Fernkampfwaffen. <em class=\"nr-ref\">(NoReturn 2E, S. 183)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 27000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "fy6JnwzUYbbC0AWc",
+  "_key": "!items!fy6JnwzUYbbC0AWc",
+  "name": "Rage of Gods",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "expert",
+   "gp": 5,
+   "ep": 10,
+   "level": 1,
+   "prerequisites": "Adrenalin 3; Demigod",
+   "levels": [],
+   "modifiers": [],
+   "description": "<p>Adrenalin auf Stärke(-Fertigkeiten) gibt zusätzlich +3W. <em class=\"nr-ref\">(NoReturn 2E, S. 183)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 28000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "tkrDDW5XILC9qF2Y",
+  "_key": "!items!tkrDDW5XILC9qF2Y",
+  "name": "Recoil Mastery",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "expert",
+   "gp": 5,
+   "ep": 10,
+   "level": 1,
+   "prerequisites": "Schießen 4; GE 4, ST 4",
+   "levels": [],
+   "modifiers": [],
+   "description": "<p>Rückstoßdämpfung +2 (wird automatisch berücksichtigt). <em class=\"nr-ref\">(NoReturn 2E, S. 183)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 29000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "rxVOE2Z56wWuDkGv",
+  "_key": "!items!rxVOE2Z56wWuDkGv",
+  "name": "Rüttelflug",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "expert",
+   "gp": 5,
+   "ep": 10,
+   "level": 1,
+   "prerequisites": "Flügel; Ausdauer 4",
+   "levels": [],
+   "modifiers": [],
+   "description": "<p>Fliegen auf der Stelle; Ausdauer-Probe = Dauer in KR. <em class=\"nr-ref\">(NoReturn 2E, S. 183)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 30000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "5bupbVJGndM6UECi",
+  "_key": "!items!5bupbVJGndM6UECi",
+  "name": "Shield Master",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "expert",
+   "gp": 7,
+   "ep": 15,
+   "level": 1,
+   "prerequisites": "Blocken 4; BE 3, WA 3",
+   "levels": [],
+   "modifiers": [],
+   "description": "<p>Mehrfachangriffe mit einer Defensivaktion blocken (ohne Adrenalin). <em class=\"nr-ref\">(NoReturn 2E, S. 183)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 31000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "BtvQCbyDXsmJkINq",
+  "_key": "!items!BtvQCbyDXsmJkINq",
+  "name": "Sollbruchstelle",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "expert",
+   "gp": 5,
+   "ep": 10,
+   "level": 1,
+   "prerequisites": "Bodenfahrzeuge 4; WI 3",
+   "levels": [],
+   "modifiers": [],
+   "description": "<p>Schaden am Fahrzeug senkt dessen Manöverwert um 1 ohne vitalen Treffer. <em class=\"nr-ref\">(NoReturn 2E, S. 183)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 32000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "PNnontFSscdbHf3v",
+  "_key": "!items!PNnontFSscdbHf3v",
+  "name": "Split",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "expert",
+   "gp": 10,
+   "ep": 20,
+   "level": 1,
+   "prerequisites": "Passend zum Hintergrund",
+   "levels": [],
+   "modifiers": [],
+   "description": "<p>Weitere Persönlichkeit mit eigenen Fertigkeiten, PSI und Merkmalen (mehrfach wählbar). <em class=\"nr-ref\">(NoReturn 2E, S. 184)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 33000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "QIqb08zC0a2iOa4g",
+  "_key": "!items!QIqb08zC0a2iOa4g",
+  "name": "Sterne-Küche",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "expert",
+   "gp": 7,
+   "ep": 15,
+   "level": 1,
+   "prerequisites": "GE 4, HA 4, WI 3",
+   "levels": [],
+   "modifiers": [],
+   "description": "<p>Fertigkeit „Kochen“ (HA): Speisen mit Inspirieren-Bonus für zwei Stunden. <em class=\"nr-ref\">(NoReturn 2E, S. 185)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 34000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "Ak8xZX0aETuIx0YV",
+  "_key": "!items!Ak8xZX0aETuIx0YV",
+  "name": "Storm of Fists",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "expert",
+   "gp": 7,
+   "ep": 15,
+   "level": 1,
+   "prerequisites": "Fist of Rage; Mehrgliedrig (Arme)",
+   "levels": [],
+   "modifiers": [],
+   "description": "<p>Mehrfachangriff mit vier waffenlosen Extremitäten. <em class=\"nr-ref\">(NoReturn 2E, S. 185)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 35000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "FwllOlENYEs4QS06",
+  "_key": "!items!FwllOlENYEs4QS06",
+  "name": "Trickster",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "expert",
+   "gp": 5,
+   "ep": 10,
+   "level": 1,
+   "prerequisites": "Taschendiebstahl 3, Heimlichkeit 3; GE 4, WA 3",
+   "levels": [],
+   "modifiers": [],
+   "description": "<p>Taschenspielertricks (MW 15); Entfesseln, Verstecken oder Taschendiebstahl einmal je KR ohne Aktion. <em class=\"nr-ref\">(NoReturn 2E, S. 185)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 36000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "sJIHi6HdrKhAqKpg",
+  "_key": "!items!sJIHi6HdrKhAqKpg",
+  "name": "Trigger Finger",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "expert",
+   "gp": 5,
+   "ep": 10,
+   "level": 1,
+   "prerequisites": "Schießen 3; GE 3",
+   "levels": [],
+   "modifiers": [],
+   "description": "<p>Im HM-Modus einen Schuss mehr: +2W Angriff, +2 Rückstoß (Option im Angriffsdialog). <em class=\"nr-ref\">(NoReturn 2E, S. 185)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 37000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "GlK5wYUGGrkwQ6uZ",
+  "_key": "!items!GlK5wYUGGrkwQ6uZ",
+  "name": "Trusty Engineer",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "expert",
+   "gp": 5,
+   "ep": 10,
+   "level": 1,
+   "prerequisites": "HA 3, WI 3",
+   "levels": [],
+   "modifiers": [],
+   "description": "<p>Crafting-Mindestwurf −5 (max. zwei Engineers). <em class=\"nr-ref\">(NoReturn 2E, S. 185)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 38000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "nQtrSI2fHR8ubJ9V",
+  "_key": "!items!nQtrSI2fHR8ubJ9V",
+  "name": "Waffenspezialisierung (Waffenart)",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "expert",
+   "gp": 5,
+   "ep": 10,
+   "level": 1,
+   "prerequisites": "GE 3, BE 3",
+   "levels": [],
+   "modifiers": [],
+   "description": "<p>+1W auf alle Proben mit der Waffenart (auch Schaden). Waffenart im Namen in Klammern angeben, z. B. „Waffenspezialisierung (Pistole)“. <em class=\"nr-ref\">(NoReturn 2E, S. 185)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 39000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "9KQCX54qloqGLbt3",
+  "_key": "!items!9KQCX54qloqGLbt3",
+  "name": "Aikido",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "kampfkunst",
+   "gp": 5,
+   "ep": 10,
+   "level": 1,
+   "prerequisites": "Nahkampf 2, Reaktion 4",
+   "levels": [
+    {
+     "prerequisites": "Nahkampf 2, Reaktion 4",
+     "effect": "Paraden mit Nahkampf."
+    },
+    {
+     "prerequisites": "Ausweichen 4; BE 4",
+     "effect": "Immer abrollen: Sturzschaden −20."
+    },
+    {
+     "prerequisites": "Nahkampf 5; ST 3",
+     "effect": "Erfolgreiche Parade: ST+10 an zufälliger Zone des Angreifers."
+    }
+   ],
+   "modifiers": [],
+   "description": "<p>Defensive japanische Kampfkunst. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 40000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "qtAqccdsbLj7K6h0",
+  "_key": "!items!qtAqccdsbLj7K6h0",
+  "name": "Ba-Kai-Do",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "kampfkunst",
+   "gp": 5,
+   "ep": 10,
+   "level": 1,
+   "prerequisites": "Nahkampf 4; BE 3",
+   "levels": [
+    {
+     "prerequisites": "Nahkampf 4; BE 3",
+     "effect": "Beißen ohne Kampfnachteil."
+    },
+    {
+     "prerequisites": "ST 5, KO 5",
+     "effect": "Krallenangriffe +3W."
+    },
+    {
+     "prerequisites": "ST 7, KO 7",
+     "effect": "Nahkampfschaden +5W."
+    }
+   ],
+   "modifiers": [],
+   "description": "<p>Tierreich-Kampfkunst. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 41000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "c4EQWcPk4672ykYh",
+  "_key": "!items!c4EQWcPk4672ykYh",
+  "name": "Boxen",
+  "type": "styleSkill",
+  "img": "icons/weapons/fist/boxing-gloves.webp",
+  "system": {
+   "kind": "kampfkunst",
+   "gp": 5,
+   "ep": 10,
+   "level": 1,
+   "prerequisites": "Nahkampf 2, Ausdauer 3; ST 3",
+   "levels": [
+    {
+     "prerequisites": "Nahkampf 2, Ausdauer 3; ST 3",
+     "effect": "Faustschaden +3W."
+    },
+    {
+     "prerequisites": "Ausdauer 4, Nahkampf 3; BE 3",
+     "effect": "Waffenlos Blocken +3W."
+    },
+    {
+     "prerequisites": "Nahkampf 4; BE 4, ST 4",
+     "effect": "Faust-Treffer = zwei Treffer an zwei Zonen."
+    }
+   ],
+   "modifiers": [],
+   "description": "<p>Klassischer Faustkampf. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 42000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "UnV0Zt1N4pcieAbq",
+  "_key": "!items!UnV0Zt1N4pcieAbq",
+  "name": "Capoeira",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "kampfkunst",
+   "gp": 5,
+   "ep": 10,
+   "level": 1,
+   "prerequisites": "Akrobatik 3; BE 3",
+   "levels": [
+    {
+     "prerequisites": "Akrobatik 3; BE 3",
+     "effect": "Ausweichen im Nahkampf +3W."
+    },
+    {
+     "prerequisites": "Akrobatik 4, Nahkampf 3; ST 3",
+     "effect": "Beinschaden +3W."
+    },
+    {
+     "prerequisites": "Akrobatik 5, Nahkampf 4; ST 3",
+     "effect": "Beinangriffe +3W."
+    }
+   ],
+   "modifiers": [],
+   "description": "<p>Brasilianischer Kampftanz. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 43000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "nTA769cHeuOZnJ4E",
+  "_key": "!items!nTA769cHeuOZnJ4E",
+  "name": "Escrima",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "kampfkunst",
+   "gp": 5,
+   "ep": 10,
+   "level": 1,
+   "prerequisites": "Nahkampf 2, Waffenkampf 2; BE 3, WA 3",
+   "levels": [
+    {
+     "prerequisites": "Nahkampf 2, Waffenkampf 2; BE 3, WA 3",
+     "effect": "Paraden mit Nahkampf oder Waffenkampf."
+    },
+    {
+     "prerequisites": "Nahkampf/Waffenkampf 3, Reaktion 4",
+     "effect": "Nahkampf und Waffenkampf austauschbar."
+    },
+    {
+     "prerequisites": "Nahkampf/Waffenkampf 5",
+     "effect": "Mehrfachangriffe +3W Angriff und Schaden."
+    }
+   ],
+   "modifiers": [],
+   "description": "<p>Philippinische Stock- und waffenlose Kunst. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 44000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "B0PTTXAKdkmjLvJz",
+  "_key": "!items!B0PTTXAKdkmjLvJz",
+  "name": "Gun-Fu",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "kampfkunst",
+   "gp": 5,
+   "ep": 10,
+   "level": 1,
+   "prerequisites": "Nahkampf 3, Schießen 3; WA 4",
+   "levels": [
+    {
+     "prerequisites": "Nahkampf 3, Schießen 3; WA 4",
+     "effect": "Parade mit Nahkampf auch mit Feuerwaffen."
+    },
+    {
+     "prerequisites": "Nahkampf oder Schießen 4; BE 3",
+     "effect": "Einhändige Waffen im Nahkampf mit Nahkampf (nur HM), kein Nachteil."
+    },
+    {
+     "prerequisites": "Nahkampf oder Schießen 6",
+     "effect": "Mehrfachangriffe im Nahkampf +3W; kompatibel mit Akimbo."
+    }
+   ],
+   "modifiers": [],
+   "description": "<p>Feuerwaffen als Verlängerung der Arme. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 45000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "3tNpHsZPLinEKmYf",
+  "_key": "!items!3tNpHsZPLinEKmYf",
+  "name": "Jiu Jitsu",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "kampfkunst",
+   "gp": 5,
+   "ep": 10,
+   "level": 1,
+   "prerequisites": "Nahkampf 2; BE 3, WA 3",
+   "levels": [
+    {
+     "prerequisites": "Nahkampf 2; BE 3, WA 3",
+     "effect": "Paraden mit Nahkampf."
+    },
+    {
+     "prerequisites": "Nahkampf 3; BE 4",
+     "effect": "Nahkampf +2W."
+    },
+    {
+     "prerequisites": "Nahkampf 4; ST 4",
+     "effect": "Waffenloser Schaden +2W."
+    }
+   ],
+   "modifiers": [],
+   "description": "<p>Fließende waffenlose Kunst der Samurai. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 46000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "z1I01b9hPR2fJO7G",
+  "_key": "!items!z1I01b9hPR2fJO7G",
+  "name": "Karate",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "kampfkunst",
+   "gp": 5,
+   "ep": 10,
+   "level": 1,
+   "prerequisites": "Blocken 2; KO 3",
+   "levels": [
+    {
+     "prerequisites": "Blocken 2; KO 3",
+     "effect": "Waffenlos Blocken +2W."
+    },
+    {
+     "prerequisites": "Nahkampf 3; KO 4",
+     "effect": "Nahkampf +2W."
+    },
+    {
+     "prerequisites": "Nahkampf 5; ST 4",
+     "effect": "Waffenloser Schaden +4W."
+    }
+   ],
+   "modifiers": [],
+   "description": "<p>Traditioneller unbewaffneter Kampf. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 47000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "9YVvOcfgEwmEC82G",
+  "_key": "!items!9YVvOcfgEwmEC82G",
+  "name": "Kenjutsu",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "kampfkunst",
+   "gp": 5,
+   "ep": 10,
+   "level": 1,
+   "prerequisites": "Waffenkampf 3; BE 4",
+   "levels": [
+    {
+     "prerequisites": "Waffenkampf 3; BE 4",
+     "effect": "Schwert ziehen und in derselben Aktion angreifen."
+    },
+    {
+     "prerequisites": "Reaktion 4; WA 3",
+     "effect": "Angriffe und Paraden mit Klingen +2W."
+    },
+    {
+     "prerequisites": "Waffenkampf 5",
+     "effect": "Erfolgreiche Parade verursacht Klingenschaden am Angreifer."
+    }
+   ],
+   "modifiers": [],
+   "description": "<p>Japanische Schwertkunst. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 48000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "2tkx7uuaNtqd5Sd1",
+  "_key": "!items!2tkx7uuaNtqd5Sd1",
+  "name": "Kick-Boxen",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "kampfkunst",
+   "gp": 5,
+   "ep": 10,
+   "level": 1,
+   "prerequisites": "Ausdauer 2, Nahkampf 2; ST 3",
+   "levels": [
+    {
+     "prerequisites": "Ausdauer 2, Nahkampf 2; ST 3",
+     "effect": "Treffer an den Beinen: +3W Widerstand."
+    },
+    {
+     "prerequisites": "Nahkampf 3; KO 4",
+     "effect": "Faust-/Beinangriffe +2W Schaden."
+    },
+    {
+     "prerequisites": "Nahkampf 4; Schmerztoleranz 5",
+     "effect": "Waffenlos Blocken +3W."
+    }
+   ],
+   "modifiers": [],
+   "description": "<p>Schläge und Tritte. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 49000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "DCw6JuprYJ4elSWp",
+  "_key": "!items!DCw6JuprYJ4elSWp",
+  "name": "Krav Maga",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "kampfkunst",
+   "gp": 5,
+   "ep": 10,
+   "level": 1,
+   "prerequisites": "Blocken 2, Nahkampf 2; ST 3",
+   "levels": [
+    {
+     "prerequisites": "Blocken 2, Nahkampf 2; ST 3",
+     "effect": "Nahkampf statt Blocken."
+    },
+    {
+     "prerequisites": "Nahkampf 3; WA 3",
+     "effect": "Knieangriffe +2W Angriff und Schaden."
+    },
+    {
+     "prerequisites": "Nahkampf 3; BE 3",
+     "effect": "Nahkampf +2W."
+    }
+   ],
+   "modifiers": [],
+   "description": "<p>Schnell und tödlich. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 50000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "SaLdrgM3ccqWNYGB",
+  "_key": "!items!SaLdrgM3ccqWNYGB",
+  "name": "Muay Thai",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "kampfkunst",
+   "gp": 5,
+   "ep": 10,
+   "level": 1,
+   "prerequisites": "Nahkampf 3; KO 4",
+   "levels": [
+    {
+     "prerequisites": "Nahkampf 3; KO 4",
+     "effect": "Blocken im Nahkampf +3W."
+    },
+    {
+     "prerequisites": "Akrobatik 2; BE 3, ST 3",
+     "effect": "Ellenbogen/Knie/Schienbein-Schaden +3W."
+    },
+    {
+     "prerequisites": "Akrobatik 4, Nahkampf 5, Springen 4",
+     "effect": "Diese Angriffe +3W."
+    }
+   ],
+   "modifiers": [],
+   "description": "<p>Fäuste, Ellenbogen, Knie, Schienbeine. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 51000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "zSEibAXEFgVM86r2",
+  "_key": "!items!zSEibAXEFgVM86r2",
+  "name": "Ringen",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "kampfkunst",
+   "gp": 5,
+   "ep": 10,
+   "level": 1,
+   "prerequisites": "Nahkampf 3; ST 3",
+   "levels": [
+    {
+     "prerequisites": "Nahkampf 3; ST 3",
+     "effect": "Clinch statt Schaden: Ziel im Nachteil, Befreiung per ST-Vergleich (Aktion)."
+    },
+    {
+     "prerequisites": "Nahkampf 4; BE 3",
+     "effect": "Im Clinch +3W Stärke, selbst unbehindert."
+    },
+    {
+     "prerequisites": "Nahkampf 5; BE 4, ST 4",
+     "effect": "Im Clinch +2W Nahkampf und Schaden."
+    }
+   ],
+   "modifiers": [],
+   "description": "<p>Körperkontakt und Hebel. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 52000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "M48CldqCVGVxHtWg",
+  "_key": "!items!M48CldqCVGVxHtWg",
+  "name": "Sado",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "kampfkunst",
+   "gp": 5,
+   "ep": 10,
+   "level": 1,
+   "prerequisites": "Nahkampf 5; BE 4; Zeugen",
+   "levels": [
+    {
+     "prerequisites": "Nahkampf 5; BE 4; Zeugen",
+     "effect": "Gute Treffer bereits je 5 Punkte Überschuss (automatisch)."
+    },
+    {
+     "prerequisites": "Nahkampf 6, Reaktion 5",
+     "effect": "Nahkampf +3W."
+    },
+    {
+     "prerequisites": "BE 5, ST 5",
+     "effect": "Parade mit Nahkampf; Nahkampfwaffen mit Nahkampf führen."
+    }
+   ],
+   "modifiers": [],
+   "description": "<p>Kampfkunst der „Zeugen“. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 53000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "ErFRMoHq1kRNBWHl",
+  "_key": "!items!ErFRMoHq1kRNBWHl",
+  "name": "Tae-Kwon-Do",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "kampfkunst",
+   "gp": 5,
+   "ep": 10,
+   "level": 1,
+   "prerequisites": "Akrobatik 2, Nahkampf 3; BE 3",
+   "levels": [
+    {
+     "prerequisites": "Akrobatik 2, Nahkampf 3; BE 3",
+     "effect": "Beinangriffe +3W."
+    },
+    {
+     "prerequisites": "Akrobatik 3, Nahkampf 5",
+     "effect": "Beinschaden +3W."
+    },
+    {
+     "prerequisites": "Akrobatik 4; ST 4, BE 4",
+     "effect": "Bein-Treffer = zwei Treffer an zwei Zonen."
+    }
+   ],
+   "modifiers": [],
+   "description": "<p>Koreanische Tritttechniken. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 54000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "C3661K5JzEWPmb8M",
+  "_key": "!items!C3661K5JzEWPmb8M",
+  "name": "ZPC (Zentrum Power Combat)",
+  "type": "styleSkill",
+  "img": "icons/svg/combat.svg",
+  "system": {
+   "kind": "kampfkunst",
+   "gp": 5,
+   "ep": 10,
+   "level": 1,
+   "prerequisites": "Nahkampf 2; ST 4 (Arm & Bein)",
+   "levels": [
+    {
+     "prerequisites": "Nahkampf 2; ST 4 (Arm & Bein)",
+     "effect": "Nahkampf mit linkem Arm/Bein +3W."
+    },
+    {
+     "prerequisites": "Nahkampf 4; BE 4 (Arm & Bein)",
+     "effect": "Schaden mit linkem Arm/Bein +3W."
+    },
+    {
+     "prerequisites": "Reaktion 3; WA 4",
+     "effect": "Paraden mit Nahkampf."
+    }
+   ],
+   "modifiers": [],
+   "description": "<p>Militärische Kampfkunst des Zentrums. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 55000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ }
+]

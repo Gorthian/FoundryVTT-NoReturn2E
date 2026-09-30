@@ -1,0 +1,738 @@
+[
+ {
+  "_id": "MD1yoMegbxUDEorT",
+  "_key": "!items!MD1yoMegbxUDEorT",
+  "name": "Bristol-Schutzweste (leicht)",
+  "type": "armor",
+  "img": "icons/equipment/chest/breastplate-banded-blue.webp",
+  "system": {
+   "rw": 30,
+   "mk": "B",
+   "komfort": 2,
+   "zones": [
+    6,
+    7,
+    8
+   ],
+   "stealth": 0,
+   "coldDice": 0,
+   "ts": 3,
+   "price": 1000,
+   "quantity": 1,
+   "equipped": false,
+   "description": "<p>Leichte Weste mit harten Kevlarplatten, beliebt bei Straßenpunks. <em class=\"nr-ref\">(NoReturn 2E, S. 262)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 1000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "gtoBwmhSPZiInxHk",
+  "_key": "!items!gtoBwmhSPZiInxHk",
+  "name": "Bristol-Schutzweste (schwer)",
+  "type": "armor",
+  "img": "icons/equipment/chest/breastplate-banded-blue.webp",
+  "system": {
+   "rw": 45,
+   "mk": "B",
+   "komfort": 4,
+   "zones": [
+    6,
+    7,
+    8
+   ],
+   "stealth": 0,
+   "coldDice": 0,
+   "ts": 3,
+   "price": 1500,
+   "quantity": 1,
+   "equipped": false,
+   "description": "<p>Schwere Version, 15 kg – Schutz gegen große Kaliber. <em class=\"nr-ref\">(NoReturn 2E, S. 262)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 2000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "iPBZJP63yIAGAHAm",
+  "_key": "!items!iPBZJP63yIAGAHAm",
+  "name": "Kevlargewebe-Schutzweste (leicht)",
+  "type": "armor",
+  "img": "icons/equipment/chest/breastplate-banded-blue.webp",
+  "system": {
+   "rw": 15,
+   "mk": "A",
+   "komfort": 1,
+   "zones": [
+    6,
+    7,
+    8
+   ],
+   "stealth": 0,
+   "coldDice": 0,
+   "ts": 2,
+   "price": 400,
+   "quantity": 1,
+   "equipped": false,
+   "description": "<p>Weich, gegen Splitter und kleine Projektile. <em class=\"nr-ref\">(NoReturn 2E, S. 262)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 3000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "CpQroZI6RRoablZj",
+  "_key": "!items!CpQroZI6RRoablZj",
+  "name": "Kevlargewebe-Schutzweste (schwer)",
+  "type": "armor",
+  "img": "icons/equipment/chest/breastplate-banded-blue.webp",
+  "system": {
+   "rw": 25,
+   "mk": "A",
+   "komfort": 2,
+   "zones": [
+    6,
+    7,
+    8
+   ],
+   "stealth": 0,
+   "coldDice": 0,
+   "ts": 2,
+   "price": 700,
+   "quantity": 1,
+   "equipped": false,
+   "description": "<p>Durchschnittlicher Schutz, unter Kleidung tragbar. <em class=\"nr-ref\">(NoReturn 2E, S. 262)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 4000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "WDwzf5eDTICKNsNs",
+  "_key": "!items!WDwzf5eDTICKNsNs",
+  "name": "Panzerjacke",
+  "type": "armor",
+  "img": "icons/equipment/chest/breastplate-banded-blue.webp",
+  "system": {
+   "rw": 25,
+   "mk": "A",
+   "komfort": 2,
+   "zones": [
+    5,
+    6,
+    7,
+    8,
+    9
+   ],
+   "stealth": 15,
+   "coldDice": 0,
+   "ts": 3,
+   "price": 950,
+   "quantity": 1,
+   "equipped": false,
+   "description": "<p>Gesamter Oberkörper ohne Kopf. Als gepanzert erkennbar mit Wahrnehmung MW 15. <em class=\"nr-ref\">(NoReturn 2E, S. 262)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 5000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "ZgIU8Jzmwh32a6KH",
+  "_key": "!items!ZgIU8Jzmwh32a6KH",
+  "name": "Ballistischer Mantel",
+  "type": "armor",
+  "img": "icons/equipment/chest/breastplate-banded-blue.webp",
+  "system": {
+   "rw": 20,
+   "mk": "A",
+   "komfort": 2,
+   "zones": [
+    2,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+   ],
+   "stealth": 15,
+   "coldDice": 0,
+   "ts": 3,
+   "price": 1100,
+   "quantity": 1,
+   "equipped": false,
+   "description": "<p>Langer Mantel aus gepanzertem Stoff (MW 15 zum Erkennen). <em class=\"nr-ref\">(NoReturn 2E, S. 262)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 6000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "C5JGEUbeVWj4tRr9",
+  "_key": "!items!C5JGEUbeVWj4tRr9",
+  "name": "Gefütterter Mantel",
+  "type": "armor",
+  "img": "icons/equipment/chest/breastplate-banded-blue.webp",
+  "system": {
+   "rw": 25,
+   "mk": "A",
+   "komfort": 2,
+   "zones": [
+    2,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+   ],
+   "stealth": 0,
+   "coldDice": 2,
+   "ts": 2,
+   "price": 1200,
+   "quantity": 1,
+   "equipped": false,
+   "description": "<p>Wetterschutz mit 2 Stufen (2W) Kälteschutz. <em class=\"nr-ref\">(NoReturn 2E, S. 262)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 7000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "ezehrrYZTaP5gEXv",
+  "_key": "!items!ezehrrYZTaP5gEXv",
+  "name": "Ballistische Kleidung",
+  "type": "armor",
+  "img": "icons/equipment/chest/breastplate-banded-blue.webp",
+  "system": {
+   "rw": 20,
+   "mk": "A",
+   "komfort": 2,
+   "zones": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+   ],
+   "stealth": 15,
+   "coldDice": 0,
+   "ts": 3,
+   "price": 1500,
+   "quantity": 1,
+   "equipped": false,
+   "description": "<p>Komplettes Outfit aus kugelsicherem Stoff (MW 15 zum Erkennen). <em class=\"nr-ref\">(NoReturn 2E, S. 262)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 8000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "bPDP44o6WtXdEN7N",
+  "_key": "!items!bPDP44o6WtXdEN7N",
+  "name": "Partielle Panzerungsglieder (je Zone)",
+  "type": "armor",
+  "img": "icons/equipment/chest/breastplate-banded-blue.webp",
+  "system": {
+   "rw": 35,
+   "mk": "B",
+   "komfort": 3,
+   "zones": [
+    7
+   ],
+   "stealth": 0,
+   "coldDice": 0,
+   "ts": 2,
+   "price": 600,
+   "quantity": 1,
+   "equipped": false,
+   "description": "<p>Verstärkte Metall- oder Kevlarplatte für eine Körperzone. Zone im Itembogen wählen; Preis je Zone. <em class=\"nr-ref\">(NoReturn 2E, S. 262)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 9000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "8lE6GkN7mTIvZQvG",
+  "_key": "!items!8lE6GkN7mTIvZQvG",
+  "name": "Panzerrüstung",
+  "type": "armor",
+  "img": "icons/equipment/chest/breastplate-banded-blue.webp",
+  "system": {
+   "rw": 40,
+   "mk": "B",
+   "komfort": 4,
+   "zones": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "stealth": 0,
+   "coldDice": 0,
+   "ts": 4,
+   "price": 8900,
+   "quantity": 1,
+   "equipped": false,
+   "description": "<p>Krone der zivilen Sicherheit, mit MP-Helm in Rüstungsoptik, ohne Energiezellen. <em class=\"nr-ref\">(NoReturn 2E, S. 263)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 10000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "2VvLh59QLW6XBT6u",
+  "_key": "!items!2VvLh59QLW6XBT6u",
+  "name": "Ritterrüstung (je Zone)",
+  "type": "armor",
+  "img": "icons/equipment/chest/breastplate-banded-blue.webp",
+  "system": {
+   "rw": 35,
+   "mk": "B",
+   "komfort": 5,
+   "zones": [
+    7
+   ],
+   "stealth": 0,
+   "coldDice": 0,
+   "ts": 2,
+   "price": 400,
+   "quantity": 1,
+   "equipped": false,
+   "description": "<p>Imposantes Symbol vergangener Zeiten; Preis je Körperzone, inkl. Helm möglich. <em class=\"nr-ref\">(NoReturn 2E, S. 263)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 11000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "eHsPXrZUzMXw7cr0",
+  "_key": "!items!eHsPXrZUzMXw7cr0",
+  "name": "Sicherheitshelm",
+  "type": "armor",
+  "img": "icons/equipment/head/greathelm-banded-steel.webp",
+  "system": {
+   "rw": 35,
+   "mk": "B",
+   "komfort": 2,
+   "zones": [
+    12
+   ],
+   "stealth": 0,
+   "coldDice": 0,
+   "ts": 2,
+   "price": 800,
+   "quantity": 1,
+   "equipped": false,
+   "description": "<p>Schützt den Kopf bis auf das Gesicht; Visier +200 N$. <em class=\"nr-ref\">(NoReturn 2E, S. 263)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 12000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "0fAy4rf3hjzw0Hrl",
+  "_key": "!items!0fAy4rf3hjzw0Hrl",
+  "name": "Multipurpose-Helm",
+  "type": "armor",
+  "img": "icons/equipment/head/greathelm-banded-steel.webp",
+  "system": {
+   "rw": 40,
+   "mk": "B",
+   "komfort": 3,
+   "zones": [
+    12
+   ],
+   "stealth": 0,
+   "coldDice": 0,
+   "ts": 4,
+   "price": 3500,
+   "quantity": 1,
+   "equipped": false,
+   "description": "<p>Halsring wird zum Helm: Lichtkompensation, Nacht-/Thermalsicht, Zoom 300 m, SmartCom-HUD, Atemfilter. <em class=\"nr-ref\">(NoReturn 2E, S. 263)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 13000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "g7f6UBoJHEvsXmk4",
+  "_key": "!items!g7f6UBoJHEvsXmk4",
+  "name": "Mad Suit (je Zone, MK:A)",
+  "type": "armor",
+  "img": "icons/equipment/chest/breastplate-banded-blue.webp",
+  "system": {
+   "rw": 20,
+   "mk": "A",
+   "komfort": 3,
+   "zones": [
+    7
+   ],
+   "stealth": 0,
+   "coldDice": 0,
+   "ts": 1,
+   "price": 100,
+   "quantity": 1,
+   "equipped": false,
+   "description": "<p>Ödland-Stil: einzelne Stücke je Körperzone, alternativ 10p. MK:B. <em class=\"nr-ref\">(NoReturn 2E, S. 264)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 14000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "Ps90N9X6xli3xePI",
+  "_key": "!items!Ps90N9X6xli3xePI",
+  "name": "LK Jack",
+  "type": "armor",
+  "img": "icons/equipment/chest/breastplate-banded-blue.webp",
+  "system": {
+   "rw": 35,
+   "mk": "A",
+   "komfort": 1,
+   "zones": [
+    6,
+    7,
+    8
+   ],
+   "stealth": 0,
+   "coldDice": 0,
+   "ts": 4,
+   "price": 1400,
+   "quantity": 1,
+   "equipped": false,
+   "description": "<p>Liquidkevlar-Shirt. Verliert den Rüstungswert unter anderer Kleidung mit Rüstungswert. UV-dicht. <em class=\"nr-ref\">(NoReturn 2E, S. 264)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 15000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "B6mJFg6l6mcTK5Ss",
+  "_key": "!items!B6mJFg6l6mcTK5Ss",
+  "name": "LK Skin",
+  "type": "armor",
+  "img": "icons/equipment/chest/breastplate-banded-blue.webp",
+  "system": {
+   "rw": 35,
+   "mk": "A",
+   "komfort": 1,
+   "zones": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+   ],
+   "stealth": 0,
+   "coldDice": 0,
+   "ts": 4,
+   "price": 5000,
+   "quantity": 1,
+   "equipped": false,
+   "description": "<p>Hautenger Liquidkevlar-Bodysuit. Nicht unter/über anderer Rüstung. <em class=\"nr-ref\">(NoReturn 2E, S. 264)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 16000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "VoBUpiSqxQ4ZhzmW",
+  "_key": "!items!VoBUpiSqxQ4ZhzmW",
+  "name": "LK Face",
+  "type": "armor",
+  "img": "icons/equipment/head/gas-mask-cloth-hood.webp",
+  "system": {
+   "rw": 35,
+   "mk": "A",
+   "komfort": 1,
+   "zones": [
+    12
+   ],
+   "stealth": 0,
+   "coldDice": 0,
+   "ts": 4,
+   "price": 1500,
+   "quantity": 1,
+   "equipped": false,
+   "description": "<p>Sturmhaube mit Mikrokameras: reguläre, Nacht- und Thermalsicht. <em class=\"nr-ref\">(NoReturn 2E, S. 264)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 17000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ }
+]

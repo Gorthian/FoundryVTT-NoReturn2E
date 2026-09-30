@@ -1,0 +1,1132 @@
+[
+ {
+  "_id": "bRbZwDzgGoEv9IbE",
+  "_key": "!items!bRbZwDzgGoEv9IbE",
+  "name": "SmartCom",
+  "type": "gear",
+  "img": "icons/commodities/tech/antenna-powered-purple.webp",
+  "system": {
+   "ts": 3,
+   "price": 0,
+   "weight": 0.0,
+   "bonus": "",
+   "quantity": 1,
+   "toolQuality": 0,
+   "alk": 0,
+   "uses": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Standardausrüstung jedes Charakters zu Spielbeginn: Kommunikation, Kamera, Irisscan. <em class=\"nr-ref\">(NoReturn 2E, S. 135)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 1000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "6GJLTaDCdWKiaiPI",
+  "_key": "!items!6GJLTaDCdWKiaiPI",
+  "name": "Set schäbige Kleidung",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "ts": 1,
+   "price": 0,
+   "weight": 0.0,
+   "bonus": "",
+   "quantity": 1,
+   "toolQuality": 0,
+   "alk": 0,
+   "uses": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Startbesitz jedes Charakters. <em class=\"nr-ref\">(NoReturn 2E, S. 135)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 2000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "pFKILMrLn69yvcLl",
+  "_key": "!items!pFKILMrLn69yvcLl",
+  "name": "Dreibein",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "ts": 2,
+   "price": 310,
+   "weight": 0.0,
+   "bonus": "+3 RD",
+   "quantity": 1,
+   "toolQuality": 0,
+   "alk": 0,
+   "uses": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Erhöht die Rückstoßdämpfung einer Waffe um 3. (Waffen-Add-On) <em class=\"nr-ref\">(NoReturn 2E, S. 242)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 3000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "lVbPgOaH6yTVsndp",
+  "_key": "!items!lVbPgOaH6yTVsndp",
+  "name": "Zweibein",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "ts": 2,
+   "price": 180,
+   "weight": 0.0,
+   "bonus": "+2 RD",
+   "quantity": 1,
+   "toolQuality": 0,
+   "alk": 0,
+   "uses": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Erhöht die Rückstoßdämpfung um 2. (Waffen-Add-On) <em class=\"nr-ref\">(NoReturn 2E, S. 242)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 4000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "1bErt8kkDGwRCRtx",
+  "_key": "!items!1bErt8kkDGwRCRtx",
+  "name": "Unterlaufgriff",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "ts": 2,
+   "price": 50,
+   "weight": 0.0,
+   "bonus": "+1 RD",
+   "quantity": 1,
+   "toolQuality": 0,
+   "alk": 0,
+   "uses": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Erhöht die Rückstoßdämpfung um 1. (Waffen-Add-On) <em class=\"nr-ref\">(NoReturn 2E, S. 242)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 5000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "fypNGVrB1E3Aj0hq",
+  "_key": "!items!fypNGVrB1E3Aj0hq",
+  "name": "Zielfernrohr",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "ts": 3,
+   "price": 150,
+   "weight": 0.0,
+   "bonus": "Distanz ÷ 18",
+   "quantity": 1,
+   "toolQuality": 0,
+   "alk": 0,
+   "uses": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>18-fache Vergrößerung: Distanz für Reichweiten-MW durch 18 teilen. (Waffen-Add-On) <em class=\"nr-ref\">(NoReturn 2E, S. 242)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 6000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "gxCR2gb1otrY1xm1",
+  "_key": "!items!gxCR2gb1otrY1xm1",
+  "name": "Lasermarkierer / Rotpunktvisier",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "ts": 3,
+   "price": 50,
+   "weight": 0.0,
+   "bonus": "Zielen −1W Malus",
+   "quantity": 1,
+   "toolQuality": 0,
+   "alk": 0,
+   "uses": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Reduziert den Zielen-Malus um einen Würfel. (Waffen-Add-On) <em class=\"nr-ref\">(NoReturn 2E, S. 242)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 7000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "w7KAAN8VYCwmimA3",
+  "_key": "!items!w7KAAN8VYCwmimA3",
+  "name": "Schalldämpfer",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "ts": 2,
+   "price": 200,
+   "weight": 0.0,
+   "bonus": "",
+   "quantity": 1,
+   "toolQuality": 0,
+   "alk": 0,
+   "uses": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Für den diskreten Einsatz. (Waffen-Add-On) <em class=\"nr-ref\">(NoReturn 2E, S. 242)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 8000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "vlK814oHp1RZjAVg",
+  "_key": "!items!vlK814oHp1RZjAVg",
+  "name": "Holster",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "ts": 1,
+   "price": 20,
+   "weight": 0.0,
+   "bonus": "",
+   "quantity": 1,
+   "toolQuality": 0,
+   "alk": 0,
+   "uses": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Nylon-Holster mit Klettverschluss. (Waffen-Add-On) <em class=\"nr-ref\">(NoReturn 2E, S. 242)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 9000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "uDuSQXxSdFBbAnL7",
+  "_key": "!items!uDuSQXxSdFBbAnL7",
+  "name": "Tarnholster",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "ts": 3,
+   "price": 100,
+   "weight": 0.0,
+   "bonus": "Entdecken MW 20",
+   "quantity": 1,
+   "toolQuality": 0,
+   "alk": 0,
+   "uses": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Unsichtbar unter der Kleidung (Wahrnehmung MW 20). (Waffen-Add-On) <em class=\"nr-ref\">(NoReturn 2E, S. 242)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 10000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "FOcPRnr3qiCP5wW8",
+  "_key": "!items!FOcPRnr3qiCP5wW8",
+  "name": "Köcher",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "ts": 1,
+   "price": 100,
+   "weight": 0.0,
+   "bonus": "",
+   "quantity": 1,
+   "toolQuality": 0,
+   "alk": 0,
+   "uses": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>20 Pfeile oder 30 Bolzen. (Waffen-Add-On) <em class=\"nr-ref\">(NoReturn 2E, S. 242)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 11000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "FXbdNkfVZ592IX2x",
+  "_key": "!items!FXbdNkfVZ592IX2x",
+  "name": "Lampe",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "ts": 2,
+   "price": 50,
+   "weight": 0.0,
+   "bonus": "",
+   "quantity": 1,
+   "toolQuality": 0,
+   "alk": 0,
+   "uses": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Montierbar an Körperpanzer und Handfeuerwaffen. (Waffen-Add-On) <em class=\"nr-ref\">(NoReturn 2E, S. 242)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 12000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "7EXcIlgls32huHDm",
+  "_key": "!items!7EXcIlgls32huHDm",
+  "name": "Ersatzmagazin",
+  "type": "gear",
+  "img": "icons/weapons/ammunition/ammo-clip-piercing.webp",
+  "system": {
+   "ts": 2,
+   "price": 10,
+   "weight": 0.0,
+   "bonus": "",
+   "quantity": 1,
+   "toolQuality": 0,
+   "alk": 0,
+   "uses": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Vorsorge ist besser als Nachsicht. (Waffen-Add-On) <em class=\"nr-ref\">(NoReturn 2E, S. 242)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 13000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "pfB7fgAb0Z1QPW3G",
+  "_key": "!items!pfB7fgAb0Z1QPW3G",
+  "name": "Schnelllader für Revolver",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "ts": 2,
+   "price": 100,
+   "weight": 0.0,
+   "bonus": "",
+   "quantity": 1,
+   "toolQuality": 0,
+   "alk": 0,
+   "uses": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Lädt eine komplette Trommel auf einmal. (Waffen-Add-On) <em class=\"nr-ref\">(NoReturn 2E, S. 242)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 14000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "Laj3GK7NFPLNxARl",
+  "_key": "!items!Laj3GK7NFPLNxARl",
+  "name": "Bewegungsmelder",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "ts": 3,
+   "price": 450,
+   "weight": 0.25,
+   "bonus": "",
+   "quantity": 1,
+   "toolQuality": 0,
+   "alk": 0,
+   "uses": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>25 m Reichweite im 160°-Winkel, zeigt Bewegung und Größe; 24 h mit zwei Micro-ZEUS. <em class=\"nr-ref\">(NoReturn 2E, S. 265)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 15000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "c2TJbtxrfMKgV4se",
+  "_key": "!items!c2TJbtxrfMKgV4se",
+  "name": "Datenwanze (10er Pack)",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "ts": 3,
+   "price": 500,
+   "weight": 0,
+   "bonus": "",
+   "quantity": 1,
+   "toolQuality": 0,
+   "alk": 0,
+   "uses": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Knopfgroße Audio-/Videoübertragung, selbstversorgend, störanfällig (DN 2). <em class=\"nr-ref\">(NoReturn 2E, S. 265)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 16000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "QQia5O85PHErissW",
+  "_key": "!items!QQia5O85PHErissW",
+  "name": "Dietrich-Set",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "ts": 2,
+   "price": 100,
+   "weight": 0.1,
+   "bonus": "",
+   "quantity": 1,
+   "toolQuality": 0,
+   "alk": 0,
+   "uses": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Feinwerkzeug zum Schlossknacken, kein Bonus. Bei Sicherheitstechnik-Ergebnis &lt; 5 zerbricht es. <em class=\"nr-ref\">(NoReturn 2E, S. 265)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 17000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "Fe8VNdz8k5DxHiLX",
+  "_key": "!items!Fe8VNdz8k5DxHiLX",
+  "name": "Dietrich (automatisch) Stufe 1",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "ts": 4,
+   "price": 1000,
+   "weight": 0.25,
+   "bonus": "+1W Sicherheitstechnik",
+   "quantity": 1,
+   "toolQuality": 0,
+   "alk": 0,
+   "uses": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Stufe = Bonuswürfel auf Sicherheitstechnik gegen mechanische Schlösser. Stufe 1–5: Stufe × 1.000 N$, militärisch 6–10: Stufe × 10.000 N$. <em class=\"nr-ref\">(NoReturn 2E, S. 265)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 18000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "t2Mx1D0hCmV60WF7",
+  "_key": "!items!t2Mx1D0hCmV60WF7",
+  "name": "Fallschirm",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "ts": 3,
+   "price": 1000,
+   "weight": 7.9,
+   "bonus": "",
+   "quantity": 1,
+   "toolQuality": 0,
+   "alk": 0,
+   "uses": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Farbwechselnder Fallschirm, wickelt sich selbst ein. Nutzung MW 20+ mit Akrobatik, Fluggeräte oder Zero-G. <em class=\"nr-ref\">(NoReturn 2E, S. 265)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 19000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "bDcmfbRryxQ5nF5Y",
+  "_key": "!items!bDcmfbRryxQ5nF5Y",
+  "name": "Geigerzähler",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "ts": 3,
+   "price": 250,
+   "weight": 0.1,
+   "bonus": "",
+   "quantity": 1,
+   "toolQuality": 0,
+   "alk": 0,
+   "uses": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Armband, erkennt erhöhte Strahlung im 25-m-Radius. <em class=\"nr-ref\">(NoReturn 2E, S. 265)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 20000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "HkAwA0GQoU8YAYBo",
+  "_key": "!items!HkAwA0GQoU8YAYBo",
+  "name": "Handschellen",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "ts": 2,
+   "price": 150,
+   "weight": 0.2,
+   "bonus": "",
+   "quantity": 1,
+   "toolQuality": 0,
+   "alk": 0,
+   "uses": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Stabilität 50 MK:B, mit Werkzeug MW 25 zu knacken. <em class=\"nr-ref\">(NoReturn 2E, S. 265)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 21000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "P2S54pzuSQfdzReu",
+  "_key": "!items!P2S54pzuSQfdzReu",
+  "name": "Kletterausrüstung",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "ts": 2,
+   "price": 350,
+   "weight": 1.5,
+   "bonus": "+3W Klettern",
+   "quantity": 1,
+   "toolQuality": 0,
+   "alk": 0,
+   "uses": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [
+    {
+     "target": "skills.klettern",
+     "value": 3
+    }
+   ],
+   "description": "<p>Gurt, Helm, Karabiner, 50 m Seil, Kalk. +3W auf Klettern. <em class=\"nr-ref\">(NoReturn 2E, S. 265)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 22000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "5PE78oVBTGQxaJQv",
+  "_key": "!items!5PE78oVBTGQxaJQv",
+  "name": "Kletterhandschuhe",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "ts": 2,
+   "price": 100,
+   "weight": 0.2,
+   "bonus": "+1W Klettern",
+   "quantity": 1,
+   "toolQuality": 0,
+   "alk": 0,
+   "uses": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [
+    {
+     "target": "skills.klettern",
+     "value": 1
+    }
+   ],
+   "description": "<p>+1W auf Klettern. <em class=\"nr-ref\">(NoReturn 2E, S. 265)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 23000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "tc76c1yAAhj2pPpM",
+  "_key": "!items!tc76c1yAAhj2pPpM",
+  "name": "Krasse Kleidung",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "ts": 3,
+   "price": 2000,
+   "weight": 0,
+   "bonus": "",
+   "quantity": 1,
+   "toolQuality": 0,
+   "alk": 0,
+   "uses": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>High-Society-Marken (Faenasana, Armisticia, Gymnica, Crocodile, De Pura Raza, Chenchen). <em class=\"nr-ref\">(NoReturn 2E, S. 265)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 24000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "PgpTJmf7flYfMjiz",
+  "_key": "!items!PgpTJmf7flYfMjiz",
+  "name": "Werkzeugkiste (durchschnittlich)",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "ts": 2,
+   "price": 500,
+   "weight": 5,
+   "bonus": "±0W Crafting",
+   "quantity": 1,
+   "toolQuality": 0,
+   "alk": 0,
+   "uses": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Normale Qualität: weder Bonus noch Malus auf Crafting-Proben. <em class=\"nr-ref\">(NoReturn 2E, S. 114)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 25000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "gKVRBylG79Wncwtv",
+  "_key": "!items!gKVRBylG79Wncwtv",
+  "name": "Hightech-Werkstatt",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "ts": 4,
+   "price": 50000,
+   "weight": 0,
+   "bonus": "+2W Crafting",
+   "quantity": 1,
+   "toolQuality": 2,
+   "alk": 0,
+   "uses": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Gewährt +2 Bonuswürfel auf Crafting-Proben im Bereich Handwerk. <em class=\"nr-ref\">(NoReturn 2E, S. 114)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 26000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "v93xrr1AGJdPyrJK",
+  "_key": "!items!v93xrr1AGJdPyrJK",
+  "name": "Verdreckte Laborantenkiste",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "ts": 1,
+   "price": 50,
+   "weight": 3,
+   "bonus": "−1W Crafting",
+   "quantity": 1,
+   "toolQuality": -1,
+   "alk": 0,
+   "uses": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Schlechte Ausrüstung: −1W auf Crafting-Proben. <em class=\"nr-ref\">(NoReturn 2E, S. 114)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 27000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "6i4b0Snmv2OzW1i0",
+  "_key": "!items!6i4b0Snmv2OzW1i0",
+  "name": "Langzeit-Medikation (20 Dosen)",
+  "type": "gear",
+  "img": "icons/consumables/potions/bottle-bulb-corked-glowing-red.webp",
+  "system": {
+   "ts": 2,
+   "price": 100,
+   "weight": 0.0,
+   "bonus": "",
+   "quantity": 20,
+   "toolQuality": 0,
+   "alk": 0,
+   "uses": {
+    "value": 20,
+    "max": 20
+   },
+   "modifiers": [],
+   "description": "<p>Tägliche Einnahme hält eine chronische Erkrankung unter Kontrolle. <em class=\"nr-ref\">(NoReturn 2E, S. 176)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 28000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ }
+]

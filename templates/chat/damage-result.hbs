@@ -1,0 +1,23 @@
+<div class="nr-card nr-damage-result">
+  <header class="nr-card-head">
+    <h3>{{label}}</h3>
+    <div class="nr-card-sub">{{actor.name}}: KO {{localize "NR.Roll.Roll"}} {{rollTotal}}{{#if resistMalus}} (−{{resistMalus}}W {{localize "NR.Damage.Continuous"}}){{/if}}{{#if usedAdrenalin}} · Adrenalin{{/if}}</div>
+  </header>
+  <table class="nr-damage-table">
+    <tr><th>Zone</th><th>Schaden</th><th>Wid.</th><th>Durch</th></tr>
+    {{#each results as |r|}}
+    <tr class="{{#if r.through}}hit{{/if}} {{#if r.lethal}}lethal{{/if}}">
+      <td>{{r.zone}} {{r.label}}</td>
+      <td>{{../amount}}</td>
+      <td>{{r.resist}}{{#if r.armor}} <span class="nr-hint">(+{{r.armor}} R.)</span>{{/if}}</td>
+      <td><strong>{{r.through}}</strong>{{#if r.destroyed}} <i class="fa-solid fa-bone" data-tooltip="{{localize 'NR.Zone.Destroyed'}}"></i>{{/if}}</td>
+    </tr>
+    {{#if r.notes.length}}<tr class="notes"><td colspan="4">{{nrJoin r.notes "; "}}</td></tr>{{/if}}
+    {{/each}}
+  </table>
+  {{#if nonLethal}}<p class="nr-hint">{{localize "NR.Damage.NlApplied"}}: {{nlAdded}}</p>{{/if}}
+  {{#if dead}}<p class="nr-alert dead"><i class="fa-solid fa-skull"></i> {{localize "NR.Status.LethalZone"}}</p>
+  {{else if unconscious}}<p class="nr-alert"><i class="fa-solid fa-bed-pulse"></i> {{localize "NR.Status.Unconscious"}} (−{{malus}}W)</p>
+  {{else if immobile}}<p class="nr-alert">{{localize "NR.Status.Immobile"}}</p>{{/if}}
+  {{#if continuous}}<p class="nr-hint">{{localize "NR.Damage.ContinuousHint"}}</p>{{/if}}
+</div>

@@ -1,0 +1,1349 @@
+[
+ {
+  "_id": "v7v4qLHuqhcoafkr",
+  "_key": "!tables!v7v4qLHuqhcoafkr",
+  "name": "Trefferzonen (2W6)",
+  "img": "icons/svg/target.svg",
+  "description": "<p>Zufällige Körperzone (S. 90–91). Letal: 12, 8, 7, 6, 2.</p>",
+  "results": [
+   "QuoT6nRP7uvtfETw",
+   "GJnj094HBOVRCYP8",
+   "L5ibhDzPkomt527Y",
+   "wAU9Vi98WhRBrZ0q",
+   "ut1Ru1YzQQ6tP2Lv",
+   "46GyIThrSLMbYzps",
+   "zRseaou461ERRRI4",
+   "1xiJWBKkhYUSMnDQ",
+   "904zBjlsMjprkKyn",
+   "eFpBdas4oBS8ARTo",
+   "JpfLcKR3EhMJGtvV"
+  ],
+  "formula": "2d6",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 1000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  },
+  "_embedded": [
+   {
+    "_id": "QuoT6nRP7uvtfETw",
+    "_key": "!tables.results!v7v4qLHuqhcoafkr.QuoT6nRP7uvtfETw",
+    "type": "text",
+    "name": "2",
+    "img": null,
+    "description": "2: Becken (letal)",
+    "weight": 1,
+    "range": [
+     2,
+     2
+    ],
+    "drawn": false,
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "GJnj094HBOVRCYP8",
+    "_key": "!tables.results!v7v4qLHuqhcoafkr.GJnj094HBOVRCYP8",
+    "type": "text",
+    "name": "3",
+    "img": null,
+    "description": "3: Bein unten rechts",
+    "weight": 1,
+    "range": [
+     3,
+     3
+    ],
+    "drawn": false,
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "L5ibhDzPkomt527Y",
+    "_key": "!tables.results!v7v4qLHuqhcoafkr.L5ibhDzPkomt527Y",
+    "type": "text",
+    "name": "4",
+    "img": null,
+    "description": "4: Oberschenkel rechts",
+    "weight": 1,
+    "range": [
+     4,
+     4
+    ],
+    "drawn": false,
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "wAU9Vi98WhRBrZ0q",
+    "_key": "!tables.results!v7v4qLHuqhcoafkr.wAU9Vi98WhRBrZ0q",
+    "type": "text",
+    "name": "5",
+    "img": null,
+    "description": "5: Arm rechts",
+    "weight": 1,
+    "range": [
+     5,
+     5
+    ],
+    "drawn": false,
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "ut1Ru1YzQQ6tP2Lv",
+    "_key": "!tables.results!v7v4qLHuqhcoafkr.ut1Ru1YzQQ6tP2Lv",
+    "type": "text",
+    "name": "6",
+    "img": null,
+    "description": "6: Torso rechts (letal)",
+    "weight": 1,
+    "range": [
+     6,
+     6
+    ],
+    "drawn": false,
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "46GyIThrSLMbYzps",
+    "_key": "!tables.results!v7v4qLHuqhcoafkr.46GyIThrSLMbYzps",
+    "type": "text",
+    "name": "7",
+    "img": null,
+    "description": "7: Rumpf (letal)",
+    "weight": 1,
+    "range": [
+     7,
+     7
+    ],
+    "drawn": false,
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "zRseaou461ERRRI4",
+    "_key": "!tables.results!v7v4qLHuqhcoafkr.zRseaou461ERRRI4",
+    "type": "text",
+    "name": "8",
+    "img": null,
+    "description": "8: Torso links (letal)",
+    "weight": 1,
+    "range": [
+     8,
+     8
+    ],
+    "drawn": false,
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "1xiJWBKkhYUSMnDQ",
+    "_key": "!tables.results!v7v4qLHuqhcoafkr.1xiJWBKkhYUSMnDQ",
+    "type": "text",
+    "name": "9",
+    "img": null,
+    "description": "9: Arm links",
+    "weight": 1,
+    "range": [
+     9,
+     9
+    ],
+    "drawn": false,
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "904zBjlsMjprkKyn",
+    "_key": "!tables.results!v7v4qLHuqhcoafkr.904zBjlsMjprkKyn",
+    "type": "text",
+    "name": "10",
+    "img": null,
+    "description": "10: Oberschenkel links",
+    "weight": 1,
+    "range": [
+     10,
+     10
+    ],
+    "drawn": false,
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "eFpBdas4oBS8ARTo",
+    "_key": "!tables.results!v7v4qLHuqhcoafkr.eFpBdas4oBS8ARTo",
+    "type": "text",
+    "name": "11",
+    "img": null,
+    "description": "11: Bein unten links",
+    "weight": 1,
+    "range": [
+     11,
+     11
+    ],
+    "drawn": false,
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "JpfLcKR3EhMJGtvV",
+    "_key": "!tables.results!v7v4qLHuqhcoafkr.JpfLcKR3EhMJGtvV",
+    "type": "text",
+    "name": "12",
+    "img": null,
+    "description": "12: Kopf (letal)",
+    "weight": 1,
+    "range": [
+     12,
+     12
+    ],
+    "drawn": false,
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   }
+  ]
+ },
+ {
+  "_id": "FadAFR5Wsbu2OvMa",
+  "_key": "!tables!FadAFR5Wsbu2OvMa",
+  "name": "PSI-Fehlschlag (2W6)",
+  "img": "icons/svg/explosion.svg",
+  "description": "<p>Psionischer Fehlschlag (S. 196). KS = gesammelte bzw. gewirkte Kraftstufe.</p>",
+  "results": [
+   "gQqDVhz2GCCBDkIw",
+   "pVE6aFopCmgcyqZw",
+   "v3PhsP5YqOVDkvXC",
+   "Ut5cXMEAOGTh6kDn",
+   "lfc0axIUOUTGj2cm",
+   "cHeAo54C7B5WqNun",
+   "tWmZnPpwstZbrSqB",
+   "SDA8ZTGjAZlUc2vE",
+   "ui545AiDxrwfmdZ4",
+   "oCmcIJaV8xzFqqUx",
+   "3t08vcobfPREZG16"
+  ],
+  "formula": "2d6",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 2000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  },
+  "_embedded": [
+   {
+    "_id": "gQqDVhz2GCCBDkIw",
+    "_key": "!tables.results!FadAFR5Wsbu2OvMa.gQqDVhz2GCCBDkIw",
+    "type": "text",
+    "name": "2 – Echo",
+    "img": null,
+    "description": "2 – Echo: KS-mal erneut auf dieser Tabelle würfeln, alle Ergebnisse gelten nacheinander.",
+    "weight": 1,
+    "range": [
+     2,
+     2
+    ],
+    "drawn": false,
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "pVE6aFopCmgcyqZw",
+    "_key": "!tables.results!FadAFR5Wsbu2OvMa.pVE6aFopCmgcyqZw",
+    "type": "text",
+    "name": "3 – Der eigene Arsch",
+    "img": null,
+    "description": "3 – Der eigene Arsch: Der Charakter wird selbst Ziel der App (bei Overload neu würfeln).",
+    "weight": 1,
+    "range": [
+     3,
+     3
+    ],
+    "drawn": false,
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "v3PhsP5YqOVDkvXC",
+    "_key": "!tables.results!FadAFR5Wsbu2OvMa.v3PhsP5YqOVDkvXC",
+    "type": "text",
+    "name": "4 – Weit gefehlt",
+    "img": null,
+    "description": "4 – Weit gefehlt: KS zufällige andere Ziele werden auf KS 1 betroffen (bei Overload neu würfeln).",
+    "weight": 1,
+    "range": [
+     4,
+     4
+    ],
+    "drawn": false,
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "Ut5cXMEAOGTh6kDn",
+    "_key": "!tables.results!FadAFR5Wsbu2OvMa.Ut5cXMEAOGTh6kDn",
+    "type": "text",
+    "name": "5 – Fremde Welt",
+    "img": null,
+    "description": "5 – Fremde Welt: KS×2 KR Tagtraum, handlungsunfähig. Die App wirkt nicht.",
+    "weight": 1,
+    "range": [
+     5,
+     5
+    ],
+    "drawn": false,
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "lfc0axIUOUTGj2cm",
+    "_key": "!tables.results!FadAFR5Wsbu2OvMa.lfc0axIUOUTGj2cm",
+    "type": "text",
+    "name": "6 – Lähmende Gedanken",
+    "img": null,
+    "description": "6 – Lähmende Gedanken: KS Runden handlungsunfähig, nimmt aber alles wahr. Die App wirkt nicht.",
+    "weight": 1,
+    "range": [
+     6,
+     6
+    ],
+    "drawn": false,
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "cHeAo54C7B5WqNun",
+    "_key": "!tables.results!FadAFR5Wsbu2OvMa.cHeAo54C7B5WqNun",
+    "type": "text",
+    "name": "7 – BÄM",
+    "img": null,
+    "description": "7 – BÄM: KS×2 m geschleudert, KS×5 Schaden an zwei zufälligen Zonen. Die App wirkt nicht.",
+    "weight": 1,
+    "range": [
+     7,
+     7
+    ],
+    "drawn": false,
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "tWmZnPpwstZbrSqB",
+    "_key": "!tables.results!FadAFR5Wsbu2OvMa.tWmZnPpwstZbrSqB",
+    "type": "text",
+    "name": "8 – Psionische Lähmung",
+    "img": null,
+    "description": "8 – Psionische Lähmung: KS Runden keine PSI, gehaltene Apps enden. Die App wirkt nicht.",
+    "weight": 1,
+    "range": [
+     8,
+     8
+    ],
+    "drawn": false,
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "SDA8ZTGjAZlUc2vE",
+    "_key": "!tables.results!FadAFR5Wsbu2OvMa.SDA8ZTGjAZlUc2vE",
+    "type": "text",
+    "name": "9 – Schmerz",
+    "img": null,
+    "description": "9 – Schmerz: KS×10 Schaden am Kopf. Die App wirkt nicht.",
+    "weight": 1,
+    "range": [
+     9,
+     9
+    ],
+    "drawn": false,
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "ui545AiDxrwfmdZ4",
+    "_key": "!tables.results!FadAFR5Wsbu2OvMa.ui545AiDxrwfmdZ4",
+    "type": "text",
+    "name": "10 – Seelische Narbe",
+    "img": null,
+    "description": "10 – Seelische Narbe: −KS Psyche. Die App wirkt nicht.",
+    "weight": 1,
+    "range": [
+     10,
+     10
+    ],
+    "drawn": false,
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "oCmcIJaV8xzFqqUx",
+    "_key": "!tables.results!FadAFR5Wsbu2OvMa.oCmcIJaV8xzFqqUx",
+    "type": "text",
+    "name": "11 – Bleibende Schäden",
+    "img": null,
+    "description": "11 – Bleibende Schäden: −KS Organismus. Die App wirkt nicht.",
+    "weight": 1,
+    "range": [
+     11,
+     11
+    ],
+    "drawn": false,
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "3t08vcobfPREZG16",
+    "_key": "!tables.results!FadAFR5Wsbu2OvMa.3t08vcobfPREZG16",
+    "type": "text",
+    "name": "12 – Weißes Licht",
+    "img": null,
+    "description": "12 – Weißes Licht: Charakter und alles im Radius KS×2 m erleidet KS×30 Schaden an allen Zonen. Die App wirkt nicht.",
+    "weight": 1,
+    "range": [
+     12,
+     12
+    ],
+    "drawn": false,
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   }
+  ]
+ },
+ {
+  "_id": "kddUtvstigc1zcQP",
+  "_key": "!tables!kddUtvstigc1zcQP",
+  "name": "Degeneration – Tabelle A (W6)",
+  "img": "icons/svg/degen.svg",
+  "description": "<p>Organismus-Schwellen (S. 115).</p>",
+  "results": [
+   "JGHEmnMFI8Ue6HQH",
+   "8H07p20U8H1bQugR",
+   "BtEIs4ezk5t7EDW4"
+  ],
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 3000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  },
+  "_embedded": [
+   {
+    "_id": "JGHEmnMFI8Ue6HQH",
+    "_key": "!tables.results!kddUtvstigc1zcQP.JGHEmnMFI8Ue6HQH",
+    "type": "text",
+    "name": "Immunsystemschwäche",
+    "img": null,
+    "description": "Immunsystemschwäche: −2 Infektionsresistenz (max. 3×)",
+    "weight": 1,
+    "range": [
+     1,
+     2
+    ],
+    "drawn": false,
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "8H07p20U8H1bQugR",
+    "_key": "!tables.results!kddUtvstigc1zcQP.8H07p20U8H1bQugR",
+    "type": "text",
+    "name": "Entstellt",
+    "img": null,
+    "description": "Entstellt: Charisma +1 Stufe Leiden (max. 3×)",
+    "weight": 1,
+    "range": [
+     3,
+     4
+    ],
+    "drawn": false,
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "BtEIs4ezk5t7EDW4",
+    "_key": "!tables.results!kddUtvstigc1zcQP.BtEIs4ezk5t7EDW4",
+    "type": "text",
+    "name": "Chronische Wunden",
+    "img": null,
+    "description": "Chronische Wunden: zwei zufällige Zonen erhalten 5 dauerhaften Schaden",
+    "weight": 1,
+    "range": [
+     5,
+     6
+    ],
+    "drawn": false,
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   }
+  ]
+ },
+ {
+  "_id": "boLHhq67H0ITJ4Is",
+  "_key": "!tables!boLHhq67H0ITJ4Is",
+  "name": "Degeneration – Tabelle B (W6)",
+  "img": "icons/svg/degen.svg",
+  "description": "<p>Organismus-Schwellen (S. 115).</p>",
+  "results": [
+   "P9OW90TQpRMZtWzk",
+   "hJwwz8xOl8WqABDd",
+   "fmx4o7Kaqp80cJrC",
+   "2dFLISAKmbNkROt4",
+   "VepsgARfkx5W5QB2",
+   "18LzAR74BtwRn9IB"
+  ],
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 4000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  },
+  "_embedded": [
+   {
+    "_id": "P9OW90TQpRMZtWzk",
+    "_key": "!tables.results!boLHhq67H0ITJ4Is.P9OW90TQpRMZtWzk",
+    "type": "text",
+    "name": "Erschöpfung",
+    "img": null,
+    "description": "Erschöpfung: Konstitution +1 Stufe Leiden",
+    "weight": 1,
+    "range": [
+     1,
+     1
+    ],
+    "drawn": false,
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "hJwwz8xOl8WqABDd",
+    "_key": "!tables.results!boLHhq67H0ITJ4Is.hJwwz8xOl8WqABDd",
+    "type": "text",
+    "name": "Zittern und Krämpfe",
+    "img": null,
+    "description": "Zittern und Krämpfe: Geschick +1 Stufe Leiden",
+    "weight": 1,
+    "range": [
+     2,
+     2
+    ],
+    "drawn": false,
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "fmx4o7Kaqp80cJrC",
+    "_key": "!tables.results!boLHhq67H0ITJ4Is.fmx4o7Kaqp80cJrC",
+    "type": "text",
+    "name": "Wahrnehmungsstörung",
+    "img": null,
+    "description": "Wahrnehmungsstörung: Wahrnehmung +1 Stufe Leiden",
+    "weight": 1,
+    "range": [
+     3,
+     3
+    ],
+    "drawn": false,
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "2dFLISAKmbNkROt4",
+    "_key": "!tables.results!boLHhq67H0ITJ4Is.2dFLISAKmbNkROt4",
+    "type": "text",
+    "name": "Lähmung",
+    "img": null,
+    "description": "Lähmung: Beweglichkeit +1 Stufe Leiden",
+    "weight": 1,
+    "range": [
+     4,
+     4
+    ],
+    "drawn": false,
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "VepsgARfkx5W5QB2",
+    "_key": "!tables.results!boLHhq67H0ITJ4Is.VepsgARfkx5W5QB2",
+    "type": "text",
+    "name": "Muskelschwäche",
+    "img": null,
+    "description": "Muskelschwäche: Stärke +1 Stufe Leiden",
+    "weight": 1,
+    "range": [
+     5,
+     5
+    ],
+    "drawn": false,
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "18LzAR74BtwRn9IB",
+    "_key": "!tables.results!boLHhq67H0ITJ4Is.18LzAR74BtwRn9IB",
+    "type": "text",
+    "name": "Demenz",
+    "img": null,
+    "description": "Demenz: Wissen +1 Stufe Leiden",
+    "weight": 1,
+    "range": [
+     6,
+     6
+    ],
+    "drawn": false,
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   }
+  ]
+ },
+ {
+  "_id": "uD3lLS68IYliYxFX",
+  "_key": "!tables!uD3lLS68IYliYxFX",
+  "name": "Butterfly Effect – roter W6",
+  "img": "icons/svg/wing.svg",
+  "description": "<p>Begabung (S. 130). Pasch 1–4: alternativ Copy Cat; Pasch 5–6: Skill Master.</p>",
+  "results": [
+   "mHvru8C6O71r1m71",
+   "s4tnvud8xgB2HtZe",
+   "Iy4KsTabzkeI0xYA",
+   "SlRvPcfSunmX7SqO",
+   "vDcM3RQYmr3M4HFq",
+   "EmDoiaPMIH0U6x1N"
+  ],
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 5000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  },
+  "_embedded": [
+   {
+    "_id": "mHvru8C6O71r1m71",
+    "_key": "!tables.results!uD3lLS68IYliYxFX.mHvru8C6O71r1m71",
+    "type": "text",
+    "name": "Artisan",
+    "img": null,
+    "description": "Artisan: Basteln, Schauspiel, Kunst",
+    "weight": 1,
+    "range": [
+     1,
+     1
+    ],
+    "drawn": false,
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "s4tnvud8xgB2HtZe",
+    "_key": "!tables.results!uD3lLS68IYliYxFX.s4tnvud8xgB2HtZe",
+    "type": "text",
+    "name": "Athlete",
+    "img": null,
+    "description": "Athlete: Akrobatik, Klettern, Rennen, Springen, Stemmen",
+    "weight": 1,
+    "range": [
+     2,
+     2
+    ],
+    "drawn": false,
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "Iy4KsTabzkeI0xYA",
+    "_key": "!tables.results!uD3lLS68IYliYxFX.Iy4KsTabzkeI0xYA",
+    "type": "text",
+    "name": "Craftsman",
+    "img": null,
+    "description": "Craftsman: Feuerwaffenbau, Mechanik, Rüstungsbau, Waffenbau",
+    "weight": 1,
+    "range": [
+     3,
+     3
+    ],
+    "drawn": false,
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "SlRvPcfSunmX7SqO",
+    "_key": "!tables.results!uD3lLS68IYliYxFX.SlRvPcfSunmX7SqO",
+    "type": "text",
+    "name": "Leader",
+    "img": null,
+    "description": "Leader: Ausdauer, Einschüchtern, Inspirieren, Willenskraft",
+    "weight": 1,
+    "range": [
+     4,
+     4
+    ],
+    "drawn": false,
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "vDcM3RQYmr3M4HFq",
+    "_key": "!tables.results!uD3lLS68IYliYxFX.vDcM3RQYmr3M4HFq",
+    "type": "text",
+    "name": "Marksman",
+    "img": null,
+    "description": "Marksman: Projektilwaffen, Schießen, Wurfwaffen",
+    "weight": 1,
+    "range": [
+     5,
+     5
+    ],
+    "drawn": false,
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "EmDoiaPMIH0U6x1N",
+    "_key": "!tables.results!uD3lLS68IYliYxFX.EmDoiaPMIH0U6x1N",
+    "type": "text",
+    "name": "Medic",
+    "img": null,
+    "description": "Medic: Medizin, Naturkunde, Spezies",
+    "weight": 1,
+    "range": [
+     6,
+     6
+    ],
+    "drawn": false,
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   }
+  ]
+ },
+ {
+  "_id": "8zjvawsR8y4ZdTpX",
+  "_key": "!tables!8zjvawsR8y4ZdTpX",
+  "name": "Butterfly Effect – weißer W6",
+  "img": "icons/svg/wing.svg",
+  "description": "<p>Begabung (S. 130).</p>",
+  "results": [
+   "wBMRblMJx1qIMlsg",
+   "2askcNK30L0KDOZC",
+   "fCMG5zaOIjqVfoX9",
+   "WfWAFCuZ3VG3ZZ0i",
+   "bRBDfkNgh4S60Xp4",
+   "6dKxnHtn6clevLrS"
+  ],
+  "formula": "1d6",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "sort": 6000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  },
+  "_embedded": [
+   {
+    "_id": "wBMRblMJx1qIMlsg",
+    "_key": "!tables.results!8zjvawsR8y4ZdTpX.wBMRblMJx1qIMlsg",
+    "type": "text",
+    "name": "Operator",
+    "img": null,
+    "description": "Operator: Bodenfahrzeuge, Fluggeräte, Reiten, Wasserfahrzeuge",
+    "weight": 1,
+    "range": [
+     1,
+     1
+    ],
+    "drawn": false,
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "2askcNK30L0KDOZC",
+    "_key": "!tables.results!8zjvawsR8y4ZdTpX.2askcNK30L0KDOZC",
+    "type": "text",
+    "name": "Rogue",
+    "img": null,
+    "description": "Rogue: Gassenwissen, Saufen, Taschendiebstahl",
+    "weight": 1,
+    "range": [
+     2,
+     2
+    ],
+    "drawn": false,
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "fCMG5zaOIjqVfoX9",
+    "_key": "!tables.results!8zjvawsR8y4ZdTpX.fCMG5zaOIjqVfoX9",
+    "type": "text",
+    "name": "Scholar",
+    "img": null,
+    "description": "Scholar: Astronomie, Chemie, Schätzen, Sagen & Mythen",
+    "weight": 1,
+    "range": [
+     3,
+     3
+    ],
+    "drawn": false,
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "WfWAFCuZ3VG3ZZ0i",
+    "_key": "!tables.results!8zjvawsR8y4ZdTpX.WfWAFCuZ3VG3ZZ0i",
+    "type": "text",
+    "name": "Scout",
+    "img": null,
+    "description": "Scout: Heimlichkeit, Nachforschen, Orientierung",
+    "weight": 1,
+    "range": [
+     4,
+     4
+    ],
+    "drawn": false,
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "bRBDfkNgh4S60Xp4",
+    "_key": "!tables.results!8zjvawsR8y4ZdTpX.bRBDfkNgh4S60Xp4",
+    "type": "text",
+    "name": "Trickster",
+    "img": null,
+    "description": "Trickster: Menschenkenntnis, Überreden, Verhandeln",
+    "weight": 1,
+    "range": [
+     5,
+     5
+    ],
+    "drawn": false,
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "6dKxnHtn6clevLrS",
+    "_key": "!tables.results!8zjvawsR8y4ZdTpX.6dKxnHtn6clevLrS",
+    "type": "text",
+    "name": "Warrior",
+    "img": null,
+    "description": "Warrior: Ausweichen, Blocken, Nahkampf, Waffenkampf",
+    "weight": 1,
+    "range": [
+     6,
+     6
+    ],
+    "drawn": false,
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   }
+  ]
+ }
+]

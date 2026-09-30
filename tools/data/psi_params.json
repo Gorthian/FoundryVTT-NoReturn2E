@@ -1,0 +1,1622 @@
+[
+{
+"name": "Aegis",
+"power": "Animakinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 3,
+"defensive": true
+},
+{
+"name": "Dreamcatcher",
+"power": "Animakinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Equilibrium",
+"power": "Animakinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 1,
+"defensive": false
+},
+{
+"name": "Good Guess",
+"power": "Animakinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Jenseitsbrücke",
+"power": "Animakinese",
+"diff": "sehr schwer",
+"min": 19,
+"max": 22,
+"hold": 3,
+"defensive": false
+},
+{
+"name": "Kick",
+"power": "Animakinese",
+"diff": "ultimativ",
+"min": 23,
+"max": 25,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Körpertausch",
+"power": "Animakinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Orakel",
+"power": "Animakinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 2,
+"defensive": false
+},
+{
+"name": "PSI-Sicht",
+"power": "Animakinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 2,
+"defensive": false
+},
+{
+"name": "PSI-Proxy",
+"power": "Animakinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Sinnesbrücke",
+"power": "Animakinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 2,
+"defensive": false
+},
+{
+"name": "Seelenfeuer",
+"power": "Animakinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Seeleninfusion",
+"power": "Animakinese",
+"diff": "sehr schwer",
+"min": 19,
+"max": 22,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Spiritwalk",
+"power": "Animakinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Suche",
+"power": "Animakinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Antibakteriell",
+"power": "Biokinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 1,
+"defensive": false
+},
+{
+"name": "Diagnose",
+"power": "Biokinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Disguise",
+"power": "Biokinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 1,
+"defensive": false
+},
+{
+"name": "Froschhaut",
+"power": "Biokinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 2,
+"defensive": false
+},
+{
+"name": "Gen-code",
+"power": "Biokinese",
+"diff": "sehr schwer",
+"min": 19,
+"max": 22,
+"hold": 2,
+"defensive": false
+},
+{
+"name": "Heilung",
+"power": "Biokinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Knochensporn",
+"power": "Biokinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 1,
+"defensive": false
+},
+{
+"name": "Kompostierung",
+"power": "Biokinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Lähmung",
+"power": "Biokinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 2,
+"defensive": false
+},
+{
+"name": "PH0",
+"power": "Biokinese",
+"diff": "sehr schwer",
+"min": 19,
+"max": 22,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Tod",
+"power": "Biokinese",
+"diff": "ultimativ",
+"min": 23,
+"max": 25,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Toxische Aura",
+"power": "Biokinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 2,
+"defensive": false
+},
+{
+"name": "Transmutation",
+"power": "Biokinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Verformung",
+"power": "Biokinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Zellregeneration",
+"power": "Biokinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Blur",
+"power": "Chronokinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 2,
+"defensive": false
+},
+{
+"name": "Double Tap",
+"power": "Chronokinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 2,
+"defensive": false
+},
+{
+"name": "Langstrecken-Teleportation",
+"power": "Chronokinese",
+"diff": "ultimativ",
+"min": 23,
+"max": 25,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Persönliche Zeit",
+"power": "Chronokinese",
+"diff": "sehr schwer",
+"min": 19,
+"max": 22,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Relax",
+"power": "Chronokinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Slow down",
+"power": "Chronokinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 2,
+"defensive": false
+},
+{
+"name": "Teleport",
+"power": "Chronokinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 0,
+"defensive": true
+},
+{
+"name": "Timefreeze",
+"power": "Chronokinese",
+"diff": "sehr schwer",
+"min": 19,
+"max": 22,
+"hold": 2,
+"defensive": false
+},
+{
+"name": "Time Dodge",
+"power": "Chronokinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 1,
+"defensive": false
+},
+{
+"name": "Timer",
+"power": "Chronokinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Vergangene Weihnacht",
+"power": "Chronokinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "What if",
+"power": "Chronokinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Yesterday",
+"power": "Chronokinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Zeitloses Wissen",
+"power": "Chronokinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 1,
+"defensive": false
+},
+{
+"name": "Zweite Chance",
+"power": "Chronokinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Abkühlen",
+"power": "Cryokinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 2,
+"defensive": false
+},
+{
+"name": "Blizzard",
+"power": "Cryokinese",
+"diff": "ultimativ",
+"min": 23,
+"max": 25,
+"hold": 3,
+"defensive": false
+},
+{
+"name": "Bridge",
+"power": "Cryokinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 2,
+"defensive": false
+},
+{
+"name": "Eisbarriere",
+"power": "Cryokinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 3,
+"defensive": true
+},
+{
+"name": "Eisnadeln",
+"power": "Cryokinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Eisplatten",
+"power": "Cryokinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 2,
+"defensive": false
+},
+{
+"name": "Frostblick",
+"power": "Cryokinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 2,
+"defensive": false
+},
+{
+"name": "Frostgeschoss",
+"power": "Cryokinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 1,
+"defensive": false
+},
+{
+"name": "Frostgriff",
+"power": "Cryokinese",
+"diff": "sehr schwer",
+"min": 19,
+"max": 22,
+"hold": 1,
+"defensive": false
+},
+{
+"name": "Glatteis",
+"power": "Cryokinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 1,
+"defensive": false
+},
+{
+"name": "Kühlschrank",
+"power": "Cryokinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Linderung",
+"power": "Cryokinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 1,
+"defensive": false
+},
+{
+"name": "Nebel",
+"power": "Cryokinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 1,
+"defensive": false
+},
+{
+"name": "Schockfrost",
+"power": "Cryokinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 2,
+"defensive": false
+},
+{
+"name": "Sub Zero",
+"power": "Cryokinese",
+"diff": "sehr schwer",
+"min": 19,
+"max": 22,
+"hold": 3,
+"defensive": false
+},
+{
+"name": "Aufladen",
+"power": "Elektrokinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 3,
+"defensive": false
+},
+{
+"name": "EMP",
+"power": "Elektrokinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Energie kontrollieren",
+"power": "Elektrokinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 2,
+"defensive": false
+},
+{
+"name": "Energiegespür",
+"power": "Elektrokinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 1,
+"defensive": false
+},
+{
+"name": "Flashlight",
+"power": "Elektrokinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Kettenblitz",
+"power": "Elektrokinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 3,
+"defensive": false
+},
+{
+"name": "Lightning Web",
+"power": "Elektrokinese",
+"diff": "sehr schwer",
+"min": 19,
+"max": 22,
+"hold": 2,
+"defensive": false
+},
+{
+"name": "Nova",
+"power": "Elektrokinese",
+"diff": "ultimativ",
+"min": 23,
+"max": 25,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Plasmapeitsche",
+"power": "Elektrokinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 1,
+"defensive": false
+},
+{
+"name": "Plasmaschneider",
+"power": "Elektrokinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 2,
+"defensive": false
+},
+{
+"name": "Schockberührung",
+"power": "Elektrokinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 2,
+"defensive": false
+},
+{
+"name": "Stun",
+"power": "Elektrokinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Supraleiter",
+"power": "Elektrokinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 2,
+"defensive": false
+},
+{
+"name": "Überlastung",
+"power": "Elektrokinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Unwetter",
+"power": "Elektrokinese",
+"diff": "sehr schwer",
+"min": 19,
+"max": 22,
+"hold": 3,
+"defensive": false
+},
+{
+"name": "Adamant",
+"power": "Haimakinese",
+"diff": "sehr schwer",
+"min": 19,
+"max": 22,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Abschirmung",
+"power": "Haimakinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 1,
+"defensive": false
+},
+{
+"name": "Aderlass",
+"power": "Haimakinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Blutheilung",
+"power": "Haimakinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Blutkristalle",
+"power": "Haimakinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Blutschweiß",
+"power": "Haimakinese",
+"diff": "ultimativ",
+"min": 23,
+"max": 25,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Blutfilter",
+"power": "Haimakinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 1,
+"defensive": false
+},
+{
+"name": "Blutwaffe",
+"power": "Haimakinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 1,
+"defensive": false
+},
+{
+"name": "Kontrolle",
+"power": "Haimakinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 4,
+"defensive": false
+},
+{
+"name": "Modellierung",
+"power": "Haimakinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Restore",
+"power": "Haimakinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Siedepunkt",
+"power": "Haimakinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 4,
+"defensive": false
+},
+{
+"name": "Sudden Death",
+"power": "Haimakinese",
+"diff": "sehr schwer",
+"min": 19,
+"max": 22,
+"hold": 3,
+"defensive": false
+},
+{
+"name": "Überdruck",
+"power": "Haimakinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 1,
+"defensive": false
+},
+{
+"name": "Verhärtung",
+"power": "Haimakinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 2,
+"defensive": false
+},
+{
+"name": "Analyse",
+"power": "Morphokinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Balance",
+"power": "Morphokinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 2,
+"defensive": false
+},
+{
+"name": "Desintegration",
+"power": "Morphokinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Entwaffnen",
+"power": "Morphokinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 1,
+"defensive": false
+},
+{
+"name": "Exiguus",
+"power": "Morphokinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 2,
+"defensive": false
+},
+{
+"name": "Gulliver",
+"power": "Morphokinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 3,
+"defensive": false
+},
+{
+"name": "Marry Bag",
+"power": "Morphokinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 1,
+"defensive": false
+},
+{
+"name": "Morphen",
+"power": "Morphokinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Phasenverschiebung",
+"power": "Morphokinese",
+"diff": "sehr schwer",
+"min": 19,
+"max": 22,
+"hold": 0,
+"defensive": true
+},
+{
+"name": "Schwerpunkt",
+"power": "Morphokinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 1,
+"defensive": false
+},
+{
+"name": "Sticky",
+"power": "Morphokinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Superposition",
+"power": "Morphokinese",
+"diff": "sehr schwer",
+"min": 19,
+"max": 22,
+"hold": 0,
+"defensive": true
+},
+{
+"name": "Transformation",
+"power": "Morphokinese",
+"diff": "ultimativ",
+"min": 23,
+"max": 25,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Verdichtung",
+"power": "Morphokinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 1,
+"defensive": false
+},
+{
+"name": "Wuchtgeschoss",
+"power": "Morphokinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 1,
+"defensive": false
+},
+{
+"name": "Abbild",
+"power": "Photokinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 1,
+"defensive": false
+},
+{
+"name": "Angel Face",
+"power": "Photokinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 2,
+"defensive": false
+},
+{
+"name": "Blenden",
+"power": "Photokinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Darkness",
+"power": "Photokinese",
+"diff": "ultimativ",
+"min": 23,
+"max": 25,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Devil Face",
+"power": "Photokinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 2,
+"defensive": false
+},
+{
+"name": "Endoskopal-Sicht",
+"power": "Photokinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 1,
+"defensive": false
+},
+{
+"name": "Filter",
+"power": "Photokinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 1,
+"defensive": false
+},
+{
+"name": "Laser",
+"power": "Photokinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Leuchten",
+"power": "Photokinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 1,
+"defensive": false
+},
+{
+"name": "Lichtscherben",
+"power": "Photokinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Lichtsalve",
+"power": "Photokinese",
+"diff": "sehr schwer",
+"min": 19,
+"max": 22,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Lichtwaffe",
+"power": "Photokinese",
+"diff": "sehr schwer",
+"min": 19,
+"max": 22,
+"hold": 1,
+"defensive": false
+},
+{
+"name": "Redshift",
+"power": "Photokinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 1,
+"defensive": false
+},
+{
+"name": "Unsichtbarkeit",
+"power": "Photokinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 3,
+"defensive": false
+},
+{
+"name": "Parallaxenfehler",
+"power": "Photokinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 1,
+"defensive": true
+},
+{
+"name": "Dominanz",
+"power": "Psychokinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 2,
+"defensive": false
+},
+{
+"name": "Gedankenschlag",
+"power": "Psychokinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Gehirnwäsche",
+"power": "Psychokinese",
+"diff": "sehr schwer",
+"min": 19,
+"max": 22,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Genesung",
+"power": "Psychokinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Hirnsturz",
+"power": "Psychokinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Illusion",
+"power": "Psychokinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 3,
+"defensive": false
+},
+{
+"name": "Kerker",
+"power": "Psychokinese",
+"diff": "sehr schwer",
+"min": 19,
+"max": 22,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Langstrecken-Telepathie",
+"power": "Psychokinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 3,
+"defensive": false
+},
+{
+"name": "Mentale Imprägnierung",
+"power": "Psychokinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 1,
+"defensive": false
+},
+{
+"name": "Orgasmus",
+"power": "Psychokinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 1,
+"defensive": false
+},
+{
+"name": "Rekonfiguration",
+"power": "Psychokinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Schmerzresistenz",
+"power": "Psychokinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 1,
+"defensive": false
+},
+{
+"name": "Telepathie",
+"power": "Psychokinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 2,
+"defensive": false
+},
+{
+"name": "Versklaven",
+"power": "Psychokinese",
+"diff": "ultimativ",
+"min": 23,
+"max": 25,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Willen brechen",
+"power": "Psychokinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 3,
+"defensive": false
+},
+{
+"name": "Absorption",
+"power": "Pyrokinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Aufkochen",
+"power": "Pyrokinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 2,
+"defensive": false
+},
+{
+"name": "Brandgeschoss",
+"power": "Pyrokinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 1,
+"defensive": false
+},
+{
+"name": "Entzünden",
+"power": "Pyrokinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Explosion",
+"power": "Pyrokinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Feuerwalze",
+"power": "Pyrokinese",
+"diff": "sehr schwer",
+"min": 19,
+"max": 22,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Flammenbändiger",
+"power": "Pyrokinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 2,
+"defensive": false
+},
+{
+"name": "Flammenhand",
+"power": "Pyrokinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 1,
+"defensive": false
+},
+{
+"name": "Hitzeschock",
+"power": "Pyrokinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 1,
+"defensive": false
+},
+{
+"name": "Inferno",
+"power": "Pyrokinese",
+"diff": "ultimativ",
+"min": 23,
+"max": 25,
+"hold": 3,
+"defensive": false
+},
+{
+"name": "Kauterisieren",
+"power": "Pyrokinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Lavafalle",
+"power": "Pyrokinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 2,
+"defensive": false
+},
+{
+"name": "Rauchbombe",
+"power": "Pyrokinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 1,
+"defensive": false
+},
+{
+"name": "Schmelzen",
+"power": "Pyrokinese",
+"diff": "sehr schwer",
+"min": 19,
+"max": 22,
+"hold": 4,
+"defensive": false
+},
+{
+"name": "Wärmeausgleich",
+"power": "Pyrokinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 2,
+"defensive": false
+},
+{
+"name": "Absturz",
+"power": "Technokinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 2,
+"defensive": false
+},
+{
+"name": "Blueprint",
+"power": "Technokinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Befehl",
+"power": "Technokinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 3,
+"defensive": false
+},
+{
+"name": "DarkNet",
+"power": "Technokinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 1,
+"defensive": false
+},
+{
+"name": "Decoder",
+"power": "Technokinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 1,
+"defensive": false
+},
+{
+"name": "Exuvien",
+"power": "Technokinese",
+"diff": "sehr schwer",
+"min": 19,
+"max": 22,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Hacken",
+"power": "Technokinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 1,
+"defensive": false
+},
+{
+"name": "Highjack",
+"power": "Technokinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 3,
+"defensive": false
+},
+{
+"name": "Quellcode",
+"power": "Technokinese",
+"diff": "ultimativ",
+"min": 23,
+"max": 25,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Memory",
+"power": "Technokinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Reciever",
+"power": "Technokinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 1,
+"defensive": false
+},
+{
+"name": "Störsignal",
+"power": "Technokinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 2,
+"defensive": false
+},
+{
+"name": "Techzombie",
+"power": "Technokinese",
+"diff": "sehr schwer",
+"min": 19,
+"max": 22,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Troubleshooter",
+"power": "Technokinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "YouNet",
+"power": "Technokinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 2,
+"defensive": false
+},
+{
+"name": "Anheben",
+"power": "Telekinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 1,
+"defensive": false
+},
+{
+"name": "Druckwelle",
+"power": "Telekinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Erweitertes Anheben",
+"power": "Telekinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 2,
+"defensive": false
+},
+{
+"name": "Fixierung",
+"power": "Telekinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 2,
+"defensive": false
+},
+{
+"name": "Geisterhände",
+"power": "Telekinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 2,
+"defensive": false
+},
+{
+"name": "Geschmeidiges Exoskelett",
+"power": "Telekinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 2,
+"defensive": false
+},
+{
+"name": "Kinetischer Sturm",
+"power": "Telekinese",
+"diff": "sehr schwer",
+"min": 19,
+"max": 22,
+"hold": 3,
+"defensive": false
+},
+{
+"name": "Power Exoskelett",
+"power": "Telekinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 2,
+"defensive": false
+},
+{
+"name": "Rüstung",
+"power": "Telekinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 1,
+"defensive": false
+},
+{
+"name": "Schlag",
+"power": "Telekinese",
+"diff": "mittel",
+"min": 11,
+"max": 15,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Schleudern",
+"power": "Telekinese",
+"diff": "leicht",
+"min": 8,
+"max": 12,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Schockwelle",
+"power": "Telekinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 0,
+"defensive": false
+},
+{
+"name": "Schutzschild",
+"power": "Telekinese",
+"diff": "schwer",
+"min": 15,
+"max": 19,
+"hold": 0,
+"defensive": true
+},
+{
+"name": "Stop",
+"power": "Telekinese",
+"diff": "sehr schwer",
+"min": 19,
+"max": 22,
+"hold": 0,
+"defensive": true
+},
+{
+"name": "Zerquetschen",
+"power": "Telekinese",
+"diff": "ultimativ",
+"min": 23,
+"max": 25,
+"hold": 0,
+"defensive": false
+}
+]

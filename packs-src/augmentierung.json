@@ -1,0 +1,1364 @@
+[
+ {
+  "_id": "qEGAeQZUUZswYGnw",
+  "_key": "!items!qEGAeQZUUZswYGnw",
+  "name": "Robotik-Körperzone: Casual",
+  "type": "augment",
+  "img": "icons/svg/clockwork.svg",
+  "system": {
+   "kind": "robotik",
+   "zone": "",
+   "model": "Casual",
+   "armor": 20,
+   "mk": "B",
+   "capacityCost": 0.0,
+   "orgLoss": 8,
+   "psycheLoss": 0,
+   "installed": true,
+   "ts": 4,
+   "price": 0,
+   "quantity": 1,
+   "modifiers": [],
+   "description": "<p>Robotikmodell Casual (schlicht, einfach, Standard) für eine Körperzone – Zone im Itembogen wählen. GE 1, ST 2, KO 2, BE 1, WA 0, Kapazität 10, Panzerung 20p. MK:B, Organismus −8. 70 TP. Implantation: Robotik-Crafting MW 45 (letal MW 50), 4 h (7 h). Nicht mit Regeneration kompatibel. Robotik-Overdrive: +X Stärke für eine Aktion kostet X Schaden am Teil. <em class=\"nr-ref\">(NoReturn 2E, S. 218)</em></p>",
+   "robotic": {
+    "ge": 1,
+    "st": 2,
+    "ko": 2,
+    "be": 1,
+    "wa": 0,
+    "capacity": 10,
+    "tp": 70
+   }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 1000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "tShXVb94GYwTDBjU",
+  "_key": "!items!tShXVb94GYwTDBjU",
+  "name": "Robotik-Körperzone: Work",
+  "type": "augment",
+  "img": "icons/svg/clockwork.svg",
+  "system": {
+   "kind": "robotik",
+   "zone": "",
+   "model": "Work",
+   "armor": 30,
+   "mk": "B",
+   "capacityCost": 0.0,
+   "orgLoss": 14,
+   "psycheLoss": 0,
+   "installed": true,
+   "ts": 4,
+   "price": 0,
+   "quantity": 1,
+   "modifiers": [],
+   "description": "<p>Robotikmodell Work (grob, offen, massiv, schwer) für eine Körperzone – Zone im Itembogen wählen. GE 1, ST 8, KO 8, BE 1, WA 0, Kapazität 16, Panzerung 30p. MK:B, Organismus −14. 70 TP. Implantation: Robotik-Crafting MW 45 (letal MW 50), 4 h (7 h). Nicht mit Regeneration kompatibel. Robotik-Overdrive: +X Stärke für eine Aktion kostet X Schaden am Teil. <em class=\"nr-ref\">(NoReturn 2E, S. 218)</em></p>",
+   "robotic": {
+    "ge": 1,
+    "st": 8,
+    "ko": 8,
+    "be": 1,
+    "wa": 0,
+    "capacity": 16,
+    "tp": 70
+   }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 2000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "3wpsxoEg0rNiCeFX",
+  "_key": "!items!3wpsxoEg0rNiCeFX",
+  "name": "Robotik-Körperzone: High Tech",
+  "type": "augment",
+  "img": "icons/svg/clockwork.svg",
+  "system": {
+   "kind": "robotik",
+   "zone": "",
+   "model": "High Tech",
+   "armor": 20,
+   "mk": "B",
+   "capacityCost": 0.0,
+   "orgLoss": 4,
+   "psycheLoss": 0,
+   "installed": true,
+   "ts": 4,
+   "price": 0,
+   "quantity": 1,
+   "modifiers": [],
+   "description": "<p>Robotikmodell High Tech (elegant, futuristisch, detailliert) für eine Körperzone – Zone im Itembogen wählen. GE 2, ST 2, KO 2, BE 2, WA 0, Kapazität 8, Panzerung 20p. MK:B, Organismus −4. 70 TP. Implantation: Robotik-Crafting MW 45 (letal MW 50), 4 h (7 h). Nicht mit Regeneration kompatibel. Robotik-Overdrive: +X Stärke für eine Aktion kostet X Schaden am Teil. <em class=\"nr-ref\">(NoReturn 2E, S. 218)</em></p>",
+   "robotic": {
+    "ge": 2,
+    "st": 2,
+    "ko": 2,
+    "be": 2,
+    "wa": 0,
+    "capacity": 8,
+    "tp": 70
+   }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 3000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "jcbQx5hVo5wCBuLX",
+  "_key": "!items!jcbQx5hVo5wCBuLX",
+  "name": "Robotik-Körperzone: Android",
+  "type": "augment",
+  "img": "icons/svg/clockwork.svg",
+  "system": {
+   "kind": "robotik",
+   "zone": "",
+   "model": "Android",
+   "armor": 0,
+   "mk": "A",
+   "capacityCost": 0.0,
+   "orgLoss": 2,
+   "psycheLoss": 0,
+   "installed": true,
+   "ts": 4,
+   "price": 0,
+   "quantity": 1,
+   "modifiers": [],
+   "description": "<p>Robotikmodell Android (menschlich, biologisch, weich) für eine Körperzone – Zone im Itembogen wählen. GE 2, ST 2, KO 2, BE 2, WA 0, Kapazität 6, Panzerung 0p. MK:A, Organismus −2. 70 TP. Implantation: Robotik-Crafting MW 45 (letal MW 50), 4 h (7 h). Nicht mit Regeneration kompatibel. Robotik-Overdrive: +X Stärke für eine Aktion kostet X Schaden am Teil. <em class=\"nr-ref\">(NoReturn 2E, S. 218)</em></p>",
+   "robotic": {
+    "ge": 2,
+    "st": 2,
+    "ko": 2,
+    "be": 2,
+    "wa": 0,
+    "capacity": 6,
+    "tp": 70
+   }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 4000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "oUHEs9Kpev1R8DLb",
+  "_key": "!items!oUHEs9Kpev1R8DLb",
+  "name": "Robotik-Körperzone: Military",
+  "type": "augment",
+  "img": "icons/svg/clockwork.svg",
+  "system": {
+   "kind": "robotik",
+   "zone": "",
+   "model": "Military",
+   "armor": 40,
+   "mk": "B",
+   "capacityCost": 0.0,
+   "orgLoss": 6,
+   "psycheLoss": 0,
+   "installed": true,
+   "ts": 4,
+   "price": 0,
+   "quantity": 1,
+   "modifiers": [],
+   "description": "<p>Robotikmodell Military (pragmatisch, solide, hochwertig) für eine Körperzone – Zone im Itembogen wählen. GE 3, ST 6, KO 6, BE 3, WA 1, Kapazität 12, Panzerung 40p. MK:B, Organismus −6. 70 TP. Implantation: Robotik-Crafting MW 45 (letal MW 50), 4 h (7 h). Nicht mit Regeneration kompatibel. Robotik-Overdrive: +X Stärke für eine Aktion kostet X Schaden am Teil. <em class=\"nr-ref\">(NoReturn 2E, S. 218)</em></p>",
+   "robotic": {
+    "ge": 3,
+    "st": 6,
+    "ko": 6,
+    "be": 3,
+    "wa": 1,
+    "capacity": 12,
+    "tp": 70
+   }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 5000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "r4ERceKimsGmr43A",
+  "_key": "!items!r4ERceKimsGmr43A",
+  "name": "Robotik-Upgrade: Geschick +1",
+  "type": "augment",
+  "img": "icons/svg/clockwork.svg",
+  "system": {
+   "kind": "upgrade",
+   "zone": "",
+   "model": "",
+   "armor": 0,
+   "mk": "",
+   "capacityCost": 0.5,
+   "orgLoss": 0,
+   "psycheLoss": 0,
+   "installed": true,
+   "ts": 4,
+   "price": 1000,
+   "quantity": 1,
+   "modifiers": [],
+   "description": "<p>Max. GE 8. Full Body 11.000 N$. Wert direkt im Robotik-Item der Zone erhöhen. <em class=\"nr-ref\">(NoReturn 2E, S. 218)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 6000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "1d5ki1jyz1BLlAy6",
+  "_key": "!items!1d5ki1jyz1BLlAy6",
+  "name": "Robotik-Upgrade: Stärke +1",
+  "type": "augment",
+  "img": "icons/svg/clockwork.svg",
+  "system": {
+   "kind": "upgrade",
+   "zone": "",
+   "model": "",
+   "armor": 0,
+   "mk": "",
+   "capacityCost": 0.25,
+   "orgLoss": 0,
+   "psycheLoss": 0,
+   "installed": true,
+   "ts": 4,
+   "price": 500,
+   "quantity": 1,
+   "modifiers": [],
+   "description": "<p>Max. ST 20. Full Body 5.500 N$. Wert direkt im Robotik-Item der Zone erhöhen. <em class=\"nr-ref\">(NoReturn 2E, S. 218)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 7000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "uHIyrrXYTEIPg1nd",
+  "_key": "!items!uHIyrrXYTEIPg1nd",
+  "name": "Robotik-Upgrade: Konstitution +1",
+  "type": "augment",
+  "img": "icons/svg/clockwork.svg",
+  "system": {
+   "kind": "upgrade",
+   "zone": "",
+   "model": "",
+   "armor": 0,
+   "mk": "",
+   "capacityCost": 0.25,
+   "orgLoss": 0,
+   "psycheLoss": 0,
+   "installed": true,
+   "ts": 4,
+   "price": 500,
+   "quantity": 1,
+   "modifiers": [],
+   "description": "<p>Max. KO 20. Full Body 5.500 N$. Wert direkt im Robotik-Item der Zone erhöhen. <em class=\"nr-ref\">(NoReturn 2E, S. 218)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 8000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "2k0xvJQx43dGDakB",
+  "_key": "!items!2k0xvJQx43dGDakB",
+  "name": "Robotik-Upgrade: Beweglichkeit +1",
+  "type": "augment",
+  "img": "icons/svg/clockwork.svg",
+  "system": {
+   "kind": "upgrade",
+   "zone": "",
+   "model": "",
+   "armor": 0,
+   "mk": "",
+   "capacityCost": 0.5,
+   "orgLoss": 0,
+   "psycheLoss": 0,
+   "installed": true,
+   "ts": 4,
+   "price": 1000,
+   "quantity": 1,
+   "modifiers": [],
+   "description": "<p>Max. BE 10. Full Body 11.000 N$. Wert direkt im Robotik-Item der Zone erhöhen. <em class=\"nr-ref\">(NoReturn 2E, S. 218)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 9000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "kLtf8nkZGYnjUSeu",
+  "_key": "!items!kLtf8nkZGYnjUSeu",
+  "name": "Robotik-Upgrade: Panzerung +10",
+  "type": "augment",
+  "img": "icons/svg/clockwork.svg",
+  "system": {
+   "kind": "upgrade",
+   "zone": "",
+   "model": "",
+   "armor": 0,
+   "mk": "",
+   "capacityCost": 0.5,
+   "orgLoss": 0,
+   "psycheLoss": 0,
+   "installed": true,
+   "ts": 4,
+   "price": 500,
+   "quantity": 1,
+   "modifiers": [],
+   "description": "<p>Erhöht nur die Rüstungspunkte, nicht die MK. Full Body 5.500 N$. Wert direkt im Robotik-Item der Zone erhöhen. <em class=\"nr-ref\">(NoReturn 2E, S. 218)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 10000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "FkOqYqXBh4Y5qlgz",
+  "_key": "!items!FkOqYqXBh4Y5qlgz",
+  "name": "Abdichtung",
+  "type": "augment",
+  "img": "icons/svg/clockwork.svg",
+  "system": {
+   "kind": "upgrade",
+   "zone": "",
+   "model": "",
+   "armor": 0,
+   "mk": "",
+   "capacityCost": 0.0,
+   "orgLoss": 0,
+   "psycheLoss": 0,
+   "installed": true,
+   "ts": 2,
+   "price": 1000,
+   "quantity": 1,
+   "modifiers": [],
+   "description": "<p>Robotisches Körperteil gegen Feuchtigkeit und toxisches Meerwasser abgedichtet. Preis je Zone. <em class=\"nr-ref\">(NoReturn 2E, S. 219)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 11000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "NoTrPf5xLy5Cgg3C",
+  "_key": "!items!NoTrPf5xLy5Cgg3C",
+  "name": "Isolierte KI",
+  "type": "augment",
+  "img": "icons/svg/clockwork.svg",
+  "system": {
+   "kind": "upgrade",
+   "zone": "",
+   "model": "",
+   "armor": 0,
+   "mk": "",
+   "capacityCost": 1,
+   "orgLoss": 0,
+   "psycheLoss": 0,
+   "installed": true,
+   "ts": 4,
+   "price": 10000,
+   "quantity": 1,
+   "modifiers": [],
+   "description": "<p>KI steuert die Zone autonom, auch bei Bewusstlosigkeit, mit den Grundattributen des Teils. Je Zone. <em class=\"nr-ref\">(NoReturn 2E, S. 219)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 12000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "Ehvj9Z0Tqv3SjX6t",
+  "_key": "!items!Ehvj9Z0Tqv3SjX6t",
+  "name": "Luxus-Upgrade",
+  "type": "augment",
+  "img": "icons/svg/clockwork.svg",
+  "system": {
+   "kind": "upgrade",
+   "zone": "",
+   "model": "",
+   "armor": 0,
+   "mk": "",
+   "capacityCost": 0.0,
+   "orgLoss": 0,
+   "psycheLoss": 0,
+   "installed": true,
+   "ts": 3,
+   "price": 2000,
+   "quantity": 1,
+   "modifiers": [],
+   "description": "<p>Edelsteine und Edelmetallapplikationen – reines Statussymbol. <em class=\"nr-ref\">(NoReturn 2E, S. 219)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 13000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "4JQ3KY7dvZDLIfzv",
+  "_key": "!items!4JQ3KY7dvZDLIfzv",
+  "name": "Alpha-Biomechanik",
+  "type": "augment",
+  "img": "icons/svg/clockwork.svg",
+  "system": {
+   "kind": "biomechanik",
+   "zone": "",
+   "model": "",
+   "armor": 0,
+   "mk": "",
+   "capacityCost": 0.0,
+   "orgLoss": 8,
+   "psycheLoss": 2,
+   "installed": true,
+   "ts": 4,
+   "price": 37000,
+   "quantity": 1,
+   "modifiers": [],
+   "description": "<p>Alle Würfel des gewählten Attributs werden zu Hazard-Di (nicht für robotische Körperteile). Meldepflichtig. <em class=\"nr-ref\">(NoReturn 2E, S. 217)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 14000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "gP6ftO1U35U8JIID",
+  "_key": "!items!gP6ftO1U35U8JIID",
+  "name": "Beta-Biomechanik",
+  "type": "augment",
+  "img": "icons/svg/clockwork.svg",
+  "system": {
+   "kind": "biomechanik",
+   "zone": "",
+   "model": "",
+   "armor": 0,
+   "mk": "",
+   "capacityCost": 0.0,
+   "orgLoss": 4,
+   "psycheLoss": 2,
+   "installed": true,
+   "ts": 4,
+   "price": 13000,
+   "quantity": 1,
+   "modifiers": [],
+   "description": "<p>Alle Würfel der gewählten Fertigkeit werden zu Hazard-Di (nicht für besondere/Elite-Fertigkeiten). <em class=\"nr-ref\">(NoReturn 2E, S. 217)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 15000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "1PHcdxlEgWTEqkLT",
+  "_key": "!items!1PHcdxlEgWTEqkLT",
+  "name": "Cybersense (einzelner Sinn)",
+  "type": "augment",
+  "img": "icons/svg/clockwork.svg",
+  "system": {
+   "kind": "implantat",
+   "zone": "12",
+   "model": "",
+   "armor": 0,
+   "mk": "",
+   "capacityCost": 1,
+   "orgLoss": 2,
+   "psycheLoss": 0,
+   "installed": true,
+   "ts": 4,
+   "price": 5000,
+   "quantity": 1,
+   "modifiers": [],
+   "description": "<p>Oculus, Auris, Odoratus, Gustatus oder Smart-Skin: +5 Stufen Wahrnehmung für diesen Sinn. <em class=\"nr-ref\">(NoReturn 2E, S. 221)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 16000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "UjbSiJk6gPATf1wc",
+  "_key": "!items!UjbSiJk6gPATf1wc",
+  "name": "Cybersense Cut (Stufe 1)",
+  "type": "augment",
+  "img": "icons/svg/clockwork.svg",
+  "system": {
+   "kind": "implantat",
+   "zone": "12",
+   "model": "",
+   "armor": 0,
+   "mk": "",
+   "capacityCost": 0.5,
+   "orgLoss": 1,
+   "psycheLoss": 0,
+   "installed": true,
+   "ts": 3,
+   "price": 2000,
+   "quantity": 1,
+   "modifiers": [],
+   "description": "<p>+2 Stufen für einen Sinn je Cut-Stufe (max. 2). Preis Stufe × 2.000 N$. <em class=\"nr-ref\">(NoReturn 2E, S. 221)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 17000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "M33ehu4zp87tRrC0",
+  "_key": "!items!M33ehu4zp87tRrC0",
+  "name": "Cybersense All-Inclusive (Stufe 1)",
+  "type": "augment",
+  "img": "icons/svg/clockwork.svg",
+  "system": {
+   "kind": "implantat",
+   "zone": "12",
+   "model": "",
+   "armor": 0,
+   "mk": "",
+   "capacityCost": 0.5,
+   "orgLoss": 1,
+   "psycheLoss": 0,
+   "installed": true,
+   "ts": 4,
+   "price": 10000,
+   "quantity": 1,
+   "modifiers": [],
+   "description": "<p>Je Stufe +2 Wahrnehmung für Fertigkeitsproben (max. Stufe 3 = +6); zählt nicht beim Steigern von WA. <em class=\"nr-ref\">(NoReturn 2E, S. 221)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 18000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "kD4oFwI09fipMlIZ",
+  "_key": "!items!kD4oFwI09fipMlIZ",
+  "name": "Vision-Upgrade",
+  "type": "augment",
+  "img": "icons/svg/clockwork.svg",
+  "system": {
+   "kind": "implantat",
+   "zone": "",
+   "model": "",
+   "armor": 0,
+   "mk": "",
+   "capacityCost": 0.0,
+   "orgLoss": 0,
+   "psycheLoss": 0,
+   "installed": true,
+   "ts": 3,
+   "price": 10000,
+   "quantity": 1,
+   "modifiers": [],
+   "description": "<p>Nur mit Cybersense Oculus: Nachtsicht und Thermalsicht. <em class=\"nr-ref\">(NoReturn 2E, S. 221)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 19000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "5BxrVQntOBZwmkvt",
+  "_key": "!items!5BxrVQntOBZwmkvt",
+  "name": "Damage Control",
+  "type": "augment",
+  "img": "icons/svg/clockwork.svg",
+  "system": {
+   "kind": "implantat",
+   "zone": "12",
+   "model": "",
+   "armor": 0,
+   "mk": "",
+   "capacityCost": 1,
+   "orgLoss": 9,
+   "psycheLoss": 4,
+   "installed": true,
+   "ts": 4,
+   "price": 20000,
+   "quantity": 1,
+   "modifiers": [
+    {
+     "target": "schmerztoleranz",
+     "value": 3
+    }
+   ],
+   "description": "<p>Schmerztoleranz +3 (max. 10). <em class=\"nr-ref\">(NoReturn 2E, S. 221)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 20000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "Q006NOsjnIJVviAB",
+  "_key": "!items!Q006NOsjnIJVviAB",
+  "name": "Energiespeicherpack",
+  "type": "augment",
+  "img": "icons/svg/clockwork.svg",
+  "system": {
+   "kind": "implantat",
+   "zone": "",
+   "model": "",
+   "armor": 0,
+   "mk": "",
+   "capacityCost": 1.5,
+   "orgLoss": 4,
+   "psycheLoss": 1,
+   "installed": true,
+   "ts": 4,
+   "price": 2500,
+   "quantity": 1,
+   "modifiers": [],
+   "description": "<p>+2 temporäre Bonuswürfel auf Ausdauer je Pack. <em class=\"nr-ref\">(NoReturn 2E, S. 221)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 21000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "jSBoCPFLN10rMd23",
+  "_key": "!items!jSBoCPFLN10rMd23",
+  "name": "Enterhaken",
+  "type": "augment",
+  "img": "icons/svg/clockwork.svg",
+  "system": {
+   "kind": "implantat",
+   "zone": "",
+   "model": "",
+   "armor": 0,
+   "mk": "",
+   "capacityCost": 2,
+   "orgLoss": 8,
+   "psycheLoss": 1,
+   "installed": true,
+   "ts": 3,
+   "price": 8200,
+   "quantity": 1,
+   "modifiers": [],
+   "description": "<p>Stahlhaken bis 50 m, zieht bis 500 kg. Einschlag 50 Schaden (Einzelfeuer). <em class=\"nr-ref\">(NoReturn 2E, S. 222)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 22000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "xJNyyhayMLGazp5F",
+  "_key": "!items!xJNyyhayMLGazp5F",
+  "name": "Integriertes SmartCom",
+  "type": "augment",
+  "img": "icons/svg/clockwork.svg",
+  "system": {
+   "kind": "implantat",
+   "zone": "",
+   "model": "",
+   "armor": 0,
+   "mk": "",
+   "capacityCost": 0.5,
+   "orgLoss": 2,
+   "psycheLoss": 1,
+   "installed": true,
+   "ts": 4,
+   "price": 3000,
+   "quantity": 1,
+   "modifiers": [],
+   "description": "<p>Gedankengesteuertes SmartCom; Sensoren nur mit Wahrnehmung MW 20 erkennbar. <em class=\"nr-ref\">(NoReturn 2E, S. 222)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 23000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "mJH7YLvlY7kOAVo4",
+  "_key": "!items!mJH7YLvlY7kOAVo4",
+  "name": "Integriertes Waffensystem",
+  "type": "augment",
+  "img": "icons/svg/clockwork.svg",
+  "system": {
+   "kind": "implantat",
+   "zone": "",
+   "model": "",
+   "armor": 0,
+   "mk": "",
+   "capacityCost": 0.0,
+   "orgLoss": 0,
+   "psycheLoss": 0,
+   "installed": true,
+   "ts": 4,
+   "price": 0,
+   "quantity": 1,
+   "modifiers": [],
+   "description": "<p>Nahkampf- oder tragbare Fernkampfwaffe in Robotik eingebaut (nicht biologisch). Gekennzeichnet legal, getarnt illegal. <em class=\"nr-ref\">(NoReturn 2E, S. 222)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 24000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "2ZyU5w8cUN76CDGr",
+  "_key": "!items!2ZyU5w8cUN76CDGr",
+  "name": "Lungenfiltersystem",
+  "type": "augment",
+  "img": "icons/svg/clockwork.svg",
+  "system": {
+   "kind": "implantat",
+   "zone": "",
+   "model": "",
+   "armor": 0,
+   "mk": "",
+   "capacityCost": 1,
+   "orgLoss": 4,
+   "psycheLoss": 2,
+   "installed": true,
+   "ts": 4,
+   "price": 7000,
+   "quantity": 1,
+   "modifiers": [],
+   "description": "<p>+2W6 Infektionsresistenz gegen Übertragung durch die Luft, immun gegen eingeatmete Gifte. <em class=\"nr-ref\">(NoReturn 2E, S. 222)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 25000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "fAZ7Xijfi8FSIQTx",
+  "_key": "!items!fAZ7Xijfi8FSIQTx",
+  "name": "Neuronaler Überbrücker",
+  "type": "augment",
+  "img": "icons/svg/clockwork.svg",
+  "system": {
+   "kind": "implantat",
+   "zone": "12",
+   "model": "",
+   "armor": 0,
+   "mk": "",
+   "capacityCost": 0.5,
+   "orgLoss": 3,
+   "psycheLoss": 1,
+   "installed": true,
+   "ts": 4,
+   "price": 5000,
+   "quantity": 1,
+   "modifiers": [],
+   "description": "<p>Erhöht dauerhaft eine programmierte Fertigkeit um 1 (ignoriert Erschaffungsmaximum). Modifikator im Item setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 222)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 26000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "cODqQN5gEnmmtX5k",
+  "_key": "!items!cODqQN5gEnmmtX5k",
+  "name": "PNS – Primär-Neural-Supporter",
+  "type": "augment",
+  "img": "icons/svg/clockwork.svg",
+  "system": {
+   "kind": "implantat",
+   "zone": "12",
+   "model": "",
+   "armor": 0,
+   "mk": "",
+   "capacityCost": 0.5,
+   "orgLoss": 10,
+   "psycheLoss": 3,
+   "installed": true,
+   "ts": 4,
+   "price": 20000,
+   "quantity": 1,
+   "modifiers": [],
+   "description": "<p>Nahezu eidetisches Gedächtnis: Fertigkeiten und besondere Fertigkeiten kosten 2 EP weniger (Häkchen „PNS“ im Bio-Reiter setzen). <em class=\"nr-ref\">(NoReturn 2E, S. 222)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 27000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "dsOSPsdrZm5t1jQR",
+  "_key": "!items!dsOSPsdrZm5t1jQR",
+  "name": "Rückstoßkompensator",
+  "type": "augment",
+  "img": "icons/svg/clockwork.svg",
+  "system": {
+   "kind": "implantat",
+   "zone": "",
+   "model": "",
+   "armor": 0,
+   "mk": "",
+   "capacityCost": 1,
+   "orgLoss": 2,
+   "psycheLoss": 1,
+   "installed": true,
+   "ts": 3,
+   "price": 3000,
+   "quantity": 1,
+   "modifiers": [],
+   "description": "<p>+2 Rückstoßdämpfung für Handfeuerwaffen in der waffenführenden Zone (beim Angriff als Auflage wählen oder RD der Waffe erhöhen). <em class=\"nr-ref\">(NoReturn 2E, S. 223)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 28000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "e8ed05CT7XrCc0Wb",
+  "_key": "!items!e8ed05CT7XrCc0Wb",
+  "name": "Schocker",
+  "type": "augment",
+  "img": "icons/svg/clockwork.svg",
+  "system": {
+   "kind": "implantat",
+   "zone": "",
+   "model": "",
+   "armor": 0,
+   "mk": "",
+   "capacityCost": 1,
+   "orgLoss": 2,
+   "psycheLoss": 1,
+   "installed": true,
+   "ts": 3,
+   "price": 1800,
+   "quantity": 1,
+   "modifiers": [],
+   "description": "<p>Elektroschock bei Berührung: leicht NL 30, mittel NL 50 (1 Eigenschaden), schwer 30 Schaden (2 Eigenschaden). <em class=\"nr-ref\">(NoReturn 2E, S. 223)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 29000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "5nse5pFlDzAZOFed",
+  "_key": "!items!5nse5pFlDzAZOFed",
+  "name": "Stauraum (je Liter)",
+  "type": "augment",
+  "img": "icons/svg/clockwork.svg",
+  "system": {
+   "kind": "implantat",
+   "zone": "",
+   "model": "",
+   "armor": 0,
+   "mk": "",
+   "capacityCost": 2,
+   "orgLoss": 4,
+   "psycheLoss": 2,
+   "installed": true,
+   "ts": 2,
+   "price": 1000,
+   "quantity": 1,
+   "modifiers": [],
+   "description": "<p>Eingebautes Fach, auch auf mehrere kleine verteilbar. <em class=\"nr-ref\">(NoReturn 2E, S. 223)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 30000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "OBSVLuQQdpRONFh6",
+  "_key": "!items!OBSVLuQQdpRONFh6",
+  "name": "Universalübersetzer",
+  "type": "augment",
+  "img": "icons/svg/clockwork.svg",
+  "system": {
+   "kind": "implantat",
+   "zone": "12",
+   "model": "",
+   "armor": 0,
+   "mk": "",
+   "capacityCost": 2,
+   "orgLoss": 13,
+   "psycheLoss": 0,
+   "installed": true,
+   "ts": 5,
+   "price": 38000,
+   "quantity": 1,
+   "modifiers": [],
+   "description": "<p>Analysiert Sprachen in 3 Minuten; Direkt-Link-Version (55.000 N$, Organismus −18, nicht in Robotik) in 3 Sekunden. Illegal. <em class=\"nr-ref\">(NoReturn 2E, S. 223)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 31000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "oF52llPog8ssnzsV",
+  "_key": "!items!oF52llPog8ssnzsV",
+  "name": "Werkzeug- oder Laborantenset (implantiert)",
+  "type": "augment",
+  "img": "icons/svg/clockwork.svg",
+  "system": {
+   "kind": "implantat",
+   "zone": "",
+   "model": "",
+   "armor": 0,
+   "mk": "",
+   "capacityCost": 0.0,
+   "orgLoss": 0,
+   "psycheLoss": 0,
+   "installed": true,
+   "ts": 4,
+   "price": 0,
+   "quantity": 1,
+   "modifiers": [],
+   "description": "<p>Implantiertes Äquivalent zur Werkzeug- bzw. Laborantenkiste; Qualität wie Werkzeuge (−2W bis +3W). <em class=\"nr-ref\">(NoReturn 2E, S. 223)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 32000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ }
+]

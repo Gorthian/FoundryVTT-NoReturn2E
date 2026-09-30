@@ -1,0 +1,418 @@
+[
+ {
+  "_id": "DNLYZsZje1zFKdZs",
+  "_key": "!items!DNLYZsZje1zFKdZs",
+  "name": "Animakinese",
+  "type": "psiPower",
+  "img": "icons/magic/death/blood-corruption-vomit-red.webp",
+  "system": {
+   "key": "animakinese",
+   "value": 1,
+   "free": 0,
+   "show": "Objekte verschwimmen geisterhaft.",
+   "description": "<p>Manipulation der Psyche und Restprojektionen Verstorbener (Neuralprojektion). Hierarchieebene 2. Show-Effekt: Objekte verschwimmen geisterhaft. Erschaffung 5 GP je Stufe (max. 6), Steigern: neue Stufe × 4 EP. Je Stufe eine App. <em class=\"nr-ref\">(NoReturn 2E, S. 197)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 1000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "TFmPbVBsgaboKH8F",
+  "_key": "!items!TFmPbVBsgaboKH8F",
+  "name": "Biokinese",
+  "type": "psiPower",
+  "img": "icons/magic/life/ankh-gold-blue.webp",
+  "system": {
+   "key": "biokinese",
+   "value": 1,
+   "free": 0,
+   "show": "Kleine Hautstelle ändert kurz Farbe/Struktur.",
+   "description": "<p>Manipulation biologischen Gewebes. Hierarchieebene 2. Show-Effekt: Kleine Hautstelle ändert kurz Farbe/Struktur. Erschaffung 5 GP je Stufe (max. 6), Steigern: neue Stufe × 4 EP. Je Stufe eine App. <em class=\"nr-ref\">(NoReturn 2E, S. 198)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 2000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "R1AO4g52xqALLJql",
+  "_key": "!items!R1AO4g52xqALLJql",
+  "name": "Chronokinese",
+  "type": "psiPower",
+  "img": "icons/magic/time/arrows-circling-green.webp",
+  "system": {
+   "key": "chronokinese",
+   "value": 1,
+   "free": 0,
+   "show": "Zeit läuft für ein Objekt kurz rückwärts.",
+   "description": "<p>Manipulation der Zeit. Hierarchieebene 3. Show-Effekt: Zeit läuft für ein Objekt kurz rückwärts. Erschaffung 5 GP je Stufe (max. 6), Steigern: neue Stufe × 4 EP. Je Stufe eine App. <em class=\"nr-ref\">(NoReturn 2E, S. 200)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 3000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "ZwSWAvrHn6uZPrxg",
+  "_key": "!items!ZwSWAvrHn6uZPrxg",
+  "name": "Cryokinese",
+  "type": "psiPower",
+  "img": "icons/magic/water/barrier-ice-crystal-wall-faceted-blue.webp",
+  "system": {
+   "key": "cryokinese",
+   "value": 1,
+   "free": 0,
+   "show": "Reif und Eiskristalle.",
+   "description": "<p>Temperatur ins Negative, Kontrolle über Wassermoleküle. Hierarchieebene 1. Show-Effekt: Reif und Eiskristalle. Erschaffung 5 GP je Stufe (max. 6), Steigern: neue Stufe × 4 EP. Je Stufe eine App. <em class=\"nr-ref\">(NoReturn 2E, S. 201)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 4000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "BdvbRbqyC0COS3NA",
+  "_key": "!items!BdvbRbqyC0COS3NA",
+  "name": "Elektrokinese",
+  "type": "psiPower",
+  "img": "icons/magic/lightning/barrier-shield-crackling-orb-pink.webp",
+  "system": {
+   "key": "elektrokinese",
+   "value": 1,
+   "free": 0,
+   "show": "Leuchtmittel flackern, kleine Blitze.",
+   "description": "<p>Manipulation elektrischer Ströme, Erzeugen von Elektrizität. Hierarchieebene 1. Show-Effekt: Leuchtmittel flackern, kleine Blitze. Erschaffung 5 GP je Stufe (max. 6), Steigern: neue Stufe × 4 EP. Je Stufe eine App. <em class=\"nr-ref\">(NoReturn 2E, S. 203)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 5000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "1MNCbE8JMHweFhTU",
+  "_key": "!items!1MNCbE8JMHweFhTU",
+  "name": "Haimakinese",
+  "type": "psiPower",
+  "img": "icons/magic/unholy/barrier-fire-pink.webp",
+  "system": {
+   "key": "haimakinese",
+   "value": 1,
+   "free": 0,
+   "show": "Sichtbares Blut bewegt sich, kristallisiert oder brodelt.",
+   "description": "<p>Manipulation von Blut. Setzt die Abnormität „Demigod“ voraus. Hierarchieebene 1. Show-Effekt: Sichtbares Blut bewegt sich, kristallisiert oder brodelt. Erschaffung 5 GP je Stufe (max. 6), Steigern: neue Stufe × 4 EP. Je Stufe eine App. <em class=\"nr-ref\">(NoReturn 2E, S. 204)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 6000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "qUKtNqJnbk7iWyMJ",
+  "_key": "!items!qUKtNqJnbk7iWyMJ",
+  "name": "Morphokinese",
+  "type": "psiPower",
+  "img": "icons/magic/earth/barrier-lava-stone-orange.webp",
+  "system": {
+   "key": "morphokinese",
+   "value": 1,
+   "free": 0,
+   "show": "Kleines ruhendes Objekt ändert kurz die Größe.",
+   "description": "<p>Manipulation von Masse in Größe und Konsistenz. Hierarchieebene 3. Show-Effekt: Kleines ruhendes Objekt ändert kurz die Größe. Erschaffung 5 GP je Stufe (max. 6), Steigern: neue Stufe × 4 EP. Je Stufe eine App. <em class=\"nr-ref\">(NoReturn 2E, S. 206)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 7000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "7U9l2xDobjHNlFCx",
+  "_key": "!items!7U9l2xDobjHNlFCx",
+  "name": "Photokinese",
+  "type": "psiPower",
+  "img": "icons/magic/light/beam-deflect-path-yellow.webp",
+  "system": {
+   "key": "photokinese",
+   "value": 1,
+   "free": 0,
+   "show": "Licht wird heller/dunkler, Schatten verformen sich.",
+   "description": "<p>Manipulation von Licht. Hierarchieebene 2. Show-Effekt: Licht wird heller/dunkler, Schatten verformen sich. Erschaffung 5 GP je Stufe (max. 6), Steigern: neue Stufe × 4 EP. Je Stufe eine App. <em class=\"nr-ref\">(NoReturn 2E, S. 208)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 8000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "Ok2SldWihBO3ynpR",
+  "_key": "!items!Ok2SldWihBO3ynpR",
+  "name": "Psychokinese",
+  "type": "psiPower",
+  "img": "icons/magic/perception/eye-ringed-glow-angry-large-red.webp",
+  "system": {
+   "key": "psychokinese",
+   "value": 1,
+   "free": 0,
+   "show": "Wirre Stimmen in Köpfen.",
+   "description": "<p>Manipulation von Verstand und Gedanken. Hierarchieebene 2. Show-Effekt: Wirre Stimmen in Köpfen. Erschaffung 5 GP je Stufe (max. 6), Steigern: neue Stufe × 4 EP. Je Stufe eine App. <em class=\"nr-ref\">(NoReturn 2E, S. 209)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 9000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "GE4ZxT3NXZSR0ZVn",
+  "_key": "!items!GE4ZxT3NXZSR0ZVn",
+  "name": "Pyrokinese",
+  "type": "psiPower",
+  "img": "icons/magic/fire/barrier-shield-explosion-yellow.webp",
+  "system": {
+   "key": "pyrokinese",
+   "value": 1,
+   "free": 0,
+   "show": "Etwas brennt ohne zu verbrennen.",
+   "description": "<p>Temperatur ins Positive, Kontrolle von Feuer. Hierarchieebene 1. Show-Effekt: Etwas brennt ohne zu verbrennen. Erschaffung 5 GP je Stufe (max. 6), Steigern: neue Stufe × 4 EP. Je Stufe eine App. <em class=\"nr-ref\">(NoReturn 2E, S. 211)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 10000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "Zzg3ayib2MZgIIqg",
+  "_key": "!items!Zzg3ayib2MZgIIqg",
+  "name": "Technokinese",
+  "type": "psiPower",
+  "img": "icons/magic/control/buff-flight-wings-blue.webp",
+  "system": {
+   "key": "technokinese",
+   "value": 1,
+   "free": 0,
+   "show": "Elektronik in der Nähe wird gestört.",
+   "description": "<p>Manipulation von Signalen, Daten und Geräten ohne Eingabegeräte. Hierarchieebene 3. Show-Effekt: Elektronik in der Nähe wird gestört. Erschaffung 5 GP je Stufe (max. 6), Steigern: neue Stufe × 4 EP. Je Stufe eine App. <em class=\"nr-ref\">(NoReturn 2E, S. 212)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 11000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "sYp5szvKV4JTpeeC",
+  "_key": "!items!sYp5szvKV4JTpeeC",
+  "name": "Telekinese",
+  "type": "psiPower",
+  "img": "icons/magic/air/air-burst-spiral-blue-gray.webp",
+  "system": {
+   "key": "telekinese",
+   "value": 1,
+   "free": 0,
+   "show": "Kleine Objekte schweben.",
+   "description": "<p>Manipulation kinetischer Kräfte und Masse über Distanz. Hierarchieebene 1. Show-Effekt: Kleine Objekte schweben. Erschaffung 5 GP je Stufe (max. 6), Steigern: neue Stufe × 4 EP. Je Stufe eine App. <em class=\"nr-ref\">(NoReturn 2E, S. 213)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 12000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "6AZBcXIMtZW4sGXl",
+  "_key": "!items!6AZBcXIMtZW4sGXl",
+  "name": "Unaufhaltsamer Schatten (Kategorie B)",
+  "type": "psiPower",
+  "img": "icons/magic/unholy/barrier-fire-pink.webp",
+  "system": {
+   "key": "kategorieB",
+   "value": 1,
+   "free": 0,
+   "show": "",
+   "description": "<p>Passive HMO-Kraft der Kategorie B (Beispiel für iHMO). Weitere Kategorie-B-Kräfte: 7 GP / 15 EP. <em class=\"nr-ref\">(NoReturn 2E, S. 215)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 13000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ }
+]

@@ -1,0 +1,61 @@
+<div class="nr-dialog">
+  <div class="nr-dialog-summary">
+    <span class="nr-chip big">{{dice}}W</span>
+    {{#if woundMalus}}<span class="nr-chip bad" data-tooltip="{{malusDetail}}">−{{woundMalus}}W {{localize "NR.Roll.Malus"}}</span>{{/if}}
+    {{#if resist}}<span class="nr-chip">{{localize "NR.Roll.NoMalusResist"}}</span>{{/if}}
+  </div>
+  {{#if attrChoices}}
+  <div class="form-group">
+    <label>{{localize "NR.Roll.Attribute"}}</label>
+    <select name="attr">{{selectOptions attrChoices selected=attrKey}}</select>
+  </div>
+  {{/if}}
+  <div class="form-group">
+    <label>{{localize "NR.Roll.BonusDice"}}</label>
+    <input type="number" name="bonusDice" value="{{extraBonus}}">
+  </div>
+  <div class="form-group">
+    <label>{{localize "NR.Roll.MalusDice"}}</label>
+    <input type="number" name="malusDice" value="0" min="0">
+  </div>
+  {{#unless resist}}
+  <div class="form-group">
+    <label data-tooltip="{{localize 'NR.Roll.DisadvantageHint'}}">{{localize "NR.Roll.Disadvantages"}}</label>
+    <input type="number" name="disadvantages" value="0" min="0">
+  </div>
+  {{else}}<input type="hidden" name="disadvantages" value="0">{{/unless}}
+  <div class="form-group">
+    <label>{{localize "NR.Roll.Points"}}</label>
+    <input type="number" name="points" value="{{extraPoints}}">
+  </div>
+  <div class="form-group">
+    <label>{{localize "NR.Roll.Difficulty"}}</label>
+    <select name="mwSelect">
+      {{selectOptions difficulties selected=(ifThen customMw "custom" mw)}}
+      <option value="custom" {{#if customMw}}selected{{/if}}>{{localize "NR.Roll.Custom"}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>{{localize "NR.Roll.CustomMw"}}</label>
+    <input type="number" name="mwCustom" value="{{mw}}">
+  </div>
+  {{#if adrenalinLeft}}
+  <div class="form-group">
+    <label>{{localize "NR.Roll.Adrenalin"}} (+{{adrenalinBonus}}W, {{adrenalinLeft}} {{localize "NR.Combat.Left"}})</label>
+    <input type="checkbox" name="useAdrenalin">
+  </div>
+  {{/if}}
+  {{#if meditationLeft}}
+  <div class="form-group">
+    <label>{{localize "NR.Special.meditation"}} (+{{meditationBonus}}W, {{meditationLeft}} {{localize "NR.Combat.Left"}})</label>
+    <input type="checkbox" name="useMeditation">
+  </div>
+  {{/if}}
+  {{#if allowPass}}
+  <div class="form-group">
+    <label data-tooltip="{{localize 'NR.Roll.PassHint'}}">{{localize "NR.Roll.Pass"}}</label>
+    <input type="checkbox" name="pass">
+  </div>
+  {{/if}}
+  {{{extraContent}}}
+</div>

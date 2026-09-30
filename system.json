@@ -1,0 +1,82 @@
+{
+  "id": "noreturn",
+  "title": "NoReturn 2E",
+  "description": "Inoffizielles Spielsystem für NoReturn 2. Edition (Vario-D6 2.0) von Mannifest Games. Charakterbögen, Würfelmechanik mit Hazard-Di, Körperzonen-Schaden, Kampfablauf, PSI-Apps, Degeneration und Compendien.",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "14"
+  },
+  "authors": [
+    { "name": "Thorsten Egolf" }
+  ],
+  "esmodules": ["noreturn.mjs"],
+  "styles": ["styles/noreturn.css"],
+  "languages": [
+    { "lang": "de", "name": "Deutsch", "path": "lang/de.json" },
+    { "lang": "en", "name": "English", "path": "lang/en.json" }
+  ],
+  "documentTypes": {
+    "Actor": {
+      "character": { "htmlFields": ["biography", "notes", "wanted"] },
+      "npc": { "htmlFields": ["biography", "notes", "wanted"] },
+      "vehicle": { "htmlFields": ["description"] }
+    },
+    "Item": {
+      "weapon": { "htmlFields": ["description"] },
+      "ammo": { "htmlFields": ["description"] },
+      "armor": { "htmlFields": ["description"] },
+      "gear": { "htmlFields": ["description"] },
+      "skill": { "htmlFields": ["description"] },
+      "psiPower": { "htmlFields": ["description"] },
+      "psiApp": { "htmlFields": ["description"] },
+      "styleSkill": { "htmlFields": ["description"] },
+      "species": { "htmlFields": ["description"] },
+      "abnormality": { "htmlFields": ["description"] },
+      "bioTrait": { "htmlFields": ["description"] },
+      "advantage": { "htmlFields": ["description"] },
+      "trait": { "htmlFields": ["description"] },
+      "augment": { "htmlFields": ["description"] }
+    }
+  },
+  "packs": [
+    { "name": "spezies", "label": "Spezies", "path": "packs/spezies", "type": "Item", "system": "noreturn", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } },
+    { "name": "waffen", "label": "Waffen", "path": "packs/waffen", "type": "Item", "system": "noreturn", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } },
+    { "name": "munition", "label": "Munition & Sprengstoffe", "path": "packs/munition", "type": "Item", "system": "noreturn", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } },
+    { "name": "ruestungen", "label": "Schutzkleidung", "path": "packs/ruestungen", "type": "Item", "system": "noreturn", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } },
+    { "name": "ausruestung", "label": "Ausrüstung", "path": "packs/ausruestung", "type": "Item", "system": "noreturn", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } },
+    { "name": "augmentierung", "label": "Augmentierung", "path": "packs/augmentierung", "type": "Item", "system": "noreturn", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } },
+    { "name": "psi-kraefte", "label": "PSI-Kräfte", "path": "packs/psi-kraefte", "type": "Item", "system": "noreturn", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } },
+    { "name": "psi-apps", "label": "PSI-Apps", "path": "packs/psi-apps", "type": "Item", "system": "noreturn", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } },
+    { "name": "style-skills", "label": "Style-Skills & Kampfkünste", "path": "packs/style-skills", "type": "Item", "system": "noreturn", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } },
+    { "name": "abnormitaeten", "label": "Biologische Abnormitäten", "path": "packs/abnormitaeten", "type": "Item", "system": "noreturn", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } },
+    { "name": "bio-eigenschaften", "label": "Biologische Eigenschaften", "path": "packs/bio-eigenschaften", "type": "Item", "system": "noreturn", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } },
+    { "name": "vor-nachteile", "label": "Vor- & Nachteile", "path": "packs/vor-nachteile", "type": "Item", "system": "noreturn", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } },
+    { "name": "merkmale", "label": "Charaktermerkmale", "path": "packs/merkmale", "type": "Item", "system": "noreturn", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } },
+    { "name": "fertigkeiten", "label": "Besondere Fertigkeiten & Sprachen", "path": "packs/fertigkeiten", "type": "Item", "system": "noreturn", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } },
+    { "name": "tabellen", "label": "Tabellen", "path": "packs/tabellen", "type": "RollTable", "system": "noreturn", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } },
+    { "name": "regeln", "label": "Regelübersicht", "path": "packs/regeln", "type": "JournalEntry", "system": "noreturn", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } }
+  ],
+  "packFolders": [
+    {
+      "name": "NoReturn 2E",
+      "sorting": "m",
+      "color": "#7a2e12",
+      "packs": ["regeln", "tabellen"],
+      "folders": [
+        { "name": "Charakter", "sorting": "m", "packs": ["spezies", "abnormitaeten", "bio-eigenschaften", "vor-nachteile", "merkmale", "style-skills", "fertigkeiten"] },
+        { "name": "Arsenal & Ausrüstung", "sorting": "m", "packs": ["waffen", "munition", "ruestungen", "ausruestung", "augmentierung"] },
+        { "name": "PSI", "sorting": "m", "packs": ["psi-kraefte", "psi-apps"] }
+      ]
+    }
+  ],
+  "grid": { "distance": 1, "units": "m" },
+  "primaryTokenAttribute": "health",
+  "secondaryTokenAttribute": "adrenalin",
+  "initiative": "1d6",
+  "url": "",
+  "manifest": "",
+  "download": "",
+  "license": "LICENSE.txt",
+  "readme": "README.md"
+}

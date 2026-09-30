@@ -1,0 +1,1537 @@
+[
+ {
+  "_id": "meBSDuaXAhK8LKZW",
+  "_key": "!items!meBSDuaXAhK8LKZW",
+  "name": "ALLES-Fresser",
+  "type": "abnormality",
+  "img": "icons/svg/biohazard.svg",
+  "system": {
+   "gp": 20,
+   "variant": "",
+   "heritability": "19 %",
+   "intensity": "",
+   "illegal": false,
+   "modifiers": [],
+   "description": "<p>Extrem aggressive Magensäure – kann fast alles verdauen, braucht aber weiter ausgewogene Nährstoffe. <em class=\"nr-ref\">(NoReturn 2E, S. 149)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 1000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "XIRit5VTt2mQResH",
+  "_key": "!items!XIRit5VTt2mQResH",
+  "name": "Amphibia Humanis",
+  "type": "abnormality",
+  "img": "icons/svg/biohazard.svg",
+  "system": {
+   "gp": 10,
+   "variant": "",
+   "heritability": "34 %",
+   "intensity": "",
+   "illegal": false,
+   "modifiers": [],
+   "description": "<p>Resistenz gegen säurehaltiges Meerwasser: kein Schaden durch toxisches Küstenwasser, kann hindurchtauchen. <em class=\"nr-ref\">(NoReturn 2E, S. 149)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 2000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "7XbwdCrVe2xaYrvO",
+  "_key": "!items!7XbwdCrVe2xaYrvO",
+  "name": "Atem-Ratio",
+  "type": "abnormality",
+  "img": "icons/svg/biohazard.svg",
+  "system": {
+   "gp": 10,
+   "variant": "",
+   "heritability": "78 %",
+   "intensity": "",
+   "illegal": false,
+   "modifiers": [
+    {
+     "target": "skills.ausdauer",
+     "value": 3
+    }
+   ],
+   "description": "<p>Luft 15 Minuten anhalten; Ausdauer +3. <em class=\"nr-ref\">(NoReturn 2E, S. 149)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 3000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "hertYNgOQyt8JVIi",
+  "_key": "!items!hertYNgOQyt8JVIi",
+  "name": "Booster-Syndrom",
+  "type": "abnormality",
+  "img": "icons/svg/biohazard.svg",
+  "system": {
+   "gp": 25,
+   "variant": "",
+   "heritability": "47 %",
+   "intensity": "",
+   "illegal": false,
+   "modifiers": [],
+   "description": "<p>Aura im 5-m-Radius: PSI-Apps anderer erhalten +2 KS (nur Wirkung, nicht Zielbereich). Wirkt nicht auf sich selbst. <em class=\"nr-ref\">(NoReturn 2E, S. 149)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 4000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "7e0EqSrhSqRfUafj",
+  "_key": "!items!7e0EqSrhSqRfUafj",
+  "name": "Caecitas",
+  "type": "abnormality",
+  "img": "icons/svg/biohazard.svg",
+  "system": {
+   "gp": 10,
+   "variant": "",
+   "heritability": "29 %",
+   "intensity": "",
+   "illegal": false,
+   "modifiers": [],
+   "description": "<p>Weichteile verhärtet: kein Weichteil-Bonusschaden gegen den Charakter. <em class=\"nr-ref\">(NoReturn 2E, S. 149)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 5000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "edqjUPKjiCAU4PxL",
+  "_key": "!items!edqjUPKjiCAU4PxL",
+  "name": "Common Sense",
+  "type": "abnormality",
+  "img": "icons/svg/biohazard.svg",
+  "system": {
+   "gp": 5,
+   "variant": "",
+   "heritability": "10 %",
+   "intensity": "",
+   "illegal": false,
+   "modifiers": [
+    {
+     "target": "psyche",
+     "value": 10
+    }
+   ],
+   "description": "<p>Psyche +10; für 1 EP 5 Psyche wiederherstellen (max. 100). Gelegentliche Tipps der SL. <em class=\"nr-ref\">(NoReturn 2E, S. 150)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 6000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "iWhb6gqIYgFnyEqR",
+  "_key": "!items!iWhb6gqIYgFnyEqR",
+  "name": "CT-Virus (CT3)",
+  "type": "abnormality",
+  "img": "icons/svg/biohazard.svg",
+  "system": {
+   "gp": 90,
+   "variant": "CT3",
+   "heritability": "98 %",
+   "intensity": "6",
+   "illegal": true,
+   "modifiers": [
+    {
+     "target": "irDice",
+     "value": 1
+    },
+    {
+     "target": "schmerztoleranz",
+     "value": 2
+    },
+    {
+     "target": "organismus",
+     "value": -24
+    },
+    {
+     "target": "psyche",
+     "value": -25
+    },
+    {
+     "target": "regSpeed",
+     "value": 30
+    },
+    {
+     "target": "regPool",
+     "value": 90
+    }
+   ],
+   "description": "<p>Parasitärer Virus: bricht nach dem Tod oder durch Schmerz aus und verwandelt in eine echsenartige Bestie. Allgemein: IR +1W6, Schmerztoleranz +2, „Roh und Blutig“, Organismus −24, Psyche −25. Regeneration 30 / Pool 90, Instinkt 6. In CT-Form: Krallen, Roar, scharfe Zähne, zermalmender Kiefer, Wechselgänger, animalische Sprache; GE −1, ST +6, KO +6, BE +5, WA +1, WI −3, CH −3, HA −2; Schwingen &amp; Gleiten. Verwandlung: Willenskraft gegen Instinkt + Adrenalin (siehe Tabelle S. 150). Inhaltswarnung beachten! <em class=\"nr-ref\">(NoReturn 2E, S. 150)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 7000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "L1AKTmLFPNS35QPU",
+  "_key": "!items!L1AKTmLFPNS35QPU",
+  "name": "CT-Virus (CT4)",
+  "type": "abnormality",
+  "img": "icons/svg/biohazard.svg",
+  "system": {
+   "gp": 100,
+   "variant": "CT4",
+   "heritability": "98 %",
+   "intensity": "6",
+   "illegal": true,
+   "modifiers": [
+    {
+     "target": "irDice",
+     "value": 1
+    },
+    {
+     "target": "schmerztoleranz",
+     "value": 2
+    },
+    {
+     "target": "organismus",
+     "value": -24
+    },
+    {
+     "target": "psyche",
+     "value": -25
+    },
+    {
+     "target": "regSpeed",
+     "value": 30
+    },
+    {
+     "target": "regPool",
+     "value": 110
+    }
+   ],
+   "description": "<p>Parasitärer Virus: bricht nach dem Tod oder durch Schmerz aus und verwandelt in eine echsenartige Bestie. Allgemein: IR +1W6, Schmerztoleranz +2, „Roh und Blutig“, Organismus −24, Psyche −25. Regeneration 30 / Pool 110, Instinkt 6. In CT-Form: Krallen, Roar, scharfe Zähne, zermalmender Kiefer, Wechselgänger, animalische Sprache; GE −1, ST +5, KO +5, BE +5, WA +1, WI −2, CH −3, HA −2; Nachtsicht. Verwandlung: Willenskraft gegen Instinkt + Adrenalin (siehe Tabelle S. 150). Inhaltswarnung beachten! <em class=\"nr-ref\">(NoReturn 2E, S. 150)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 8000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "VwBZ5cfNloqkbCfD",
+  "_key": "!items!VwBZ5cfNloqkbCfD",
+  "name": "CT-Virus (CT5)",
+  "type": "abnormality",
+  "img": "icons/svg/biohazard.svg",
+  "system": {
+   "gp": 110,
+   "variant": "CT5",
+   "heritability": "98 %",
+   "intensity": "6",
+   "illegal": true,
+   "modifiers": [
+    {
+     "target": "irDice",
+     "value": 1
+    },
+    {
+     "target": "schmerztoleranz",
+     "value": 2
+    },
+    {
+     "target": "organismus",
+     "value": -24
+    },
+    {
+     "target": "psyche",
+     "value": -25
+    },
+    {
+     "target": "regSpeed",
+     "value": 30
+    },
+    {
+     "target": "regPool",
+     "value": 130
+    }
+   ],
+   "description": "<p>Parasitärer Virus: bricht nach dem Tod oder durch Schmerz aus und verwandelt in eine echsenartige Bestie. Allgemein: IR +1W6, Schmerztoleranz +2, „Roh und Blutig“, Organismus −24, Psyche −25. Regeneration 30 / Pool 130, Instinkt 5. In CT-Form: Krallen, Roar, scharfe Zähne, zermalmender Kiefer, Wechselgänger, animalische Sprache; GE −1, ST +5, KO +5, BE +5, WA +2, WI −2, CH −3, HA −2; Nachtsicht, Schwingen &amp; Gleiten. Verwandlung: Willenskraft gegen Instinkt + Adrenalin (siehe Tabelle S. 150). Inhaltswarnung beachten! <em class=\"nr-ref\">(NoReturn 2E, S. 150)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 9000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "RCHHD1YDewibKNE5",
+  "_key": "!items!RCHHD1YDewibKNE5",
+  "name": "CT-Virus (CT6)",
+  "type": "abnormality",
+  "img": "icons/svg/biohazard.svg",
+  "system": {
+   "gp": 120,
+   "variant": "CT6",
+   "heritability": "98 %",
+   "intensity": "6",
+   "illegal": true,
+   "modifiers": [
+    {
+     "target": "irDice",
+     "value": 1
+    },
+    {
+     "target": "schmerztoleranz",
+     "value": 2
+    },
+    {
+     "target": "organismus",
+     "value": -24
+    },
+    {
+     "target": "psyche",
+     "value": -25
+    },
+    {
+     "target": "regSpeed",
+     "value": 30
+    },
+    {
+     "target": "regPool",
+     "value": 150
+    }
+   ],
+   "description": "<p>Parasitärer Virus: bricht nach dem Tod oder durch Schmerz aus und verwandelt in eine echsenartige Bestie. Allgemein: IR +1W6, Schmerztoleranz +2, „Roh und Blutig“, Organismus −24, Psyche −25. Regeneration 30 / Pool 150, Instinkt 5. In CT-Form: Krallen, Roar, scharfe Zähne, zermalmender Kiefer, Wechselgänger, animalische Sprache; GE −1, ST +5, KO +6, BE +6, WA +2, WI −2, CH −3, HA −2; Nachtsicht, einziehbare Schwingen &amp; Gleiten. Verwandlung: Willenskraft gegen Instinkt + Adrenalin (siehe Tabelle S. 150). Inhaltswarnung beachten! <em class=\"nr-ref\">(NoReturn 2E, S. 150)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 10000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "D7FPQw1UAlqfxEAV",
+  "_key": "!items!D7FPQw1UAlqfxEAV",
+  "name": "Demigod",
+  "type": "abnormality",
+  "img": "icons/svg/biohazard.svg",
+  "system": {
+   "gp": 30,
+   "variant": "",
+   "heritability": "100 %",
+   "intensity": "",
+   "illegal": true,
+   "modifiers": [
+    {
+     "target": "attributes.st",
+     "value": 2
+    },
+    {
+     "target": "attributes.ko",
+     "value": 1
+    }
+   ],
+   "description": "<p>Voraussetzung: drei andere Abnormitäten. Stärke +2, Konstitution +1; öffnet Style-Skills und Eigenschaften (z. B. Rage of Gods). Blutrote Iris, schwarze Lederhaut. Kopfgeld 2.500 N$. <em class=\"nr-ref\">(NoReturn 2E, S. 153)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 11000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "ie6v1fQ7lhN2PYHh",
+  "_key": "!items!ie6v1fQ7lhN2PYHh",
+  "name": "Diezinsynthese",
+  "type": "abnormality",
+  "img": "icons/svg/biohazard.svg",
+  "system": {
+   "gp": 15,
+   "variant": "",
+   "heritability": "91 %",
+   "intensity": "",
+   "illegal": false,
+   "modifiers": [],
+   "description": "<p>Ernährt sich von 3–4 l Diezin täglich; Giftresistenz 1; immun gegen CT und HMO; keine Regeneration. Bei Zerstörung von Zone 7 durch Hitze: Explosion 50 Hitzeschaden auf 1W6 m. <em class=\"nr-ref\">(NoReturn 2E, S. 153)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 12000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "GrBE1nKrjAQb5SlR",
+  "_key": "!items!GrBE1nKrjAQb5SlR",
+  "name": "Flair",
+  "type": "abnormality",
+  "img": "icons/svg/biohazard.svg",
+  "system": {
+   "gp": 10,
+   "variant": "",
+   "heritability": "49 %",
+   "intensity": "",
+   "illegal": false,
+   "modifiers": [],
+   "description": "<p>Willenskraft-Probe (1 KR): Ergebnis = Radius in m, in dem PSI-Begabte grob geortet werden. <em class=\"nr-ref\">(NoReturn 2E, S. 153)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 13000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "ZIkBHOK6fUDUDAdT",
+  "_key": "!items!ZIkBHOK6fUDUDAdT",
+  "name": "HMO (iHMO, infiziert)",
+  "type": "abnormality",
+  "img": "icons/svg/biohazard.svg",
+  "system": {
+   "gp": 100,
+   "variant": "iHMO",
+   "heritability": "99 %",
+   "intensity": "8 (3)",
+   "illegal": false,
+   "modifiers": [
+    {
+     "target": "irPoints",
+     "value": 4
+    },
+    {
+     "target": "tp",
+     "value": 20
+    },
+    {
+     "target": "psyche",
+     "value": -10
+    },
+    {
+     "target": "organismus",
+     "value": -10
+    },
+    {
+     "target": "bloodMax",
+     "value": 5
+    }
+   ],
+   "description": "<p>Hämatophager mutagener Organismus („Vampir“): IR +4, scharfe Zähne, Nachtsicht, TP 50, Psyche −10, Organismus −10. Blutpunkte (max. 5): 1 BP = 0,5 l Blut, 1 BP je Sonnenaufgang, +4W auf ein Attribut je BP. UV: 30 andauernder Schaden je KR. PSI Kategorie B: „Unaufhaltsamer Schatten“. <em class=\"nr-ref\">(NoReturn 2E, S. 154)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 14000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "GxsHZhmaipNi3MVL",
+  "_key": "!items!GxsHZhmaipNi3MVL",
+  "name": "HMO (gHMO, geboren)",
+  "type": "abnormality",
+  "img": "icons/svg/biohazard.svg",
+  "system": {
+   "gp": 140,
+   "variant": "gHMO",
+   "heritability": "99 %",
+   "intensity": "8 (3)",
+   "illegal": false,
+   "modifiers": [
+    {
+     "target": "irPoints",
+     "value": 4
+    },
+    {
+     "target": "tp",
+     "value": 40
+    },
+    {
+     "target": "psyche",
+     "value": -10
+    },
+    {
+     "target": "organismus",
+     "value": -10
+    },
+    {
+     "target": "bloodMax",
+     "value": 10
+    }
+   ],
+   "description": "<p>Wie iHMO, aber TP 70, max. 10 Blutpunkte und eine frei wählbare PSI-Kraft der Kategorie B (weitere für je 7 GP / 15 EP). <em class=\"nr-ref\">(NoReturn 2E, S. 154)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 15000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "bc5uiGyL9vUT4Wob",
+  "_key": "!items!bc5uiGyL9vUT4Wob",
+  "name": "Hyperbolismus",
+  "type": "abnormality",
+  "img": "icons/svg/biohazard.svg",
+  "system": {
+   "gp": 110,
+   "variant": "",
+   "heritability": "24 %",
+   "intensity": "",
+   "illegal": false,
+   "modifiers": [
+    {
+     "target": "regSpeed",
+     "value": 30
+    },
+    {
+     "target": "regPool",
+     "value": 300
+    }
+   ],
+   "description": "<p>Heilung mit vielfacher Geschwindigkeit: Regeneration 30, Pool 300. <em class=\"nr-ref\">(NoReturn 2E, S. 155)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 16000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "bCJPDdRPBLqJ31Ab",
+  "_key": "!items!bCJPDdRPBLqJ31Ab",
+  "name": "Hyperdrenalin",
+  "type": "abnormality",
+  "img": "icons/svg/biohazard.svg",
+  "system": {
+   "gp": 30,
+   "variant": "",
+   "heritability": "45 %",
+   "intensity": "",
+   "illegal": false,
+   "modifiers": [
+    {
+     "target": "adrenalin",
+     "value": 2
+    }
+   ],
+   "description": "<p>Adrenalin auch außerhalb von Stresssituationen einsetzbar; Adrenalin +2. <em class=\"nr-ref\">(NoReturn 2E, S. 155)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 17000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "yToTbZeNnUNEsM4S",
+  "_key": "!items!yToTbZeNnUNEsM4S",
+  "name": "Immunität",
+  "type": "abnormality",
+  "img": "icons/svg/biohazard.svg",
+  "system": {
+   "gp": 30,
+   "variant": "",
+   "heritability": "57 %",
+   "intensity": "",
+   "illegal": false,
+   "modifiers": [
+    {
+     "target": "irDice",
+     "value": 2
+    }
+   ],
+   "description": "<p>+2W auf Infektionsresistenz; Wunden entzünden sich nie und heilen doppelt so schnell. <em class=\"nr-ref\">(NoReturn 2E, S. 155)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 18000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "01YuxN0PL4OCtfkd",
+  "_key": "!items!01YuxN0PL4OCtfkd",
+  "name": "Insight",
+  "type": "abnormality",
+  "img": "icons/svg/biohazard.svg",
+  "system": {
+   "gp": 50,
+   "variant": "",
+   "heritability": "9 %",
+   "intensity": "",
+   "illegal": false,
+   "modifiers": [],
+   "description": "<p>Willenskraft-Probe: Radius in m, erkennt welche Wesen PSI der Kategorie A besitzen. Mit Berührung prüfbar. <em class=\"nr-ref\">(NoReturn 2E, S. 156)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 19000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "D1UOsqRq1McMX3e8",
+  "_key": "!items!D1UOsqRq1McMX3e8",
+  "name": "Kongenitale Analgesie",
+  "type": "abnormality",
+  "img": "icons/svg/biohazard.svg",
+  "system": {
+   "gp": 60,
+   "variant": "",
+   "heritability": "29 %",
+   "intensity": "",
+   "illegal": false,
+   "modifiers": [
+    {
+     "target": "schmerztoleranz",
+     "value": 10
+    }
+   ],
+   "description": "<p>Angeborene Schmerzunempfindlichkeit: Schmerztoleranz 10, nicht senkbar. <em class=\"nr-ref\">(NoReturn 2E, S. 156)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 20000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "VoW5yFGb9iSb9i6L",
+  "_key": "!items!VoW5yFGb9iSb9i6L",
+  "name": "Kordionisches Manko",
+  "type": "abnormality",
+  "img": "icons/svg/biohazard.svg",
+  "system": {
+   "gp": 30,
+   "variant": "",
+   "heritability": "19 %",
+   "intensity": "",
+   "illegal": false,
+   "modifiers": [],
+   "description": "<p>Tagsüber nahezu blind (−3W optisch bei hellem Licht), alle anderen Wahrnehmungsproben +3W; „Sechster Sinn“. <em class=\"nr-ref\">(NoReturn 2E, S. 156)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 21000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "ugA0kIeqSLZq0Y7D",
+  "_key": "!items!ugA0kIeqSLZq0Y7D",
+  "name": "Memo-Scar",
+  "type": "abnormality",
+  "img": "icons/svg/biohazard.svg",
+  "system": {
+   "gp": 5,
+   "variant": "",
+   "heritability": "45 %",
+   "intensity": "",
+   "illegal": false,
+   "modifiers": [],
+   "description": "<p>Voraussetzung Regenerationspool: Narben bleiben sichtbar, Tätowierungen möglich. <em class=\"nr-ref\">(NoReturn 2E, S. 156)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 22000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "oOgJ5UjJxZ9WC6VY",
+  "_key": "!items!oOgJ5UjJxZ9WC6VY",
+  "name": "Metamorph",
+  "type": "abnormality",
+  "img": "icons/svg/biohazard.svg",
+  "system": {
+   "gp": 120,
+   "variant": "",
+   "heritability": "26 %",
+   "intensity": "",
+   "illegal": true,
+   "modifiers": [],
+   "description": "<p>Gestalt in engem Rahmen wandelbar (±20 cm, ±20 kg Eindruck, Haare). 1 KR, Willenskraft MW 20; währenddessen −1W auf körperliche Aktionen. Intersexuell. Illegal. <em class=\"nr-ref\">(NoReturn 2E, S. 157)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 23000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "JKYzwBbDFL73wZot",
+  "_key": "!items!JKYzwBbDFL73wZot",
+  "name": "Meta-Schwannsche-Zellen",
+  "type": "abnormality",
+  "img": "icons/svg/biohazard.svg",
+  "system": {
+   "gp": 70,
+   "variant": "",
+   "heritability": "31 %",
+   "intensity": "",
+   "illegal": false,
+   "modifiers": [],
+   "description": "<p>Eine Aktion mehr pro Runde; alle Mali auf Psyche und Organismus werden verdoppelt. <em class=\"nr-ref\">(NoReturn 2E, S. 157)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 24000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "FoB7D9vp1a9k06cM",
+  "_key": "!items!FoB7D9vp1a9k06cM",
+  "name": "Mysteriöses Implantat",
+  "type": "abnormality",
+  "img": "icons/svg/biohazard.svg",
+  "system": {
+   "gp": 10,
+   "variant": "",
+   "heritability": "",
+   "intensity": "",
+   "illegal": false,
+   "modifiers": [
+    {
+     "target": "organismus",
+     "value": -5
+    },
+    {
+     "target": "psyche",
+     "value": -5
+    }
+   ],
+   "description": "<p>Fremde Erinnerungen: zwei Wissens-Fertigkeiten +1 (über Maximum). Organismus −5, Psyche −5. Auch für Erwachte. <em class=\"nr-ref\">(NoReturn 2E, S. 157)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 25000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "Shz6yGMNMVkV5NgL",
+  "_key": "!items!Shz6yGMNMVkV5NgL",
+  "name": "N²",
+  "type": "abnormality",
+  "img": "icons/svg/biohazard.svg",
+  "system": {
+   "gp": 35,
+   "variant": "",
+   "heritability": "72 %",
+   "intensity": "",
+   "illegal": false,
+   "modifiers": [],
+   "description": "<p>Bei der Erschaffung dürfen zwei Fertigkeiten bis 6 gesteigert werden und erhalten einmalig +1 (bis 7). <em class=\"nr-ref\">(NoReturn 2E, S. 158)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 26000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "gdECkONaA5WoOMjy",
+  "_key": "!items!gdECkONaA5WoOMjy",
+  "name": "Pheromonia",
+  "type": "abnormality",
+  "img": "icons/svg/biohazard.svg",
+  "system": {
+   "gp": 60,
+   "variant": "",
+   "heritability": "45 %",
+   "intensity": "",
+   "illegal": true,
+   "modifiers": [],
+   "description": "<p>Botenstoffe im Radius KO × 5 m: Anziehung, Besänftigung, Furcht, Wut oder Vertrauen. CH + Willenskraft gegen WI + Willenskraft + IR. Immun gegen fremde Pheromonia. Kopfgeld 750 N$. <em class=\"nr-ref\">(NoReturn 2E, S. 158)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 27000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "PSTvscybxq041woa",
+  "_key": "!items!PSTvscybxq041woa",
+  "name": "PSI-Resistenz",
+  "type": "abnormality",
+  "img": "icons/svg/biohazard.svg",
+  "system": {
+   "gp": 25,
+   "variant": "",
+   "heritability": "23 %",
+   "intensity": "",
+   "illegal": false,
+   "modifiers": [],
+   "description": "<p>Fremde PSI-Apps der Kategorie A wirken um 2 KS schwächer (nach erfolgreichem Wirken). <em class=\"nr-ref\">(NoReturn 2E, S. 159)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 28000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "OiFpQivbkxz4oHzs",
+  "_key": "!items!OiFpQivbkxz4oHzs",
+  "name": "Psionische Abartigkeit",
+  "type": "abnormality",
+  "img": "icons/svg/biohazard.svg",
+  "system": {
+   "gp": 40,
+   "variant": "",
+   "heritability": "24 %",
+   "intensity": "",
+   "illegal": false,
+   "modifiers": [],
+   "description": "<p>Kann kein PSI wirken und keine Kategorie-A-Kräfte erwerben; Kategorie-A-Kräfte wirken nicht auf den Charakter. <em class=\"nr-ref\">(NoReturn 2E, S. 159)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 29000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "oDE4DUbdRHTqAMLe",
+  "_key": "!items!oDE4DUbdRHTqAMLe",
+  "name": "Psionische Transzendenz",
+  "type": "abnormality",
+  "img": "icons/svg/biohazard.svg",
+  "system": {
+   "gp": 60,
+   "variant": "",
+   "heritability": "65 %",
+   "intensity": "",
+   "illegal": false,
+   "modifiers": [],
+   "description": "<p>Immunität gegen PSI der Kategorie A; mit Adrenalin je 1 Minute aufhebbar. Wird von Flair/Insight nicht erkannt. <em class=\"nr-ref\">(NoReturn 2E, S. 159)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 30000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "av0Ypn56BLSWM0ap",
+  "_key": "!items!av0Ypn56BLSWM0ap",
+  "name": "Psionische Maskierung",
+  "type": "abnormality",
+  "img": "icons/svg/biohazard.svg",
+  "system": {
+   "gp": 25,
+   "variant": "",
+   "heritability": "",
+   "intensity": "",
+   "illegal": false,
+   "modifiers": [],
+   "description": "<p>Tarnt psionische Begabung (siehe GP-Übersicht S. 136). <em class=\"nr-ref\">(NoReturn 2E, S. 136)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 31000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "GJnG0mjFZ4i34Tr6",
+  "_key": "!items!GJnG0mjFZ4i34Tr6",
+  "name": "Resin-Gen",
+  "type": "abnormality",
+  "img": "icons/svg/biohazard.svg",
+  "system": {
+   "gp": 10,
+   "variant": "",
+   "heritability": "7 %",
+   "intensity": "",
+   "illegal": false,
+   "modifiers": [],
+   "description": "<p>Organismus heilbar: 1 EP = 5 Organismus (max. 100); bei Erschaffung 1 GP = 5 Organismus. Hebt Meta-Schwann-Nachteil auf. <em class=\"nr-ref\">(NoReturn 2E, S. 159)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 32000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "O7Cl0kcmaSMXgxOg",
+  "_key": "!items!O7Cl0kcmaSMXgxOg",
+  "name": "Solaris",
+  "type": "abnormality",
+  "img": "icons/svg/biohazard.svg",
+  "system": {
+   "gp": 40,
+   "variant": "",
+   "heritability": "55 %",
+   "intensity": "",
+   "illegal": false,
+   "modifiers": [],
+   "description": "<p>UV-Licht 1 Min.–2 h: +1W, über 2 h: +2W auf GE, ST, KO, BE für die gleiche Dauer. Kein Sonnenbrand. <em class=\"nr-ref\">(NoReturn 2E, S. 160)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 33000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "AM43UR7td6dt4RVW",
+  "_key": "!items!AM43UR7td6dt4RVW",
+  "name": "Soulmate (AA–ZZ)",
+  "type": "abnormality",
+  "img": "icons/svg/biohazard.svg",
+  "system": {
+   "gp": 10,
+   "variant": "",
+   "heritability": "50/100 %",
+   "intensity": "",
+   "illegal": false,
+   "modifiers": [],
+   "description": "<p>Code-Kombination AA–ZZ: gleiche Soulmates spüren einander auf WI × 100 m, +2W Charisma untereinander. Wirkungslos unter Psyche 25. <em class=\"nr-ref\">(NoReturn 2E, S. 160)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 34000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "nqrhn8hB0D7bEpXj",
+  "_key": "!items!nqrhn8hB0D7bEpXj",
+  "name": "Super Charge",
+  "type": "abnormality",
+  "img": "icons/svg/biohazard.svg",
+  "system": {
+   "gp": 30,
+   "variant": "",
+   "heritability": "81 %",
+   "intensity": "",
+   "illegal": false,
+   "modifiers": [],
+   "description": "<p>Supraleiter: ernährt sich von Strom. Mittlere Quellen: Sättigung → Adrenalin auffüllen → +4W nächste körperliche Aktion; danach Schaden. <em class=\"nr-ref\">(NoReturn 2E, S. 160)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 35000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "baS4YCiBMpoSLEcX",
+  "_key": "!items!baS4YCiBMpoSLEcX",
+  "name": "Tierische Mutation",
+  "type": "abnormality",
+  "img": "icons/svg/biohazard.svg",
+  "system": {
+   "gp": 6,
+   "variant": "",
+   "heritability": "61 %",
+   "intensity": "",
+   "illegal": false,
+   "modifiers": [
+    {
+     "target": "organismus",
+     "value": -2
+    }
+   ],
+   "description": "<p>Gewährt biologische Eigenschaften im Wert von 5 GP (mehrfach wählbar). Organismus −2 je Auswahl. Mutant zweiter Klasse. <em class=\"nr-ref\">(NoReturn 2E, S. 161)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 36000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "E2V81kSQCQbGe8bw",
+  "_key": "!items!E2V81kSQCQbGe8bw",
+  "name": "Toxic",
+  "type": "abnormality",
+  "img": "icons/svg/biohazard.svg",
+  "system": {
+   "gp": 20,
+   "variant": "",
+   "heritability": "30 %",
+   "intensity": "",
+   "illegal": false,
+   "modifiers": [
+    {
+     "target": "irDice",
+     "value": 1
+    }
+   ],
+   "description": "<p>Ätzendes Blut: 25 andauernder Hitzeschaden bei Kontakt (selbst immun). Keine Robotik/Biomechanik; IR +1W6. <em class=\"nr-ref\">(NoReturn 2E, S. 161)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 37000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "strz3BbBeXdqu147",
+  "_key": "!items!strz3BbBeXdqu147",
+  "name": "Verfluchte Bindung",
+  "type": "abnormality",
+  "img": "icons/svg/biohazard.svg",
+  "system": {
+   "gp": 40,
+   "variant": "",
+   "heritability": "85 %",
+   "intensity": "",
+   "illegal": false,
+   "modifiers": [],
+   "description": "<p>Psionische Bindung an einen Gegenstand: ohne Kontakt +2W auf alle Attribute, aber −1 Psyche je Stunde. Zerstörung: neue Bindung, Psyche −10. <em class=\"nr-ref\">(NoReturn 2E, S. 161)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 38000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "mE2kAfWQnLRdv6sq",
+  "_key": "!items!mE2kAfWQnLRdv6sq",
+  "name": "X-trem Gen",
+  "type": "abnormality",
+  "img": "icons/svg/biohazard.svg",
+  "system": {
+   "gp": 30,
+   "variant": "",
+   "heritability": "97 %",
+   "intensity": "",
+   "illegal": false,
+   "modifiers": [
+    {
+     "target": "attributes.st",
+     "value": 1
+    }
+   ],
+   "description": "<p>Stärke +1; Stärke wird wie eine Elite-Fertigkeit gesteigert (nächste Stufe × 4 EP). <em class=\"nr-ref\">(NoReturn 2E, S. 161)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 39000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ }
+]

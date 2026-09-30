@@ -1,0 +1,1573 @@
+[
+ {
+  "_id": "4yODkmLmxMlZfcLY",
+  "_key": "!items!4yODkmLmxMlZfcLY",
+  "name": "Alkoholresistenz",
+  "type": "advantage",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+   "kind": "vorteil",
+   "markers": 1,
+   "level": 1,
+   "modifiers": [],
+   "description": "<p>Alkohol zählt 5 ALK weniger. <em class=\"nr-ref\">(NoReturn 2E, S. 174)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 1000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "4GRTwz2m5DXAfuAs",
+  "_key": "!items!4GRTwz2m5DXAfuAs",
+  "name": "Angespannt",
+  "type": "advantage",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+   "kind": "vorteil",
+   "markers": 2,
+   "level": 1,
+   "modifiers": [
+    {
+     "target": "adrenalin",
+     "value": 1
+    }
+   ],
+   "description": "<p>Adrenalin +1. <em class=\"nr-ref\">(NoReturn 2E, S. 174)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 2000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "HGCT66ozW8ZpdnVM",
+  "_key": "!items!HGCT66ozW8ZpdnVM",
+  "name": "Aus gutem Hause",
+  "type": "advantage",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+   "kind": "vorteil",
+   "markers": 2,
+   "level": 1,
+   "modifiers": [],
+   "description": "<p>Einmal im Zonat Zugriff auf Ressourcen im Wert von 10.000 N$ – pflegen! <em class=\"nr-ref\">(NoReturn 2E, S. 174)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 3000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "3vAObgOhzrDXb8Lu",
+  "_key": "!items!3vAObgOhzrDXb8Lu",
+  "name": "Berühmt",
+  "type": "advantage",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+   "kind": "vorteil",
+   "markers": 1,
+   "level": 1,
+   "modifiers": [],
+   "description": "<p>Startet mit Bekanntheit Meilenstein 6 (MW 20). <em class=\"nr-ref\">(NoReturn 2E, S. 174)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 4000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "AN28wfyd0kD6w7Ir",
+  "_key": "!items!AN28wfyd0kD6w7Ir",
+  "name": "Extrem talentiert",
+  "type": "advantage",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+   "kind": "vorteil",
+   "markers": 1,
+   "level": 1,
+   "modifiers": [],
+   "description": "<p>Würfelt zweimal den Butterfly Effect – zwei Begabungen. <em class=\"nr-ref\">(NoReturn 2E, S. 174)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 5000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "X4G2DPt6gUzsYBQg",
+  "_key": "!items!X4G2DPt6gUzsYBQg",
+  "name": "Fahrzeugempathie",
+  "type": "advantage",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+   "kind": "vorteil",
+   "markers": 1,
+   "level": 1,
+   "modifiers": [],
+   "description": "<p>Handling von gesteuerten Fahrzeugen −10. Nicht mit Fahrzeugantipathie. <em class=\"nr-ref\">(NoReturn 2E, S. 174)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 6000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "3XkXQkLpeofEqm1l",
+  "_key": "!items!3XkXQkLpeofEqm1l",
+  "name": "Frühaufsteher",
+  "type": "advantage",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+   "kind": "vorteil",
+   "markers": 1,
+   "level": 1,
+   "modifiers": [],
+   "description": "<p>Nach vier Stunden Schlaf erholt. <em class=\"nr-ref\">(NoReturn 2E, S. 174)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 7000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "hT9CTYm7jaQYY36w",
+  "_key": "!items!hT9CTYm7jaQYY36w",
+  "name": "Gutes Heilfleisch",
+  "type": "advantage",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+   "kind": "vorteil",
+   "markers": 1,
+   "level": 1,
+   "modifiers": [],
+   "description": "<p>Natürliche Heilung 20 Punkte je Tag statt KO. Nicht mit Verdorbenes Fleisch. <em class=\"nr-ref\">(NoReturn 2E, S. 174)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 8000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "NZSSDWPsmC2Pww8U",
+  "_key": "!items!NZSSDWPsmC2Pww8U",
+  "name": "Kontakte zu Hightech",
+  "type": "advantage",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+   "kind": "vorteil",
+   "markers": 1,
+   "level": 1,
+   "modifiers": [],
+   "description": "<p>Zugang zu sämtlicher Hightech-Ausrüstung zu normalen Preisen. <em class=\"nr-ref\">(NoReturn 2E, S. 174)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 9000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "0uCRJG2wAli4QrxH",
+  "_key": "!items!0uCRJG2wAli4QrxH",
+  "name": "Konzentration [PSI]",
+  "type": "advantage",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+   "kind": "vorteil",
+   "markers": 1,
+   "level": 1,
+   "modifiers": [],
+   "description": "<p>Kraftsammeln um 5 Punkte erleichtert. <em class=\"nr-ref\">(NoReturn 2E, S. 174)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 10000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "V4LI8WicNxY0IxIi",
+  "_key": "!items!V4LI8WicNxY0IxIi",
+  "name": "Meisterschaft (Fertigkeit)",
+  "type": "advantage",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+   "kind": "vorteil",
+   "markers": 1,
+   "level": 1,
+   "modifiers": [],
+   "description": "<p>Eine Fertigkeit +1 (auch über Maximum); einmal je Fertigkeit. Modifikator setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 174)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 11000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "vzop5LJAbTHo0hkj",
+  "_key": "!items!vzop5LJAbTHo0hkj",
+  "name": "Mutagen",
+  "type": "advantage",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+   "kind": "vorteil",
+   "markers": 1,
+   "level": 1,
+   "modifiers": [],
+   "description": "<p>Nur für Spezies mit biologischen Eigenschaften: fortschreitende Entwicklung trotz fremder Regeneration. <em class=\"nr-ref\">(NoReturn 2E, S. 174)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 12000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "uFCFEcseFNBDJKMp",
+  "_key": "!items!uFCFEcseFNBDJKMp",
+  "name": "Jane/John Doe",
+  "type": "advantage",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+   "kind": "vorteil",
+   "markers": 1,
+   "level": 1,
+   "modifiers": [],
+   "description": "<p>So unauffällig, dass man sich kaum erinnert; wird zuletzt ausgewählt. <em class=\"nr-ref\">(NoReturn 2E, S. 174)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 13000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "5qj8yqrOqPwcLxcF",
+  "_key": "!items!5qj8yqrOqPwcLxcF",
+  "name": "Realitätsbrechende Selbstüberzeugung",
+  "type": "advantage",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+   "kind": "vorteil",
+   "markers": 3,
+   "level": 1,
+   "modifiers": [],
+   "description": "<p>Einmal je Spielsitzung einen Würfelwurf neu werfen. <em class=\"nr-ref\">(NoReturn 2E, S. 174)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 14000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "RKfTQAWUS0wRoDAg",
+  "_key": "!items!RKfTQAWUS0wRoDAg",
+  "name": "Unterschlupf",
+  "type": "advantage",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+   "kind": "vorteil",
+   "markers": 2,
+   "level": 1,
+   "modifiers": [],
+   "description": "<p>Sicherer 40-m²-Rückzugsort mit Wasser und Strom. <em class=\"nr-ref\">(NoReturn 2E, S. 174)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 15000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "2om3oyjor2Xf9F8M",
+  "_key": "!items!2om3oyjor2Xf9F8M",
+  "name": "Schmerzresistent",
+  "type": "advantage",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+   "kind": "vorteil",
+   "markers": 2,
+   "level": 1,
+   "modifiers": [
+    {
+     "target": "schmerztoleranz",
+     "value": 2
+    }
+   ],
+   "description": "<p>Schmerztoleranz +2. Nicht mit Schmerzempfindlichkeit. <em class=\"nr-ref\">(NoReturn 2E, S. 174)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 16000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "Xvlu5VUwvcZKwTNR",
+  "_key": "!items!Xvlu5VUwvcZKwTNR",
+  "name": "Schneller Lerner",
+  "type": "advantage",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+   "kind": "vorteil",
+   "markers": 3,
+   "level": 1,
+   "modifiers": [],
+   "description": "<p>+1 EP je Spielrunde. Nicht mit Begriffsstutzig. <em class=\"nr-ref\">(NoReturn 2E, S. 174)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 17000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "F1g1izOptoV0U7bD",
+  "_key": "!items!F1g1izOptoV0U7bD",
+  "name": "Tausendsassa",
+  "type": "advantage",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+   "kind": "vorteil",
+   "markers": 3,
+   "level": 1,
+   "modifiers": [],
+   "description": "<p>+20 GP bei der Charaktererschaffung (GP-Extra im Bio-Reiter eintragen). <em class=\"nr-ref\">(NoReturn 2E, S. 174)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 18000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "gEupQLSmNFYCzTeI",
+  "_key": "!items!gEupQLSmNFYCzTeI",
+  "name": "Verbündete",
+  "type": "advantage",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+   "kind": "vorteil",
+   "markers": 2,
+   "level": 1,
+   "modifiers": [],
+   "description": "<p>Ein treuer NSC-Verbündeter; je weiterem Marker eine Person mehr. <em class=\"nr-ref\">(NoReturn 2E, S. 174)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 19000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "b8jVdE01Ur5dqWcY",
+  "_key": "!items!b8jVdE01Ur5dqWcY",
+  "name": "Abgestumpft",
+  "type": "advantage",
+  "img": "icons/svg/downgrade.svg",
+  "system": {
+   "kind": "nachteil",
+   "markers": 2,
+   "level": 1,
+   "modifiers": [],
+   "description": "<p>Erhält stets einen CP und einen JP weniger. <em class=\"nr-ref\">(NoReturn 2E, S. 176)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 20000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "tHvQXnvTXciNxJA1",
+  "_key": "!items!tHvQXnvTXciNxJA1",
+  "name": "Alkoholanfällig",
+  "type": "advantage",
+  "img": "icons/svg/downgrade.svg",
+  "system": {
+   "kind": "nachteil",
+   "markers": 1,
+   "level": 1,
+   "modifiers": [],
+   "description": "<p>Alkohol zählt mit doppeltem ALK-Wert. <em class=\"nr-ref\">(NoReturn 2E, S. 176)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 21000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "BMfCnc5BBXknbHXk",
+  "_key": "!items!BMfCnc5BBXknbHXk",
+  "name": "Allergie (selten)",
+  "type": "advantage",
+  "img": "icons/svg/downgrade.svg",
+  "system": {
+   "kind": "nachteil",
+   "markers": 2,
+   "level": 1,
+   "modifiers": [],
+   "description": "<p>Kontakt: −2W auf alle Aktionen (inkl. Widerstand), −1 Organismus je Minute. <em class=\"nr-ref\">(NoReturn 2E, S. 176)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 22000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "j8Lb5W8m8hclZM2q",
+  "_key": "!items!j8Lb5W8m8hclZM2q",
+  "name": "Allergie (häufig)",
+  "type": "advantage",
+  "img": "icons/svg/downgrade.svg",
+  "system": {
+   "kind": "nachteil",
+   "markers": 4,
+   "level": 1,
+   "modifiers": [],
+   "description": "<p>Wie oben mit häufigem Auslöser (Kunststoffe, Metalle, UV, Insekten, Staub). <em class=\"nr-ref\">(NoReturn 2E, S. 176)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 23000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "kAaPToId0jvb3T0B",
+  "_key": "!items!kAaPToId0jvb3T0B",
+  "name": "Amnesie (Teil)",
+  "type": "advantage",
+  "img": "icons/svg/downgrade.svg",
+  "system": {
+   "kind": "nachteil",
+   "markers": 1,
+   "level": 1,
+   "modifiers": [],
+   "description": "<p>Erinnert sich nicht an Identität, Aspekte der Vergangenheit oder ein Trauma. <em class=\"nr-ref\">(NoReturn 2E, S. 176)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 24000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "IVXz9LKDs0rBC0nb",
+  "_key": "!items!IVXz9LKDs0rBC0nb",
+  "name": "Amnesie (vollständig)",
+  "type": "advantage",
+  "img": "icons/svg/downgrade.svg",
+  "system": {
+   "kind": "nachteil",
+   "markers": 3,
+   "level": 1,
+   "modifiers": [],
+   "description": "<p>Die SL konzipiert den Charakter; Werte werden im Spiel entdeckt. <em class=\"nr-ref\">(NoReturn 2E, S. 176)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 25000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "h1Hy3ofoMefWBpO3",
+  "_key": "!items!h1Hy3ofoMefWBpO3",
+  "name": "Analphabet",
+  "type": "advantage",
+  "img": "icons/svg/downgrade.svg",
+  "system": {
+   "kind": "nachteil",
+   "markers": 2,
+   "level": 1,
+   "modifiers": [],
+   "description": "<p>Startsprache nur Stufe 2; keine Sprachen per GP. <em class=\"nr-ref\">(NoReturn 2E, S. 176)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 26000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "p7J3Q8Z9BconEChN",
+  "_key": "!items!p7J3Q8Z9BconEChN",
+  "name": "Außer Form",
+  "type": "advantage",
+  "img": "icons/svg/downgrade.svg",
+  "system": {
+   "kind": "nachteil",
+   "markers": 3,
+   "level": 1,
+   "modifiers": [],
+   "description": "<p>ST, KO und BE bei der Erschaffung maximal 2. <em class=\"nr-ref\">(NoReturn 2E, S. 176)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 27000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "uAF4MwtCxpWzOrSV",
+  "_key": "!items!uAF4MwtCxpWzOrSV",
+  "name": "Begriffsstutzig",
+  "type": "advantage",
+  "img": "icons/svg/downgrade.svg",
+  "system": {
+   "kind": "nachteil",
+   "markers": 3,
+   "level": 1,
+   "modifiers": [],
+   "description": "<p>−1 EP je Spielrunde. Nicht mit Schneller Lerner. <em class=\"nr-ref\">(NoReturn 2E, S. 176)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 28000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "Eb11JVnEYUK1o4JG",
+  "_key": "!items!Eb11JVnEYUK1o4JG",
+  "name": "Chronische Erkrankung",
+  "type": "advantage",
+  "img": "icons/svg/downgrade.svg",
+  "system": {
+   "kind": "nachteil",
+   "markers": 2,
+   "level": 1,
+   "modifiers": [],
+   "description": "<p>Ohne tägliche Versorgung −1 Organismus je Tag (Langzeit-Medikation 100 N$ / 20 Dosen). <em class=\"nr-ref\">(NoReturn 2E, S. 176)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 29000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "QFMBw45DV418UrXc",
+  "_key": "!items!QFMBw45DV418UrXc",
+  "name": "Eingeschränkte Ausrüstung",
+  "type": "advantage",
+  "img": "icons/svg/downgrade.svg",
+  "system": {
+   "kind": "nachteil",
+   "markers": 1,
+   "level": 1,
+   "modifiers": [],
+   "description": "<p>Zu Spielbeginn nur TS I–II; New Dollar aus GP halbiert. <em class=\"nr-ref\">(NoReturn 2E, S. 176)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 30000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "idhb1YYA9UcthyZB",
+  "_key": "!items!idhb1YYA9UcthyZB",
+  "name": "Empfindlicher Magen",
+  "type": "advantage",
+  "img": "icons/svg/downgrade.svg",
+  "system": {
+   "kind": "nachteil",
+   "markers": 1,
+   "level": 1,
+   "modifiers": [
+    {
+     "target": "irPoints",
+     "value": -1
+    }
+   ],
+   "description": "<p>Infektionsresistenz −1. <em class=\"nr-ref\">(NoReturn 2E, S. 176)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 31000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "O2H3f5F9mxXAAIeM",
+  "_key": "!items!O2H3f5F9mxXAAIeM",
+  "name": "Fahrzeugantipathie",
+  "type": "advantage",
+  "img": "icons/svg/downgrade.svg",
+  "system": {
+   "kind": "nachteil",
+   "markers": 1,
+   "level": 1,
+   "modifiers": [],
+   "description": "<p>Handling gesteuerter Fahrzeuge +10. <em class=\"nr-ref\">(NoReturn 2E, S. 176)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 32000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "PCsLsXHPDcezjE3Z",
+  "_key": "!items!PCsLsXHPDcezjE3Z",
+  "name": "Feind",
+  "type": "advantage",
+  "img": "icons/svg/downgrade.svg",
+  "system": {
+   "kind": "nachteil",
+   "markers": 3,
+   "level": 1,
+   "modifiers": [],
+   "description": "<p>Ein Kopfgeld und ein mächtiger Gegner – regelmäßige Konfrontationen. <em class=\"nr-ref\">(NoReturn 2E, S. 176)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 33000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "hQSjwBaV0uFBhsWZ",
+  "_key": "!items!hQSjwBaV0uFBhsWZ",
+  "name": "Geschunden",
+  "type": "advantage",
+  "img": "icons/svg/downgrade.svg",
+  "system": {
+   "kind": "nachteil",
+   "markers": 1,
+   "level": 1,
+   "modifiers": [
+    {
+     "target": "organismus",
+     "value": -15
+    }
+   ],
+   "description": "<p>Organismus −15. <em class=\"nr-ref\">(NoReturn 2E, S. 176)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 34000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "atwmYqzLTpSE2YIB",
+  "_key": "!items!atwmYqzLTpSE2YIB",
+  "name": "Gremlins",
+  "type": "advantage",
+  "img": "icons/svg/downgrade.svg",
+  "system": {
+   "kind": "nachteil",
+   "markers": 1,
+   "level": 1,
+   "modifiers": [],
+   "description": "<p>Technische Geräte fallen in seinen Händen gern aus (SL). <em class=\"nr-ref\">(NoReturn 2E, S. 176)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 35000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "VegW6Qv0In2YOky8",
+  "_key": "!items!VegW6Qv0In2YOky8",
+  "name": "Hörschwäche",
+  "type": "advantage",
+  "img": "icons/svg/downgrade.svg",
+  "system": {
+   "kind": "nachteil",
+   "markers": 1,
+   "level": 1,
+   "modifiers": [],
+   "description": "<p>−2W auf akustische Wahrnehmung ohne Hörhilfe. <em class=\"nr-ref\">(NoReturn 2E, S. 176)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 36000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "W4VAi8OJT8L30iqQ",
+  "_key": "!items!W4VAi8OJT8L30iqQ",
+  "name": "Job",
+  "type": "advantage",
+  "img": "icons/svg/downgrade.svg",
+  "system": {
+   "kind": "nachteil",
+   "markers": 1,
+   "level": 1,
+   "modifiers": [],
+   "description": "<p>5–10 h täglich gebunden, 50 N$/h. <em class=\"nr-ref\">(NoReturn 2E, S. 176)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 37000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "QC6wK5JZmaSc1sod",
+  "_key": "!items!QC6wK5JZmaSc1sod",
+  "name": "Phobie (selten)",
+  "type": "advantage",
+  "img": "icons/svg/downgrade.svg",
+  "system": {
+   "kind": "nachteil",
+   "markers": 1,
+   "level": 1,
+   "modifiers": [],
+   "description": "<p>Angesichts des Auslösers −2W auf alle Aktionen außer Widerstand. <em class=\"nr-ref\">(NoReturn 2E, S. 176)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 38000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "t3GylMDvux4tyo9Z",
+  "_key": "!items!t3GylMDvux4tyo9Z",
+  "name": "Phobie (häufig)",
+  "type": "advantage",
+  "img": "icons/svg/downgrade.svg",
+  "system": {
+   "kind": "nachteil",
+   "markers": 3,
+   "level": 1,
+   "modifiers": [],
+   "description": "<p>Wie oben mit häufigem Auslöser (Klaustrophobie, Dunkelheit …). <em class=\"nr-ref\">(NoReturn 2E, S. 176)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 39000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "7FVwAPUPy31v5Pa8",
+  "_key": "!items!7FVwAPUPy31v5Pa8",
+  "name": "Querschnittsgelähmt",
+  "type": "advantage",
+  "img": "icons/svg/downgrade.svg",
+  "system": {
+   "kind": "nachteil",
+   "markers": 6,
+   "level": 1,
+   "modifiers": [],
+   "description": "<p>Untere Körperhälfte weder beweglich noch schmerzempfindlich. <em class=\"nr-ref\">(NoReturn 2E, S. 176)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 40000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "CrZW5KLZPVqsj25b",
+  "_key": "!items!CrZW5KLZPVqsj25b",
+  "name": "Sehschwäche",
+  "type": "advantage",
+  "img": "icons/svg/downgrade.svg",
+  "system": {
+   "kind": "nachteil",
+   "markers": 1,
+   "level": 1,
+   "modifiers": [],
+   "description": "<p>−2W auf optische Wahrnehmung ohne Sehhilfe. <em class=\"nr-ref\">(NoReturn 2E, S. 176)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 41000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "3r4bDEthvAtRao3r",
+  "_key": "!items!3r4bDEthvAtRao3r",
+  "name": "Schlimme Vergangenheit",
+  "type": "advantage",
+  "img": "icons/svg/downgrade.svg",
+  "system": {
+   "kind": "nachteil",
+   "markers": 1,
+   "level": 1,
+   "modifiers": [
+    {
+     "target": "psyche",
+     "value": -20
+    }
+   ],
+   "description": "<p>Psyche −20. <em class=\"nr-ref\">(NoReturn 2E, S. 176)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 42000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "YZ5OCIQs45Ek8ylf",
+  "_key": "!items!YZ5OCIQs45Ek8ylf",
+  "name": "Schmerzempfindlichkeit",
+  "type": "advantage",
+  "img": "icons/svg/downgrade.svg",
+  "system": {
+   "kind": "nachteil",
+   "markers": 2,
+   "level": 1,
+   "modifiers": [
+    {
+     "target": "schmerztoleranz",
+     "value": -2
+    }
+   ],
+   "description": "<p>Schmerztoleranz −2. <em class=\"nr-ref\">(NoReturn 2E, S. 176)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 43000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "4p2xTuTA1QvU4Evp",
+  "_key": "!items!4p2xTuTA1QvU4Evp",
+  "name": "Schlafmütze",
+  "type": "advantage",
+  "img": "icons/svg/downgrade.svg",
+  "system": {
+   "kind": "nachteil",
+   "markers": 1,
+   "level": 1,
+   "modifiers": [],
+   "description": "<p>Unter acht Stunden Schlaf keine Erholung von Adrenalin/Regeneration. <em class=\"nr-ref\">(NoReturn 2E, S. 176)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 44000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "OCTwa0XpuQu7cbZO",
+  "_key": "!items!OCTwa0XpuQu7cbZO",
+  "name": "Schwaches Attribut (…)",
+  "type": "advantage",
+  "img": "icons/svg/downgrade.svg",
+  "system": {
+   "kind": "nachteil",
+   "markers": 2,
+   "level": 1,
+   "modifiers": [],
+   "description": "<p>Attribut bei Erschaffung max. 2 (kostet 20 GP), Steigern doppelte EP. Attribut im Namen angeben, z. B. „Schwaches Attribut Stärke“. Max. 3×. <em class=\"nr-ref\">(NoReturn 2E, S. 176)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 45000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "zEORc7GX5Gi9ipn5",
+  "_key": "!items!zEORc7GX5Gi9ipn5",
+  "name": "Signatur",
+  "type": "advantage",
+  "img": "icons/svg/downgrade.svg",
+  "system": {
+   "kind": "nachteil",
+   "markers": 1,
+   "level": 1,
+   "modifiers": [
+    {
+     "target": "psyche",
+     "value": -5
+    }
+   ],
+   "description": "<p>Markenzeichen/Angewohnheit; Psyche −5. <em class=\"nr-ref\">(NoReturn 2E, S. 176)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 46000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "IocrRoya0jWu2VyS",
+  "_key": "!items!IocrRoya0jWu2VyS",
+  "name": "Verdorbenes Fleisch",
+  "type": "advantage",
+  "img": "icons/svg/downgrade.svg",
+  "system": {
+   "kind": "nachteil",
+   "markers": 2,
+   "level": 1,
+   "modifiers": [],
+   "description": "<p>Regenerationspool nie über 0; Heilung max. KO je Tag, Medizin wirkungslos (nur PSI hilft). <em class=\"nr-ref\">(NoReturn 2E, S. 176)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 47000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "7sa7U8leGSFkRiZg",
+  "_key": "!items!7sa7U8leGSFkRiZg",
+  "name": "Verpflichtung",
+  "type": "advantage",
+  "img": "icons/svg/downgrade.svg",
+  "system": {
+   "kind": "nachteil",
+   "markers": 2,
+   "level": 1,
+   "modifiers": [],
+   "description": "<p>Täglich ca. 5 h gebunden; drei Versäumnisse haben schwere Folgen. <em class=\"nr-ref\">(NoReturn 2E, S. 176)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 48000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ }
+]

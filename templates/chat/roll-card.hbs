@@ -1,0 +1,39 @@
+<div class="nr-card nr-roll {{#if (eq success true)}}success{{/if}}{{#if (eq success false)}}failure{{/if}}">
+  <header class="nr-card-head">
+    <h3>{{label}}</h3>
+    {{#if subtitle}}<div class="nr-card-sub">{{subtitle}}</div>{{/if}}
+  </header>
+  <div class="nr-card-pool">
+    <span class="nr-chip">{{n}}W</span>
+    {{#if bonusDice}}<span class="nr-chip good">+{{bonusDice}}W</span>{{/if}}
+    {{#if malusDice}}<span class="nr-chip bad">−{{malusDice}}W</span>{{/if}}
+    {{#if points}}<span class="nr-chip">{{nrSigned points}}p.</span>{{/if}}
+    {{#if passed}}<span class="nr-chip">{{localize "NR.Roll.Passed"}}</span>{{/if}}
+    {{#if multiplier}}<span class="nr-chip">×{{multiplier}}</span>{{/if}}
+  </div>
+  <div class="nr-dice-row nr-dice-toggle" data-tooltip="{{localize 'NR.Roll.DiceToggle'}}">
+    {{#each dice as |d|}}
+    <span class="nr-die {{d.kind}} {{#if d.max}}max{{/if}} {{#if d.min}}min{{/if}}" {{#if d.chain}}data-tooltip="Hazard-Di: {{d.chain}}"{{/if}}>{{d.value}}</span>
+    {{/each}}
+    {{#each extraDice as |d|}}<span class="nr-die bonus">{{d.value}}</span>{{/each}}
+  </div>
+  <div class="nr-total">
+    <span class="nr-total-value">{{total}}</span>
+    {{#if mw}}
+    <span class="nr-vs">{{localize "NR.Roll.Vs"}} MW {{mw}}</span>
+    {{#if success}}<span class="nr-result good">{{localize "NR.Roll.Success"}} ({{nrSigned excess}})</span>
+    {{else}}<span class="nr-result bad">{{localize "NR.Roll.Failure"}} ({{excess}})</span>{{/if}}
+    {{/if}}
+  </div>
+  {{#if leiden}}
+  <div class="nr-leiden-line {{#if leidenTriggered}}bad{{/if}}">
+    {{localize "NR.Roll.Leiden"}} L{{leiden}}: W6 = {{leidenValue}}{{#if leidenTriggered}} → {{localize "NR.Roll.LeidenHalved"}}{{/if}}
+  </div>
+  {{/if}}
+  {{{extraHtml}}}
+  {{#if reroll}}
+  <div class="nr-card-buttons">
+    <button type="button" data-nr-action="reroll" {{#unless canReroll}}disabled{{/unless}}><i class="fa-solid fa-bolt"></i> {{localize "NR.Roll.Reroll"}}</button>
+  </div>
+  {{/if}}
+</div>

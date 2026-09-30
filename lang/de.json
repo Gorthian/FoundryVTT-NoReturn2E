@@ -1,0 +1,194 @@
+{
+  "TYPES": {
+    "Actor": { "character": "Charakter", "npc": "NSC / Kreatur", "vehicle": "Fahrzeug" },
+    "Item": {
+      "weapon": "Waffe", "ammo": "Munition", "armor": "Schutzkleidung", "gear": "Ausrüstung",
+      "skill": "Besondere Fertigkeit / Sprache", "psiPower": "PSI-Kraft", "psiApp": "PSI-App",
+      "styleSkill": "Style-Skill", "species": "Spezies", "abnormality": "Biologische Abnormität",
+      "bioTrait": "Biologische Eigenschaft", "advantage": "Vor-/Nachteil", "trait": "Charaktermerkmal",
+      "augment": "Augmentierung"
+    }
+  },
+  "NR": {
+    "Tab": {
+      "stats": "Werte", "combat": "Kampf", "psi": "PSI", "traits": "Eigenschaften", "inventory": "Inventar", "bio": "Bio",
+      "details": "Details", "description": "Beschreibung", "modifiers": "Modifikatoren"
+    },
+    "Section": {
+      "Attributes": "Attribute", "Special": "Sonderattribute", "Skills": "Fertigkeiten", "CustomSkills": "Besondere Fertigkeiten & Sprachen",
+      "Body": "Körperzonen", "Condition": "Zustand & Mali", "Weapons": "Waffen", "Armor": "Schutzkleidung",
+      "Organism": "Organismus & Psyche", "Augments": "Augmentierung", "Abnormalities": "Biologische Abnormitäten",
+      "BioTraits": "Biologische Eigenschaften", "StyleSkills": "Style-Skills & Kampfkünste", "Advantages": "Vorteile",
+      "Disadvantages": "Nachteile", "Justice": "Justice-Merkmale", "Chaos": "Chaos-Merkmale", "Gear": "Ausrüstung",
+      "Ammo": "Munition & Sprengstoffe", "Details": "Persönliche Daten", "Progress": "Entwicklung", "Creation": "Charaktererschaffung (GP)",
+      "Biography": "Hintergrund", "Wanted": "Steckbrief", "Notes": "Notizen", "Description": "Beschreibung", "Physical": "Gegenstand"
+    },
+    "Special": { "adrenalin": "Adrenalin", "schmerztoleranz": "Schmerztoleranz", "meditation": "Meditation" },
+    "Detail": {
+      "species": "Spezies", "concept": "Konzept", "threat": "Gefahr", "occupation": "Tätigkeit", "age": "Alter", "gender": "Geschlecht",
+      "height": "Größe", "weight": "Gewicht", "eyes": "Augen", "hair": "Haare", "origin": "Herkunft", "languages": "Sprachen (Notiz)"
+    },
+    "Status": {
+      "Health": "Trefferpunkte", "HealthHint": "Summe der verbleibenden TP aller Körperzonen",
+      "Malus": "Malus", "MalusHint": "Maluswürfel auf alle Aktionen außer Schadenswiderstand (Wunden, Betäubung, PSI, temporär)",
+      "Movement": "Bewegung", "Organism": "Organismus", "Psyche": "Psyche",
+      "Unconscious": "Bewusstlos – Malus erreicht Konstitution (2W6 Minuten, mit Regeneration 2W6 KR)",
+      "Immobile": "Kann nicht gehen – Malus erreicht Beweglichkeit",
+      "LethalZone": "Letale Körperzone zerstört – der Charakter ist in der Regel tot!"
+    },
+    "Sheet": {
+      "Character": "NoReturn Charakterbogen", "Vehicle": "NoReturn Fahrzeugbogen", "Item": "NoReturn Itembogen",
+      "Portrait": "Portrait ändern", "Name": "Name", "UseAdrenalin": "Adrenalin verbrauchen", "RestoreAdrenalin": "Adrenalin zurückgeben",
+      "Rest": "Rast", "RestHint": "6 h Schlaf & Nahrung: Adrenalin, Meditation und Regenerationspool auffüllen",
+      "BaseValue": "Gekaufte Stufe", "BonusValue": "Bonus (Spezies etc.)", "Leiden": "Leiden-Stufe (Degeneration)",
+      "AdrenalinHint": "Verbleibend / Maximum. Bonuswürfel max. 5.", "Threshold": "Schwelle", "ThresholdHint": "Schmerztoleranz × 10 % der TP – Schaden darüber: −2W je Zone",
+      "Infection": "Infektionsresistenz", "AddLanguage": "Sprache hinzufügen", "AddSkill": "Besondere Fertigkeit hinzufügen",
+      "NoCustomSkills": "Muttersprache (Stufe 5) und besondere Fertigkeiten hier anlegen.", "Defensive": "Defensivaktion",
+      "Pool": "Würfelpool (Attribut + Fertigkeit, ungeübt: Attribut − 2)",
+      "TpBase": "TP je Zone", "Regenerate": "Regenerieren", "RunHint": "BE + Rennen, Rennen-Probe = Ergebnis in m",
+      "Komfort": "Komfort (Rüstung)", "Regeneration": "Regeneration", "Alcohol": "ALK-Summe",
+      "Equip": "Ausrüsten", "Wear": "Tragen", "DropWeapons": "Waffen aus dem Compendium hierher ziehen.",
+      "DropArmor": "Schutzkleidung hierher ziehen.", "DropGear": "Ausrüstung hierher ziehen.", "DropSpecies": "Spezies aus dem Compendium hierher ziehen.",
+      "Base": "Basis", "Loss": "Verlust", "IrMalus": "Immunschwäche", "Blood": "Blutpunkte (HMO)",
+      "PsycheTraits": "Merkmale dieses Psyche-Bereichs", "TableA": "Tabelle A", "TableB": "Tabelle B", "DegenHint": "Schwellenwert",
+      "Installed": "Eingebaut", "Markers": "Vorteilsmarker", "MarkersGained": "erhalten", "MarkersSpent": "ausgegeben",
+      "Money": "New Dollar", "ToChat": "In den Chat", "Price": "Preis (N$)",
+      "DeleteTitle": "Löschen", "DeleteConfirm": "<strong>{name}</strong> wirklich löschen?", "NewItem": "Neu: {type}"
+    },
+    "Malus": { "wounds": "Wunden", "nonLethal": "NL-Schaden (Betäubung)", "temp": "Temporärer Malus", "psi": "Kraft sammeln / Haltung", "total": "Gesamtmalus" },
+    "Zone": { "Damage": "Schaden in dieser Zone", "Chronic": "Chronischer, nicht heilbarer Schaden", "Zone": "Zone", "Destroyed": "Zone zerstört" },
+    "Roll": {
+      "Roll": "Würfeln", "BonusDice": "Bonuswürfel", "MalusDice": "Maluswürfel", "Disadvantages": "Nachteile (je −2W)",
+      "DisadvantageHint": "Für jeden einschränkenden Faktor (Witterung, Sprint, eingeschränkte Bewegung …) −2 Würfel",
+      "Points": "Bonus-/Maluspunkte", "Difficulty": "Mindestwurf", "Custom": "Eigener Wert", "CustomMw": "Eigener MW",
+      "Adrenalin": "Adrenalin einsetzen", "Pass": "Passen (2,5 je Würfel)", "PassHint": "Ab 6 Würfeln erlaubt, nicht bei PSI. Die SL darf ablehnen.",
+      "Attribute": "Attribut", "Malus": "Malus", "NoMalusResist": "Schadenswiderstand: keine Mali",
+      "Passed": "gepasst", "DiceToggle": "Hazard-Di sind rot markiert", "Vs": "gegen", "Success": "Erfolg", "Failure": "Misserfolg",
+      "Leiden": "Leiden", "LeidenHalved": "Ergebnis halbiert", "Reroll": "Mit Adrenalin wiederholen",
+      "Infection": "Infektionsresistenz", "Intensity": "Intensität (MW)", "Resist": "Schadenswiderstand",
+      "ResistPrompt": "{amount} Schaden an {zone}. Rüstung: {armor} Punkte.", "UseAdrenalin": "Adrenalin (+{n}W, noch {left})"
+    },
+    "Combat": {
+      "Attack": "Angriff", "Defend": "Verteidigen", "Defense": "Verteidigung", "NoDefense": "Keine Verteidigung",
+      "Damage": "Schaden", "DamagePoints": "Schadenspunkte", "RollDamage": "Schaden würfeln", "ResistFor": "Widerstand:",
+      "Hit": "Treffer", "Miss": "Verfehlt / abgewehrt", "GoodHits": "Gute Treffer (Bonuswürfel)",
+      "BlockHit": "Geblockt: Der Schaden trifft das blockende Körperteil/Schild, keine Guten Treffer.",
+      "BlockPerfect": "Perfekt geblockt (≥ 20 Punkte Überschuss): kein Schaden.",
+      "RangeFail": "Mindestwurf der Reichweite verfehlt – der Angriff schlägt automatisch fehl.",
+      "ExplosiveNear": "Knapp verfehlt – das Ziel befindet sich noch im Explosionsradius!",
+      "OutOfRange": "Außer Reichweite", "NoAmmo": "{name}: nicht genug Munition!", "Reload": "Nachladen",
+      "Aim": "Zielen", "TargetZone": "Zielzone (bei gezielt)", "Half": "Körperhälfte (bei Hälfte)",
+      "RangeMw": "Reichweiten-MW", "NoRangeMw": "kein MW", "AutoRange": "Automatisch ermittelt", "SpecialAmmo": "Sondermunition",
+      "StandardAmmo": "Standardmunition", "Braced": "Auflage/Stütze", "BracedHint": "Erhöht die Rückstoßdämpfung",
+      "MultiAttack": "Mehrfachangriff", "MultiHint": "Style-Skills wie Dual Wielding/Akimbo: ein Wurf zählt für mehrere Angriffe, kein Adrenalin erlaubt. Jeder Angriff muss einzeln verteidigt werden.",
+      "NoTargets": "Keine Ziele markiert – Verteidigung manuell abwickeln.", "Shots": "Schuss", "Left": "übrig",
+      "IncomingAttack": "Eingehender Angriff", "DefenseCount": "Bisherige Defensivaktionen diese Runde",
+      "NoOneDie": "ohne 1-Würfel-Regel", "DefenseAction": "Defensivaktion", "ParryWith": "Parieren/Blocken mit",
+      "DefenseHint": "Ausweichen/Blocken/Parade als konkurrierende Probe. Gleichstand gewinnt der Verteidiger. Blocken gegen Fernkampf nur mit Schild.",
+      "NoDiceLeft": "keine Würfel mehr", "Defenses": "Defensivaktionen", "ResetDefenses": "Zurücksetzen (neue Runde)",
+      "HitZone": "Trefferzone würfeln", "Resist": "Widerstand", "Through": "Durch"
+    },
+    "Damage": {
+      "Manual": "Schaden erleiden", "Resist": "Widerstand würfeln", "Amount": "Schadenswert", "Zones": "Körperzonen",
+      "Random": "Zufällig (2W6)", "Single": "Bestimmte Zone", "All": "Alle Zonen (Flächenschaden)", "Pierce": "Panzerbrechend",
+      "Structure": "Strukturschaden (×250)", "Continuous": "Andauernder Schaden", "ResistMalus": "Malus (Runden − 1)",
+      "Direct": "Direkter Schaden (ohne Widerstand)", "DirectHint": "Z. B. toxisches Gift oder PSI-Fehlschlag",
+      "ManualHint": "Aufprall: 1 Schaden je m/KR. Unkontrollierter Sturz: 10 je Meter.", "NlApplied": "NL-Schaden hinzugefügt",
+      "ContinuousHint": "Andauernder Schaden: Zu Beginn jeder eigenen Runde erneut widerstehen, kumulativ −1W je weiterer Runde."
+    },
+    "Heal": {
+      "Title": "Heilung", "Days": "Tage", "Medical": "Medizinische Versorgung (Medizin-Probe gelungen, ×2)",
+      "Hint": "Natürliche Heilung: KO-Stufe je Tag und Zone. Gutes Heilfleisch: 20/Tag. NL-Schaden wird entfernt.", "Apply": "Heilen"
+    },
+    "Chat": {
+      "DamageResistance": "Schadenswiderstand", "VehicleDamage": "Fahrzeugschaden",
+      "VehicleDamageText": "{amount} Schaden gegen Stabilität+Panzerung {resist} (Panzerung {armor}) → {through} TP Verlust.",
+      "VitalHit": "Vitale Stelle getroffen! (W6 = 6)", "VehicleCrippled": "Unter 50 % TP: Handling +5, Geschwindigkeit halbiert, Manöver −2",
+      "Regenerated": "{name} regeneriert {n} Schadenspunkte.", "DegenerationTable": "Degeneration – Tabelle {table}",
+      "LeidenMax": "Maximum erreicht – erneut würfeln (SL).", "DirectDamage": "{name} erleidet {amount} direkten Schaden an {zones}."
+    },
+    "Psi": {
+      "Cast": "PSI-App wirken", "Collect": "Kraft sammeln", "CollectHint": "Willenskraft gegen MW 20 (+10 je gesammelter KS)",
+      "Collected": "Kraftstufe gesammelt – jetzt {ks} KS.", "Collected2": "gesammelt", "CollectedKs": "Gesammelte KS",
+      "Overload": "Overload! Die gesammelten Kraftstufen entladen sich.", "FailTable": "PSI-Fehlschlag", "FailHint": "2W6 auf der Fehlschlagtabelle mit aktueller KS",
+      "HoldMalus": "Haltung", "AddPower": "PSI-Kraft hinzufügen", "AddApp": "PSI-App hinzufügen", "Level": "Stufe", "AppsKnown": "Apps",
+      "ToggleHeld": "Gehalten an/aus", "NoPowers": "Keine PSI-Kräfte. PSI-Kräfte und -Apps aus dem Compendium hierher ziehen.",
+      "OrphanApps": "Apps ohne passende PSI-Kraft", "NotGifted": "Die gewählte Spezies ist nicht PSI-begabt.",
+      "NoPower": "Der Charakter besitzt die PSI-Kraft {power} nicht.", "TooMany": "Zu viele Würfel verteilt (Pool {pool}).",
+      "Summary": "Pool {pool}: KS {ks} · Probe {probe}W · Kompensation {comp} → Zielbereich {min}–{max}",
+      "Pool": "Pool", "Probe": "Probe", "Comp": "Kompensation", "Target": "Zielbereich", "Success": "Wirkt!", "Failure": "Fehlschlag",
+      "HeldNote": "Die App wird gehalten", "Power": "PSI-Kraft", "FreeLevels": "Kostenlose Stufen (Spezies)", "Show": "Show-Effekt",
+      "PowerHint": "Je Stufe darf der Charakter eine App dieser Kraft beherrschen. Erschaffung: 5 GP je Stufe (max. 6), Steigern: neue Stufe × 4 EP.",
+      "Difficulty": "Schwierigkeit", "Range": "Zielbereich", "Hold": "Haltung", "Held": "gehalten", "Resist": "Widerstand des Ziels",
+      "DamageMult": "Schaden", "AllZones": "alle Zonen", "Effect": "Effekt (Kurzfassung, „KS“ wird beim Wirken berechnet)",
+      "EffectHint": "Ausdrücke wie „KS x 10“ oder „10 – KS“ werden im Chat automatisch ausgerechnet.",
+      "DistributeHint": "Verteile die Würfel der PSI-Kraft auf Kraftstufen, Probewürfel und Kompensation (Rest).",
+      "KsDice": "Würfel → Kraftstufen", "ProbeDice": "Würfel → Probe", "Booster": "Externe KS (Booster, Implantate)",
+      "MalusOnProbe": "Mali reduzieren die Probewürfel"
+    },
+    "Advance": {
+      "Title": "Steigern", "Tooltip": "Steigern",
+      "Prompt": "<strong>{label}</strong> von {from} auf {to} steigern für <strong>{cost} EP</strong>? (verfügbar: {xp})",
+      "NotEnough": "Nicht genug Erfahrungspunkte!", "Done": "{name} steigert {label} auf {to} ({cost} EP)."
+    },
+    "Progress": {
+      "Current": "aktuell", "Total": "gesamt", "XP": "Erfahrungspunkte", "JP": "Justicepoints", "CP": "Chaospoints",
+      "MustInvest": "Ab 30 Punkten muss ein Charaktermerkmal (15 JP/CP) erworben werden.", "Reputation": "Bekanntheit (Steckbrief)",
+      "Butterfly": "Butterfly Effect", "Butterfly2": "2. Butterfly Effect (Extrem talentiert)", "Pns": "PNS-Implantat (−2 EP je Fertigkeitssteigerung)"
+    },
+    "Creation": {
+      "PowerLevel": "Powerniveau", "GpMoney": "GP in Ressourcen", "GpExtra": "Zusätzliche GP (Tausendsassa …)",
+      "Languages": "Sprachen", "SpecialSkills": "Weitere Fertigkeiten", "Psi": "PSI-Kräfte", "Items": "Spezies, Abnormitäten, Eigenschaften, Style-Skills",
+      "Money": "Ressourcen", "Spent": "Ausgegeben", "Left": "übrig"
+    },
+    "Weapon": {
+      "Category": "Kategorie", "Skill": "Fertigkeit", "DamageType": "Schadensart", "StrengthBased": "Schaden = ST-Probe +",
+      "DamagePoints": "Schadenspunkte", "DamageFormula": "Schadensformel (optional)", "Pierce": "Panzerbrechend", "Flags": "Eigenschaften",
+      "Continuous": "andauernd", "Area": "Flächenschaden", "TwoHanded": "zweihändig", "AttackDice": "Angriffsbonus (W)", "ParryDice": "Paradebonus (W)",
+      "BlockDice": "Blockbonus (W)", "Stability": "Stabilität (Schild)", "Modes": "Feuermodi", "Mode": "Feuermodus", "RD": "Rückstoßdämpfung",
+      "RDFolded": "ausgeklappt", "Ammo": "Ladung", "AmmoType": "Munitionsart", "Range": "Reichweitenprofil", "Spray": "Sprühprofil (m)",
+      "MinStrength": "Mindeststärke (Bogen)", "Features": "Sonderausstattung"
+    },
+    "Ammo": { "Type": "Art", "DamageBonus": "Bonusschaden", "Damage": "Eigener Schaden", "Radius": "Detonationsradius", "Recoil": "Zusätzlicher Rückstoß", "NoDamageVs": "Kein Schaden gegen ab" },
+    "Armor": { "RW": "Rüstungswert", "Komfort": "Komfort", "Stealth": "Erkennbar (MW)", "Cold": "Kälteschutz (W)", "Heat": "Hitzeschutz (W)", "Zones": "Geschützte Zonen" },
+    "Gear": { "Uses": "Anwendungen", "Alk": "ALK-Wert", "ToolQuality": "Werkzeugqualität", "Bonus": "Bonus (Text)" },
+    "Skill": { "Category": "Kategorie", "Attribute": "Attribut", "Value": "Stufe", "Native": "Muttersprache (5 frei)", "LanguageHint": "Sprachen: ohne Attribut. Stufe 1–2 nur gesprochen. Neue Sprache 2 GP je Stufe, im Spiel wie Elite-Fertigkeit (nächste Stufe × 4 EP)." },
+    "Style": { "Kind": "Art", "Prerequisites": "Voraussetzungen", "Level": "Stufe", "Levels": "Stufen" },
+    "Species": {
+      "TP": "Trefferpunkte je Zone", "Psi": "PSI-begabt (Kategorie A)", "FreePsi": "Kostenlose PSI-Kräfte (Stufe 3)", "BioGp": "GP für biologische Eigenschaften",
+      "Identification": "Identifikation", "Special": "Sonderregeln",
+      "Hint": "Beim Hinzufügen zum Charakter werden TP, Infektionsresistenz, Adrenalin, Psyche und Organismus übernommen. Attributsboni als Modifikatoren eintragen."
+    },
+    "Abnormality": { "Variant": "Unterart", "Heritability": "Erblichkeit", "Intensity": "Intensität", "Illegal": "Illegal (Zentrum)" },
+    "Bio": { "Kind": "Art", "PerLevel": "je Stufe", "Level": "Stufe", "Covers": "Deckt GP (Auffälligkeit)", "Conspicuity": "Auffälligkeit", "Charges": "Ladungen" },
+    "Advantage": { "Kind": "Art", "Markers": "Vorteilsmarker", "Level": "Stufe" },
+    "Trait": { "Kind": "Art", "PsycheRange": "Psyche-Bereich", "Bonus": "Bonus", "Hint": "Merkmal kostet 15 JP/CP. Max. 6 Merkmale. Ausgespieltes Merkmal: +1 EP." },
+    "Augment": {
+      "Kind": "Art", "Zone": "Körperzone", "Installed": "Eingebaut", "OrgLoss": "Organismusverlust", "PsycheLoss": "Psycheverlust",
+      "CapacityCost": "Kapazitätskosten", "Model": "Modell", "RoboticValues": "Robotik-Attribute", "Capacity": "Kapazität", "Armor": "Panzerung",
+      "RoboticHint": "Robotische Zonen ersetzen die biologischen Werte dieser Zone (Durchschnitt über 11 Zonen) und haben 70 TP. Nicht mit Regeneration kompatibel."
+    },
+    "Physical": { "Quantity": "Anzahl", "Weight": "Gewicht (kg)", "Taped": "Taped Ware (½ Preis, Defekt bei Doppel-1)" },
+    "Modifier": {
+      "Hint": "Modifikatoren wirken automatisch auf den Besitzer (Rüstung/Ausrüstung nur wenn ausgerüstet, Augmentierung nur wenn eingebaut).",
+      "None": "Keine Modifikatoren.", "Add": "Modifikator hinzufügen"
+    },
+    "Vehicle": {
+      "Category": "Art", "HP": "Trefferpunkte", "Profile": "Fahrzeugprofil", "Handling": "Handling", "Speed": "Geschwindigkeit",
+      "Maneuver": "Manöver", "Stability": "Stabilität", "Armor": "Panzerung", "Power": "Kraft", "Fuel": "Treibstoff", "Reach": "Reichweite",
+      "Crew": "Besatzung", "Equipment": "Ausstattung", "Drive": "Steuern", "Stunt": "Stunt", "Crash": "Crash vermeiden", "Damage": "Schaden",
+      "Vitals": "Vitale Stellen", "Visible": "sichtbar", "Destroyed": "zerstört",
+      "DriverHint": "Proben werden mit dem ausgewählten Token (oder deinem Charakter) als Fahrer*in abgelegt. Fahren gilt als Tätigkeit: andere Aktionen −2W.",
+      "NoDriver": "Wähle ein Token als Fahrer*in aus."
+    },
+    "Notify": {
+      "Rested": "{name} hat sich erholt.", "Healed": "{name} heilt {heal} Punkte je Zone.", "SkillNotLearned": "Diese besondere Fertigkeit ist nicht erlernt.",
+      "NotOwner": "Du besitzt keine Rechte an diesem Charakter.", "NoAdrenalin": "Kein Adrenalin mehr übrig.",
+      "MacroOwned": "Nur Items eines Charakters können als Makro abgelegt werden.", "ItemMissing": "Item „{name}“ nicht gefunden."
+    },
+    "Settings": {
+      "AutoRegen": "Automatische Regeneration", "AutoRegenHint": "Regeneriert Kämpfer mit Regeneration zu Beginn ihres Zuges.",
+      "ShowDice": "Würfel anzeigen", "ShowDiceHint": "Einzelne Würfel in Probenkarten anzeigen."
+    }
+  }
+}

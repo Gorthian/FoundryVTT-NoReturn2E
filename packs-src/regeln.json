@@ -1,0 +1,341 @@
+[
+ {
+  "_id": "16ubT0KzKP9xy9se",
+  "_key": "!journal!16ubT0KzKP9xy9se",
+  "name": "NoReturn 2E – Regelübersicht",
+  "pages": [
+   "EL83damWvOOVlX7T",
+   "0Im4OfjGdpPRLoCE",
+   "0VKcypDUNbO1S0ZO",
+   "Q9RFhgmMRWTbDqFq",
+   "awmda6QaquAswxFc",
+   "AdbiAwzb0ecGCvnu",
+   "pO6z11v8z3AU7hdK",
+   "GxylsiYnJ8WNENrP"
+  ],
+  "categories": [],
+  "folder": null,
+  "sort": 1000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1790717394647,
+   "modifiedTime": 1790717394647,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  },
+  "_embedded": [
+   {
+    "_id": "EL83damWvOOVlX7T",
+    "_key": "!journal.pages!16ubT0KzKP9xy9se.EL83damWvOOVlX7T",
+    "name": "Das System benutzen",
+    "type": "text",
+    "title": {
+     "show": true,
+     "level": 1
+    },
+    "image": {},
+    "text": {
+     "content": "<h2>NoReturn 2E in Foundry</h2>\n<p>Dieses System setzt die Vario-D6-2.0-Regeln um. Es ist ein inoffizielles Fan-Werkzeug und ersetzt nicht das Corebook von Mannifest Games – die Compendien enthalten Werte und Kurzfassungen mit Seitenverweisen.</p>\n<h3>Charakterbogen</h3>\n<ul><li><strong>Werte</strong>: Attribute (Klick = Probe), Leiden-Stufen, Sonderattribute, alle Fertigkeiten mit Würfelpool, besondere Fertigkeiten und Sprachen. Der grüne Pfeil steigert gegen EP (Butterfly Effect und PNS werden eingerechnet).</li><li><strong>Kampf</strong>: Körperzonen-Grafik mit Schaden je Zone, Rüstung und Schadensschwelle, Waffen (Klick = Angriff), Schutzkleidung, Mali-Übersicht.</li><li><strong>PSI</strong>: Kräfte mit Stufe und zugehörigen Apps, Kraft sammeln, Haltung an/aus, Fehlschlagtabelle.</li><li><strong>Eigenschaften</strong>: Spezies, Organismus & Psyche mit Degenerationstabellen, Augmentierung, Abnormitäten, biologische Eigenschaften, Style-Skills, Vor-/Nachteile, Charaktermerkmale.</li><li><strong>Bio</strong>: Persönliche Daten, EP/JP/CP, Bekanntheit, Butterfly Effect, GP-Bilanz der Erschaffung, Hintergrund und Steckbrief.</li></ul>\n<h3>Kampfablauf im Chat</h3>\n<ul><li>Ziel(e) markieren (T), Waffe im Bogen anklicken → Angriffsdialog (Feuermodus, Zielen, Reichweite wird aus der Token-Entfernung vorgeschlagen, Munition, Auflage).</li><li>Auf der Angriffskarte klickt die Besitzerin des Ziels <em>Verteidigen</em> (Ausweichen, Blocken, Parade, Akrobatik, PSI …) oder <em>Keine Verteidigung</em>. Der Malus für weitere Defensivaktionen wird automatisch gezählt und zu Rundenbeginn zurückgesetzt.</li><li>Bei Treffer würfelt die Angreiferin <em>Schaden</em> (Gute Treffer als Bonuswürfel, Trefferzone automatisch).</li><li>Das Ziel klickt <em>Widerstand</em>: Konstitutionsprobe + Rüstung der Zone (MK, panzerbrechend, Wucht gegen MK:A berücksichtigt), Schaden wird eingetragen.</li></ul>\n<h3>Item-Modifikatoren</h3>\n<p>Spezies, Abnormitäten, Eigenschaften, Vorteile, Ausrüstung und Augmentierung können unter „Modifikatoren“ Attribute, Fertigkeiten, TP, Adrenalin, Schmerztoleranz, Organismus, Psyche usw. verändern. Sie wirken automatisch (Ausrüstung nur ausgerüstet, Augmentierung nur eingebaut).</p>\n<h3>Makros</h3><p>Items eines Charakters lassen sich auf die Makroleiste ziehen. Skript-API: <code>game.noreturn.rollPool({dice: 5, mw: 15, label: \"Test\"})</code>.</p>",
+     "format": 1
+    },
+    "video": {
+     "controls": true,
+     "volume": 0.5
+    },
+    "src": null,
+    "system": {},
+    "sort": 1000,
+    "ownership": {
+     "default": -1
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    },
+    "category": null
+   },
+   {
+    "_id": "0Im4OfjGdpPRLoCE",
+    "_key": "!journal.pages!16ubT0KzKP9xy9se.0Im4OfjGdpPRLoCE",
+    "name": "Proben & Würfel",
+    "type": "text",
+    "title": {
+     "show": true,
+     "level": 1
+    },
+    "image": {},
+    "text": {
+     "content": "<h2>Die Probe (S. 84–87)</h2>\n<ul><li>Würfelanzahl = Attribut + Fertigkeit (W6 addiert). Ungeübt: nur Attribut −2W. Besondere Fertigkeiten nur ab Stufe 1.</li><li><strong>Hazard-Di</strong>: Ein Würfel jeder Probe mit Attribut/Fertigkeit ist ein Hazard-Di – eine 6 wird erneut geworfen und addiert (auch mehrfach).</li><li><strong>1-Würfel-Regel</strong>: Mali können eine Probe nie verhindern, man würfelt mindestens 1 Würfel (Ausnahme: weitere Defensivaktionen).</li><li><strong>Nachteil</strong>: je einschränkendem Umstand −2W (nie auf Schadenswiderstand).</li><li><strong>Passen</strong>: ab 6 Würfeln 2,5 Punkte je Würfel ansetzen (nicht bei PSI, SL darf ablehnen).</li><li><strong>Unterstützung</strong>: Helfer würfelt mit halbem Pool; ab 10 wird das Ergebnis addiert, darunter abgezogen.</li><li><strong>Leiden</strong> (Degeneration): separater W6 – Stufe 1 bei 1–2, Stufe 2 bei 1–4, Stufe 3 immer: Ergebnis halbiert.</li><li><strong>Adrenalin</strong>: vor der Probe Bonuswürfel in Höhe der Stufe (max. 5) oder nach der Probe Wiederholung – nie beides. Stufe = Nutzungen bis zur Rast.</li></ul>\n<table><tr><th>Schwierigkeit</th><th>MW</th></tr><tr><td>Routiniert</td><td>5</td></tr><tr><td>Normal</td><td>10</td></tr><tr><td>Anspruchsvoll</td><td>15</td></tr><tr><td>Schwer</td><td>20</td></tr><tr><td>Sehr schwer</td><td>25</td></tr><tr><td>Episch</td><td>30</td></tr><tr><td>Legendär</td><td>40</td></tr></table>",
+     "format": 1
+    },
+    "video": {
+     "controls": true,
+     "volume": 0.5
+    },
+    "src": null,
+    "system": {},
+    "sort": 2000,
+    "ownership": {
+     "default": -1
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    },
+    "category": null
+   },
+   {
+    "_id": "0VKcypDUNbO1S0ZO",
+    "_key": "!journal.pages!16ubT0KzKP9xy9se.0VKcypDUNbO1S0ZO",
+    "name": "Kampf",
+    "type": "text",
+    "title": {
+     "show": true,
+     "level": 1
+    },
+    "image": {},
+    "text": {
+     "content": "<h2>Kampfrunde (S. 88–97)</h2>\n<ul><li>Eine Kampfrunde = 3 Sekunden: zwei Aktionen plus Bewegung (BE + Rennen in m). Rennen-Probe = Meter, andere Aktionen −2W.</li><li>Initiative: Wer angreift, beginnt; beim Mexican Standoff Reaktion-Proben (Foundry-Initiative nutzt den Reaktion-Pool).</li><li>Defensivaktionen sind unbegrenzt, jede weitere −1W kumulativ (ohne 1-Würfel-Regel). Gleichstand gewinnt der Verteidiger.</li><li><strong>Gute Treffer</strong>: je 10 Punkte Überschuss +1 Schadenswürfel (kein Hazard-Di); Salvenmodus je 5 Punkte.</li><li>Zielen (Nah/Fern): exakte Stelle −4W/−3W (Weichteile +10 Schaden), Körperzone −2W/−1W, Körperhälfte −1W/0.</li><li>Fernkampf-Reichweite: Kurz MW 10, Mittel 20, Weit 30, Extrem 40 – wird der MW verfehlt, schlägt der Angriff automatisch fehl.</li><li>Rückstoß − Rückstoßdämpfung (RD, +1 je 5 ST) = Maluswürfel.</li></ul>\n<table><tr><th>Modus</th><th>Wirkung</th><th>Rückstoß</th></tr><tr><td>RM</td><td>1 Schuss, Vorbereiten kostet eine Aktion</td><td>1</td></tr><tr><td>HM</td><td>1 Schuss</td><td>1</td></tr><tr><td>SM</td><td>3 Schuss, +2W, Gute Treffer je 5</td><td>3</td></tr><tr><td>VM</td><td>10 Schuss, 2 Aktionen, +2W, +30 Schaden an zwei zufälligen Zonen, kein Zielen/Gute Treffer</td><td>10</td></tr><tr><td>GM</td><td>150 Schuss, Warmlaufen + 2 Aktionen, +2W, alle Zonen, ignoriert MK:A</td><td>20</td></tr><tr><td>SP</td><td>Sprühen: Kegel, alle Zonen, Ziel im Nachteil beim Ausweichen</td><td>1</td></tr></table>\n<p><strong>Parade</strong> mit Nahkampfwaffe (Waffenkampf) oder Kampfkunst (Nahkampf). <strong>Blocken</strong>: bei Erfolg trifft der Schaden das blockende Teil, ab 20 Punkten Überschuss kein Schaden; Fernkampf nur mit Schild.</p>",
+     "format": 1
+    },
+    "video": {
+     "controls": true,
+     "volume": 0.5
+    },
+    "src": null,
+    "system": {},
+    "sort": 3000,
+    "ownership": {
+     "default": -1
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    },
+    "category": null
+   },
+   {
+    "_id": "Q9RFhgmMRWTbDqFq",
+    "_key": "!journal.pages!16ubT0KzKP9xy9se.Q9RFhgmMRWTbDqFq",
+    "name": "Schaden & Heilung",
+    "type": "text",
+    "title": {
+     "show": true,
+     "level": 1
+    },
+    "image": {},
+    "text": {
+     "content": "<h2>Was einen nicht umbringt (S. 98–103)</h2>\n<ul><li>Schadenswiderstand: Konstitution + Rüstungspunkte der Zone gegen den Schaden; die Differenz wird von den TP der Zone abgezogen. Nie Maluswürfel.</li><li>Mensch: 30 TP je Zone; Robotik 70. Zone auf 0 → unbrauchbar. Letale Zonen (12, 8, 7, 6, 2) → meist Tod.</li><li>Schadensschwelle = Schmerztoleranz × 10 % der TP: Schaden darüber gibt −2W je Zone auf alles (außer Widerstand).</li><li>Erreicht der Malus Konstitution → bewusstlos (2W6 Minuten, mit Regeneration 2W6 KR); erreicht er Beweglichkeit → kann nicht gehen.</li><li>Materialkategorien: MK:A (Stoff, Körper – schützt nicht gegen Wucht), MK:B (Rüstung, Fahrzeuge, Robotik), MK:C (Speziallegierungen, Militär).</li><li>Nicht-letaler Schaden: je 10 durchgekommene Punkte −1W für 20 KR; MK:B oder Schmerztoleranz 10 verhindern NL.</li><li>Flächeneffekte treffen alle Zonen mit einer Widerstandsprobe; Springen/Akrobatik als Defensivaktion (MW 10 je Meter).</li><li>Andauernder Schaden (Feuer, Säure): zu Beginn jeder eigenen Runde erneut widerstehen, kumulativ −1W.</li><li>Aufprall: 1 Schaden je m/KR; Sturz: 10 je Meter (Akrobatik reduziert).</li><li>Verbluten (optional): Zone über halbe TP verloren → KO in Minuten bis zum Tod, Medizin MW 15 stoppt.</li><li>Heilung: täglich KO-Stufe je Zone, mit gelungener Medizin-Probe (MW = höchster Zonenschaden) doppelt.</li><li>Regeneration: Geschwindigkeit je KR aus dem Pool; Pool füllt sich nach Schlaf und zwei Mahlzeiten.</li><li>Alkohol: Saufen gegen ALK-Summe (−10/Stunde); Misserfolg −1W für eine Stunde, 10 darunter ohnmächtig 2W6 h.</li></ul>",
+     "format": 1
+    },
+    "video": {
+     "controls": true,
+     "volume": 0.5
+    },
+    "src": null,
+    "system": {},
+    "sort": 4000,
+    "ownership": {
+     "default": -1
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    },
+    "category": null
+   },
+   {
+    "_id": "awmda6QaquAswxFc",
+    "_key": "!journal.pages!16ubT0KzKP9xy9se.awmda6QaquAswxFc",
+    "name": "PSI",
+    "type": "text",
+    "title": {
+     "show": true,
+     "level": 1
+    },
+    "image": {},
+    "text": {
+     "content": "<h2>PSI wirken (S. 193–196)</h2>\n<ul><li>Die Stufe der PSI-Kraft ist ein Würfelpool (erhöhbar durch Adrenalin/Meditation/Zeitpool). Wirken kostet zwei Aktionen.</li><li>Verteile den Pool: Würfel → Kraftstufen (KS), Würfel → Probe (inkl. Hazard-Di), Rest → Kompensation.</li><li>Die Probe muss im Zielbereich der Schwierigkeit liegen: leicht 8–12, mittel 11–15, schwer 15–19, sehr schwer 19–22, ultimativ 23–25. Jeder Kompensationspunkt erweitert den Bereich um 1 in beide Richtungen.</li><li>Kraft sammeln: Willenskraft gegen MW 20 (+10 je gesammelter KS) als Aktion; gesammelte KS gelten nur bis zur nächsten Runde und geben Maluswürfel. Misslingt es: Overload → Fehlschlag.</li><li>Haltung: gehaltene Apps geben Maluswürfel in Höhe des Haltungswerts (nicht auf Widerstand).</li><li>PSI-Defensivaktion: PSI-Kraft + Reaktion gegen den Angriff.</li><li>Hierarchie: für eine Kraft der Ebene 2 bzw. 3 braucht man mindestens ebenso viele Kräfte auf den darunterliegenden Ebenen.</li></ul>",
+     "format": 1
+    },
+    "video": {
+     "controls": true,
+     "volume": 0.5
+    },
+    "src": null,
+    "system": {},
+    "sort": 5000,
+    "ownership": {
+     "default": -1
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    },
+    "category": null
+   },
+   {
+    "_id": "AdbiAwzb0ecGCvnu",
+    "_key": "!journal.pages!16ubT0KzKP9xy9se.AdbiAwzb0ecGCvnu",
+    "name": "Degeneration & Moral",
+    "type": "text",
+    "title": {
+     "show": true,
+     "level": 1
+    },
+    "image": {},
+    "text": {
+     "content": "<h2>Organismus & Psyche (S. 115–116)</h2>\n<table><tr><th>Organismus</th><th>Beim Unterschreiten würfeln</th></tr><tr><td>100–76</td><td>gesund</td></tr><tr><td>75–66</td><td>1× A</td></tr><tr><td>65–36</td><td>1× B je Schwelle</td></tr><tr><td>35–16</td><td>1× A und 1× B je Schwelle</td></tr><tr><td>15–1</td><td>2× A und 2× B je Schwelle</td></tr><tr><td>≤ 0</td><td>Tod</td></tr></table>\n<table><tr><th>Psyche</th><th>Bereich</th></tr><tr><td>100–81</td><td>Optimale Psyche</td></tr><tr><td>80–61</td><td>Gesunde Psyche</td></tr><tr><td>60–41</td><td>Belastete Psyche</td></tr><tr><td>40–21</td><td>Gefährdete Psyche</td></tr><tr><td>20–1</td><td>Katastrophale Psyche</td></tr></table>\n<p>Beim Wechsel des Psyche-Bereichs wird ein Charaktermerkmal gegen eines des neuen Bereichs getauscht.</p>\n<h2>Chaos- & Justicepoints (S. 117–118)</h2>\n<ul><li>Die SL vergibt je Sitzung 0–3 JP (moralisch positiv) und CP (fragwürdig).</li><li>Ein Charaktermerkmal kostet 15 Punkte; ab 30 angesammelten Punkten muss investiert werden. Maximal sechs Merkmale.</li><li>Bei der Erschaffung drei Merkmale frei wählbar.</li></ul>",
+     "format": 1
+    },
+    "video": {
+     "controls": true,
+     "volume": 0.5
+    },
+    "src": null,
+    "system": {},
+    "sort": 6000,
+    "ownership": {
+     "default": -1
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    },
+    "category": null
+   },
+   {
+    "_id": "pO6z11v8z3AU7hdK",
+    "_key": "!journal.pages!16ubT0KzKP9xy9se.pO6z11v8z3AU7hdK",
+    "name": "Erschaffung & Steigern",
+    "type": "text",
+    "title": {
+     "show": true,
+     "level": 1
+    },
+    "image": {},
+    "text": {
+     "content": "<h2>Charaktererschaffung (S. 134–136)</h2>\n<table><tr><th>Powerniveau</th><th>GP</th><th>Ressourcen</th></tr><tr><td>Survival</td><td>300 GP</td><td>100 N$ je GP</td></tr><tr><td>Standard</td><td>450 GP</td><td>1.000 N$ je GP</td></tr><tr><td>Superior</td><td>600 GP</td><td>5.000 N$ je GP</td></tr></table>\n<ul><li>Attribute starten auf 1; Stufe 2 und 3 je 10 GP, jede weitere 20 GP. Schmerztoleranz startet mit 3.</li><li>Fertigkeiten 2 GP je Stufe (max. 4); Elite-Fertigkeiten/PSI 4 bzw. 5 GP je Stufe (PSI max. 6).</li><li>Muttersprache Stufe 5 gratis, weitere Sprachen 2 GP je Stufe.</li><li>Vor- und Nachteile gleichen sich über Vorteilsmarker aus (max. vier Nachteile).</li><li>Zum Schluss: drei Charaktermerkmale und den Butterfly Effect auswürfeln.</li></ul>\n<h2>Steigern (S. 129)</h2>\n<table><tr><th>Wert</th><th>Kosten</th></tr><tr><td>Attribute</td><td>nächste Stufe × 10 EP</td></tr><tr><td>Sonderattribute</td><td>× 6</td></tr><tr><td>Elite-Fertigkeiten, PSI, Sprachen</td><td>× 4</td></tr><tr><td>Fertigkeiten, besondere Fertigkeiten</td><td>× 2</td></tr><tr><td>Style-Skills</td><td>laut Beschreibung</td></tr></table>\n<p>EP: +1 je zwei Stunden Spielzeit, +1 je ausgespieltem Merkmal, +1 je besonderem Erlebnis. Nur trainierte Werte steigern, maximal eine Stufe je Sitzung. Butterfly-Effect-Sets kosten die Hälfte.</p>",
+     "format": 1
+    },
+    "video": {
+     "controls": true,
+     "volume": 0.5
+    },
+    "src": null,
+    "system": {},
+    "sort": 7000,
+    "ownership": {
+     "default": -1
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    },
+    "category": null
+   },
+   {
+    "_id": "GxylsiYnJ8WNENrP",
+    "_key": "!journal.pages!16ubT0KzKP9xy9se.GxylsiYnJ8WNENrP",
+    "name": "Fahrzeuge",
+    "type": "text",
+    "title": {
+     "show": true,
+     "level": 1
+    },
+    "image": {},
+    "text": {
+     "content": "<h2>Fahrzeugregeln (S. 104–106)</h2>\n<ul><li>Handling = Mindestwurf zum Steuern; wird er unterwürfelt → Crash oder Kontrollverlust.</li><li>Manöver wird als Würfelmodifikator auf die Fahrprobe gerechnet; Geschwindigkeit in m/KR.</li><li>Unter 50 % TP: Handling +5, Geschwindigkeit halbiert, Manöver −2.</li><li>Crash: erst Reaktion, dann Fahrzeugfertigkeit + Manöver; Schaden nach Aufprallregeln.</li><li>Stunt: Fahrzeugfertigkeit ab MW 20, Vorteil oder +2W auf die nächste Aktion.</li><li>Fahrzeugkampf: −2W für jede nicht erfüllte Ausgangsposition; Ausweichen mit Fahrzeugfertigkeit + Manöver.</li><li>Ungezielter Treffer: W6 = 6 → vitale Stelle. Gezielte Angriffe auf sichtbare Komponenten −2W.</li></ul>",
+     "format": 1
+    },
+    "video": {
+     "controls": true,
+     "volume": 0.5
+    },
+    "src": null,
+    "system": {},
+    "sort": 8000,
+    "ownership": {
+     "default": -1
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "1.0.0",
+     "createdTime": 1790717394647,
+     "modifiedTime": 1790717394647,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    },
+    "category": null
+   }
+  ]
+ }
+]
