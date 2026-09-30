@@ -31,6 +31,18 @@ Danach Foundry starten und eine neue Welt mit dem System „NoReturn 2E“ anleg
 - **Item-Modifikatoren**: Spezies, Abnormitäten, Eigenschaften, Vorteile, Rüstung und Augmentierung verändern Werte automatisch; Robotik-Zonen ersetzen Attribute und TP der Zone.
 - **16 Compendien** (751 Einträge): Spezies, 87 Waffen, Munition & Sprengstoffe, Schutzkleidung, Ausrüstung, Augmentierung, 12 PSI-Kräfte, 180 PSI-Apps, Style-Skills & 16 Kampfkünste, Abnormitäten, biologische Eigenschaften, Vor-/Nachteile, 128 Charaktermerkmale, besondere Fertigkeiten, Rolltables (Trefferzonen, PSI-Fehlschlag, Degeneration, Butterfly Effect) und ein Regel-Journal.
 
+## Releases & Manifest
+
+Foundry kann das System über die Manifest-URL installieren und aktualisieren und legt den Ordner `noreturn` dabei selbst an:
+
+```
+https://github.com/Gorthian/FoundryVTT-NoReturn2E/releases/latest/download/system.json
+```
+
+> Funktioniert erst, wenn das Repository öffentlich ist – Foundry kann private Releases nicht abrufen.
+
+Neue Version veröffentlichen: Auf GitHub unter *Releases → Draft a new release* einen Tag wie `v1.0.1` anlegen und veröffentlichen. Der Workflow `.github/workflows/release.yml` setzt daraufhin `version` und `download` in der `system.json`, baut `noreturn.zip` und hängt beide Dateien an den Release.
+
 ## Compendien neu bauen
 
 Die Inhalte liegen als Python-Quellen in `tools/src/`. Foundry muss dafür geschlossen sein.

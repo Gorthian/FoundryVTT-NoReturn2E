@@ -1,0 +1,39 @@
+# Baut beim Veröffentlichen eines GitHub-Release (Tag z. B. "v1.0.1")
+# das Foundry-Paket und hängt system.json + noreturn.zip an den Release an.
+# Foundry-Manifest-URL: .../releases/latest/download/system.json
+name: Release
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Version und Download-URL aus dem Tag setzen
+        run: |
+          TAG="${GITHUB_REF_NAME}"
+          VERSION="${TAG#v}"
+          DOWNLOAD="https://github.com/${GITHUB_REPOSITORY}/releases/download/${TAG}/noreturn.zip"
+          jq --arg v "$VERSION" --arg d "$DOWNLOAD" '.version = $v | .download = $d' system.json > system.tmp
+          mv system.tmp system.json
+          jq '{version, manifest, download}' system.json
+
+      - name: Paket bauen
+        run: |
+          zip -r noreturn.zip system.json noreturn.mjs LICENSE.txt README.md \
+            lang module styles templates packs \
+            -x "packs/*/LOCK" "packs/*/LOG" "packs/*/LOG.old"
+
+      - name: An Release anhängen
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            system.json
+            noreturn.zip
