@@ -6,8 +6,19 @@ Inoffizielles Spielsystem für **NoReturn 2. Edition** (Vario-D6 2.0, Mannifest 
 
 ## Installation
 
-1. Den Ordner `noreturn` nach `%LOCALAPPDATA%\FoundryVTT\Data\systems\noreturn` kopieren (Linux: `~/.local/share/FoundryVTT/Data/systems/`).
-2. Foundry starten, neue Welt mit dem System „NoReturn 2E“ anlegen.
+Foundry erkennt das System nur, wenn sein Ordner genau wie die System-ID heißt: **`noreturn`**. Der Repository-Name `FoundryVTT-NoReturn2E` funktioniert als Ordnername nicht.
+
+**Per Git** (empfohlen, Updates mit `git pull`):
+
+```
+git clone https://github.com/Gorthian/FoundryVTT-NoReturn2E.git "%LOCALAPPDATA%\FoundryVTT\Data\systems\noreturn"
+```
+
+Linux: `git clone https://github.com/Gorthian/FoundryVTT-NoReturn2E.git ~/.local/share/FoundryVTT/Data/systems/noreturn`
+
+**Als ZIP**: Auf GitHub *Code → Download ZIP* wählen, entpacken und den Ordner `FoundryVTT-NoReturn2E-main` in `noreturn` umbenennen, bevor er nach `%LOCALAPPDATA%\FoundryVTT\Data\systems\` kommt.
+
+Danach Foundry starten und eine neue Welt mit dem System „NoReturn 2E“ anlegen.
 
 ## Funktionen
 
