@@ -13,7 +13,7 @@
   <div class="nr-psi-power tier-{{p.tier}}" data-item-id="{{p.item.id}}">
     <div class="nr-psi-power-head draggable" data-item-id="{{p.item.id}}">
       <img src="{{p.item.img}}" alt="">
-      <h4>{{p.item.name}} <span class="nr-chip">Ebene {{p.tier}}</span></h4>
+      <h4 class="nr-subhead">{{p.item.name}} <span class="nr-chip">Ebene {{p.tier}}</span></h4>
       <label>{{localize "NR.Psi.Level"}} <input type="number" data-item-field="system.value" value="{{p.item.system.value}}" min="0"></label>
       {{#if ../isCharacter}}<a data-action="advance" data-type="psi" data-tooltip="{{p.cost}} EP"><i class="fa-solid fa-circle-up"></i></a>{{/if}}
       <span class="nr-hint">{{localize "NR.Psi.AppsKnown"}}: {{p.apps.length}}/{{p.item.system.value}}</span>

@@ -5,6 +5,12 @@
         <a class="nr-add" data-action="hitZone" data-tooltip="{{localize 'NR.Combat.HitZone'}}"><i class="fa-solid fa-dice"></i></a>
       </h3>
       <div class="nr-body">
+        <svg class="nr-vitruv" viewBox="0 0 200 240" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <circle cx="100" cy="128" r="96"/>
+          <rect x="10" y="30" width="180" height="180"/>
+          <path d="M100 30 V120 M28 88 H172 M100 120 L52 210 M100 120 L148 210"/>
+          <circle cx="100" cy="48" r="16"/>
+        </svg>
         <div class="nr-body-row">{{> "systems/noreturn/templates/actor/parts/zone.hbs" zone=body.head}}</div>
         <div class="nr-body-row">
           {{> "systems/noreturn/templates/actor/parts/zone.hbs" zone=body.armR}}
