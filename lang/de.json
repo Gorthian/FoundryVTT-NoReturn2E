@@ -521,6 +521,14 @@
       "ShowDiceHint": "Einzelne Würfel in Probenkarten anzeigen."
     },
     "Gen": {
+      "Edit": "Im Charaktergenerator umbauen",
+      "EditTitle": "Charaktergenerator: {name} umbauen",
+      "Apply": "Änderungen übernehmen",
+      "EditNote": "Umbau-Modus: Der Generator ist mit den Werten dieses Charakters vorbelegt. Beim Übernehmen werden nur Attribute, Fertigkeiten, Sprachen und die vom Generator verwalteten Katalog-Items (Abnormitäten, Eigenschaften, Style-Skills, Vor-/Nachteile, Merkmale, PSI) angepasst. Ausrüstung, eigene Items, Schaden und Fortschritt (EP/JP/CP) bleiben unverändert; Einkäufe im Warenkorb werden zusätzlich angelegt und vom vorhandenen Geld abgezogen. Die GP-Bilanz zeigt den Stand des Charakters – bei gesteigerten Charakteren sind Überschreitungen normal.",
+      "EditUnmanaged": "Unverändert bleiben (dem Generator unbekannt):",
+      "ApplyAnyway": "Es gibt noch offene Punkte. Trotzdem übernehmen?",
+      "Updated": "{name} wurde umgebaut.",
+      "NoEditPermission": "Du hast keine Berechtigung, diesen Charakter zu bearbeiten.",
       "Title": "Charaktergenerator",
       "Gp": "GP übrig",
       "Prev": "Zurück",
