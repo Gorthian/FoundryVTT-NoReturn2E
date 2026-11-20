@@ -54,6 +54,11 @@ function specializationBonus(actor, weapon) {
 /** Hinweise zu Style-Skills, die im Angriffsdialog angezeigt werden (rein informative Effekte). */
 function styleAttackHints(actor, weapon) {
   const hints = [];
+  const ranged = !isMeleeWeapon(weapon);
+  // Billy the Kid: einhändige Feuerwaffen in einer Aktion ziehen und abfeuern
+  if (ranged && !weapon.system.twoHanded && ["faustfeuer", "schnellfeuer"].includes(weapon.system.category) && actor.styleLevel("billyTheKid")) {
+    hints.push(game.i18n.localize("NR.Style.BillyHint"));
+  }
   return hints;
 }
 

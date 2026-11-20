@@ -446,7 +446,8 @@
       "Hint": "Hinweistext",
       "NoUsesLeft": "{name}: keine Einsätze mehr übrig.",
       "UsesLeft": "Einsätze: {n}/{max} {per}",
-      "AimForTheHeartNote": "Aim for the Heart: kein Malus für gezielte Fahrzeugangriffe, auch nicht sichtbare vitale Stellen sind erlaubt"
+      "AimForTheHeartNote": "Aim for the Heart: kein Malus für gezielte Fahrzeugangriffe, auch nicht sichtbare vitale Stellen sind erlaubt",
+      "BillyHint": "Billy the Kid: Die einhändige Waffe darf in derselben Aktion gezogen und abgefeuert werden (kein eigener Aktionsaufwand fürs Ziehen)."
     },
     "Species": {
       "TP": "Trefferpunkte je Zone",

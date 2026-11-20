@@ -160,7 +160,8 @@
    "prerequisites": "Schießen 4; GE 4",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Einhändige Feuerwaffen in einer Aktion ziehen und abfeuern. <em class=\"nr-ref\">(NoReturn 2E, S. 180)</em></p>"
+   "description": "<p>Einhändige Feuerwaffen in einer Aktion ziehen und abfeuern. <em class=\"nr-ref\">(NoReturn 2E, S. 180)</em></p>",
+   "hint": "<p>Einhändige Feuerwaffen werden in einer einzigen Aktion gezogen und abgefeuert; das Ziehen kostet keine eigene Aktion. Der Angriffsdialog weist bei passenden Waffen darauf hin.</p>"
   },
   "effects": [],
   "folder": null,

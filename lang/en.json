@@ -446,7 +446,8 @@
       "Hint": "Hint text",
       "NoUsesLeft": "{name}: no uses left.",
       "UsesLeft": "Uses: {n}/{max} {per}",
-      "AimForTheHeartNote": "Aim for the Heart: no penalty for aimed vehicle attacks, hidden vital spots may be targeted"
+      "AimForTheHeartNote": "Aim for the Heart: no penalty for aimed vehicle attacks, hidden vital spots may be targeted",
+      "BillyHint": "Billy the Kid: the one-handed weapon may be drawn and fired in the same action (drawing costs no extra action)."
     },
     "Species": {
       "TP": "HP per zone",

@@ -312,6 +312,7 @@ STYLE_EXTRA = {
     "Storm of Fists": {"hint": "Erweitert Fist of Rage auf vier waffenlose Extremitäten: im Angriffsdialog „Mehrfachangriff“ bis 4."},
     "Shield Master": {"hint": "Beim Blocken gegen einen Mehrfachangriff genügt eine Defensivaktion (ein Block-Malus) für alle Teilangriffe; Adrenalin ist dabei nicht erlaubt. Im Verteidigungsdialog je Teilangriff „Verteidigen“ wählen – die Folgewürfe werden als dieselbe Defensivaktion gewertet."},
     "Blademaster": {"hint": "Defensivaktion: Fernkampfangriffe lassen sich mit einer Klingenwaffe ≥ 30 cm parieren (Nachteil −2W). Im Verteidigungsdialog Waffenkampf/Nahkampf wählen und die Klingenwaffe als Parade-Waffe angeben – der Malus wird automatisch eingerechnet."},
+    "Billy the Kid": {"hint": "Einhändige Feuerwaffen werden in einer einzigen Aktion gezogen und abgefeuert; das Ziehen kostet keine eigene Aktion. Der Angriffsdialog weist bei passenden Waffen darauf hin."},
     # (Ende STYLE_EXTRA)
 }
 
