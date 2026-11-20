@@ -47,6 +47,8 @@ export async function poolDialog({ title, actor, dice, woundMalus = 0, mw = 10, 
           useMeditation: f.useMeditation?.checked ?? false,
           pass: f.pass?.checked ?? false,
           attr: f.attr?.value ?? attrKey,
+          // Zusatzfelder aus Style-Skills (z. B. Fast Talk, Trusty Engineer)
+          styleFields: Object.fromEntries([...button.form.querySelectorAll("[data-style-field]")].map(el => [el.name, Number(el.value) || 0])),
           form: button.form
         };
       }

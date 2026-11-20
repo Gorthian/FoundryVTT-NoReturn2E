@@ -108,3 +108,60 @@ export function nahkampfParryVia(actor) {
   if (L("zpc") >= 3) via.push("ZPC");
   return via;
 }
+
+/* -------------------------------------------- */
+/*  Fertigkeitsproben                            */
+/* -------------------------------------------- */
+
+const esc = s => foundry.utils.escapeHTML?.(String(s)) ?? String(s);
+
+/**
+ * Wirkung von Style-Skills auf eine Fertigkeitsprobe (Probendialog).
+ * @param {Actor} actor
+ * @param {string|null} skillKey  Schlüssel aus NR.skills (null bei Sonderfertigkeiten)
+ * @returns {{hints: string[], fields: {name: string, label: string, value: number, min: number, max: number}[], autoBelow: number|null, crafting: boolean}}
+ */
+export function skillStyleEffects(actor, skillKey) {
+  const out = { hints: [], fields: [], autoBelow: null, crafting: false };
+  if (!skillKey || !actor?.styleLevel) return out;
+  const L = key => actor.styleLevel(key);
+  const t = key => game.i18n.localize(`NR.Style.Skill.${key}`);
+  const cfg = NR.skills[skillKey];
+  const social = cfg?.attr === "ch";
+  const crafting = cfg?.attr === "ha";
+  out.crafting = crafting;
+
+  if (skillKey === "computer") {
+    if (L("anonymous")) out.hints.push(t("anonymous"));
+    if (L("neo")) out.hints.push(t("neo"));
+    if (L("crashOverride")) out.hints.push(t("crashOverride"));
+  }
+  if (skillKey === "dressieren") {
+    if (L("beastmaster")) out.hints.push(t("beastmaster"));
+    if (L("petPal")) out.hints.push(t("petPal"));
+  }
+  if (crafting) {
+    if (L("crapGyver")) out.hints.push(t("crapGyver"));
+    if (L("trustyEngineer")) out.fields.push({ name: "trusty", label: t("trustyLabel"), value: 1, min: 0, max: 2 });
+  }
+  if (social) {
+    if (L("fastTalk")) out.fields.push({ name: "fastTalk", label: t("fastTalkLabel"), value: 0, min: 0, max: 3 });
+    if (L("goldeneZunge")) out.hints.push(t("goldeneZunge"));
+  }
+  if (["taschendiebstahl", "heimlichkeit"].includes(skillKey) && L("trickster")) out.hints.push(t("trickster"));
+  if (["klettern", "springen"].includes(skillKey) && L("parkour")) {
+    out.autoBelow = 30;
+    out.hints.push(t("parkour"));
+  }
+  return out;
+}
+
+/** HTML-Block (Hinweise und Zusatzfelder) für den Probendialog. */
+export function styleDialogContent(effects) {
+  let html = "";
+  for (const h of effects.hints) html += `<p class="nr-hint"><i class="fa-solid fa-star"></i> ${esc(h)}</p>`;
+  for (const f of effects.fields) {
+    html += `<div class="form-group"><label>${esc(f.label)}</label><input type="number" name="${f.name}" data-style-field value="${f.value}" min="${f.min}" max="${f.max}"></div>`;
+  }
+  return html;
+}

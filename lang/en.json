@@ -447,7 +447,24 @@
       "NoUsesLeft": "{name}: no uses left.",
       "UsesLeft": "Uses: {n}/{max} {per}",
       "AimForTheHeartNote": "Aim for the Heart: no penalty for aimed vehicle attacks, hidden vital spots may be targeted",
-      "BillyHint": "Billy the Kid: the one-handed weapon may be drawn and fired in the same action (drawing costs no extra action)."
+      "BillyHint": "Billy the Kid: the one-handed weapon may be drawn and fired in the same action (drawing costs no extra action).",
+      "Skill": {
+        "anonymous": "Anonymous: computer actions cannot be traced; side effects are avoided without a check (security barriers still require checks).",
+        "neo": "Neo: the GM reveals the risks and the target number before the check; you may still change your mind.",
+        "crashOverride": "Crash-Override: hacking/programming counts as crafting; duration is reduced by 50%.",
+        "beastmaster": "Beastmaster: creatures regard you as a friend and attack you last; two fewer Training checks are needed; uncontrolled creatures react positively.",
+        "petPal": "Pet Pal: you understand animal speech within limits (agree with the GM).",
+        "crapGyver": "CrapGyver: crafting duration is reduced by 50% (except Computer).",
+        "trustyLabel": "Trusty Engineers (target number −5 each, max 2)",
+        "trustyApplied": "Trusty Engineer: target number −{n}",
+        "fastTalkLabel": "Fast Talk: preparatory actions (+2D each, max 3)",
+        "fastTalkApplied": "Fast Talk: +{n}D",
+        "goldeneZunge": "Golden Tongue: social checks are possible even in unsuitable situations; the addressed target must allow the interaction.",
+        "trickster": "Trickster: sleight-of-hand tricks (target number 15); escaping, hiding or pickpocketing once per combat round without an action.",
+        "parkour": "Parkour: Climbing and Jumping checks with a target number below 30 succeed automatically.",
+        "parkourAuto": "Parkour: succeeds automatically (target number {mw} < 30).",
+        "rageApplied": "Rage of Gods: adrenaline on Strength grants an additional +3D"
+      }
     },
     "Species": {
       "TP": "HP per zone",

@@ -1,6 +1,7 @@
 import { NR } from "../config.mjs";
 import { rollPool, applyChatMode, buildFormula } from "../dice/pool.mjs";
 import { poolDialog } from "../dice/roll-dialog.mjs";
+import { skillStyleEffects, styleDialogContent } from "../styles.mjs";
 
 const { renderTemplate } = foundry.applications.handlebars;
 
@@ -148,13 +149,36 @@ export class NRActor extends foundry.documents.Actor {
     skillValue = null, untrained = false, flags = {}, extraHtml = "", skillKey = null } = {}) {
 
     const malus = this.getMalus({ resist, psi });
+    const effects = skillStyleEffects(this, skillKey);
     let opts = { bonusDice: extraBonus, malusDice: 0, points: extraPoints, mw, pass: false, useAdrenalin: false, useMeditation: false, disadvantages: 0, attr: attrKey };
     if (!skipDialog) {
       opts = await poolDialog({
         title: label, actor: this, dice, woundMalus: malus, mw, allowPass, resist,
-        attrKey, altAttr, skillValue, untrained, extraBonus, extraPoints
+        attrKey, altAttr, skillValue, untrained, extraBonus, extraPoints, extraContent: styleDialogContent(effects)
       });
       if (!opts) return null;
+    }
+    const styleFields = opts.styleFields ?? {};
+    const styleNotes = [...effects.hints];
+    // Fast Talk: +2W je vorbereitender Aktion (bis zu dreimal); Trusty Engineer: Crafting-MW −5 je Engineer
+    if (styleFields.fastTalk) {
+      opts.bonusDice += 2 * styleFields.fastTalk;
+      styleNotes.push(game.i18n.format("NR.Style.Skill.fastTalkApplied", { n: 2 * styleFields.fastTalk }));
+    }
+    if (styleFields.trusty) {
+      opts.mw = Math.max(0, opts.mw - 5 * styleFields.trusty);
+      styleNotes.push(game.i18n.format("NR.Style.Skill.trustyApplied", { n: 5 * styleFields.trusty }));
+    }
+
+    // Parkour: Klettern/Springen unter MW 30 gelingen automatisch
+    if (effects.autoBelow && opts.mw > 0 && opts.mw < effects.autoBelow) {
+      const msgData = {
+        speaker: ChatMessage.getSpeaker({ actor: this }),
+        content: `<div class="nr-card"><header class="nr-card-head"><h3>${label}</h3></header><p class="nr-result good">${game.i18n.format("NR.Style.Skill.parkourAuto", { mw: opts.mw })}</p></div>`
+      };
+      applyChatMode(msgData);
+      await ChatMessage.create(msgData);
+      return { total: opts.mw, success: true, auto: true, n: 0, excess: 0 };
     }
 
     // Attributwechsel (z. B. Einschüchtern mit ST)
@@ -176,7 +200,14 @@ export class NRActor extends foundry.documents.Actor {
         extraHtml += `<p class="nr-good"><i class="fa-solid fa-paw"></i> ${game.i18n.format("NR.Chat.SituationalDice", { n: sit })}</p>`;
       }
     }
-    if (opts.useAdrenalin && await this.spendAdrenalin("adrenalin")) bonus += this.system.adrenalinBonus;
+    if (opts.useAdrenalin && await this.spendAdrenalin("adrenalin")) {
+      bonus += this.system.adrenalinBonus;
+      // Rage of Gods: Adrenalin auf Stärke(-Fertigkeiten) gibt zusätzlich +3W
+      if (this.styleLevel("rageOfGods") && attrUsed === "st") {
+        bonus += 3;
+        styleNotes.push(game.i18n.localize("NR.Style.Skill.rageApplied"));
+      }
+    }
     if (opts.useMeditation && await this.spendAdrenalin("meditation")) bonus += Math.min(5, this.system.meditationMax);
 
     // Robotik-Overdrive (S. 217): gespeicherte Bonuspunkte auf die nächste Stärke-Aktion
@@ -187,6 +218,7 @@ export class NRActor extends foundry.documents.Actor {
       await this.update({ "system.combat.overdrive": 0 });
     }
     if (overdrive) extraHtml += `<p class="nr-warn"><i class="fa-solid fa-gears"></i> Overdrive +${overdrive} Stärke</p>`;
+    for (const n of styleNotes) extraHtml += `<p class="nr-good"><i class="fa-solid fa-star"></i> ${n}</p>`;
     const malusTotal = (resist ? 0 : malus) + opts.malusDice + opts.disadvantages * 2;
     const leiden = attrUsed ? (this.system.attr[attrUsed]?.leiden ?? 0) : 0;
     const sub = subtitle || (attrUsed ? `${this.system.attr[attrUsed].abbr} ${this.system.attr[attrUsed].total}` : "");

@@ -447,7 +447,24 @@
       "NoUsesLeft": "{name}: keine Einsätze mehr übrig.",
       "UsesLeft": "Einsätze: {n}/{max} {per}",
       "AimForTheHeartNote": "Aim for the Heart: kein Malus für gezielte Fahrzeugangriffe, auch nicht sichtbare vitale Stellen sind erlaubt",
-      "BillyHint": "Billy the Kid: Die einhändige Waffe darf in derselben Aktion gezogen und abgefeuert werden (kein eigener Aktionsaufwand fürs Ziehen)."
+      "BillyHint": "Billy the Kid: Die einhändige Waffe darf in derselben Aktion gezogen und abgefeuert werden (kein eigener Aktionsaufwand fürs Ziehen).",
+      "Skill": {
+        "anonymous": "Anonymous: Computeraktionen sind nicht zurückverfolgbar, Seiteneffekte werden ohne Probe vermieden (Sicherheitsbarrieren erfordern weiterhin Proben).",
+        "neo": "Neo: Die SL nennt vor der Probe Risiken und Mindestwurf; du kannst dich noch umentscheiden.",
+        "crashOverride": "Crash-Override: Hacken/Programmieren zählt als Crafting; die Dauer verkürzt sich um 50 %.",
+        "beastmaster": "Beastmaster: Kreaturen sehen dich als Freund und greifen zuletzt an; zwei Dressieren-Proben weniger nötig; unkontrollierte Kreaturen reagieren positiv.",
+        "petPal": "Pet Pal: Du verstehst die Sprache von Tieren in Grenzen (Absprache mit der SL).",
+        "crapGyver": "CrapGyver: Die Crafting-Dauer sinkt um 50 % (außer bei Computer).",
+        "trustyLabel": "Trusty Engineers (MW −5 je Person, max. 2)",
+        "trustyApplied": "Trusty Engineer: Mindestwurf −{n}",
+        "fastTalkLabel": "Fast Talk: vorbereitende Aktionen (+2W je Aktion, max. 3)",
+        "fastTalkApplied": "Fast Talk: +{n}W",
+        "goldeneZunge": "Goldene Zunge: Soziale Proben sind auch in unpassenden Situationen möglich; das angesprochene Ziel muss die Interaktion zulassen.",
+        "trickster": "Trickster: Taschenspielertricks (MW 15); Entfesseln, Verstecken oder Taschendiebstahl einmal je Kampfrunde ohne Aktion.",
+        "parkour": "Parkour: Klettern- und Springen-Proben mit Mindestwurf unter 30 gelingen automatisch.",
+        "parkourAuto": "Parkour: automatisch gelungen (Mindestwurf {mw} < 30).",
+        "rageApplied": "Rage of Gods: Adrenalin auf Stärke gibt zusätzlich +3W"
+      }
     },
     "Species": {
       "TP": "Trefferpunkte je Zone",
