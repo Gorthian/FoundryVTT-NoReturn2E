@@ -314,6 +314,7 @@ STYLE_EXTRA = {
     "Blademaster": {"hint": "Defensivaktion: Fernkampfangriffe lassen sich mit einer Klingenwaffe ≥ 30 cm parieren (Nachteil −2W). Im Verteidigungsdialog Waffenkampf/Nahkampf wählen und die Klingenwaffe als Parade-Waffe angeben – der Malus wird automatisch eingerechnet."},
     "Billy the Kid": {"hint": "Einhändige Feuerwaffen werden in einer einzigen Aktion gezogen und abgefeuert; das Ziehen kostet keine eigene Aktion. Der Angriffsdialog weist bei passenden Waffen darauf hin."},
     "Anonymous": {"hint": "Computeraktionen sind nicht zurückverfolgbar; Seiteneffekte werden automatisch bedacht und brauchen keine Probe. Sicherheitsbarrieren erfordern weiterhin Proben. Auf Computer-Proben erscheint ein Hinweis."},
+    "Beastmaster": {"hint": "Kreaturen sehen dich als Freund und greifen dich zuletzt an; zwei Dressieren-Proben weniger sind nötig, um Sturheit zu überwinden; unkontrollierte Kreaturen reagieren positiv. Die Angriffsreihenfolge bestimmt die Spielleitung."},
     # (Ende STYLE_EXTRA)
 }
 

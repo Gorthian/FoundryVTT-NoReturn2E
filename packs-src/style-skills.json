@@ -125,7 +125,8 @@
    "prerequisites": "Dressieren 3; CH 4",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Kreaturen greifen zuletzt an; zwei Dressieren-Proben weniger nötig. Unkontrollierte CTs reagieren positiv. <em class=\"nr-ref\">(NoReturn 2E, S. 180)</em></p>"
+   "description": "<p>Kreaturen greifen zuletzt an; zwei Dressieren-Proben weniger nötig. Unkontrollierte CTs reagieren positiv. <em class=\"nr-ref\">(NoReturn 2E, S. 180)</em></p>",
+   "hint": "<p>Kreaturen sehen dich als Freund und greifen dich zuletzt an; zwei Dressieren-Proben weniger sind nötig, um Sturheit zu überwinden; unkontrollierte Kreaturen reagieren positiv. Die Angriffsreihenfolge bestimmt die Spielleitung.</p>"
   },
   "effects": [],
   "folder": null,
