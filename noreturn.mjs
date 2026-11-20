@@ -150,18 +150,25 @@ function registerHandlebarsHelpers() {
 async function createItemMacro(data, slot) {
   const item = await fromUuid(data.uuid);
   if (!item?.parent) return ui.notifications.warn(game.i18n.localize("NR.Notify.MacroOwned"));
-  const command = `game.noreturn.useItem(${JSON.stringify(item.name)});`;
-  let macro = game.macros.find(m => m.name === item.name && m.command === command);
+  // Name als Fallback, Item-ID als bevorzugter Schlüssel (eindeutig bei doppelten Namen)
+  const command = `game.noreturn.useItem(${JSON.stringify(item.name)}, ${JSON.stringify(item.id)});`;
+  let macro = game.macros.find(m => m.command === command);
   if (!macro) {
     macro = await Macro.create({ name: item.name, type: "script", img: item.img, command, flags: { "noreturn.itemMacro": true } });
   }
   game.user.assignHotbarMacro(macro, slot);
 }
 
-function useItemMacro(name) {
+/**
+ * Löst das Item des aktiven Akteurs auf und verwendet es.
+ * Bevorzugt die Item-ID; fällt auf den Namen zurück (z. B. bei anderem Akteur oder alten Makros).
+ * @param {string} name  Itemname (Fallback)
+ * @param {string} [id]  Item-ID
+ */
+function useItemMacro(name, id) {
   const speaker = ChatMessage.getSpeaker();
   const actor = (speaker.token ? game.actors.tokens[speaker.token] : null) ?? game.actors.get(speaker.actor) ?? game.user.character;
-  const item = actor?.items.find(i => i.name === name);
+  const item = (id ? actor?.items.get(id) : null) ?? actor?.items.find(i => i.name === name);
   if (!item) return ui.notifications.warn(game.i18n.format("NR.Notify.ItemMissing", { name }));
   return item.use();
 }
