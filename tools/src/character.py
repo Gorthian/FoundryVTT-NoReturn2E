@@ -307,6 +307,7 @@ STYLE_EXTRA = {
     "Akimbo": {"hint": "Mehrfachangriff mit zwei Fernkampfwaffen in einem Wurf: im Angriffsdialog „Mehrfachangriff“ auf 2 setzen. Es gelten der jeweils höchste Malus/niedrigste Wert; kein Adrenalin/Meditation; jedes Ziel muss sich gegen jeden Angriff verteidigen, Schaden je Treffer."},
     "Dual Wielding": {"hint": "Mehrfachangriff mit zwei Nahkampfwaffen in einem Wurf: im Angriffsdialog „Mehrfachangriff“ auf 2 setzen. Kein Adrenalin/Meditation; jedes Ziel verteidigt gegen jeden Angriff einzeln."},
     "Fist of Rage": {"hint": "Mehrfachangriff mit zwei waffenlosen Extremitäten: bei waffenlosen Angriffen im Angriffsdialog „Mehrfachangriff“ auf 2 setzen (Angriffsart je Extremität wählbar)."},
+    "Multiple Wielding": {"hint": "Erweitert Dual Wielding auf vier Nahkampfwaffen: im Angriffsdialog „Mehrfachangriff“ bis 4. Voraussetzung Mehrgliedrig (Arme) bleibt Sache der Charaktererschaffung."},
     # (Ende STYLE_EXTRA)
 }
 

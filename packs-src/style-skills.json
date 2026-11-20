@@ -743,7 +743,8 @@
    "prerequisites": "Dual Wielding; Mehrgliedrig (Arme)",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Mehrfachangriff mit vier Nahkampfwaffen. <em class=\"nr-ref\">(NoReturn 2E, S. 182)</em></p>"
+   "description": "<p>Mehrfachangriff mit vier Nahkampfwaffen. <em class=\"nr-ref\">(NoReturn 2E, S. 182)</em></p>",
+   "hint": "<p>Erweitert Dual Wielding auf vier Nahkampfwaffen: im Angriffsdialog „Mehrfachangriff“ bis 4. Voraussetzung Mehrgliedrig (Arme) bleibt Sache der Charaktererschaffung.</p>"
   },
   "effects": [],
   "folder": null,
