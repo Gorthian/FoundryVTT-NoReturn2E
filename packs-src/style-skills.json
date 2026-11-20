@@ -2001,8 +2001,30 @@
      "effect": "Waffenlos Blocken +3W."
     }
    ],
-   "modifiers": [],
-   "description": "<p>Schläge und Tritte. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>"
+   "modifiers": [
+    {
+     "target": "resist.leg",
+     "value": 3,
+     "level": 1
+    },
+    {
+     "target": "damage.fist",
+     "value": 2,
+     "level": 2
+    },
+    {
+     "target": "damage.leg",
+     "value": 2,
+     "level": 2
+    },
+    {
+     "target": "defense.blockUnarmed",
+     "value": 3,
+     "level": 3
+    }
+   ],
+   "description": "<p>Schläge und Tritte. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>",
+   "hint": "<p>Stufe 1: Treffer an den Beinen +3W auf den Schadenswiderstand (KO; automatisch im Widerstandsdialog). Stufe 2: Faust- und Beinschaden +2W. Stufe 3: waffenloses Blocken +3W.</p>"
   },
   "effects": [],
   "folder": null,

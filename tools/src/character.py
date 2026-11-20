@@ -342,6 +342,7 @@ STYLE_EXTRA = {
     "Capoeira": {"mods": [mod("defense.dodgeMelee", 3, 1), mod("damage.leg", 3, 2), mod("attack.leg", 3, 3)], "hint": "Stufe 1: Ausweichen gegen Nahkampfangriffe +3W (automatisch). Stufe 2: Beinschaden +3W (Angriffsart „Tritt/Knie/Schienbein“). Stufe 3: Beinangriffe +3W auf den Angriff."},
     "Jiu Jitsu": {"mods": [mod("dice.nahkampf", 2, 2), mod("damage.unarmed", 2, 3)], "hint": "Stufe 1: Nahkampf darf Nahkampfangriffe parieren. Stufe 2: Nahkampf +2W (Proben, Angriffe, Paraden). Stufe 3: waffenloser Schaden +2W."},
     "Karate": {"mods": [mod("defense.blockUnarmed", 2, 1), mod("dice.nahkampf", 2, 2), mod("damage.unarmed", 4, 3)], "hint": "Stufe 1: waffenloses Blocken +2W (Block ohne Schild). Stufe 2: Nahkampf +2W. Stufe 3: waffenloser Schaden +4W."},
+    "Kick-Boxen": {"mods": [mod("resist.leg", 3, 1), mod("damage.fist", 2, 2), mod("damage.leg", 2, 2), mod("defense.blockUnarmed", 3, 3)], "hint": "Stufe 1: Treffer an den Beinen +3W auf den Schadenswiderstand (KO; automatisch im Widerstandsdialog). Stufe 2: Faust- und Beinschaden +2W. Stufe 3: waffenloses Blocken +3W."},
     # (Ende STYLE_EXTRA)
 }
 
