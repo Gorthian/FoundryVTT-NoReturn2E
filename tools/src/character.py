@@ -317,6 +317,7 @@ STYLE_EXTRA = {
     "Beastmaster": {"hint": "Kreaturen sehen dich als Freund und greifen dich zuletzt an; zwei Dressieren-Proben weniger sind nötig, um Sturheit zu überwinden; unkontrollierte Kreaturen reagieren positiv. Die Angriffsreihenfolge bestimmt die Spielleitung."},
     "CrapGyver": {"hint": "Die Crafting-Dauer sinkt um 50 % (außer bei Computer). Das System führt keine Crafting-Dauer; auf Handwerk-Proben erscheint ein Hinweis, die Dauer halbiert die Spielleitung."},
     "Crash-Override": {"hint": "Hacken/Programmieren zählt als Crafting; die Dauer der Computer-Proben verkürzt sich um 50 %. Das System führt keine Crafting-Dauer; die Spielleitung halbiert sie anhand des Hinweises auf der Computer-Probe."},
+    "Fast Talk": {"hint": "Je vorbereitender Aktion +2W auf die folgende Sozialfertigkeit, bis zu dreimal kumulativ: im Probendialog sozialer Fertigkeiten (Attribut CH) die Zahl der Aktionen eintragen."},
     # (Ende STYLE_EXTRA)
 }
 

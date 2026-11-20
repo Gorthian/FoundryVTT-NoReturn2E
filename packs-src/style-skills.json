@@ -455,7 +455,8 @@
    "prerequisites": "Überreden 5; CH 5",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Je Aktion +2W auf die folgende Sozialfertigkeit, bis zu dreimal kumulativ. <em class=\"nr-ref\">(NoReturn 2E, S. 181)</em></p>"
+   "description": "<p>Je Aktion +2W auf die folgende Sozialfertigkeit, bis zu dreimal kumulativ. <em class=\"nr-ref\">(NoReturn 2E, S. 181)</em></p>",
+   "hint": "<p>Je vorbereitender Aktion +2W auf die folgende Sozialfertigkeit, bis zu dreimal kumulativ: im Probendialog sozialer Fertigkeiten (Attribut CH) die Zahl der Aktionen eintragen.</p>"
   },
   "effects": [],
   "folder": null,
