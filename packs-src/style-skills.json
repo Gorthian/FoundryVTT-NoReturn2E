@@ -1882,8 +1882,20 @@
      "effect": "Erfolgreiche Parade verursacht Klingenschaden am Angreifer."
     }
    ],
-   "modifiers": [],
-   "description": "<p>Japanische Schwertkunst. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>"
+   "modifiers": [
+    {
+     "target": "attack.blade",
+     "value": 2,
+     "level": 2
+    },
+    {
+     "target": "defense.parryBlade",
+     "value": 2,
+     "level": 2
+    }
+   ],
+   "description": "<p>Japanische Schwertkunst. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>",
+   "hint": "<p>Stufe 1: Schwert ziehen und in derselben Aktion angreifen (Hinweis im Angriffsdialog). Stufe 2: Angriffe und Paraden mit Klingenwaffen +2W (automatisch). Stufe 3: Jede erfolgreiche Parade mit einer Klingenwaffe verursacht deren Schaden an einer zufälligen Zone des Angreifers (automatische Schadenskarte).</p>"
   },
   "effects": [],
   "folder": null,
