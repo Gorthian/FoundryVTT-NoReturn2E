@@ -310,7 +310,13 @@
    "prerequisites": "PSI-begabt, Willenskraft 5; WA 5",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Einmal je Sitzung ein Hinweis der SL auf kommende Ereignisse. <em class=\"nr-ref\">(NoReturn 2E, S. 181)</em></p>"
+   "description": "<p>Einmal je Sitzung ein Hinweis der SL auf kommende Ereignisse. <em class=\"nr-ref\">(NoReturn 2E, S. 181)</em></p>",
+   "hint": "<p>Einmal je Sitzung gibt die Spielleitung einen Hinweis auf kommende Ereignisse. Einsetzen verbraucht den Einsatz und meldet ihn der Spielleitung im Chat. Der Zähler wird bei Beginn einer neuen Sitzung im Item-Bogen (Einsätze) zurückgesetzt.</p>",
+   "uses": {
+    "max": 1,
+    "value": 1,
+    "per": "Sitzung"
+   }
   },
   "effects": [],
   "folder": null,
@@ -945,7 +951,8 @@
    "prerequisites": "3 PSI-Kräfte auf 3",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Weitere Ziele einer App möglich, je Ziel −1 effektive KS. <em class=\"nr-ref\">(NoReturn 2E, S. 183)</em></p>"
+   "description": "<p>Weitere Ziele einer App möglich, je Ziel −1 effektive KS. <em class=\"nr-ref\">(NoReturn 2E, S. 183)</em></p>",
+   "hint": "<p>Eine App kann zusätzliche Ziele erfassen; je zusätzlichem Ziel sinkt die effektive Kraftstufe (KS) um 1. Im PSI-Dialog das Feld „Zusätzliche Ziele“ ausfüllen.</p>"
   },
   "effects": [],
   "folder": null,
@@ -1091,7 +1098,8 @@
    "prerequisites": "Flügel; Ausdauer 4",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Fliegen auf der Stelle; Ausdauer-Probe = Dauer in KR. <em class=\"nr-ref\">(NoReturn 2E, S. 183)</em></p>"
+   "description": "<p>Fliegen auf der Stelle; Ausdauer-Probe = Dauer in KR. <em class=\"nr-ref\">(NoReturn 2E, S. 183)</em></p>",
+   "hint": "<p>Einsetzen: Ausdauer-Probe; das Ergebnis entspricht der Dauer des Schwebens in Kampfrunden (Fliegen auf der Stelle).</p>"
   },
   "effects": [],
   "folder": null,
@@ -1237,7 +1245,8 @@
    "prerequisites": "GE 4, HA 4, WI 3",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Fertigkeit „Kochen“ (HA): Speisen mit Inspirieren-Bonus für zwei Stunden. <em class=\"nr-ref\">(NoReturn 2E, S. 185)</em></p>"
+   "description": "<p>Fertigkeit „Kochen“ (HA): Speisen mit Inspirieren-Bonus für zwei Stunden. <em class=\"nr-ref\">(NoReturn 2E, S. 185)</em></p>",
+   "hint": "<p>Einsetzen: Probe auf die Zusatzfertigkeit „Kochen“ (HA), die beim ersten Einsatz freigeschaltet wird. Die Speise gibt dem Ziel für zwei Stunden Bonuswürfel wie Inspirieren (+1W je 20 Punkte); Ziel vorher markieren.</p>"
   },
   "effects": [],
   "folder": null,
