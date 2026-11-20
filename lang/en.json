@@ -621,6 +621,19 @@
       "MacroOwned": "Only owned items can become macros.",
       "ItemMissing": "Item \"{name}\" not found."
     },
+    "Notice": {
+      "Title": "Notice about NoReturn 2E",
+      "Intro": "Please read before use:",
+      "Ai": "<strong>AI-generated:</strong> This system was developed with the help of AI.",
+      "Beta": "<strong>Early beta:</strong> Features are missing and bugs are to be expected (version {version}, tested with Foundry {foundry}).",
+      "Risk": "<strong>Use at your own risk:</strong> Any update may introduce changes that break existing content (characters, items, worlds).",
+      "Backup": "<strong>Backup:</strong> Back up your world before every update.",
+      "Bugs": "<strong>Report bugs:</strong> Please file them as a <a href=\"{issues}\" target=\"_blank\" rel=\"noopener\">GitHub issue</a>.",
+      "Unofficial": "<strong>Unofficial fan project</strong> in consultation with <a href=\"{url}\" target=\"_blank\" rel=\"noopener\">Mannifest Games</a>, not an official Mannifest Games product.",
+      "Rights": "<strong>Rights:</strong> All rights to NoReturn, its setting and rules remain with Mannifest Games. The code license (MIT) covers the code only, not rules content. The core book is required for the full rules.",
+          "Dismiss": "Don't show again until the next version",
+      "Ok": "Understood"
+    },
     "Settings": {
       "AutoRegen": "Automatic regeneration",
       "AutoRegenHint": "Regenerate combatants at the start of their turn.",

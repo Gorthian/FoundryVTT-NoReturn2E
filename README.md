@@ -2,7 +2,19 @@
 
 Inoffizielles Spielsystem für **NoReturn 2. Edition** (Vario-D6 2.0, Mannifest Games) für Foundry Virtual Tabletop **v13 und v14** (getestet mit 14.368).
 
-> Fan-Projekt ohne Verbindung zu Mannifest Games. Die Compendien enthalten Spielwerte und eigene Kurzfassungen mit Seitenverweisen auf das Corebook 2E – für die vollständigen Regeln wird das Buch benötigt.
+> [!WARNING]
+> **Bitte vor der Nutzung lesen**
+>
+> - **KI-generiert:** Dieses System wurde mit Hilfe von KI entwickelt.
+> - **Frühe Beta-Phase:** Es fehlen Funktionen, Fehler sind zu erwarten. Getestet mit Foundry 14.368 (kompatibel: v13 und v14).
+> - **Nutzung auf eigene Gefahr:** Mit jedem Update können Änderungen kommen, die bestehende Inhalte (Charaktere, Items, Welten) beschädigen. **Lege vor jedem Update ein Backup deiner Welt an.**
+> - **Inoffizielles Fan-Projekt** in Rücksprache mit [Mannifest Games](https://www.mannifest-games.de/), aber kein offizielles Produkt von Mannifest Games.
+> - **Alle Rechte** an NoReturn, Setting und Regelwerk verbleiben bei Mannifest Games. Die Code-Lizenz (MIT) gilt nur für den Code, nicht für Regelinhalte.
+> - **Fehler** bitte als [GitHub-Issue](https://github.com/Gorthian/FoundryVTT-NoReturn2E/issues) melden.
+>
+> Beim Start einer Welt zeigt das System diesen Hinweis als Dialog (pro Spieler bis zur nächsten Version ausblendbar; erneut per Makro `game.noreturn.showNotice()`).
+
+Die Compendien enthalten Spielwerte und eigene Kurzfassungen mit Seitenverweisen auf das Corebook 2E – für die vollständigen Regeln wird das Buch benötigt.
 
 ## Installation
 
@@ -114,4 +126,4 @@ Das Skript erzeugt `packs-src/*.json` und schreibt daraus die LevelDB-Compendien
 
 ## Lizenz
 
-Code: MIT. NoReturn ist eine eingetragene Marke von Manfred Altenschmidt / Mannifest Games; alle Rechte an Setting und Regelwerk verbleiben dort.
+Code: MIT (gilt nur für den Code, nicht für Regelinhalte). NoReturn ist eine eingetragene Marke von Manfred Altenschmidt / Mannifest Games; alle Rechte an Setting und Regelwerk verbleiben dort.

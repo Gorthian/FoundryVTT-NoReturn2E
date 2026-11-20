@@ -621,6 +621,19 @@
       "MacroOwned": "Nur Items eines Charakters können als Makro abgelegt werden.",
       "ItemMissing": "Item „{name}“ nicht gefunden."
     },
+    "Notice": {
+      "Title": "Hinweis zu NoReturn 2E",
+      "Intro": "Bitte vor der Nutzung lesen:",
+      "Ai": "<strong>KI-generiert:</strong> Dieses System wurde mit Hilfe von KI entwickelt.",
+      "Beta": "<strong>Frühe Beta-Phase:</strong> Es fehlen Funktionen und es sind Fehler zu erwarten (Version {version}, getestet mit Foundry {foundry}).",
+      "Risk": "<strong>Benutzung auf eigene Gefahr:</strong> Mit jedem Update können Änderungen kommen, die bestehende Inhalte (Charaktere, Items, Welten) beschädigen.",
+      "Backup": "<strong>Backup:</strong> Lege vor jedem Update ein Backup deiner Welt an.",
+      "Bugs": "<strong>Fehler melden:</strong> Bitte als <a href=\"{issues}\" target=\"_blank\" rel=\"noopener\">GitHub-Issue</a> melden.",
+      "Unofficial": "<strong>Inoffizielles Fan-Projekt</strong> in Rücksprache mit <a href=\"{url}\" target=\"_blank\" rel=\"noopener\">Mannifest Games</a>, kein offizielles Produkt von Mannifest Games.",
+      "Rights": "<strong>Rechte:</strong> Alle Rechte an NoReturn, Setting und Regelwerk verbleiben bei Mannifest Games. Die Code-Lizenz (MIT) gilt nur für den Code, nicht für Regelinhalte. Für die vollständigen Regeln wird das Corebook benötigt.",
+          "Dismiss": "Bis zur nächsten Version nicht mehr anzeigen",
+      "Ok": "Verstanden"
+    },
     "Settings": {
       "AutoRegen": "Automatische Regeneration",
       "AutoRegenHint": "Regeneriert Kämpfer mit Regeneration zu Beginn ihres Zuges.",
