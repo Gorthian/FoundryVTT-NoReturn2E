@@ -1478,7 +1478,8 @@
     }
    ],
    "modifiers": [],
-   "description": "<p>Defensive japanische Kampfkunst. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>"
+   "description": "<p>Defensive japanische Kampfkunst. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>",
+   "hint": "<p>Stufe 1: Nahkampf darf Nahkampfangriffe parieren (im Verteidigungsdialog freigeschaltet). Stufe 2: du rollst immer ab – Sturzschaden −20 (manuelle Schadenseingabe, vom Schaden abziehen). Stufe 3: Jede erfolgreiche Parade im Nahkampf verursacht beim Angreifer ST + 10 Punkte Schaden an einer zufälligen Zone (automatische Schadenskarte).</p>"
   },
   "effects": [],
   "folder": null,

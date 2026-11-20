@@ -489,9 +489,53 @@ function defenseCapacity(actor, isBlock) {
     L("quadrupleAkimbo") ? 4 : 0, L("akimbo") ? 2 : 0);
 }
 
-/** Konterschaden nach erfolgreicher Parade (wird durch Aikido 3 / Kenjutsu 3 erweitert). */
+/**
+ * Konterschaden nach erfolgreicher Parade im Nahkampf, an einer zufälligen Zone des Angreifers:
+ *  - Aikido 3: ST + 10 Punkte
+ *  - Kenjutsu 3: Schaden der parierenden Klingenwaffe
+ */
 async function parryRetaliation(defender, attack, gear) {
-  return null;
+  const counters = [];
+  if (defender.styleLevel("aikido") >= 3) {
+    counters.push({ label: "Aikido", dmg: { strength: true, points: 10, formula: "", damageType: "wucht", pierce: "" } });
+  }
+  if (defender.styleLevel("kenjutsu") >= 3 && gear?.system.damageType === "klinge") {
+    const d = gear.system.damage;
+    counters.push({ label: `Kenjutsu (${gear.name})`, dmg: { strength: d.strength, points: d.points, formula: d.formula, damageType: gear.system.damageType, pierce: d.pierce } });
+  }
+  for (const c of counters) await postRetaliation(defender, attack, c);
+}
+
+/** Würfle einen Konterschaden und poste die Schadenskarte für den Angreifer. */
+async function postRetaliation(defender, attack, { label, dmg }) {
+  const attacker = await fromUuid(attack.actorUuid);
+  if (!attacker) return null;
+  let roll;
+  let text;
+  if (dmg.formula) {
+    roll = await new Roll(`${toFormula(dmg.formula)}${dmg.points ? ` + ${dmg.points}` : ""}`.replace(/\+ -/g, "- ")).evaluate();
+    text = dmg.formula;
+  } else if (dmg.strength) {
+    const st = defender.system.attr.st.total;
+    roll = await new Roll(buildFormula({ dice: st, points: dmg.points, hazard: true }).formula).evaluate();
+    text = `ST ${st}${dmg.points ? ` + ${dmg.points}p.` : ""}`;
+  } else {
+    roll = await new Roll(buildFormula({ dice: 0, points: dmg.points, hazard: false, oneDieRule: false }).formula).evaluate();
+    text = `${dmg.points}p.`;
+  }
+  const zones = [(await rollHitZone()).zone];
+  const payload = {
+    kind: "damage", amount: roll.total, zones,
+    attack: { pierce: dmg.pierce ?? "", damageType: dmg.damageType ?? "wucht", noDamageVs: "", nonLethal: false, structure: false, continuous: false },
+    target: { tokenUuid: attack.tokenUuid, actorUuid: attacker.uuid, name: attacker.name },
+    weaponName: `${label} (${game.i18n.localize("NR.Combat.Retaliation")})`, blocked: false
+  };
+  const content = await renderTemplate("systems/noreturn/templates/chat/damage-card.hbs", {
+    ...payload, label: text, zoneLabels: zones.map(z => NR.zones[z].label).join(", "), dice: diceSummary(roll), describe: ""
+  });
+  const msgData = { speaker: ChatMessage.getSpeaker({ actor: defender }), content, rolls: [roll], flags: { noreturn: { damage: payload } } };
+  applyChatMode(msgData);
+  return ChatMessage.create(msgData);
 }
 
 /* -------------------------------------------- */
