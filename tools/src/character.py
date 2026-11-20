@@ -310,6 +310,7 @@ STYLE_EXTRA = {
     "Multiple Wielding": {"hint": "Erweitert Dual Wielding auf vier Nahkampfwaffen: im Angriffsdialog „Mehrfachangriff“ bis 4. Voraussetzung Mehrgliedrig (Arme) bleibt Sache der Charaktererschaffung."},
     "Quadruple Akimbo": {"hint": "Erweitert Akimbo auf vier Fernkampfwaffen: im Angriffsdialog „Mehrfachangriff“ bis 4. Voraussetzung Mehrgliedrig (Arme) bleibt Sache der Charaktererschaffung."},
     "Storm of Fists": {"hint": "Erweitert Fist of Rage auf vier waffenlose Extremitäten: im Angriffsdialog „Mehrfachangriff“ bis 4."},
+    "Shield Master": {"hint": "Beim Blocken gegen einen Mehrfachangriff genügt eine Defensivaktion (ein Block-Malus) für alle Teilangriffe; Adrenalin ist dabei nicht erlaubt. Im Verteidigungsdialog je Teilangriff „Verteidigen“ wählen – die Folgewürfe werden als dieselbe Defensivaktion gewertet."},
     # (Ende STYLE_EXTRA)
 }
 

@@ -1105,7 +1105,8 @@
    "prerequisites": "Blocken 4; BE 3, WA 3",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Mehrfachangriffe mit einer Defensivaktion blocken (ohne Adrenalin). <em class=\"nr-ref\">(NoReturn 2E, S. 183)</em></p>"
+   "description": "<p>Mehrfachangriffe mit einer Defensivaktion blocken (ohne Adrenalin). <em class=\"nr-ref\">(NoReturn 2E, S. 183)</em></p>",
+   "hint": "<p>Beim Blocken gegen einen Mehrfachangriff genügt eine Defensivaktion (ein Block-Malus) für alle Teilangriffe; Adrenalin ist dabei nicht erlaubt. Im Verteidigungsdialog je Teilangriff „Verteidigen“ wählen – die Folgewürfe werden als dieselbe Defensivaktion gewertet.</p>"
   },
   "effects": [],
   "folder": null,
