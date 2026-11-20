@@ -504,6 +504,8 @@
       "NoDriver": "Wähle ein Token als Fahrer*in aus."
     },
     "Notify": {
+      "DamageDelegated": "Schaden an {n} Ziel(e) wurde an die Spielleitung übergeben.",
+      "DamageSkipped": "Kein Schaden angewendet (keine Berechtigung, keine Spielleitung online): {names}",
       "Rested": "{name} hat sich erholt.",
       "Healed": "{name} heilt {heal} Punkte je Zone.",
       "SkillNotLearned": "Diese besondere Fertigkeit ist nicht erlernt.",

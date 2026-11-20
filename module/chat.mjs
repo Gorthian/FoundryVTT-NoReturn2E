@@ -2,6 +2,7 @@ import { defendAgainst, rollDamage, resistFromMessage } from "./combat.mjs";
 import { applyPsiDamage } from "./psi.mjs";
 import { rollPool } from "./dice/pool.mjs";
 import { NR } from "./config.mjs";
+import { applyDamageTo } from "./socket.mjs";
 
 /**
  * Chat-Interaktionen: Buttons in Würfelkarten.
@@ -65,10 +66,17 @@ async function onAction(message, btn) {
       // Schaden an alle markierten Ziele (GM-Hilfe für Flächenangriffe)
       const payload = f.damage;
       if (!payload) return;
+      let delegated = 0;
+      const missing = [];
       for (const t of game.user.targets) {
-        if (!t.actor?.isOwner) continue;
-        await t.actor.resistDamage({ amount: payload.amount, zones: payload.zones, attack: payload.attack, label: payload.weaponName });
+        const result = await applyDamageTo(t.actor?.uuid ?? t.document.uuid, {
+          amount: payload.amount, zones: payload.zones, attack: payload.attack, label: payload.weaponName
+        });
+        if (result === "delegated") delegated++;
+        else if (result === "unavailable") missing.push(t.name);
       }
+      if (delegated) ui.notifications.info(game.i18n.format("NR.Notify.DamageDelegated", { n: delegated }));
+      if (missing.length) ui.notifications.warn(game.i18n.format("NR.Notify.DamageSkipped", { names: missing.join(", ") }));
       return;
     }
   }
