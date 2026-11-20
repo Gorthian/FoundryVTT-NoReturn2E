@@ -226,7 +226,7 @@ export class NRActor extends foundry.documents.Actor {
     const physMalus = resist ? 0 : this.physicalMalus(attrUsed);
     if (physMalus) styleNotes.push(game.i18n.format("NR.Style.PhysicalMalus", { n: physMalus }));
     // Temporäre Bonuswürfel (Der Doktor, Mixology, Sterne-Küche, Inspirieren) – nicht auf Schadenswiderstand
-    if (!resist && this.system.tempBonus) {
+    if (!resist && (this.system.tempBonus ?? 0) > 0) {
       bonus += this.system.tempBonus;
       styleNotes.push(game.i18n.format("NR.Style.TempBonus", { n: this.system.tempBonus }));
     }
