@@ -331,6 +331,7 @@ STYLE_EXTRA = {
     "Sollbruchstelle": {"hint": "Angriff aufs Manöver eines Fahrzeugs ohne vitale Stelle: Im Angriffsdialog „Angriff aufs Manöver“ wählen. Verursacht der Angriff Schaden am Fahrzeug, sinkt dessen Manöverwert um 1 (Fahrzeugbogen, Feld Manöver)."},
     "Der Doktor": {"hint": "Einsetzen: Behandlung mit WI + Medizin. Das Ergebnis gibt dem Ziel Bonuswürfel (4 h) oder Maluswürfel (12 h) wie Inspirieren (+1W je 20 Punkte) oder füllt dessen Adrenalin auf (≈ 1 h). Ziel vorher markieren; Bonus/Malus landen im Feld „Temp. Bonuswürfel/Malus“ im Reiter Kampf."},
     "Mixology": {"hint": "Einsetzen: Probe auf die Zusatzfertigkeit „Ambrosia“ (HA), die beim ersten Einsatz freigeschaltet wird. Das Getränk gibt dem Ziel für zwei Stunden Bonuswürfel wie Inspirieren (+1W je 20 Punkte); Ziel vorher markieren."},
+    "Sterne-Küche": {"hint": "Einsetzen: Probe auf die Zusatzfertigkeit „Kochen“ (HA), die beim ersten Einsatz freigeschaltet wird. Die Speise gibt dem Ziel für zwei Stunden Bonuswürfel wie Inspirieren (+1W je 20 Punkte); Ziel vorher markieren."},
     # (Ende STYLE_EXTRA)
 }
 
