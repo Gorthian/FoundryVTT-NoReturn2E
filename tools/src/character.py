@@ -352,6 +352,7 @@ STYLE_EXTRA = {
     "Gun-Fu": {"mods": [mod("attack.multi", 3, 3), mod("damage.multi", 3, 3)], "hint": "Stufe 1: Parade mit Nahkampf auch mit Feuerwaffen in den Händen (Waffe im Verteidigungsdialog wählen). Stufe 2: Einhändige Feuerwaffen im Nahkampf mit Nahkampf statt Schießen (nur HM, kein Nachteil; Fertigkeitswahl im Angriffsdialog). Stufe 3: Mehrfachangriffe mit Feuerwaffen im Nahkampf +3W auf Angriff und Schaden; kompatibel mit Akimbo."},
     "Linguist": {"hint": "Drei zusätzliche Fremdsprachen bis Stufe 3 sind kostenlos: Bei der GP-Bilanz (Charakterbogen und Charaktergenerator) werden die Kosten der drei höchsten Fremdsprachen bis Stufe 3 (2 GP je Stufe) automatisch abgezogen."},
     "Split": {"hint": "Weitere Persönlichkeit mit eigenen Fertigkeiten, PSI und Merkmalen (mehrfach wählbar). Wird noch nicht automatisch abgebildet (Designentscheidung offen, siehe Issue): Persönlichkeiten bis dahin als eigener Charakterbogen führen."},
+    "Ringen": {"hint": "Stufe 1: Clinch statt Schaden – das Ziel erhält einen Kampfnachteil, Befreiung per konkurrierender Stärkeprobe (Aktion). Stufe 2: im Clinch +3W Stärke zum Halten, selbst nicht behindert. Stufe 3: im Clinch +2W auf Nahkampf und Schaden. Der Clinch-Zustand wird noch nicht automatisch geführt (Designentscheidung offen, siehe Issue) – bitte am Tisch verwalten."},
     # (Ende STYLE_EXTRA)
 }
 
