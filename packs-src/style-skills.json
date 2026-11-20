@@ -960,7 +960,8 @@
    "prerequisites": "Akimbo; Mehrgliedrig (Arme)",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Mehrfachangriff mit vier Fernkampfwaffen. <em class=\"nr-ref\">(NoReturn 2E, S. 183)</em></p>"
+   "description": "<p>Mehrfachangriff mit vier Fernkampfwaffen. <em class=\"nr-ref\">(NoReturn 2E, S. 183)</em></p>",
+   "hint": "<p>Erweitert Akimbo auf vier Fernkampfwaffen: im Angriffsdialog „Mehrfachangriff“ bis 4. Voraussetzung Mehrgliedrig (Arme) bleibt Sache der Charaktererschaffung.</p>"
   },
   "effects": [],
   "folder": null,
