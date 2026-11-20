@@ -2302,8 +2302,20 @@
      "effect": "Bein-Treffer = zwei Treffer an zwei Zonen."
     }
    ],
-   "modifiers": [],
-   "description": "<p>Koreanische Tritttechniken. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>"
+   "modifiers": [
+    {
+     "target": "attack.leg",
+     "value": 3,
+     "level": 1
+    },
+    {
+     "target": "damage.leg",
+     "value": 3,
+     "level": 2
+    }
+   ],
+   "description": "<p>Koreanische Tritttechniken. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>",
+   "hint": "<p>Stufe 1: Beinangriffe +3W. Stufe 2: Beinschaden +3W. Stufe 3: Ein Beinangriff, der trifft, gilt als zwei Treffer an zwei Zonen (Schaden zweimal).</p>"
   },
   "effects": [],
   "folder": null,
