@@ -88,7 +88,8 @@
    "prerequisites": "Computer 4; HA 4, WI 5",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Computeraktionen sind nicht zurückverfolgbar; Seiteneffekte ohne Probe vermieden (Sicherheitsbarrieren weiterhin). <em class=\"nr-ref\">(NoReturn 2E, S. 179)</em></p>"
+   "description": "<p>Computeraktionen sind nicht zurückverfolgbar; Seiteneffekte ohne Probe vermieden (Sicherheitsbarrieren weiterhin). <em class=\"nr-ref\">(NoReturn 2E, S. 179)</em></p>",
+   "hint": "<p>Computeraktionen sind nicht zurückverfolgbar; Seiteneffekte werden automatisch bedacht und brauchen keine Probe. Sicherheitsbarrieren erfordern weiterhin Proben. Auf Computer-Proben erscheint ein Hinweis.</p>"
   },
   "effects": [],
   "folder": null,
