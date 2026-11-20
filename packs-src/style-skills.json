@@ -643,7 +643,8 @@
    "prerequisites": "PSI-Kraft 6; Willenskraft 5",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Haltungskosten aller Apps der gewählten Kraft −1 (min. 0). Je Kraft einmal. <em class=\"nr-ref\">(NoReturn 2E, S. 182)</em></p>"
+   "description": "<p>Haltungskosten aller Apps der gewählten Kraft −1 (min. 0). Je Kraft einmal. <em class=\"nr-ref\">(NoReturn 2E, S. 182)</em></p>",
+   "hint": "<p>Die Haltungskosten aller Apps der gewählten PSI-Kraft sinken um 1 (mindestens 0). Die Kraft im Feld „Auswahl“ (oder im Namen in Klammern) eintragen, z. B. „Memorum [Telekinese]“. Je Kraft einmal wählbar.</p>"
   },
   "effects": [],
   "folder": null,

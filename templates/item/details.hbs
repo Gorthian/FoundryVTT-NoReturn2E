@@ -118,6 +118,7 @@
     <label>GP / EP</label><span><input type="number" name="system.gp" value="{{system.gp}}"> / <input type="number" name="system.ep" value="{{system.ep}}"></span>
     <label>{{localize "NR.Style.Prerequisites"}}</label><input type="text" name="system.prerequisites" value="{{system.prerequisites}}">
     {{#if (eq system.kind "kampfkunst")}}<label>{{localize "NR.Style.Level"}}</label><input type="number" name="system.level" value="{{system.level}}" min="0" max="3">{{/if}}
+    <label data-tooltip="{{localize 'NR.Style.VariantHint'}}">{{localize "NR.Style.Variant"}}</label><input type="text" name="system.variant" value="{{system.variant}}">
     <label data-tooltip="{{localize 'NR.Style.KeyHint'}}">{{localize "NR.Style.Key"}}</label><input type="text" name="system.key" value="{{system.key}}">
     <label data-tooltip="{{localize 'NR.Style.UsesHint'}}">{{localize "NR.Style.Uses"}}</label>
     <span><input type="number" name="system.uses.value" value="{{system.uses.value}}" min="0"> / <input type="number" name="system.uses.max" value="{{system.uses.max}}" min="0"> <input type="text" name="system.uses.per" value="{{system.uses.per}}" placeholder="{{localize 'NR.Style.UsesPer'}}"></span>

@@ -212,6 +212,10 @@ export class StyleSkillData extends NRItemData {
     return {
       /** Stabiler Schlüssel (siehe NR.styleSkillKeys); die Spiellogik fragt ihn statt des Namens ab. */
       key: str(""),
+      /** Auswahl bei Style-Skills mit Platzhalter, z. B. PSI-Kraft (Memorum), Element (Metamorphose), Waffenart. */
+      variant: str(""),
+      /** Umschaltbarer Zustand (z. B. Metamorphose); Modifikatoren wirken nur, solange er aktiv ist. */
+      active: bool(false),
       kind: str("expert", { choices: Object.keys(NR.styleSkillKinds) }),
       gp: int(0, { min: 0 }),
       ep: int(0, { min: 0 }),
@@ -231,6 +235,17 @@ export class StyleSkillData extends NRItemData {
   prepareBaseData() {
     super.prepareBaseData();
     if (!this.key) this.key = NR.styleKeyFromName(this.parent?.name);
+    // Auswahl notfalls aus dem Namen lesen: „Memorum [Telekinese]“ / „Waffenspezialisierung (Pistole)“
+    if (!this.variant) {
+      const m = String(this.parent?.name ?? "").match(/\[([^\]]+)\]|\(([^)]+)\)/);
+      const v = (m?.[1] ?? m?.[2] ?? "").trim();
+      if (v && !["PSI-Kraft", "Element", "Waffenart"].includes(v)) this.variant = v;
+    }
+  }
+
+  /** @override – Modifikatoren umschaltbarer Style-Skills wirken nur im aktiven Zustand. */
+  get modifiersActive() {
+    return this.key === "metamorphose" ? this.active : true;
   }
 }
 

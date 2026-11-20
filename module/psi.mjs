@@ -40,7 +40,8 @@ export async function castPsiApp(actor, app) {
     woundMalus: actor.getMalus({ psi: true }),
     defaultKs: collected > 0 ? 0 : 1,
     defaultProbe: Math.min(level, 3),
-    boosterKs: 0
+    boosterKs: 0,
+    hold: actor.system.psiHold(app), memorum: actor.system.psiHold(app) < s.hold
   });
 
   const opts = await DialogV2.wait({
@@ -119,7 +120,7 @@ export async function castPsiApp(actor, app) {
   const content2 = await renderTemplate("systems/noreturn/templates/chat/psi-card.hbs", {
     app, power, ks, comp, total, lo, hi, success, probe: opts.probe, malus, pool,
     dice: diceSummary(res.roll), effectHtml, description: s.effect ? "" : await enrich(s.description, app),
-    fail, held: success && s.hold > 0, hold: s.hold, targets: Array.from(game.user.targets).map(t => ({ uuid: t.document.uuid, name: t.name })),
+    fail, held: success && s.hold > 0, hold: actor.system.psiHold(app), targets: Array.from(game.user.targets).map(t => ({ uuid: t.document.uuid, name: t.name })),
     damage: damagePayload
   });
   const msgData = {

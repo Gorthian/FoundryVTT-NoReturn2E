@@ -464,7 +464,10 @@
         "parkour": "Parkour: Climbing and Jumping checks with a target number below 30 succeed automatically.",
         "parkourAuto": "Parkour: succeeds automatically (target number {mw} < 30).",
         "rageApplied": "Rage of Gods: adrenaline on Strength grants an additional +3D"
-      }
+      },
+      "MemorumShort": "Memorum",
+      "Variant": "Selection",
+      "VariantHint": "Chosen PSI power, element or weapon type (e.g. Telekinesis, heat, pistol)."
     },
     "Species": {
       "TP": "HP per zone",

@@ -28,7 +28,7 @@
           <a class="nr-btn tiny" data-action="useItem" data-tooltip="{{localize 'NR.Psi.Cast'}}"><i class="fa-solid fa-brain"></i></a>
           <a class="nr-item-name" data-action="toggleDescription">{{a.item.name}}</a>
           <span class="nr-item-stat">{{a.diff}} {{a.item.system.min}}–{{a.item.system.max}}</span>
-          {{#if a.item.system.hold}}<a class="nr-item-stat" data-action="toggleHeld" data-tooltip="{{localize 'NR.Psi.ToggleHeld'}}"><i class="fa-solid fa-hourglass-half {{#unless a.item.system.held}}nr-dim{{/unless}}"></i> H{{a.item.system.hold}}</a>{{/if}}
+          {{#if a.item.system.hold}}<a class="nr-item-stat" data-action="toggleHeld" data-tooltip="{{localize 'NR.Psi.ToggleHeld'}}"><i class="fa-solid fa-hourglass-half {{#unless a.item.system.held}}nr-dim{{/unless}}"></i> H{{a.hold}}</a>{{/if}}
           {{#if a.item.system.defensive}}<i class="fa-solid fa-shield-halved nr-def" data-tooltip="{{localize 'NR.Sheet.Defensive'}}"></i>{{/if}}
           <a data-action="editItem"><i class="fa-solid fa-pen"></i></a>
           <a data-action="deleteItem"><i class="fa-solid fa-trash"></i></a>

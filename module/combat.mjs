@@ -46,7 +46,7 @@ function specializationBonus(actor, weapon) {
   const wn = weapon.name.toLowerCase();
   return specs.some(s => {
     const m = s.name.match(/\(([^)]+)\)|\[([^\]]+)\]|:\s*(.+)$/);
-    const kind = (m?.[1] ?? m?.[2] ?? m?.[3] ?? "").toLowerCase().trim();
+    const kind = (s.system.variant || (m?.[1] ?? m?.[2] ?? m?.[3] ?? "")).toLowerCase().trim();
     return kind && (wn.includes(kind) || (weapon.system.features ?? "").toLowerCase().includes(kind));
   }) ? 1 : 0;
 }

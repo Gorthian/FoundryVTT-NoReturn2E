@@ -404,6 +404,16 @@ NR.styleKeyFromName = name => {
   return Object.entries(NR.styleSkillKeys).find(([, prefix]) => n.startsWith(prefix))?.[0] ?? "";
 };
 
+/** Ordne einen Freitext (z. B. Auswahl „Telekinese“ oder „Hitze“) einer PSI-Kraft zu; "" wenn unbekannt. */
+NR.psiPowerFromText = text => {
+  const t = String(text ?? "").toLowerCase().trim();
+  if (!t) return "";
+  const synonyms = { hitze: "pyrokinese", feuer: "pyrokinese", kälte: "cryokinese", kaelte: "cryokinese", eis: "cryokinese", elektro: "elektrokinese", strom: "elektrokinese" };
+  for (const [word, key] of Object.entries(synonyms)) if (t.includes(word)) return key;
+  return Object.entries(NR.psiPowers).find(([key, p]) => t.includes(key.toLowerCase()) || t.includes(String(p.labelDe ?? p.label).toLowerCase())
+    || String(p.labelDe ?? p.label).toLowerCase().startsWith(t.slice(0, 5)))?.[0] ?? "";
+};
+
 /**
  * Körperteil/Angriffsart waffenloser Angriffe. `groups` sind die Modifikator-Gruppen (attack.<g>/damage.<g>),
  * die für diese Angriffsart gelten.

@@ -100,6 +100,12 @@ export class CreatureData extends foundry.abstract.TypeDataModel {
     if (this.parent?.items) this._prepareCreature();
   }
 
+  /** Effektive Haltungskosten einer PSI-App (Memorum: −1, mindestens 0). */
+  psiHold(app) {
+    const base = app.system.hold;
+    return this.memorumPowers?.has(app.system.power) ? Math.max(0, base - 1) : base;
+  }
+
   /** Summiere die Modifikatoren aller aktiven Items. */
   _collectModifiers() {
     const mods = {};
@@ -127,11 +133,16 @@ export class CreatureData extends foundry.abstract.TypeDataModel {
 
     // Style-Skills: Schlüssel → Stufe (Expertenfähigkeiten 1, Kampfkünste 1–3)
     sys.styles = {};
+    sys.styleVariants = {};
     for (const item of actor.items) {
       if (item.type !== "styleSkill" || !item.system.key) continue;
       const lvl = item.system.kind === "kampfkunst" ? item.system.level : 1;
       sys.styles[item.system.key] = Math.max(sys.styles[item.system.key] ?? 0, lvl);
+      // Mehrfach wählbare Style-Skills (Memorum, Metamorphose, Waffenspezialisierung): gewählte Varianten sammeln
+      (sys.styleVariants[item.system.key] ??= []).push({ variant: item.system.variant, active: item.system.active, item });
     }
+    // Memorum: Haltungskosten der Apps der gewählten PSI-Kräfte −1
+    sys.memorumPowers = new Set((sys.styleVariants.memorum ?? []).map(v => NR.psiPowerFromText(v.variant)).filter(Boolean));
 
     // Robotik je Körperzone
     const robotics = {};
@@ -275,7 +286,7 @@ export class CreatureData extends foundry.abstract.TypeDataModel {
     // Mali (S. 84, 99, 100)
     const woundMalus = woundZones * 2;
     const nlMalus = pain >= 10 ? 0 : Math.floor(sys.nonLethal / 10);
-    const holdMalus = actor.items.filter(i => i.type === "psiApp" && i.system.held).reduce((acc, i) => acc + i.system.hold, 0);
+    const holdMalus = actor.items.filter(i => i.type === "psiApp" && i.system.held).reduce((acc, i) => acc + sys.psiHold(i), 0);
     const alcMalus = 0;
     sys.malus = {
       wounds: woundMalus,

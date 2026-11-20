@@ -464,7 +464,10 @@
         "parkour": "Parkour: Klettern- und Springen-Proben mit Mindestwurf unter 30 gelingen automatisch.",
         "parkourAuto": "Parkour: automatisch gelungen (Mindestwurf {mw} < 30).",
         "rageApplied": "Rage of Gods: Adrenalin auf Stärke gibt zusätzlich +3W"
-      }
+      },
+      "MemorumShort": "Memorum",
+      "Variant": "Auswahl",
+      "VariantHint": "Gewählte PSI-Kraft, Element oder Waffenart (z. B. Telekinese, Hitze, Pistole)."
     },
     "Species": {
       "TP": "Trefferpunkte je Zone",

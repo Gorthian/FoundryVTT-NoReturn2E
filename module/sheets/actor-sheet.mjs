@@ -113,7 +113,7 @@ export class NRActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       item: p, label: NR.psiPowers[p.system.key]?.label, tier: p.system.tier,
       cost: actor.type === "character" ? actor.advancementCost("psi", p.system.value) : null,
       apps: items.filter(i => i.type === "psiApp" && i.system.power === p.system.key).map(a => ({
-        item: a, diff: NR.psiDifficulties[a.system.difficulty]?.label
+        item: a, diff: NR.psiDifficulties[a.system.difficulty]?.label, hold: sys.psiHold(a)
       }))
     }));
     const knownKeys = new Set(powers.map(p => p.item.system.key));

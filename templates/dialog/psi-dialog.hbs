@@ -4,7 +4,7 @@
     <span><strong>{{app.name}}</strong> · {{diff}} ({{min}}–{{max}})<br>
       {{power.name}}: <span class="nr-chip big">{{level}}W</span>
       {{#if collected}}<span class="nr-chip psi">+{{collected}} KS {{localize "NR.Psi.Collected2"}}</span>{{/if}}
-      {{#if app.system.hold}}<span class="nr-chip">{{localize "NR.Psi.Hold"}} {{app.system.hold}}</span>{{/if}}</span>
+      {{#if hold}}<span class="nr-chip">{{localize "NR.Psi.Hold"}} {{hold}}{{#if memorum}} ({{localize "NR.Style.MemorumShort"}}){{/if}}</span>{{/if}}</span>
   </div>
   <p class="nr-hint">{{localize "NR.Psi.DistributeHint"}}</p>
   <div class="form-group"><label>{{localize "NR.Psi.KsDice"}}</label><input type="number" name="ks" value="{{defaultKs}}" min="0"></div>
