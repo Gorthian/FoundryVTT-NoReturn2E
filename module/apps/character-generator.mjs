@@ -702,9 +702,9 @@ export class NRCharacterGenerator extends HandlebarsApplicationMixin(Application
       const doc = d.byId.get(u);
       const markers = s.advMarkers[u] ?? doc?.system.markers;
       if (doc?.name.startsWith("Schwaches Attribut") && s.weakAttrs.length) {
-        for (const k of s.weakAttrs) add(doc, { name: `Schwaches Attribut ${NR.attributes[k].label}`, system: { markers } });
+        for (const k of s.weakAttrs) add(doc, { name: `Schwaches Attribut ${NR.attributes[k].labelDe ?? NR.attributes[k].label}`, system: { markers } });
       } else if (doc?.name.startsWith("Meisterschaft") && s.masterySkills.length) {
-        for (const k of s.masterySkills) add(doc, { name: `Meisterschaft (${NR.skills[k]?.label ?? k})`, system: { markers, modifiers: skillMods([k]) } });
+        for (const k of s.masterySkills) add(doc, { name: `Meisterschaft (${NR.skills[k]?.labelDe ?? NR.skills[k]?.label ?? k})`, system: { markers, modifiers: skillMods([k]) } });
       } else add(doc, { system: { markers } });
     }
     for (const u of s.traits) add(d.byId.get(u));

@@ -666,6 +666,822 @@
       "Imported": "{name} wurde importiert.",
       "ImportedWithGaps": "{name} wurde importiert. {n} Einträge konnten nicht zugeordnet werden:",
       "Placeholder": "Platzhalter für den Katalogeintrag „{id}“ aus dem Verlags-Generator – bitte durch das passende Item aus den Compendien ersetzen (die ID bleibt beim Export erhalten)."
+    },
+    "Cfg": {
+      "attributes": {
+        "ge": {
+          "label": "Geschick"
+        },
+        "st": {
+          "label": "Stärke"
+        },
+        "ko": {
+          "label": "Konstitution"
+        },
+        "be": {
+          "label": "Beweglichkeit"
+        },
+        "wa": {
+          "label": "Wahrnehmung"
+        },
+        "wi": {
+          "label": "Wissen"
+        },
+        "ch": {
+          "label": "Charisma"
+        },
+        "ha": {
+          "label": "Handwerk"
+        }
+      },
+      "skills": {
+        "bodenfahrzeuge": {
+          "label": "Bodenfahrzeuge"
+        },
+        "fluggeraete": {
+          "label": "Fluggeräte"
+        },
+        "geschuetze": {
+          "label": "Geschütze"
+        },
+        "projektilwaffen": {
+          "label": "Projektilwaffen"
+        },
+        "raumjaeger": {
+          "label": "Raumjäger"
+        },
+        "raumschiff": {
+          "label": "Raumschiff"
+        },
+        "schiessen": {
+          "label": "Schießen"
+        },
+        "schwereWaffen": {
+          "label": "Schwere Waffen"
+        },
+        "spruehwaffen": {
+          "label": "Sprühwaffen"
+        },
+        "taschendiebstahl": {
+          "label": "Taschendiebstahl"
+        },
+        "wasserfahrzeuge": {
+          "label": "Wasserfahrzeuge"
+        },
+        "wurfwaffen": {
+          "label": "Wurfwaffen"
+        },
+        "stemmen": {
+          "label": "Stemmen"
+        },
+        "ausdauer": {
+          "label": "Ausdauer"
+        },
+        "blocken": {
+          "label": "Blocken"
+        },
+        "saufen": {
+          "label": "Saufen"
+        },
+        "akrobatik": {
+          "label": "Akrobatik"
+        },
+        "ausweichen": {
+          "label": "Ausweichen"
+        },
+        "klettern": {
+          "label": "Klettern"
+        },
+        "nahkampf": {
+          "label": "Nahkampf"
+        },
+        "reiten": {
+          "label": "Reiten"
+        },
+        "rennen": {
+          "label": "Rennen"
+        },
+        "schwimmen": {
+          "label": "Schwimmen"
+        },
+        "springen": {
+          "label": "Springen"
+        },
+        "waffenkampf": {
+          "label": "Waffenkampf"
+        },
+        "zeroG": {
+          "label": "Zero-G"
+        },
+        "heimlichkeit": {
+          "label": "Heimlichkeit"
+        },
+        "nachforschen": {
+          "label": "Nachforschen"
+        },
+        "orientierung": {
+          "label": "Orientierung"
+        },
+        "reaktion": {
+          "label": "Reaktion"
+        },
+        "schaetzen": {
+          "label": "Schätzen"
+        },
+        "astronomie": {
+          "label": "Astronomie"
+        },
+        "chemie": {
+          "label": "Chemie"
+        },
+        "computer": {
+          "label": "Computer"
+        },
+        "gassenwissen": {
+          "label": "Gassenwissen"
+        },
+        "grossraumschiff": {
+          "label": "Großraumschiff"
+        },
+        "medizin": {
+          "label": "Medizin"
+        },
+        "naturkunde": {
+          "label": "Naturkunde"
+        },
+        "sagenMythen": {
+          "label": "Sagen & Mythen"
+        },
+        "spezies": {
+          "label": "Spezies"
+        },
+        "willenskraft": {
+          "label": "Willenskraft"
+        },
+        "dressieren": {
+          "label": "Dressieren"
+        },
+        "einschuechtern": {
+          "label": "Einschüchtern"
+        },
+        "inspirieren": {
+          "label": "Inspirieren"
+        },
+        "menschenkenntnis": {
+          "label": "Menschenkenntnis"
+        },
+        "schauspiel": {
+          "label": "Schauspiel"
+        },
+        "ueberreden": {
+          "label": "Überreden"
+        },
+        "verhandeln": {
+          "label": "Verhandeln"
+        },
+        "basteln": {
+          "label": "Basteln"
+        },
+        "elektronik": {
+          "label": "Elektronik"
+        },
+        "feuerwaffenbau": {
+          "label": "Feuerwaffenbau"
+        },
+        "kunst": {
+          "label": "Kunst"
+        },
+        "mechanik": {
+          "label": "Mechanik"
+        },
+        "robotik": {
+          "label": "Robotik"
+        },
+        "ruestungsbau": {
+          "label": "Rüstungsbau"
+        },
+        "sicherheitstechnik": {
+          "label": "Sicherheitstechnik"
+        },
+        "waffenbau": {
+          "label": "Waffenbau"
+        }
+      },
+      "difficulties": {
+        "0": "Keine (offen)",
+        "5": "Routiniert (5)",
+        "10": "Normal (10)",
+        "15": "Anspruchsvoll (15)",
+        "20": "Schwer (20)",
+        "25": "Sehr schwer (25)",
+        "30": "Episch (30)",
+        "40": "Legendär (40)"
+      },
+      "zones": {
+        "2": {
+          "label": "Becken",
+          "short": "Becken"
+        },
+        "3": {
+          "label": "Bein unten rechts",
+          "short": "U.-Bein re."
+        },
+        "4": {
+          "label": "Oberschenkel rechts",
+          "short": "O.-Schenkel re."
+        },
+        "5": {
+          "label": "Arm rechts",
+          "short": "Arm re."
+        },
+        "6": {
+          "label": "Torso rechts",
+          "short": "Torso re."
+        },
+        "7": {
+          "label": "Rumpf",
+          "short": "Rumpf"
+        },
+        "8": {
+          "label": "Torso links",
+          "short": "Torso li."
+        },
+        "9": {
+          "label": "Arm links",
+          "short": "Arm li."
+        },
+        "10": {
+          "label": "Oberschenkel links",
+          "short": "O.-Schenkel li."
+        },
+        "11": {
+          "label": "Bein unten links",
+          "short": "U.-Bein li."
+        },
+        "12": {
+          "label": "Kopf",
+          "short": "Kopf"
+        }
+      },
+      "aiming": {
+        "random": {
+          "label": "Zufälliges Ziel (ganzer Körper)"
+        },
+        "half": {
+          "label": "Zufällige Körperhälfte"
+        },
+        "zone": {
+          "label": "Bestimmte Körperzone"
+        },
+        "exact": {
+          "label": "Exakte Stelle (Weichteile +10p.)"
+        }
+      },
+      "armorPiercing": {
+        "none": "Keine",
+        "A": "Ignoriert MK:A",
+        "B": "Ignoriert bis MK:B",
+        "C": "Ignoriert bis MK:C",
+        "all": "Ignoriert jede Rüstung"
+      },
+      "damageTypes": {
+        "klinge": "Klinge",
+        "stich": "Stich/Spitz",
+        "wucht": "Wucht",
+        "scharf": "Scharf (Wurf)",
+        "projektil": "Projektil",
+        "explosiv": "Explosiv",
+        "hitze": "Hitze/Feuer",
+        "kaelte": "Kälte",
+        "elektro": "Elektrizität",
+        "saeure": "Säure",
+        "psi": "Psionisch",
+        "gift": "Gift"
+      },
+      "weaponCategories": {
+        "unbewaffnet": {
+          "label": "Waffenlos/körpereigen"
+        },
+        "faustkampf": {
+          "label": "Faustkampfwaffe"
+        },
+        "nahkampf": {
+          "label": "Nahkampfwaffe"
+        },
+        "schild": {
+          "label": "Schild"
+        },
+        "wurf": {
+          "label": "Wurfwaffe"
+        },
+        "faustfeuer": {
+          "label": "Faustfeuerwaffe"
+        },
+        "gewehr": {
+          "label": "Gewehr"
+        },
+        "schnellfeuer": {
+          "label": "Schnellfeuerwaffe"
+        },
+        "gatling": {
+          "label": "Gatling-Waffe"
+        },
+        "schwer": {
+          "label": "Schwere Waffe"
+        },
+        "spruehwaffe": {
+          "label": "Sprühwaffe"
+        },
+        "projektil": {
+          "label": "Projektilwaffe (Bogen/Armbrust)"
+        },
+        "geschuetz": {
+          "label": "Geschütz"
+        }
+      },
+      "ranges": {
+        "none": {
+          "label": "Nahkampf / keine"
+        },
+        "pistole": {
+          "label": "Pistole / Revolver / MP"
+        },
+        "shotgun": {
+          "label": "Shotgun / Pumpgun"
+        },
+        "sturmgewehr": {
+          "label": "Sturmgewehr / MG"
+        },
+        "scharfschuetze": {
+          "label": "Scharfschützengewehr"
+        },
+        "granatwerfer": {
+          "label": "Granatwerfer"
+        },
+        "gatling": {
+          "label": "Gatlingwaffen"
+        },
+        "recurve": {
+          "label": "Recurvebogen"
+        },
+        "langbogen": {
+          "label": "Langbogen"
+        },
+        "compound": {
+          "label": "Compoundbogen"
+        },
+        "handarmbrust": {
+          "label": "Handarmbrust"
+        },
+        "armbrust": {
+          "label": "Armbrust"
+        },
+        "wurf": {
+          "label": "Wurfwaffen (× ST)"
+        },
+        "geschuetz": {
+          "label": "Geschütz"
+        },
+        "variabel": {
+          "label": "Variabel (siehe Waffe)"
+        }
+      },
+      "rangeBands": {
+        "kurz": {
+          "label": "Kurz"
+        },
+        "mittel": {
+          "label": "Mittel"
+        },
+        "weit": {
+          "label": "Weit"
+        },
+        "extrem": {
+          "label": "Extrem"
+        }
+      },
+      "fireModes": {
+        "RM": {
+          "label": "Repetiermodus (RM)"
+        },
+        "HM": {
+          "label": "Halbautomatisch (HM)"
+        },
+        "SM": {
+          "label": "Salvenmodus (SM)"
+        },
+        "VM": {
+          "label": "Vollautomatisch (VM)"
+        },
+        "GM": {
+          "label": "Gatling-Modus (GM)"
+        },
+        "SP": {
+          "label": "Sprühen (SP)"
+        }
+      },
+      "ammoContainers": {
+        "m": "Magazin",
+        "t": "Trommel",
+        "k": "Kette",
+        "i": "intern",
+        "a": "aufgelegt",
+        "l": "Liquid"
+      },
+      "powerLevels": {
+        "survival": {
+          "label": "Survival"
+        },
+        "standard": {
+          "label": "Standard"
+        },
+        "superior": {
+          "label": "Superior"
+        }
+      },
+      "butterflyEffects": {
+        "artisan": {
+          "label": "Artisan"
+        },
+        "athlete": {
+          "label": "Athlete"
+        },
+        "craftsman": {
+          "label": "Craftsman"
+        },
+        "leader": {
+          "label": "Leader"
+        },
+        "marksman": {
+          "label": "Marksman"
+        },
+        "medic": {
+          "label": "Medic"
+        },
+        "operator": {
+          "label": "Operator"
+        },
+        "rogue": {
+          "label": "Rogue"
+        },
+        "scholar": {
+          "label": "Scholar"
+        },
+        "scout": {
+          "label": "Scout"
+        },
+        "trickster": {
+          "label": "Trickster"
+        },
+        "warrior": {
+          "label": "Warrior"
+        },
+        "copycat": {
+          "label": "Copy Cat (−2 EP je Steigerung nach Beobachtung)"
+        },
+        "skillmaster": {
+          "label": "Skill Master (−2 EP, kann lehren)"
+        }
+      },
+      "psiDifficulties": {
+        "leicht": {
+          "label": "Leicht"
+        },
+        "mittel": {
+          "label": "Mittel"
+        },
+        "schwer": {
+          "label": "Schwer"
+        },
+        "sehrSchwer": {
+          "label": "Sehr schwer"
+        },
+        "ultimativ": {
+          "label": "Ultimativ"
+        }
+      },
+      "psiPowers": {
+        "animakinese": {
+          "label": "Animakinese"
+        },
+        "biokinese": {
+          "label": "Biokinese"
+        },
+        "chronokinese": {
+          "label": "Chronokinese"
+        },
+        "cryokinese": {
+          "label": "Cryokinese"
+        },
+        "elektrokinese": {
+          "label": "Elektrokinese"
+        },
+        "haimakinese": {
+          "label": "Haimakinese"
+        },
+        "morphokinese": {
+          "label": "Morphokinese"
+        },
+        "photokinese": {
+          "label": "Photokinese"
+        },
+        "psychokinese": {
+          "label": "Psychokinese"
+        },
+        "pyrokinese": {
+          "label": "Pyrokinese"
+        },
+        "technokinese": {
+          "label": "Technokinese"
+        },
+        "telekinese": {
+          "label": "Telekinese"
+        },
+        "kategorieB": {
+          "label": "Kategorie B (HMO)"
+        }
+      },
+      "organismThresholds": {
+        "0": {
+          "label": "Gesund"
+        },
+        "1": {
+          "label": "1× Tabelle A"
+        },
+        "2": {
+          "label": "1× Tabelle B"
+        },
+        "3": {
+          "label": "1× Tabelle B"
+        },
+        "4": {
+          "label": "1× Tabelle B"
+        },
+        "5": {
+          "label": "1× A & 1× B"
+        },
+        "6": {
+          "label": "1× A & 1× B"
+        },
+        "7": {
+          "label": "1× A & 1× B"
+        },
+        "8": {
+          "label": "2× A & 2× B"
+        },
+        "9": {
+          "label": "2× A & 2× B"
+        },
+        "10": {
+          "label": "2× A & 2× B"
+        },
+        "11": {
+          "label": "Tod"
+        }
+      },
+      "degenerationA": {
+        "1": {
+          "label": "Immunsystemschwäche"
+        },
+        "2": {
+          "label": "Immunsystemschwäche"
+        },
+        "3": {
+          "label": "Entstellt"
+        },
+        "4": {
+          "label": "Entstellt"
+        },
+        "5": {
+          "label": "Chronische Wunden"
+        },
+        "6": {
+          "label": "Chronische Wunden"
+        }
+      },
+      "degenerationB": {
+        "1": {
+          "label": "Erschöpfung"
+        },
+        "2": {
+          "label": "Zittern und Krämpfe"
+        },
+        "3": {
+          "label": "Wahrnehmungsstörung"
+        },
+        "4": {
+          "label": "Lähmung"
+        },
+        "5": {
+          "label": "Muskelschwäche"
+        },
+        "6": {
+          "label": "Demenz"
+        }
+      },
+      "psycheRanges": {
+        "0": {
+          "label": "Optimale Psyche"
+        },
+        "1": {
+          "label": "Gesunde Psyche"
+        },
+        "2": {
+          "label": "Belastete Psyche"
+        },
+        "3": {
+          "label": "Gefährdete Psyche"
+        },
+        "4": {
+          "label": "Katastrophale Psyche"
+        }
+      },
+      "reputation": {
+        "1": "1 – Absolut unbekannt (–)",
+        "2": "2 – Lokal bekannt (MW 40)",
+        "3": "3 – Regional bekannt (MW 35)",
+        "4": "4 – National bekannt (MW 30)",
+        "5": "5 – International bekannt (MW 25)",
+        "6": "6 – Berühmt (MW 20)",
+        "7": "7 – Prominent (MW 15)",
+        "8": "8 – Weltweit bekannt (MW 10)",
+        "9": "9 – Ikone (MW 5)",
+        "10": "10 – Legendär (kein Wurf)"
+      },
+      "customSkillCategories": {
+        "besondere": "Besondere Fertigkeit",
+        "elite": "Elite-Fertigkeit",
+        "sprache": "Sprache",
+        "fertigkeit": "Zusätzliche Fertigkeit"
+      },
+      "toolQuality": {
+        "0": "±0 (durchschnittlich)",
+        "1": "+1W (gut)",
+        "2": "+2W (Hightech)",
+        "3": "+3W (herausragend)",
+        "-2": "−2W (miserabel)",
+        "-1": "−1W (schlecht)"
+      },
+      "advantageKinds": {
+        "vorteil": "Vorteil",
+        "nachteil": "Nachteil"
+      },
+      "augmentKinds": {
+        "implantat": "Implantat",
+        "robotik": "Robotik (Körperzone)",
+        "biomechanik": "Biomechanik",
+        "upgrade": "Robotik-Upgrade",
+        "design": "Erwachten-Designoption"
+      },
+      "bioTraitKinds": {
+        "sichtbar": "Sichtbar",
+        "verborgen": "Verborgen",
+        "auffaelligkeit": "Auffälligkeit"
+      },
+      "styleSkillKinds": {
+        "expert": "Expertenfähigkeit",
+        "kampfkunst": "Kampfkunst"
+      },
+      "modifierTargets": {
+        "dice": {
+          "klettern": "Bonuswürfel: Klettern",
+          "nahkampf": "Bonuswürfel: Nahkampf",
+          "einschuechtern": {
+            "st": "Bonuswürfel: Einschüchtern mit Stärke"
+          }
+        },
+        "attributes": {
+          "ge": "Attribut: Geschick",
+          "st": "Attribut: Stärke",
+          "ko": "Attribut: Konstitution",
+          "be": "Attribut: Beweglichkeit",
+          "wa": "Attribut: Wahrnehmung",
+          "wi": "Attribut: Wissen",
+          "ch": "Attribut: Charisma",
+          "ha": "Attribut: Handwerk"
+        },
+        "adrenalin": "Adrenalin (Stufe)",
+        "schmerztoleranz": "Schmerztoleranz (Stufe)",
+        "meditation": "Meditation (Stufe)",
+        "tp": "Trefferpunkte je Körperzone",
+        "organismus": "Organismus (max./Verlust)",
+        "psyche": "Psyche (max./Verlust)",
+        "irDice": "Infektionsresistenz (Würfel)",
+        "irPoints": "Infektionsresistenz (Punkte)",
+        "regSpeed": "Regenerationsgeschwindigkeit",
+        "regPool": "Regenerationspool",
+        "movement": "Bewegungsreichweite (m)",
+        "bloodMax": "Blutpunkte (max.)",
+        "armorAll": "Rüstung an allen Zonen (Punkte)",
+        "chassisArmor": "Erwachte: Chassis-Panzerung (Punkte)",
+        "chassisMk": "Erwachte: Chassis MK:B (Wert 1)",
+        "capacity": "Erwachte: Kapazität je Zone",
+        "skills": {
+          "bodenfahrzeuge": "Fertigkeit: Bodenfahrzeuge",
+          "fluggeraete": "Fertigkeit: Fluggeräte",
+          "geschuetze": "Fertigkeit: Geschütze",
+          "projektilwaffen": "Fertigkeit: Projektilwaffen",
+          "raumjaeger": "Fertigkeit: Raumjäger",
+          "raumschiff": "Fertigkeit: Raumschiff",
+          "schiessen": "Fertigkeit: Schießen",
+          "schwereWaffen": "Fertigkeit: Schwere Waffen",
+          "spruehwaffen": "Fertigkeit: Sprühwaffen",
+          "taschendiebstahl": "Fertigkeit: Taschendiebstahl",
+          "wasserfahrzeuge": "Fertigkeit: Wasserfahrzeuge",
+          "wurfwaffen": "Fertigkeit: Wurfwaffen",
+          "stemmen": "Fertigkeit: Stemmen",
+          "ausdauer": "Fertigkeit: Ausdauer",
+          "blocken": "Fertigkeit: Blocken",
+          "saufen": "Fertigkeit: Saufen",
+          "akrobatik": "Fertigkeit: Akrobatik",
+          "ausweichen": "Fertigkeit: Ausweichen",
+          "klettern": "Fertigkeit: Klettern",
+          "nahkampf": "Fertigkeit: Nahkampf",
+          "reiten": "Fertigkeit: Reiten",
+          "rennen": "Fertigkeit: Rennen",
+          "schwimmen": "Fertigkeit: Schwimmen",
+          "springen": "Fertigkeit: Springen",
+          "waffenkampf": "Fertigkeit: Waffenkampf",
+          "zeroG": "Fertigkeit: Zero-G",
+          "heimlichkeit": "Fertigkeit: Heimlichkeit",
+          "nachforschen": "Fertigkeit: Nachforschen",
+          "orientierung": "Fertigkeit: Orientierung",
+          "reaktion": "Fertigkeit: Reaktion",
+          "schaetzen": "Fertigkeit: Schätzen",
+          "astronomie": "Fertigkeit: Astronomie",
+          "chemie": "Fertigkeit: Chemie",
+          "computer": "Fertigkeit: Computer",
+          "gassenwissen": "Fertigkeit: Gassenwissen",
+          "grossraumschiff": "Fertigkeit: Großraumschiff",
+          "medizin": "Fertigkeit: Medizin",
+          "naturkunde": "Fertigkeit: Naturkunde",
+          "sagenMythen": "Fertigkeit: Sagen & Mythen",
+          "spezies": "Fertigkeit: Spezies",
+          "willenskraft": "Fertigkeit: Willenskraft",
+          "dressieren": "Fertigkeit: Dressieren",
+          "einschuechtern": "Fertigkeit: Einschüchtern",
+          "inspirieren": "Fertigkeit: Inspirieren",
+          "menschenkenntnis": "Fertigkeit: Menschenkenntnis",
+          "schauspiel": "Fertigkeit: Schauspiel",
+          "ueberreden": "Fertigkeit: Überreden",
+          "verhandeln": "Fertigkeit: Verhandeln",
+          "basteln": "Fertigkeit: Basteln",
+          "elektronik": "Fertigkeit: Elektronik",
+          "feuerwaffenbau": "Fertigkeit: Feuerwaffenbau",
+          "kunst": "Fertigkeit: Kunst",
+          "mechanik": "Fertigkeit: Mechanik",
+          "robotik": "Fertigkeit: Robotik",
+          "ruestungsbau": "Fertigkeit: Rüstungsbau",
+          "sicherheitstechnik": "Fertigkeit: Sicherheitstechnik",
+          "waffenbau": "Fertigkeit: Waffenbau"
+        }
+      }
+    },
+    "Txt": {
+      "Malus": {
+        "Wounds": "Wunden −{n}",
+        "NonLethal": "Betäubung −{n}",
+        "Temp": "Temporär {sign}{n}",
+        "PsiCollect": "Kraft sammeln −{n}",
+        "Hold": "Haltung −{n}"
+      },
+      "Opt": {
+        "NoAttribute": "– (ohne Attribut)",
+        "DefaultSkill": "– (Standard der Kategorie)",
+        "PickTarget": "– Ziel wählen –",
+        "BodyArmor": "Körperpanzer: {zone}",
+        "AmmoCartridge": "Patronen",
+        "AmmoProjectile": "Pfeile/Bolzen",
+        "AmmoGrenade": "Granate",
+        "AmmoRocket": "Rakete",
+        "AmmoExplosive": "Sprengstoff",
+        "AmmoLiquid": "Liquid"
+      },
+      "Stats": {
+        "Damage": "Schaden {v}",
+        "AttackDice": "Angriff +{n}W",
+        "ParryDice": "Parade +{n}W",
+        "BlockDice": "Blocken +{n}W",
+        "Mode": "Modus {v}",
+        "Rd": "RD {v}",
+        "Charge": "Ladung {v}/{max}({c})",
+        "Armor": "RW {rw}p. {mk}",
+        "Comfort": "Komfort {v}",
+        "Zones": "Zonen {v}",
+        "BonusDamage": "Bonusschaden {v}",
+        "Radius": "Radius {v}",
+        "Hold": "Haltung {v}",
+        "Defensive": "Defensivaktion",
+        "Prerequisites": "Voraussetzung: {v}",
+        "PerLevel": " je Stufe",
+        "Markers": "{kind}: {n} Marker",
+        "Tp": "TP {v}",
+        "Ir": "IR {v}",
+        "Adrenalin": "Adrenalin {v}",
+        "Psyche": "Psyche {v}",
+        "OrgLoss": "Organismus −{v}",
+        "PsycheLoss": "Psyche −{v}"
+      }
     }
   }
 }

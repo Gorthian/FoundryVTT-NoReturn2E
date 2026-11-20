@@ -64,6 +64,7 @@ export class NRItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     const item = this.item;
     const s = item.system;
     const TE = foundry.applications.ux.TextEditor.implementation;
+    const L = key => game.i18n.localize(`NR.Txt.Opt.${key}`);
     const opts = obj => Object.fromEntries(Object.entries(obj).map(([k, v]) => [k, typeof v === "string" ? v : v.label]));
     Object.assign(context, {
       item, system: s, source: item._source.system, config: NR, editable: this.isEditable,
@@ -72,8 +73,8 @@ export class NRItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
       enrichedDescription: await TE.enrichHTML(s.description ?? "", { relativeTo: item, secrets: item.isOwner }),
       options: {
         attributes: opts(NR.attributes),
-        attributesOptional: { "": "– (ohne Attribut)", ...opts(NR.attributes) },
-        skills: { "": "– (Standard der Kategorie)", ...opts(NR.skills) },
+        attributesOptional: { "": L("NoAttribute"), ...opts(NR.attributes) },
+        skills: { "": L("DefaultSkill"), ...opts(NR.skills) },
         weaponCategories: opts(NR.weaponCategories),
         damageTypes: NR.damageTypes,
         pierce: NR.armorPiercing,
@@ -90,8 +91,8 @@ export class NRItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
         bioTraitKinds: NR.bioTraitKinds,
         styleSkillKinds: NR.styleSkillKinds,
         zones: { "": "–", ...Object.fromEntries(Object.entries(NR.zones).map(([k, v]) => [k, `${k}: ${v.label}`])) },
-        modifierTargets: { "": "– Ziel wählen –", ...NR.modifierTargets, ...Object.fromEntries(Object.entries(NR.zones).map(([k, v]) => [`armor.${k}`, `Körperpanzer: ${v.label}`])) },
-        ammoTypes: { patrone: "Patronen", projektil: "Pfeile/Bolzen", granate: "Granate", rakete: "Rakete", sprengstoff: "Sprengstoff", liquid: "Liquid" },
+        modifierTargets: { "": L("PickTarget"), ...NR.modifierTargets, ...Object.fromEntries(Object.entries(NR.zones).map(([k, v]) => [`armor.${k}`, game.i18n.format("NR.Txt.Opt.BodyArmor", { zone: v.label })])) },
+        ammoTypes: { patrone: L("AmmoCartridge"), projektil: L("AmmoProjectile"), granate: L("AmmoGrenade"), rakete: L("AmmoRocket"), sprengstoff: L("AmmoExplosive"), liquid: L("AmmoLiquid") },
         toolQuality: NR.toolQuality
       },
       fireModes: Object.entries(NR.fireModes).map(([k, v]) => ({ key: k, label: v.label, checked: s.modes?.includes(k) })),

@@ -418,3 +418,44 @@ NR.attributeGpCost = level => {
   if (level <= 3) return (level - 1) * 10;
   return 20 + (level - 3) * 20;
 };
+
+/* -------------------------------------------- */
+/*  Lokalisierung                                */
+/* -------------------------------------------- */
+
+/** Konstanten-Maps, deren Stringwerte direkt Anzeigetexte sind. */
+const STRING_MAPS = [
+  "difficulties", "armorPiercing", "damageTypes", "ammoContainers", "customSkillCategories", "toolQuality",
+  "advantageKinds", "augmentKinds", "bioTraitKinds", "styleSkillKinds", "modifierTargets", "reputation"
+];
+
+/**
+ * Ersetzt die deutschen Standardtexte der Konfiguration (label/short sowie die Werte der
+ * STRING_MAPS) durch die Übersetzung aus `lang/*.json` (Schlüssel `NR.Cfg.<Pfad>`).
+ * Der ursprüngliche (deutsche) Text bleibt als `labelDe` erhalten, z. B. für den Mannifest-Import.
+ * Fehlt ein Schlüssel, bleibt der Standardtext bestehen.
+ */
+export function localizeConfig() {
+  const i18n = game.i18n;
+  const tr = (path, fallback) => {
+    const key = `NR.Cfg.${path.map(p => p === "" ? "none" : p).join(".")}`;
+    return i18n.has(key) ? i18n.localize(key) : fallback;
+  };
+  const walk = (obj, path) => {
+    for (const [k, v] of Object.entries(obj)) {
+      if (v && typeof v === "object") walk(v, [...path, Array.isArray(obj) && v.key ? v.key : k]);
+      else if (typeof v === "string" && (k === "label" || k === "short")) {
+        if (k === "label") obj.labelDe ??= v;
+        obj[k] = tr([...path, k], obj[`${k}De`] ?? v);
+      }
+    }
+  };
+  for (const [root, value] of Object.entries(NR)) {
+    if (!value || typeof value !== "object") continue;
+    if (STRING_MAPS.includes(root)) {
+      NR.__de ??= {};
+      NR.__de[root] ??= { ...value };
+      for (const k of Object.keys(value)) value[k] = tr([root, k], NR.__de[root][k]);
+    } else walk(value, [root]);
+  }
+}
