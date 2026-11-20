@@ -2,7 +2,8 @@ import { defendAgainst, rollDamage, resistFromMessage } from "./combat.mjs";
 import { applyPsiDamage } from "./psi.mjs";
 import { rollPool } from "./dice/pool.mjs";
 import { NR } from "./config.mjs";
-import { applyDamageTo } from "./socket.mjs";
+import { applyDamageTo, applyBuffTo } from "./socket.mjs";
+import { startClinch } from "./style-actions.mjs";
 
 /**
  * Chat-Interaktionen: Buttons in Würfelkarten.
@@ -35,7 +36,7 @@ function prepareButtons(message, el) {
       const doc = uuid ? fromUuidSync(uuid) : null;
       const actor = doc?.actor ?? doc;
       allowed = game.user.isGM || !!actor?.isOwner;
-    } else if (action === "damage") {
+    } else if (action === "damage" || action === "clinch") {
       const actor = f.defense?.attack?.actorUuid ? fromUuidSync(f.defense.attack.actorUuid) : null;
       allowed = game.user.isGM || !!actor?.isOwner;
     } else if (action === "reroll") {
@@ -51,17 +52,25 @@ async function onAction(message, btn) {
   const f = message.flags?.noreturn ?? {};
   switch (action) {
     case "defend":
-      return defendAgainst(message, btn.dataset.tokenUuid, false);
+      return defendAgainst(message, btn.dataset.tokenUuid, false, Number(btn.dataset.index) || 1);
     case "noDefense":
-      return defendAgainst(message, btn.dataset.tokenUuid, true);
+      return defendAgainst(message, btn.dataset.tokenUuid, true, Number(btn.dataset.index) || 1);
     case "damage":
       return rollDamage(f.defense);
+    case "clinch":
+      return startClinch(f.defense);
     case "resist":
       return resistFromMessage(message);
     case "psiDamage":
       return applyPsiDamage(message, btn.dataset.tokenUuid);
     case "reroll":
       return rerollWithAdrenalin(message);
+    case "styleBuff": {
+      const d = btn.dataset;
+      const result = await applyBuffTo(d.targetUuid, { kind: d.kind, n: Number(d.n) || 0 });
+      const key = result === "applied" ? "NR.Style.Buff.Applied" : result === "delegated" ? "NR.Style.Buff.Delegated" : "NR.Style.Buff.Unavailable";
+      return ui.notifications.info(game.i18n.format(key, { source: d.source }));
+    }
     case "applyTargets": {
       // Schaden an alle markierten Ziele (GM-Hilfe für Flächenangriffe)
       const payload = f.damage;

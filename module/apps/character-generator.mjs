@@ -169,6 +169,10 @@ export class NRCharacterGenerator extends HandlebarsApplicationMixin(Application
     const hasImplant = this._has(s.abnormalities, "Mysteriöses Implantat");
     const hasMastery = this._has(s.advantages, "Meisterschaft");
     for (const l of s.languages) gp.languages += l.value * 2;
+    // Linguist: drei Fremdsprachen bis Stufe 3 kostenlos
+    if (Object.entries(s.styleSkills).some(([u, lvl]) => lvl > 0 && NR.styleKeyFromName(d.byId.get(u)?.name) === "linguist")) {
+      gp.languages = Math.max(0, gp.languages - NR.linguistSavings(s.languages.map(l => l.value)));
+    }
 
     // PSI
     const freePowers = sp?.system.freePsi ?? 0;

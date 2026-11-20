@@ -1,6 +1,7 @@
 import { NR } from "../config.mjs";
 import { rollPool, applyChatMode, buildFormula } from "../dice/pool.mjs";
 import { poolDialog } from "../dice/roll-dialog.mjs";
+import { skillStyleEffects, styleDialogContent, LEG_ZONES } from "../styles.mjs";
 
 const { renderTemplate } = foundry.applications.handlebars;
 
@@ -110,6 +111,54 @@ export class NRActor extends foundry.documents.Actor {
     return true;
   }
 
+  /**
+   * Stufe eines Style-Skills (0 = nicht vorhanden). Expertenfähigkeiten haben Stufe 1,
+   * Kampfkünste ihre gewählte Stufe.
+   * @param {string} key   Schlüssel aus NR.styleSkillKeys
+   */
+  styleLevel(key) {
+    return this.system.styles?.[key] ?? 0;
+  }
+
+  /**
+   * Split (S. 184): Wechselt die aktive Persönlichkeit. Je Persönlichkeit eigen sind Fertigkeiten, PSI-Kräfte/-Apps,
+   * Charaktermerkmale und besondere Fertigkeiten (ohne Sprachen); Körper, Attribute, Inventar, Wunden, Adrenalin und
+   * Style-Skills bleiben gemeinsam. Das aktuelle Profil wird im Flag `noreturn.split` gesichert, Zurückwechseln stellt es wieder her.
+   * @param {number} target    Index der Ziel-Persönlichkeit (0 = Grundpersönlichkeit)
+   * @param {string} [rename]  Neuer Name der Ziel-Persönlichkeit
+   * @returns {Promise<number>} Index der aktiven Persönlichkeit
+   */
+  async switchPersonality(target, rename = "") {
+    const count = 1 + this.items.filter(i => i.type === "styleSkill" && i.system.key === "split").length;
+    if (target < 0 || target >= count) return this.getFlag("noreturn", "split")?.active ?? 0;
+    const data = foundry.utils.deepClone(this.getFlag("noreturn", "split") ?? {});
+    data.active ??= 0; data.sets ??= []; data.names ??= [];
+    if (rename) data.names[target] = rename;
+    if (target !== data.active) {
+      const bound = i => ["psiPower", "psiApp", "trait"].includes(i.type) || (i.type === "skill" && i.system.category !== "sprache");
+      data.sets[data.active] = { skills: foundry.utils.deepClone(this.system.toObject().skills), items: this.items.filter(bound).map(i => i.toObject()) };
+      const next = data.sets[target] ?? { skills: Object.fromEntries(Object.keys(this.system.skills).map(k => [k, { value: 0 }])), items: [] };
+      const old = this.items.filter(bound).map(i => i.id);
+      if (old.length) await this.deleteEmbeddedDocuments("Item", old);
+      await this.update({ "system.skills": next.skills });
+      if (next.items.length) await this.createEmbeddedDocuments("Item", next.items.map(i => { const c = foundry.utils.deepClone(i); delete c._id; return c; }));
+      data.active = target;
+    }
+    await this.setFlag("noreturn", "split", data);
+    return data.active;
+  }
+
+  /** Maluswürfel auf körperliche Aktionen (GE, ST, KO, BE) aus Items, z. B. Metamorphose. */
+  physicalMalus(attrKey) {
+    return (["ge", "st", "ko", "be"].includes(attrKey) ? (this.system.mods?.["malus.physical"] ?? 0) : 0) + this.clinchMalus();
+  }
+
+  /** Ringen: Wer im Clinch gehalten wird, hat Kampfnachteil (−2W auf Proben, Angriff und Verteidigung). */
+  clinchMalus() {
+    const c = this.getFlag("noreturn", "clinch");
+    return c && !c.holder ? 2 : 0;
+  }
+
   /** Stelle Adrenalin, Meditation und Regenerationspool wieder her (Rast: 6 h Schlaf + Nahrung). */
   async rest() {
     await this.update({
@@ -119,6 +168,10 @@ export class NRActor extends foundry.documents.Actor {
       "system.combat.defenses": 0,
       "system.combat.psiCollected": 0
     });
+    // Style-Skills mit begrenzten Einsätzen (außer „je Sitzung“) füllen sich bei der Rast wieder auf
+    const refill = this.items.filter(i => i.type === "styleSkill" && i.system.uses.max > 0 && i.system.uses.value < i.system.uses.max
+      && !/^(sitzung|session)/i.test(i.system.uses.per));
+    if (refill.length) await this.updateEmbeddedDocuments("Item", refill.map(i => ({ _id: i.id, "system.uses.value": i.system.uses.max })));
     ui.notifications.info(game.i18n.format("NR.Notify.Rested", { name: this.name }));
   }
 
@@ -135,13 +188,36 @@ export class NRActor extends foundry.documents.Actor {
     skillValue = null, untrained = false, flags = {}, extraHtml = "", skillKey = null } = {}) {
 
     const malus = this.getMalus({ resist, psi });
+    const effects = skillStyleEffects(this, skillKey);
     let opts = { bonusDice: extraBonus, malusDice: 0, points: extraPoints, mw, pass: false, useAdrenalin: false, useMeditation: false, disadvantages: 0, attr: attrKey };
     if (!skipDialog) {
       opts = await poolDialog({
         title: label, actor: this, dice, woundMalus: malus, mw, allowPass, resist,
-        attrKey, altAttr, skillValue, untrained, extraBonus, extraPoints
+        attrKey, altAttr, skillValue, untrained, extraBonus, extraPoints, extraContent: styleDialogContent(effects)
       });
       if (!opts) return null;
+    }
+    const styleFields = opts.styleFields ?? {};
+    const styleNotes = [...effects.hints];
+    // Fast Talk: +2W je vorbereitender Aktion (bis zu dreimal); Trusty Engineer: Crafting-MW −5 je Engineer
+    if (styleFields.fastTalk) {
+      opts.bonusDice += 2 * styleFields.fastTalk;
+      styleNotes.push(game.i18n.format("NR.Style.Skill.fastTalkApplied", { n: 2 * styleFields.fastTalk }));
+    }
+    if (styleFields.trusty) {
+      opts.mw = Math.max(0, opts.mw - 5 * styleFields.trusty);
+      styleNotes.push(game.i18n.format("NR.Style.Skill.trustyApplied", { n: 5 * styleFields.trusty }));
+    }
+
+    // Parkour: Klettern/Springen unter MW 30 gelingen automatisch
+    if (effects.autoBelow && opts.mw > 0 && opts.mw < effects.autoBelow) {
+      const msgData = {
+        speaker: ChatMessage.getSpeaker({ actor: this }),
+        content: `<div class="nr-card"><header class="nr-card-head"><h3>${label}</h3></header><p class="nr-result good">${game.i18n.format("NR.Style.Skill.parkourAuto", { mw: opts.mw })}</p></div>`
+      };
+      applyChatMode(msgData);
+      await ChatMessage.create(msgData);
+      return { total: opts.mw, success: true, auto: true, n: 0, excess: 0 };
     }
 
     // Attributwechsel (z. B. Einschüchtern mit ST)
@@ -163,7 +239,14 @@ export class NRActor extends foundry.documents.Actor {
         extraHtml += `<p class="nr-good"><i class="fa-solid fa-paw"></i> ${game.i18n.format("NR.Chat.SituationalDice", { n: sit })}</p>`;
       }
     }
-    if (opts.useAdrenalin && await this.spendAdrenalin("adrenalin")) bonus += this.system.adrenalinBonus;
+    if (opts.useAdrenalin && await this.spendAdrenalin("adrenalin")) {
+      bonus += this.system.adrenalinBonus;
+      // Rage of Gods: Adrenalin auf Stärke(-Fertigkeiten) gibt zusätzlich +3W
+      if (this.styleLevel("rageOfGods") && attrUsed === "st") {
+        bonus += 3;
+        styleNotes.push(game.i18n.localize("NR.Style.Skill.rageApplied"));
+      }
+    }
     if (opts.useMeditation && await this.spendAdrenalin("meditation")) bonus += Math.min(5, this.system.meditationMax);
 
     // Robotik-Overdrive (S. 217): gespeicherte Bonuspunkte auf die nächste Stärke-Aktion
@@ -174,7 +257,15 @@ export class NRActor extends foundry.documents.Actor {
       await this.update({ "system.combat.overdrive": 0 });
     }
     if (overdrive) extraHtml += `<p class="nr-warn"><i class="fa-solid fa-gears"></i> Overdrive +${overdrive} Stärke</p>`;
-    const malusTotal = (resist ? 0 : malus) + opts.malusDice + opts.disadvantages * 2;
+    const physMalus = resist ? 0 : this.physicalMalus(attrUsed);
+    if (physMalus) styleNotes.push(game.i18n.format("NR.Style.PhysicalMalus", { n: physMalus }));
+    // Temporäre Bonuswürfel (Der Doktor, Mixology, Sterne-Küche, Inspirieren) – nicht auf Schadenswiderstand
+    if (!resist && (this.system.tempBonus ?? 0) > 0) {
+      bonus += this.system.tempBonus;
+      styleNotes.push(game.i18n.format("NR.Style.TempBonus", { n: this.system.tempBonus }));
+    }
+    for (const n of styleNotes) extraHtml += `<p class="nr-good"><i class="fa-solid fa-star"></i> ${n}</p>`;
+    const malusTotal = (resist ? 0 : malus) + opts.malusDice + opts.disadvantages * 2 + physMalus;
     const leiden = attrUsed ? (this.system.attr[attrUsed]?.leiden ?? 0) : 0;
     const sub = subtitle || (attrUsed ? `${this.system.attr[attrUsed].abbr} ${this.system.attr[attrUsed].total}` : "");
     return rollPool({
@@ -275,12 +366,16 @@ export class NRActor extends foundry.documents.Actor {
 
     let bonusDice = 0;
     let usedAdrenalin = false;
+    // Kick-Boxen: Treffer ausschließlich an den Beinen → Bonuswürfel auf den Widerstand (resist.leg)
+    const legBonus = zones.length && zones.every(z => LEG_ZONES.includes(String(z))) ? (this.system.mods?.["resist.leg"] ?? 0) : 0;
+    bonusDice += legBonus;
     if (!skipDialog) {
       const choice = await foundry.applications.api.DialogV2.wait({
         window: { title: game.i18n.localize("NR.Roll.Resist"), icon: "fa-solid fa-shield-heart" },
         classes: ["noreturn", "nr-roll-dialog"],
         content: `<p>${game.i18n.format("NR.Roll.ResistPrompt", { amount: effAmount, zone: zones.map(z => NR.zones[z].label).join(", "), armor: armor.points })}</p>
           ${armor.notes.length ? `<p class="nr-hint">${armor.notes.join("<br>")}</p>` : ""}
+          ${legBonus ? `<p class="nr-hint"><i class="fa-solid fa-star"></i> ${game.i18n.format("NR.Style.LegResist", { n: legBonus })}</p>` : ""}
           <div class="form-group"><label>${game.i18n.localize("NR.Roll.BonusDice")}</label><input type="number" name="bonus" value="0"></div>
           ${this.system.adrenalinLeft > 0 ? `<div class="form-group"><label>${game.i18n.format("NR.Roll.UseAdrenalin", { n: this.system.adrenalinBonus, left: this.system.adrenalinLeft })}</label><input type="checkbox" name="adrenalin"></div>` : ""}`,
         buttons: [{
@@ -289,7 +384,7 @@ export class NRActor extends foundry.documents.Actor {
         }, { action: "cancel", label: game.i18n.localize("Cancel") }]
       }).catch(() => null);
       if (!choice || choice === "cancel") return null;
-      bonusDice = choice.bonus;
+      bonusDice = legBonus + choice.bonus;
       if (choice.adrenalin && await this.spendAdrenalin()) { bonusDice += this.system.adrenalinBonus; usedAdrenalin = true; }
     }
 
@@ -343,10 +438,15 @@ export class NRActor extends foundry.documents.Actor {
     const resist = roll.total + armor;
     const through = Math.max(0, effAmount - resist);
     if (through > 0) await this.update({ "system.hp.value": Math.max(0, s.hp.value - through) });
-    const vital = through > 0 ? (await new Roll("1d6").evaluate()).total === 6 : false;
+    // Ungezielt: W6 = 6 → vitale Stelle; Aim for the Heart: gezielter Treffer auf eine vitale Stelle
+    // Sollbruchstelle: Angriff aufs Manöver – keine vitale Stelle, dafür Manöverwert −1 bei Schaden
+    const vital = (through > 0 && !attack.sollbruch) ? (attack.aimVital || (await new Roll("1d6").evaluate()).total === 6) : false;
+    const maneuverLoss = through > 0 && attack.sollbruch;
+    if (maneuverLoss) await this.update({ "system.maneuver": this.system.maneuver - 1 });
     const content = `<div class="nr-card"><h3>${game.i18n.localize("NR.Chat.VehicleDamage")}</h3>
       <p>${game.i18n.format("NR.Chat.VehicleDamageText", { amount: effAmount, resist, armor, through })}</p>
       ${vital ? `<p class="nr-bad"><strong>${game.i18n.localize("NR.Chat.VitalHit")}</strong></p>` : ""}
+      ${maneuverLoss ? `<p class="nr-bad"><strong>${game.i18n.localize("NR.Style.ManeuverLoss")}</strong></p>` : ""}
       ${this.system.damaged ? `<p class="nr-warn">${game.i18n.localize("NR.Chat.VehicleCrippled")}</p>` : ""}</div>`;
     const msgData = { speaker: ChatMessage.getSpeaker({ actor: this }), content, rolls: [roll] };
     applyChatMode(msgData);

@@ -152,7 +152,9 @@
       "nonLethal": "NL-Schaden (Betäubung)",
       "temp": "Temporärer Malus",
       "psi": "Kraft sammeln / Haltung",
-      "total": "Gesamtmalus"
+      "total": "Gesamtmalus",
+      "tempBonus": "Temp. Bonuswürfel",
+      "tempBonusHint": "Temporäre Bonuswürfel (Inspirieren, Der Doktor, Mixology, Sterne-Küche); wirken auf Proben, Angriffe und Verteidigung (nicht auf den Schadenswiderstand). Nach Ablauf der Wirkungsdauer von Hand zurücksetzen."
     },
     "Zone": {
       "Damage": "Schaden in dieser Zone",
@@ -236,7 +238,8 @@
       "HitZone": "Trefferzone würfeln",
       "Resist": "Widerstand",
       "Through": "Durch",
-      "Retaliation": "Rückschaden"
+      "Retaliation": "Rückschaden",
+      "Block": "Blocken"
     },
     "Damage": {
       "Manual": "Schaden erleiden",
@@ -414,7 +417,110 @@
       "Kind": "Art",
       "Prerequisites": "Voraussetzungen",
       "Level": "Stufe",
-      "Levels": "Stufen"
+      "Levels": "Stufen",
+      "AttackSkill": "Fertigkeit",
+      "Limb": "Angriffsart",
+      "ZpcLimb": "Mit linkem Arm/Bein (ZPC)",
+      "MultiAllowed": "Durch Style-Skills erlaubt bis zu",
+      "MultiExceeded": "Mehr Angriffe als die Style-Skills erlauben (max. {n}) – nur nach Absprache mit der SL",
+      "AttackBonus": "+{n}W Angriff (Style)",
+      "DamageBonus": "+{n}W Schaden (Style)",
+      "DefenseBonus": "+{n}W Verteidigung (Style)",
+      "DefendMulti": "Angriff {i} von {n} des Mehrfachangriffs",
+      "BlademasterNote": "Blademaster: Parade gegen Fernkampf mit Klingenwaffe ≥ 30 cm (Nachteil −2W)",
+      "NoRangedParry": "Fernkampfangriffe lassen sich nur mit Blademaster parieren (SL entscheidet)",
+      "SameDefenseAction": "Dieselbe Defensivaktion wie beim vorigen Angriff des Mehrfachangriffs",
+      "Kampfkunst": "Kampfkunst",
+      "BlockWithNahkampf": "Blocken mit Nahkampf (Krav Maga)",
+      "NahkampfParryNeedsStyle": "Eine Parade mit Nahkampf ist nur mit passender Kampfkunst vorgesehen (Aikido, Jiu Jitsu, Escrima, Gun-Fu, Sado, ZPC).",
+      "NahkampfParryVia": "Nahkampf-Parade möglich durch",
+      "StyleSkill": "Style",
+      "Via": {
+        "escrima": "Escrima",
+        "sado": "Sado",
+        "gunFu": "Gun-Fu"
+      },
+      "Key": "Schlüssel",
+      "KeyHint": "Stabiler Schlüssel, über den die Spielmechanik den Style-Skill erkennt (nicht ändern).",
+      "Uses": "Einsätze",
+      "UsesHint": "Verbleibend / Maximum (0 = unbegrenzt) und Zeitraum, z. B. „Sitzung“.",
+      "UsesPer": "Zeitraum",
+      "Hint": "Hinweistext",
+      "NoUsesLeft": "{name}: keine Einsätze mehr übrig.",
+      "UsesLeft": "Einsätze: {n}/{max} {per}",
+      "AimForTheHeartNote": "Aim for the Heart: kein Malus für gezielte Fahrzeugangriffe, auch nicht sichtbare vitale Stellen sind erlaubt",
+      "BillyHint": "Billy the Kid: Die einhändige Waffe darf in derselben Aktion gezogen und abgefeuert werden (kein eigener Aktionsaufwand fürs Ziehen).",
+      "Skill": {
+        "anonymous": "Anonymous: Computeraktionen sind nicht zurückverfolgbar, Seiteneffekte werden ohne Probe vermieden (Sicherheitsbarrieren erfordern weiterhin Proben).",
+        "neo": "Neo: Die SL nennt vor der Probe Risiken und Mindestwurf; du kannst dich noch umentscheiden.",
+        "crashOverride": "Crash-Override: Hacken/Programmieren zählt als Crafting; die Dauer verkürzt sich um 50 %.",
+        "beastmaster": "Beastmaster: Kreaturen sehen dich als Freund und greifen zuletzt an; zwei Dressieren-Proben weniger nötig; unkontrollierte Kreaturen reagieren positiv.",
+        "petPal": "Pet Pal: Du verstehst die Sprache von Tieren in Grenzen (Absprache mit der SL).",
+        "crapGyver": "CrapGyver: Die Crafting-Dauer sinkt um 50 % (außer bei Computer).",
+        "trustyLabel": "Trusty Engineers (MW −5 je Person, max. 2)",
+        "trustyApplied": "Trusty Engineer: Mindestwurf −{n}",
+        "fastTalkLabel": "Fast Talk: vorbereitende Aktionen (+2W je Aktion, max. 3)",
+        "fastTalkApplied": "Fast Talk: +{n}W",
+        "goldeneZunge": "Goldene Zunge: Soziale Proben sind auch in unpassenden Situationen möglich; das angesprochene Ziel muss die Interaktion zulassen.",
+        "trickster": "Trickster: Taschenspielertricks (MW 15); Entfesseln, Verstecken oder Taschendiebstahl einmal je Kampfrunde ohne Aktion.",
+        "parkour": "Parkour: Klettern- und Springen-Proben mit Mindestwurf unter 30 gelingen automatisch.",
+        "parkourAuto": "Parkour: automatisch gelungen (Mindestwurf {mw} < 30).",
+        "rageApplied": "Rage of Gods: Adrenalin auf Stärke gibt zusätzlich +3W"
+      },
+      "MemorumShort": "Memorum",
+      "Variant": "Auswahl",
+      "VariantHint": "Gewählte PSI-Kraft, Element oder Waffenart (z. B. Telekinese, Hitze, Pistole).",
+      "ExtraTargets": "Zusätzliche Ziele (Psionische Vielfältigkeit)",
+      "ExtraTargetsHint": "Je weiterem Ziel sinkt die effektive Kraftstufe (KS) um 1.",
+      "MetamorphoseKs": "Metamorphose: +1 KS für Apps dieser Kraft",
+      "PhysicalMalus": "−{n}W auf körperliche Aktionen (Style)",
+      "StateOn": "Zustand: aktiv",
+      "StateOff": "Zustand: inaktiv",
+      "Sollbruch": "Angriff aufs Manöver (Sollbruchstelle)",
+      "SollbruchHint": "Keine vitale Stelle; Schaden am Fahrzeug senkt dessen Manöverwert um 1.",
+      "SollbruchNote": "Sollbruchstelle: Angriff aufs Manöver – bei Schaden Manöver −1, keine vitale Stelle",
+      "ManeuverLoss": "Manöverwert −1 (Sollbruchstelle)",
+      "TempBonus": "+{n}W temporärer Bonus",
+      "Buff": {
+        "Doctor": "Der Doktor: Behandlung",
+        "Result": "Ergebnis {total} → {n} Würfel (1 je 20 Punkte)",
+        "Hint": "Ziele markieren und die gewünschte Wirkung anwenden. Die Dauer läuft nicht automatisch ab – den Wert im Reiter Kampf nach Ablauf zurücksetzen.",
+        "Bonus": "+{n}W Bonus ({h} h)",
+        "Malus": "−{n}W Malus ({h} h)",
+        "Adrenalin": "Adrenalin auffüllen (≈ {h} h)",
+        "SkillMissing": "Die Fertigkeit „{name}“ wurde im Compendium nicht gefunden.",
+        "Applied": "{source}: Wirkung angewendet.",
+        "Delegated": "{source}: Wirkung an die Spielleitung übergeben.",
+        "Unavailable": "{source}: Ziel nicht verfügbar oder keine Spielleitung aktiv."
+      },
+      "HoverDuration": "Rüttelflug: Schweben für {n} Kampfrunden",
+      "PowerNap": "Power Nap",
+      "PowerNapConfirm": "Ein halbstündiges Nickerchen erholt vollständig (höchstens 4 Tage am Stück) und füllt – mit Nahrung – den Regenerationspool. Jetzt anwenden?",
+      "PowerNapDone": "{name}: Power Nap – Adrenalin, Meditation und Regenerationspool sind wieder aufgefüllt.",
+      "BaKaiDoBite": "Ba-Kai-Do 1: Beißen im Nahkampf ist ohne Kampfnachteil möglich.",
+      "KenjutsuDraw": "Kenjutsu 1: Das Schwert darf in derselben Aktion gezogen und zum Angriff genutzt werden.",
+      "TwoHits": "Trifft ein Treffer, zählt er als zwei Treffer an zwei Zonen (zwei Schadenswürfe)",
+      "EscrimaSwap": "Escrima: {skill} statt der gewählten Fertigkeit (austauschbar)",
+      "LegResist": "Kick-Boxen: Treffer an den Beinen +{n}W auf den Schadenswiderstand",
+      "SplitDefaultName": "Persönlichkeit {n}",
+      "SplitActive": "aktiv",
+      "SplitTitle": "Split: Persönlichkeit wechseln",
+      "SplitHint": "Körper, Attribute, Inventar, Wunden und Adrenalin bleiben gleich. Fertigkeiten, PSI-Kräfte/-Apps, Charaktermerkmale und besondere Fertigkeiten (ohne Sprachen) gehören zum Profil der Persönlichkeit und werden beim Wechsel ausgetauscht. Jeder Split-Style-Skill schaltet eine weitere Persönlichkeit frei.",
+      "SplitSwitchTo": "Wechseln zu",
+      "SplitRename": "Umbenennen (Ziel-Persönlichkeit)",
+      "SplitApply": "Anwenden",
+      "SplitSwitched": "{actor}: Persönlichkeit „{name}“ ist jetzt aktiv.",
+      "ClinchBonus": "Ringen 3: im Clinch +2W auf Angriff und Schaden",
+      "ClinchStart": "Clinch ansetzen (statt Schaden)",
+      "ClinchBreak": "Clinch: befreien bzw. auflösen",
+      "ClinchBusy": "Einer der Beteiligten ist bereits in einem Clinch (ein Clinch je Ringer).",
+      "ClinchStarted": "{holder} hält {target} im Clinch: {target} hat Kampfnachteil (−2W auf alle Proben außer Schadenswiderstand).",
+      "ClinchEnded": "Der Clinch zwischen {a} und {b} ist aufgelöst.",
+      "ClinchOut": "Clinch zwischen {a} und {b} beendet, weil ein Beteiligter ausgeschieden ist (Hinweis an die SL).",
+      "ClinchBrokenFree": "{a} befreit sich aus dem Clinch mit {b}.",
+      "ClinchHeld": "{a} kann sich nicht befreien, {b} hält weiter fest.",
+      "ClinchHold": "Clinch halten (Stärke)",
+      "ClinchOtherTarget": "Im Clinch: Angriff auf ein anderes Ziel als den Clinch-Partner (erlaubt, Clinch bleibt bestehen)."
     },
     "Species": {
       "TP": "Trefferpunkte je Zone",
@@ -477,7 +583,8 @@
     "Modifier": {
       "Hint": "Modifikatoren wirken automatisch auf den Besitzer (Rüstung/Ausrüstung nur wenn ausgerüstet, Augmentierung nur wenn eingebaut).",
       "None": "Keine Modifikatoren.",
-      "Add": "Modifikator hinzufügen"
+      "Add": "Modifikator hinzufügen",
+      "FromLevel": "Gilt ab Stufe (nur Kampfkünste; 0 = immer)"
     },
     "Vehicle": {
       "Category": "Art",
@@ -1444,6 +1551,65 @@
           "ruestungsbau": "Fertigkeit: Rüstungsbau",
           "sicherheitstechnik": "Fertigkeit: Sicherheitstechnik",
           "waffenbau": "Fertigkeit: Waffenbau"
+        },
+        "attack": {
+          "fist": "Angriff: Faustschläge (Bonuswürfel)",
+          "leg": "Angriff: Beinangriffe (Bonuswürfel)",
+          "emk": "Angriff: Ellenbogen/Knie/Schienbein (Bonuswürfel)",
+          "knee": "Angriff: Knieangriffe (Bonuswürfel)",
+          "claw": "Angriff: Krallen (Bonuswürfel)",
+          "blade": "Angriff: Klingenwaffen (Bonuswürfel)",
+          "multi": "Angriff: Mehrfachangriff (Bonuswürfel)",
+          "zpc": "Angriff: linker Arm/Bein, ZPC (Bonuswürfel)"
+        },
+        "damage": {
+          "melee": "Schaden: alle Nahkampfangriffe (Würfel)",
+          "unarmed": "Schaden: waffenlos (Würfel)",
+          "fist": "Schaden: Faustschläge (Würfel)",
+          "leg": "Schaden: Beinangriffe (Würfel)",
+          "emk": "Schaden: Ellenbogen/Knie/Schienbein (Würfel)",
+          "knee": "Schaden: Knieangriffe (Würfel)",
+          "multi": "Schaden: Mehrfachangriff (Würfel)",
+          "zpc": "Schaden: linker Arm/Bein, ZPC (Würfel)",
+          "blade": "Schaden: Klingenwaffen (Würfel)"
+        },
+        "defense": {
+          "blockUnarmed": "Verteidigung: waffenlos Blocken (Bonuswürfel)",
+          "blockMelee": "Verteidigung: Blocken gegen Nahkampf (Bonuswürfel)",
+          "dodgeMelee": "Verteidigung: Ausweichen gegen Nahkampf (Bonuswürfel)",
+          "parryBlade": "Verteidigung: Parade mit Klingenwaffe (Bonuswürfel)"
+        },
+        "resist": {
+          "leg": "Schadenswiderstand: Treffer an den Beinen (Bonuswürfel)"
+        },
+        "malus": {
+          "physical": "Malus: körperliche Aktionen (Würfel)"
+        }
+      },
+      "strikeLimbs": {
+        "fist": {
+          "label": "Faust"
+        },
+        "elbow": {
+          "label": "Ellenbogen"
+        },
+        "knee": {
+          "label": "Knie"
+        },
+        "shin": {
+          "label": "Schienbein"
+        },
+        "leg": {
+          "label": "Tritt (Fuß/Bein)"
+        },
+        "claw": {
+          "label": "Krallen"
+        },
+        "bite": {
+          "label": "Biss"
+        },
+        "head": {
+          "label": "Kopf/Horn"
         }
       }
     },

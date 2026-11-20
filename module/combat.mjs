@@ -1,5 +1,9 @@
 import { NR } from "./config.mjs";
 import { rollPool, rollHitZone, buildFormula, applyChatMode, postPoolMessage, diceSummary } from "./dice/pool.mjs";
+import {
+  isUnarmed, isMeleeWeapon, defaultLimb, strikeGroups, styleDice, maxMultiAttacks, attackSkillOptions,
+  nahkampfParryVia, LEG_ZONES
+} from "./styles.mjs";
 
 const { renderTemplate } = foundry.applications.handlebars;
 const { DialogV2 } = foundry.applications.api;
@@ -36,20 +40,31 @@ export function rangeBand(weapon, distance, strength = 3) {
   return { key: "out", label: game.i18n.localize("NR.Combat.OutOfRange"), mw: 999 };
 }
 
-function hasStyle(actor, name) {
-  const n = name.toLowerCase();
-  return actor.items.some(i => i.type === "styleSkill" && i.name.toLowerCase().startsWith(n));
-}
-
 /** Gewählte Waffenspezialisierung? (+1W auf alle Proben mit der Waffe) */
 function specializationBonus(actor, weapon) {
-  const specs = actor.items.filter(i => i.type === "styleSkill" && i.name.toLowerCase().startsWith("waffenspezialisierung"));
+  const specs = actor.items.filter(i => i.type === "styleSkill" && i.system.key === "waffenspezialisierung");
   const wn = weapon.name.toLowerCase();
   return specs.some(s => {
     const m = s.name.match(/\(([^)]+)\)|\[([^\]]+)\]|:\s*(.+)$/);
-    const kind = (m?.[1] ?? m?.[2] ?? m?.[3] ?? "").toLowerCase().trim();
+    const kind = (s.system.variant || (m?.[1] ?? m?.[2] ?? m?.[3] ?? "")).toLowerCase().trim();
     return kind && (wn.includes(kind) || (weapon.system.features ?? "").toLowerCase().includes(kind));
   }) ? 1 : 0;
+}
+
+/** Hinweise zu Style-Skills, die im Angriffsdialog angezeigt werden (rein informative Effekte). */
+function styleAttackHints(actor, weapon) {
+  const hints = [];
+  const ranged = !isMeleeWeapon(weapon);
+  // Billy the Kid: einhändige Feuerwaffen in einer Aktion ziehen und abfeuern
+  if (ranged && !weapon.system.twoHanded && ["faustfeuer", "schnellfeuer"].includes(weapon.system.category) && actor.styleLevel("billyTheKid")) {
+    hints.push(game.i18n.localize("NR.Style.BillyHint"));
+  }
+  // Ba-Kai-Do 1: Beißen im Nahkampf ohne Kampfnachteil; Kenjutsu 1: Schwert ziehen und in derselben Aktion angreifen
+  if (isUnarmed(weapon) && actor.styleLevel("baKaiDo") >= 1) hints.push(game.i18n.localize("NR.Style.BaKaiDoBite"));
+  if (weapon.system.category === "nahkampf" && weapon.system.damageType === "klinge" && actor.styleLevel("kenjutsu") >= 1) {
+    hints.push(game.i18n.localize("NR.Style.KenjutsuDraw"));
+  }
+  return hints;
 }
 
 /** Tokens → UUIDs */
@@ -70,9 +85,9 @@ export async function attackWithWeapon(actor, weapon) {
   const sys = weapon.system;
   const cat = NR.weaponCategories[sys.category] ?? {};
   const melee = !!cat.melee;
-  const skillKey = sys.skillKey;
-  const skill = actor.system.skillList[skillKey];
-  const attr = actor.system.attr[skill?.attr ?? "ge"];
+  const skillOptions = attackSkillOptions(actor, weapon);
+  const unarmed = isUnarmed(weapon);
+  const zpcAvailable = actor.styleLevel("zpc") >= 1 && melee;
   const targets = targetList();
   const source = actor.getActiveTokens()[0];
   const distance = targets.length && source ? tokenDistance(source, targets[0].token) : null;
@@ -83,11 +98,17 @@ export async function attackWithWeapon(actor, weapon) {
   const ammoItems = actor.items.filter(i => i.type === "ammo" && i.system.quantity > 0 && ammoKinds.includes(i.system.ammoType));
 
   const content = await renderTemplate("systems/noreturn/templates/dialog/attack-dialog.hbs", {
-    weapon, melee, skill, attr, modes: modes.map(m => ({ key: m, label: NR.fireModes[m]?.label ?? m })),
+    weapon, melee, skill: actor.system.skillList[skillOptions[0].key], modes: modes.map(m => ({ key: m, label: NR.fireModes[m]?.label ?? m })),
     aiming: NR.aiming, zones: NR.zones, targets, distance, band, rangeBands: NR.rangeBands,
     hasRange: !melee && sys.range !== "none", ammoItems, hasAmmo: sys.hasAmmo, ammo: sys.ammo,
     woundMalus: actor.getMalus(), adrenalinLeft: actor.system.adrenalinLeft, adrenalinBonus: actor.system.adrenalinBonus,
-    meditationLeft: actor.system.meditationLeft, recoilMastery: hasStyle(actor, "recoil mastery"), triggerFinger: hasStyle(actor, "trigger finger")
+    meditationLeft: actor.system.meditationLeft, recoilMastery: actor.styleLevel("recoilMastery") > 0, triggerFinger: actor.styleLevel("triggerFinger") > 0,
+    skillOptions: skillOptions.map(o => ({ key: o.key, label: `${actor.system.skillList[o.key].label} (${actor.system.skillList[o.key].pool}W)${o.via ? ` – ${game.i18n.localize(`NR.Style.Via.${o.via}`)}` : ""}` })),
+    skillChoice: skillOptions.length > 1, bestSkill: skillOptions.reduce((b, o) => actor.system.skillList[o.key].pool > actor.system.skillList[b.key].pool ? o : b, skillOptions[0]).key,
+    limbs: unarmed ? Object.entries(NR.strikeLimbs).map(([key, l]) => ({ key, label: l.label, selected: key === defaultLimb(weapon) })) : null,
+    zpcAvailable, sollbruchAvailable: actor.styleLevel("sollbruchstelle") > 0 && targets.some(t => t.token?.actor?.type === "vehicle"),
+    maxMulti: maxMultiAttacks(actor, weapon, { gunFuMelee: actor.styleLevel("gunFu") >= 2 }),
+    styleHints: styleAttackHints(actor, weapon)
   });
 
   const opts = await DialogV2.wait({
@@ -114,12 +135,28 @@ export async function attackWithWeapon(actor, weapon) {
           ammoId: f.ammoId?.value ?? "",
           triggerFinger: f.triggerFinger?.checked ?? false,
           braced: Number(f.braced?.value) || 0,
-          multi: Math.max(1, Number(f.multi?.value) || 1)
+          multi: Math.max(1, Number(f.multi?.value) || 1),
+          skillKey: f.skillKey?.value ?? "",
+          limb: f.limb?.value ?? "fist",
+          zpc: f.zpc?.checked ?? false,
+          sollbruch: f.sollbruch?.checked ?? false
         };
       }
     }, { action: "cancel", label: game.i18n.localize("Cancel") }]
   }).then(r => (r === "cancel" ? null : r)).catch(() => null);
   if (!opts) return null;
+
+  // Fertigkeit (Escrima/Sado/Gun-Fu können sie austauschen) und Angriffskontext
+  const skillKey = skillOptions.some(o => o.key === opts.skillKey) ? opts.skillKey : skillOptions[0].key;
+  const gunFuMelee = !!skillOptions.find(o => o.key === skillKey)?.gunFu;
+  if (gunFuMelee) opts.mode = "HM";
+  const skill = actor.system.skillList[skillKey];
+  const attr = actor.system.attr[skill?.attr ?? "ge"];
+  const groups = strikeGroups(weapon, { limb: opts.limb, zpc: opts.zpc, multi: opts.multi, gunFuMelee });
+  const maxMulti = maxMultiAttacks(actor, weapon, { gunFuMelee });
+  const styleNotes = [];
+  let skillBonusExtra = 0;
+  if (opts.multi > maxMulti) styleNotes.push(game.i18n.format("NR.Style.MultiExceeded", { n: maxMulti }));
 
   const mode = opts.mode ? NR.fireModes[opts.mode] : null;
   const ammoItem = opts.ammoId ? actor.items.get(opts.ammoId) : null;
@@ -139,6 +176,13 @@ export async function attackWithWeapon(actor, weapon) {
 
   // Würfelpool zusammensetzen
   let bonus = opts.bonusDice + sys.attackDice + (mode?.attackDice ?? 0) + (ammoSys?.attackDice ?? 0) + specializationBonus(actor, weapon);
+  // Situative Bonuswürfel auf die Fertigkeit (z. B. Nahkampf +2W) und Style-/Kampfkunst-Boni auf den Angriff
+  const skillSit = actor.system.mods?.[`dice.${skillKey}`] ?? 0;
+  const styleAttack = styleDice(actor, "attack", groups);
+  const tempBonus = actor.system.tempBonus ?? 0;
+  bonus += skillSit + styleAttack + tempBonus;
+  if (tempBonus) styleNotes.push(game.i18n.format("NR.Style.TempBonus", { n: tempBonus }));
+  if (skillSit + styleAttack) styleNotes.push(game.i18n.format("NR.Style.AttackBonus", { n: skillSit + styleAttack }));
   if (opts.triggerFinger && opts.mode === "HM") bonus += 2;
   if (opts.useAdrenalin && opts.multi === 1 && await actor.spendAdrenalin()) bonus += actor.system.adrenalinBonus;
   if (opts.useMeditation && opts.multi === 1 && await actor.spendAdrenalin("meditation")) bonus += Math.min(5, actor.system.meditationMax);
@@ -147,11 +191,25 @@ export async function attackWithWeapon(actor, weapon) {
   if (!mode?.noAim) aimMalus = melee ? NR.aiming[opts.aim].melee : NR.aiming[opts.aim].ranged;
   const aim = mode?.noAim ? "random" : opts.aim;
 
+  // Gezielte Angriffe auf Fahrzeuge: pauschal −2W statt der Körperzonen-Mali (sichtbare Komponenten, S. 105). Aim for the Heart hebt den Malus auf
+  // und erlaubt auch nicht sichtbare vitale Stellen.
+  const vehicleTarget = targets[0]?.token?.actor?.type === "vehicle";
+  let aimVital = false;
+  const sollbruch = vehicleTarget && !!opts.sollbruch && actor.styleLevel("sollbruchstelle") > 0;
+  if (sollbruch) styleNotes.push(game.i18n.localize("NR.Style.SollbruchNote"));
+  if (vehicleTarget && aim !== "random") {
+    if (actor.styleLevel("aimForTheHeart")) {
+      aimVital = true;
+      aimMalus = 0;
+      styleNotes.push(game.i18n.localize("NR.Style.AimForTheHeartNote"));
+    } else aimMalus = 2;
+  }
+
   let recoilMalus = 0;
   let recoilInfo = "";
   if (!melee && mode) {
     let recoil = mode.recoil + (ammoSys?.recoil ?? 0) + (opts.triggerFinger && opts.mode === "HM" ? 2 : 0);
-    const rd = (opts.braced ? sys.rd + opts.braced : sys.rd) + Math.floor(actor.system.attr.st.total / 5) + (hasStyle(actor, "recoil mastery") ? 2 : 0);
+    const rd = (opts.braced ? sys.rd + opts.braced : sys.rd) + Math.floor(actor.system.attr.st.total / 5) + (actor.styleLevel("recoilMastery") ? 2 : 0);
     recoilMalus = Math.max(0, recoil - rd);
     recoilInfo = `Rückstoß ${recoil} − RD ${rd}`;
   }
@@ -165,7 +223,20 @@ export async function attackWithWeapon(actor, weapon) {
     strengthMalusPoints = diff * 10;
   }
 
-  const malus = actor.getMalus() + opts.malusDice + opts.disadvantages * 2 + aimMalus + recoilMalus + strengthMalusDice;
+  const physMalus = actor.physicalMalus(skill.attr);
+  if (physMalus) styleNotes.push(game.i18n.format("NR.Style.PhysicalMalus", { n: physMalus }));
+  const malus = actor.getMalus() + opts.malusDice + opts.disadvantages * 2 + aimMalus + recoilMalus + strengthMalusDice + physMalus - skillBonusExtra;
+  // Schadenswürfel aus Style-Skills (Bonuswürfel auf die Schadensprobe, nie Hazard-Di)
+  let styleDamageDice = styleDice(actor, "damage", groups);
+  // Ringen 3: Im Clinch +2W auf Nahkampf und Schaden gegen den Clinch-Partner
+  const clinch = actor.getFlag("noreturn", "clinch");
+  if (clinch?.holder && targets.length && !targets.some(t => t.actorUuid === clinch.partnerUuid)) styleNotes.push(game.i18n.localize("NR.Style.ClinchOtherTarget"));
+  if (clinch?.holder && actor.styleLevel("ringen") >= 3 && melee && targets.some(t => t.actorUuid === clinch.partnerUuid)) {
+    styleDamageDice += 2;
+    skillBonusExtra = 2;
+    styleNotes.push(game.i18n.localize("NR.Style.ClinchBonus"));
+  }
+  if (styleDamageDice) styleNotes.push(game.i18n.format("NR.Style.DamageBonus", { n: styleDamageDice }));
   const dice = skill.pool;
   const subtitle = `${attr.abbr} ${attr.total}${skill.trained ? ` + ${skill.label} ${skill.value}` : " − 2 (ungeübt)"}`;
 
@@ -179,7 +250,8 @@ export async function attackWithWeapon(actor, weapon) {
     nonLethal: sys.damage.nonLethal || !!ammoSys?.nonLethal,
     continuous: sys.damage.continuous || !!ammoSys?.continuous,
     structure: sys.damage.structure || !!ammoSys?.structure,
-    noDamageVs: ammoSys?.noDamageVs ?? ""
+    noDamageVs: ammoSys?.noDamageVs ?? "",
+    bonusDice: styleDamageDice
   };
 
   const area = sys.damage.area || !!ammoSys?.radius;
@@ -191,24 +263,29 @@ export async function attackWithWeapon(actor, weapon) {
     weaponName: weapon.name,
     category: sys.category,
     tokenUuid: actor.token?.uuid ?? actor.getActiveTokens()[0]?.document.uuid ?? null,
-    melee,
+    melee: melee || gunFuMelee,
     mode: opts.mode,
     aim, zone: opts.zone, half: opts.half,
-    rangeMw: melee ? 0 : opts.rangeMw,
+    rangeMw: (melee || gunFuMelee) ? 0 : opts.rangeMw,
     dmg,
-    goodHitStep: hasStyle(actor, "sado") && melee ? 5 : (mode?.goodHitStep ?? 10),
+    goodHitStep: actor.styleLevel("sado") > 0 && melee ? 5 : (mode?.goodHitStep ?? 10),
     noGoodHits: !!mode?.noGoodHits || zonesMode === "all",
     zonesMode,
     multi: opts.multi,
+    groups: [...groups],
+    aimVital, sollbruch,
+    twoHits: isUnarmed(weapon) && ((actor.styleLevel("boxen") >= 3 && groups.has("fist")) || (actor.styleLevel("taeKwonDo") >= 3 && groups.has("leg"))),
+    limb: isUnarmed(weapon) ? opts.limb : null,
     targets: targets.map(t => ({ uuid: t.uuid, name: t.name, actorUuid: t.actorUuid }))
   };
 
+  if (attackData.twoHits) styleNotes.push(game.i18n.localize("NR.Style.TwoHits"));
   const extra = await renderTemplate("systems/noreturn/templates/chat/attack-extra.hbs", {
     weapon, attackData, mode: mode?.label, aimLabel: NR.aiming[aim]?.label,
     zoneLabel: aim === "zone" || aim === "exact" ? NR.zones[opts.zone]?.label : null,
-    halfLabel: aim === "half" ? opts.half : null, recoilInfo, recoilMalus, aimMalus, shots: sys.hasAmmo ? shots : 0,
+    halfLabel: aim === "half" ? opts.half : null, styleNotes, recoilInfo, recoilMalus, aimMalus, shots: sys.hasAmmo ? shots : 0,
     ammoLeft: sys.hasAmmo ? sys.ammo.value - shots : null, ammoName: ammoItem?.name, damageLabel: describeDamage(dmg),
-    distance, targets: attackData.targets
+    distance, targets: attackData.targets, attackIndices: Array.from({ length: opts.multi }, (_, i) => i + 1)
   });
 
   const result = await rollPool({
@@ -218,7 +295,7 @@ export async function attackWithWeapon(actor, weapon) {
   });
 
   // Reichweite: Mindestwurf verfehlt → automatischer Fehlschlag
-  const rangeFail = !melee && attackData.rangeMw > 0 && result.total < attackData.rangeMw;
+  const rangeFail = !melee && !gunFuMelee && attackData.rangeMw > 0 && result.total < attackData.rangeMw;
   const explosiveNear = rangeFail && result.total === attackData.rangeMw - 1 && (dmg.damageType === "explosiv");
   attackData.total = result.total;
   attackData.rangeFail = rangeFail && !explosiveNear;
@@ -257,7 +334,7 @@ export function describeDamage(dmg) {
  * @param {string} tokenUuid      Verteidigendes Token
  * @param {boolean} none          Keine Verteidigung (Wurf = 0)
  */
-export async function defendAgainst(message, tokenUuid, none = false) {
+export async function defendAgainst(message, tokenUuid, none = false, index = 1) {
   const attack = message.flags.noreturn?.attack;
   if (!attack) return;
   const tokenDoc = await fromUuid(tokenUuid);
@@ -270,17 +347,27 @@ export async function defendAgainst(message, tokenUuid, none = false) {
   let defRoll = null;
   let blocked = false;
   let skillKey = null;
+  let parryGear = null;
+  const styleNotes = [];
 
   if (!none && !attack.rangeFail) {
     const count = actor.system.combat.defenses;
     const skills = Object.values(actor.system.skillList).filter(s => s.defensive);
     const custom = actor.items.filter(i => i.type === "skill" && i.system.defensive);
     const psiApps = actor.items.filter(i => i.type === "psiApp" && i.system.defensive);
-    const gear = actor.items.filter(i => i.type === "weapon" && i.system.equipped && (i.system.parryDice || i.system.blockDice));
+    // Gun-Fu 1: Feuerwaffen in den Händen dürfen zum Parieren dienen
+    const gunFuParry = actor.styleLevel("gunFu") >= 1;
+    const gear = actor.items.filter(i => i.type === "weapon" && i.system.equipped
+      && (i.system.parryDice || i.system.blockDice || (gunFuParry && !isMeleeWeapon(i))));
+    const blockAsNahkampf = actor.styleLevel("kravMaga") >= 1;
+    const parryVia = nahkampfParryVia(actor);
+    const tally = actor.getFlag("noreturn", "defTally");
     const content = await renderTemplate("systems/noreturn/templates/dialog/defense-dialog.hbs", {
-      actor, attack, skills, custom, psiApps, gear, count, defenseMalus: count,
+      actor, attack, skills, custom, psiApps, gear, count, defenseMalus: count, blockAsNahkampf,
       woundMalus: actor.getMalus(), adrenalinLeft: actor.system.adrenalinLeft, adrenalinBonus: actor.system.adrenalinBonus,
-      suggested: attack.melee ? "ausweichen" : "ausweichen"
+      suggested: attack.melee ? "ausweichen" : "ausweichen",
+      multiInfo: attack.multi > 1 ? game.i18n.format("NR.Style.DefendMulti", { i: index, n: attack.multi }) : null,
+      parryVia: parryVia.join(", "), nahkampfNeedsStyle: !parryVia.length
     });
     const opts = await DialogV2.wait({
       window: { title: `${game.i18n.localize("NR.Combat.Defend")}: ${actor.name}`, icon: "fa-solid fa-shield-halved" },
@@ -303,10 +390,22 @@ export async function defendAgainst(message, tokenUuid, none = false) {
 
     let dice = 0;
     let bonus = opts.bonusDice;
+    let isBlock = false;
     const [type, key] = opts.choice.split(":");
+    const mods = actor.system.mods ?? {};
     if (type === "skill") {
       const s = actor.system.skillList[key];
       dice = s.pool; defLabel = s.label; skillKey = key;
+      isBlock = key === "blocken";
+      // Escrima 2: Nahkampf und Waffenkampf sind austauschbar – der bessere Wert zählt
+      if (actor.styleLevel("escrima") >= 2 && ["nahkampf", "waffenkampf"].includes(key)) {
+        const other = actor.system.skillList[key === "nahkampf" ? "waffenkampf" : "nahkampf"];
+        if (other.pool > dice) { dice = other.pool; styleNotes.push(game.i18n.format("NR.Style.EscrimaSwap", { skill: other.label })); }
+      }
+    } else if (type === "block") {
+      // Krav Maga 1: Nahkampf statt Blocken
+      const s = actor.system.skillList[key];
+      dice = s.pool; defLabel = `${game.i18n.localize("NR.Combat.Block")} (${s.label})`; skillKey = key; isBlock = true;
     } else if (type === "custom") {
       const it = actor.items.get(key);
       const a = it.system.attribute ? actor.system.attr[it.system.attribute].total : 0;
@@ -318,13 +417,49 @@ export async function defendAgainst(message, tokenUuid, none = false) {
       defLabel = `${app.name} (PSI + Reaktion)`;
     }
     const g = opts.gearId ? actor.items.get(opts.gearId) : null;
-    if (g) bonus += (skillKey === "blocken" ? g.system.blockDice : g.system.parryDice) || 0;
+    if (g) bonus += (isBlock ? g.system.blockDice : g.system.parryDice) || 0;
+    const isParry = !isBlock && ["nahkampf", "waffenkampf"].includes(skillKey);
+
+    // Style-Skills/Kampfkünste: situative Bonuswürfel auf die Verteidigung
+    let styleBonus = skillKey ? (mods[`dice.${skillKey}`] ?? 0) : 0;
+    if (isBlock) {
+      if (!g || !g.system.blockDice) styleBonus += mods["defense.blockUnarmed"] ?? 0;
+      if (attack.melee) styleBonus += mods["defense.blockMelee"] ?? 0;
+    }
+    if (skillKey === "ausweichen" && attack.melee) styleBonus += mods["defense.dodgeMelee"] ?? 0;
+    if (isParry && g?.system.damageType === "klinge") styleBonus += mods["defense.parryBlade"] ?? 0;
+    const tempBonus = actor.system.tempBonus ?? 0;
+    if (tempBonus) { bonus += tempBonus; styleNotes.push(game.i18n.format("NR.Style.TempBonus", { n: tempBonus })); }
+    if (styleBonus) { bonus += styleBonus; styleNotes.push(game.i18n.format("NR.Style.DefenseBonus", { n: styleBonus })); }
+    if (isParry) parryGear = g;
     if (opts.useAdrenalin && attack.multi === 1 && await actor.spendAdrenalin()) bonus += actor.system.adrenalinBonus;
 
+    // Parade gegen Fernkampf: nur Blademaster (Klinge ≥ 30 cm, Nachteil −2W)
+    let extraMalus = 0;
+    if (isParry && !attack.melee) {
+      if (actor.styleLevel("blademaster") && g?.system.damageType === "klinge") {
+        extraMalus += 2;
+        styleNotes.push(game.i18n.localize("NR.Style.BlademasterNote"));
+      } else styleNotes.push(game.i18n.localize("NR.Style.NoRangedParry"));
+    }
+
+    // Mehrfachabwehr: Mehrere Angriffe eines Mehrfachangriffs mit einer Defensivaktion abwehren
+    // (Shield Master beim Blocken, sonst so viele, wie der Verteidiger selbst Angriffe hätte).
+    const capacity = defenseCapacity(actor, isBlock);
+    const kind = isBlock ? "block" : (skillKey ?? type);
+    const freeRide = attack.multi > 1 && capacity > 1 && tally?.msg === message.id && tally.kind === kind && tally.n < capacity;
+    const actionMalus = freeRide ? Math.max(0, count - 1) : count;
+    if (attack.multi > 1 && capacity > 1) {
+      await actor.setFlag("noreturn", "defTally", { msg: message.id, kind, n: freeRide ? tally.n + 1 : 1 });
+      if (freeRide) styleNotes.push(game.i18n.localize("NR.Style.SameDefenseAction"));
+    }
+
     // Steigender Malus je weiterer Defensivaktion – ohne 1-Würfel-Regel
-    const malus = actor.getMalus() + opts.malusDice + count;
+    const physMalus = skillKey ? actor.physicalMalus(actor.system.skillList[skillKey]?.attr) : 0;
+    if (physMalus) styleNotes.push(game.i18n.format("NR.Style.PhysicalMalus", { n: physMalus }));
+    const malus = actor.getMalus() + opts.malusDice + actionMalus + extraMalus + physMalus;
     const effective = dice + bonus - malus;
-    await actor.update({ "system.combat.defenses": count + 1 });
+    if (!freeRide) await actor.update({ "system.combat.defenses": count + 1 });
     if (effective < 1) {
       defTotal = 0;
       defLabel += ` – ${game.i18n.localize("NR.Combat.NoDiceLeft")}`;
@@ -333,7 +468,7 @@ export async function defendAgainst(message, tokenUuid, none = false) {
       defTotal = res.total;
       defRoll = res.roll;
     }
-    blocked = skillKey === "blocken";
+    blocked = isBlock;
   }
 
   const hit = !attack.rangeFail && attack.total > defTotal;
@@ -351,16 +486,81 @@ export async function defendAgainst(message, tokenUuid, none = false) {
   const outcome = {
     kind: "defense",
     attackMessageId: message.id,
+    index,
     attack,
     defender: { tokenUuid, actorUuid: actor.uuid, name: tokenDoc.name },
-    defTotal, defLabel, hit, diff, goodHits, blocked: blocked && !hit, blockedAll, damageAllowed
+    defTotal, defLabel, hit, diff, goodHits, blocked: blocked && !hit, blockedAll, damageAllowed,
+    canClinch: hit && attack.melee && (await fromUuid(attack.actorUuid))?.styleLevel?.("ringen") >= 1
   };
   const content = await renderTemplate("systems/noreturn/templates/chat/defense-card.hbs", {
     ...outcome, blockNote, attackTotal: attack.total, weaponName: attack.weaponName,
-    dice: defRoll ? diceSummary(defRoll) : []
+    dice: defRoll ? diceSummary(defRoll) : [], styleNotes, multiLabel: attack.multi > 1 ? `${index}/${attack.multi}` : null
   });
   const msgData = { speaker: ChatMessage.getSpeaker({ actor }), content, flags: { noreturn: { defense: outcome } } };
   if (defRoll) msgData.rolls = [defRoll];
+  applyChatMode(msgData);
+  const msg = await ChatMessage.create(msgData);
+  // Erfolgreiche Parade im Nahkampf: Konterschaden (Aikido 3, Kenjutsu 3)
+  if (!hit && !blocked && skillKey && ["nahkampf", "waffenkampf"].includes(skillKey) && attack.melee) {
+    await parryRetaliation(actor, attack, parryGear);
+  }
+  return msg;
+}
+
+/** Wie viele Angriffe eines Mehrfachangriffs deckt eine Defensivaktion ab? */
+function defenseCapacity(actor, isBlock) {
+  if (isBlock && actor.styleLevel("shieldMaster")) return 99;
+  const L = key => actor.styleLevel(key);
+  return Math.max(1,
+    L("stormOfFists") ? 4 : 0, L("fistOfRage") ? 2 : 0, L("multipleWielding") ? 4 : 0, L("dualWielding") ? 2 : 0,
+    L("quadrupleAkimbo") ? 4 : 0, L("akimbo") ? 2 : 0);
+}
+
+/**
+ * Konterschaden nach erfolgreicher Parade im Nahkampf, an einer zufälligen Zone des Angreifers:
+ *  - Aikido 3: ST + 10 Punkte
+ *  - Kenjutsu 3: Schaden der parierenden Klingenwaffe
+ */
+async function parryRetaliation(defender, attack, gear) {
+  const counters = [];
+  if (defender.styleLevel("aikido") >= 3) {
+    counters.push({ label: "Aikido", dmg: { strength: true, points: 10, formula: "", damageType: "wucht", pierce: "" } });
+  }
+  if (defender.styleLevel("kenjutsu") >= 3 && gear?.system.damageType === "klinge") {
+    const d = gear.system.damage;
+    counters.push({ label: `Kenjutsu (${gear.name})`, dmg: { strength: d.strength, points: d.points, formula: d.formula, damageType: gear.system.damageType, pierce: d.pierce } });
+  }
+  for (const c of counters) await postRetaliation(defender, attack, c);
+}
+
+/** Würfle einen Konterschaden und poste die Schadenskarte für den Angreifer. */
+async function postRetaliation(defender, attack, { label, dmg }) {
+  const attacker = await fromUuid(attack.actorUuid);
+  if (!attacker) return null;
+  let roll;
+  let text;
+  if (dmg.formula) {
+    roll = await new Roll(`${toFormula(dmg.formula)}${dmg.points ? ` + ${dmg.points}` : ""}`.replace(/\+ -/g, "- ")).evaluate();
+    text = dmg.formula;
+  } else if (dmg.strength) {
+    const st = defender.system.attr.st.total;
+    roll = await new Roll(buildFormula({ dice: st, points: dmg.points, hazard: true }).formula).evaluate();
+    text = `ST ${st}${dmg.points ? ` + ${dmg.points}p.` : ""}`;
+  } else {
+    roll = await new Roll(buildFormula({ dice: 0, points: dmg.points, hazard: false, oneDieRule: false }).formula).evaluate();
+    text = `${dmg.points}p.`;
+  }
+  const zones = [(await rollHitZone()).zone];
+  const payload = {
+    kind: "damage", amount: roll.total, zones,
+    attack: { pierce: dmg.pierce ?? "", damageType: dmg.damageType ?? "wucht", noDamageVs: "", nonLethal: false, structure: false, continuous: false },
+    target: { tokenUuid: attack.tokenUuid, actorUuid: attacker.uuid, name: attacker.name },
+    weaponName: `${label} (${game.i18n.localize("NR.Combat.Retaliation")})`, blocked: false
+  };
+  const content = await renderTemplate("systems/noreturn/templates/chat/damage-card.hbs", {
+    ...payload, label: text, zoneLabels: zones.map(z => NR.zones[z].label).join(", "), dice: diceSummary(roll), describe: ""
+  });
+  const msgData = { speaker: ChatMessage.getSpeaker({ actor: defender }), content, rolls: [roll], flags: { noreturn: { damage: payload } } };
   applyChatMode(msgData);
   return ChatMessage.create(msgData);
 }
@@ -377,8 +577,18 @@ export async function rollDamage(defense) {
   const attacker = await fromUuid(attack.actorUuid);
   if (!attacker) return;
   if (!attacker.isOwner) return ui.notifications.warn(game.i18n.localize("NR.Notify.NotOwner"));
+  let msg = await rollDamageOnce(defense, attacker, 0);
+  // Boxen 3 / Tae-Kwon-Do 3: Der Treffer gilt als zwei Treffer an zwei Zonen (zwei Schadenswürfe)
+  if (attack.twoHits && !defense.blocked) msg = await rollDamageOnce(defense, attacker, 1);
+  await spikeRetaliation(defense, attacker);
+  return msg;
+}
+
+/** Ein Schadenswurf samt Schadenskarte; `hit` > 0 würfelt die Trefferzone zufällig (zweiter Treffer). */
+async function rollDamageOnce(defense, attacker, hit) {
+  const attack = defense.attack;
   const dmg = attack.dmg;
-  const extraDice = defense.blocked ? 0 : defense.goodHits;
+  const extraDice = (defense.blocked ? 0 : defense.goodHits) + (dmg.bonusDice ?? 0);
 
   let roll;
   let label;
@@ -398,13 +608,15 @@ export async function rollDamage(defense) {
     roll = await new Roll(formula).evaluate();
     label = `${dmg.points}p.`;
   }
-  if (extraDice) label += ` + ${extraDice}W (Gute Treffer)`;
+  if (defense.goodHits && !defense.blocked) label += ` + ${defense.goodHits}W (Gute Treffer)`;
+  if (dmg.bonusDice) label += ` + ${dmg.bonusDice}W (${game.i18n.localize("NR.Style.StyleSkill")})`;
 
   // Trefferzonen
   let zones = [];
   if (defense.blocked) zones = ["9"];
   else if (attack.zonesMode === "all") zones = Object.keys(NR.zones);
   else if (attack.zonesMode === "twoRandom") zones = [(await rollHitZone()).zone, (await rollHitZone()).zone];
+  else if (hit > 0) zones = [(await rollHitZone()).zone];
   else if (attack.aim === "zone" || attack.aim === "exact") zones = [attack.zone];
   else if (attack.aim === "half") zones = [(await rollHitZone(attack.half)).zone];
   else zones = [(await rollHitZone()).zone];
@@ -413,7 +625,7 @@ export async function rollDamage(defense) {
   const payload = {
     kind: "damage", amount: roll.total, zones, attack: {
       pierce: dmg.pierce, damageType: dmg.damageType, noDamageVs: dmg.noDamageVs,
-      nonLethal: dmg.nonLethal, structure: dmg.structure, continuous: dmg.continuous
+      nonLethal: dmg.nonLethal, structure: dmg.structure, continuous: dmg.continuous, aimVital: !!attack.aimVital, sollbruch: !!attack.sollbruch
     },
     target: defense.defender, weaponName: attack.weaponName, blocked: defense.blocked
   };
@@ -423,9 +635,7 @@ export async function rollDamage(defense) {
   });
   const msgData = { speaker: ChatMessage.getSpeaker({ actor: attacker }), content, rolls: [roll], flags: { noreturn: { damage: payload } } };
   applyChatMode(msgData);
-  const msg = await ChatMessage.create(msgData);
-  await spikeRetaliation(defense, attacker);
-  return msg;
+  return ChatMessage.create(msgData);
 }
 
 /**
@@ -529,6 +739,14 @@ export class NRCombatant extends Combatant {
 
 /** Setze Defensivaktionen zu Beginn jeder Runde zurück, Regeneration zu Beginn des eigenen Zugs. */
 export function registerCombatHooks() {
+  // Ringen: Ein Clinch endet, wenn ein Beteiligter bewusstlos wird oder ausscheidet (nur Spielleitung, mit Hinweis)
+  Hooks.on("updateActor", async actor => {
+    if (!game.user.isGM || !actor.getFlag?.("noreturn", "clinch")) return;
+    if (actor.system.unconscious || actor.system.lethalDestroyed) {
+      const { endClinch } = await import("./style-actions.mjs");
+      await endClinch(actor, "NR.Style.ClinchOut");
+    }
+  });
   Hooks.on("updateCombat", async (combat, changed) => {
     if (!game.user.isGM) return;
     if ("round" in changed) {

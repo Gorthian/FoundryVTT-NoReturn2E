@@ -48,7 +48,9 @@ export class NRActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       itemQuantity: NRActorSheet.#onItemQuantity,
       itemValue: NRActorSheet.#onItemValue,
       overdrive: NRActorSheet.#onOverdrive,
-      empHit: NRActorSheet.#onEmpHit
+      empHit: NRActorSheet.#onEmpHit,
+      switchPersonality: NRActorSheet.#onSwitchPersonality,
+      breakClinch: NRActorSheet.#onBreakClinch
     }
   };
 
@@ -113,7 +115,7 @@ export class NRActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       item: p, label: NR.psiPowers[p.system.key]?.label, tier: p.system.tier,
       cost: actor.type === "character" ? actor.advancementCost("psi", p.system.value) : null,
       apps: items.filter(i => i.type === "psiApp" && i.system.power === p.system.key).map(a => ({
-        item: a, diff: NR.psiDifficulties[a.system.difficulty]?.label
+        item: a, diff: NR.psiDifficulties[a.system.difficulty]?.label, hold: sys.psiHold(a)
       }))
     }));
     const knownKeys = new Set(powers.map(p => p.item.system.key));
@@ -143,7 +145,7 @@ export class NRActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       disadvantages: rows("advantage", i => i.system.kind === "nachteil"),
       traitsJustice: rows("trait", i => i.system.kind === "justice"),
       traitsChaos: rows("trait", i => i.system.kind === "chaos"),
-      styleSkills: rows("styleSkill"), augments: rows("augment"),
+      hasSplit: actor.styleLevel("split") > 0, clinch: actor.getFlag("noreturn", "clinch") ?? null, styleSkills: rows("styleSkill"), augments: rows("augment"),
       gear: rows("gear"), ammo: rows("ammo"),
       adrenalinPips: Array.from({ length: sys.adrenalinMax }, (_, i) => ({ used: i >= sys.adrenalinLeft })),
       meditationPips: Array.from({ length: sys.meditationMax }, (_, i) => ({ used: i >= sys.meditationLeft })),
@@ -219,6 +221,16 @@ export class NRActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
   _getItem(target) {
     const id = target.closest("[data-item-id]")?.dataset.itemId;
     return this.actor.items.get(id);
+  }
+
+  static async #onBreakClinch() {
+    const { breakClinch } = await import("../style-actions.mjs");
+    return breakClinch(this.actor);
+  }
+
+  static async #onSwitchPersonality() {
+    const { useSplit } = await import("../style-actions.mjs");
+    return useSplit(this.actor);
   }
 
   static async #onUseItem(event, target) {

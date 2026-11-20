@@ -11,6 +11,8 @@
     <span class="nr-chip">{{localize "NR.Psi.Probe"}} {{probe}}W{{#if malus}} (−{{malus}}W){{/if}}</span>
     <span class="nr-chip">{{localize "NR.Psi.Comp"}} {{comp}}</span>
     <span class="nr-chip">{{localize "NR.Psi.Target"}} {{lo}}–{{hi}}</span>
+    {{#if extraTargets}}<span class="nr-chip good"><i class="fa-solid fa-star"></i> {{localize "NR.Style.ExtraTargets"}}: {{extraTargets}} (−{{extraTargets}} KS)</span>{{/if}}
+    {{#if meta}}<span class="nr-chip good"><i class="fa-solid fa-star"></i> {{localize "NR.Style.MetamorphoseKs"}}</span>{{/if}}
   </div>
   <div class="nr-dice-row">
     {{#each dice as |d|}}<span class="nr-die {{d.kind}} {{#if d.max}}max{{/if}}" {{#if d.chain}}data-tooltip="Hazard-Di: {{d.chain}}"{{/if}}>{{d.value}}</span>{{/each}}

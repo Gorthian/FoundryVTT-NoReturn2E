@@ -11,14 +11,17 @@
     {{#if distance}}<span class="nr-chip">{{distance}} m</span>{{/if}}
     {{#if attackData.rangeMw}}<span class="nr-chip">{{localize "NR.Combat.RangeMw"}} {{attackData.rangeMw}}</span>{{/if}}
     {{#if (gt attackData.multi 1)}}<span class="nr-chip">{{localize "NR.Combat.MultiAttack"}} ×{{attackData.multi}}</span>{{/if}}
+    {{#each styleNotes as |n|}}<span class="nr-chip good"><i class="fa-solid fa-star"></i> {{n}}</span>{{/each}}
   </div>
   {{#if targets.length}}
   <div class="nr-targets">
     {{#each targets as |t|}}
     <div class="nr-target">
       <span class="nr-target-name"><i class="fa-solid fa-bullseye"></i> {{t.name}}</span>
-      <button type="button" data-nr-action="defend" data-token-uuid="{{t.uuid}}"><i class="fa-solid fa-shield-halved"></i> {{localize "NR.Combat.Defend"}}</button>
-      <button type="button" data-nr-action="noDefense" data-token-uuid="{{t.uuid}}"><i class="fa-solid fa-person-falling"></i> {{localize "NR.Combat.NoDefense"}}</button>
+      {{#each @root.attackIndices as |i|}}
+      <button type="button" data-nr-action="defend" data-token-uuid="{{t.uuid}}" data-index="{{i}}"><i class="fa-solid fa-shield-halved"></i> {{localize "NR.Combat.Defend"}}{{#if (gt @root.attackData.multi 1)}} {{i}}/{{@root.attackData.multi}}{{/if}}</button>
+      <button type="button" data-nr-action="noDefense" data-token-uuid="{{t.uuid}}" data-index="{{i}}"><i class="fa-solid fa-person-falling"></i> {{localize "NR.Combat.NoDefense"}}</button>
+      {{/each}}
     </div>
     {{/each}}
   </div>

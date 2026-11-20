@@ -100,6 +100,12 @@ export class CreatureData extends foundry.abstract.TypeDataModel {
     if (this.parent?.items) this._prepareCreature();
   }
 
+  /** Effektive Haltungskosten einer PSI-App (Memorum: −1, mindestens 0). */
+  psiHold(app) {
+    const base = app.system.hold;
+    return this.memorumPowers?.has(app.system.power) ? Math.max(0, base - 1) : base;
+  }
+
   /** Summiere die Modifikatoren aller aktiven Items. */
   _collectModifiers() {
     const mods = {};
@@ -111,6 +117,8 @@ export class CreatureData extends foundry.abstract.TypeDataModel {
         : (item.type === "augment" && item.system.fullBody) ? Math.max(1, item.system.quantity || 1) : 1;
       for (const m of list) {
         if (!m.target) continue;
+        // Kampfkünste: Stufen-Modifikatoren wirken erst ab der gewählten Stufe
+        if (item.type === "styleSkill" && m.level > 0 && item.system.level < m.level) continue;
         mods[m.target] = (mods[m.target] ?? 0) + (Number(m.value) || 0) * factor;
       }
     }
@@ -122,6 +130,19 @@ export class CreatureData extends foundry.abstract.TypeDataModel {
     const actor = this.parent;
     const mods = this._collectModifiers();
     sys.mods = mods;
+
+    // Style-Skills: Schlüssel → Stufe (Expertenfähigkeiten 1, Kampfkünste 1–3)
+    sys.styles = {};
+    sys.styleVariants = {};
+    for (const item of actor.items) {
+      if (item.type !== "styleSkill" || !item.system.key) continue;
+      const lvl = item.system.kind === "kampfkunst" ? item.system.level : 1;
+      sys.styles[item.system.key] = Math.max(sys.styles[item.system.key] ?? 0, lvl);
+      // Mehrfach wählbare Style-Skills (Memorum, Metamorphose, Waffenspezialisierung): gewählte Varianten sammeln
+      (sys.styleVariants[item.system.key] ??= []).push({ variant: item.system.variant, active: item.system.active, item });
+    }
+    // Memorum: Haltungskosten der Apps der gewählten PSI-Kräfte −1
+    sys.memorumPowers = new Set((sys.styleVariants.memorum ?? []).map(v => NR.psiPowerFromText(v.variant)).filter(Boolean));
 
     // Robotik je Körperzone
     const robotics = {};
@@ -265,7 +286,7 @@ export class CreatureData extends foundry.abstract.TypeDataModel {
     // Mali (S. 84, 99, 100)
     const woundMalus = woundZones * 2;
     const nlMalus = pain >= 10 ? 0 : Math.floor(sys.nonLethal / 10);
-    const holdMalus = actor.items.filter(i => i.type === "psiApp" && i.system.held).reduce((acc, i) => acc + i.system.hold, 0);
+    const holdMalus = actor.items.filter(i => i.type === "psiApp" && i.system.held).reduce((acc, i) => acc + sys.psiHold(i), 0);
     const alcMalus = 0;
     sys.malus = {
       wounds: woundMalus,
@@ -327,6 +348,7 @@ export class CreatureData extends foundry.abstract.TypeDataModel {
     const p = sys.progress;
     const level = NR.powerLevels[p.powerLevel] ?? NR.powerLevels.standard;
     const gp = { attributes: 0, skills: 0, psi: 0, languages: 0, special: 0, items: 0, money: p.gpMoney };
+    const foreignLanguages = [];
     for (const key of Object.keys(NR.attributes)) {
       // Erwachte: Körperattribute (GE, ST, KO, BE, WA) werden nur über Upgrades gesteigert
       if (sys.awakened && (key in NR.awakened.physical || key === "wa")) continue;
@@ -351,12 +373,17 @@ export class CreatureData extends foundry.abstract.TypeDataModel {
           else gp.psi += Math.max(0, s.value - s.free) * 5;
           break;
         case "skill":
-          if (s.category === "sprache") gp.languages += s.native ? Math.max(0, s.value - 5) * 2 : s.value * 2;
+          if (s.category === "sprache") {
+            gp.languages += s.native ? Math.max(0, s.value - 5) * 2 : s.value * 2;
+            if (!s.native) foreignLanguages.push(s.value);
+          }
           else if (s.category === "elite") gp.special += s.value * 4;
           else if (s.category === "fertigkeit") gp.special += s.value * 2;
           break;
       }
     }
+    // Linguist: drei Fremdsprachen bis Stufe 3 kostenlos
+    if (sys.styles.linguist) gp.languages = Math.max(0, gp.languages - NR.linguistSavings(foreignLanguages));
     if (actor.items.some(i => i.type === "abnormality" && i.name.startsWith("HMO")) && actor.items.some(i => i.type === "psiPower" && i.system.key === "kategorieB")) gp.psi -= 7;
     // Meditation: Stufe 1 liefert der Style-Skill (Modifikator), jede Basisstufe darüber 5 GP (S. 182)
     gp.special += Math.max(0, sys.special.meditation?.value ?? 0) * 5;

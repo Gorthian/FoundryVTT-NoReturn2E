@@ -64,6 +64,25 @@ Spezies mit dem Flag „Erwachter“ erhalten automatisch: Schmerztoleranz 10, k
 
 Robotikmodelle werden je Körperzone eingebaut (Zone im Itembogen wählen). **Robotik-Upgrades** (GE/ST/KO/BE +1, Panzerung +10) wirken auf die im Item gewählte robotische Zone; die **Anzahl** zählt als Stufen und multipliziert Wert und Kapazität. Die Zonenwerte werden auf GE 8, ST 20, KO 20, BE 10 begrenzt und fließen über den Durchschnitt aller 11 Zonen in die Attribute ein. Upgrades in organischen Zonen bleiben wirkungslos und werden im Zonen-Tooltip markiert. Kapazität ist reiner Einbauplatz – sie verändert keine Werte, eine Überschreitung wird nur angezeigt. Bei Erwachten wirken Einzelzonen-Upgrades auf jede Zone, Ganzkörper-Pakete auf alle Zonen gleichzeitig.
 
+## Style-Skills & Kampfkünste (S. 179–191)
+
+Style-Skills haben einen stabilen Schlüssel (`system.key`, bei älteren Items wird er zur Laufzeit aus dem Namen ergänzt); die Spiellogik fragt `actor.styleLevel("<schlüssel>")` ab. Numerische Effekte stehen als Item-Modifikatoren am Style-Skill (bei Kampfkünsten mit „gilt ab Stufe“), Hinweise und Aktionen am Knopf **Einsetzen** (Chat-Symbol in der Itemzeile).
+
+| Wirkung | Style-Skills |
+|---|---|
+| **Mehrfachangriff** im Angriffsdialog (je Angriff ein Verteidigungsknopf, eine Defensivaktion deckt mehrere Angriffe ab, wenn der Verteidiger selbst Mehrfachangriffe führen kann) | Akimbo, Quadruple Akimbo, Dual/Multiple Wielding, Fist of Rage, Storm of Fists; Shield Master (Blocken) |
+| **Bonuswürfel/Schadenswürfel/Verteidigung/Widerstand** über Modifikatoren (`attack.*`, `damage.*`, `defense.*`, `resist.*`, `dice.<fertigkeit>`) mit Angriffsart (Faust, Tritt, Knie, Kralle …) | Boxen, Capoeira, Jiu Jitsu, Karate, Kenjutsu, Kick-Boxen, Krav Maga, Muay Thai, Sado, Tae-Kwon-Do, ZPC, Ba-Kai-Do, Escrima 3, Gun-Fu 3 |
+| **Parade/Block/Fertigkeitswechsel** (Nahkampf-Parade, Blocken mit Nahkampf, Nahkampf ↔ Waffenkampf, Feuerwaffen im Nahkampf, Parade gegen Fernkampf) | Aikido, Jiu Jitsu, Escrima, Gun-Fu, Sado, ZPC, Krav Maga, Blademaster |
+| **Konterschaden** nach erfolgreicher Parade, **zwei Treffer an zwei Zonen** | Aikido 3, Kenjutsu 3; Boxen 3, Tae-Kwon-Do 3 |
+| **Fahrzeuge** (kein Malus/vitale Stelle bei gezielten Angriffen, Manöverwert −1) | Aim for the Heart, Sollbruchstelle |
+| **Proben** (Zusatzfelder, Hinweise, automatischer Erfolg, GP-Bilanz) | Fast Talk, Trusty Engineer, Parkour, Rage of Gods, Linguist; Hinweise: Anonymous, Neo, Crash-Override, CrapGyver, Beastmaster, Pet Pal, Goldene Zunge, Trickster |
+| **PSI** | Memorum (Haltung −1), Psionische Vielfältigkeit (zusätzliche Ziele), Metamorphose (umschaltbar, +1 KS, −1W körperlich) |
+| **Aktionen** per *Einsetzen* | Der Doktor, Mixology, Sterne-Küche (Bonus-/Maluswürfel auf Ziele, Feld „Temp. Bonuswürfel“), Rüttelflug, Power Nap, Déjà-vu (Einsatzzähler) |
+| **Nur Hinweistext** (kein Aktionszähler, keine Sturzschadens-Berechnung) | Billy the Kid, Kenjutsu 1, Ba-Kai-Do 1, Aikido 2, Parkour (Sprungschaden) |
+| **Offen** (Designentscheidung) | Split (zweite Persönlichkeit), Ringen (Clinch-Zustand) |
+
+Die Dauer von Bonus-/Maluswürfeln (Doktor, Speisen, Getränke) läuft nicht automatisch ab; der Wert im Reiter Kampf wird von Hand zurückgesetzt. Die Pack-Quelle für diese Daten ist `tools/src/character.py` (`STYLE_KEYS`, `STYLE_EXTRA`).
+
 ## Releases & Manifest
 
 Foundry kann das System über die Manifest-URL installieren und aktualisieren und legt den Ordner `noreturn` dabei selbst an:

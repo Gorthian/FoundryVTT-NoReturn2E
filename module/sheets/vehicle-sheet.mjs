@@ -92,7 +92,7 @@ export class NRVehicleSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
     if (!driver) return;
     const s = this.actor.system;
     const sk = driver.system.skillList[this._skillKey()];
-    const drift = driver.items.some(i => i.type === "styleSkill" && i.name.toLowerCase().startsWith("drift king"));
+    const drift = driver.styleLevel("driftKing") > 0;
     return driver.rollCheck({
       label: `${game.i18n.localize("NR.Vehicle.Stunt")}: ${this.actor.name}`, dice: sk.pool, attrKey: sk.attr,
       mw: 20, extraBonus: s.effManeuver, extraPoints: drift ? 10 : 0, skillValue: sk.value, untrained: !sk.trained

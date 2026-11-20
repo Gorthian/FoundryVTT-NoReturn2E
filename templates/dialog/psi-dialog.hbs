@@ -4,12 +4,14 @@
     <span><strong>{{app.name}}</strong> · {{diff}} ({{min}}–{{max}})<br>
       {{power.name}}: <span class="nr-chip big">{{level}}W</span>
       {{#if collected}}<span class="nr-chip psi">+{{collected}} KS {{localize "NR.Psi.Collected2"}}</span>{{/if}}
-      {{#if app.system.hold}}<span class="nr-chip">{{localize "NR.Psi.Hold"}} {{app.system.hold}}</span>{{/if}}</span>
+      {{#if hold}}<span class="nr-chip">{{localize "NR.Psi.Hold"}} {{hold}}{{#if memorum}} ({{localize "NR.Style.MemorumShort"}}){{/if}}</span>{{/if}}</span>
   </div>
   <p class="nr-hint">{{localize "NR.Psi.DistributeHint"}}</p>
   <div class="form-group"><label>{{localize "NR.Psi.KsDice"}}</label><input type="number" name="ks" value="{{defaultKs}}" min="0"></div>
   <div class="form-group"><label>{{localize "NR.Psi.ProbeDice"}}</label><input type="number" name="probe" value="{{defaultProbe}}" min="1"></div>
   <div class="form-group"><label>{{localize "NR.Psi.Booster"}}</label><input type="number" name="booster" value="{{boosterKs}}" min="0"></div>
+  {{#if multiTarget}}<div class="form-group"><label data-tooltip="{{localize 'NR.Style.ExtraTargetsHint'}}">{{localize "NR.Style.ExtraTargets"}}</label><input type="number" name="extraTargets" value="0" min="0"></div>{{/if}}
+  {{#if metamorphose}}<p class="nr-hint"><i class="fa-solid fa-star"></i> {{localize "NR.Style.MetamorphoseKs"}}</p>{{/if}}
   {{#if adrenalinLeft}}<div class="form-group"><label>{{localize "NR.Roll.Adrenalin"}} (+{{adrenalinBonus}}W)</label><input type="checkbox" name="useAdrenalin"></div>{{/if}}
   {{#if meditationLeft}}<div class="form-group"><label>{{localize "NR.Special.meditation"}} (+{{meditationBonus}}W)</label><input type="checkbox" name="useMeditation"></div>{{/if}}
   {{#if woundMalus}}<p class="nr-hint">{{localize "NR.Psi.MalusOnProbe"}}: −{{woundMalus}}W</p>{{/if}}

@@ -3,8 +3,12 @@
 from .common import icon, p
 
 
-def mod(target, value):
-    return {"target": target, "value": value}
+def mod(target, value, level=None):
+    """Modifikator; `level` (nur Kampfkünste): gilt ab dieser Stufe."""
+    m = {"target": target, "value": value}
+    if level:
+        m["level"] = level
+    return m
 
 
 def species():
@@ -274,12 +278,91 @@ def traits():
     return T
 
 
+# Stabile Schlüssel (system.key) – muss mit NR.styleSkillKeys in module/config.mjs übereinstimmen.
+STYLE_KEYS = {
+    "Aim for the Heart": "aimForTheHeart", "Akimbo": "akimbo", "Anonymous": "anonymous", "Beastmaster": "beastmaster",
+    "Billy the Kid": "billyTheKid", "Blademaster": "blademaster", "CrapGyver": "crapGyver", "Crash-Override": "crashOverride",
+    "Déjà-vu": "dejaVu", "Der Doktor": "derDoktor", "Drift King": "driftKing", "Dual Wielding": "dualWielding",
+    "Fast Talk": "fastTalk", "Fist of Rage": "fistOfRage", "Goldene Zunge": "goldeneZunge", "Linguist": "linguist",
+    "Meditation": "meditation", "Memorum [PSI-Kraft]": "memorum", "Metamorphose [Element]": "metamorphose",
+    "Mixology": "mixology", "Multiple Wielding": "multipleWielding", "Neo": "neo", "Pet Pal": "petPal",
+    "Power Nap": "powerNap", "Parkour": "parkour", "Psionische Vielfältigkeit": "psionischeVielfaeltigkeit",
+    "Quadruple Akimbo": "quadrupleAkimbo", "Rage of Gods": "rageOfGods", "Recoil Mastery": "recoilMastery",
+    "Rüttelflug": "ruettelflug", "Shield Master": "shieldMaster", "Sollbruchstelle": "sollbruchstelle", "Split": "split",
+    "Sterne-Küche": "sterneKueche", "Storm of Fists": "stormOfFists", "Trickster": "trickster",
+    "Trigger Finger": "triggerFinger", "Trusty Engineer": "trustyEngineer",
+    "Waffenspezialisierung (Waffenart)": "waffenspezialisierung",
+    "Aikido": "aikido", "Ba-Kai-Do": "baKaiDo", "Boxen": "boxen", "Capoeira": "capoeira", "Escrima": "escrima",
+    "Gun-Fu": "gunFu", "Jiu Jitsu": "jiuJitsu", "Karate": "karate", "Kenjutsu": "kenjutsu", "Kick-Boxen": "kickBoxen",
+    "Krav Maga": "kravMaga", "Muay Thai": "muayThai", "Ringen": "ringen", "Sado": "sado", "Tae-Kwon-Do": "taeKwonDo",
+    "ZPC (Zentrum Power Combat)": "zpc",
+}
+
+
+# Mechanische Ergänzungen je Style-Skill: mods (Item-Modifikatoren, Kampfkünste mit Stufe), hint (Hinweistext der
+# „Einsetzen“-Chatkarte), uses ((Anzahl, Zeitraum) für begrenzte Einsätze). Details siehe module/styles.mjs/combat.mjs.
+STYLE_EXTRA = {
+
+    "Aim for the Heart": {"hint": "Gezielte Angriffe auf Fahrzeuge erhalten keinen −2W-Malus und dürfen auch nicht sichtbare vitale Stellen treffen: Bei Schaden am Fahrzeug gilt der gezielte Treffer dann als vitale Stelle (wird im Angriffsdialog/Schadenswurf automatisch berücksichtigt)."},
+    "Akimbo": {"hint": "Mehrfachangriff mit zwei Fernkampfwaffen in einem Wurf: im Angriffsdialog „Mehrfachangriff“ auf 2 setzen. Es gelten der jeweils höchste Malus/niedrigste Wert; kein Adrenalin/Meditation; jedes Ziel muss sich gegen jeden Angriff verteidigen, Schaden je Treffer."},
+    "Dual Wielding": {"hint": "Mehrfachangriff mit zwei Nahkampfwaffen in einem Wurf: im Angriffsdialog „Mehrfachangriff“ auf 2 setzen. Kein Adrenalin/Meditation; jedes Ziel verteidigt gegen jeden Angriff einzeln."},
+    "Fist of Rage": {"hint": "Mehrfachangriff mit zwei waffenlosen Extremitäten: bei waffenlosen Angriffen im Angriffsdialog „Mehrfachangriff“ auf 2 setzen (Angriffsart je Extremität wählbar)."},
+    "Multiple Wielding": {"hint": "Erweitert Dual Wielding auf vier Nahkampfwaffen: im Angriffsdialog „Mehrfachangriff“ bis 4. Voraussetzung Mehrgliedrig (Arme) bleibt Sache der Charaktererschaffung."},
+    "Quadruple Akimbo": {"hint": "Erweitert Akimbo auf vier Fernkampfwaffen: im Angriffsdialog „Mehrfachangriff“ bis 4. Voraussetzung Mehrgliedrig (Arme) bleibt Sache der Charaktererschaffung."},
+    "Storm of Fists": {"hint": "Erweitert Fist of Rage auf vier waffenlose Extremitäten: im Angriffsdialog „Mehrfachangriff“ bis 4."},
+    "Shield Master": {"hint": "Beim Blocken gegen einen Mehrfachangriff genügt eine Defensivaktion (ein Block-Malus) für alle Teilangriffe; Adrenalin ist dabei nicht erlaubt. Im Verteidigungsdialog je Teilangriff „Verteidigen“ wählen – die Folgewürfe werden als dieselbe Defensivaktion gewertet."},
+    "Blademaster": {"hint": "Defensivaktion: Fernkampfangriffe lassen sich mit einer Klingenwaffe ≥ 30 cm parieren (Nachteil −2W). Im Verteidigungsdialog Waffenkampf/Nahkampf wählen und die Klingenwaffe als Parade-Waffe angeben – der Malus wird automatisch eingerechnet."},
+    "Billy the Kid": {"hint": "Einhändige Feuerwaffen werden in einer einzigen Aktion gezogen und abgefeuert; das Ziehen kostet keine eigene Aktion. Der Angriffsdialog weist bei passenden Waffen darauf hin."},
+    "Anonymous": {"hint": "Computeraktionen sind nicht zurückverfolgbar; Seiteneffekte werden automatisch bedacht und brauchen keine Probe. Sicherheitsbarrieren erfordern weiterhin Proben. Auf Computer-Proben erscheint ein Hinweis."},
+    "Beastmaster": {"hint": "Kreaturen sehen dich als Freund und greifen dich zuletzt an; zwei Dressieren-Proben weniger sind nötig, um Sturheit zu überwinden; unkontrollierte Kreaturen reagieren positiv. Die Angriffsreihenfolge bestimmt die Spielleitung."},
+    "CrapGyver": {"hint": "Die Crafting-Dauer sinkt um 50 % (außer bei Computer). Das System führt keine Crafting-Dauer; auf Handwerk-Proben erscheint ein Hinweis, die Dauer halbiert die Spielleitung."},
+    "Crash-Override": {"hint": "Hacken/Programmieren zählt als Crafting; die Dauer der Computer-Proben verkürzt sich um 50 %. Das System führt keine Crafting-Dauer; die Spielleitung halbiert sie anhand des Hinweises auf der Computer-Probe."},
+    "Fast Talk": {"hint": "Je vorbereitender Aktion +2W auf die folgende Sozialfertigkeit, bis zu dreimal kumulativ: im Probendialog sozialer Fertigkeiten (Attribut CH) die Zahl der Aktionen eintragen."},
+    "Goldene Zunge": {"hint": "Soziale Proben sind auch in unpassenden Situationen möglich; das angesprochene Ziel muss die Interaktion zulassen (eine Person)."},
+    "Neo": {"hint": "Die Spielleitung nennt dir vor Computerproben die Risiken und den Mindestwurf; du kannst dich noch entscheiden, die Probe abzulegen."},
+    "Pet Pal": {"hint": "Du verstehst animalische Sprache in Grenzen. Rein erzählerisch: Absprache mit der Spielleitung; Hinweis auf Dressieren-Proben."},
+    "Trickster": {"hint": "Taschenspielertricks (MW 15). Entfesseln, Verstecken oder Taschendiebstahl einmal je Kampfrunde ohne Aktion."},
+    "Trusty Engineer": {"hint": "Crafting-Mindestwurf −5 (auch als Helfer; höchstens zwei Engineers, also max. −10). Im Probendialog von Handwerk-Proben die Zahl der Engineers eintragen."},
+    "Parkour": {"hint": "Klettern- und Springen-Proben mit Mindestwurf unter 30 gelingen automatisch. Beim Sprung-/Sturzschaden den Springen-Wert addieren (manuelle Schadenseingabe)."},
+    "Rage of Gods": {"hint": "Adrenalin auf Stärke(-Fertigkeiten) gibt zusätzlich +3W. Beim Adrenalineinsatz auf Proben mit Stärke wird der Bonus automatisch eingerechnet."},
+    "Memorum [PSI-Kraft]": {"hint": "Die Haltungskosten aller Apps der gewählten PSI-Kraft sinken um 1 (mindestens 0). Die Kraft im Feld „Auswahl“ (oder im Namen in Klammern) eintragen, z. B. „Memorum [Telekinese]“. Je Kraft einmal wählbar."},
+    "Psionische Vielfältigkeit": {"hint": "Eine App kann zusätzliche Ziele erfassen; je zusätzlichem Ziel sinkt die effektive Kraftstufe (KS) um 1. Im PSI-Dialog das Feld „Zusätzliche Ziele“ ausfüllen."},
+    "Metamorphose [Element]": {"mods": [mod("malus.physical", 1)], "hint": "Einsetzen schaltet den Zustand um: Der Körper ist mit dem Element überzogen (Elektro/Hitze/Kälte, im Feld „Auswahl“ eintragen). Berührung verursacht 5 Elementarschaden, du bist immun gegen das Element, −1W auf körperliche Aktionen (automatisch) und +1 KS für Apps der passenden Kraft (automatisch)."},
+    "Sollbruchstelle": {"hint": "Angriff aufs Manöver eines Fahrzeugs ohne vitale Stelle: Im Angriffsdialog „Angriff aufs Manöver“ wählen. Verursacht der Angriff Schaden am Fahrzeug, sinkt dessen Manöverwert um 1 (Fahrzeugbogen, Feld Manöver)."},
+    "Der Doktor": {"hint": "Einsetzen: Behandlung mit WI + Medizin. Das Ergebnis gibt dem Ziel Bonuswürfel (4 h) oder Maluswürfel (12 h) wie Inspirieren (+1W je 20 Punkte) oder füllt dessen Adrenalin auf (≈ 1 h). Ziel vorher markieren; Bonus/Malus landen im Feld „Temp. Bonuswürfel/Malus“ im Reiter Kampf."},
+    "Mixology": {"hint": "Einsetzen: Probe auf die Zusatzfertigkeit „Ambrosia“ (HA), die beim ersten Einsatz freigeschaltet wird. Das Getränk gibt dem Ziel für zwei Stunden Bonuswürfel wie Inspirieren (+1W je 20 Punkte); Ziel vorher markieren."},
+    "Sterne-Küche": {"hint": "Einsetzen: Probe auf die Zusatzfertigkeit „Kochen“ (HA), die beim ersten Einsatz freigeschaltet wird. Die Speise gibt dem Ziel für zwei Stunden Bonuswürfel wie Inspirieren (+1W je 20 Punkte); Ziel vorher markieren."},
+    "Rüttelflug": {"hint": "Einsetzen: Ausdauer-Probe; das Ergebnis entspricht der Dauer des Schwebens in Kampfrunden (Fliegen auf der Stelle)."},
+    "Power Nap": {"hint": "Einsetzen: Ein halbstündiges Nickerchen erholt vollständig (höchstens 4 Tage am Stück) und füllt – mit Nahrung – den Regenerationspool. Wendet die Rast an (Adrenalin, Meditation, Regenerationspool, Defensivaktionen)."},
+    "Déjà-vu": {"uses": (1, "Sitzung"), "hint": "Einmal je Sitzung gibt die Spielleitung einen Hinweis auf kommende Ereignisse. Einsetzen verbraucht den Einsatz und meldet ihn der Spielleitung im Chat. Der Zähler wird bei Beginn einer neuen Sitzung im Item-Bogen (Einsätze) zurückgesetzt."},
+    "Aikido": {"hint": "Stufe 1: Nahkampf darf Nahkampfangriffe parieren (im Verteidigungsdialog freigeschaltet). Stufe 2: du rollst immer ab – Sturzschaden −20 (manuelle Schadenseingabe, vom Schaden abziehen). Stufe 3: Jede erfolgreiche Parade im Nahkampf verursacht beim Angreifer ST + 10 Punkte Schaden an einer zufälligen Zone (automatische Schadenskarte)."},
+    "Ba-Kai-Do": {"mods": [mod("attack.claw", 3, 2), mod("damage.melee", 5, 3)], "hint": "Stufe 1: Beißen im Nahkampf ohne Kampfnachteil (Hinweis im Angriffsdialog). Stufe 2: Krallenangriffe +3W (Angriffsart „Krallen“ im Angriffsdialog wählen). Stufe 3: Nahkampfschaden +5W, mit und ohne natürliche Waffen."},
+    "Kenjutsu": {"mods": [mod("attack.blade", 2, 2), mod("defense.parryBlade", 2, 2)], "hint": "Stufe 1: Schwert ziehen und in derselben Aktion angreifen (Hinweis im Angriffsdialog). Stufe 2: Angriffe und Paraden mit Klingenwaffen +2W (automatisch). Stufe 3: Jede erfolgreiche Parade mit einer Klingenwaffe verursacht deren Schaden an einer zufälligen Zone des Angreifers (automatische Schadenskarte)."},
+    "Boxen": {"mods": [mod("damage.fist", 3, 1), mod("defense.blockUnarmed", 3, 2)], "hint": "Stufe 1: Faustschaden +3W (Angriffsart „Faust“). Stufe 2: waffenloses Blocken +3W (Verteidigungsdialog, Block ohne Schild). Stufe 3: Ein Faustangriff, der trifft, gilt als zwei Treffer an zwei Zonen – der Schaden wird zweimal gewürfelt."},
+    "Capoeira": {"mods": [mod("defense.dodgeMelee", 3, 1), mod("damage.leg", 3, 2), mod("attack.leg", 3, 3)], "hint": "Stufe 1: Ausweichen gegen Nahkampfangriffe +3W (automatisch). Stufe 2: Beinschaden +3W (Angriffsart „Tritt/Knie/Schienbein“). Stufe 3: Beinangriffe +3W auf den Angriff."},
+    "Jiu Jitsu": {"mods": [mod("dice.nahkampf", 2, 2), mod("damage.unarmed", 2, 3)], "hint": "Stufe 1: Nahkampf darf Nahkampfangriffe parieren. Stufe 2: Nahkampf +2W (Proben, Angriffe, Paraden). Stufe 3: waffenloser Schaden +2W."},
+    "Karate": {"mods": [mod("defense.blockUnarmed", 2, 1), mod("dice.nahkampf", 2, 2), mod("damage.unarmed", 4, 3)], "hint": "Stufe 1: waffenloses Blocken +2W (Block ohne Schild). Stufe 2: Nahkampf +2W. Stufe 3: waffenloser Schaden +4W."},
+    "Kick-Boxen": {"mods": [mod("resist.leg", 3, 1), mod("damage.fist", 2, 2), mod("damage.leg", 2, 2), mod("defense.blockUnarmed", 3, 3)], "hint": "Stufe 1: Treffer an den Beinen +3W auf den Schadenswiderstand (KO; automatisch im Widerstandsdialog). Stufe 2: Faust- und Beinschaden +2W. Stufe 3: waffenloses Blocken +3W."},
+    "Krav Maga": {"mods": [mod("attack.knee", 2, 2), mod("damage.knee", 2, 2), mod("dice.nahkampf", 2, 3)], "hint": "Stufe 1: Nahkampf statt Blocken (Verteidigungsdialog: „Blocken mit Nahkampf“). Stufe 2: Knieangriffe +2W auf Angriff und Schaden (Angriffsart „Knie“). Stufe 3: Nahkampf +2W."},
+    "Muay Thai": {"mods": [mod("defense.blockMelee", 3, 1), mod("damage.emk", 3, 2), mod("attack.emk", 3, 3)], "hint": "Stufe 1: Blocken gegen Nahkampfangriffe +3W. Stufe 2: Ellenbogen-/Knie-/Schienbeinschaden +3W (Angriffsart wählen). Stufe 3: diese Angriffe +3W auf den Angriff."},
+    "Tae-Kwon-Do": {"mods": [mod("attack.leg", 3, 1), mod("damage.leg", 3, 2)], "hint": "Stufe 1: Beinangriffe +3W. Stufe 2: Beinschaden +3W. Stufe 3: Ein Beinangriff, der trifft, gilt als zwei Treffer an zwei Zonen (Schaden zweimal)."},
+    "ZPC (Zentrum Power Combat)": {"mods": [mod("attack.zpc", 3, 1), mod("damage.zpc", 3, 2)], "hint": "Stufe 1: Nahkampf mit dem linken Arm/Bein +3W (Option „Mit linkem Arm/Bein“ im Angriffsdialog). Stufe 2: Schaden mit dem linken Arm/Bein +3W. Stufe 3: Nahkampfangriffe dürfen mit Nahkampf pariert werden."},
+    "Sado": {"mods": [mod("dice.nahkampf", 3, 2)], "hint": "Stufe 1: Gute Treffer im Nahkampf schon je 5 Punkte Überschuss (automatisch). Stufe 2: Nahkampf +3W. Stufe 3: Nahkampf-Parade; Nahkampfwaffen werden mit Nahkampf statt Waffenkampf geführt (Fertigkeitswahl im Angriffsdialog)."},
+    "Escrima": {"mods": [mod("attack.multi", 3, 3), mod("damage.multi", 3, 3)], "hint": "Stufe 1: Parade mit Nahkampf oder Waffenkampf. Stufe 2: Nahkampf und Waffenkampf sind austauschbar (Fertigkeitswahl im Angriffsdialog, bessere Fertigkeit bei der Parade). Stufe 3: Mehrfachangriffe im Nahkampf +3W auf Angriff und Schaden."},
+    "Gun-Fu": {"mods": [mod("attack.multi", 3, 3), mod("damage.multi", 3, 3)], "hint": "Stufe 1: Parade mit Nahkampf auch mit Feuerwaffen in den Händen (Waffe im Verteidigungsdialog wählen). Stufe 2: Einhändige Feuerwaffen im Nahkampf mit Nahkampf statt Schießen (nur HM, kein Nachteil; Fertigkeitswahl im Angriffsdialog). Stufe 3: Mehrfachangriffe mit Feuerwaffen im Nahkampf +3W auf Angriff und Schaden; kompatibel mit Akimbo."},
+    "Linguist": {"hint": "Drei zusätzliche Fremdsprachen bis Stufe 3 sind kostenlos: Bei der GP-Bilanz (Charakterbogen und Charaktergenerator) werden die Kosten der drei höchsten Fremdsprachen bis Stufe 3 (2 GP je Stufe) automatisch abgezogen."},
+    "Split": {"hint": "Einsetzen öffnet den Profil-Umschalter: Körper, Attribute, Inventar, Wunden und Adrenalin bleiben gleich; Fertigkeiten, PSI-Kräfte/-Apps, Charaktermerkmale und besondere Fertigkeiten (ohne Sprachen) werden je Persönlichkeit getauscht. Jeder Split-Style-Skill schaltet eine weitere Persönlichkeit frei (mehrfach wählbar). EP für Fertigkeiten werden der gerade aktiven Persönlichkeit zugewiesen."},
+    "Ringen": {"hint": "Stufe 1: Nach einem Treffer „Clinch ansetzen“ statt Schaden – das Ziel hat Kampfnachteil (−2W auf alle Proben außer Schadenswiderstand); Befreiung per konkurrierender Stärkeprobe (Masken-/Griff-Symbol im Style-Skill-Abschnitt). Stufe 2: +3W Stärke des Halters beim Halten, er selbst bleibt unbehindert. Stufe 3: im Clinch +2W auf Angriff und Schaden gegen den Partner. Der Clinch endet durch Befreiung, Auflösen durch den Halter oder wenn ein Beteiligter ausscheidet; ein Clinch je Ringer."},
+    # (Ende STYLE_EXTRA)
+}
+
+
 def style_skills():
     X = []
 
     def ss(name, gp, ep, pre, desc, page, mods=None):
         return {"name": name, "type": "styleSkill", "img": icon("svg", "combat"),
-                "system": {"kind": "expert", "gp": gp, "ep": ep, "level": 1, "prerequisites": pre, "levels": [], "modifiers": mods or [], "description": p(desc, page)}}
+                "system": {"key": STYLE_KEYS[name], "kind": "expert", "gp": gp, "ep": ep, "level": 1, "prerequisites": pre, "levels": [], "modifiers": mods or [], "description": p(desc, page)}}
 
     data = [
         ("Aim for the Heart", 7, 15, "Fahrzeug-Fertigkeit 4; WA 3", "Gezielte Angriffe dürfen auch nicht sichtbare vitale Stellen treffen; der −2W-Malus für gezielte Fahrzeugangriffe entfällt.", 179),
@@ -345,9 +428,20 @@ def style_skills():
     }
     for name, (desc, levels) in arts.items():
         X.append({"name": name, "type": "styleSkill", "img": icon("weapons/fist", "boxing") if name == "Boxen" else icon("svg", "combat"),
-                  "system": {"kind": "kampfkunst", "gp": 5, "ep": 10, "level": 1, "prerequisites": levels[0][0],
+                  "system": {"key": STYLE_KEYS[name], "kind": "kampfkunst", "gp": 5, "ep": 10, "level": 1, "prerequisites": levels[0][0],
                              "levels": [{"prerequisites": pr, "effect": ef} for pr, ef in levels], "modifiers": [],
                              "description": p(desc + " Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen.", 186)}})
+    for x in X:
+        ex = STYLE_EXTRA.get(x["name"])
+        if not ex:
+            continue
+        sysd = x["system"]
+        if "mods" in ex:
+            sysd["modifiers"] = ex["mods"]
+        if "hint" in ex:
+            sysd["hint"] = p(ex["hint"])
+        if "uses" in ex:
+            sysd["uses"] = {"max": ex["uses"][0], "value": ex["uses"][0], "per": ex["uses"][1]}
     return X
 
 

@@ -6,6 +6,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "aimForTheHeart",
    "kind": "expert",
    "gp": 7,
    "ep": 15,
@@ -13,7 +14,8 @@
    "prerequisites": "Fahrzeug-Fertigkeit 4; WA 3",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Gezielte Angriffe dürfen auch nicht sichtbare vitale Stellen treffen; der −2W-Malus für gezielte Fahrzeugangriffe entfällt. <em class=\"nr-ref\">(NoReturn 2E, S. 179)</em></p>"
+   "description": "<p>Gezielte Angriffe dürfen auch nicht sichtbare vitale Stellen treffen; der −2W-Malus für gezielte Fahrzeugangriffe entfällt. <em class=\"nr-ref\">(NoReturn 2E, S. 179)</em></p>",
+   "hint": "<p>Gezielte Angriffe auf Fahrzeuge erhalten keinen −2W-Malus und dürfen auch nicht sichtbare vitale Stellen treffen: Bei Schaden am Fahrzeug gilt der gezielte Treffer dann als vitale Stelle (wird im Angriffsdialog/Schadenswurf automatisch berücksichtigt).</p>"
   },
   "effects": [],
   "folder": null,
@@ -26,8 +28,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -41,6 +43,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "akimbo",
    "kind": "expert",
    "gp": 7,
    "ep": 15,
@@ -48,7 +51,8 @@
    "prerequisites": "Schießen 5; WA 3",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Mehrfachangriff mit zwei Fernkampfwaffen in einem Angriffswurf. <em class=\"nr-ref\">(NoReturn 2E, S. 179)</em></p>"
+   "description": "<p>Mehrfachangriff mit zwei Fernkampfwaffen in einem Angriffswurf. <em class=\"nr-ref\">(NoReturn 2E, S. 179)</em></p>",
+   "hint": "<p>Mehrfachangriff mit zwei Fernkampfwaffen in einem Wurf: im Angriffsdialog „Mehrfachangriff“ auf 2 setzen. Es gelten der jeweils höchste Malus/niedrigste Wert; kein Adrenalin/Meditation; jedes Ziel muss sich gegen jeden Angriff verteidigen, Schaden je Treffer.</p>"
   },
   "effects": [],
   "folder": null,
@@ -61,8 +65,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -76,6 +80,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "anonymous",
    "kind": "expert",
    "gp": 7,
    "ep": 15,
@@ -83,7 +88,8 @@
    "prerequisites": "Computer 4; HA 4, WI 5",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Computeraktionen sind nicht zurückverfolgbar; Seiteneffekte ohne Probe vermieden (Sicherheitsbarrieren weiterhin). <em class=\"nr-ref\">(NoReturn 2E, S. 179)</em></p>"
+   "description": "<p>Computeraktionen sind nicht zurückverfolgbar; Seiteneffekte ohne Probe vermieden (Sicherheitsbarrieren weiterhin). <em class=\"nr-ref\">(NoReturn 2E, S. 179)</em></p>",
+   "hint": "<p>Computeraktionen sind nicht zurückverfolgbar; Seiteneffekte werden automatisch bedacht und brauchen keine Probe. Sicherheitsbarrieren erfordern weiterhin Proben. Auf Computer-Proben erscheint ein Hinweis.</p>"
   },
   "effects": [],
   "folder": null,
@@ -96,8 +102,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -111,6 +117,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "beastmaster",
    "kind": "expert",
    "gp": 5,
    "ep": 10,
@@ -118,7 +125,8 @@
    "prerequisites": "Dressieren 3; CH 4",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Kreaturen greifen zuletzt an; zwei Dressieren-Proben weniger nötig. Unkontrollierte CTs reagieren positiv. <em class=\"nr-ref\">(NoReturn 2E, S. 180)</em></p>"
+   "description": "<p>Kreaturen greifen zuletzt an; zwei Dressieren-Proben weniger nötig. Unkontrollierte CTs reagieren positiv. <em class=\"nr-ref\">(NoReturn 2E, S. 180)</em></p>",
+   "hint": "<p>Kreaturen sehen dich als Freund und greifen dich zuletzt an; zwei Dressieren-Proben weniger sind nötig, um Sturheit zu überwinden; unkontrollierte Kreaturen reagieren positiv. Die Angriffsreihenfolge bestimmt die Spielleitung.</p>"
   },
   "effects": [],
   "folder": null,
@@ -131,8 +139,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -146,6 +154,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "billyTheKid",
    "kind": "expert",
    "gp": 5,
    "ep": 10,
@@ -153,7 +162,8 @@
    "prerequisites": "Schießen 4; GE 4",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Einhändige Feuerwaffen in einer Aktion ziehen und abfeuern. <em class=\"nr-ref\">(NoReturn 2E, S. 180)</em></p>"
+   "description": "<p>Einhändige Feuerwaffen in einer Aktion ziehen und abfeuern. <em class=\"nr-ref\">(NoReturn 2E, S. 180)</em></p>",
+   "hint": "<p>Einhändige Feuerwaffen werden in einer einzigen Aktion gezogen und abgefeuert; das Ziehen kostet keine eigene Aktion. Der Angriffsdialog weist bei passenden Waffen darauf hin.</p>"
   },
   "effects": [],
   "folder": null,
@@ -166,8 +176,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -181,6 +191,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "blademaster",
    "kind": "expert",
    "gp": 7,
    "ep": 15,
@@ -188,7 +199,8 @@
    "prerequisites": "Reaktion 6, Waffenkampf 6; GE, BE, WA 4",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Parade gegen Fernkampf mit Klingenwaffe ≥ 30 cm (mit Nachteil −2W). <em class=\"nr-ref\">(NoReturn 2E, S. 180)</em></p>"
+   "description": "<p>Parade gegen Fernkampf mit Klingenwaffe ≥ 30 cm (mit Nachteil −2W). <em class=\"nr-ref\">(NoReturn 2E, S. 180)</em></p>",
+   "hint": "<p>Defensivaktion: Fernkampfangriffe lassen sich mit einer Klingenwaffe ≥ 30 cm parieren (Nachteil −2W). Im Verteidigungsdialog Waffenkampf/Nahkampf wählen und die Klingenwaffe als Parade-Waffe angeben – der Malus wird automatisch eingerechnet.</p>"
   },
   "effects": [],
   "folder": null,
@@ -201,8 +213,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -216,6 +228,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "crapGyver",
    "kind": "expert",
    "gp": 7,
    "ep": 15,
@@ -223,7 +236,8 @@
    "prerequisites": "3 Handwerk-Fertigkeiten auf 4",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Crafting-Dauer −50 % (außer Computer). <em class=\"nr-ref\">(NoReturn 2E, S. 180)</em></p>"
+   "description": "<p>Crafting-Dauer −50 % (außer Computer). <em class=\"nr-ref\">(NoReturn 2E, S. 180)</em></p>",
+   "hint": "<p>Die Crafting-Dauer sinkt um 50 % (außer bei Computer). Das System führt keine Crafting-Dauer; auf Handwerk-Proben erscheint ein Hinweis, die Dauer halbiert die Spielleitung.</p>"
   },
   "effects": [],
   "folder": null,
@@ -236,8 +250,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -251,6 +265,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "crashOverride",
    "kind": "expert",
    "gp": 5,
    "ep": 10,
@@ -258,7 +273,8 @@
    "prerequisites": "Computer 5; HA 4",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Hacken/Programmieren als Crafting mit −50 % Dauer. <em class=\"nr-ref\">(NoReturn 2E, S. 180)</em></p>"
+   "description": "<p>Hacken/Programmieren als Crafting mit −50 % Dauer. <em class=\"nr-ref\">(NoReturn 2E, S. 180)</em></p>",
+   "hint": "<p>Hacken/Programmieren zählt als Crafting; die Dauer der Computer-Proben verkürzt sich um 50 %. Das System führt keine Crafting-Dauer; die Spielleitung halbiert sie anhand des Hinweises auf der Computer-Probe.</p>"
   },
   "effects": [],
   "folder": null,
@@ -271,8 +287,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -286,6 +302,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "dejaVu",
    "kind": "expert",
    "gp": 7,
    "ep": 15,
@@ -293,7 +310,13 @@
    "prerequisites": "PSI-begabt, Willenskraft 5; WA 5",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Einmal je Sitzung ein Hinweis der SL auf kommende Ereignisse. <em class=\"nr-ref\">(NoReturn 2E, S. 181)</em></p>"
+   "description": "<p>Einmal je Sitzung ein Hinweis der SL auf kommende Ereignisse. <em class=\"nr-ref\">(NoReturn 2E, S. 181)</em></p>",
+   "hint": "<p>Einmal je Sitzung gibt die Spielleitung einen Hinweis auf kommende Ereignisse. Einsetzen verbraucht den Einsatz und meldet ihn der Spielleitung im Chat. Der Zähler wird bei Beginn einer neuen Sitzung im Item-Bogen (Einsätze) zurückgesetzt.</p>",
+   "uses": {
+    "max": 1,
+    "value": 1,
+    "per": "Sitzung"
+   }
   },
   "effects": [],
   "folder": null,
@@ -306,8 +329,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -321,6 +344,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "derDoktor",
    "kind": "expert",
    "gp": 7,
    "ep": 15,
@@ -328,7 +352,8 @@
    "prerequisites": "Medizin 4; HA 4, WI 4",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Behandlung (WI + Medizin) gibt temporäre Bonus- (4 h) oder Maluswürfel (12 h) wie Inspirieren, alternativ Adrenalin auffüllen (ca. 1 h). <em class=\"nr-ref\">(NoReturn 2E, S. 181)</em></p>"
+   "description": "<p>Behandlung (WI + Medizin) gibt temporäre Bonus- (4 h) oder Maluswürfel (12 h) wie Inspirieren, alternativ Adrenalin auffüllen (ca. 1 h). <em class=\"nr-ref\">(NoReturn 2E, S. 181)</em></p>",
+   "hint": "<p>Einsetzen: Behandlung mit WI + Medizin. Das Ergebnis gibt dem Ziel Bonuswürfel (4 h) oder Maluswürfel (12 h) wie Inspirieren (+1W je 20 Punkte) oder füllt dessen Adrenalin auf (≈ 1 h). Ziel vorher markieren; Bonus/Malus landen im Feld „Temp. Bonuswürfel/Malus“ im Reiter Kampf.</p>"
   },
   "effects": [],
   "folder": null,
@@ -341,8 +366,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -356,6 +381,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "driftKing",
    "kind": "expert",
    "gp": 5,
    "ep": 10,
@@ -376,8 +402,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -391,6 +417,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "dualWielding",
    "kind": "expert",
    "gp": 7,
    "ep": 15,
@@ -398,7 +425,8 @@
    "prerequisites": "Waffenkampf 5; WA 3",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Mehrfachangriff mit zwei Nahkampfwaffen in einem Angriffswurf. <em class=\"nr-ref\">(NoReturn 2E, S. 181)</em></p>"
+   "description": "<p>Mehrfachangriff mit zwei Nahkampfwaffen in einem Angriffswurf. <em class=\"nr-ref\">(NoReturn 2E, S. 181)</em></p>",
+   "hint": "<p>Mehrfachangriff mit zwei Nahkampfwaffen in einem Wurf: im Angriffsdialog „Mehrfachangriff“ auf 2 setzen. Kein Adrenalin/Meditation; jedes Ziel verteidigt gegen jeden Angriff einzeln.</p>"
   },
   "effects": [],
   "folder": null,
@@ -411,8 +439,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -426,6 +454,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "fastTalk",
    "kind": "expert",
    "gp": 7,
    "ep": 15,
@@ -433,7 +462,8 @@
    "prerequisites": "Überreden 5; CH 5",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Je Aktion +2W auf die folgende Sozialfertigkeit, bis zu dreimal kumulativ. <em class=\"nr-ref\">(NoReturn 2E, S. 181)</em></p>"
+   "description": "<p>Je Aktion +2W auf die folgende Sozialfertigkeit, bis zu dreimal kumulativ. <em class=\"nr-ref\">(NoReturn 2E, S. 181)</em></p>",
+   "hint": "<p>Je vorbereitender Aktion +2W auf die folgende Sozialfertigkeit, bis zu dreimal kumulativ: im Probendialog sozialer Fertigkeiten (Attribut CH) die Zahl der Aktionen eintragen.</p>"
   },
   "effects": [],
   "folder": null,
@@ -446,8 +476,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -461,6 +491,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "fistOfRage",
    "kind": "expert",
    "gp": 7,
    "ep": 15,
@@ -468,7 +499,8 @@
    "prerequisites": "Nahkampf 4; BE 4, WA 4",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Mehrfachangriff mit zwei waffenlosen Extremitäten. <em class=\"nr-ref\">(NoReturn 2E, S. 181)</em></p>"
+   "description": "<p>Mehrfachangriff mit zwei waffenlosen Extremitäten. <em class=\"nr-ref\">(NoReturn 2E, S. 181)</em></p>",
+   "hint": "<p>Mehrfachangriff mit zwei waffenlosen Extremitäten: bei waffenlosen Angriffen im Angriffsdialog „Mehrfachangriff“ auf 2 setzen (Angriffsart je Extremität wählbar).</p>"
   },
   "effects": [],
   "folder": null,
@@ -481,8 +513,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -496,6 +528,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "goldeneZunge",
    "kind": "expert",
    "gp": 7,
    "ep": 15,
@@ -503,7 +536,8 @@
    "prerequisites": "Inspirieren 4, Überreden 4; CH 5",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Soziale Proben auch in unpassenden Situationen; das angesprochene Ziel muss die Interaktion zulassen. <em class=\"nr-ref\">(NoReturn 2E, S. 181)</em></p>"
+   "description": "<p>Soziale Proben auch in unpassenden Situationen; das angesprochene Ziel muss die Interaktion zulassen. <em class=\"nr-ref\">(NoReturn 2E, S. 181)</em></p>",
+   "hint": "<p>Soziale Proben sind auch in unpassenden Situationen möglich; das angesprochene Ziel muss die Interaktion zulassen (eine Person).</p>"
   },
   "effects": [],
   "folder": null,
@@ -516,8 +550,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -531,6 +565,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "linguist",
    "kind": "expert",
    "gp": 7,
    "ep": 15,
@@ -538,7 +573,8 @@
    "prerequisites": "WI 4; drei Sprachen auf 4",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Drei zusätzliche Sprachen auf Stufe 3 kostenlos. <em class=\"nr-ref\">(NoReturn 2E, S. 181)</em></p>"
+   "description": "<p>Drei zusätzliche Sprachen auf Stufe 3 kostenlos. <em class=\"nr-ref\">(NoReturn 2E, S. 181)</em></p>",
+   "hint": "<p>Drei zusätzliche Fremdsprachen bis Stufe 3 sind kostenlos: Bei der GP-Bilanz (Charakterbogen und Charaktergenerator) werden die Kosten der drei höchsten Fremdsprachen bis Stufe 3 (2 GP je Stufe) automatisch abgezogen.</p>"
   },
   "effects": [],
   "folder": null,
@@ -551,8 +587,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -566,6 +602,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "meditation",
    "kind": "expert",
    "gp": 5,
    "ep": 10,
@@ -591,8 +628,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -606,6 +643,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "memorum",
    "kind": "expert",
    "gp": 7,
    "ep": 15,
@@ -613,7 +651,8 @@
    "prerequisites": "PSI-Kraft 6; Willenskraft 5",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Haltungskosten aller Apps der gewählten Kraft −1 (min. 0). Je Kraft einmal. <em class=\"nr-ref\">(NoReturn 2E, S. 182)</em></p>"
+   "description": "<p>Haltungskosten aller Apps der gewählten Kraft −1 (min. 0). Je Kraft einmal. <em class=\"nr-ref\">(NoReturn 2E, S. 182)</em></p>",
+   "hint": "<p>Die Haltungskosten aller Apps der gewählten PSI-Kraft sinken um 1 (mindestens 0). Die Kraft im Feld „Auswahl“ (oder im Namen in Klammern) eintragen, z. B. „Memorum [Telekinese]“. Je Kraft einmal wählbar.</p>"
   },
   "effects": [],
   "folder": null,
@@ -626,8 +665,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -641,14 +680,21 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "metamorphose",
    "kind": "expert",
    "gp": 7,
    "ep": 15,
    "level": 1,
    "prerequisites": "Pyro-, Cryo- oder Elektrokinese 6; Willenskraft 6; WI 4",
    "levels": [],
-   "modifiers": [],
-   "description": "<p>Als Aktion Körper mit dem Element überziehen: 5 Schaden bei Berührung, immun gegen das Element, −1W körperlich, +1 KS für passende Apps. <em class=\"nr-ref\">(NoReturn 2E, S. 182)</em></p>"
+   "modifiers": [
+    {
+     "target": "malus.physical",
+     "value": 1
+    }
+   ],
+   "description": "<p>Als Aktion Körper mit dem Element überziehen: 5 Schaden bei Berührung, immun gegen das Element, −1W körperlich, +1 KS für passende Apps. <em class=\"nr-ref\">(NoReturn 2E, S. 182)</em></p>",
+   "hint": "<p>Einsetzen schaltet den Zustand um: Der Körper ist mit dem Element überzogen (Elektro/Hitze/Kälte, im Feld „Auswahl“ eintragen). Berührung verursacht 5 Elementarschaden, du bist immun gegen das Element, −1W auf körperliche Aktionen (automatisch) und +1 KS für Apps der passenden Kraft (automatisch).</p>"
   },
   "effects": [],
   "folder": null,
@@ -661,8 +707,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -676,6 +722,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "mixology",
    "kind": "expert",
    "gp": 7,
    "ep": 15,
@@ -683,7 +730,8 @@
    "prerequisites": "GE 4, HA 4, WI 3",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Fertigkeit „Ambrosia“ (HA): Getränke mit Inspirieren-Bonus für zwei Stunden. <em class=\"nr-ref\">(NoReturn 2E, S. 182)</em></p>"
+   "description": "<p>Fertigkeit „Ambrosia“ (HA): Getränke mit Inspirieren-Bonus für zwei Stunden. <em class=\"nr-ref\">(NoReturn 2E, S. 182)</em></p>",
+   "hint": "<p>Einsetzen: Probe auf die Zusatzfertigkeit „Ambrosia“ (HA), die beim ersten Einsatz freigeschaltet wird. Das Getränk gibt dem Ziel für zwei Stunden Bonuswürfel wie Inspirieren (+1W je 20 Punkte); Ziel vorher markieren.</p>"
   },
   "effects": [],
   "folder": null,
@@ -696,8 +744,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -711,6 +759,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "multipleWielding",
    "kind": "expert",
    "gp": 7,
    "ep": 15,
@@ -718,7 +767,8 @@
    "prerequisites": "Dual Wielding; Mehrgliedrig (Arme)",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Mehrfachangriff mit vier Nahkampfwaffen. <em class=\"nr-ref\">(NoReturn 2E, S. 182)</em></p>"
+   "description": "<p>Mehrfachangriff mit vier Nahkampfwaffen. <em class=\"nr-ref\">(NoReturn 2E, S. 182)</em></p>",
+   "hint": "<p>Erweitert Dual Wielding auf vier Nahkampfwaffen: im Angriffsdialog „Mehrfachangriff“ bis 4. Voraussetzung Mehrgliedrig (Arme) bleibt Sache der Charaktererschaffung.</p>"
   },
   "effects": [],
   "folder": null,
@@ -731,8 +781,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -746,6 +796,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "neo",
    "kind": "expert",
    "gp": 5,
    "ep": 10,
@@ -753,7 +804,8 @@
    "prerequisites": "Computer 5; HA 3, WI 4",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Erfährt vor Computerproben Risiken und Mindestwurf und kann sich entscheiden. <em class=\"nr-ref\">(NoReturn 2E, S. 182)</em></p>"
+   "description": "<p>Erfährt vor Computerproben Risiken und Mindestwurf und kann sich entscheiden. <em class=\"nr-ref\">(NoReturn 2E, S. 182)</em></p>",
+   "hint": "<p>Die Spielleitung nennt dir vor Computerproben die Risiken und den Mindestwurf; du kannst dich noch entscheiden, die Probe abzulegen.</p>"
   },
   "effects": [],
   "folder": null,
@@ -766,8 +818,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -781,6 +833,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "petPal",
    "kind": "expert",
    "gp": 7,
    "ep": 15,
@@ -788,7 +841,8 @@
    "prerequisites": "Dressieren 3, Menschenkenntnis 2, Naturkunde 4; WI 4",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Versteht animalische Sprache in Grenzen. <em class=\"nr-ref\">(NoReturn 2E, S. 182)</em></p>"
+   "description": "<p>Versteht animalische Sprache in Grenzen. <em class=\"nr-ref\">(NoReturn 2E, S. 182)</em></p>",
+   "hint": "<p>Du verstehst animalische Sprache in Grenzen. Rein erzählerisch: Absprache mit der Spielleitung; Hinweis auf Dressieren-Proben.</p>"
   },
   "effects": [],
   "folder": null,
@@ -801,8 +855,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -816,6 +870,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "powerNap",
    "kind": "expert",
    "gp": 5,
    "ep": 10,
@@ -823,7 +878,8 @@
    "prerequisites": "Ausdauer 3, Willenskraft 3; KO 3",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Halbstündiges Nickerchen erholt vollständig (max. 4 Tage am Stück); füllt den Regenerationspool mit Nahrung. <em class=\"nr-ref\">(NoReturn 2E, S. 183)</em></p>"
+   "description": "<p>Halbstündiges Nickerchen erholt vollständig (max. 4 Tage am Stück); füllt den Regenerationspool mit Nahrung. <em class=\"nr-ref\">(NoReturn 2E, S. 183)</em></p>",
+   "hint": "<p>Einsetzen: Ein halbstündiges Nickerchen erholt vollständig (höchstens 4 Tage am Stück) und füllt – mit Nahrung – den Regenerationspool. Wendet die Rast an (Adrenalin, Meditation, Regenerationspool, Defensivaktionen).</p>"
   },
   "effects": [],
   "folder": null,
@@ -836,8 +892,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -851,6 +907,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "parkour",
    "kind": "expert",
    "gp": 7,
    "ep": 15,
@@ -858,7 +915,8 @@
    "prerequisites": "Akrobatik 3, Klettern 3, Springen 3; BE 3",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Klettern- und Springen-Proben unter MW 30 gelingen automatisch; beim Sprungschaden Springen addieren. <em class=\"nr-ref\">(NoReturn 2E, S. 183)</em></p>"
+   "description": "<p>Klettern- und Springen-Proben unter MW 30 gelingen automatisch; beim Sprungschaden Springen addieren. <em class=\"nr-ref\">(NoReturn 2E, S. 183)</em></p>",
+   "hint": "<p>Klettern- und Springen-Proben mit Mindestwurf unter 30 gelingen automatisch. Beim Sprung-/Sturzschaden den Springen-Wert addieren (manuelle Schadenseingabe).</p>"
   },
   "effects": [],
   "folder": null,
@@ -871,8 +929,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -886,6 +944,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "psionischeVielfaeltigkeit",
    "kind": "expert",
    "gp": 7,
    "ep": 15,
@@ -893,7 +952,8 @@
    "prerequisites": "3 PSI-Kräfte auf 3",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Weitere Ziele einer App möglich, je Ziel −1 effektive KS. <em class=\"nr-ref\">(NoReturn 2E, S. 183)</em></p>"
+   "description": "<p>Weitere Ziele einer App möglich, je Ziel −1 effektive KS. <em class=\"nr-ref\">(NoReturn 2E, S. 183)</em></p>",
+   "hint": "<p>Eine App kann zusätzliche Ziele erfassen; je zusätzlichem Ziel sinkt die effektive Kraftstufe (KS) um 1. Im PSI-Dialog das Feld „Zusätzliche Ziele“ ausfüllen.</p>"
   },
   "effects": [],
   "folder": null,
@@ -906,8 +966,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -921,6 +981,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "quadrupleAkimbo",
    "kind": "expert",
    "gp": 7,
    "ep": 15,
@@ -928,7 +989,8 @@
    "prerequisites": "Akimbo; Mehrgliedrig (Arme)",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Mehrfachangriff mit vier Fernkampfwaffen. <em class=\"nr-ref\">(NoReturn 2E, S. 183)</em></p>"
+   "description": "<p>Mehrfachangriff mit vier Fernkampfwaffen. <em class=\"nr-ref\">(NoReturn 2E, S. 183)</em></p>",
+   "hint": "<p>Erweitert Akimbo auf vier Fernkampfwaffen: im Angriffsdialog „Mehrfachangriff“ bis 4. Voraussetzung Mehrgliedrig (Arme) bleibt Sache der Charaktererschaffung.</p>"
   },
   "effects": [],
   "folder": null,
@@ -941,8 +1003,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -956,6 +1018,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "rageOfGods",
    "kind": "expert",
    "gp": 5,
    "ep": 10,
@@ -963,7 +1026,8 @@
    "prerequisites": "Adrenalin 3; Demigod",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Adrenalin auf Stärke(-Fertigkeiten) gibt zusätzlich +3W. <em class=\"nr-ref\">(NoReturn 2E, S. 183)</em></p>"
+   "description": "<p>Adrenalin auf Stärke(-Fertigkeiten) gibt zusätzlich +3W. <em class=\"nr-ref\">(NoReturn 2E, S. 183)</em></p>",
+   "hint": "<p>Adrenalin auf Stärke(-Fertigkeiten) gibt zusätzlich +3W. Beim Adrenalineinsatz auf Proben mit Stärke wird der Bonus automatisch eingerechnet.</p>"
   },
   "effects": [],
   "folder": null,
@@ -976,8 +1040,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -991,6 +1055,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "recoilMastery",
    "kind": "expert",
    "gp": 5,
    "ep": 10,
@@ -1011,8 +1076,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -1026,6 +1091,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "ruettelflug",
    "kind": "expert",
    "gp": 5,
    "ep": 10,
@@ -1033,7 +1099,8 @@
    "prerequisites": "Flügel; Ausdauer 4",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Fliegen auf der Stelle; Ausdauer-Probe = Dauer in KR. <em class=\"nr-ref\">(NoReturn 2E, S. 183)</em></p>"
+   "description": "<p>Fliegen auf der Stelle; Ausdauer-Probe = Dauer in KR. <em class=\"nr-ref\">(NoReturn 2E, S. 183)</em></p>",
+   "hint": "<p>Einsetzen: Ausdauer-Probe; das Ergebnis entspricht der Dauer des Schwebens in Kampfrunden (Fliegen auf der Stelle).</p>"
   },
   "effects": [],
   "folder": null,
@@ -1046,8 +1113,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -1061,6 +1128,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "shieldMaster",
    "kind": "expert",
    "gp": 7,
    "ep": 15,
@@ -1068,7 +1136,8 @@
    "prerequisites": "Blocken 4; BE 3, WA 3",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Mehrfachangriffe mit einer Defensivaktion blocken (ohne Adrenalin). <em class=\"nr-ref\">(NoReturn 2E, S. 183)</em></p>"
+   "description": "<p>Mehrfachangriffe mit einer Defensivaktion blocken (ohne Adrenalin). <em class=\"nr-ref\">(NoReturn 2E, S. 183)</em></p>",
+   "hint": "<p>Beim Blocken gegen einen Mehrfachangriff genügt eine Defensivaktion (ein Block-Malus) für alle Teilangriffe; Adrenalin ist dabei nicht erlaubt. Im Verteidigungsdialog je Teilangriff „Verteidigen“ wählen – die Folgewürfe werden als dieselbe Defensivaktion gewertet.</p>"
   },
   "effects": [],
   "folder": null,
@@ -1081,8 +1150,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -1096,6 +1165,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "sollbruchstelle",
    "kind": "expert",
    "gp": 5,
    "ep": 10,
@@ -1103,7 +1173,8 @@
    "prerequisites": "Bodenfahrzeuge 4; WI 3",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Schaden am Fahrzeug senkt dessen Manöverwert um 1 ohne vitalen Treffer. <em class=\"nr-ref\">(NoReturn 2E, S. 183)</em></p>"
+   "description": "<p>Schaden am Fahrzeug senkt dessen Manöverwert um 1 ohne vitalen Treffer. <em class=\"nr-ref\">(NoReturn 2E, S. 183)</em></p>",
+   "hint": "<p>Angriff aufs Manöver eines Fahrzeugs ohne vitale Stelle: Im Angriffsdialog „Angriff aufs Manöver“ wählen. Verursacht der Angriff Schaden am Fahrzeug, sinkt dessen Manöverwert um 1 (Fahrzeugbogen, Feld Manöver).</p>"
   },
   "effects": [],
   "folder": null,
@@ -1116,8 +1187,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -1131,6 +1202,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "split",
    "kind": "expert",
    "gp": 10,
    "ep": 20,
@@ -1138,7 +1210,8 @@
    "prerequisites": "Passend zum Hintergrund",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Weitere Persönlichkeit mit eigenen Fertigkeiten, PSI und Merkmalen (mehrfach wählbar). <em class=\"nr-ref\">(NoReturn 2E, S. 184)</em></p>"
+   "description": "<p>Weitere Persönlichkeit mit eigenen Fertigkeiten, PSI und Merkmalen (mehrfach wählbar). <em class=\"nr-ref\">(NoReturn 2E, S. 184)</em></p>",
+   "hint": "<p>Einsetzen öffnet den Profil-Umschalter: Körper, Attribute, Inventar, Wunden und Adrenalin bleiben gleich; Fertigkeiten, PSI-Kräfte/-Apps, Charaktermerkmale und besondere Fertigkeiten (ohne Sprachen) werden je Persönlichkeit getauscht. Jeder Split-Style-Skill schaltet eine weitere Persönlichkeit frei (mehrfach wählbar). EP für Fertigkeiten werden der gerade aktiven Persönlichkeit zugewiesen.</p>"
   },
   "effects": [],
   "folder": null,
@@ -1151,8 +1224,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -1166,6 +1239,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "sterneKueche",
    "kind": "expert",
    "gp": 7,
    "ep": 15,
@@ -1173,7 +1247,8 @@
    "prerequisites": "GE 4, HA 4, WI 3",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Fertigkeit „Kochen“ (HA): Speisen mit Inspirieren-Bonus für zwei Stunden. <em class=\"nr-ref\">(NoReturn 2E, S. 185)</em></p>"
+   "description": "<p>Fertigkeit „Kochen“ (HA): Speisen mit Inspirieren-Bonus für zwei Stunden. <em class=\"nr-ref\">(NoReturn 2E, S. 185)</em></p>",
+   "hint": "<p>Einsetzen: Probe auf die Zusatzfertigkeit „Kochen“ (HA), die beim ersten Einsatz freigeschaltet wird. Die Speise gibt dem Ziel für zwei Stunden Bonuswürfel wie Inspirieren (+1W je 20 Punkte); Ziel vorher markieren.</p>"
   },
   "effects": [],
   "folder": null,
@@ -1186,8 +1261,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -1201,6 +1276,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "stormOfFists",
    "kind": "expert",
    "gp": 7,
    "ep": 15,
@@ -1208,7 +1284,8 @@
    "prerequisites": "Fist of Rage; Mehrgliedrig (Arme)",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Mehrfachangriff mit vier waffenlosen Extremitäten. <em class=\"nr-ref\">(NoReturn 2E, S. 185)</em></p>"
+   "description": "<p>Mehrfachangriff mit vier waffenlosen Extremitäten. <em class=\"nr-ref\">(NoReturn 2E, S. 185)</em></p>",
+   "hint": "<p>Erweitert Fist of Rage auf vier waffenlose Extremitäten: im Angriffsdialog „Mehrfachangriff“ bis 4.</p>"
   },
   "effects": [],
   "folder": null,
@@ -1221,8 +1298,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -1236,6 +1313,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "trickster",
    "kind": "expert",
    "gp": 5,
    "ep": 10,
@@ -1243,7 +1321,8 @@
    "prerequisites": "Taschendiebstahl 3, Heimlichkeit 3; GE 4, WA 3",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Taschenspielertricks (MW 15); Entfesseln, Verstecken oder Taschendiebstahl einmal je KR ohne Aktion. <em class=\"nr-ref\">(NoReturn 2E, S. 185)</em></p>"
+   "description": "<p>Taschenspielertricks (MW 15); Entfesseln, Verstecken oder Taschendiebstahl einmal je KR ohne Aktion. <em class=\"nr-ref\">(NoReturn 2E, S. 185)</em></p>",
+   "hint": "<p>Taschenspielertricks (MW 15). Entfesseln, Verstecken oder Taschendiebstahl einmal je Kampfrunde ohne Aktion.</p>"
   },
   "effects": [],
   "folder": null,
@@ -1256,8 +1335,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -1271,6 +1350,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "triggerFinger",
    "kind": "expert",
    "gp": 5,
    "ep": 10,
@@ -1291,8 +1371,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -1306,6 +1386,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "trustyEngineer",
    "kind": "expert",
    "gp": 5,
    "ep": 10,
@@ -1313,7 +1394,8 @@
    "prerequisites": "HA 3, WI 3",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Crafting-Mindestwurf −5 (max. zwei Engineers). <em class=\"nr-ref\">(NoReturn 2E, S. 185)</em></p>"
+   "description": "<p>Crafting-Mindestwurf −5 (max. zwei Engineers). <em class=\"nr-ref\">(NoReturn 2E, S. 185)</em></p>",
+   "hint": "<p>Crafting-Mindestwurf −5 (auch als Helfer; höchstens zwei Engineers, also max. −10). Im Probendialog von Handwerk-Proben die Zahl der Engineers eintragen.</p>"
   },
   "effects": [],
   "folder": null,
@@ -1326,8 +1408,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -1341,6 +1423,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "waffenspezialisierung",
    "kind": "expert",
    "gp": 5,
    "ep": 10,
@@ -1361,8 +1444,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -1376,6 +1459,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "aikido",
    "kind": "kampfkunst",
    "gp": 5,
    "ep": 10,
@@ -1396,7 +1480,8 @@
     }
    ],
    "modifiers": [],
-   "description": "<p>Defensive japanische Kampfkunst. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>"
+   "description": "<p>Defensive japanische Kampfkunst. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>",
+   "hint": "<p>Stufe 1: Nahkampf darf Nahkampfangriffe parieren (im Verteidigungsdialog freigeschaltet). Stufe 2: du rollst immer ab – Sturzschaden −20 (manuelle Schadenseingabe, vom Schaden abziehen). Stufe 3: Jede erfolgreiche Parade im Nahkampf verursacht beim Angreifer ST + 10 Punkte Schaden an einer zufälligen Zone (automatische Schadenskarte).</p>"
   },
   "effects": [],
   "folder": null,
@@ -1409,8 +1494,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -1424,6 +1509,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "baKaiDo",
    "kind": "kampfkunst",
    "gp": 5,
    "ep": 10,
@@ -1443,8 +1529,20 @@
      "effect": "Nahkampfschaden +5W."
     }
    ],
-   "modifiers": [],
-   "description": "<p>Tierreich-Kampfkunst. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>"
+   "modifiers": [
+    {
+     "target": "attack.claw",
+     "value": 3,
+     "level": 2
+    },
+    {
+     "target": "damage.melee",
+     "value": 5,
+     "level": 3
+    }
+   ],
+   "description": "<p>Tierreich-Kampfkunst. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>",
+   "hint": "<p>Stufe 1: Beißen im Nahkampf ohne Kampfnachteil (Hinweis im Angriffsdialog). Stufe 2: Krallenangriffe +3W (Angriffsart „Krallen“ im Angriffsdialog wählen). Stufe 3: Nahkampfschaden +5W, mit und ohne natürliche Waffen.</p>"
   },
   "effects": [],
   "folder": null,
@@ -1457,8 +1555,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -1472,6 +1570,7 @@
   "type": "styleSkill",
   "img": "icons/weapons/fist/boxing-gloves.webp",
   "system": {
+   "key": "boxen",
    "kind": "kampfkunst",
    "gp": 5,
    "ep": 10,
@@ -1491,8 +1590,20 @@
      "effect": "Faust-Treffer = zwei Treffer an zwei Zonen."
     }
    ],
-   "modifiers": [],
-   "description": "<p>Klassischer Faustkampf. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>"
+   "modifiers": [
+    {
+     "target": "damage.fist",
+     "value": 3,
+     "level": 1
+    },
+    {
+     "target": "defense.blockUnarmed",
+     "value": 3,
+     "level": 2
+    }
+   ],
+   "description": "<p>Klassischer Faustkampf. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>",
+   "hint": "<p>Stufe 1: Faustschaden +3W (Angriffsart „Faust“). Stufe 2: waffenloses Blocken +3W (Verteidigungsdialog, Block ohne Schild). Stufe 3: Ein Faustangriff, der trifft, gilt als zwei Treffer an zwei Zonen – der Schaden wird zweimal gewürfelt.</p>"
   },
   "effects": [],
   "folder": null,
@@ -1505,8 +1616,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -1520,6 +1631,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "capoeira",
    "kind": "kampfkunst",
    "gp": 5,
    "ep": 10,
@@ -1539,8 +1651,25 @@
      "effect": "Beinangriffe +3W."
     }
    ],
-   "modifiers": [],
-   "description": "<p>Brasilianischer Kampftanz. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>"
+   "modifiers": [
+    {
+     "target": "defense.dodgeMelee",
+     "value": 3,
+     "level": 1
+    },
+    {
+     "target": "damage.leg",
+     "value": 3,
+     "level": 2
+    },
+    {
+     "target": "attack.leg",
+     "value": 3,
+     "level": 3
+    }
+   ],
+   "description": "<p>Brasilianischer Kampftanz. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>",
+   "hint": "<p>Stufe 1: Ausweichen gegen Nahkampfangriffe +3W (automatisch). Stufe 2: Beinschaden +3W (Angriffsart „Tritt/Knie/Schienbein“). Stufe 3: Beinangriffe +3W auf den Angriff.</p>"
   },
   "effects": [],
   "folder": null,
@@ -1553,8 +1682,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -1568,6 +1697,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "escrima",
    "kind": "kampfkunst",
    "gp": 5,
    "ep": 10,
@@ -1587,8 +1717,20 @@
      "effect": "Mehrfachangriffe +3W Angriff und Schaden."
     }
    ],
-   "modifiers": [],
-   "description": "<p>Philippinische Stock- und waffenlose Kunst. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>"
+   "modifiers": [
+    {
+     "target": "attack.multi",
+     "value": 3,
+     "level": 3
+    },
+    {
+     "target": "damage.multi",
+     "value": 3,
+     "level": 3
+    }
+   ],
+   "description": "<p>Philippinische Stock- und waffenlose Kunst. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>",
+   "hint": "<p>Stufe 1: Parade mit Nahkampf oder Waffenkampf. Stufe 2: Nahkampf und Waffenkampf sind austauschbar (Fertigkeitswahl im Angriffsdialog, bessere Fertigkeit bei der Parade). Stufe 3: Mehrfachangriffe im Nahkampf +3W auf Angriff und Schaden.</p>"
   },
   "effects": [],
   "folder": null,
@@ -1601,8 +1743,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -1616,6 +1758,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "gunFu",
    "kind": "kampfkunst",
    "gp": 5,
    "ep": 10,
@@ -1635,8 +1778,20 @@
      "effect": "Mehrfachangriffe im Nahkampf +3W; kompatibel mit Akimbo."
     }
    ],
-   "modifiers": [],
-   "description": "<p>Feuerwaffen als Verlängerung der Arme. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>"
+   "modifiers": [
+    {
+     "target": "attack.multi",
+     "value": 3,
+     "level": 3
+    },
+    {
+     "target": "damage.multi",
+     "value": 3,
+     "level": 3
+    }
+   ],
+   "description": "<p>Feuerwaffen als Verlängerung der Arme. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>",
+   "hint": "<p>Stufe 1: Parade mit Nahkampf auch mit Feuerwaffen in den Händen (Waffe im Verteidigungsdialog wählen). Stufe 2: Einhändige Feuerwaffen im Nahkampf mit Nahkampf statt Schießen (nur HM, kein Nachteil; Fertigkeitswahl im Angriffsdialog). Stufe 3: Mehrfachangriffe mit Feuerwaffen im Nahkampf +3W auf Angriff und Schaden; kompatibel mit Akimbo.</p>"
   },
   "effects": [],
   "folder": null,
@@ -1649,8 +1804,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -1664,6 +1819,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "jiuJitsu",
    "kind": "kampfkunst",
    "gp": 5,
    "ep": 10,
@@ -1683,8 +1839,20 @@
      "effect": "Waffenloser Schaden +2W."
     }
    ],
-   "modifiers": [],
-   "description": "<p>Fließende waffenlose Kunst der Samurai. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>"
+   "modifiers": [
+    {
+     "target": "dice.nahkampf",
+     "value": 2,
+     "level": 2
+    },
+    {
+     "target": "damage.unarmed",
+     "value": 2,
+     "level": 3
+    }
+   ],
+   "description": "<p>Fließende waffenlose Kunst der Samurai. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>",
+   "hint": "<p>Stufe 1: Nahkampf darf Nahkampfangriffe parieren. Stufe 2: Nahkampf +2W (Proben, Angriffe, Paraden). Stufe 3: waffenloser Schaden +2W.</p>"
   },
   "effects": [],
   "folder": null,
@@ -1697,8 +1865,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -1712,6 +1880,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "karate",
    "kind": "kampfkunst",
    "gp": 5,
    "ep": 10,
@@ -1731,8 +1900,25 @@
      "effect": "Waffenloser Schaden +4W."
     }
    ],
-   "modifiers": [],
-   "description": "<p>Traditioneller unbewaffneter Kampf. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>"
+   "modifiers": [
+    {
+     "target": "defense.blockUnarmed",
+     "value": 2,
+     "level": 1
+    },
+    {
+     "target": "dice.nahkampf",
+     "value": 2,
+     "level": 2
+    },
+    {
+     "target": "damage.unarmed",
+     "value": 4,
+     "level": 3
+    }
+   ],
+   "description": "<p>Traditioneller unbewaffneter Kampf. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>",
+   "hint": "<p>Stufe 1: waffenloses Blocken +2W (Block ohne Schild). Stufe 2: Nahkampf +2W. Stufe 3: waffenloser Schaden +4W.</p>"
   },
   "effects": [],
   "folder": null,
@@ -1745,8 +1931,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -1760,6 +1946,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "kenjutsu",
    "kind": "kampfkunst",
    "gp": 5,
    "ep": 10,
@@ -1779,8 +1966,20 @@
      "effect": "Erfolgreiche Parade verursacht Klingenschaden am Angreifer."
     }
    ],
-   "modifiers": [],
-   "description": "<p>Japanische Schwertkunst. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>"
+   "modifiers": [
+    {
+     "target": "attack.blade",
+     "value": 2,
+     "level": 2
+    },
+    {
+     "target": "defense.parryBlade",
+     "value": 2,
+     "level": 2
+    }
+   ],
+   "description": "<p>Japanische Schwertkunst. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>",
+   "hint": "<p>Stufe 1: Schwert ziehen und in derselben Aktion angreifen (Hinweis im Angriffsdialog). Stufe 2: Angriffe und Paraden mit Klingenwaffen +2W (automatisch). Stufe 3: Jede erfolgreiche Parade mit einer Klingenwaffe verursacht deren Schaden an einer zufälligen Zone des Angreifers (automatische Schadenskarte).</p>"
   },
   "effects": [],
   "folder": null,
@@ -1793,8 +1992,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -1808,6 +2007,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "kickBoxen",
    "kind": "kampfkunst",
    "gp": 5,
    "ep": 10,
@@ -1827,8 +2027,30 @@
      "effect": "Waffenlos Blocken +3W."
     }
    ],
-   "modifiers": [],
-   "description": "<p>Schläge und Tritte. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>"
+   "modifiers": [
+    {
+     "target": "resist.leg",
+     "value": 3,
+     "level": 1
+    },
+    {
+     "target": "damage.fist",
+     "value": 2,
+     "level": 2
+    },
+    {
+     "target": "damage.leg",
+     "value": 2,
+     "level": 2
+    },
+    {
+     "target": "defense.blockUnarmed",
+     "value": 3,
+     "level": 3
+    }
+   ],
+   "description": "<p>Schläge und Tritte. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>",
+   "hint": "<p>Stufe 1: Treffer an den Beinen +3W auf den Schadenswiderstand (KO; automatisch im Widerstandsdialog). Stufe 2: Faust- und Beinschaden +2W. Stufe 3: waffenloses Blocken +3W.</p>"
   },
   "effects": [],
   "folder": null,
@@ -1841,8 +2063,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -1856,6 +2078,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "kravMaga",
    "kind": "kampfkunst",
    "gp": 5,
    "ep": 10,
@@ -1875,8 +2098,25 @@
      "effect": "Nahkampf +2W."
     }
    ],
-   "modifiers": [],
-   "description": "<p>Schnell und tödlich. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>"
+   "modifiers": [
+    {
+     "target": "attack.knee",
+     "value": 2,
+     "level": 2
+    },
+    {
+     "target": "damage.knee",
+     "value": 2,
+     "level": 2
+    },
+    {
+     "target": "dice.nahkampf",
+     "value": 2,
+     "level": 3
+    }
+   ],
+   "description": "<p>Schnell und tödlich. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>",
+   "hint": "<p>Stufe 1: Nahkampf statt Blocken (Verteidigungsdialog: „Blocken mit Nahkampf“). Stufe 2: Knieangriffe +2W auf Angriff und Schaden (Angriffsart „Knie“). Stufe 3: Nahkampf +2W.</p>"
   },
   "effects": [],
   "folder": null,
@@ -1889,8 +2129,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -1904,6 +2144,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "muayThai",
    "kind": "kampfkunst",
    "gp": 5,
    "ep": 10,
@@ -1923,8 +2164,25 @@
      "effect": "Diese Angriffe +3W."
     }
    ],
-   "modifiers": [],
-   "description": "<p>Fäuste, Ellenbogen, Knie, Schienbeine. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>"
+   "modifiers": [
+    {
+     "target": "defense.blockMelee",
+     "value": 3,
+     "level": 1
+    },
+    {
+     "target": "damage.emk",
+     "value": 3,
+     "level": 2
+    },
+    {
+     "target": "attack.emk",
+     "value": 3,
+     "level": 3
+    }
+   ],
+   "description": "<p>Fäuste, Ellenbogen, Knie, Schienbeine. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>",
+   "hint": "<p>Stufe 1: Blocken gegen Nahkampfangriffe +3W. Stufe 2: Ellenbogen-/Knie-/Schienbeinschaden +3W (Angriffsart wählen). Stufe 3: diese Angriffe +3W auf den Angriff.</p>"
   },
   "effects": [],
   "folder": null,
@@ -1937,8 +2195,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -1952,6 +2210,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "ringen",
    "kind": "kampfkunst",
    "gp": 5,
    "ep": 10,
@@ -1972,7 +2231,8 @@
     }
    ],
    "modifiers": [],
-   "description": "<p>Körperkontakt und Hebel. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>"
+   "description": "<p>Körperkontakt und Hebel. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>",
+   "hint": "<p>Stufe 1: Nach einem Treffer „Clinch ansetzen“ statt Schaden – das Ziel hat Kampfnachteil (−2W auf alle Proben außer Schadenswiderstand); Befreiung per konkurrierender Stärkeprobe (Masken-/Griff-Symbol im Style-Skill-Abschnitt). Stufe 2: +3W Stärke des Halters beim Halten, er selbst bleibt unbehindert. Stufe 3: im Clinch +2W auf Angriff und Schaden gegen den Partner. Der Clinch endet durch Befreiung, Auflösen durch den Halter oder wenn ein Beteiligter ausscheidet; ein Clinch je Ringer.</p>"
   },
   "effects": [],
   "folder": null,
@@ -1985,8 +2245,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -2000,6 +2260,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "sado",
    "kind": "kampfkunst",
    "gp": 5,
    "ep": 10,
@@ -2019,8 +2280,15 @@
      "effect": "Parade mit Nahkampf; Nahkampfwaffen mit Nahkampf führen."
     }
    ],
-   "modifiers": [],
-   "description": "<p>Kampfkunst der „Zeugen“. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>"
+   "modifiers": [
+    {
+     "target": "dice.nahkampf",
+     "value": 3,
+     "level": 2
+    }
+   ],
+   "description": "<p>Kampfkunst der „Zeugen“. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>",
+   "hint": "<p>Stufe 1: Gute Treffer im Nahkampf schon je 5 Punkte Überschuss (automatisch). Stufe 2: Nahkampf +3W. Stufe 3: Nahkampf-Parade; Nahkampfwaffen werden mit Nahkampf statt Waffenkampf geführt (Fertigkeitswahl im Angriffsdialog).</p>"
   },
   "effects": [],
   "folder": null,
@@ -2033,8 +2301,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -2048,6 +2316,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "taeKwonDo",
    "kind": "kampfkunst",
    "gp": 5,
    "ep": 10,
@@ -2067,8 +2336,20 @@
      "effect": "Bein-Treffer = zwei Treffer an zwei Zonen."
     }
    ],
-   "modifiers": [],
-   "description": "<p>Koreanische Tritttechniken. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>"
+   "modifiers": [
+    {
+     "target": "attack.leg",
+     "value": 3,
+     "level": 1
+    },
+    {
+     "target": "damage.leg",
+     "value": 3,
+     "level": 2
+    }
+   ],
+   "description": "<p>Koreanische Tritttechniken. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>",
+   "hint": "<p>Stufe 1: Beinangriffe +3W. Stufe 2: Beinschaden +3W. Stufe 3: Ein Beinangriff, der trifft, gilt als zwei Treffer an zwei Zonen (Schaden zweimal).</p>"
   },
   "effects": [],
   "folder": null,
@@ -2081,8 +2362,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -2096,6 +2377,7 @@
   "type": "styleSkill",
   "img": "icons/svg/combat.svg",
   "system": {
+   "key": "zpc",
    "kind": "kampfkunst",
    "gp": 5,
    "ep": 10,
@@ -2115,8 +2397,20 @@
      "effect": "Paraden mit Nahkampf."
     }
    ],
-   "modifiers": [],
-   "description": "<p>Militärische Kampfkunst des Zentrums. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>"
+   "modifiers": [
+    {
+     "target": "attack.zpc",
+     "value": 3,
+     "level": 1
+    },
+    {
+     "target": "damage.zpc",
+     "value": 3,
+     "level": 2
+    }
+   ],
+   "description": "<p>Militärische Kampfkunst des Zentrums. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>",
+   "hint": "<p>Stufe 1: Nahkampf mit dem linken Arm/Bein +3W (Option „Mit linkem Arm/Bein“ im Angriffsdialog). Stufe 2: Schaden mit dem linken Arm/Bein +3W. Stufe 3: Nahkampfangriffe dürfen mit Nahkampf pariert werden.</p>"
   },
   "effects": [],
   "folder": null,
@@ -2129,8 +2423,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1795115309516,
-   "modifiedTime": 1795115309516,
+   "createdTime": 1795200329514,
+   "modifiedTime": 1795200329514,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,

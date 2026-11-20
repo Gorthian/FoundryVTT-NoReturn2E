@@ -152,7 +152,9 @@
       "nonLethal": "Non-lethal (stun)",
       "temp": "Temporary penalty",
       "psi": "Gathering power / holding",
-      "total": "Total penalty"
+      "total": "Total penalty",
+      "tempBonus": "Temp. bonus dice",
+      "tempBonusHint": "Temporary bonus dice (Inspire, The Doctor, Mixology, Star Cuisine); applied to checks, attacks and defense (not to damage resistance). Reset by hand when the duration ends."
     },
     "Zone": {
       "Damage": "Damage in this zone",
@@ -236,7 +238,8 @@
       "HitZone": "Roll hit zone",
       "Resist": "Resist",
       "Through": "Through",
-      "Retaliation": "retaliation"
+      "Retaliation": "retaliation",
+      "Block": "Block"
     },
     "Damage": {
       "Manual": "Take damage",
@@ -414,7 +417,110 @@
       "Kind": "Kind",
       "Prerequisites": "Prerequisites",
       "Level": "Level",
-      "Levels": "Levels"
+      "Levels": "Levels",
+      "AttackSkill": "Skill",
+      "Limb": "Strike type",
+      "ZpcLimb": "With left arm/leg (ZPC)",
+      "MultiAllowed": "Allowed by style skills up to",
+      "MultiExceeded": "More attacks than the style skills allow (max. {n}) – only by agreement with the GM",
+      "AttackBonus": "+{n}D attack (style)",
+      "DamageBonus": "+{n}D damage (style)",
+      "DefenseBonus": "+{n}D defense (style)",
+      "DefendMulti": "Attack {i} of {n} of the multi-attack",
+      "BlademasterNote": "Blademaster: parry ranged attacks with a blade ≥ 30 cm (disadvantage −2D)",
+      "NoRangedParry": "Ranged attacks can only be parried with Blademaster (GM decides)",
+      "SameDefenseAction": "Same defensive action as against the previous attack of the multi-attack",
+      "Kampfkunst": "Martial art",
+      "BlockWithNahkampf": "Block using Melee (Krav Maga)",
+      "NahkampfParryNeedsStyle": "Parrying with Melee requires a matching martial art (Aikido, Jiu Jitsu, Escrima, Gun-Fu, Sado, ZPC).",
+      "NahkampfParryVia": "Melee parry possible through",
+      "StyleSkill": "Style",
+      "Via": {
+        "escrima": "Escrima",
+        "sado": "Sado",
+        "gunFu": "Gun-Fu"
+      },
+      "Key": "Key",
+      "KeyHint": "Stable key the game mechanics use to recognise this style skill (do not change).",
+      "Uses": "Uses",
+      "UsesHint": "Remaining / maximum (0 = unlimited) and period, e.g. “session”.",
+      "UsesPer": "Period",
+      "Hint": "Hint text",
+      "NoUsesLeft": "{name}: no uses left.",
+      "UsesLeft": "Uses: {n}/{max} {per}",
+      "AimForTheHeartNote": "Aim for the Heart: no penalty for aimed vehicle attacks, hidden vital spots may be targeted",
+      "BillyHint": "Billy the Kid: the one-handed weapon may be drawn and fired in the same action (drawing costs no extra action).",
+      "Skill": {
+        "anonymous": "Anonymous: computer actions cannot be traced; side effects are avoided without a check (security barriers still require checks).",
+        "neo": "Neo: the GM reveals the risks and the target number before the check; you may still change your mind.",
+        "crashOverride": "Crash-Override: hacking/programming counts as crafting; duration is reduced by 50%.",
+        "beastmaster": "Beastmaster: creatures regard you as a friend and attack you last; two fewer Training checks are needed; uncontrolled creatures react positively.",
+        "petPal": "Pet Pal: you understand animal speech within limits (agree with the GM).",
+        "crapGyver": "CrapGyver: crafting duration is reduced by 50% (except Computer).",
+        "trustyLabel": "Trusty Engineers (target number −5 each, max 2)",
+        "trustyApplied": "Trusty Engineer: target number −{n}",
+        "fastTalkLabel": "Fast Talk: preparatory actions (+2D each, max 3)",
+        "fastTalkApplied": "Fast Talk: +{n}D",
+        "goldeneZunge": "Golden Tongue: social checks are possible even in unsuitable situations; the addressed target must allow the interaction.",
+        "trickster": "Trickster: sleight-of-hand tricks (target number 15); escaping, hiding or pickpocketing once per combat round without an action.",
+        "parkour": "Parkour: Climbing and Jumping checks with a target number below 30 succeed automatically.",
+        "parkourAuto": "Parkour: succeeds automatically (target number {mw} < 30).",
+        "rageApplied": "Rage of Gods: adrenaline on Strength grants an additional +3D"
+      },
+      "MemorumShort": "Memorum",
+      "Variant": "Selection",
+      "VariantHint": "Chosen PSI power, element or weapon type (e.g. Telekinesis, heat, pistol).",
+      "ExtraTargets": "Additional targets (Psionic Versatility)",
+      "ExtraTargetsHint": "Each additional target lowers the effective power level (KS) by 1.",
+      "MetamorphoseKs": "Metamorphosis: +1 KS for apps of this power",
+      "PhysicalMalus": "−{n}D on physical actions (style)",
+      "StateOn": "State: active",
+      "StateOff": "State: inactive",
+      "Sollbruch": "Attack the maneuver (breaking point)",
+      "SollbruchHint": "No vital spot; damage to the vehicle lowers its maneuver value by 1.",
+      "SollbruchNote": "Breaking point: attack on the maneuver – on damage maneuver −1, no vital spot",
+      "ManeuverLoss": "Maneuver value −1 (breaking point)",
+      "TempBonus": "+{n}D temporary bonus",
+      "Buff": {
+        "Doctor": "The Doctor: treatment",
+        "Result": "Result {total} → {n} dice (1 per 20 points)",
+        "Hint": "Target tokens and apply the desired effect. The duration does not expire automatically – reset the value on the Combat tab afterwards.",
+        "Bonus": "+{n}D bonus ({h} h)",
+        "Malus": "−{n}D penalty ({h} h)",
+        "Adrenalin": "Refill adrenaline (≈ {h} h)",
+        "SkillMissing": "The skill “{name}” was not found in the compendium.",
+        "Applied": "{source}: effect applied.",
+        "Delegated": "{source}: effect handed to the GM.",
+        "Unavailable": "{source}: target unavailable or no GM active."
+      },
+      "HoverDuration": "Hovering: stay aloft for {n} combat rounds",
+      "PowerNap": "Power Nap",
+      "PowerNapConfirm": "A half-hour nap fully restores (for at most 4 days in a row) and – with food – refills the regeneration pool. Apply now?",
+      "PowerNapDone": "{name}: Power Nap – adrenaline, meditation and regeneration pool are refilled.",
+      "BaKaiDoBite": "Ba-Kai-Do 1: biting in melee carries no combat disadvantage.",
+      "KenjutsuDraw": "Kenjutsu 1: the sword may be drawn and used to attack in the same action.",
+      "TwoHits": "A hit counts as two hits on two zones (two damage rolls)",
+      "EscrimaSwap": "Escrima: {skill} instead of the chosen skill (interchangeable)",
+      "LegResist": "Kick-Boxing: hits to the legs +{n}D on damage resistance",
+      "SplitDefaultName": "Personality {n}",
+      "SplitActive": "active",
+      "SplitTitle": "Split: switch personality",
+      "SplitHint": "Body, attributes, inventory, wounds and adrenaline stay the same. Skills, PSI powers/apps, character traits and special skills (without languages) belong to the personality's profile and are swapped on switching. Each Split style skill unlocks one more personality.",
+      "SplitSwitchTo": "Switch to",
+      "SplitRename": "Rename (target personality)",
+      "SplitApply": "Apply",
+      "SplitSwitched": "{actor}: personality “{name}” is now active.",
+      "ClinchBonus": "Wrestling 3: in the clinch +2D on attack and damage",
+      "ClinchStart": "Start clinch (instead of damage)",
+      "ClinchBreak": "Clinch: break free / release",
+      "ClinchBusy": "One of the fighters is already in a clinch (one clinch per wrestler).",
+      "ClinchStarted": "{holder} holds {target} in a clinch: {target} is at a combat disadvantage (−2D on all checks except damage resistance).",
+      "ClinchEnded": "The clinch between {a} and {b} is released.",
+      "ClinchOut": "Clinch between {a} and {b} ended because a participant is out (note for the GM).",
+      "ClinchBrokenFree": "{a} breaks free of the clinch with {b}.",
+      "ClinchHeld": "{a} cannot break free, {b} keeps holding.",
+      "ClinchHold": "Hold clinch (Strength)",
+      "ClinchOtherTarget": "In a clinch: attacking a target other than the clinch partner (allowed, clinch persists)."
     },
     "Species": {
       "TP": "HP per zone",
@@ -477,7 +583,8 @@
     "Modifier": {
       "Hint": "Modifiers apply automatically to the owner.",
       "None": "No modifiers.",
-      "Add": "Add modifier"
+      "Add": "Add modifier",
+      "FromLevel": "Applies from level (martial arts only; 0 = always)"
     },
     "Vehicle": {
       "Category": "Type",
@@ -1444,6 +1551,65 @@
           "ruestungsbau": "Skill: Armor Smithing",
           "sicherheitstechnik": "Skill: Security Systems",
           "waffenbau": "Skill: Weapon Smithing"
+        },
+        "attack": {
+          "fist": "Attack: punches (bonus dice)",
+          "leg": "Attack: leg attacks (bonus dice)",
+          "emk": "Attack: elbow/knee/shin (bonus dice)",
+          "knee": "Attack: knee attacks (bonus dice)",
+          "claw": "Attack: claws (bonus dice)",
+          "blade": "Attack: bladed weapons (bonus dice)",
+          "multi": "Attack: multi-attack (bonus dice)",
+          "zpc": "Attack: left arm/leg, ZPC (bonus dice)"
+        },
+        "damage": {
+          "melee": "Damage: all melee attacks (dice)",
+          "unarmed": "Damage: unarmed (dice)",
+          "fist": "Damage: punches (dice)",
+          "leg": "Damage: leg attacks (dice)",
+          "emk": "Damage: elbow/knee/shin (dice)",
+          "knee": "Damage: knee attacks (dice)",
+          "multi": "Damage: multi-attack (dice)",
+          "zpc": "Damage: left arm/leg, ZPC (dice)",
+          "blade": "Damage: bladed weapons (dice)"
+        },
+        "defense": {
+          "blockUnarmed": "Defense: unarmed block (bonus dice)",
+          "blockMelee": "Defense: block against melee (bonus dice)",
+          "dodgeMelee": "Defense: dodge against melee (bonus dice)",
+          "parryBlade": "Defense: parry with bladed weapon (bonus dice)"
+        },
+        "resist": {
+          "leg": "Damage resistance: hits to the legs (bonus dice)"
+        },
+        "malus": {
+          "physical": "Penalty: physical actions (dice)"
+        }
+      },
+      "strikeLimbs": {
+        "fist": {
+          "label": "Fist"
+        },
+        "elbow": {
+          "label": "Elbow"
+        },
+        "knee": {
+          "label": "Knee"
+        },
+        "shin": {
+          "label": "Shin"
+        },
+        "leg": {
+          "label": "Kick (foot/leg)"
+        },
+        "claw": {
+          "label": "Claws"
+        },
+        "bite": {
+          "label": "Bite"
+        },
+        "head": {
+          "label": "Head/horn"
         }
       }
     },

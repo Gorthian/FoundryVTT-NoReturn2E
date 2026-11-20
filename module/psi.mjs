@@ -19,6 +19,12 @@ export function resolveKsText(text, ks) {
   });
 }
 
+/** Metamorphose: +1 KS für Apps der Kraft, deren Element der Körper gerade angenommen hat. */
+function metamorphoseKs(actor, app) {
+  const active = (actor.system.styleVariants?.metamorphose ?? []).some(v => v.active && NR.psiPowerFromText(v.variant) === app.system.power);
+  return active ? 1 : 0;
+}
+
 function powerFor(actor, app) {
   return actor.items.find(i => i.type === "psiPower" && i.system.key === app.system.power);
 }
@@ -40,7 +46,9 @@ export async function castPsiApp(actor, app) {
     woundMalus: actor.getMalus({ psi: true }),
     defaultKs: collected > 0 ? 0 : 1,
     defaultProbe: Math.min(level, 3),
-    boosterKs: 0
+    boosterKs: 0,
+    hold: actor.system.psiHold(app), memorum: actor.system.psiHold(app) < s.hold,
+    multiTarget: actor.styleLevel("psionischeVielfaeltigkeit") > 0, metamorphose: metamorphoseKs(actor, app) > 0
   });
 
   const opts = await DialogV2.wait({
@@ -56,6 +64,7 @@ export async function castPsiApp(actor, app) {
           ks: Number(f.ks.value) || 0,
           probe: Number(f.probe.value) || 0,
           booster: Number(f.booster.value) || 0,
+          extraTargets: Math.max(0, Number(f.extraTargets?.value) || 0),
           useAdrenalin: f.useAdrenalin?.checked ?? false,
           useMeditation: f.useMeditation?.checked ?? false
         };
@@ -72,7 +81,7 @@ export async function castPsiApp(actor, app) {
         const probe = Number(f.probe?.value) || 0;
         const comp = pool - ks - probe;
         const out = el.querySelector("[data-psi-summary]");
-        const finalKs = ks + collected + (Number(f.booster?.value) || 0);
+        const finalKs = Math.max(0, ks + collected + (Number(f.booster?.value) || 0) + metamorphoseKs(actor, app) - (Number(f.extraTargets?.value) || 0));
         if (out) {
           out.innerHTML = comp < 0
             ? `<span class="nr-bad">${game.i18n.format("NR.Psi.TooMany", { pool })}</span>`
@@ -92,7 +101,9 @@ export async function castPsiApp(actor, app) {
   if (opts.useAdrenalin && await actor.spendAdrenalin()) pool += actor.system.adrenalinBonus;
   if (opts.useMeditation && await actor.spendAdrenalin("meditation")) pool += Math.min(5, actor.system.meditationMax);
   const comp = Math.max(0, pool - opts.ks - opts.probe);
-  const ks = Math.max(1, opts.ks + collected + opts.booster);
+  // Metamorphose: +1 KS für Apps der gewählten Kraft; Psionische Vielfältigkeit: −1 effektive KS je zusätzlichem Ziel
+  const meta = metamorphoseKs(actor, app);
+  const ks = Math.max(1, opts.ks + collected + opts.booster + meta - opts.extraTargets);
 
   // Probe: gewählte Würfel, ein Hazard-Di, Mali durch Wunden verringern die Probewürfel (1-Würfel-Regel)
   const malus = actor.getMalus({ psi: true });
@@ -119,7 +130,8 @@ export async function castPsiApp(actor, app) {
   const content2 = await renderTemplate("systems/noreturn/templates/chat/psi-card.hbs", {
     app, power, ks, comp, total, lo, hi, success, probe: opts.probe, malus, pool,
     dice: diceSummary(res.roll), effectHtml, description: s.effect ? "" : await enrich(s.description, app),
-    fail, held: success && s.hold > 0, hold: s.hold, targets: Array.from(game.user.targets).map(t => ({ uuid: t.document.uuid, name: t.name })),
+    extraTargets: opts.extraTargets, meta,
+    fail, held: success && s.hold > 0, hold: actor.system.psiHold(app), targets: Array.from(game.user.targets).map(t => ({ uuid: t.document.uuid, name: t.name })),
     damage: damagePayload
   });
   const msgData = {

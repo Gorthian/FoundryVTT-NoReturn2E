@@ -11,6 +11,22 @@
   <p class="nr-hint">{{localize "NR.Combat.NoTargets"}}</p>
   {{/if}}
 
+  {{#if skillChoice}}
+  <div class="form-group">
+    <label>{{localize "NR.Style.AttackSkill"}}</label>
+    <select name="skillKey">{{#each skillOptions as |o|}}<option value="{{o.key}}" {{#if (eq o.key ../bestSkill)}}selected{{/if}}>{{o.label}}</option>{{/each}}</select>
+  </div>
+  {{/if}}
+  {{#if limbs}}
+  <div class="form-group">
+    <label>{{localize "NR.Style.Limb"}}</label>
+    <select name="limb">{{#each limbs as |l|}}<option value="{{l.key}}" {{#if l.selected}}selected{{/if}}>{{l.label}}</option>{{/each}}</select>
+  </div>
+  {{/if}}
+  {{#if zpcAvailable}}<div class="form-group"><label>{{localize "NR.Style.ZpcLimb"}}</label><input type="checkbox" name="zpc"></div>{{/if}}
+  {{#if sollbruchAvailable}}<div class="form-group"><label data-tooltip="{{localize 'NR.Style.SollbruchHint'}}">{{localize "NR.Style.Sollbruch"}}</label><input type="checkbox" name="sollbruch"></div>{{/if}}
+  {{#each styleHints as |h|}}<p class="nr-hint"><i class="fa-solid fa-star"></i> {{h}}</p>{{/each}}
+
   {{#if modes.length}}
   <div class="form-group">
     <label>{{localize "NR.Weapon.Mode"}}</label>
@@ -64,6 +80,7 @@
     <label data-tooltip="{{localize 'NR.Combat.MultiHint'}}">{{localize "NR.Combat.MultiAttack"}}</label>
     <input type="number" name="multi" value="1" min="1" max="4">
   </div>
+  {{#if (gt maxMulti 1)}}<p class="nr-hint"><i class="fa-solid fa-star"></i> {{localize "NR.Style.MultiAllowed"}}: {{maxMulti}}</p>{{/if}}
   <div class="form-group"><label>{{localize "NR.Roll.BonusDice"}}</label><input type="number" name="bonusDice" value="0"></div>
   <div class="form-group"><label>{{localize "NR.Roll.MalusDice"}}</label><input type="number" name="malusDice" value="0" min="0"></div>
   <div class="form-group"><label data-tooltip="{{localize 'NR.Roll.DisadvantageHint'}}">{{localize "NR.Roll.Disadvantages"}}</label><input type="number" name="disadvantages" value="0" min="0"></div>

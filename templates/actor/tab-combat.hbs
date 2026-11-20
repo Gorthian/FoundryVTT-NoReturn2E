@@ -48,6 +48,7 @@
         <label>{{localize "NR.Malus.wounds"}}</label><span class="nr-derived">−{{system.malus.wounds}}W</span>
         <label>{{localize "NR.Malus.nonLethal"}}</label><span><input type="number" name="system.nonLethal" value="{{system.nonLethal}}" min="0"> <span class="nr-derived">−{{system.malus.nonLethal}}W</span></span>
         <label>{{localize "NR.Malus.temp"}}</label><span><input type="number" name="system.tempMalus" value="{{system.tempMalus}}"></span>
+        <label data-tooltip="{{localize 'NR.Malus.tempBonusHint'}}">{{localize "NR.Malus.tempBonus"}}</label><span><input type="number" name="system.tempBonus" value="{{system.tempBonus}}" min="0"></span>
         <label>{{localize "NR.Malus.psi"}}</label><span class="nr-derived">−{{system.malus.psiCollect}}W / −{{system.malus.hold}}W</span>
         <label>{{localize "NR.Malus.total"}}</label><span class="nr-derived strong">−{{system.malus.total}}W</span>
         <label>{{localize "NR.Combat.Defenses"}}</label><span><span class="nr-derived">{{system.combat.defenses}}</span> <a data-action="resetDefenses" data-tooltip="{{localize 'NR.Combat.ResetDefenses'}}"><i class="fa-solid fa-rotate-left"></i></a></span>

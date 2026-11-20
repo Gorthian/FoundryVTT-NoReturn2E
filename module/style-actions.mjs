@@ -1,0 +1,190 @@
+import { applyChatMode, rollPool } from "./dice/pool.mjs";
+import { applyBuffTo } from "./socket.mjs";
+
+/**
+ * Aktive Style-Skills, die eine Probe mit anschließender Wirkung auf Ziele verbinden
+ * (Der Doktor, Mixology, Sterne-Küche, Rüttelflug, Power Nap).
+ */
+
+const esc = s => foundry.utils.escapeHTML?.(String(s)) ?? String(s);
+
+/** Ziele der Wirkung: markierte Tokens, sonst der Akteur selbst. */
+function buffTargets(actor) {
+  const targets = Array.from(game.user.targets).filter(t => t.actor);
+  if (targets.length) return targets.map(t => ({ uuid: t.actor.uuid, name: t.name }));
+  return [{ uuid: actor.uuid, name: actor.name }];
+}
+
+/**
+ * Chatkarte mit Buttons „Bonus/Malus/Adrenalin auf Ziel anwenden“.
+ * Bonus-/Maluswürfel wirken wie Inspirieren: +1 Würfel je 20 Punkte Probenergebnis.
+ * @param {Actor} actor
+ * @param {object} cfg
+ * @param {string} cfg.source           Name des Style-Skills
+ * @param {number} cfg.total            Probenergebnis
+ * @param {{kind: string, hours: number}[]} cfg.options  kind: bonus | malus | adrenalin
+ */
+export async function postBuffCard(actor, { source, total, options }) {
+  const n = Math.floor(total / 20);
+  const t = (key, data) => game.i18n.format(`NR.Style.Buff.${key}`, data);
+  const targets = buffTargets(actor);
+  const rows = targets.map(tg => {
+    const buttons = options.map(o => {
+      if (o.kind !== "adrenalin" && n < 1) return "";
+      const label = o.kind === "bonus" ? t("Bonus", { n, h: o.hours }) : o.kind === "malus" ? t("Malus", { n, h: o.hours }) : t("Adrenalin", { h: o.hours });
+      const icon = o.kind === "bonus" ? "fa-arrow-up" : o.kind === "malus" ? "fa-arrow-down" : "fa-bolt";
+      return `<button type="button" data-nr-action="styleBuff" data-target-uuid="${esc(tg.uuid)}" data-kind="${o.kind}" data-n="${n}" data-hours="${o.hours}" data-source="${esc(source)}"><i class="fa-solid ${icon}"></i> ${esc(label)}</button>`;
+    }).join("");
+    return `<div class="nr-target"><span class="nr-target-name"><i class="fa-solid fa-bullseye"></i> ${esc(tg.name)}</span>${buttons}</div>`;
+  }).join("");
+  const content = `<div class="nr-card"><header class="nr-card-head"><h3>${esc(source)}</h3><div class="nr-card-sub">${esc(t("Result", { total, n }))}</div></header>
+    <p class="nr-hint">${esc(t("Hint"))}</p><div class="nr-targets">${rows}</div></div>`;
+  const msgData = { speaker: ChatMessage.getSpeaker({ actor }), content };
+  applyChatMode(msgData);
+  return ChatMessage.create(msgData);
+}
+
+/** Der Doktor (S. 181): Behandlung (WI + Medizin) gibt Bonus- (4 h) oder Maluswürfel (12 h) oder füllt Adrenalin auf (≈ 1 h). */
+export async function useDoctor(actor) {
+  const res = await actor.rollSkill("medizin");
+  if (!res || res.auto) return null;
+  return postBuffCard(actor, {
+    source: game.i18n.localize("NR.Style.Buff.Doctor"), total: res.total,
+    options: [{ kind: "bonus", hours: 4 }, { kind: "malus", hours: 12 }, { kind: "adrenalin", hours: 1 }]
+  });
+}
+
+/**
+ * Mixology/Sterne-Küche: Zusatzfertigkeit „Ambrosia“ bzw. „Kochen“ (HA) – wird beim ersten Einsatz aus dem Compendium
+ * freigeschaltet. Das Ergebnis gibt Bonuswürfel wie Inspirieren für zwei Stunden.
+ */
+export async function useCraftedBuff(actor, { skillName, source }) {
+  let skill = actor.items.find(i => i.type === "skill" && i.name === skillName);
+  if (!skill) {
+    const pack = game.packs.get("noreturn.fertigkeiten");
+    const doc = (await pack?.getDocuments())?.find(d => d.name === skillName);
+    if (!doc) return ui.notifications.warn(game.i18n.format("NR.Style.Buff.SkillMissing", { name: skillName }));
+    [skill] = await actor.createEmbeddedDocuments("Item", [game.items.fromCompendium(doc)]);
+  }
+  const res = await actor.rollCustomSkill(skill);
+  if (!res || res.auto) return null;
+  return postBuffCard(actor, { source, total: res.total, options: [{ kind: "bonus", hours: 2 }] });
+}
+
+/** Rüttelflug (S. 183): Ausdauer-Probe; das Ergebnis entspricht der Dauer in Kampfrunden. */
+export async function useHover(actor) {
+  const res = await actor.rollSkill("ausdauer");
+  if (!res || res.auto) return null;
+  const msgData = {
+    speaker: ChatMessage.getSpeaker({ actor }),
+    content: `<div class="nr-card"><p class="nr-result good"><i class="fa-solid fa-feather"></i> ${esc(game.i18n.format("NR.Style.HoverDuration", { n: res.total }))}</p></div>`
+  };
+  applyChatMode(msgData);
+  return ChatMessage.create(msgData);
+}
+
+/** Power Nap (S. 183): Ein halbstündiges Nickerchen erholt vollständig (höchstens 4 Tage am Stück). */
+export async function usePowerNap(actor) {
+  const ok = await foundry.applications.api.DialogV2.confirm({
+    window: { title: game.i18n.localize("NR.Style.PowerNap") },
+    content: `<p>${game.i18n.localize("NR.Style.PowerNapConfirm")}</p>`
+  });
+  if (!ok) return null;
+  await actor.rest();
+  const msgData = {
+    speaker: ChatMessage.getSpeaker({ actor }),
+    content: `<div class="nr-card"><p class="nr-result good"><i class="fa-solid fa-bed"></i> ${esc(game.i18n.format("NR.Style.PowerNapDone", { name: actor.name }))}</p></div>`
+  };
+  applyChatMode(msgData);
+  return ChatMessage.create(msgData);
+}
+
+/* -------------------------------------------- */
+/*  Split (S. 184): Persönlichkeitsprofile        */
+/* -------------------------------------------- */
+
+
+/**
+ * Split als Profil-Umschalter: Körper, Attribute, Inventar, Wunden und Adrenalin bleiben gemeinsam; Fertigkeiten,
+ * PSI-Kräfte/-Apps, Merkmale und besondere Fertigkeiten gehören je Persönlichkeit zum Profil.
+ * Die Profile liegen im Flag `noreturn.split`; jeder Split-Style-Skill schaltet eine weitere Persönlichkeit frei.
+ */
+export async function useSplit(actor) {
+  const count = 1 + actor.items.filter(i => i.type === "styleSkill" && i.system.key === "split").length;
+  const data = foundry.utils.deepClone(actor.getFlag("noreturn", "split") ?? {});
+  data.active ??= 0;
+  data.sets ??= [];
+  data.names ??= [];
+  const name = i => data.names[i] || game.i18n.format("NR.Style.SplitDefaultName", { n: i + 1 });
+  const options = Array.from({ length: count }, (_, i) => `<option value="${i}" ${i === data.active ? "selected" : ""}>${esc(name(i))}${i === data.active ? ` (${esc(game.i18n.localize("NR.Style.SplitActive"))})` : ""}</option>`).join("");
+  const res = await foundry.applications.api.DialogV2.prompt({
+    window: { title: game.i18n.localize("NR.Style.SplitTitle") },
+    content: `<p class="nr-hint">${esc(game.i18n.localize("NR.Style.SplitHint"))}</p>
+      <div class="form-group"><label>${esc(game.i18n.localize("NR.Style.SplitSwitchTo"))}</label><select name="target">${options}</select></div>
+      <div class="form-group"><label>${esc(game.i18n.localize("NR.Style.SplitRename"))}</label><input type="text" name="rename" placeholder="${esc(name(data.active))}"></div>`,
+    ok: { label: game.i18n.localize("NR.Style.SplitApply"), callback: (event, button) => ({ target: Number(button.form.elements.target.value), rename: button.form.elements.rename.value.trim() }) },
+    rejectClose: false
+  }).catch(() => null);
+  if (!res) return null;
+
+  const active = await actor.switchPersonality(res.target, res.rename);
+  data.active = active;
+  data.names = actor.getFlag("noreturn", "split")?.names ?? data.names;
+  const msgData = {
+    speaker: ChatMessage.getSpeaker({ actor }),
+    content: `<div class="nr-card"><p class="nr-result"><i class="fa-solid fa-masks-theater"></i> ${esc(game.i18n.format("NR.Style.SplitSwitched", { actor: actor.name, name: name(data.active) }))}</p></div>`
+  };
+  applyChatMode(msgData);
+  return ChatMessage.create(msgData);
+}
+
+/* -------------------------------------------- */
+/*  Ringen: Clinch                                */
+/* -------------------------------------------- */
+
+const note = (actor, html) => {
+  const msgData = { speaker: ChatMessage.getSpeaker({ actor }), content: `<div class="nr-card"><p class="nr-result"><i class="fa-solid fa-hands-holding"></i> ${html}</p></div>` };
+  applyChatMode(msgData);
+  return ChatMessage.create(msgData);
+};
+
+/** Clinch ansetzen (Ringen 1): Statt Schaden hält der Angreifer das Ziel; ein Clinch je Ringer. */
+export async function startClinch(defense) {
+  const holder = await fromUuid(defense.attack.actorUuid);
+  const target = (await fromUuid(defense.defender.tokenUuid))?.actor ?? await fromUuid(defense.defender.actorUuid);
+  if (!holder || !target) return null;
+  if (holder.getFlag("noreturn", "clinch") || target.getFlag("noreturn", "clinch")) {
+    return ui.notifications.warn(game.i18n.localize("NR.Style.ClinchBusy"));
+  }
+  await applyBuffTo(holder.uuid, { kind: "clinch", partnerUuid: target.uuid, holder: true });
+  await applyBuffTo(target.uuid, { kind: "clinch", partnerUuid: holder.uuid, holder: false });
+  return note(holder, esc(game.i18n.format("NR.Style.ClinchStarted", { holder: holder.name, target: target.name })));
+}
+
+/** Clinch beenden (auf beiden Seiten). */
+export async function endClinch(actor, reasonKey = "NR.Style.ClinchEnded") {
+  const c = actor.getFlag("noreturn", "clinch");
+  if (!c) return null;
+  await applyBuffTo(actor.uuid, { kind: "clinchEnd" });
+  const partner = await fromUuid(c.partnerUuid);
+  if (partner) await applyBuffTo(partner.uuid, { kind: "clinchEnd" });
+  return note(actor, esc(game.i18n.format(reasonKey, { a: actor.name, b: partner?.name ?? "?" })));
+}
+
+/**
+ * Befreien (Gehaltener): konkurrierende Stärkeprobe gegen den Halter (Ringen 2: +3W für den Halter).
+ * Der Halter kann den Clinch jederzeit auflösen.
+ */
+export async function breakClinch(actor) {
+  const c = actor.getFlag("noreturn", "clinch");
+  if (!c) return null;
+  if (c.holder) return endClinch(actor);
+  const holder = await fromUuid(c.partnerUuid);
+  if (!holder) return endClinch(actor);
+  const mine = await actor.rollAttribute("st", { skipDialog: true, mw: 0 });
+  if (!mine) return null;
+  const bonus = holder.styleLevel("ringen") >= 2 ? 3 : 0;
+  const theirs = await rollPool({ actor: holder, label: game.i18n.localize("NR.Style.ClinchHold"), dice: holder.system.attr.st.total, bonusDice: bonus, malusDice: holder.getMalus() });
+  if (mine.total > theirs.total) return endClinch(actor, "NR.Style.ClinchBrokenFree");
+  return note(actor, esc(game.i18n.format("NR.Style.ClinchHeld", { a: actor.name, b: holder.name })));
+}
