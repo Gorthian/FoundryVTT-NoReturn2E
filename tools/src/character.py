@@ -334,6 +334,7 @@ STYLE_EXTRA = {
     "Sterne-Küche": {"hint": "Einsetzen: Probe auf die Zusatzfertigkeit „Kochen“ (HA), die beim ersten Einsatz freigeschaltet wird. Die Speise gibt dem Ziel für zwei Stunden Bonuswürfel wie Inspirieren (+1W je 20 Punkte); Ziel vorher markieren."},
     "Rüttelflug": {"hint": "Einsetzen: Ausdauer-Probe; das Ergebnis entspricht der Dauer des Schwebens in Kampfrunden (Fliegen auf der Stelle)."},
     "Power Nap": {"hint": "Einsetzen: Ein halbstündiges Nickerchen erholt vollständig (höchstens 4 Tage am Stück) und füllt – mit Nahrung – den Regenerationspool. Wendet die Rast an (Adrenalin, Meditation, Regenerationspool, Defensivaktionen)."},
+    "Déjà-vu": {"uses": (1, "Sitzung"), "hint": "Einmal je Sitzung gibt die Spielleitung einen Hinweis auf kommende Ereignisse. Einsetzen verbraucht den Einsatz und meldet ihn der Spielleitung im Chat. Der Zähler wird bei Beginn einer neuen Sitzung im Item-Bogen (Einsätze) zurückgesetzt."},
     # (Ende STYLE_EXTRA)
 }
 
