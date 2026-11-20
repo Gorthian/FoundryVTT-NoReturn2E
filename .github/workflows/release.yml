@@ -1,25 +1,77 @@
-# Baut beim Veröffentlichen eines GitHub-Release (Tag z. B. "v1.0.1")
-# das Foundry-Paket und hängt system.json + noreturn.zip an den Release an.
-# Foundry-Manifest-URL: .../releases/latest/download/system.json
+# Erzeugt ein Release (Tag, system.json, noreturn.zip) für die Installation/Updates in Foundry/The Forge.
+#
+#  - Manuell: Actions -> "Release" -> "Run workflow" -> bump wählen (patch/minor/major)
+#    oder eine genaue Version angeben (z. B. 1.2.0). Version wird in system.json hochgezählt
+#    und nach main committet, danach wird getaggt und das Release gebaut.
+#  - Alternativ: ein Tag "vX.Y.Z" pushen; dann wird nur gebaut und veröffentlicht.
+#
+# Foundry-Manifest-URL: https://github.com/<owner>/<repo>/releases/latest/download/system.json
 name: Release
 
 on:
-  release:
-    types: [published]
+  workflow_dispatch:
+    inputs:
+      bump:
+        description: "Versionssprung (wird ignoriert, wenn 'version' gesetzt ist)"
+        type: choice
+        options: [patch, minor, major]
+        default: patch
+      version:
+        description: "Genaue Version, z. B. 1.2.0 (optional)"
+        type: string
+        required: false
+  push:
+    tags: ["v*"]
 
 permissions:
   contents: write
 
+concurrency:
+  group: release
+  cancel-in-progress: false
+
 jobs:
-  build:
+  release:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'workflow_dispatch' && 'main' || github.ref }}
+          fetch-depth: 0
 
-      - name: Version und Download-URL aus dem Tag setzen
+      - name: Version bestimmen
+        id: v
+        env:
+          EVENT: ${{ github.event_name }}
+          IN_VERSION: ${{ inputs.version }}
+          IN_BUMP: ${{ inputs.bump }}
         run: |
-          TAG="${GITHUB_REF_NAME}"
-          VERSION="${TAG#v}"
+          if [ "$EVENT" = "push" ]; then
+            VERSION="${GITHUB_REF_NAME#v}"
+          elif [ -n "$IN_VERSION" ]; then
+            VERSION="${IN_VERSION#v}"
+          else
+            CUR=$(jq -r .version system.json)
+            IFS=. read -r MA MI PA <<< "$CUR"
+            case "$IN_BUMP" in
+              major) MA=$((MA+1)); MI=0; PA=0 ;;
+              minor) MI=$((MI+1)); PA=0 ;;
+              *)     PA=$((PA+1)) ;;
+            esac
+            VERSION="$MA.$MI.$PA"
+          fi
+          [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || { echo "Ungültige Version: $VERSION"; exit 1; }
+          if git rev-parse -q --verify "refs/tags/v$VERSION" > /dev/null && [ "$EVENT" != "push" ]; then
+            echo "Tag v$VERSION existiert bereits"; exit 1
+          fi
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "tag=v$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: system.json aktualisieren
+        env:
+          VERSION: ${{ steps.v.outputs.version }}
+          TAG: ${{ steps.v.outputs.tag }}
+        run: |
           DOWNLOAD="https://github.com/${GITHUB_REPOSITORY}/releases/download/${TAG}/noreturn.zip"
           jq --arg v "$VERSION" --arg d "$DOWNLOAD" '.version = $v | .download = $d' system.json > system.tmp
           mv system.tmp system.json
@@ -40,9 +92,22 @@ jobs:
             lang module styles templates packs \
             -x "packs/*/LOCK" "packs/*/LOG" "packs/*/LOG.old"
 
-      - name: An Release anhängen
+      - name: Versionsänderung nach main committen
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add system.json
+          git commit -m "Release ${{ steps.v.outputs.tag }}" || echo "system.json unverändert"
+          git push origin HEAD:main
+
+      - name: Release veröffentlichen
         uses: softprops/action-gh-release@v2
         with:
+          tag_name: ${{ steps.v.outputs.tag }}
+          target_commitish: ${{ github.event_name == 'workflow_dispatch' && 'main' || github.sha }}
+          generate_release_notes: true
+          make_latest: true
           files: |
             system.json
             noreturn.zip
