@@ -56,7 +56,11 @@ export class NRCharacterGenerator extends HandlebarsApplicationMixin(Application
   ];
 
   constructor(options = {}) {
-    super(options);
+    const { actor = null, ...rest } = options;
+    if (actor) rest.id = `${NRCharacterGenerator.DEFAULT_OPTIONS.id}-${actor.id}`;
+    super(rest);
+    /** Bearbeitungsmodus: bestehender Actor, der umgebaut wird (sonst null = neuer Charakter). */
+    this.actor = actor;
     this.gen = {
       step: 0, name: "", concept: "", gender: "", age: "", img: "icons/svg/mystery-man.svg", biography: "",
       powerLevel: "standard", speciesId: null, mutantAttrs: [],
@@ -66,6 +70,11 @@ export class NRCharacterGenerator extends HandlebarsApplicationMixin(Application
       cart: {}, moneyGp: 0, traits: [], butterfly: { red: null, white: null, choice: "", choice2: "" }, shopFilter: "waffen", shopSearch: ""
     };
     this.data = null;
+  }
+
+  /** @override */
+  get title() {
+    return this.actor ? game.i18n.format("NR.Gen.EditTitle", { name: this.actor.name }) : super.title;
   }
 
   /* -------------------------------------------- */
@@ -198,6 +207,8 @@ export class NRCharacterGenerator extends HandlebarsApplicationMixin(Application
     // Geld
     let money = s.moneyGp * level.money;
     if (restricted) money = Math.floor(money / 2);
+    // Umbau: vorhandenes Geld des Actors, nur die Änderung der GP-Zuteilung wirkt sich aus
+    if (this.actor) money = (Number(this.actor.system.money) || 0) + (s.moneyGp - (this._baseline?.moneyGp ?? 0)) * level.money;
     let cartCost = 0;
     for (const [u, q] of Object.entries(s.cart)) cartCost += (d.byId.get(u)?.system.price ?? 0) * q;
 
@@ -401,7 +412,7 @@ export class NRCharacterGenerator extends HandlebarsApplicationMixin(Application
     const allButterfly = Object.entries(NR.butterflyEffects).filter(([k]) => k).map(([k, v]) => ({ key: k, label: v.label, skills: v.skills.map(x => NR.skills[x].label).join(", "), rolled: butterflyOptions.includes(k), selected: b.choice === k, selected2: b.choice2 === k }));
 
     Object.assign(ctx, {
-      s, c, d, sp, steps, step: s.step, stepId: stepDef[s.step].id, isFirst: s.step === 0, isLast: s.step === stepDef.length - 1,
+      isEdit: !!this.actor, unmanaged: this._baseline?.unmanaged ?? [], s, c, d, sp, steps, step: s.step, stepId: stepDef[s.step].id, isFirst: s.step === 0, isLast: s.step === stepDef.length - 1,
       config: NR, powerLevels: Object.entries(NR.powerLevels).map(([k, v]) => ({ key: k, ...v, selected: s.powerLevel === k })),
       species: d.species.map(x => ({ doc: x, uuid: x.uuid, selected: x.uuid === s.speciesId, mods: (x.system.modifiers ?? []).map(m => `${NR.modifierTargets[m.target] ?? m.target} ${m.value > 0 ? "+" : ""}${m.value}`).join(", ") })),
       attrChoices: Object.entries(NR.attributes).map(([k, a]) => ({ key: k, label: a.label, selected: s.mutantAttrs.includes(k), weak: s.weakAttrs.includes(k) })),
@@ -622,15 +633,24 @@ export class NRCharacterGenerator extends HandlebarsApplicationMixin(Application
     doc?.sheet.render(true);
   }
 
-  /** Charakter anlegen. */
+  /** Charakter anlegen bzw. (Umbau) den bestehenden Actor aktualisieren. */
   static async #onCreate() {
     const c = this._compute();
+    const edit = !!this.actor;
     if (c.issues.length) {
       const ok = await DialogV2.confirm({
         window: { title: game.i18n.localize("NR.Gen.Title") },
-        content: `<p>${game.i18n.localize("NR.Gen.CreateAnyway")}</p><ul>${c.issues.map(i => `<li>${i.msg}</li>`).join("")}</ul>`
+        content: `<p>${game.i18n.localize(edit ? "NR.Gen.ApplyAnyway" : "NR.Gen.CreateAnyway")}</p><ul>${c.issues.map(i => `<li>${i.msg}</li>`).join("")}</ul>`
       });
       if (!ok) return;
+    }
+    if (edit) {
+      if (!this.actor.isOwner) return ui.notifications.error(game.i18n.localize("NR.Gen.NoEditPermission"));
+      await this.updateActor(c);
+      ui.notifications.info(game.i18n.format("NR.Gen.Updated", { name: this.actor.name }));
+      this.actor.sheet.render(true);
+      this.close();
+      return;
     }
     if (!game.user.can("ACTOR_CREATE")) return ui.notifications.error(game.i18n.localize("NR.Gen.NoPermission"));
     const actor = await this.createActor(c);
@@ -639,6 +659,195 @@ export class NRCharacterGenerator extends HandlebarsApplicationMixin(Application
       actor.sheet.render(true);
       this.close();
     }
+  }
+
+  /* -------------------------------------------- */
+  /*  Umbau eines bestehenden Actors                */
+  /* -------------------------------------------- */
+
+  static MANAGED_TYPES = new Set(["abnormality", "bioTrait", "styleSkill", "advantage", "trait", "psiPower", "psiApp"]);
+
+  /** Katalogeintrag (Compendium) zu einem Item des Actors – über Herkunft, sonst über den Namen. */
+  _catalogDoc(item) {
+    const d = this.data;
+    const src = item._stats?.compendiumSource ?? item.flags?.core?.sourceId;
+    if (src && d.byId.has(src)) return d.byId.get(src);
+    const base = n => String(n ?? "").replace(/\s*\(.*\)\s*$/, "").trim();
+    const cands = [...d.byId.values()].filter(x => x.type === item.type);
+    return cands.find(x => x.name === item.name)
+      ?? cands.find(x => base(x.name) && base(x.name) === base(item.name))
+      ?? (item.type === "advantage" && item.name.startsWith("Schwaches Attribut") ? cands.find(x => x.name.startsWith("Schwaches Attribut")) : null)
+      ?? null;
+  }
+
+  /** Wird dieses Item vom Generator verwaltet (und beim Umbau ggf. ersetzt)? Alles andere bleibt unangetastet. */
+  _isManaged(item) {
+    if (item.type === "skill") return item.system.category === "sprache";
+    if (item.type === "species") return false;
+    if (item.type === "augment") return this._catalogDoc(item)?.system.kind === "design";
+    return NRCharacterGenerator.MANAGED_TYPES.has(item.type) && !!this._catalogDoc(item);
+  }
+
+  /** Gen-Zustand aus dem bestehenden Actor vorbelegen. */
+  async _initFromActor() {
+    const a = this.actor;
+    const d = await this._loadData();
+    const s = this.gen;
+    const src = a.toObject().system;
+    const modSkills = (item, doc) => (item.system.modifiers ?? [])
+      .filter(m => m.target?.startsWith("skills.") && !(doc?.system.modifiers ?? []).some(x => x.target === m.target && x.value === m.value))
+      .map(m => m.target.slice(7));
+
+    s.name = a.name;
+    s.img = a.img || s.img;
+    s.concept = src.details?.concept ?? "";
+    s.gender = src.details?.gender ?? "";
+    s.age = src.details?.age ?? "";
+    const pr = src.progress ?? {};
+    s.powerLevel = NR.powerLevels[pr.powerLevel] ? pr.powerLevel : "standard";
+    s.moneyGp = Number(pr.gpMoney) || 0;
+    s.butterfly.choice = pr.butterfly ?? "";
+    s.butterfly.choice2 = pr.butterfly2 ?? "";
+    for (const k of Object.keys(NR.attributes)) {
+      s.attributes[k] = Math.max(1, Number(src.attributes?.[k]?.value) || 1);
+      if ((Number(src.attributes?.[k]?.bonus) || 0) > 0) s.mutantAttrs.push(k);
+    }
+    for (const k of Object.keys(NR.skills)) { const v = Number(src.skills?.[k]?.value) || 0; if (v) s.skills[k] = v; }
+
+    const unmanaged = [];
+    let meditation = false;
+    for (const item of a.items) {
+      const doc = item.type === "species" ? this._catalogDoc(item) : (this._isManaged(item) ? this._catalogDoc(item) : null);
+      if (item.type === "skill" && item.system.category === "sprache") {
+        if (item.system.native) s.nativeName = item.name.replace(/\s*\(Muttersprache\)\s*$/, "");
+        else s.languages.push({ name: item.name, value: Math.max(1, item.system.value) });
+        continue;
+      }
+      if (!doc) { if (!["weapon", "armor", "ammo", "gear", "skill", "augment"].includes(item.type)) unmanaged.push(item.name); continue; }
+      const u = doc.uuid;
+      switch (item.type) {
+        case "species": s.speciesId ??= u; break;
+        case "abnormality":
+          if (s.abnormalities.includes(u)) break;
+          s.abnormalities.push(u);
+          if (doc.name === "N²") s.n2Skills = modSkills(item, doc);
+          else if (doc.name.startsWith("Mysteriöses Implantat")) s.implantSkills = modSkills(item, doc);
+          break;
+        case "psiPower":
+          if (doc.system.key === "kategorieB") { if (!s.hmoPowers.includes(u)) s.hmoPowers.push(u); }
+          else s.psi[doc.system.key] = Math.max(1, item.system.value);
+          break;
+        case "psiApp": if (!s.psiApps.includes(u)) s.psiApps.push(u); break;
+        case "bioTrait":
+          if (s.bioTraits[u]) break;
+          s.bioTraits[u] = Math.max(1, item.system.level);
+          if (/\(einziehbar\)\s*$/.test(item.name)) s.retractable.push(u);
+          break;
+        case "styleSkill":
+          s.styleSkills[u] = Math.max(1, item.system.level);
+          if (doc.name === "Meditation") meditation = true;
+          break;
+        case "advantage":
+          if (!s.advantages.includes(u)) s.advantages.push(u);
+          if (item.system.markers !== doc.system.markers) s.advMarkers[u] = item.system.markers;
+          if (doc.name.startsWith("Meisterschaft")) s.masterySkills.push(...modSkills(item, doc));
+          if (doc.name.startsWith("Schwaches Attribut")) {
+            const k = Object.keys(NR.attributes).find(x => item.name === `Schwaches Attribut ${NR.attributes[x].labelDe ?? NR.attributes[x].label}`);
+            if (k && !s.weakAttrs.includes(k)) s.weakAttrs.push(k);
+          }
+          break;
+        case "trait": if (!s.traits.includes(u)) s.traits.push(u); break;
+        case "augment": if (!s.designs.includes(u)) s.designs.push(u); break;
+      }
+    }
+    // Spezies notfalls über den Namen im Kopfbereich bestimmen
+    if (!s.speciesId && src.details?.species) s.speciesId = d.species.find(x => x.name === src.details.species)?.uuid ?? null;
+    if (meditation) s.meditation = Math.max(1, Math.min(5, (Number(src.special?.meditation?.value) || 0) + 1));
+    this._baseline = { speciesId: s.speciesId, moneyGp: s.moneyGp, unmanaged };
+    return this;
+  }
+
+  /**
+   * Umbau: Generatorstand auf den bestehenden Actor anwenden.
+   * Sicher: Nur vom Generator verwaltete Katalog-Items werden angepasst, ergänzt oder entfernt; Ausrüstung,
+   * eigene/unbekannte Items sowie Verlaufswerte (Schaden, EP/JP/CP, Reputation, Notizen) bleiben unverändert.
+   */
+  async updateActor(c) {
+    const a = this.actor;
+    const s = this.gen;
+    const sp = this.species;
+
+    // Spezies nur bei Wechsel ersetzen (das Item überträgt dabei die Startwerte)
+    if (sp && sp.uuid !== this._baseline.speciesId) {
+      const old = a.items.filter(i => i.type === "species").map(i => i.id);
+      const o = sp.toObject();
+      delete o._id;
+      foundry.utils.setProperty(o, "_stats.compendiumSource", sp.uuid);
+      await a.createEmbeddedDocuments("Item", [o]);
+      if (old.length) await a.deleteEmbeddedDocuments("Item", old.filter(id => a.items.has(id)));
+    }
+
+    // Items abgleichen
+    const variant = (doc, name) => (/^(Schwaches Attribut|Meisterschaft)/.test(doc?.name ?? "") || /\(einziehbar\)\s*$/.test(name)) ? name : "";
+    const existingKey = i => i.type === "skill" ? `lang|${i.name}` : `${i.type}|${this._catalogDoc(i)?.uuid}|${variant(this._catalogDoc(i), i.name)}`;
+    const desiredKey = o => {
+      if (o.type === "skill") return `lang|${o.name}`;
+      const src = o._stats?.compendiumSource;
+      return `${o.type}|${src}|${variant(this.data.byId.get(src), o.name)}`;
+    };
+    const pool = new Map();
+    for (const i of a.items) if (this._isManaged(i)) { const k = existingKey(i); (pool.get(k) ?? pool.set(k, []).get(k)).push(i); }
+
+    const toCreate = [], toUpdate = [];
+    for (const o of this._buildItems(c)) {
+      const managed = (o.type === "skill" && o.system.category === "sprache")
+        || (o.type === "augment" && o.system.kind === "design")
+        || NRCharacterGenerator.MANAGED_TYPES.has(o.type);
+      if (!managed) {
+        // Nicht verwaltet: Einkäufe immer neu anlegen, Hilfs-Fertigkeiten (z. B. „Fliegen“) nur wenn noch nicht vorhanden
+        if (!o._stats?.compendiumSource && a.items.some(i => i.type === o.type && i.name === o.name)) continue;
+        toCreate.push(o);
+        continue;
+      }
+      const hit = pool.get(desiredKey(o))?.shift();
+      if (!hit) { toCreate.push(o); continue; }
+      const patch = {};
+      const same = (x, y) => JSON.stringify(x) === JSON.stringify(y);
+      if (["bioTrait", "styleSkill"].includes(o.type) && o.system.level !== hit.system.level) patch["system.level"] = o.system.level;
+      if (["psiPower", "skill"].includes(o.type) && o.system.value !== hit.system.value) patch["system.value"] = o.system.value;
+      if (o.type === "advantage" && o.system.markers !== hit.system.markers) patch["system.markers"] = o.system.markers;
+      if (/^(N²|Mysteriöses Implantat|Meisterschaft)/.test(o.name) && !same(o.system.modifiers, hit.system.modifiers)) patch["system.modifiers"] = o.system.modifiers;
+      if (Object.keys(patch).length) toUpdate.push({ _id: hit.id, ...patch });
+    }
+    const toDelete = [...pool.values()].flat().map(i => i.id);
+
+    if (toDelete.length) await a.deleteEmbeddedDocuments("Item", toDelete);
+    if (toUpdate.length) await a.updateEmbeddedDocuments("Item", toUpdate);
+    if (toCreate.length) await a.createEmbeddedDocuments("Item", toCreate);
+
+    // Actor-Werte (nur, was der Generator verwaltet)
+    const update = {
+      name: s.name || a.name,
+      img: s.img,
+      "system.details.concept": s.concept,
+      "system.details.gender": s.gender,
+      "system.details.age": s.age,
+      "system.special.meditation.value": c.hasMeditation ? Math.max(1, Math.min(5, s.meditation)) - 1 : 0,
+      "system.money": Math.max(0, c.moneyLeft),
+      "system.progress.powerLevel": s.powerLevel,
+      "system.progress.gpMoney": s.moneyGp,
+      "system.progress.gpExtra": c.extraGp,
+      "system.progress.butterfly": s.butterfly.choice,
+      "system.progress.butterfly2": s.butterfly.choice2
+    };
+    for (const k of Object.keys(NR.attributes)) {
+      update[`system.attributes.${k}.value`] = s.attributes[k];
+      update[`system.attributes.${k}.bonus`] = s.mutantAttrs.includes(k) ? 1 : 0;
+    }
+    for (const k of Object.keys(NR.skills)) update[`system.skills.${k}.value`] = s.skills[k] ?? 0;
+    if (s.biography.trim()) update["system.biography"] = `${a.system.biography ?? ""}<p>${foundry.utils.escapeHTML(s.biography)}</p>`;
+    await a.update(update);
+    return a;
   }
 
   async createActor(c) {
@@ -667,6 +876,28 @@ export class NRCharacterGenerator extends HandlebarsApplicationMixin(Application
     const actor = await Actor.create({ name: s.name || "Namenlos", type: "character", img: s.img, system });
     if (!actor) return null;
 
+
+    // Spezies zuerst (überträgt Startwerte)
+    if (sp) await actor.createEmbeddedDocuments("Item", [(() => { const o = sp.toObject(); delete o._id; return o; })()]);
+    const items = this._buildItems(c);
+    if (!items.some(i => i.type === "weapon" && i.name === "Waffenloser Angriff")) {
+      const fist = (await game.packs.get("noreturn.waffen")?.getDocuments())?.find(w => w.name === "Waffenloser Angriff");
+      if (fist) {
+        const o = fist.toObject();
+        delete o._id;
+        foundry.utils.setProperty(o, "_stats.compendiumSource", fist.uuid);
+        items.push(o);
+      }
+    }
+    await actor.createEmbeddedDocuments("Item", items);
+    return actor;
+  }
+
+  /** Item-Daten (ohne Spezies) aus dem aktuellen Generatorstand. */
+  _buildItems(c) {
+    const s = this.gen;
+    const d = this.data;
+    const sp = this.species;
     const items = [];
     const add = (doc, patch = {}) => {
       if (!doc) return;
@@ -676,8 +907,6 @@ export class NRCharacterGenerator extends HandlebarsApplicationMixin(Application
       foundry.utils.setProperty(obj, "_stats.compendiumSource", doc.uuid);
       items.push(obj);
     };
-    // Spezies zuerst (überträgt Startwerte)
-    if (sp) await actor.createEmbeddedDocuments("Item", [(() => { const o = sp.toObject(); delete o._id; return o; })()]);
     const skillMods = keys => keys.map(k => ({ target: `skills.${k}`, value: 1 }));
     for (const u of s.abnormalities) {
       const doc = d.byId.get(u);
@@ -717,25 +946,28 @@ export class NRCharacterGenerator extends HandlebarsApplicationMixin(Application
     // Sprachen
     items.push({ name: `${s.nativeName} (Muttersprache)`, type: "skill", img: "icons/svg/sound.svg", system: { category: "sprache", attribute: "", value: c.nativeLevel, native: true } });
     for (const l of s.languages) items.push({ name: l.name, type: "skill", img: "icons/svg/sound.svg", system: { category: "sprache", attribute: "", value: l.value } });
-    // Startausrüstung (S. 135) und Einkäufe
-    items.push({ name: "SmartCom", type: "gear", img: "icons/svg/item-bag.svg", system: { ts: 3, quantity: 1 } });
-    items.push({ name: "Set schäbige Kleidung", type: "gear", img: "icons/svg/item-bag.svg", system: { ts: 1, quantity: 1 } });
+    // Startausrüstung (S. 135) nur bei neuen Charakteren, dazu die Einkäufe
+    if (!this.actor) {
+      items.push({ name: "SmartCom", type: "gear", img: "icons/svg/item-bag.svg", system: { ts: 3, quantity: 1 } });
+      items.push({ name: "Set schäbige Kleidung", type: "gear", img: "icons/svg/item-bag.svg", system: { ts: 1, quantity: 1 } });
+    }
     for (const [u, q] of Object.entries(s.cart)) {
       const doc = d.byId.get(u);
       if (!doc || q <= 0) continue;
       if (["weapon", "armor", "augment"].includes(doc.type)) for (let i = 0; i < q; i++) add(doc, { system: { equipped: doc.type !== "augment", installed: true } });
       else add(doc, { system: { quantity: (doc.system.quantity || 1) * q } });
     }
-    if (!items.some(i => i.type === "weapon" && i.name === "Waffenloser Angriff")) {
-      const fist = (await game.packs.get("noreturn.waffen")?.getDocuments())?.find(w => w.name === "Waffenloser Angriff");
-      if (fist) add(fist);
-    }
-    await actor.createEmbeddedDocuments("Item", items);
-    return actor;
+    return items;
   }
+
 }
 
-/** Öffnet den Charaktergenerator. */
-export function openCharacterGenerator() {
-  return new NRCharacterGenerator().render(true);
+/** Öffnet den Charaktergenerator; mit `actor` zum Umbauen eines bestehenden Charakters. */
+export async function openCharacterGenerator(actor = null) {
+  if (!actor) return new NRCharacterGenerator().render(true);
+  const existing = foundry.applications.instances.get(`${NRCharacterGenerator.DEFAULT_OPTIONS.id}-${actor.id}`);
+  if (existing) return existing.render({ force: true });
+  const gen = new NRCharacterGenerator({ actor });
+  await gen._initFromActor();
+  return gen.render(true);
 }

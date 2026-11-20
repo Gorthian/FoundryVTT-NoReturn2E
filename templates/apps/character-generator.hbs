@@ -54,6 +54,10 @@
     {{#if (eq stepId "concept")}}
       <h2>{{localize "NR.Gen.Step.concept"}}</h2>
       <p class="nr-hint">{{localize "NR.Gen.Hint.concept"}}</p>
+      {{#if isEdit}}
+      <p class="nr-hint"><i class="fa-solid fa-user-pen"></i> <strong>{{localize "NR.Gen.EditNote"}}</strong></p>
+      {{#if unmanaged.length}}<p class="nr-hint">{{localize "NR.Gen.EditUnmanaged"}} {{unmanaged}}</p>{{/if}}
+      {{/if}}
       <div class="nr-gen-concept">
         <img src="{{s.img}}" class="nr-portrait" data-action="pickImage" alt="">
         <div class="nr-form-grid">
@@ -468,7 +472,7 @@
       {{#unless isFirst}}<a class="nr-btn" data-action="prev"><i class="fa-solid fa-arrow-left"></i> {{localize "NR.Gen.Prev"}}</a>{{/unless}}
       <span class="nr-gen-issues">{{#each c.issues as |i|}}{{#if (eq i.step ../step)}}<span class="nr-bad"><i class="fa-solid fa-triangle-exclamation"></i> {{i.msg}}</span>{{/if}}{{/each}}</span>
       {{#if isLast}}
-      <a class="nr-btn primary" data-action="create"><i class="fa-solid fa-user-check"></i> {{localize "NR.Gen.Create"}}</a>
+      <a class="nr-btn primary" data-action="create"><i class="fa-solid fa-user-check"></i> {{#if isEdit}}{{localize "NR.Gen.Apply"}}{{else}}{{localize "NR.Gen.Create"}}{{/if}}</a>
       {{else}}
       <a class="nr-btn primary" data-action="next">{{localize "NR.Gen.Next"}} <i class="fa-solid fa-arrow-right"></i></a>
       {{/if}}

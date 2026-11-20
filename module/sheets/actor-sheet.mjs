@@ -3,6 +3,7 @@ import { manualDamageDialog } from "../combat.mjs";
 import { collectPower, rollPsiFail } from "../psi.mjs";
 import { rollHitZone } from "../dice/pool.mjs";
 import { downloadMannifest, promptImport } from "../apps/mannifest.mjs";
+import { openCharacterGenerator } from "../apps/character-generator.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -22,6 +23,7 @@ export class NRActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       rollAttribute: NRActorSheet.#onRollAttribute,
       mannifestExport: NRActorSheet.#onMannifestExport,
       mannifestImport: NRActorSheet.#onMannifestImport,
+      openGenerator: NRActorSheet.#onOpenGenerator,
       rollSkill: NRActorSheet.#onRollSkill,
       useItem: NRActorSheet.#onUseItem,
       editItem: NRActorSheet.#onEditItem,
@@ -186,6 +188,7 @@ export class NRActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
     const controls = super._getHeaderControls();
     if (this.document.type !== "character") return controls;
     controls.push(
+      { icon: "fa-solid fa-user-pen", label: "NR.Gen.Edit", action: "openGenerator", visible: () => this.document.isOwner },
       { icon: "fa-solid fa-file-export", label: "NR.Mannifest.Export", action: "mannifestExport" },
       { icon: "fa-solid fa-file-import", label: "NR.Mannifest.Import", action: "mannifestImport", visible: () => this.document.isOwner }
     );
@@ -194,6 +197,11 @@ export class NRActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
 
   static #onMannifestExport() {
     downloadMannifest(this.document);
+  }
+
+  /** Charaktergenerator mit den Werten dieses Actors öffnen (Umbau). */
+  static async #onOpenGenerator() {
+    await openCharacterGenerator(this.document);
   }
 
   static async #onMannifestImport() {

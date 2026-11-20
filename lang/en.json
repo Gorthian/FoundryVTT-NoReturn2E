@@ -521,6 +521,14 @@
       "ShowDiceHint": "Show individual dice in roll cards."
     },
     "Gen": {
+      "Edit": "Rebuild in character generator",
+      "EditTitle": "Character Generator: rebuild {name}",
+      "Apply": "Apply changes",
+      "EditNote": "Rebuild mode: the generator is pre-filled with this character's values. On apply, only attributes, skills, languages and the catalog items managed by the generator (abnormalities, traits, style skills, advantages, character traits, PSI) are adjusted. Gear, custom items, damage and progress (XP/JP/CP) stay untouched; cart purchases are added and deducted from the existing money. The GP balance reflects the character as it is – overruns are normal for advanced characters.",
+      "EditUnmanaged": "Left untouched (unknown to the generator):",
+      "ApplyAnyway": "There are open issues. Apply anyway?",
+      "Updated": "{name} has been rebuilt.",
+      "NoEditPermission": "You may not edit this character.",
       "Title": "Character Generator",
       "Gp": "GP left",
       "Prev": "Back",
