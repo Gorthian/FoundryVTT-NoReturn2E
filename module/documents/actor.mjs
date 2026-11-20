@@ -17,13 +17,27 @@ export class NRActor extends Actor {
     this._prepareCreature();
   }
 
+  /** Biologische Eigenschaften bringen ihre körpereigenen Waffen mit (system.grants). */
+  async _onCreateDescendantDocuments(parent, collection, documents, data, options, userId) {
+    super._onCreateDescendantDocuments(parent, collection, documents, data, options, userId);
+    if (userId !== game.user.id || collection !== "items" || options.nrSkipGrants) return;
+    const wanted = new Set();
+    for (const d of documents) if (d.type === "bioTrait") for (const n of d.system.grants ?? []) if (n && !this.items.some(i => i.type === "weapon" && i.name === n)) wanted.add(n);
+    if (!wanted.size) return;
+    const pack = await game.packs.get("noreturn.waffen")?.getDocuments() ?? [];
+    const toCreate = [...wanted].map(n => pack.find(w => w.name === n)?.toObject()).filter(Boolean).map(o => { delete o._id; return o; });
+    if (toCreate.length) await this.createEmbeddedDocuments("Item", toCreate, { nrSkipGrants: true });
+  }
+
   /** Summiere die Modifikatoren aller aktiven Items. */
   _collectModifiers() {
     const mods = {};
     for (const item of this.items) {
       const list = item.system.modifiers;
       if (!Array.isArray(list) || !item.system.modifiersActive) continue;
-      const factor = (item.type === "bioTrait" && item.system.perLevel) ? Math.max(1, item.system.level) : 1;
+      // Stufen: Bio-Eigenschaften je Level, Ganzkörper-Pakete je Anzahl
+      const factor = (item.type === "bioTrait" && item.system.perLevel) ? Math.max(1, item.system.level)
+        : (item.type === "augment" && item.system.fullBody) ? Math.max(1, item.system.quantity || 1) : 1;
       for (const m of list) {
         if (!m.target) continue;
         mods[m.target] = (mods[m.target] ?? 0) + (Number(m.value) || 0) * factor;
@@ -45,6 +59,23 @@ export class NRActor extends Actor {
     }
     sys.roboticZones = robotics;
 
+    // Einzelzonen-Upgrades (S. 218): Steigerung je Stufe in system.robotic / system.armor, Stufen = Anzahl
+    const zoneUpgrades = {};
+    for (const a of augments) {
+      if (a.system.kind !== "upgrade" || a.system.fullBody || !a.system.zone) continue;
+      const q = Math.max(1, a.system.quantity || 1);
+      const u = zoneUpgrades[a.system.zone] ??= { ge: 0, st: 0, ko: 0, be: 0, wa: 0, armor: 0, items: [] };
+      for (const k of ["ge", "st", "ko", "be", "wa"]) u[k] += (a.system.robotic?.[k] || 0) * q;
+      u.armor += (a.system.armor || 0) * q;
+      u.items.push(a.name);
+    }
+    sys.zoneUpgrades = zoneUpgrades;
+
+    // Erwachte (S. 145–147)
+    const speciesItem = this.items.find(i => i.type === "species");
+    const awakened = !!speciesItem?.system.awakened;
+    sys.awakened = awakened;
+
     // Attribute (biologischer Wert)
     sys.attr = {};
     for (const [key, cfg] of Object.entries(NR.attributes)) {
@@ -56,13 +87,23 @@ export class NRActor extends Actor {
     // Robotik-Durchschnitt (S. 82): GE, ST, KO, BE über 11 Zonen, WA über Tastsinn
     const zoneKeys = Object.keys(NR.zones);
     const roboticCount = Object.keys(robotics).length;
+    const roboMax = NR.awakened.maxima;
     sys.zoneAttr = {};
+    let zoneUpgraded = false;
     for (const z of zoneKeys) {
       const r = robotics[z]?.system.robotic;
+      // Upgrades wirken nur auf robotische Zonen (bei Erwachten: jede Zone)
+      const up = (r || awakened) ? zoneUpgrades[z] : null;
+      if (up) zoneUpgraded = true;
       sys.zoneAttr[z] = {};
-      for (const k of ["ge", "st", "ko", "be", "wa"]) sys.zoneAttr[z][k] = r ? r[k] : sys.attr[k].bio;
+      for (const k of ["ge", "st", "ko", "be", "wa"]) {
+        let v = r ? r[k] : sys.attr[k].bio;
+        if (up) v += up[k];
+        if ((r || awakened) && roboMax[k]) v = Math.min(roboMax[k], v);
+        sys.zoneAttr[z][k] = v;
+      }
     }
-    if (roboticCount > 0) {
+    if (roboticCount > 0 || zoneUpgraded) {
       for (const k of ["ge", "st", "ko", "be"]) {
         const sum = zoneKeys.reduce((acc, z) => acc + sys.zoneAttr[z][k], 0);
         sys.attr[k].total = Math.round(sum / zoneKeys.length);
@@ -70,11 +111,15 @@ export class NRActor extends Actor {
       const touch = zoneKeys.reduce((acc, z) => acc + sys.zoneAttr[z].wa, 0) / zoneKeys.length;
       sys.attr.wa.total = Math.round((touch + sys.attr.wa.bio * 4) / 5);
     }
+    if (awakened) {
+      // Technische Höchstwerte der Robotik (S. 218)
+      for (const [k, max] of Object.entries(NR.awakened.maxima)) sys.attr[k].total = Math.min(max, sys.attr[k].total);
+    }
 
     // Sonderattribute
-    const pain = Math.min(10, Math.max(0, sys.special.schmerztoleranz.value + (mods.schmerztoleranz ?? 0)));
+    const pain = awakened ? NR.awakened.pain : Math.min(10, Math.max(0, sys.special.schmerztoleranz.value + (mods.schmerztoleranz ?? 0)));
     sys.pain = pain;
-    sys.adrenalinMax = Math.max(0, sys.special.adrenalin.value + (mods.adrenalin ?? 0));
+    sys.adrenalinMax = awakened ? 0 : Math.max(0, sys.special.adrenalin.value + (mods.adrenalin ?? 0));
     sys.adrenalinLeft = Math.max(0, sys.adrenalinMax - sys.special.adrenalin.used);
     sys.adrenalinBonus = Math.min(5, sys.adrenalinMax);
     sys.meditationMax = Math.max(0, sys.special.meditation.value + (mods.meditation ?? 0));
@@ -99,6 +144,8 @@ export class NRActor extends Actor {
     const armors = this.items.filter(i => i.type === "armor" && i.system.equipped);
     const armorAll = mods.armorAll ?? 0;
     sys.zoneData = {};
+    const capacityMax = NR.awakened.capacity + (mods.capacity ?? 0);
+    const fullBodyCap = augments.filter(a => a.system.fullBody).reduce((acc, a) => acc + (a.system.capacityCost || 0) * (a.system.quantity || 1), 0);
     let woundZones = 0;
     let hpSum = 0;
     let hpMax = 0;
@@ -110,8 +157,10 @@ export class NRActor extends Actor {
       for (const a of armors) {
         if (a.system.zones.includes(Number(z))) layers.push({ rw: a.system.rw, mk: a.system.mk, name: a.name });
       }
-      if (robo && (robo.system.armor > 0 || robo.system.mk)) layers.push({ rw: robo.system.armor, mk: robo.system.mk || "B", name: robo.name, natural: true });
+      const up = (robo || awakened) ? zoneUpgrades[z] : null;
+      if (robo && (robo.system.armor > 0 || robo.system.mk)) layers.push({ rw: robo.system.armor + (up?.armor ?? 0), mk: robo.system.mk || "B", name: robo.name, natural: true });
       if (armorAll) layers.push({ rw: armorAll, mk: "A", name: "Bonus", natural: true });
+      if (awakened && !robo) layers.push({ rw: NR.awakened.chassisArmor + (mods.chassisArmor ?? 0) + (up?.armor ?? 0), mk: (mods.chassisMk ?? 0) > 0 ? "B" : "A", name: "Chassis", natural: true });
       // Körpereigene Panzerung aus biologischen Eigenschaften mit Zonenangabe (modifier target "armor.<zone>")
       const zoneArmorMod = mods[`armor.${z}`] ?? 0;
       if (zoneArmorMod) layers.push({ rw: zoneArmorMod, mk: "A", name: "Körperpanzer", natural: true });
@@ -122,13 +171,19 @@ export class NRActor extends Actor {
       const wounded = damage > threshold;
       if (wounded) woundZones++;
       const remaining = max - damage;
+      const lethal = awakened ? NR.awakened.lethalZones.includes(z) : NR.zones[z].lethal;
+      const capUsed = (awakened || robo) ? fullBodyCap * (awakened ? 1 : 0) + augments.filter(a => !a.system.fullBody && a.system.zone === z && a.system.kind !== "robotik").reduce((acc, a) => acc + (a.system.capacityCost || 0) * Math.max(1, a.system.quantity || 1), 0) : 0;
+      const capMax = awakened ? capacityMax : (robo?.system.robotic.capacity ?? 0);
       hpSum += Math.max(0, remaining);
       hpMax += max;
       sys.zoneData[z] = {
-        key: z, label: NR.zones[z].label, short: NR.zones[z].short, lethal: NR.zones[z].lethal,
+        key: z, label: NR.zones[z].label, short: NR.zones[z].short, lethal,
+        capacity: (awakened || robo) ? { used: capUsed, max: capMax, over: capUsed > capMax } : null,
         max, damage: zd.damage, chronic: zd.chronic, total: damage, remaining,
         destroyed: zd.destroyed || remaining <= 0, half: remaining <= max / 2,
         threshold, wounded, armor, mk, layers, robotic: !!robo, roboticName: robo?.name ?? "",
+        roboticAttrs: (robo || (awakened && zoneUpgrades[z])) ? ["ge", "st", "ko", "be"].map(k => `${NR.attributes[k].abbr} ${sys.zoneAttr[z][k]}`).join(" · ") : "",
+        strayUpgrades: !robo && !awakened && zoneUpgrades[z] ? zoneUpgrades[z].items.join(", ") : "",
         pct: Math.max(0, Math.min(100, Math.round((remaining / max) * 100)))
       };
     }
@@ -162,9 +217,9 @@ export class NRActor extends Actor {
     const psyLoss = augments.reduce((acc, a) => acc + (a.system.psycheLoss || 0), 0);
     const orgValue = Math.min(100, sys.organismus.base + (mods.organismus ?? 0) - orgLoss - sys.organismus.loss);
     const psyValue = Math.min(100, sys.psyche.base + (mods.psyche ?? 0) - psyLoss - sys.psyche.loss);
-    const orgBand = NR.organismThresholds.find(t => orgValue >= t.min && orgValue <= t.max) ?? NR.organismThresholds.at(-1);
+    const orgBand = awakened ? { label: "entfällt (Erwachter)", a: 0, b: 0 } : (NR.organismThresholds.find(t => orgValue >= t.min && orgValue <= t.max) ?? NR.organismThresholds.at(-1));
     const psyBand = NR.psycheRanges.find(t => psyValue >= t.min && psyValue <= t.max) ?? NR.psycheRanges.at(-1);
-    sys.org = { value: orgValue, implantLoss: orgLoss, band: orgBand, pct: Math.max(0, orgValue) };
+    sys.org = { value: awakened ? 100 : orgValue, implantLoss: orgLoss, band: orgBand, pct: Math.max(0, orgValue) };
     sys.psy = { value: psyValue, implantLoss: psyLoss, band: psyBand, pct: Math.max(0, psyValue) };
 
     // Infektionsresistenz (S. 103)
@@ -186,8 +241,9 @@ export class NRActor extends Actor {
 
     // PSI
     sys.psiPowers = this.items.filter(i => i.type === "psiPower");
-    const species = this.items.find(i => i.type === "species");
-    sys.speciesItem = species ?? null;
+    sys.speciesItem = speciesItem ?? null;
+    sys.capacityOver = Object.values(sys.zoneData).some(z => z.capacity?.over);
+    sys.hasRobotics = awakened || roboticCount > 0;
 
     if (this.type === "character") this._prepareProgress();
   }
@@ -198,7 +254,11 @@ export class NRActor extends Actor {
     const p = sys.progress;
     const level = NR.powerLevels[p.powerLevel] ?? NR.powerLevels.standard;
     const gp = { attributes: 0, skills: 0, psi: 0, languages: 0, special: 0, items: 0, money: p.gpMoney };
-    for (const key of Object.keys(NR.attributes)) gp.attributes += NR.attributeGpCost(sys.attributes[key].value);
+    for (const key of Object.keys(NR.attributes)) {
+      // Erwachte: Körperattribute (GE, ST, KO, BE, WA) werden nur über Upgrades gesteigert
+      if (sys.awakened && (key in NR.awakened.physical || key === "wa")) continue;
+      gp.attributes += NR.attributeGpCost(sys.attributes[key].value);
+    }
     for (const key of Object.keys(NR.skills)) gp.skills += sys.skills[key].value * 2;
     for (const item of this.items) {
       const s = item.system;
@@ -206,12 +266,17 @@ export class NRActor extends Actor {
         case "species":
         case "abnormality":
           gp.items += s.gp; break;
+        case "augment":
+          gp.items += s.gp || 0; break;
         case "bioTrait":
           if (s.kind !== "auffaelligkeit") gp.items += s.totalGp; break;
         case "styleSkill":
           gp.items += s.kind === "kampfkunst" ? s.gp * Math.max(1, s.level) : s.gp; break;
         case "psiPower":
-          gp.psi += Math.max(0, s.value - s.free) * 5; break;
+          // Kategorie B (HMO): 7 GP je Kraft, eine davon frei (S. 154)
+          if (s.key === "kategorieB") gp.psi += 7;
+          else gp.psi += Math.max(0, s.value - s.free) * 5;
+          break;
         case "skill":
           if (s.category === "sprache") gp.languages += s.native ? Math.max(0, s.value - 5) * 2 : s.value * 2;
           else if (s.category === "elite") gp.special += s.value * 4;
@@ -219,6 +284,9 @@ export class NRActor extends Actor {
           break;
       }
     }
+    if (this.items.some(i => i.type === "abnormality" && i.name.startsWith("HMO")) && this.items.some(i => i.type === "psiPower" && i.system.key === "kategorieB")) gp.psi -= 7;
+    // Meditation: Stufe 1 liefert der Style-Skill (Modifikator), jede Basisstufe darüber 5 GP (S. 182)
+    gp.special += Math.max(0, sys.special.meditation?.value ?? 0) * 5;
     const spent = Object.values(gp).reduce((a, b) => a + b, 0);
     const available = level.gp + p.gpExtra;
     const markers = this.items.filter(i => i.type === "advantage").reduce((acc, i) => {
@@ -286,7 +354,7 @@ export class NRActor extends Actor {
    */
   async rollCheck({ label, dice, attrKey = null, subtitle = "", mw = 10, hazard = true, allowPass = true,
     skipDialog = false, resist = false, psi = false, extraBonus = 0, extraPoints = 0, altAttr = null,
-    skillValue = null, untrained = false, flags = {}, extraHtml = "" } = {}) {
+    skillValue = null, untrained = false, flags = {}, extraHtml = "", skillKey = null } = {}) {
 
     const malus = this.getMalus({ resist, psi });
     let opts = { bonusDice: extraBonus, malusDice: 0, points: extraPoints, mw, pass: false, useAdrenalin: false, useMeditation: false, disadvantages: 0, attr: attrKey };
@@ -308,9 +376,26 @@ export class NRActor extends Actor {
     }
 
     let bonus = opts.bonusDice;
+    // Situative Bonuswürfel aus Items: dice.<fertigkeit> bzw. dice.<fertigkeit>.<attribut> (z. B. Krallen, Roar)
+    if (skillKey) {
+      const m = this.system.mods ?? {};
+      const sit = (m[`dice.${skillKey}`] ?? 0) + (attrUsed ? (m[`dice.${skillKey}.${attrUsed}`] ?? 0) : 0);
+      if (sit) {
+        bonus += sit;
+        extraHtml += `<p class="nr-good"><i class="fa-solid fa-paw"></i> ${game.i18n.format("NR.Chat.SituationalDice", { n: sit })}</p>`;
+      }
+    }
     if (opts.useAdrenalin && await this.spendAdrenalin("adrenalin")) bonus += this.system.adrenalinBonus;
     if (opts.useMeditation && await this.spendAdrenalin("meditation")) bonus += Math.min(5, this.system.meditationMax);
 
+    // Robotik-Overdrive (S. 217): gespeicherte Bonuspunkte auf die nächste Stärke-Aktion
+    let overdrive = 0;
+    if (attrUsed === "st" && this.system.combat?.overdrive > 0) {
+      overdrive = this.system.combat.overdrive;
+      opts.points += overdrive;
+      await this.update({ "system.combat.overdrive": 0 });
+    }
+    if (overdrive) extraHtml += `<p class="nr-warn"><i class="fa-solid fa-gears"></i> Overdrive +${overdrive} Stärke</p>`;
     const malusTotal = (resist ? 0 : malus) + opts.malusDice + opts.disadvantages * 2;
     const leiden = attrUsed ? (this.system.attr[attrUsed]?.leiden ?? 0) : 0;
     const sub = subtitle || (attrUsed ? `${this.system.attr[attrUsed].abbr} ${this.system.attr[attrUsed].total}` : "");
@@ -333,7 +418,7 @@ export class NRActor extends Actor {
     const subtitle = s.trained ? `${a.abbr} ${a.total} + ${s.label} ${s.value}` : `${a.abbr} ${a.total} − 2 (ungeübt)`;
     return this.rollCheck({
       label: s.label, dice: s.pool, attrKey: s.attr, altAttr: cfg.alt ?? null, subtitle,
-      skillValue: s.value, untrained: !s.trained, ...options
+      skillValue: s.value, untrained: !s.trained, skillKey: key, ...options
     });
   }
 
@@ -351,6 +436,7 @@ export class NRActor extends Actor {
 
   /** Infektionsresistenz gegen Intensität (ohne Hazard-Di). */
   async rollInfection() {
+    if (this.system.awakened) return ui.notifications.info(game.i18n.localize("NR.Awakened.Immune"));
     const ir = this.system.ir;
     const intensity = await foundry.applications.api.DialogV2.input({
       window: { title: game.i18n.localize("NR.Roll.Infection") },
@@ -498,6 +584,7 @@ export class NRActor extends Actor {
 
   /** Heilung (S. 103): natürliche Heilung = KO je Zone, mit Medizin verdoppelt. */
   async healNatural({ doubled = false, days = 1 } = {}) {
+    if (this.system.awakened) return ui.notifications.warn(game.i18n.localize("NR.Awakened.NoHealing"));
     const good = this.items.some(i => i.type === "advantage" && i.name.toLowerCase().includes("heilfleisch"));
     const bad = this.items.some(i => i.type === "advantage" && i.name.toLowerCase().includes("verdorbenes"));
     let perDay = good ? 20 : this.system.attr.ko.total;
@@ -535,6 +622,50 @@ export class NRActor extends Actor {
     updates["system.regeneration.poolUsed"] = this.system.regeneration.poolUsed + used;
     await this.update(updates);
     ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor: this }), content: `<div class="nr-card"><p>${game.i18n.format("NR.Chat.Regenerated", { name: this.name, n: used })}</p></div>` });
+  }
+
+  /* -------------------------------------------- */
+  /*  Robotik & Erwachte                           */
+  /* -------------------------------------------- */
+
+  /**
+   * Robotik-Overdrive (S. 217): Stärke eines Robotikteils für eine Aktion erhöhen,
+   * jeder Bonuspunkt verursacht einen Schadenspunkt am Teil.
+   */
+  async overdrive() {
+    const sys = this.system;
+    const zones = Object.values(sys.zoneData).filter(z => (sys.awakened || z.robotic) && !z.destroyed);
+    if (!zones.length) return ui.notifications.warn(game.i18n.localize("NR.Awakened.NoRobotics"));
+    const def = zones.find(z => z.key === "5") ?? zones[0];
+    const res = await foundry.applications.api.DialogV2.wait({
+      window: { title: game.i18n.localize("NR.Awakened.Overdrive"), icon: "fa-solid fa-gears" },
+      classes: ["noreturn", "nr-roll-dialog"],
+      content: `<p class="nr-hint">${game.i18n.localize("NR.Awakened.OverdriveHint")}</p>
+        <div class="form-group"><label>${game.i18n.localize("NR.Zone.Zone")}</label><select name="zone">${zones.map(z => `<option value="${z.key}" ${z.key === def.key ? "selected" : ""}>${z.key}: ${z.label} (${z.remaining}/${z.max} TP)</option>`).join("")}</select></div>
+        <div class="form-group"><label>${game.i18n.localize("NR.Awakened.OverdrivePoints")}</label><input type="number" name="points" value="20" min="1"></div>`,
+      buttons: [{ action: "ok", label: game.i18n.localize("NR.Awakened.Overdrive"), default: true,
+        callback: (e, b) => ({ zone: b.form.elements.zone.value, points: Math.max(1, Number(b.form.elements.points.value) || 0) }) },
+      { action: "cancel", label: game.i18n.localize("Cancel") }]
+    }).catch(() => null);
+    if (!res || res === "cancel") return;
+    const z = sys.zoneData[res.zone];
+    const points = Math.min(res.points, Math.max(0, z.remaining));
+    await this.update({
+      [`system.zones.${res.zone}.damage`]: sys.zones[res.zone].damage + points,
+      "system.combat.overdrive": (sys.combat.overdrive || 0) + points
+    });
+    ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor: this }),
+      content: `<div class="nr-card"><h3><i class="fa-solid fa-gears"></i> ${game.i18n.localize("NR.Awakened.Overdrive")}</h3><p>${game.i18n.format("NR.Awakened.OverdriveChat", { name: this.name, points, zone: z.label })}</p>${this.system.zoneData[res.zone].destroyed ? `<p class="nr-bad">${game.i18n.localize("NR.Zone.Destroyed")}</p>` : ""}</div>` });
+  }
+
+  /** EMP/Technokinese gegen Erwachte (S. 147): 2W6 − (Willenskraft + Wissen) KR handlungsunfähig. */
+  async empHit() {
+    const wk = this.system.skillList.willenskraft.value;
+    const wi = this.system.attr.wi.total;
+    const roll = await new Roll("2d6").evaluate();
+    const rounds = Math.max(0, roll.total - wk - wi);
+    ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor: this }), rolls: [roll],
+      content: `<div class="nr-card"><h3><i class="fa-solid fa-bolt"></i> ${game.i18n.localize("NR.Awakened.Emp")}</h3><p>${game.i18n.format("NR.Awakened.EmpChat", { name: this.name, roll: roll.total, wk, wi, rounds })}</p></div>` });
   }
 
   /* -------------------------------------------- */
@@ -605,6 +736,9 @@ export class NRActor extends Actor {
     else if (type === "skill") { path = `system.skills.${key}.value`; current = this.system.skills[key].value; label = NR.skills[key].label; }
     else if (type === "special") { path = `system.special.${key}.value`; current = this.system.special[key].value; label = key === "schmerztoleranz" ? "Schmerztoleranz" : key === "adrenalin" ? "Adrenalin" : "Meditation"; }
     else if (type === "custom" || type === "psi") { item = this.items.get(key); path = "system.value"; current = item.system.value; label = item.name; }
+    if (type === "attribute" && this.system.awakened && (key in NR.awakened.physical || key === "wa")) {
+      return ui.notifications.warn(game.i18n.localize("NR.Awakened.UpgradeOnly"));
+    }
     const cost = this.advancementCost(type === "psi" ? "psi" : type, current, { skillKey: type === "attribute" || type === "skill" ? key : null, item });
     const xp = this.system.progress.xp.value;
     const ok = await foundry.applications.api.DialogV2.confirm({

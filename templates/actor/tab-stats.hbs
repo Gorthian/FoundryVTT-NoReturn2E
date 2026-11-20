@@ -13,7 +13,8 @@
             <label>{{a.label}}</label>
             <input type="number" name="system.attributes.{{key}}.value" value="{{lookup (lookup ../system.attributes key) 'value'}}" min="0" data-tooltip="{{localize 'NR.Sheet.BaseValue'}}">
             <input type="number" name="system.attributes.{{key}}.bonus" value="{{lookup (lookup ../system.attributes key) 'bonus'}}" data-tooltip="{{localize 'NR.Sheet.BonusValue'}}">
-            {{#if ../isCharacter}}<a class="nr-advance" data-action="advance" data-type="attribute" data-key="{{key}}" data-tooltip="{{localize 'NR.Advance.Tooltip'}}: {{nrLookup ../attrCosts key}} EP"><i class="fa-solid fa-circle-up"></i></a>{{/if}}
+            {{#if (nrLookup ../upgradeOnly key)}}<i class="fa-solid fa-robot nr-dim" data-tooltip="{{localize 'NR.Awakened.UpgradeOnly'}}"></i>
+            {{else if ../isCharacter}}<a class="nr-advance" data-action="advance" data-type="attribute" data-key="{{key}}" data-tooltip="{{localize 'NR.Advance.Tooltip'}}: {{nrLookup ../attrCosts key}} EP"><i class="fa-solid fa-circle-up"></i></a>{{/if}}
           </div>
           <select class="nr-leiden" name="system.attributes.{{key}}.leiden" data-tooltip="{{localize 'NR.Sheet.Leiden'}}">
             {{selectOptions @root.leidenOptions selected=a.leiden}}
@@ -24,12 +25,14 @@
 
       <h3 class="nr-section-title">{{localize "NR.Section.Special"}}</h3>
       <div class="nr-special">
+        {{#unless awakened}}
         <div class="nr-special-row">
           <label>{{localize "NR.Special.adrenalin"}}</label>
           <input type="number" name="system.special.adrenalin.value" value="{{system.special.adrenalin.value}}" min="0">
           <span class="nr-derived" data-tooltip="{{localize 'NR.Sheet.AdrenalinHint'}}">{{system.adrenalinLeft}}/{{system.adrenalinMax}}</span>
           {{#if isCharacter}}<a data-action="advance" data-type="special" data-key="adrenalin" data-tooltip="{{specialCosts.adrenalin}} EP"><i class="fa-solid fa-circle-up"></i></a>{{/if}}
         </div>
+        {{/unless}}
         <div class="nr-special-row">
           <label>{{localize "NR.Special.schmerztoleranz"}}</label>
           <input type="number" name="system.special.schmerztoleranz.value" value="{{system.special.schmerztoleranz.value}}" min="0" max="10">
@@ -45,11 +48,15 @@
           </span>
           {{#if isCharacter}}<a data-action="advance" data-type="special" data-key="meditation" data-tooltip="{{specialCosts.meditation}} EP"><i class="fa-solid fa-circle-up"></i></a>{{/if}}
         </div>
+        {{#unless awakened}}
         <div class="nr-special-row">
           <label>{{localize "NR.Sheet.Infection"}}</label>
           <span class="nr-derived">{{system.ir.label}}</span>
           <a class="nr-btn tiny" data-action="rollInfection"><i class="fa-solid fa-virus"></i> {{localize "NR.Roll.Roll"}}</a>
         </div>
+        {{else}}
+        <p class="nr-hint"><i class="fa-solid fa-robot"></i> {{localize "NR.Awakened.StatsHint"}}</p>
+        {{/unless}}
       </div>
 
       <h3 class="nr-section-title">{{localize "NR.Section.CustomSkills"}}

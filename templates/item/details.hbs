@@ -143,6 +143,7 @@
     <label>{{localize "NR.Status.Psyche"}}</label><input type="number" name="system.psyche" value="{{system.psyche}}">
     <label>{{localize "NR.Status.Organism"}}</label><input type="number" name="system.organismus" value="{{system.organismus}}">
     <label>{{localize "NR.Species.Psi"}}</label><input type="checkbox" name="system.psi" {{checked system.psi}}>
+    <label>{{localize "NR.Species.Awakened"}}</label><input type="checkbox" name="system.awakened" {{checked system.awakened}}>
     <label>{{localize "NR.Species.FreePsi"}}</label><input type="number" name="system.freePsi" value="{{system.freePsi}}">
     <label>{{localize "NR.Species.BioGp"}}</label><input type="number" name="system.bioGp" value="{{system.bioGp}}">
     <label>{{localize "NR.Species.Identification"}}</label><input type="text" name="system.identification" value="{{system.identification}}">
@@ -194,6 +195,8 @@
     <label>{{localize "NR.Augment.Kind"}}</label><select name="system.kind">{{selectOptions options.augmentKinds selected=system.kind}}</select>
     <label>{{localize "NR.Augment.Zone"}}</label><select name="system.zone">{{selectOptions options.zones selected=system.zone}}</select>
     <label>{{localize "NR.Augment.Installed"}}</label><input type="checkbox" name="system.installed" {{checked system.installed}}>
+    <label>{{localize "NR.Augment.FullBody"}}</label><input type="checkbox" name="system.fullBody" {{checked system.fullBody}}>
+    <label>{{localize "NR.Augment.Gp"}}</label><input type="number" name="system.gp" value="{{system.gp}}" min="0">
     <label>{{localize "NR.Augment.OrgLoss"}}</label><input type="number" name="system.orgLoss" value="{{system.orgLoss}}">
     <label>{{localize "NR.Augment.PsycheLoss"}}</label><input type="number" name="system.psycheLoss" value="{{system.psycheLoss}}">
     <label>{{localize "NR.Augment.CapacityCost"}}</label><input type="number" name="system.capacityCost" value="{{system.capacityCost}}" step="0.25">
@@ -210,7 +213,18 @@
     <label>{{localize "NR.Augment.Capacity"}} / TP</label><span><input type="number" name="system.robotic.capacity" value="{{system.robotic.capacity}}" step="0.25"> / <input type="number" name="system.robotic.tp" value="{{system.robotic.tp}}"></span>
     <label>{{localize "NR.Augment.Armor"}}</label><span><input type="number" name="system.armor" value="{{system.armor}}"> <select name="system.mk">{{selectOptions options.mk selected=system.mk}}</select></span>
     {{/if}}
+    {{#if (and (eq system.kind "upgrade") (not system.fullBody))}}
+    <label>{{localize "NR.Augment.UpgradeValues"}}</label>
+    <span class="nr-inline-checks">
+      GE <input type="number" name="system.robotic.ge" value="{{system.robotic.ge}}">
+      ST <input type="number" name="system.robotic.st" value="{{system.robotic.st}}">
+      KO <input type="number" name="system.robotic.ko" value="{{system.robotic.ko}}">
+      BE <input type="number" name="system.robotic.be" value="{{system.robotic.be}}">
+      {{localize "NR.Augment.Armor"}} <input type="number" name="system.armor" value="{{system.armor}}">
+    </span>
+    {{/if}}
   </div>
+  {{#if (and (eq system.kind "upgrade") (not system.fullBody))}}<p class="nr-hint">{{localize "NR.Augment.UpgradeHint"}}</p>{{/if}}
   {{#if (eq system.kind "robotik")}}<p class="nr-hint">{{localize "NR.Augment.RoboticHint"}}</p>{{/if}}
 {{/if}}
 

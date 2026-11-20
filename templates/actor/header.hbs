@@ -22,6 +22,9 @@
         <div class="nr-bar"><div class="nr-bar-fill hp" style="width: {{nrPct system.health.value system.health.max}}%"></div></div>
         <span class="nr-stat-value nr-stat-big">{{system.health.value}}<small>/{{system.health.max}}</small></span>
       </div>
+      {{#if awakened}}
+      <div class="nr-stat" data-tooltip="{{localize 'NR.Awakened.Hint'}}"><span class="nr-stat-label"><i class="fa-solid fa-robot"></i> {{localize "NR.Awakened.Label"}}</span>{{#if system.combat.overdrive}}<span class="nr-chip warn">Overdrive +{{system.combat.overdrive}}</span>{{/if}}</div>
+      {{else}}
       <div class="nr-stat nr-adrenalin">
         <span class="nr-stat-label">{{localize "NR.Special.adrenalin"}}</span>
         <span class="nr-pips">
@@ -30,6 +33,7 @@
         <a data-action="adrenalin" data-kind="adrenalin" data-delta="1" data-tooltip="{{localize 'NR.Sheet.UseAdrenalin'}}"><i class="fa-solid fa-minus"></i></a>
         <a data-action="adrenalin" data-kind="adrenalin" data-delta="-1" data-tooltip="{{localize 'NR.Sheet.RestoreAdrenalin'}}"><i class="fa-solid fa-plus"></i></a>
       </div>
+      {{/if}}
       <div class="nr-stat {{#if system.malus.total}}nr-warn{{/if}}" data-tooltip="{{localize 'NR.Status.MalusHint'}}">
         <span class="nr-stat-label">{{localize "NR.Status.Malus"}}</span>
         <span class="nr-stat-value nr-stat-big">−{{system.malus.total}}<small>W</small></span>
@@ -38,10 +42,13 @@
         <span class="nr-stat-label">{{localize "NR.Status.Movement"}}</span>
         <span class="nr-stat-value nr-stat-big">{{system.movement}}<small>m</small></span>
       </div>
+      {{#unless awakened}}
       <div class="nr-stat" data-tooltip="{{system.org.band.label}}">
         <span class="nr-stat-label">{{localize "NR.Status.Organism"}}</span>
         <span class="nr-stat-value nr-stat-big">{{system.org.value}}</span>
       </div>
+      {{/unless}}
+      {{#if system.capacityOver}}<span class="nr-chip bad">{{localize "NR.Awakened.CapacityOver"}}</span>{{/if}}
       <div class="nr-stat" data-tooltip="{{system.psy.band.label}}">
         <span class="nr-stat-label">{{localize "NR.Status.Psyche"}}</span>
         <span class="nr-stat-value nr-stat-big">{{system.psy.value}}</span>

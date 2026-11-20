@@ -32,6 +32,13 @@ def weapons():
     W.append(weapon("Waffenloser Angriff", "unbewaffnet", st=True, pts=0, dtype="wucht", ts=0,
                     img=icon("weapons/fist", "boxing"), equipped=True,
                     desc="Faust, Tritt oder Kopfstoß. Schaden ist eine reine Stärke-Probe. Körpereigene Waffen (Biss, Krallen) erhalten +10 Punkte (S. 101).", page=93))
+    # ---- Körpereigene Waffen aus biologischen Eigenschaften / Robotischer Adaption (S. 163–164)
+    for n, pts, atk, dt, ik, ds in [("Krallen (körpereigen)", 20, 1, "klinge", "claw", "Krallen, Klauen oder scharfe Nägel: Nahkampf +1W, Schaden ST+20p. (S. 163)."),
+                                    ("Biss (körpereigen)", 30, 0, "stich", "fangs", "Scharfe Zähne oder Schnabel: Biss ST+30p. (mit zermalmendem Kiefer ST+40p. – Punkte anpassen) (S. 164)."),
+                                    ("Hornstoß (körpereigen)", 30, 0, "stich", "horn", "Horn, Hörner oder Stoßzähne: ST+30p., durch Anlauf erhöht (S. 163)."),
+                                    ("Großer Stachel (körpereigen)", 30, 0, "stich", "spike", "Einzelner großer Stachel: ST+30p. offensiv (S. 164). Ersetzt den defensiven Rückschaden der Stacheln.")]:
+        W.append(weapon(n, "unbewaffnet", st=True, pts=pts, atk=atk, dtype=dt, ts=0, equipped=True,
+                        img=icon("weapons/fist", "boxing"), desc=ds + " Gilt auch als robotische Version für Erwachte.", page=163))
     # ---- Faustkampfwaffen (S. 226)
     fk = [("Klingeneinsatz", 1, 35, 0.3, 3, 2500, "klinge", "dagger", "Ausklappbare Klinge in Handschuh oder Stiefel, bis 30 cm, per Muskelkontraktion ausgelöst."),
           ("Messer", 1, 15, 0.2, 1, 60, "klinge", "dagger", "Schlichtes Klapp- oder feststehendes Messer."),
@@ -317,8 +324,9 @@ def gear():
     return G
 
 
-def augment(name, kind, *, ts=4, price=0, org=0, psy=0, cap=0.0, desc="", page=221, zone="", robotic=None, armor=0, mk="", model="", mods=None, img=None):
+def augment(name, kind, *, ts=4, price=0, org=0, psy=0, cap=0.0, desc="", page=221, zone="", robotic=None, armor=0, mk="", model="", mods=None, img=None, gp=0, full_body=False):
     sysd = {"kind": kind, "zone": zone, "model": model, "armor": armor, "mk": mk, "capacityCost": cap, "orgLoss": org, "psycheLoss": psy,
+            "gp": gp, "fullBody": full_body,
             "installed": True, "ts": ts, "price": price, "quantity": 1, "modifiers": mods or [], "description": p(desc, page)}
     if robotic:
         sysd["robotic"] = robotic
@@ -335,12 +343,31 @@ def augments():
         A.append(augment(f"Robotik-Körperzone: {n}", "robotik", model=n, org=org, armor=arm, mk=mk, ts=4, page=218,
                          robotic={"ge": ge, "st": st, "ko": ko, "be": be, "wa": wa, "capacity": cap, "tp": 70},
                          desc=f"Robotikmodell {n} ({ds}) für eine Körperzone – Zone im Itembogen wählen. GE {ge}, ST {st}, KO {ko}, BE {be}, WA {wa}, Kapazität {cap}, Panzerung {arm}p. MK:{mk}, Organismus −{org}. 70 TP. Implantation: Robotik-Crafting MW 45 (letal MW 50), 4 h (7 h). Nicht mit Regeneration kompatibel. Robotik-Overdrive: +X Stärke für eine Aktion kostet X Schaden am Teil."))
-    for n, cap, pr, ds in [("Robotik-Upgrade: Geschick +1", 0.5, 1000, "Max. GE 8. Full Body 11.000 N$."),
-                           ("Robotik-Upgrade: Stärke +1", 0.25, 500, "Max. ST 20. Full Body 5.500 N$."),
-                           ("Robotik-Upgrade: Konstitution +1", 0.25, 500, "Max. KO 20. Full Body 5.500 N$."),
-                           ("Robotik-Upgrade: Beweglichkeit +1", 0.5, 1000, "Max. BE 10. Full Body 11.000 N$."),
-                           ("Robotik-Upgrade: Panzerung +10", 0.5, 500, "Erhöht nur die Rüstungspunkte, nicht die MK. Full Body 5.500 N$.")]:
-        A.append(augment(n, "upgrade", cap=cap, price=pr, ts=4, page=218, desc=ds + " Wert direkt im Robotik-Item der Zone erhöhen."))
+    for n, cap, pr, key, ds in [("Robotik-Upgrade: Geschick +1", 0.5, 1000, "ge", "Max. GE 8. Full Body 11.000 N$."),
+                                ("Robotik-Upgrade: Stärke +1", 0.25, 500, "st", "Max. ST 20. Full Body 5.500 N$."),
+                                ("Robotik-Upgrade: Konstitution +1", 0.25, 500, "ko", "Max. KO 20. Full Body 5.500 N$."),
+                                ("Robotik-Upgrade: Beweglichkeit +1", 0.5, 1000, "be", "Max. BE 10. Full Body 11.000 N$."),
+                                ("Robotik-Upgrade: Panzerung +10", 0.5, 500, "armor", "Erhöht nur die Rüstungspunkte, nicht die MK. Full Body 5.500 N$.")]:
+        robo = {"ge": 0, "st": 0, "ko": 0, "be": 0, "wa": 0, "capacity": 0, "tp": 70}
+        if key != "armor":
+            robo[key] = 1
+        A.append(augment(n, "upgrade", cap=cap, price=pr, ts=4, page=218, robotic=robo, armor=10 if key == "armor" else 0,
+                         desc=ds + " Im Itembogen die robotische Zone wählen; die Anzahl zählt als Stufen (Kapazität und Wert je Stufe)."))
+    # Erwachte: Ganzkörper-Upgrade-Pakete (S. 146)
+    for n, attr, pr, cap in [("Geschick-Upgrade-Pack", "ge", 11000, 0.5), ("Stärke-Upgrade-Pack", "st", 5500, 0.25),
+                             ("Konstitutions-Upgrade-Pack", "ko", 5500, 0.25), ("Beweglichkeits-Upgrade-Pack", "be", 11000, 0.5)]:
+        A.append(augment(f"Ganzkörper: {n} (+1)", "upgrade", price=pr, cap=cap, full_body=True, ts=4, page=146,
+                         mods=[{"target": f"attributes.{attr}", "value": 1}],
+                         desc=f"Hebt {attr.upper()} des gesamten robotischen Körpers um eine Stufe und verbraucht {cap} Kapazität in jeder Körperzone. Mehrfach kaufbar (Anzahl erhöhen bzw. weiteres Paket). Höchstwerte: GE 8, ST 20, KO 20, BE 10."))
+    A.append(augment("Ganzkörper: Panzerungs-Upgrade (+10)", "upgrade", price=5500, cap=0.5, full_body=True, ts=4, page=218,
+                     mods=[{"target": "chassisArmor", "value": 10}], desc="+10 Punkte Chassis-Panzerung an allen Zonen (MK bleibt)."))
+    # Erwachte: Designoptionen (S. 146–147, GP-Kosten)
+    for n, gp, mods, ds in [("Flugtauglich", 35, [], "Schubdüsen, Antigravitation oder Rotoren: besondere Fertigkeit „Fliegen“ (BE) auf Stufe 3, Rüttelflug integriert."),
+                            ("Fortbewegung (Räder/Ketten)", 20, [], "Rollen, Räder oder Kettenantrieb nach den Regeln von „Wechselgänger“ (Rennen-Ergebnis ×2) ohne auf alle Viere zu gehen."),
+                            ("Fusionsbatterie", 40, [], "Energie statt Ernährung: Ausdauerproben gelingen automatisch, kein Schlaf nötig (4 h Trance zum Sortieren der Gedanken)."),
+                            ("Nanitenprototyp", 40, [{"target": "regSpeed", "value": 5}, {"target": "regPool", "value": 80}], "Reparaturnaniten: Regeneration 5, Pool 80 (füllt sich in der Trance)."),
+                            ("Strukturupgrade", 15, [{"target": "chassisMk", "value": 1}], "Die Chassis-Panzerung des Erwachten zählt als MK:B statt MK:A.")]:
+        A.append(augment(f"Designoption: {n}", "design", gp=gp, ts=0, page=146, mods=mods, desc=ds + f" Kosten {gp} GP (nur Erwachte)."))
     A.append(augment("Abdichtung", "upgrade", ts=2, price=1000, page=219, desc="Robotisches Körperteil gegen Feuchtigkeit und toxisches Meerwasser abgedichtet. Preis je Zone."))
     A.append(augment("Isolierte KI", "upgrade", ts=4, price=10000, cap=1, page=219, desc="KI steuert die Zone autonom, auch bei Bewusstlosigkeit, mit den Grundattributen des Teils. Je Zone."))
     A.append(augment("Luxus-Upgrade", "upgrade", ts=3, price=2000, page=219, desc="Edelsteine und Edelmetallapplikationen – reines Statussymbol."))

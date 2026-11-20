@@ -357,8 +357,24 @@ NR.toolQuality = { "-2": "−2W (miserabel)", "-1": "−1W (schlecht)", 0: "±0 
 
 NR.traitKinds = { justice: "Justice", chaos: "Chaos" };
 NR.advantageKinds = { vorteil: "Vorteil", nachteil: "Nachteil" };
-NR.augmentKinds = { implantat: "Implantat", robotik: "Robotik (Körperzone)", biomechanik: "Biomechanik", upgrade: "Robotik-Upgrade" };
+NR.augmentKinds = { implantat: "Implantat", robotik: "Robotik (Körperzone)", biomechanik: "Biomechanik", upgrade: "Robotik-Upgrade", design: "Erwachten-Designoption" };
 NR.bioTraitKinds = { sichtbar: "Sichtbar", verborgen: "Verborgen", auffaelligkeit: "Auffälligkeit" };
+/** Erwachte (S. 145–147). */
+NR.awakened = {
+  physical: { ge: 2, st: 2, ko: 2, be: 2 },
+  perception: 3,
+  mental: 1,
+  tp: 70,
+  pain: 10,
+  capacity: 16,
+  chassisArmor: 10,
+  lethalZones: ["12", "6", "8"],
+  maxima: { ge: 8, st: 20, ko: 20, be: 10 },
+  adaptionMax: 80,
+  excludedTraits: ["Dicke Haut", "Panzer", "Adrenalinkammern", "Gesteigerte Fertigkeit", "Giftresistenz", "Regeneration",
+    "Schmerzresistenz", "Sechster Sinn", "Verbesserte Wahrnehmung", "Verdichtete Muskulatur"]
+};
+
 NR.styleSkillKinds = { expert: "Expertenfähigkeit", kampfkunst: "Kampfkunst" };
 
 /**
@@ -366,6 +382,9 @@ NR.styleSkillKinds = { expert: "Expertenfähigkeit", kampfkunst: "Kampfkunst" };
  * damit Spezies, Abnormitäten, Vorteile und Implantate ihre Werte automatisch einbringen.
  */
 NR.modifierTargets = {
+  "dice.klettern": "Bonuswürfel: Klettern",
+  "dice.nahkampf": "Bonuswürfel: Nahkampf",
+  "dice.einschuechtern.st": "Bonuswürfel: Einschüchtern mit Stärke",
   "attributes.ge": "Attribut: Geschick",
   "attributes.st": "Attribut: Stärke",
   "attributes.ko": "Attribut: Konstitution",
@@ -387,6 +406,9 @@ NR.modifierTargets = {
   movement: "Bewegungsreichweite (m)",
   bloodMax: "Blutpunkte (max.)",
   armorAll: "Rüstung an allen Zonen (Punkte)",
+  chassisArmor: "Erwachte: Chassis-Panzerung (Punkte)",
+  chassisMk: "Erwachte: Chassis MK:B (Wert 1)",
+  capacity: "Erwachte: Kapazität je Zone",
   ...Object.fromEntries(Object.entries(NR.skills).map(([k, s]) => [`skills.${k}`, `Fertigkeit: ${s.label}`]))
 };
 

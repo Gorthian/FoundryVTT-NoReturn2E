@@ -36,6 +36,8 @@
       <div class="nr-button-row">
         <a class="nr-btn" data-action="manualDamage"><i class="fa-solid fa-heart-crack"></i> {{localize "NR.Damage.Manual"}}</a>
         <a class="nr-btn" data-action="heal"><i class="fa-solid fa-kit-medical"></i> {{localize "NR.Heal.Title"}}</a>
+        {{#if system.hasRobotics}}<a class="nr-btn" data-action="overdrive" data-tooltip="{{localize 'NR.Awakened.OverdriveHint'}}"><i class="fa-solid fa-gears"></i> {{localize "NR.Awakened.Overdrive"}}</a>{{/if}}
+        {{#if awakened}}<a class="nr-btn" data-action="empHit" data-tooltip="{{localize 'NR.Awakened.EmpHint'}}"><i class="fa-solid fa-bolt"></i> {{localize "NR.Awakened.Emp"}}</a>{{/if}}
         {{#if system.hasRegeneration}}<a class="nr-btn" data-action="regenerate"><i class="fa-solid fa-dna"></i> {{localize "NR.Sheet.Regenerate"}}</a>{{/if}}
       </div>
     </div>

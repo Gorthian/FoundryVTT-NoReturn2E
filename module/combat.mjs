@@ -189,6 +189,8 @@ export async function attackWithWeapon(actor, weapon) {
     actorUuid: actor.uuid,
     weaponId: weapon.id,
     weaponName: weapon.name,
+    category: sys.category,
+    tokenUuid: actor.token?.uuid ?? actor.getActiveTokens()[0]?.document.uuid ?? null,
     melee,
     mode: opts.mode,
     aim, zone: opts.zone, half: opts.half,
@@ -386,9 +388,11 @@ export async function rollDamage(defense) {
     label = dmg.formula;
   } else if (dmg.strength) {
     const st = attacker.system.attr.st.total;
-    const { formula } = buildFormula({ dice: st, extraDice, points: dmg.points, hazard: true });
+    const overdrive = attacker.system.combat?.overdrive ?? 0;
+    const { formula } = buildFormula({ dice: st, extraDice, points: dmg.points + overdrive, hazard: true });
     roll = await new Roll(formula).evaluate();
-    label = `ST ${st}${dmg.points ? ` + ${dmg.points}p.` : ""}`;
+    label = `ST ${st}${dmg.points ? ` + ${dmg.points}p.` : ""}${overdrive ? ` + Overdrive ${overdrive}` : ""}`;
+    if (overdrive) await attacker.update({ "system.combat.overdrive": 0 });
   } else {
     const { formula } = buildFormula({ dice: 0, extraDice, points: dmg.points, hazard: false, oneDieRule: false });
     roll = await new Roll(formula).evaluate();
@@ -418,6 +422,39 @@ export async function rollDamage(defense) {
     dice: diceSummary(roll), describe: describeDamage(dmg)
   });
   const msgData = { speaker: ChatMessage.getSpeaker({ actor: attacker }), content, rolls: [roll], flags: { noreturn: { damage: payload } } };
+  applyChatMode(msgData);
+  const msg = await ChatMessage.create(msgData);
+  await spikeRetaliation(defense, attacker);
+  return msg;
+}
+
+/**
+ * Stacheln (S. 164): Ein waffenloser/körpereigener Nahkampfangriff auf einen Träger
+ * defensiver Stacheln fügt dem Angreifer KO + 15 Punkte Schaden zu.
+ */
+async function spikeRetaliation(defense, attacker) {
+  const attack = defense.attack;
+  if (!attack.melee || attack.category !== "unbewaffnet") return;
+  const defTok = defense.defender.tokenUuid ? await fromUuid(defense.defender.tokenUuid) : null;
+  const defender = defTok?.actor ?? await fromUuid(defense.defender.actorUuid);
+  if (!defender) return;
+  const spikes = defender.items.find(i => i.type === "bioTrait" && i.name.startsWith("Stachel(n)"));
+  if (!spikes || defender.items.some(i => i.type === "weapon" && i.name.startsWith("Großer Stachel"))) return;
+  const ko = defender.system.attr?.ko?.total ?? 1;
+  const { formula } = buildFormula({ dice: ko, points: 15, hazard: true });
+  const roll = await new Roll(formula).evaluate();
+  const zones = [(await rollHitZone()).zone];
+  const payload = {
+    kind: "damage", amount: roll.total, zones,
+    attack: { pierce: "", damageType: "stich", noDamageVs: "", nonLethal: false, structure: false, continuous: false },
+    target: { tokenUuid: attack.tokenUuid, actorUuid: attacker.uuid, name: attacker.name },
+    weaponName: `${spikes.name} (${game.i18n.localize("NR.Combat.Retaliation")})`, blocked: false
+  };
+  const content = await renderTemplate("systems/noreturn/templates/chat/damage-card.hbs", {
+    ...payload, label: `KO ${ko} + 15p.`, zoneLabels: zones.map(z => NR.zones[z].label).join(", "),
+    dice: diceSummary(roll), describe: ""
+  });
+  const msgData = { speaker: ChatMessage.getSpeaker({ actor: defender }), content, rolls: [roll], flags: { noreturn: { damage: payload } } };
   applyChatMode(msgData);
   return ChatMessage.create(msgData);
 }

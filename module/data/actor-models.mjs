@@ -62,7 +62,8 @@ function creatureSchema() {
     tempBonus: int(0),
     combat: new fields.SchemaField({
       defenses: int(0, { min: 0 }),
-      psiCollected: int(0, { min: 0 })
+      psiCollected: int(0, { min: 0 }),
+      overdrive: int(0, { min: 0 })
     }),
     alcohol: int(0, { min: 0 }),
     details: new fields.SchemaField({

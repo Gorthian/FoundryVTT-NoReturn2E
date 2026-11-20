@@ -1,5 +1,5 @@
 <div class="nr-zone zone-{{zone.key}} {{#if zone.wounded}}wounded{{/if}} {{#if zone.destroyed}}destroyed{{/if}} {{#if zone.lethal}}lethal{{/if}} {{#if zone.robotic}}robotic{{/if}}"
-     data-tooltip="{{zone.label}}{{#if zone.lethal}} (letal){{/if}}{{#if zone.robotic}} · {{zone.roboticName}}{{/if}}<br>TP {{zone.remaining}}/{{zone.max}} · Schwelle {{zone.threshold}}<br>Rüstung {{zone.armor}}p. {{zone.mk}}">
+     data-tooltip="{{zone.label}}{{#if zone.lethal}} (letal){{/if}}{{#if zone.robotic}} · {{zone.roboticName}}{{/if}}{{#if zone.roboticAttrs}}<br>{{zone.roboticAttrs}}{{/if}}{{#if zone.strayUpgrades}}<br>⚠ {{localize 'NR.Augment.StrayUpgrade'}}: {{zone.strayUpgrades}}{{/if}}<br>TP {{zone.remaining}}/{{zone.max}} · Schwelle {{zone.threshold}}<br>Rüstung {{zone.armor}}p. {{zone.mk}}{{#if zone.capacity}}<br>Kapazität {{zone.capacity.used}}/{{zone.capacity.max}}{{/if}}">
   <div class="nr-zone-head">
     <span class="nr-zone-num">{{zone.key}}</span>
     <span class="nr-zone-name">{{zone.short}}</span>
@@ -9,6 +9,7 @@
   <div class="nr-zone-inputs">
     <input type="number" name="system.zones.{{zone.key}}.damage" value="{{zone.damage}}" min="0" data-tooltip="{{localize 'NR.Zone.Damage'}}">
     <span>/ {{zone.max}}</span>
+    {{#if zone.capacity}}<span class="nr-cap {{#if zone.capacity.over}}nr-bad{{/if}}">⚙{{zone.capacity.used}}</span>{{/if}}
     {{#if zone.chronic}}<span class="nr-chronic" data-tooltip="{{localize 'NR.Zone.Chronic'}}">+{{zone.chronic}}</span>{{/if}}
   </div>
 </div>

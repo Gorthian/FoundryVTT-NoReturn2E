@@ -18,6 +18,7 @@
     "max": 0
    },
    "modifiers": [],
+   "grants": [],
    "description": "<p>Kiemen – atmet unter Wasser. <em class=\"nr-ref\">(NoReturn 2E, S. 162)</em></p>"
   },
   "effects": [],
@@ -31,8 +32,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -63,6 +64,7 @@
      "value": 2
     }
    ],
+   "grants": [],
    "description": "<p>Charisma +2; eigene Einschüchtern-Proben werden halbiert. <em class=\"nr-ref\">(NoReturn 2E, S. 162)</em></p>"
   },
   "effects": [],
@@ -76,8 +78,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -103,6 +105,7 @@
     "max": 0
    },
    "modifiers": [],
+   "grants": [],
    "description": "<p>Je Stufe +1W gegen Kälte (Fell) bzw. Hitze (Haut). Max. 5. <em class=\"nr-ref\">(NoReturn 2E, S. 162)</em></p>"
   },
   "effects": [],
@@ -116,8 +119,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -143,6 +146,7 @@
     "max": 0
    },
    "modifiers": [],
+   "grants": [],
    "description": "<p>Fertigkeit „Fliegen“ (BE) Stufe 1, MW 5; Geschwindigkeit = Wurf × 2. Schweben nur mit Rüttelflug. <em class=\"nr-ref\">(NoReturn 2E, S. 162)</em></p>"
   },
   "effects": [],
@@ -156,8 +160,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -183,6 +187,7 @@
     "max": 0
    },
    "modifiers": [],
+   "grants": [],
    "description": "<p>Gleitflug: besondere Fertigkeit „Gleiten“ (BE) 1, MW 5, Wurf × 2 m/KR; verdoppelt Springen. <em class=\"nr-ref\">(NoReturn 2E, S. 162)</em></p>"
   },
   "effects": [],
@@ -196,8 +201,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -223,6 +228,7 @@
     "max": 0
    },
    "modifiers": [],
+   "grants": [],
    "description": "<p>Nässende Giftschicht wirkt bei Berührung ohne Kleidung/Rüstung wie Giftdrüsen (toxisch). <em class=\"nr-ref\">(NoReturn 2E, S. 163)</em></p>"
   },
   "effects": [],
@@ -236,8 +242,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -263,6 +269,7 @@
     "max": 0
    },
    "modifiers": [],
+   "grants": [],
    "description": "<p>Wie oben mit narkotischem Gift. <em class=\"nr-ref\">(NoReturn 2E, S. 163)</em></p>"
   },
   "effects": [],
@@ -276,8 +283,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -303,7 +310,10 @@
     "max": 0
    },
    "modifiers": [],
-   "description": "<p>Schaden ST+30p., durch Anlauf (Rennen) erhöht. <em class=\"nr-ref\">(NoReturn 2E, S. 163)</em></p>"
+   "grants": [
+    "Hornstoß (körpereigen)"
+   ],
+   "description": "<p>Schaden ST+30p., durch Anlauf (Rennen) erhöht. Bringt die Waffe „Hornstoß (körpereigen)“ mit. <em class=\"nr-ref\">(NoReturn 2E, S. 163)</em></p>"
   },
   "effects": [],
   "folder": null,
@@ -316,8 +326,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -342,8 +352,16 @@
     "value": 0,
     "max": 0
    },
-   "modifiers": [],
-   "description": "<p>Klettern +1W; Nahkampf +1W; Schaden ST+20p. <em class=\"nr-ref\">(NoReturn 2E, S. 163)</em></p>"
+   "modifiers": [
+    {
+     "target": "dice.klettern",
+     "value": 1
+    }
+   ],
+   "grants": [
+    "Krallen (körpereigen)"
+   ],
+   "description": "<p>Klettern +1W (automatisch); Nahkampf +1W und Schaden ST+20p. über die Waffe „Krallen (körpereigen)“, die automatisch hinzugefügt wird. <em class=\"nr-ref\">(NoReturn 2E, S. 163)</em></p>"
   },
   "effects": [],
   "folder": null,
@@ -356,8 +374,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -383,6 +401,7 @@
     "max": 0
    },
    "modifiers": [],
+   "grants": [],
    "description": "<p>Je Stufe ein zusätzliches Paar Arme (+4W Stärke wenn alle beteiligt) oder Beine (+4W Rennen). Max. 2. <em class=\"nr-ref\">(NoReturn 2E, S. 163)</em></p>"
   },
   "effects": [],
@@ -396,8 +415,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -423,6 +442,7 @@
     "max": 0
    },
    "modifiers": [],
+   "grants": [],
    "description": "<p>Je Stufe drei Zonen mit 20p. MK:A (Modifikator „Körperpanzer“ je Zone setzen). Weichteile ungeschützt. <em class=\"nr-ref\">(NoReturn 2E, S. 163)</em></p>"
   },
   "effects": [],
@@ -436,8 +456,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -463,6 +483,7 @@
     "max": 0
    },
    "modifiers": [],
+   "grants": [],
    "description": "<p>Je Stufe zwei Zonen mit 30p. MK:B (Modifikator „Körperpanzer“ je Zone). Weichteile ungeschützt. <em class=\"nr-ref\">(NoReturn 2E, S. 163)</em></p>"
   },
   "effects": [],
@@ -476,8 +497,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -503,6 +524,7 @@
     "max": 0
    },
    "modifiers": [],
+   "grants": [],
    "description": "<p>Augen seitlich – sieht auch hinter sich. Ultraschall-Rundumsicht: 25 GP. <em class=\"nr-ref\">(NoReturn 2E, S. 163)</em></p>"
   },
   "effects": [],
@@ -516,8 +538,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -543,6 +565,9 @@
     "max": 0
    },
    "modifiers": [],
+   "grants": [
+    "Biss (körpereigen)"
+   ],
    "description": "<p>Biss ST+30p. (mit zermalmendem Kiefer ST+40p.). <em class=\"nr-ref\">(NoReturn 2E, S. 164)</em></p>"
   },
   "effects": [],
@@ -556,8 +581,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -583,6 +608,7 @@
     "max": 0
    },
    "modifiers": [],
+   "grants": [],
    "description": "<p>Je Stufe +10 Punkte auf Schwimmen. <em class=\"nr-ref\">(NoReturn 2E, S. 164)</em></p>"
   },
   "effects": [],
@@ -596,8 +622,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -623,6 +649,7 @@
     "max": 0
    },
    "modifiers": [],
+   "grants": [],
    "description": "<p>Nur Demigod: je 5 GP fünf Stufen ST/KO/BE frei auf Körperzonen verteilen. Max. 4×. <em class=\"nr-ref\">(NoReturn 2E, S. 164)</em></p>"
   },
   "effects": [],
@@ -636,8 +663,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -663,7 +690,8 @@
     "max": 0
    },
    "modifiers": [],
-   "description": "<p>Verteidigend KO+15p. gegen Angreifer, ein großer Stachel ST+30p. <em class=\"nr-ref\">(NoReturn 2E, S. 164)</em></p>"
+   "grants": [],
+   "description": "<p>Verteidigend: Trifft dich ein waffenloser/körpereigener Nahkampfangriff, erleidet der Angreifer KO+15p. Schaden (Schadenskarte erscheint automatisch). Alternativ ein einzelner großer Stachel ST+30p.: dann die Waffe „Großer Stachel (körpereigen)“ aus dem Compendium Waffen hinzufügen – der Rückschaden entfällt. <em class=\"nr-ref\">(NoReturn 2E, S. 164)</em></p>"
   },
   "effects": [],
   "folder": null,
@@ -676,8 +704,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -708,6 +736,7 @@
      "value": 4
     }
    ],
+   "grants": [],
    "description": "<p>Rennen +4. <em class=\"nr-ref\">(NoReturn 2E, S. 164)</em></p>"
   },
   "effects": [],
@@ -721,8 +750,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -753,6 +782,7 @@
      "value": 1
     }
    ],
+   "grants": [],
    "description": "<p>Je Stufe Adrenalin +1. Max. 2. <em class=\"nr-ref\">(NoReturn 2E, S. 165)</em></p>"
   },
   "effects": [],
@@ -766,8 +796,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -793,6 +823,7 @@
     "max": 0
    },
    "modifiers": [],
+   "grants": [],
    "description": "<p>+5 GP auf eine sichtbare Eigenschaft bis 15 GP – wird dadurch verborgen. <em class=\"nr-ref\">(NoReturn 2E, S. 165)</em></p>"
   },
   "effects": [],
@@ -806,8 +837,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -833,6 +864,7 @@
     "max": 20
    },
    "modifiers": [],
+   "grants": [],
    "description": "<p>Einmal je KR ohne Aktion per Berührung: Hitzeschaden = besondere Fertigkeit „Elektroschock (Schaden)“ (Start 2). 20 Ladungen (+5 je 5 GP). Nicht mit Super Charge. <em class=\"nr-ref\">(NoReturn 2E, S. 165)</em></p>"
   },
   "effects": [],
@@ -846,8 +878,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -873,6 +905,7 @@
     "max": 0
    },
    "modifiers": [],
+   "grants": [],
    "description": "<p>Ortet alles mit Bodenkontakt in Wahrnehmung × 2 m; Heimlichkeit dagegen halbiert, optische Tarnung wirkungslos. <em class=\"nr-ref\">(NoReturn 2E, S. 166)</em></p>"
   },
   "effects": [],
@@ -886,8 +919,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -913,6 +946,7 @@
     "max": 0
    },
    "modifiers": [],
+   "grants": [],
    "description": "<p>Stufe 1: +20 Heimlichkeit (optisch), −2 je verdeckte Zone. Stufe 2: +40, −4 je Zone. <em class=\"nr-ref\">(NoReturn 2E, S. 166)</em></p>"
   },
   "effects": [],
@@ -926,8 +960,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -953,6 +987,7 @@
     "max": 0
    },
    "modifiers": [],
+   "grants": [],
    "description": "<p>+2W auf Einschüchtern, Inspirieren, Schauspiel (für sich oder andere). <em class=\"nr-ref\">(NoReturn 2E, S. 166)</em></p>"
   },
   "effects": [],
@@ -966,8 +1001,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -993,6 +1028,7 @@
     "max": 0
    },
    "modifiers": [],
+   "grants": [],
    "description": "<p>Je Stufe +2 auf Heimlichkeit, Klettern, Rennen, Schwimmen, Springen oder Stemmen (Modifikator anpassen). <em class=\"nr-ref\">(NoReturn 2E, S. 166)</em></p>"
   },
   "effects": [],
@@ -1006,8 +1042,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -1033,6 +1069,7 @@
     "max": 0
    },
    "modifiers": [],
+   "grants": [],
    "description": "<p>Kontakt: −3W auf alle Attribute für 20 KR (Giftresistenz je Stufe −1W); KO ≤ 0 → bewusstlos. <em class=\"nr-ref\">(NoReturn 2E, S. 166)</em></p>"
   },
   "effects": [],
@@ -1046,8 +1083,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -1073,6 +1110,7 @@
     "max": 0
    },
    "modifiers": [],
+   "grants": [],
    "description": "<p>Kontakt: 3 KR je 6 Schaden am Herzen oder Kopf ohne Widerstand (Giftresistenz −2 je Stufe). <em class=\"nr-ref\">(NoReturn 2E, S. 167)</em></p>"
   },
   "effects": [],
@@ -1086,8 +1124,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -1113,6 +1151,7 @@
     "max": 0
    },
    "modifiers": [],
+   "grants": [],
    "description": "<p>Je Stufe Resistenz gegen Gifte; +2W gegen Alkohol je Stufe. Max. 3. <em class=\"nr-ref\">(NoReturn 2E, S. 167)</em></p>"
   },
   "effects": [],
@@ -1126,8 +1165,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -1153,6 +1192,7 @@
     "max": 0
    },
    "modifiers": [],
+   "grants": [],
    "description": "<p>Bis zu drei Liter Stauraum. <em class=\"nr-ref\">(NoReturn 2E, S. 167)</em></p>"
   },
   "effects": [],
@@ -1166,8 +1206,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -1193,6 +1233,7 @@
     "max": 0
    },
    "modifiers": [],
+   "grants": [],
    "description": "<p>Keine Erschwernis bei optischer Wahrnehmung im Dunkeln. <em class=\"nr-ref\">(NoReturn 2E, S. 167)</em></p>"
   },
   "effects": [],
@@ -1206,8 +1247,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -1242,6 +1283,7 @@
      "value": 100
     }
    ],
+   "grants": [],
    "description": "<p>Regenerationsgeschwindigkeit 10, Pool 100. <em class=\"nr-ref\">(NoReturn 2E, S. 167)</em></p>"
   },
   "effects": [],
@@ -1255,8 +1297,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -1281,8 +1323,14 @@
     "value": 0,
     "max": 0
    },
-   "modifiers": [],
-   "description": "<p>+5W auf Einschüchtern mit Stärke. <em class=\"nr-ref\">(NoReturn 2E, S. 167)</em></p>"
+   "modifiers": [
+    {
+     "target": "dice.einschuechtern.st",
+     "value": 5
+    }
+   ],
+   "grants": [],
+   "description": "<p>+5W auf Einschüchtern, wenn mit Stärke statt Charisma gewürfelt wird (automatisch bei Attributwahl ST). <em class=\"nr-ref\">(NoReturn 2E, S. 167)</em></p>"
   },
   "effects": [],
   "folder": null,
@@ -1295,8 +1343,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -1327,6 +1375,7 @@
      "value": 1
     }
    ],
+   "grants": [],
    "description": "<p>Verdaut rohe Nahrung; +1 auf Infektionsresistenz. <em class=\"nr-ref\">(NoReturn 2E, S. 167)</em></p>"
   },
   "effects": [],
@@ -1340,8 +1389,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -1367,6 +1416,7 @@
     "max": 1
    },
    "modifiers": [],
+   "grants": [],
    "description": "<p>Feuer- oder Säurestoß SP 6/6 alle 6 h; Fertigkeit „Odemwaffe“ (GE) 1; Schaden = doppelter Stärkewurf, andauernd 1W6 KR. +5 GP je Ladung (max. 5). <em class=\"nr-ref\">(NoReturn 2E, S. 167)</em></p>"
   },
   "effects": [],
@@ -1380,8 +1430,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -1412,6 +1462,7 @@
      "value": 2
     }
    ],
+   "grants": [],
    "description": "<p>Je Stufe Schmerztoleranz +2. Max. 2. <em class=\"nr-ref\">(NoReturn 2E, S. 168)</em></p>"
   },
   "effects": [],
@@ -1425,8 +1476,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -1452,6 +1503,7 @@
     "max": 0
    },
    "modifiers": [],
+   "grants": [],
    "description": "<p>Darf immer eine Defensivaktion durchführen, auch gegen nicht wahrnehmbare Angriffe. <em class=\"nr-ref\">(NoReturn 2E, S. 168)</em></p>"
   },
   "effects": [],
@@ -1465,8 +1517,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -1492,6 +1544,7 @@
     "max": 20
    },
    "modifiers": [],
+   "grants": [],
    "description": "<p>Netz oder Seil bis 30 m. Fertigkeiten „Spinnenseide (Werfen)“ (GE) und „(Stabilität)“ (ST) je 1. 20 Ladungen. <em class=\"nr-ref\">(NoReturn 2E, S. 168)</em></p>"
   },
   "effects": [],
@@ -1505,8 +1558,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -1532,6 +1585,7 @@
     "max": 20
    },
    "modifiers": [],
+   "grants": [],
    "description": "<p>Bis 50 m, Angriff mit Projektilwaffen, Schaden = besondere Fertigkeit „Körpergeschosse“ (2). 20 Ladungen. <em class=\"nr-ref\">(NoReturn 2E, S. 168)</em></p>"
   },
   "effects": [],
@@ -1545,8 +1599,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -1572,6 +1626,7 @@
     "max": 0
    },
    "modifiers": [],
+   "grants": [],
    "description": "<p>Druckwelle SP 10/20, 20 Schaden (+10 je weiterem Adrenalin), kostet 1 Adrenalin; Opfer mit Gehör: je 10 Punkte der Hörprobe −1W für 10 KR. Kopfgeld +500 N$. <em class=\"nr-ref\">(NoReturn 2E, S. 169)</em></p>"
   },
   "effects": [],
@@ -1585,8 +1640,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -1612,6 +1667,7 @@
     "max": 0
    },
    "modifiers": [],
+   "grants": [],
    "description": "<p>Sieht Wärme, auch durch dünne Wände (ersetzt keine Nachtsicht). <em class=\"nr-ref\">(NoReturn 2E, S. 169)</em></p>"
   },
   "effects": [],
@@ -1625,8 +1681,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -1652,6 +1708,7 @@
     "max": 0
    },
    "modifiers": [],
+   "grants": [],
    "description": "<p>Immun gegen toxische Gewässer. <em class=\"nr-ref\">(NoReturn 2E, S. 170)</em></p>"
   },
   "effects": [],
@@ -1665,8 +1722,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -1692,6 +1749,7 @@
     "max": 0
    },
    "modifiers": [],
+   "grants": [],
    "description": "<p>Biosonar: farbloses Abbild, unbeeinträchtigt von Licht, Rauch oder Tarnung. <em class=\"nr-ref\">(NoReturn 2E, S. 170)</em></p>"
   },
   "effects": [],
@@ -1705,8 +1763,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -1732,6 +1790,7 @@
     "max": 0
    },
    "modifiers": [],
+   "grants": [],
    "description": "<p>Je Stufe +2W für einen Sinn (Sehen, Riechen, Schmecken, Hören oder Tasten). Max. 3 je Sinn. <em class=\"nr-ref\">(NoReturn 2E, S. 170)</em></p>"
   },
   "effects": [],
@@ -1745,8 +1804,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -1781,6 +1840,7 @@
      "value": 1
     }
    ],
+   "grants": [],
    "description": "<p>Je Stufe Stärke +1 und Konstitution +1. Max. 3. <em class=\"nr-ref\">(NoReturn 2E, S. 170)</em></p>"
   },
   "effects": [],
@@ -1794,8 +1854,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -1821,6 +1881,7 @@
     "max": 0
    },
    "modifiers": [],
+   "grants": [],
    "description": "<p>Auf vier Beinen: Rennen-Ergebnis × 2. <em class=\"nr-ref\">(NoReturn 2E, S. 170)</em></p>"
   },
   "effects": [],
@@ -1834,8 +1895,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -1861,6 +1922,7 @@
     "max": 0
    },
    "modifiers": [],
+   "grants": [],
    "description": "<p>Biss ST+30p. (mit scharfen Zähnen ST+40p.). <em class=\"nr-ref\">(NoReturn 2E, S. 170)</em></p>"
   },
   "effects": [],
@@ -1874,8 +1936,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -1901,6 +1963,7 @@
     "max": 0
    },
    "modifiers": [],
+   "grants": [],
    "description": "<p>Veränderte Stimmbänder – keine menschliche Sprache. Deckt 50 GP verborgener Eigenschaften. <em class=\"nr-ref\">(NoReturn 2E, S. 170)</em></p>"
   },
   "effects": [],
@@ -1914,8 +1977,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -1941,6 +2004,7 @@
     "max": 0
    },
    "modifiers": [],
+   "grants": [],
    "description": "<p>Unnatürliche Farbe oder verformte Iris. Deckt 5 GP verborgener Eigenschaften. <em class=\"nr-ref\">(NoReturn 2E, S. 170)</em></p>"
   },
   "effects": [],
@@ -1954,8 +2018,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -1981,6 +2045,7 @@
     "max": 0
    },
    "modifiers": [],
+   "grants": [],
    "description": "<p>Form, Position oder Anzahl weicht ab. Deckt 10 GP verborgener Eigenschaften. <em class=\"nr-ref\">(NoReturn 2E, S. 170)</em></p>"
   },
   "effects": [],
@@ -1994,8 +2059,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -2021,6 +2086,7 @@
     "max": 0
    },
    "modifiers": [],
+   "grants": [],
    "description": "<p>Sekundäre Merkmale. Deckt 20 GP verborgener Eigenschaften. <em class=\"nr-ref\">(NoReturn 2E, S. 170)</em></p>"
   },
   "effects": [],
@@ -2034,8 +2100,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -2061,6 +2127,7 @@
     "max": 0
    },
    "modifiers": [],
+   "grants": [],
    "description": "<p>Primäre Merkmale. Deckt 30 GP verborgener Eigenschaften. <em class=\"nr-ref\">(NoReturn 2E, S. 170)</em></p>"
   },
   "effects": [],
@@ -2074,8 +2141,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -2101,6 +2168,7 @@
     "max": 0
    },
    "modifiers": [],
+   "grants": [],
    "description": "<p>Tierische Extremitäten. Deckt 25 GP verborgener Eigenschaften. <em class=\"nr-ref\">(NoReturn 2E, S. 170)</em></p>"
   },
   "effects": [],
@@ -2114,8 +2182,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -2141,6 +2209,7 @@
     "max": 0
    },
    "modifiers": [],
+   "grants": [],
    "description": "<p>Tierschädel, der menschliche Mimik zulässt. Deckt 30 GP verborgener Eigenschaften. <em class=\"nr-ref\">(NoReturn 2E, S. 170)</em></p>"
   },
   "effects": [],
@@ -2154,8 +2223,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -2181,6 +2250,7 @@
     "max": 0
    },
    "modifiers": [],
+   "grants": [],
    "description": "<p>Völlig tierischer Kopf. Deckt 40 GP verborgener Eigenschaften. <em class=\"nr-ref\">(NoReturn 2E, S. 170)</em></p>"
   },
   "effects": [],
@@ -2194,8 +2264,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -2221,6 +2291,7 @@
     "max": 0
    },
    "modifiers": [],
+   "grants": [],
    "description": "<p>Spitz, behaart, zu groß/klein. Deckt 5 GP verborgener Eigenschaften. <em class=\"nr-ref\">(NoReturn 2E, S. 170)</em></p>"
   },
   "effects": [],
@@ -2234,8 +2305,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -2261,6 +2332,7 @@
     "max": 0
    },
    "modifiers": [],
+   "grants": [],
    "description": "<p>Wie Fledermaus- oder Hasenohren. Deckt 10 GP verborgener Eigenschaften. <em class=\"nr-ref\">(NoReturn 2E, S. 170)</em></p>"
   },
   "effects": [],
@@ -2274,8 +2346,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,

@@ -23,8 +23,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -55,8 +55,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -87,8 +87,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -119,8 +119,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -151,8 +151,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -183,8 +183,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -215,8 +215,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -247,8 +247,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -279,8 +279,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -311,8 +311,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -343,8 +343,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -375,8 +375,8 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
@@ -384,9 +384,9 @@
   }
  },
  {
-  "_id": "6AZBcXIMtZW4sGXl",
-  "_key": "!items!6AZBcXIMtZW4sGXl",
-  "name": "Unaufhaltsamer Schatten (Kategorie B)",
+  "_id": "G0Szvv5rHAYv1yqQ",
+  "_key": "!items!G0Szvv5rHAYv1yqQ",
+  "name": "Bloodwalker",
   "type": "psiPower",
   "img": "icons/magic/unholy/barrier-fire-pink.webp",
   "system": {
@@ -394,7 +394,7 @@
    "value": 1,
    "free": 0,
    "show": "",
-   "description": "<p>Passive HMO-Kraft der Kategorie B (Beispiel für iHMO). Weitere Kategorie-B-Kräfte: 7 GP / 15 EP. <em class=\"nr-ref\">(NoReturn 2E, S. 215)</em></p>"
+   "description": "<p>PSI-Kraft der Kategorie B (HMO). Voraussetzung: Abnormität „Demigod“. Blut perlt auf Wunsch von Körper und Kleidung ab; über nicht getrocknetes Blut kann man gehen, ohne einzusinken. Kräfte dieser Kategorie wirken nach einmaliger Aktivierung automatisch (auch im Schlaf); gleichzeitig aktiv: Stufe in Wissen. iHMO erhalten „Unaufhaltsamer Schatten“, gHMO wählen eine Kraft frei; weitere 7 GP bei Erschaffung bzw. 15 EP. <em class=\"nr-ref\">(NoReturn 2E, S. 215)</em></p>"
   },
   "effects": [],
   "folder": null,
@@ -407,8 +407,360 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "1.0.0",
-   "createdTime": 1790717394647,
-   "modifiedTime": 1790717394647,
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "AqY2q5gYfF8AY0wY",
+  "_key": "!items!AqY2q5gYfF8AY0wY",
+  "name": "Blutlust",
+  "type": "psiPower",
+  "img": "icons/magic/unholy/barrier-fire-pink.webp",
+  "system": {
+   "key": "kategorieB",
+   "value": 1,
+   "free": 0,
+   "show": "",
+   "description": "<p>PSI-Kraft der Kategorie B (HMO). Der Charakter kann fünf Blutpunkte aufnehmen bzw. sein Maximum an Blutpunkten steigt um fünf. Kräfte dieser Kategorie wirken nach einmaliger Aktivierung automatisch (auch im Schlaf); gleichzeitig aktiv: Stufe in Wissen. iHMO erhalten „Unaufhaltsamer Schatten“, gHMO wählen eine Kraft frei; weitere 7 GP bei Erschaffung bzw. 15 EP. <em class=\"nr-ref\">(NoReturn 2E, S. 215)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 14000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "Ysy1hXfKFoLJBD13",
+  "_key": "!items!Ysy1hXfKFoLJBD13",
+  "name": "Brutale Ignoranz",
+  "type": "psiPower",
+  "img": "icons/magic/unholy/barrier-fire-pink.webp",
+  "system": {
+   "key": "kategorieB",
+   "value": 1,
+   "free": 0,
+   "show": "",
+   "description": "<p>PSI-Kraft der Kategorie B (HMO). 1 Blutpunkt: zehn Minuten keinen Schmerz – Schmerztoleranz zählt als Stufe 10. Kräfte dieser Kategorie wirken nach einmaliger Aktivierung automatisch (auch im Schlaf); gleichzeitig aktiv: Stufe in Wissen. iHMO erhalten „Unaufhaltsamer Schatten“, gHMO wählen eine Kraft frei; weitere 7 GP bei Erschaffung bzw. 15 EP. <em class=\"nr-ref\">(NoReturn 2E, S. 215)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 15000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "00tIiq9pG7XkgA8v",
+  "_key": "!items!00tIiq9pG7XkgA8v",
+  "name": "Charme",
+  "type": "psiPower",
+  "img": "icons/magic/unholy/barrier-fire-pink.webp",
+  "system": {
+   "key": "kategorieB",
+   "value": 1,
+   "free": 0,
+   "show": "",
+   "description": "<p>PSI-Kraft der Kategorie B (HMO). Charisma temporär +2 Stufen. Kräfte dieser Kategorie wirken nach einmaliger Aktivierung automatisch (auch im Schlaf); gleichzeitig aktiv: Stufe in Wissen. iHMO erhalten „Unaufhaltsamer Schatten“, gHMO wählen eine Kraft frei; weitere 7 GP bei Erschaffung bzw. 15 EP. <em class=\"nr-ref\">(NoReturn 2E, S. 215)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 16000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "YiFutHqCR5MwjNNf",
+  "_key": "!items!YiFutHqCR5MwjNNf",
+  "name": "Dunkler Balsam",
+  "type": "psiPower",
+  "img": "icons/magic/unholy/barrier-fire-pink.webp",
+  "system": {
+   "key": "kategorieB",
+   "value": 1,
+   "free": 0,
+   "show": "",
+   "description": "<p>PSI-Kraft der Kategorie B (HMO). 1 Blutpunkt (max. einer je KR, keine Aktion): sofort 30 TP regeneriert, Brüche heilen, Gliedmaßen wachsen nach. Verdrängt Robotik der betroffenen Zone. Kräfte dieser Kategorie wirken nach einmaliger Aktivierung automatisch (auch im Schlaf); gleichzeitig aktiv: Stufe in Wissen. iHMO erhalten „Unaufhaltsamer Schatten“, gHMO wählen eine Kraft frei; weitere 7 GP bei Erschaffung bzw. 15 EP. <em class=\"nr-ref\">(NoReturn 2E, S. 215)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 17000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "8djFRRAuvrdPogoG",
+  "_key": "!items!8djFRRAuvrdPogoG",
+  "name": "Gabe der Gewalt",
+  "type": "psiPower",
+  "img": "icons/magic/unholy/barrier-fire-pink.webp",
+  "system": {
+   "key": "kategorieB",
+   "value": 1,
+   "free": 0,
+   "show": "",
+   "description": "<p>PSI-Kraft der Kategorie B (HMO). Stärke temporär +2 Stufen. Kräfte dieser Kategorie wirken nach einmaliger Aktivierung automatisch (auch im Schlaf); gleichzeitig aktiv: Stufe in Wissen. iHMO erhalten „Unaufhaltsamer Schatten“, gHMO wählen eine Kraft frei; weitere 7 GP bei Erschaffung bzw. 15 EP. <em class=\"nr-ref\">(NoReturn 2E, S. 215)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 18000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "i3r69kjxF86lrOKD",
+  "_key": "!items!i3r69kjxF86lrOKD",
+  "name": "Maskerade",
+  "type": "psiPower",
+  "img": "icons/magic/unholy/barrier-fire-pink.webp",
+  "system": {
+   "key": "kategorieB",
+   "value": 1,
+   "free": 0,
+   "show": "",
+   "description": "<p>PSI-Kraft der Kategorie B (HMO). Wirkt harmlos und vertraut; als bestimmte Person ausgeben: Schauspiel gegen Willenskraft des Ziels. Mit Mentale Sklaverei kombinierbar. Kräfte dieser Kategorie wirken nach einmaliger Aktivierung automatisch (auch im Schlaf); gleichzeitig aktiv: Stufe in Wissen. iHMO erhalten „Unaufhaltsamer Schatten“, gHMO wählen eine Kraft frei; weitere 7 GP bei Erschaffung bzw. 15 EP. <em class=\"nr-ref\">(NoReturn 2E, S. 215)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 19000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "ACQPyOw0It07Y0RG",
+  "_key": "!items!ACQPyOw0It07Y0RG",
+  "name": "Mentale Sklaverei",
+  "type": "psiPower",
+  "img": "icons/magic/unholy/barrier-fire-pink.webp",
+  "system": {
+   "key": "kategorieB",
+   "value": 1,
+   "free": 0,
+   "show": "",
+   "description": "<p>PSI-Kraft der Kategorie B (HMO). Ziele haben −3W auf Willenskraft, wenn sie sich dem Wirker widersetzen (z. B. gegen Einschüchtern oder Überreden). Kräfte dieser Kategorie wirken nach einmaliger Aktivierung automatisch (auch im Schlaf); gleichzeitig aktiv: Stufe in Wissen. iHMO erhalten „Unaufhaltsamer Schatten“, gHMO wählen eine Kraft frei; weitere 7 GP bei Erschaffung bzw. 15 EP. <em class=\"nr-ref\">(NoReturn 2E, S. 215)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 20000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "T236QIf0Lm4W9kql",
+  "_key": "!items!T236QIf0Lm4W9kql",
+  "name": "Schleier der Hast",
+  "type": "psiPower",
+  "img": "icons/magic/unholy/barrier-fire-pink.webp",
+  "system": {
+   "key": "kategorieB",
+   "value": 1,
+   "free": 0,
+   "show": "",
+   "description": "<p>PSI-Kraft der Kategorie B (HMO). Beweglichkeit temporär +2 Stufen. Kräfte dieser Kategorie wirken nach einmaliger Aktivierung automatisch (auch im Schlaf); gleichzeitig aktiv: Stufe in Wissen. iHMO erhalten „Unaufhaltsamer Schatten“, gHMO wählen eine Kraft frei; weitere 7 GP bei Erschaffung bzw. 15 EP. <em class=\"nr-ref\">(NoReturn 2E, S. 215)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 21000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "ElntjGxhti8buuj0",
+  "_key": "!items!ElntjGxhti8buuj0",
+  "name": "Schwarzes Orakel",
+  "type": "psiPower",
+  "img": "icons/magic/unholy/barrier-fire-pink.webp",
+  "system": {
+   "key": "kategorieB",
+   "value": 1,
+   "free": 0,
+   "show": "",
+   "description": "<p>PSI-Kraft der Kategorie B (HMO). Wahrnehmung temporär +2 Stufen. Kräfte dieser Kategorie wirken nach einmaliger Aktivierung automatisch (auch im Schlaf); gleichzeitig aktiv: Stufe in Wissen. iHMO erhalten „Unaufhaltsamer Schatten“, gHMO wählen eine Kraft frei; weitere 7 GP bei Erschaffung bzw. 15 EP. <em class=\"nr-ref\">(NoReturn 2E, S. 215)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 22000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "jrE6p4LN2dVALe9D",
+  "_key": "!items!jrE6p4LN2dVALe9D",
+  "name": "Unaufhaltsamer Schatten",
+  "type": "psiPower",
+  "img": "icons/magic/unholy/barrier-fire-pink.webp",
+  "system": {
+   "key": "kategorieB",
+   "value": 1,
+   "free": 0,
+   "show": "",
+   "description": "<p>PSI-Kraft der Kategorie B (HMO). Haftet an allen Oberflächen (kein Klettern nötig, Rennen −2W für die Geschwindigkeit); Sturzhöhe für Schaden −50 m × Wissen. Kräfte dieser Kategorie wirken nach einmaliger Aktivierung automatisch (auch im Schlaf); gleichzeitig aktiv: Stufe in Wissen. iHMO erhalten „Unaufhaltsamer Schatten“, gHMO wählen eine Kraft frei; weitere 7 GP bei Erschaffung bzw. 15 EP. <em class=\"nr-ref\">(NoReturn 2E, S. 215)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 23000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "gYivjuHWsQ0n3elz",
+  "_key": "!items!gYivjuHWsQ0n3elz",
+  "name": "Unheilige Beständigkeit",
+  "type": "psiPower",
+  "img": "icons/magic/unholy/barrier-fire-pink.webp",
+  "system": {
+   "key": "kategorieB",
+   "value": 1,
+   "free": 0,
+   "show": "",
+   "description": "<p>PSI-Kraft der Kategorie B (HMO). Trefferpunkte jeder Körperzone +20 (Robotik ausgenommen). Kräfte dieser Kategorie wirken nach einmaliger Aktivierung automatisch (auch im Schlaf); gleichzeitig aktiv: Stufe in Wissen. iHMO erhalten „Unaufhaltsamer Schatten“, gHMO wählen eine Kraft frei; weitere 7 GP bei Erschaffung bzw. 15 EP. <em class=\"nr-ref\">(NoReturn 2E, S. 215)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 24000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,

@@ -14,6 +14,8 @@ import { NRCombatant, registerCombatHooks, attackWithWeapon, manualDamageDialog 
 import { registerChatHooks } from "./module/chat.mjs";
 import { rollPool, rollHitZone } from "./module/dice/pool.mjs";
 import { castPsiApp, collectPower, rollPsiFail } from "./module/psi.mjs";
+import { NRCharacterGenerator, openCharacterGenerator } from "./module/apps/character-generator.mjs";
+import { importMannifest, exportMannifest, promptImport } from "./module/apps/mannifest.mjs";
 
 Hooks.once("init", () => {
   console.log("NoReturn 2E | Initialisiere System");
@@ -21,7 +23,8 @@ Hooks.once("init", () => {
   CONFIG.NR = NR;
   game.noreturn = {
     config: NR, rollPool, rollHitZone, attackWithWeapon, manualDamageDialog, castPsiApp, collectPower, rollPsiFail,
-    useItem: useItemMacro
+    useItem: useItemMacro, characterGenerator: openCharacterGenerator, NRCharacterGenerator,
+    mannifest: { import: importMannifest, export: exportMannifest, promptImport }
   };
 
   // Dokumentklassen
@@ -74,6 +77,25 @@ Hooks.once("init", () => {
     "systems/noreturn/templates/actor/parts/zone.hbs",
     "systems/noreturn/templates/chat/roll-card.hbs"
   ]);
+});
+
+/** Button „Charaktergenerator“ in der Actor-Seitenleiste. */
+Hooks.on("renderActorDirectory", (app, html) => {
+  const el = html instanceof HTMLElement ? html : html[0];
+  if (!el || !game.user.can("ACTOR_CREATE") || el.querySelector(".nr-gen-open")) return;
+  const target = el.querySelector(".header-actions") ?? el.querySelector(".directory-header");
+  if (!target) return;
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "nr-gen-open";
+  btn.innerHTML = `<i class="fa-solid fa-user-plus"></i> ${game.i18n.localize("NR.Gen.Title")}`;
+  btn.addEventListener("click", ev => { ev.preventDefault(); openCharacterGenerator(); });
+  const imp = document.createElement("button");
+  imp.type = "button";
+  imp.className = "nr-mannifest-import";
+  imp.innerHTML = `<i class="fa-solid fa-file-import"></i> ${game.i18n.localize("NR.Mannifest.ImportNew")}`;
+  imp.addEventListener("click", ev => { ev.preventDefault(); promptImport(); });
+  target.append(btn, imp);
 });
 
 Hooks.once("ready", () => {

@@ -224,15 +224,32 @@ E = {
 DIFF_KEYS = {"leicht": "leicht", "mittel": "mittel", "schwer": "schwer", "sehr schwer": "sehrSchwer", "ultimativ": "ultimativ"}
 
 
+HMO_POWERS = [
+    ("Bloodwalker", "Voraussetzung: Abnormität „Demigod“. Blut perlt auf Wunsch von Körper und Kleidung ab; über nicht getrocknetes Blut kann man gehen, ohne einzusinken."),
+    ("Blutlust", "Der Charakter kann fünf Blutpunkte aufnehmen bzw. sein Maximum an Blutpunkten steigt um fünf."),
+    ("Brutale Ignoranz", "1 Blutpunkt: zehn Minuten keinen Schmerz – Schmerztoleranz zählt als Stufe 10."),
+    ("Charme", "Charisma temporär +2 Stufen."),
+    ("Dunkler Balsam", "1 Blutpunkt (max. einer je KR, keine Aktion): sofort 30 TP regeneriert, Brüche heilen, Gliedmaßen wachsen nach. Verdrängt Robotik der betroffenen Zone."),
+    ("Gabe der Gewalt", "Stärke temporär +2 Stufen."),
+    ("Maskerade", "Wirkt harmlos und vertraut; als bestimmte Person ausgeben: Schauspiel gegen Willenskraft des Ziels. Mit Mentale Sklaverei kombinierbar."),
+    ("Mentale Sklaverei", "Ziele haben −3W auf Willenskraft, wenn sie sich dem Wirker widersetzen (z. B. gegen Einschüchtern oder Überreden)."),
+    ("Schleier der Hast", "Beweglichkeit temporär +2 Stufen."),
+    ("Schwarzes Orakel", "Wahrnehmung temporär +2 Stufen."),
+    ("Unaufhaltsamer Schatten", "Haftet an allen Oberflächen (kein Klettern nötig, Rennen −2W für die Geschwindigkeit); Sturzhöhe für Schaden −50 m × Wissen."),
+    ("Unheilige Beständigkeit", "Trefferpunkte jeder Körperzone +20 (Robotik ausgenommen)."),
+]
+
+
 def powers():
     out = []
     for key, (name, tier, desc, show, page, folder) in POWERS.items():
         out.append({"name": name, "type": "psiPower", "img": icon(folder, ""),
                     "system": {"key": key, "value": 1, "free": 0, "show": show,
                                "description": p(f"{desc} Hierarchieebene {tier}. Show-Effekt: {show} Erschaffung 5 GP je Stufe (max. 6), Steigern: neue Stufe × 4 EP. Je Stufe eine App.", page)}})
-    out.append({"name": "Unaufhaltsamer Schatten (Kategorie B)", "type": "psiPower", "img": icon("magic/unholy", ""),
-                "system": {"key": "kategorieB", "value": 1, "free": 0, "show": "",
-                           "description": p("Passive HMO-Kraft der Kategorie B (Beispiel für iHMO). Weitere Kategorie-B-Kräfte: 7 GP / 15 EP.", 215)}})
+    for name, desc in HMO_POWERS:
+        out.append({"name": name, "type": "psiPower", "img": icon("magic/unholy", ""),
+                    "system": {"key": "kategorieB", "value": 1, "free": 0, "show": "",
+                               "description": p(f"PSI-Kraft der Kategorie B (HMO). {desc} Kräfte dieser Kategorie wirken nach einmaliger Aktivierung automatisch (auch im Schlaf); gleichzeitig aktiv: Stufe in Wissen. iHMO erhalten „Unaufhaltsamer Schatten“, gHMO wählen eine Kraft frei; weitere 7 GP bei Erschaffung bzw. 15 EP.", 215)}})
     return out
 
 
