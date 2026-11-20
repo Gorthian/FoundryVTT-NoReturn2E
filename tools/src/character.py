@@ -344,6 +344,7 @@ STYLE_EXTRA = {
     "Karate": {"mods": [mod("defense.blockUnarmed", 2, 1), mod("dice.nahkampf", 2, 2), mod("damage.unarmed", 4, 3)], "hint": "Stufe 1: waffenloses Blocken +2W (Block ohne Schild). Stufe 2: Nahkampf +2W. Stufe 3: waffenloser Schaden +4W."},
     "Kick-Boxen": {"mods": [mod("resist.leg", 3, 1), mod("damage.fist", 2, 2), mod("damage.leg", 2, 2), mod("defense.blockUnarmed", 3, 3)], "hint": "Stufe 1: Treffer an den Beinen +3W auf den Schadenswiderstand (KO; automatisch im Widerstandsdialog). Stufe 2: Faust- und Beinschaden +2W. Stufe 3: waffenloses Blocken +3W."},
     "Krav Maga": {"mods": [mod("attack.knee", 2, 2), mod("damage.knee", 2, 2), mod("dice.nahkampf", 2, 3)], "hint": "Stufe 1: Nahkampf statt Blocken (Verteidigungsdialog: „Blocken mit Nahkampf“). Stufe 2: Knieangriffe +2W auf Angriff und Schaden (Angriffsart „Knie“). Stufe 3: Nahkampf +2W."},
+    "Muay Thai": {"mods": [mod("defense.blockMelee", 3, 1), mod("damage.emk", 3, 2), mod("attack.emk", 3, 3)], "hint": "Stufe 1: Blocken gegen Nahkampfangriffe +3W. Stufe 2: Ellenbogen-/Knie-/Schienbeinschaden +3W (Angriffsart wählen). Stufe 3: diese Angriffe +3W auf den Angriff."},
     # (Ende STYLE_EXTRA)
 }
 

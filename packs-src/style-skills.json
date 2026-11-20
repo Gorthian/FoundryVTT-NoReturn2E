@@ -2138,8 +2138,25 @@
      "effect": "Diese Angriffe +3W."
     }
    ],
-   "modifiers": [],
-   "description": "<p>Fäuste, Ellenbogen, Knie, Schienbeine. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>"
+   "modifiers": [
+    {
+     "target": "defense.blockMelee",
+     "value": 3,
+     "level": 1
+    },
+    {
+     "target": "damage.emk",
+     "value": 3,
+     "level": 2
+    },
+    {
+     "target": "attack.emk",
+     "value": 3,
+     "level": 3
+    }
+   ],
+   "description": "<p>Fäuste, Ellenbogen, Knie, Schienbeine. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>",
+   "hint": "<p>Stufe 1: Blocken gegen Nahkampfangriffe +3W. Stufe 2: Ellenbogen-/Knie-/Schienbeinschaden +3W (Angriffsart wählen). Stufe 3: diese Angriffe +3W auf den Angriff.</p>"
   },
   "effects": [],
   "folder": null,
