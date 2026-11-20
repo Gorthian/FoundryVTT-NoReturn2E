@@ -871,7 +871,8 @@
    "prerequisites": "Ausdauer 3, Willenskraft 3; KO 3",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Halbstündiges Nickerchen erholt vollständig (max. 4 Tage am Stück); füllt den Regenerationspool mit Nahrung. <em class=\"nr-ref\">(NoReturn 2E, S. 183)</em></p>"
+   "description": "<p>Halbstündiges Nickerchen erholt vollständig (max. 4 Tage am Stück); füllt den Regenerationspool mit Nahrung. <em class=\"nr-ref\">(NoReturn 2E, S. 183)</em></p>",
+   "hint": "<p>Einsetzen: Ein halbstündiges Nickerchen erholt vollständig (höchstens 4 Tage am Stück) und füllt – mit Nahrung – den Regenerationspool. Wendet die Rast an (Adrenalin, Meditation, Regenerationspool, Defensivaktionen).</p>"
   },
   "effects": [],
   "folder": null,

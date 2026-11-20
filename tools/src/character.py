@@ -333,6 +333,7 @@ STYLE_EXTRA = {
     "Mixology": {"hint": "Einsetzen: Probe auf die Zusatzfertigkeit „Ambrosia“ (HA), die beim ersten Einsatz freigeschaltet wird. Das Getränk gibt dem Ziel für zwei Stunden Bonuswürfel wie Inspirieren (+1W je 20 Punkte); Ziel vorher markieren."},
     "Sterne-Küche": {"hint": "Einsetzen: Probe auf die Zusatzfertigkeit „Kochen“ (HA), die beim ersten Einsatz freigeschaltet wird. Die Speise gibt dem Ziel für zwei Stunden Bonuswürfel wie Inspirieren (+1W je 20 Punkte); Ziel vorher markieren."},
     "Rüttelflug": {"hint": "Einsetzen: Ausdauer-Probe; das Ergebnis entspricht der Dauer des Schwebens in Kampfrunden (Fliegen auf der Stelle)."},
+    "Power Nap": {"hint": "Einsetzen: Ein halbstündiges Nickerchen erholt vollständig (höchstens 4 Tage am Stück) und füllt – mit Nahrung – den Regenerationspool. Wendet die Rast an (Adrenalin, Meditation, Regenerationspool, Defensivaktionen)."},
     # (Ende STYLE_EXTRA)
 }
 
