@@ -320,6 +320,7 @@ STYLE_EXTRA = {
     "Fast Talk": {"hint": "Je vorbereitender Aktion +2W auf die folgende Sozialfertigkeit, bis zu dreimal kumulativ: im Probendialog sozialer Fertigkeiten (Attribut CH) die Zahl der Aktionen eintragen."},
     "Goldene Zunge": {"hint": "Soziale Proben sind auch in unpassenden Situationen möglich; das angesprochene Ziel muss die Interaktion zulassen (eine Person)."},
     "Neo": {"hint": "Die Spielleitung nennt dir vor Computerproben die Risiken und den Mindestwurf; du kannst dich noch entscheiden, die Probe abzulegen."},
+    "Pet Pal": {"hint": "Du verstehst animalische Sprache in Grenzen. Rein erzählerisch: Absprache mit der Spielleitung; Hinweis auf Dressieren-Proben."},
     # (Ende STYLE_EXTRA)
 }
 

@@ -825,7 +825,8 @@
    "prerequisites": "Dressieren 3, Menschenkenntnis 2, Naturkunde 4; WI 4",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Versteht animalische Sprache in Grenzen. <em class=\"nr-ref\">(NoReturn 2E, S. 182)</em></p>"
+   "description": "<p>Versteht animalische Sprache in Grenzen. <em class=\"nr-ref\">(NoReturn 2E, S. 182)</em></p>",
+   "hint": "<p>Du verstehst animalische Sprache in Grenzen. Rein erzählerisch: Absprache mit der Spielleitung; Hinweis auf Dressieren-Proben.</p>"
   },
   "effects": [],
   "folder": null,
