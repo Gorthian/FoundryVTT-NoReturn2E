@@ -19,14 +19,66 @@ export class NRActor extends Actor {
 
   /** Biologische Eigenschaften bringen ihre körpereigenen Waffen mit (system.grants). */
   async _onCreateDescendantDocuments(parent, collection, documents, data, options, userId) {
-    super._onCreateDescendantDocuments(parent, collection, documents, data, options, userId);
+    await super._onCreateDescendantDocuments(parent, collection, documents, data, options, userId);
     if (userId !== game.user.id || collection !== "items" || options.nrSkipGrants) return;
     const wanted = new Set();
     for (const d of documents) if (d.type === "bioTrait") for (const n of d.system.grants ?? []) if (n && !this.items.some(i => i.type === "weapon" && i.name === n)) wanted.add(n);
     if (!wanted.size) return;
-    const pack = await game.packs.get("noreturn.waffen")?.getDocuments() ?? [];
-    const toCreate = [...wanted].map(n => pack.find(w => w.name === n)?.toObject()).filter(Boolean).map(o => { delete o._id; return o; });
+    // Nur den Index laden und gezielt die benötigten Waffen holen (statt das ganze Pack)
+    const pack = game.packs.get("noreturn.waffen");
+    if (!pack) return;
+    const index = await pack.getIndex();
+    const toCreate = [];
+    for (const n of wanted) {
+      const entry = index.find(w => w.name === n);
+      const doc = entry ? await pack.getDocument(entry._id) : null;
+      if (doc) {
+        const o = doc.toObject();
+        delete o._id;
+        toCreate.push(o);
+      }
+    }
     if (toCreate.length) await this.createEmbeddedDocuments("Item", toCreate, { nrSkipGrants: true });
+  }
+
+  /**
+   * Token-Leisten: Gesundheit und Adrenalin sind abgeleitete Werte ohne Schemafeld und
+   * müssen auf echte Felder abgebildet werden.
+   * @override
+   */
+  async modifyTokenAttribute(attribute, value, isDelta = false, isBar = true) {
+    if (this.type !== "vehicle" && isBar && attribute === "health") {
+      const { value: cur, max } = this.system.health;
+      const target = Math.clamp(isDelta ? cur + value : value, 0, max);
+      return this._setHealthTotal(target);
+    }
+    if (this.type !== "vehicle" && isBar && attribute === "adrenalin") {
+      const { value: cur, max } = this.system.adrenalin;
+      const target = Math.clamp(isDelta ? cur + value : value, 0, max);
+      return this.update({ "system.special.adrenalin.used": max - target });
+    }
+    return super.modifyTokenAttribute(attribute, value, isDelta, isBar);
+  }
+
+  /**
+   * Setzt die Summe der verbleibenden Trefferpunkte: Schaden geht auf den Rumpf,
+   * Heilung reduziert den Schaden beginnend bei der am schwersten getroffenen Zone.
+   * @param {number} target
+   */
+  async _setHealthTotal(target) {
+    let diff = this.system.health.value - target; // > 0: Schaden, < 0: Heilung
+    if (!diff) return this;
+    if (diff > 0) return this.applyDirectDamage("7", diff);
+    const updates = {};
+    const zones = Object.entries(this.system.zones).sort(([, a], [, b]) => b.damage - a.damage);
+    for (const [key, z] of zones) {
+      if (diff >= 0) break;
+      const heal = Math.min(z.damage, -diff);
+      if (heal <= 0) continue;
+      updates[`system.zones.${key}.damage`] = z.damage - heal;
+      diff += heal;
+    }
+    return Object.keys(updates).length ? this.update(updates) : this;
   }
 
   /** Summiere die Modifikatoren aller aktiven Items. */
@@ -759,10 +811,13 @@ export class NRActor extends Actor {
   /** @override */
   async _preCreate(data, options, user) {
     if ((await super._preCreate(data, options, user)) === false) return false;
+    // Bereits gesetzte Token-Konfiguration (Import, Kopie, Compendium-Drop) nicht überschreiben
+    const given = foundry.utils.flattenObject(data.prototypeToken ?? {});
     const proto = {};
     if (this.type === "character") Object.assign(proto, { actorLink: true, disposition: CONST.TOKEN_DISPOSITIONS.FRIENDLY, "sight.enabled": true });
     if (this.type === "vehicle") Object.assign(proto, { width: 2, height: 1 });
     Object.assign(proto, { "bar1.attribute": this.type === "vehicle" ? "hp" : "health", "displayBars": CONST.TOKEN_DISPLAY_MODES.OWNER_HOVER });
-    this.updateSource({ prototypeToken: foundry.utils.expandObject(proto) });
+    for (const key of Object.keys(proto)) if (key in given) delete proto[key];
+    if (!foundry.utils.isEmpty(proto)) this.updateSource({ prototypeToken: foundry.utils.expandObject(proto) });
   }
 }
