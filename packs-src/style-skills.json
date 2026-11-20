@@ -1297,7 +1297,8 @@
    "prerequisites": "Taschendiebstahl 3, Heimlichkeit 3; GE 4, WA 3",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Taschenspielertricks (MW 15); Entfesseln, Verstecken oder Taschendiebstahl einmal je KR ohne Aktion. <em class=\"nr-ref\">(NoReturn 2E, S. 185)</em></p>"
+   "description": "<p>Taschenspielertricks (MW 15); Entfesseln, Verstecken oder Taschendiebstahl einmal je KR ohne Aktion. <em class=\"nr-ref\">(NoReturn 2E, S. 185)</em></p>",
+   "hint": "<p>Taschenspielertricks (MW 15). Entfesseln, Verstecken oder Taschendiebstahl einmal je Kampfrunde ohne Aktion.</p>"
   },
   "effects": [],
   "folder": null,

@@ -321,6 +321,7 @@ STYLE_EXTRA = {
     "Goldene Zunge": {"hint": "Soziale Proben sind auch in unpassenden Situationen möglich; das angesprochene Ziel muss die Interaktion zulassen (eine Person)."},
     "Neo": {"hint": "Die Spielleitung nennt dir vor Computerproben die Risiken und den Mindestwurf; du kannst dich noch entscheiden, die Probe abzulegen."},
     "Pet Pal": {"hint": "Du verstehst animalische Sprache in Grenzen. Rein erzählerisch: Absprache mit der Spielleitung; Hinweis auf Dressieren-Proben."},
+    "Trickster": {"hint": "Taschenspielertricks (MW 15). Entfesseln, Verstecken oder Taschendiebstahl einmal je Kampfrunde ohne Aktion."},
     # (Ende STYLE_EXTRA)
 }
 
