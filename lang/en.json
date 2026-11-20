@@ -504,6 +504,8 @@
       "NoDriver": "Select a token as driver."
     },
     "Notify": {
+      "DamageDelegated": "Damage to {n} target(s) was handed over to the GM.",
+      "DamageSkipped": "No damage applied (no permission and no GM online): {names}",
       "Rested": "{name} has rested.",
       "Healed": "{name} heals {heal} points per zone.",
       "SkillNotLearned": "This special skill is not learned.",

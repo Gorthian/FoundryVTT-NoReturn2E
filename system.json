@@ -70,6 +70,7 @@
       ]
     }
   ],
+  "socket": true,
   "primaryTokenAttribute": "health",
   "secondaryTokenAttribute": "adrenalin",
   "url": "https://github.com/Gorthian/FoundryVTT-NoReturn2E",

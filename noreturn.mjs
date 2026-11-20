@@ -12,6 +12,7 @@ import { NRVehicleSheet } from "./module/sheets/vehicle-sheet.mjs";
 import { NRItemSheet } from "./module/sheets/item-sheet.mjs";
 import { NRCombatant, registerCombatHooks, attackWithWeapon, manualDamageDialog } from "./module/combat.mjs";
 import { registerChatHooks } from "./module/chat.mjs";
+import { registerSocket } from "./module/socket.mjs";
 import { rollPool, rollHitZone } from "./module/dice/pool.mjs";
 import { castPsiApp, collectPower, rollPsiFail } from "./module/psi.mjs";
 import { NRCharacterGenerator, openCharacterGenerator } from "./module/apps/character-generator.mjs";
@@ -133,6 +134,7 @@ Hooks.on("renderActorDirectory", (app, html) => {
 });
 
 Hooks.once("ready", async () => {
+  registerSocket();
   await foundry.applications.handlebars.loadTemplates(TEMPLATES);
   document.body.classList.toggle("nr-hide-dice", !game.settings.get("noreturn", "showDice"));
   // Makros per Drag & Drop auf die Hotbar
