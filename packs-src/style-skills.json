@@ -788,7 +788,8 @@
    "prerequisites": "Computer 5; HA 3, WI 4",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Erfährt vor Computerproben Risiken und Mindestwurf und kann sich entscheiden. <em class=\"nr-ref\">(NoReturn 2E, S. 182)</em></p>"
+   "description": "<p>Erfährt vor Computerproben Risiken und Mindestwurf und kann sich entscheiden. <em class=\"nr-ref\">(NoReturn 2E, S. 182)</em></p>",
+   "hint": "<p>Die Spielleitung nennt dir vor Computerproben die Risiken und den Mindestwurf; du kannst dich noch entscheiden, die Probe abzulegen.</p>"
   },
   "effects": [],
   "folder": null,
