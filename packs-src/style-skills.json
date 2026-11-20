@@ -1527,8 +1527,20 @@
      "effect": "Nahkampfschaden +5W."
     }
    ],
-   "modifiers": [],
-   "description": "<p>Tierreich-Kampfkunst. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>"
+   "modifiers": [
+    {
+     "target": "attack.claw",
+     "value": 3,
+     "level": 2
+    },
+    {
+     "target": "damage.melee",
+     "value": 5,
+     "level": 3
+    }
+   ],
+   "description": "<p>Tierreich-Kampfkunst. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>",
+   "hint": "<p>Stufe 1: Beißen im Nahkampf ohne Kampfnachteil (Hinweis im Angriffsdialog). Stufe 2: Krallenangriffe +3W (Angriffsart „Krallen“ im Angriffsdialog wählen). Stufe 3: Nahkampfschaden +5W, mit und ohne natürliche Waffen.</p>"
   },
   "effects": [],
   "folder": null,

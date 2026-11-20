@@ -59,6 +59,11 @@ function styleAttackHints(actor, weapon) {
   if (ranged && !weapon.system.twoHanded && ["faustfeuer", "schnellfeuer"].includes(weapon.system.category) && actor.styleLevel("billyTheKid")) {
     hints.push(game.i18n.localize("NR.Style.BillyHint"));
   }
+  // Ba-Kai-Do 1: Beißen im Nahkampf ohne Kampfnachteil; Kenjutsu 1: Schwert ziehen und in derselben Aktion angreifen
+  if (isUnarmed(weapon) && actor.styleLevel("baKaiDo") >= 1) hints.push(game.i18n.localize("NR.Style.BaKaiDoBite"));
+  if (weapon.system.category === "nahkampf" && weapon.system.damageType === "klinge" && actor.styleLevel("kenjutsu") >= 1) {
+    hints.push(game.i18n.localize("NR.Style.KenjutsuDraw"));
+  }
   return hints;
 }
 

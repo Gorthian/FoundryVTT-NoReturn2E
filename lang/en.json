@@ -496,7 +496,9 @@
       "HoverDuration": "Hovering: stay aloft for {n} combat rounds",
       "PowerNap": "Power Nap",
       "PowerNapConfirm": "A half-hour nap fully restores (for at most 4 days in a row) and – with food – refills the regeneration pool. Apply now?",
-      "PowerNapDone": "{name}: Power Nap – adrenaline, meditation and regeneration pool are refilled."
+      "PowerNapDone": "{name}: Power Nap – adrenaline, meditation and regeneration pool are refilled.",
+      "BaKaiDoBite": "Ba-Kai-Do 1: biting in melee carries no combat disadvantage.",
+      "KenjutsuDraw": "Kenjutsu 1: the sword may be drawn and used to attack in the same action."
     },
     "Species": {
       "TP": "HP per zone",
