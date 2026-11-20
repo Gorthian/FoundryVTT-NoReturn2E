@@ -485,7 +485,8 @@
    "prerequisites": "Nahkampf 4; BE 4, WA 4",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Mehrfachangriff mit zwei waffenlosen Extremitäten. <em class=\"nr-ref\">(NoReturn 2E, S. 181)</em></p>"
+   "description": "<p>Mehrfachangriff mit zwei waffenlosen Extremitäten. <em class=\"nr-ref\">(NoReturn 2E, S. 181)</em></p>",
+   "hint": "<p>Mehrfachangriff mit zwei waffenlosen Extremitäten: bei waffenlosen Angriffen im Angriffsdialog „Mehrfachangriff“ auf 2 setzen (Angriffsart je Extremität wählbar).</p>"
   },
   "effects": [],
   "folder": null,
