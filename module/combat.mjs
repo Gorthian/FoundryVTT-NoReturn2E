@@ -173,7 +173,8 @@ export async function attackWithWeapon(actor, weapon) {
   // Situative Bonuswürfel auf die Fertigkeit (z. B. Nahkampf +2W) und Style-/Kampfkunst-Boni auf den Angriff
   const skillSit = actor.system.mods?.[`dice.${skillKey}`] ?? 0;
   const styleAttack = styleDice(actor, "attack", groups);
-  bonus += skillSit + styleAttack;
+  bonus += skillSit + styleAttack + actor.system.tempBonus;
+  if (actor.system.tempBonus) styleNotes.push(game.i18n.format("NR.Style.TempBonus", { n: actor.system.tempBonus }));
   if (skillSit + styleAttack) styleNotes.push(game.i18n.format("NR.Style.AttackBonus", { n: skillSit + styleAttack }));
   if (opts.triggerFinger && opts.mode === "HM") bonus += 2;
   if (opts.useAdrenalin && opts.multi === 1 && await actor.spendAdrenalin()) bonus += actor.system.adrenalinBonus;
@@ -402,6 +403,7 @@ export async function defendAgainst(message, tokenUuid, none = false, index = 1)
     }
     if (skillKey === "ausweichen" && attack.melee) styleBonus += mods["defense.dodgeMelee"] ?? 0;
     if (isParry && g?.system.damageType === "klinge") styleBonus += mods["defense.parryBlade"] ?? 0;
+    if (actor.system.tempBonus) { bonus += actor.system.tempBonus; styleNotes.push(game.i18n.format("NR.Style.TempBonus", { n: actor.system.tempBonus })); }
     if (styleBonus) { bonus += styleBonus; styleNotes.push(game.i18n.format("NR.Style.DefenseBonus", { n: styleBonus })); }
     if (isParry) parryGear = g;
     if (opts.useAdrenalin && attack.multi === 1 && await actor.spendAdrenalin()) bonus += actor.system.adrenalinBonus;

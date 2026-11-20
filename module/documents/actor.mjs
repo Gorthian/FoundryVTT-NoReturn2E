@@ -225,6 +225,11 @@ export class NRActor extends foundry.documents.Actor {
     if (overdrive) extraHtml += `<p class="nr-warn"><i class="fa-solid fa-gears"></i> Overdrive +${overdrive} Stärke</p>`;
     const physMalus = resist ? 0 : this.physicalMalus(attrUsed);
     if (physMalus) styleNotes.push(game.i18n.format("NR.Style.PhysicalMalus", { n: physMalus }));
+    // Temporäre Bonuswürfel (Der Doktor, Mixology, Sterne-Küche, Inspirieren) – nicht auf Schadenswiderstand
+    if (!resist && this.system.tempBonus) {
+      bonus += this.system.tempBonus;
+      styleNotes.push(game.i18n.format("NR.Style.TempBonus", { n: this.system.tempBonus }));
+    }
     for (const n of styleNotes) extraHtml += `<p class="nr-good"><i class="fa-solid fa-star"></i> ${n}</p>`;
     const malusTotal = (resist ? 0 : malus) + opts.malusDice + opts.disadvantages * 2 + physMalus;
     const leiden = attrUsed ? (this.system.attr[attrUsed]?.leiden ?? 0) : 0;

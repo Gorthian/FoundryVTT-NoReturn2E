@@ -2,7 +2,7 @@ import { defendAgainst, rollDamage, resistFromMessage } from "./combat.mjs";
 import { applyPsiDamage } from "./psi.mjs";
 import { rollPool } from "./dice/pool.mjs";
 import { NR } from "./config.mjs";
-import { applyDamageTo } from "./socket.mjs";
+import { applyDamageTo, applyBuffTo } from "./socket.mjs";
 
 /**
  * Chat-Interaktionen: Buttons in Würfelkarten.
@@ -62,6 +62,12 @@ async function onAction(message, btn) {
       return applyPsiDamage(message, btn.dataset.tokenUuid);
     case "reroll":
       return rerollWithAdrenalin(message);
+    case "styleBuff": {
+      const d = btn.dataset;
+      const result = await applyBuffTo(d.targetUuid, { kind: d.kind, n: Number(d.n) || 0 });
+      const key = result === "applied" ? "NR.Style.Buff.Applied" : result === "delegated" ? "NR.Style.Buff.Delegated" : "NR.Style.Buff.Unavailable";
+      return ui.notifications.info(game.i18n.format(key, { source: d.source }));
+    }
     case "applyTargets": {
       // Schaden an alle markierten Ziele (GM-Hilfe für Flächenangriffe)
       const payload = f.damage;

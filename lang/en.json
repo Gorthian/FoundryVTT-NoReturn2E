@@ -152,7 +152,9 @@
       "nonLethal": "Non-lethal (stun)",
       "temp": "Temporary penalty",
       "psi": "Gathering power / holding",
-      "total": "Total penalty"
+      "total": "Total penalty",
+      "tempBonus": "Temp. bonus dice",
+      "tempBonusHint": "Temporary bonus dice (Inspire, The Doctor, Mixology, Star Cuisine); applied to checks, attacks and defense (not to damage resistance). Reset by hand when the duration ends."
     },
     "Zone": {
       "Damage": "Damage in this zone",
@@ -477,7 +479,24 @@
       "Sollbruch": "Attack the maneuver (breaking point)",
       "SollbruchHint": "No vital spot; damage to the vehicle lowers its maneuver value by 1.",
       "SollbruchNote": "Breaking point: attack on the maneuver – on damage maneuver −1, no vital spot",
-      "ManeuverLoss": "Maneuver value −1 (breaking point)"
+      "ManeuverLoss": "Maneuver value −1 (breaking point)",
+      "TempBonus": "+{n}D temporary bonus",
+      "Buff": {
+        "Doctor": "The Doctor: treatment",
+        "Result": "Result {total} → {n} dice (1 per 20 points)",
+        "Hint": "Target tokens and apply the desired effect. The duration does not expire automatically – reset the value on the Combat tab afterwards.",
+        "Bonus": "+{n}D bonus ({h} h)",
+        "Malus": "−{n}D penalty ({h} h)",
+        "Adrenalin": "Refill adrenaline (≈ {h} h)",
+        "SkillMissing": "The skill “{name}” was not found in the compendium.",
+        "Applied": "{source}: effect applied.",
+        "Delegated": "{source}: effect handed to the GM.",
+        "Unavailable": "{source}: target unavailable or no GM active."
+      },
+      "HoverDuration": "Hovering: stay aloft for {n} combat rounds",
+      "PowerNap": "Power Nap",
+      "PowerNapConfirm": "A half-hour nap fully restores (for at most 4 days in a row) and – with food – refills the regeneration pool. Apply now?",
+      "PowerNapDone": "{name}: Power Nap – adrenaline, meditation and regeneration pool are refilled."
     },
     "Species": {
       "TP": "HP per zone",

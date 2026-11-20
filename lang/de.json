@@ -152,7 +152,9 @@
       "nonLethal": "NL-Schaden (Betäubung)",
       "temp": "Temporärer Malus",
       "psi": "Kraft sammeln / Haltung",
-      "total": "Gesamtmalus"
+      "total": "Gesamtmalus",
+      "tempBonus": "Temp. Bonuswürfel",
+      "tempBonusHint": "Temporäre Bonuswürfel (Inspirieren, Der Doktor, Mixology, Sterne-Küche); wirken auf Proben, Angriffe und Verteidigung (nicht auf den Schadenswiderstand). Nach Ablauf der Wirkungsdauer von Hand zurücksetzen."
     },
     "Zone": {
       "Damage": "Schaden in dieser Zone",
@@ -477,7 +479,24 @@
       "Sollbruch": "Angriff aufs Manöver (Sollbruchstelle)",
       "SollbruchHint": "Keine vitale Stelle; Schaden am Fahrzeug senkt dessen Manöverwert um 1.",
       "SollbruchNote": "Sollbruchstelle: Angriff aufs Manöver – bei Schaden Manöver −1, keine vitale Stelle",
-      "ManeuverLoss": "Manöverwert −1 (Sollbruchstelle)"
+      "ManeuverLoss": "Manöverwert −1 (Sollbruchstelle)",
+      "TempBonus": "+{n}W temporärer Bonus",
+      "Buff": {
+        "Doctor": "Der Doktor: Behandlung",
+        "Result": "Ergebnis {total} → {n} Würfel (1 je 20 Punkte)",
+        "Hint": "Ziele markieren und die gewünschte Wirkung anwenden. Die Dauer läuft nicht automatisch ab – den Wert im Reiter Kampf nach Ablauf zurücksetzen.",
+        "Bonus": "+{n}W Bonus ({h} h)",
+        "Malus": "−{n}W Malus ({h} h)",
+        "Adrenalin": "Adrenalin auffüllen (≈ {h} h)",
+        "SkillMissing": "Die Fertigkeit „{name}“ wurde im Compendium nicht gefunden.",
+        "Applied": "{source}: Wirkung angewendet.",
+        "Delegated": "{source}: Wirkung an die Spielleitung übergeben.",
+        "Unavailable": "{source}: Ziel nicht verfügbar oder keine Spielleitung aktiv."
+      },
+      "HoverDuration": "Rüttelflug: Schweben für {n} Kampfrunden",
+      "PowerNap": "Power Nap",
+      "PowerNapConfirm": "Ein halbstündiges Nickerchen erholt vollständig (höchstens 4 Tage am Stück) und füllt – mit Nahrung – den Regenerationspool. Jetzt anwenden?",
+      "PowerNapDone": "{name}: Power Nap – Adrenalin, Meditation und Regenerationspool sind wieder aufgefüllt."
     },
     "Species": {
       "TP": "Trefferpunkte je Zone",

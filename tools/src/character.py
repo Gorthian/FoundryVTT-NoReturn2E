@@ -329,6 +329,7 @@ STYLE_EXTRA = {
     "Psionische Vielfältigkeit": {"hint": "Eine App kann zusätzliche Ziele erfassen; je zusätzlichem Ziel sinkt die effektive Kraftstufe (KS) um 1. Im PSI-Dialog das Feld „Zusätzliche Ziele“ ausfüllen."},
     "Metamorphose [Element]": {"mods": [mod("malus.physical", 1)], "hint": "Einsetzen schaltet den Zustand um: Der Körper ist mit dem Element überzogen (Elektro/Hitze/Kälte, im Feld „Auswahl“ eintragen). Berührung verursacht 5 Elementarschaden, du bist immun gegen das Element, −1W auf körperliche Aktionen (automatisch) und +1 KS für Apps der passenden Kraft (automatisch)."},
     "Sollbruchstelle": {"hint": "Angriff aufs Manöver eines Fahrzeugs ohne vitale Stelle: Im Angriffsdialog „Angriff aufs Manöver“ wählen. Verursacht der Angriff Schaden am Fahrzeug, sinkt dessen Manöverwert um 1 (Fahrzeugbogen, Feld Manöver)."},
+    "Der Doktor": {"hint": "Einsetzen: Behandlung mit WI + Medizin. Das Ergebnis gibt dem Ziel Bonuswürfel (4 h) oder Maluswürfel (12 h) wie Inspirieren (+1W je 20 Punkte) oder füllt dessen Adrenalin auf (≈ 1 h). Ziel vorher markieren; Bonus/Malus landen im Feld „Temp. Bonuswürfel/Malus“ im Reiter Kampf."},
     # (Ende STYLE_EXTRA)
 }
 

@@ -33,6 +33,32 @@ export async function applyDamageTo(targetUuid, payload) {
   return "delegated";
 }
 
+/**
+ * Wendet eine Bonus-/Malus-Wirkung (Der Doktor, Mixology, Sterne-Küche) auf ein Ziel an – direkt oder über die Spielleitung.
+ * @param {string} targetUuid  UUID des Actors
+ * @param {{kind: string, n: number}} payload  kind: bonus | malus | adrenalin
+ * @returns {Promise<"applied"|"delegated"|"unavailable">}
+ */
+export async function applyBuffTo(targetUuid, payload) {
+  const doc = await fromUuid(targetUuid);
+  const actor = doc?.actor ?? doc;
+  if (!actor) return "unavailable";
+  if (actor.isOwner) {
+    await applyBuff(actor, payload);
+    return "applied";
+  }
+  const gm = executingGM();
+  if (!gm) return "unavailable";
+  game.socket.emit(CHANNEL, { type: "applyBuff", gmId: gm.id, userId: game.user.id, targetUuid, payload });
+  return "delegated";
+}
+
+async function applyBuff(actor, { kind, n }) {
+  if (kind === "bonus") return actor.update({ "system.tempBonus": actor.system.tempBonus + n });
+  if (kind === "malus") return actor.update({ "system.tempMalus": actor.system.tempMalus + n });
+  if (kind === "adrenalin") return actor.update({ "system.special.adrenalin.used": 0 });
+}
+
 async function onMessage(msg) {
   if (msg?.gmId !== game.user.id || !game.user.isGM) return;
   if (msg.type === "applyDamage") {
@@ -42,5 +68,10 @@ async function onMessage(msg) {
     const { amount, zones, attack, label } = msg.payload ?? {};
     // Ohne Dialog, da Spielleitung statt Besitzer*in würfelt
     await actor.resistDamage({ amount, zones, attack, label, skipDialog: true });
+  }
+  if (msg.type === "applyBuff") {
+    const doc = await fromUuid(msg.targetUuid);
+    const actor = doc?.actor ?? doc;
+    if (actor) await applyBuff(actor, msg.payload ?? {});
   }
 }

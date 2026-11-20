@@ -346,7 +346,8 @@
    "prerequisites": "Medizin 4; HA 4, WI 4",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Behandlung (WI + Medizin) gibt temporäre Bonus- (4 h) oder Maluswürfel (12 h) wie Inspirieren, alternativ Adrenalin auffüllen (ca. 1 h). <em class=\"nr-ref\">(NoReturn 2E, S. 181)</em></p>"
+   "description": "<p>Behandlung (WI + Medizin) gibt temporäre Bonus- (4 h) oder Maluswürfel (12 h) wie Inspirieren, alternativ Adrenalin auffüllen (ca. 1 h). <em class=\"nr-ref\">(NoReturn 2E, S. 181)</em></p>",
+   "hint": "<p>Einsetzen: Behandlung mit WI + Medizin. Das Ergebnis gibt dem Ziel Bonuswürfel (4 h) oder Maluswürfel (12 h) wie Inspirieren (+1W je 20 Punkte) oder füllt dessen Adrenalin auf (≈ 1 h). Ziel vorher markieren; Bonus/Malus landen im Feld „Temp. Bonuswürfel/Malus“ im Reiter Kampf.</p>"
   },
   "effects": [],
   "folder": null,

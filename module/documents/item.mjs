@@ -1,6 +1,7 @@
 import { NR } from "../config.mjs";
 import { attackWithWeapon } from "../combat.mjs";
 import { castPsiApp } from "../psi.mjs";
+import { useDoctor, useCraftedBuff, useHover, usePowerNap } from "../style-actions.mjs";
 
 const { renderTemplate } = foundry.applications.handlebars;
 
@@ -91,6 +92,14 @@ export class NRItem extends foundry.documents.Item {
       const active = !s.active;
       await this.update({ "system.active": active });
       return this.toChat({ hint: s.hint, usesText: game.i18n.localize(active ? "NR.Style.StateOn" : "NR.Style.StateOff") });
+    }
+    // Aktive Style-Skills mit eigener Probe/Wirkung
+    switch (s.key) {
+      case "derDoktor": return useDoctor(this.actor);
+      case "mixology": return useCraftedBuff(this.actor, { skillName: "Ambrosia", source: this.name });
+      case "sterneKueche": return useCraftedBuff(this.actor, { skillName: "Kochen", source: this.name });
+      case "ruettelflug": return useHover(this.actor);
+      case "powerNap": return usePowerNap(this.actor);
     }
     let usesText = null;
     if (s.uses.max > 0) {
