@@ -264,10 +264,12 @@ export async function attackWithWeapon(actor, weapon) {
     multi: opts.multi,
     groups: [...groups],
     aimVital, sollbruch,
+    twoHits: isUnarmed(weapon) && ((actor.styleLevel("boxen") >= 3 && groups.has("fist")) || (actor.styleLevel("taeKwonDo") >= 3 && groups.has("leg"))),
     limb: isUnarmed(weapon) ? opts.limb : null,
     targets: targets.map(t => ({ uuid: t.uuid, name: t.name, actorUuid: t.actorUuid }))
   };
 
+  if (attackData.twoHits) styleNotes.push(game.i18n.localize("NR.Style.TwoHits"));
   const extra = await renderTemplate("systems/noreturn/templates/chat/attack-extra.hbs", {
     weapon, attackData, mode: mode?.label, aimLabel: NR.aiming[aim]?.label,
     zoneLabel: aim === "zone" || aim === "exact" ? NR.zones[opts.zone]?.label : null,
@@ -555,6 +557,16 @@ export async function rollDamage(defense) {
   const attacker = await fromUuid(attack.actorUuid);
   if (!attacker) return;
   if (!attacker.isOwner) return ui.notifications.warn(game.i18n.localize("NR.Notify.NotOwner"));
+  let msg = await rollDamageOnce(defense, attacker, 0);
+  // Boxen 3 / Tae-Kwon-Do 3: Der Treffer gilt als zwei Treffer an zwei Zonen (zwei Schadenswürfe)
+  if (attack.twoHits && !defense.blocked) msg = await rollDamageOnce(defense, attacker, 1);
+  await spikeRetaliation(defense, attacker);
+  return msg;
+}
+
+/** Ein Schadenswurf samt Schadenskarte; `hit` > 0 würfelt die Trefferzone zufällig (zweiter Treffer). */
+async function rollDamageOnce(defense, attacker, hit) {
+  const attack = defense.attack;
   const dmg = attack.dmg;
   const extraDice = (defense.blocked ? 0 : defense.goodHits) + (dmg.bonusDice ?? 0);
 
@@ -584,6 +596,7 @@ export async function rollDamage(defense) {
   if (defense.blocked) zones = ["9"];
   else if (attack.zonesMode === "all") zones = Object.keys(NR.zones);
   else if (attack.zonesMode === "twoRandom") zones = [(await rollHitZone()).zone, (await rollHitZone()).zone];
+  else if (hit > 0) zones = [(await rollHitZone()).zone];
   else if (attack.aim === "zone" || attack.aim === "exact") zones = [attack.zone];
   else if (attack.aim === "half") zones = [(await rollHitZone(attack.half)).zone];
   else zones = [(await rollHitZone()).zone];
@@ -602,9 +615,7 @@ export async function rollDamage(defense) {
   });
   const msgData = { speaker: ChatMessage.getSpeaker({ actor: attacker }), content, rolls: [roll], flags: { noreturn: { damage: payload } } };
   applyChatMode(msgData);
-  const msg = await ChatMessage.create(msgData);
-  await spikeRetaliation(defense, attacker);
-  return msg;
+  return ChatMessage.create(msgData);
 }
 
 /**

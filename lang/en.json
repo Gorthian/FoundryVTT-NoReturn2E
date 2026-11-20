@@ -498,7 +498,8 @@
       "PowerNapConfirm": "A half-hour nap fully restores (for at most 4 days in a row) and – with food – refills the regeneration pool. Apply now?",
       "PowerNapDone": "{name}: Power Nap – adrenaline, meditation and regeneration pool are refilled.",
       "BaKaiDoBite": "Ba-Kai-Do 1: biting in melee carries no combat disadvantage.",
-      "KenjutsuDraw": "Kenjutsu 1: the sword may be drawn and used to attack in the same action."
+      "KenjutsuDraw": "Kenjutsu 1: the sword may be drawn and used to attack in the same action.",
+      "TwoHits": "A hit counts as two hits on two zones (two damage rolls)"
     },
     "Species": {
       "TP": "HP per zone",

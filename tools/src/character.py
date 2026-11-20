@@ -338,6 +338,7 @@ STYLE_EXTRA = {
     "Aikido": {"hint": "Stufe 1: Nahkampf darf Nahkampfangriffe parieren (im Verteidigungsdialog freigeschaltet). Stufe 2: du rollst immer ab – Sturzschaden −20 (manuelle Schadenseingabe, vom Schaden abziehen). Stufe 3: Jede erfolgreiche Parade im Nahkampf verursacht beim Angreifer ST + 10 Punkte Schaden an einer zufälligen Zone (automatische Schadenskarte)."},
     "Ba-Kai-Do": {"mods": [mod("attack.claw", 3, 2), mod("damage.melee", 5, 3)], "hint": "Stufe 1: Beißen im Nahkampf ohne Kampfnachteil (Hinweis im Angriffsdialog). Stufe 2: Krallenangriffe +3W (Angriffsart „Krallen“ im Angriffsdialog wählen). Stufe 3: Nahkampfschaden +5W, mit und ohne natürliche Waffen."},
     "Kenjutsu": {"mods": [mod("attack.blade", 2, 2), mod("defense.parryBlade", 2, 2)], "hint": "Stufe 1: Schwert ziehen und in derselben Aktion angreifen (Hinweis im Angriffsdialog). Stufe 2: Angriffe und Paraden mit Klingenwaffen +2W (automatisch). Stufe 3: Jede erfolgreiche Parade mit einer Klingenwaffe verursacht deren Schaden an einer zufälligen Zone des Angreifers (automatische Schadenskarte)."},
+    "Boxen": {"mods": [mod("damage.fist", 3, 1), mod("defense.blockUnarmed", 3, 2)], "hint": "Stufe 1: Faustschaden +3W (Angriffsart „Faust“). Stufe 2: waffenloses Blocken +3W (Verteidigungsdialog, Block ohne Schild). Stufe 3: Ein Faustangriff, der trifft, gilt als zwei Treffer an zwei Zonen – der Schaden wird zweimal gewürfelt."},
     # (Ende STYLE_EXTRA)
 }
 

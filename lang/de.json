@@ -498,7 +498,8 @@
       "PowerNapConfirm": "Ein halbstündiges Nickerchen erholt vollständig (höchstens 4 Tage am Stück) und füllt – mit Nahrung – den Regenerationspool. Jetzt anwenden?",
       "PowerNapDone": "{name}: Power Nap – Adrenalin, Meditation und Regenerationspool sind wieder aufgefüllt.",
       "BaKaiDoBite": "Ba-Kai-Do 1: Beißen im Nahkampf ist ohne Kampfnachteil möglich.",
-      "KenjutsuDraw": "Kenjutsu 1: Das Schwert darf in derselben Aktion gezogen und zum Angriff genutzt werden."
+      "KenjutsuDraw": "Kenjutsu 1: Das Schwert darf in derselben Aktion gezogen und zum Angriff genutzt werden.",
+      "TwoHits": "Trifft ein Treffer, zählt er als zwei Treffer an zwei Zonen (zwei Schadenswürfe)"
     },
     "Species": {
       "TP": "Trefferpunkte je Zone",

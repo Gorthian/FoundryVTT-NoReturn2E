@@ -1588,8 +1588,20 @@
      "effect": "Faust-Treffer = zwei Treffer an zwei Zonen."
     }
    ],
-   "modifiers": [],
-   "description": "<p>Klassischer Faustkampf. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>"
+   "modifiers": [
+    {
+     "target": "damage.fist",
+     "value": 3,
+     "level": 1
+    },
+    {
+     "target": "defense.blockUnarmed",
+     "value": 3,
+     "level": 2
+    }
+   ],
+   "description": "<p>Klassischer Faustkampf. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>",
+   "hint": "<p>Stufe 1: Faustschaden +3W (Angriffsart „Faust“). Stufe 2: waffenloses Blocken +3W (Verteidigungsdialog, Block ohne Schild). Stufe 3: Ein Faustangriff, der trifft, gilt als zwei Treffer an zwei Zonen – der Schaden wird zweimal gewürfelt.</p>"
   },
   "effects": [],
   "folder": null,
