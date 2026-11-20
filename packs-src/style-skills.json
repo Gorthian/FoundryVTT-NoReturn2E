@@ -1161,7 +1161,8 @@
    "prerequisites": "Bodenfahrzeuge 4; WI 3",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Schaden am Fahrzeug senkt dessen Manöverwert um 1 ohne vitalen Treffer. <em class=\"nr-ref\">(NoReturn 2E, S. 183)</em></p>"
+   "description": "<p>Schaden am Fahrzeug senkt dessen Manöverwert um 1 ohne vitalen Treffer. <em class=\"nr-ref\">(NoReturn 2E, S. 183)</em></p>",
+   "hint": "<p>Angriff aufs Manöver eines Fahrzeugs ohne vitale Stelle: Im Angriffsdialog „Angriff aufs Manöver“ wählen. Verursacht der Angriff Schaden am Fahrzeug, sinkt dessen Manöverwert um 1 (Fahrzeugbogen, Feld Manöver).</p>"
   },
   "effects": [],
   "folder": null,

@@ -24,6 +24,7 @@
   </div>
   {{/if}}
   {{#if zpcAvailable}}<div class="form-group"><label>{{localize "NR.Style.ZpcLimb"}}</label><input type="checkbox" name="zpc"></div>{{/if}}
+  {{#if sollbruchAvailable}}<div class="form-group"><label data-tooltip="{{localize 'NR.Style.SollbruchHint'}}">{{localize "NR.Style.Sollbruch"}}</label><input type="checkbox" name="sollbruch"></div>{{/if}}
   {{#each styleHints as |h|}}<p class="nr-hint"><i class="fa-solid fa-star"></i> {{h}}</p>{{/each}}
 
   {{#if modes.length}}

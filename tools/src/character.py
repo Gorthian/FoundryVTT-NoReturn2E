@@ -328,6 +328,7 @@ STYLE_EXTRA = {
     "Memorum [PSI-Kraft]": {"hint": "Die Haltungskosten aller Apps der gewählten PSI-Kraft sinken um 1 (mindestens 0). Die Kraft im Feld „Auswahl“ (oder im Namen in Klammern) eintragen, z. B. „Memorum [Telekinese]“. Je Kraft einmal wählbar."},
     "Psionische Vielfältigkeit": {"hint": "Eine App kann zusätzliche Ziele erfassen; je zusätzlichem Ziel sinkt die effektive Kraftstufe (KS) um 1. Im PSI-Dialog das Feld „Zusätzliche Ziele“ ausfüllen."},
     "Metamorphose [Element]": {"mods": [mod("malus.physical", 1)], "hint": "Einsetzen schaltet den Zustand um: Der Körper ist mit dem Element überzogen (Elektro/Hitze/Kälte, im Feld „Auswahl“ eintragen). Berührung verursacht 5 Elementarschaden, du bist immun gegen das Element, −1W auf körperliche Aktionen (automatisch) und +1 KS für Apps der passenden Kraft (automatisch)."},
+    "Sollbruchstelle": {"hint": "Angriff aufs Manöver eines Fahrzeugs ohne vitale Stelle: Im Angriffsdialog „Angriff aufs Manöver“ wählen. Verursacht der Angriff Schaden am Fahrzeug, sinkt dessen Manöverwert um 1 (Fahrzeugbogen, Feld Manöver)."},
     # (Ende STYLE_EXTRA)
 }
 

@@ -473,7 +473,11 @@
       "MetamorphoseKs": "Metamorphose: +1 KS für Apps dieser Kraft",
       "PhysicalMalus": "−{n}W auf körperliche Aktionen (Style)",
       "StateOn": "Zustand: aktiv",
-      "StateOff": "Zustand: inaktiv"
+      "StateOff": "Zustand: inaktiv",
+      "Sollbruch": "Angriff aufs Manöver (Sollbruchstelle)",
+      "SollbruchHint": "Keine vitale Stelle; Schaden am Fahrzeug senkt dessen Manöverwert um 1.",
+      "SollbruchNote": "Sollbruchstelle: Angriff aufs Manöver – bei Schaden Manöver −1, keine vitale Stelle",
+      "ManeuverLoss": "Manöverwert −1 (Sollbruchstelle)"
     },
     "Species": {
       "TP": "Trefferpunkte je Zone",

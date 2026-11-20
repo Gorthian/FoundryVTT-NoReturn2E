@@ -396,10 +396,14 @@ export class NRActor extends foundry.documents.Actor {
     const through = Math.max(0, effAmount - resist);
     if (through > 0) await this.update({ "system.hp.value": Math.max(0, s.hp.value - through) });
     // Ungezielt: W6 = 6 → vitale Stelle; Aim for the Heart: gezielter Treffer auf eine vitale Stelle
-    const vital = through > 0 ? (attack.aimVital || (await new Roll("1d6").evaluate()).total === 6) : false;
+    // Sollbruchstelle: Angriff aufs Manöver – keine vitale Stelle, dafür Manöverwert −1 bei Schaden
+    const vital = (through > 0 && !attack.sollbruch) ? (attack.aimVital || (await new Roll("1d6").evaluate()).total === 6) : false;
+    const maneuverLoss = through > 0 && attack.sollbruch;
+    if (maneuverLoss) await this.update({ "system.maneuver": this.system.maneuver - 1 });
     const content = `<div class="nr-card"><h3>${game.i18n.localize("NR.Chat.VehicleDamage")}</h3>
       <p>${game.i18n.format("NR.Chat.VehicleDamageText", { amount: effAmount, resist, armor, through })}</p>
       ${vital ? `<p class="nr-bad"><strong>${game.i18n.localize("NR.Chat.VitalHit")}</strong></p>` : ""}
+      ${maneuverLoss ? `<p class="nr-bad"><strong>${game.i18n.localize("NR.Style.ManeuverLoss")}</strong></p>` : ""}
       ${this.system.damaged ? `<p class="nr-warn">${game.i18n.localize("NR.Chat.VehicleCrippled")}</p>` : ""}</div>`;
     const msgData = { speaker: ChatMessage.getSpeaker({ actor: this }), content, rolls: [roll] };
     applyChatMode(msgData);

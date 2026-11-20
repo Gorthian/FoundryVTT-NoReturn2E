@@ -473,7 +473,11 @@
       "MetamorphoseKs": "Metamorphosis: +1 KS for apps of this power",
       "PhysicalMalus": "−{n}D on physical actions (style)",
       "StateOn": "State: active",
-      "StateOff": "State: inactive"
+      "StateOff": "State: inactive",
+      "Sollbruch": "Attack the maneuver (breaking point)",
+      "SollbruchHint": "No vital spot; damage to the vehicle lowers its maneuver value by 1.",
+      "SollbruchNote": "Breaking point: attack on the maneuver – on damage maneuver −1, no vital spot",
+      "ManeuverLoss": "Maneuver value −1 (breaking point)"
     },
     "Species": {
       "TP": "HP per zone",

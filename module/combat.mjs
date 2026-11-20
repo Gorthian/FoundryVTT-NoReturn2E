@@ -101,7 +101,8 @@ export async function attackWithWeapon(actor, weapon) {
     skillOptions: skillOptions.map(o => ({ key: o.key, label: `${actor.system.skillList[o.key].label} (${actor.system.skillList[o.key].pool}W)${o.via ? ` – ${game.i18n.localize(`NR.Style.Via.${o.via}`)}` : ""}` })),
     skillChoice: skillOptions.length > 1, bestSkill: skillOptions.reduce((b, o) => actor.system.skillList[o.key].pool > actor.system.skillList[b.key].pool ? o : b, skillOptions[0]).key,
     limbs: unarmed ? Object.entries(NR.strikeLimbs).map(([key, l]) => ({ key, label: l.label, selected: key === defaultLimb(weapon) })) : null,
-    zpcAvailable, maxMulti: maxMultiAttacks(actor, weapon, { gunFuMelee: actor.styleLevel("gunFu") >= 2 }),
+    zpcAvailable, sollbruchAvailable: actor.styleLevel("sollbruchstelle") > 0 && targets.some(t => t.token?.actor?.type === "vehicle"),
+    maxMulti: maxMultiAttacks(actor, weapon, { gunFuMelee: actor.styleLevel("gunFu") >= 2 }),
     styleHints: styleAttackHints(actor, weapon)
   });
 
@@ -132,7 +133,8 @@ export async function attackWithWeapon(actor, weapon) {
           multi: Math.max(1, Number(f.multi?.value) || 1),
           skillKey: f.skillKey?.value ?? "",
           limb: f.limb?.value ?? "fist",
-          zpc: f.zpc?.checked ?? false
+          zpc: f.zpc?.checked ?? false,
+          sollbruch: f.sollbruch?.checked ?? false
         };
       }
     }, { action: "cancel", label: game.i18n.localize("Cancel") }]
@@ -185,6 +187,8 @@ export async function attackWithWeapon(actor, weapon) {
   // und erlaubt auch nicht sichtbare vitale Stellen.
   const vehicleTarget = targets[0]?.token?.actor?.type === "vehicle";
   let aimVital = false;
+  const sollbruch = vehicleTarget && !!opts.sollbruch && actor.styleLevel("sollbruchstelle") > 0;
+  if (sollbruch) styleNotes.push(game.i18n.localize("NR.Style.SollbruchNote"));
   if (vehicleTarget && aim !== "random") {
     if (actor.styleLevel("aimForTheHeart")) {
       aimVital = true;
@@ -253,7 +257,7 @@ export async function attackWithWeapon(actor, weapon) {
     zonesMode,
     multi: opts.multi,
     groups: [...groups],
-    aimVital,
+    aimVital, sollbruch,
     limb: isUnarmed(weapon) ? opts.limb : null,
     targets: targets.map(t => ({ uuid: t.uuid, name: t.name, actorUuid: t.actorUuid }))
   };
@@ -537,7 +541,7 @@ export async function rollDamage(defense) {
   const payload = {
     kind: "damage", amount: roll.total, zones, attack: {
       pierce: dmg.pierce, damageType: dmg.damageType, noDamageVs: dmg.noDamageVs,
-      nonLethal: dmg.nonLethal, structure: dmg.structure, continuous: dmg.continuous, aimVital: !!attack.aimVital
+      nonLethal: dmg.nonLethal, structure: dmg.structure, continuous: dmg.continuous, aimVital: !!attack.aimVital, sollbruch: !!attack.sollbruch
     },
     target: defense.defender, weaponName: attack.weaponName, blocked: defense.blocked
   };
