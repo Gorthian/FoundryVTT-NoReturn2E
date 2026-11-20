@@ -273,7 +273,8 @@
    "prerequisites": "Computer 5; HA 4",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Hacken/Programmieren als Crafting mit −50 % Dauer. <em class=\"nr-ref\">(NoReturn 2E, S. 180)</em></p>"
+   "description": "<p>Hacken/Programmieren als Crafting mit −50 % Dauer. <em class=\"nr-ref\">(NoReturn 2E, S. 180)</em></p>",
+   "hint": "<p>Hacken/Programmieren zählt als Crafting; die Dauer der Computer-Proben verkürzt sich um 50 %. Das System führt keine Crafting-Dauer; die Spielleitung halbiert sie anhand des Hinweises auf der Computer-Probe.</p>"
   },
   "effects": [],
   "folder": null,
