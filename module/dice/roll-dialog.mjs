@@ -69,11 +69,12 @@ export async function poolDialog({ title, actor, dice, woundMalus = 0, mw = 10, 
 }
 
 function buildMalusDetail(m) {
+  const t = (key, data) => game.i18n.format(`NR.Txt.Malus.${key}`, data);
   const parts = [];
-  if (m.wounds) parts.push(`Wunden −${m.wounds}`);
-  if (m.nonLethal) parts.push(`Betäubung −${m.nonLethal}`);
-  if (m.temp) parts.push(`Temporär ${m.temp > 0 ? "−" : "+"}${Math.abs(m.temp)}`);
-  if (m.psiCollect) parts.push(`Kraft sammeln −${m.psiCollect}`);
-  if (m.hold) parts.push(`Haltung −${m.hold}`);
+  if (m.wounds) parts.push(t("Wounds", { n: m.wounds }));
+  if (m.nonLethal) parts.push(t("NonLethal", { n: m.nonLethal }));
+  if (m.temp) parts.push(t("Temp", { sign: m.temp > 0 ? "−" : "+", n: Math.abs(m.temp) }));
+  if (m.psiCollect) parts.push(t("PsiCollect", { n: m.psiCollect }));
+  if (m.hold) parts.push(t("Hold", { n: m.hold }));
   return parts.join(", ");
 }

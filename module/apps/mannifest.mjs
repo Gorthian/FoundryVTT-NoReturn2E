@@ -72,12 +72,12 @@ function findDoc(list, id, name = "") {
 function skillKey(id) {
   if (NR.skills[id]) return id;
   const c = canon(id);
-  return Object.entries(NR.skills).find(([k, v]) => canon(k) === c || canon(v.label) === c)?.[0] ?? null;
+  return Object.entries(NR.skills).find(([k, v]) => canon(k) === c || canon(v.labelDe ?? v.label) === c || canon(v.label) === c)?.[0] ?? null;
 }
 
 /** Eigener Fertigkeitsschlüssel → Verlags-ID (snake_case ohne Umlaute). */
 function skillId(key) {
-  return slug(NR.skills[key]?.label ?? key);
+  return slug(NR.skills[key]?.labelDe ?? NR.skills[key]?.label ?? key);
 }
 
 /* -------------------------------------------- */
@@ -453,7 +453,7 @@ export function exportMannifest(actor) {
       if (mastery) e.skill = prevSkill[mastery.target.slice(7)] ?? mastery.target.slice(7);
     }
     if (item.name.startsWith("Schwaches Attribut")) {
-      const k = Object.entries(NR.attributes).find(([, v]) => item.name.endsWith(v.label))?.[0];
+      const k = Object.entries(NR.attributes).find(([, v]) => item.name.endsWith(v.labelDe ?? v.label))?.[0];
       const id = Object.entries(ATTRS).find(([, v]) => v === k)?.[0];
       if (id) { e.id = old?.id ?? "schwaches_attribut"; e.attribute = id; }
     }

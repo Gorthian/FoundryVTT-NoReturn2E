@@ -2,7 +2,7 @@
  * NoReturn 2E – Foundry VTT System
  * Inoffizielle Umsetzung des Vario-D6-2.0-Regelwerks (NoReturn 2. Edition, Mannifest Games).
  */
-import { NR } from "./module/config.mjs";
+import { NR, localizeConfig } from "./module/config.mjs";
 import { CharacterData, NpcData, VehicleData } from "./module/data/actor-models.mjs";
 import * as ItemModels from "./module/data/item-models.mjs";
 import { NRActor } from "./module/documents/actor.mjs";
@@ -73,6 +73,9 @@ Hooks.once("init", () => {
   registerChatHooks();
   registerCombatHooks();
 });
+
+/** Konfigurationstexte (Attribute, Fertigkeiten, Zonen …) in die gewählte Sprache übersetzen. */
+Hooks.once("i18nInit", () => localizeConfig());
 
 /** Alle Templates des Systems (Partials und Chat-/Dialog-Vorlagen) vorladen. */
 const TEMPLATES = [

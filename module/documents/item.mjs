@@ -91,53 +91,54 @@ export class NRItem extends foundry.documents.Item {
   chatStats() {
     const s = this.system;
     const st = [];
+    const t = (key, data) => game.i18n.format(`NR.Txt.Stats.${key}`, data);
     const ts = s.ts ? NR.techLevels[s.ts] : null;
     switch (this.type) {
       case "weapon":
-        st.push(NR.weaponCategories[s.category]?.label, `Schaden ${s.damageLabel}`);
-        if (s.attackDice) st.push(`Angriff +${s.attackDice}W`);
-        if (s.parryDice) st.push(`Parade +${s.parryDice}W`);
-        if (s.blockDice) st.push(`Blocken +${s.blockDice}W`);
-        if (s.modes.length) st.push(`Modus ${s.modes.join(", ")}`);
-        if (s.modes.length || s.rd) st.push(`RD ${s.rd}${s.rdFolded ? `(${s.rdFolded})` : ""}`);
-        if (s.ammo.max) st.push(`Ladung ${s.ammo.value}/${s.ammo.max}(${s.ammo.container})`);
+        st.push(NR.weaponCategories[s.category]?.label, t("Damage", { v: s.damageLabel }));
+        if (s.attackDice) st.push(t("AttackDice", { n: s.attackDice }));
+        if (s.parryDice) st.push(t("ParryDice", { n: s.parryDice }));
+        if (s.blockDice) st.push(t("BlockDice", { n: s.blockDice }));
+        if (s.modes.length) st.push(t("Mode", { v: s.modes.join(", ") }));
+        if (s.modes.length || s.rd) st.push(t("Rd", { v: `${s.rd}${s.rdFolded ? `(${s.rdFolded})` : ""}` }));
+        if (s.ammo.max) st.push(t("Charge", { v: s.ammo.value, max: s.ammo.max, c: s.ammo.container }));
         break;
       case "armor":
-        st.push(`RW ${s.rw}p. ${NR.materialCategories[s.mk]}`, `Komfort ${s.komfort}`, `Zonen ${s.zones.join(", ")}`);
+        st.push(t("Armor", { rw: s.rw, mk: NR.materialCategories[s.mk] }), t("Comfort", { v: s.komfort }), t("Zones", { v: s.zones.join(", ") }));
         break;
       case "ammo":
-        if (s.damage) st.push(`Schaden ${s.damage}`);
-        if (s.damageBonus) st.push(`Bonusschaden ${s.damageBonus > 0 ? "+" : ""}${s.damageBonus}`);
+        if (s.damage) st.push(t("Damage", { v: s.damage }));
+        if (s.damageBonus) st.push(t("BonusDamage", { v: `${s.damageBonus > 0 ? "+" : ""}${s.damageBonus}` }));
         if (s.pierce) st.push(NR.armorPiercing[s.pierce]);
-        if (s.radius) st.push(`Radius ${s.radius}`);
+        if (s.radius) st.push(t("Radius", { v: s.radius }));
         break;
       case "psiApp":
         st.push(NR.psiPowers[s.power]?.label, `${NR.psiDifficulties[s.difficulty]?.label} (${s.min}–${s.max})`);
-        if (s.hold) st.push(`Haltung ${s.hold}`);
-        if (s.defensive) st.push("Defensivaktion");
+        if (s.hold) st.push(t("Hold", { v: s.hold }));
+        if (s.defensive) st.push(t("Defensive"));
         break;
       case "styleSkill":
         st.push(`${s.gp} GP / ${s.ep} EP`);
-        if (s.prerequisites) st.push(`Voraussetzung: ${s.prerequisites}`);
+        if (s.prerequisites) st.push(t("Prerequisites", { v: s.prerequisites }));
         break;
       case "abnormality":
       case "bioTrait":
-        if (s.gp) st.push(`${s.gp} GP${s.perLevel ? " je Stufe" : ""}`);
+        if (s.gp) st.push(`${s.gp} GP${s.perLevel ? t("PerLevel") : ""}`);
         break;
       case "advantage":
-        st.push(`${NR.advantageKinds[s.kind]}: ${s.markers} Marker`);
+        st.push(t("Markers", { kind: NR.advantageKinds[s.kind], n: s.markers }));
         break;
       case "species":
-        st.push(`${s.gp} GP`, `TP ${s.tp}`, `IR ${s.irDice}W6${s.irPoints ? s.irPoints : ""}`, `Adrenalin ${s.adrenalin}`, `Psyche ${s.psyche}`);
+        st.push(`${s.gp} GP`, t("Tp", { v: s.tp }), t("Ir", { v: `${s.irDice}W6${s.irPoints ? s.irPoints : ""}` }), t("Adrenalin", { v: s.adrenalin }), t("Psyche", { v: s.psyche }));
         break;
       case "augment":
         st.push(NR.augmentKinds[s.kind]);
-        if (s.orgLoss) st.push(`Organismus −${s.orgLoss}`);
-        if (s.psycheLoss) st.push(`Psyche −${s.psycheLoss}`);
+        if (s.orgLoss) st.push(t("OrgLoss", { v: s.orgLoss }));
+        if (s.psycheLoss) st.push(t("PsycheLoss", { v: s.psycheLoss }));
         break;
     }
     if (ts) st.push(ts);
-    if (s.price) st.push(`${s.price.toLocaleString("de-DE")} N$`);
+    if (s.price) st.push(`${s.price.toLocaleString(game.i18n.lang)} N$`);
     return st.filter(Boolean);
   }
 }

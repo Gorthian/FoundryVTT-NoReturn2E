@@ -668,6 +668,822 @@
       "Imported": "{name} imported.",
       "ImportedWithGaps": "{name} imported. {n} entries could not be matched:",
       "Placeholder": "Placeholder for catalog entry “{id}” from the publisher's generator – replace with the matching compendium item (the ID is kept on export)."
+    },
+    "Cfg": {
+      "attributes": {
+        "ge": {
+          "label": "Dexterity"
+        },
+        "st": {
+          "label": "Strength"
+        },
+        "ko": {
+          "label": "Constitution"
+        },
+        "be": {
+          "label": "Agility"
+        },
+        "wa": {
+          "label": "Perception"
+        },
+        "wi": {
+          "label": "Knowledge"
+        },
+        "ch": {
+          "label": "Charisma"
+        },
+        "ha": {
+          "label": "Craftsmanship"
+        }
+      },
+      "skills": {
+        "bodenfahrzeuge": {
+          "label": "Ground Vehicles"
+        },
+        "fluggeraete": {
+          "label": "Aircraft"
+        },
+        "geschuetze": {
+          "label": "Heavy Guns"
+        },
+        "projektilwaffen": {
+          "label": "Projectile Weapons"
+        },
+        "raumjaeger": {
+          "label": "Space Fighters"
+        },
+        "raumschiff": {
+          "label": "Spaceship"
+        },
+        "schiessen": {
+          "label": "Shooting"
+        },
+        "schwereWaffen": {
+          "label": "Heavy Weapons"
+        },
+        "spruehwaffen": {
+          "label": "Spray Weapons"
+        },
+        "taschendiebstahl": {
+          "label": "Pickpocketing"
+        },
+        "wasserfahrzeuge": {
+          "label": "Watercraft"
+        },
+        "wurfwaffen": {
+          "label": "Thrown Weapons"
+        },
+        "stemmen": {
+          "label": "Lifting"
+        },
+        "ausdauer": {
+          "label": "Endurance"
+        },
+        "blocken": {
+          "label": "Blocking"
+        },
+        "saufen": {
+          "label": "Drinking"
+        },
+        "akrobatik": {
+          "label": "Acrobatics"
+        },
+        "ausweichen": {
+          "label": "Dodging"
+        },
+        "klettern": {
+          "label": "Climbing"
+        },
+        "nahkampf": {
+          "label": "Melee"
+        },
+        "reiten": {
+          "label": "Riding"
+        },
+        "rennen": {
+          "label": "Running"
+        },
+        "schwimmen": {
+          "label": "Swimming"
+        },
+        "springen": {
+          "label": "Jumping"
+        },
+        "waffenkampf": {
+          "label": "Weapon Combat"
+        },
+        "zeroG": {
+          "label": "Zero-G"
+        },
+        "heimlichkeit": {
+          "label": "Stealth"
+        },
+        "nachforschen": {
+          "label": "Investigation"
+        },
+        "orientierung": {
+          "label": "Orientation"
+        },
+        "reaktion": {
+          "label": "Reaction"
+        },
+        "schaetzen": {
+          "label": "Estimating"
+        },
+        "astronomie": {
+          "label": "Astronomy"
+        },
+        "chemie": {
+          "label": "Chemistry"
+        },
+        "computer": {
+          "label": "Computer"
+        },
+        "gassenwissen": {
+          "label": "Street Knowledge"
+        },
+        "grossraumschiff": {
+          "label": "Capital Ship"
+        },
+        "medizin": {
+          "label": "Medicine"
+        },
+        "naturkunde": {
+          "label": "Natural Science"
+        },
+        "sagenMythen": {
+          "label": "Legends & Myths"
+        },
+        "spezies": {
+          "label": "Species Lore"
+        },
+        "willenskraft": {
+          "label": "Willpower"
+        },
+        "dressieren": {
+          "label": "Animal Training"
+        },
+        "einschuechtern": {
+          "label": "Intimidation"
+        },
+        "inspirieren": {
+          "label": "Inspiring"
+        },
+        "menschenkenntnis": {
+          "label": "Insight"
+        },
+        "schauspiel": {
+          "label": "Acting"
+        },
+        "ueberreden": {
+          "label": "Persuasion"
+        },
+        "verhandeln": {
+          "label": "Negotiation"
+        },
+        "basteln": {
+          "label": "Tinkering"
+        },
+        "elektronik": {
+          "label": "Electronics"
+        },
+        "feuerwaffenbau": {
+          "label": "Firearm Smithing"
+        },
+        "kunst": {
+          "label": "Art"
+        },
+        "mechanik": {
+          "label": "Mechanics"
+        },
+        "robotik": {
+          "label": "Robotics"
+        },
+        "ruestungsbau": {
+          "label": "Armor Smithing"
+        },
+        "sicherheitstechnik": {
+          "label": "Security Systems"
+        },
+        "waffenbau": {
+          "label": "Weapon Smithing"
+        }
+      },
+      "difficulties": {
+        "0": "None (open)",
+        "5": "Routine (5)",
+        "10": "Normal (10)",
+        "15": "Demanding (15)",
+        "20": "Hard (20)",
+        "25": "Very hard (25)",
+        "30": "Epic (30)",
+        "40": "Legendary (40)"
+      },
+      "zones": {
+        "2": {
+          "label": "Pelvis",
+          "short": "Pelvis"
+        },
+        "3": {
+          "label": "Lower leg right",
+          "short": "L. leg r."
+        },
+        "4": {
+          "label": "Thigh right",
+          "short": "Thigh r."
+        },
+        "5": {
+          "label": "Arm right",
+          "short": "Arm r."
+        },
+        "6": {
+          "label": "Torso right",
+          "short": "Torso r."
+        },
+        "7": {
+          "label": "Trunk",
+          "short": "Trunk"
+        },
+        "8": {
+          "label": "Torso left",
+          "short": "Torso l."
+        },
+        "9": {
+          "label": "Arm left",
+          "short": "Arm l."
+        },
+        "10": {
+          "label": "Thigh left",
+          "short": "Thigh l."
+        },
+        "11": {
+          "label": "Lower leg left",
+          "short": "L. leg l."
+        },
+        "12": {
+          "label": "Head",
+          "short": "Head"
+        }
+      },
+      "aiming": {
+        "random": {
+          "label": "Random target (whole body)"
+        },
+        "half": {
+          "label": "Random body half"
+        },
+        "zone": {
+          "label": "Specific body zone"
+        },
+        "exact": {
+          "label": "Exact spot (soft tissue +10p.)"
+        }
+      },
+      "armorPiercing": {
+        "none": "None",
+        "A": "Ignores MK:A",
+        "B": "Ignores up to MK:B",
+        "C": "Ignores up to MK:C",
+        "all": "Ignores all armor"
+      },
+      "damageTypes": {
+        "klinge": "Blade",
+        "stich": "Piercing",
+        "wucht": "Blunt",
+        "scharf": "Sharp (thrown)",
+        "projektil": "Projectile",
+        "explosiv": "Explosive",
+        "hitze": "Heat/Fire",
+        "kaelte": "Cold",
+        "elektro": "Electric",
+        "saeure": "Acid",
+        "psi": "Psionic",
+        "gift": "Poison"
+      },
+      "weaponCategories": {
+        "unbewaffnet": {
+          "label": "Unarmed/natural"
+        },
+        "faustkampf": {
+          "label": "Fist weapon"
+        },
+        "nahkampf": {
+          "label": "Melee weapon"
+        },
+        "schild": {
+          "label": "Shield"
+        },
+        "wurf": {
+          "label": "Thrown weapon"
+        },
+        "faustfeuer": {
+          "label": "Handgun"
+        },
+        "gewehr": {
+          "label": "Rifle"
+        },
+        "schnellfeuer": {
+          "label": "Rapid-fire weapon"
+        },
+        "gatling": {
+          "label": "Gatling weapon"
+        },
+        "schwer": {
+          "label": "Heavy weapon"
+        },
+        "spruehwaffe": {
+          "label": "Spray weapon"
+        },
+        "projektil": {
+          "label": "Projectile weapon (bow/crossbow)"
+        },
+        "geschuetz": {
+          "label": "Heavy gun"
+        }
+      },
+      "ranges": {
+        "none": {
+          "label": "Melee / none"
+        },
+        "pistole": {
+          "label": "Pistol / Revolver / SMG"
+        },
+        "shotgun": {
+          "label": "Shotgun / Pump-action"
+        },
+        "sturmgewehr": {
+          "label": "Assault rifle / MG"
+        },
+        "scharfschuetze": {
+          "label": "Sniper rifle"
+        },
+        "granatwerfer": {
+          "label": "Grenade launcher"
+        },
+        "gatling": {
+          "label": "Gatling weapons"
+        },
+        "recurve": {
+          "label": "Recurve bow"
+        },
+        "langbogen": {
+          "label": "Longbow"
+        },
+        "compound": {
+          "label": "Compound bow"
+        },
+        "handarmbrust": {
+          "label": "Hand crossbow"
+        },
+        "armbrust": {
+          "label": "Crossbow"
+        },
+        "wurf": {
+          "label": "Thrown weapons (× STR)"
+        },
+        "geschuetz": {
+          "label": "Heavy gun"
+        },
+        "variabel": {
+          "label": "Variable (see weapon)"
+        }
+      },
+      "rangeBands": {
+        "kurz": {
+          "label": "Short"
+        },
+        "mittel": {
+          "label": "Medium"
+        },
+        "weit": {
+          "label": "Far"
+        },
+        "extrem": {
+          "label": "Extreme"
+        }
+      },
+      "fireModes": {
+        "RM": {
+          "label": "Repeater mode (RM)"
+        },
+        "HM": {
+          "label": "Semi-automatic (HM)"
+        },
+        "SM": {
+          "label": "Burst mode (SM)"
+        },
+        "VM": {
+          "label": "Fully automatic (VM)"
+        },
+        "GM": {
+          "label": "Gatling mode (GM)"
+        },
+        "SP": {
+          "label": "Spray (SP)"
+        }
+      },
+      "ammoContainers": {
+        "m": "Magazine",
+        "t": "Drum",
+        "k": "Belt",
+        "i": "internal",
+        "a": "mounted",
+        "l": "Liquid"
+      },
+      "powerLevels": {
+        "survival": {
+          "label": "Survival"
+        },
+        "standard": {
+          "label": "Standard"
+        },
+        "superior": {
+          "label": "Superior"
+        }
+      },
+      "butterflyEffects": {
+        "artisan": {
+          "label": "Artisan"
+        },
+        "athlete": {
+          "label": "Athlete"
+        },
+        "craftsman": {
+          "label": "Craftsman"
+        },
+        "leader": {
+          "label": "Leader"
+        },
+        "marksman": {
+          "label": "Marksman"
+        },
+        "medic": {
+          "label": "Medic"
+        },
+        "operator": {
+          "label": "Operator"
+        },
+        "rogue": {
+          "label": "Rogue"
+        },
+        "scholar": {
+          "label": "Scholar"
+        },
+        "scout": {
+          "label": "Scout"
+        },
+        "trickster": {
+          "label": "Trickster"
+        },
+        "warrior": {
+          "label": "Warrior"
+        },
+        "copycat": {
+          "label": "Copy Cat (−2 XP per advance after observation)"
+        },
+        "skillmaster": {
+          "label": "Skill Master (−2 XP, can teach)"
+        }
+      },
+      "psiDifficulties": {
+        "leicht": {
+          "label": "Easy"
+        },
+        "mittel": {
+          "label": "Medium"
+        },
+        "schwer": {
+          "label": "Hard"
+        },
+        "sehrSchwer": {
+          "label": "Very hard"
+        },
+        "ultimativ": {
+          "label": "Ultimate"
+        }
+      },
+      "psiPowers": {
+        "animakinese": {
+          "label": "Animakinese"
+        },
+        "biokinese": {
+          "label": "Biokinese"
+        },
+        "chronokinese": {
+          "label": "Chronokinese"
+        },
+        "cryokinese": {
+          "label": "Cryokinese"
+        },
+        "elektrokinese": {
+          "label": "Elektrokinese"
+        },
+        "haimakinese": {
+          "label": "Haimakinese"
+        },
+        "morphokinese": {
+          "label": "Morphokinese"
+        },
+        "photokinese": {
+          "label": "Photokinese"
+        },
+        "psychokinese": {
+          "label": "Psychokinese"
+        },
+        "pyrokinese": {
+          "label": "Pyrokinese"
+        },
+        "technokinese": {
+          "label": "Technokinese"
+        },
+        "telekinese": {
+          "label": "Telekinese"
+        },
+        "kategorieB": {
+          "label": "Category B (HMO)"
+        }
+      },
+      "organismThresholds": {
+        "0": {
+          "label": "Healthy"
+        },
+        "1": {
+          "label": "1× Table A"
+        },
+        "2": {
+          "label": "1× Table B"
+        },
+        "3": {
+          "label": "1× Table B"
+        },
+        "4": {
+          "label": "1× Table B"
+        },
+        "5": {
+          "label": "1× A & 1× B"
+        },
+        "6": {
+          "label": "1× A & 1× B"
+        },
+        "7": {
+          "label": "1× A & 1× B"
+        },
+        "8": {
+          "label": "2× A & 2× B"
+        },
+        "9": {
+          "label": "2× A & 2× B"
+        },
+        "10": {
+          "label": "2× A & 2× B"
+        },
+        "11": {
+          "label": "Death"
+        }
+      },
+      "degenerationA": {
+        "1": {
+          "label": "Weak immune system"
+        },
+        "2": {
+          "label": "Weak immune system"
+        },
+        "3": {
+          "label": "Disfigured"
+        },
+        "4": {
+          "label": "Disfigured"
+        },
+        "5": {
+          "label": "Chronic wounds"
+        },
+        "6": {
+          "label": "Chronic wounds"
+        }
+      },
+      "degenerationB": {
+        "1": {
+          "label": "Exhaustion"
+        },
+        "2": {
+          "label": "Tremors and spasms"
+        },
+        "3": {
+          "label": "Perception disorder"
+        },
+        "4": {
+          "label": "Paralysis"
+        },
+        "5": {
+          "label": "Muscle weakness"
+        },
+        "6": {
+          "label": "Dementia"
+        }
+      },
+      "psycheRanges": {
+        "0": {
+          "label": "Optimal psyche"
+        },
+        "1": {
+          "label": "Healthy psyche"
+        },
+        "2": {
+          "label": "Strained psyche"
+        },
+        "3": {
+          "label": "Endangered psyche"
+        },
+        "4": {
+          "label": "Catastrophic psyche"
+        }
+      },
+      "reputation": {
+        "1": "1 – Absolutely unknown (–)",
+        "2": "2 – Locally known (TN 40)",
+        "3": "3 – Regionally known (TN 35)",
+        "4": "4 – Nationally known (TN 30)",
+        "5": "5 – Internationally known (TN 25)",
+        "6": "6 – Famous (TN 20)",
+        "7": "7 – Prominent (TN 15)",
+        "8": "8 – Known worldwide (TN 10)",
+        "9": "9 – Icon (TN 5)",
+        "10": "10 – Legendary (no roll)"
+      },
+      "customSkillCategories": {
+        "besondere": "Special skill",
+        "elite": "Elite skill",
+        "sprache": "Language",
+        "fertigkeit": "Additional skill"
+      },
+      "toolQuality": {
+        "0": "±0 (average)",
+        "1": "+1D (good)",
+        "2": "+2D (high-tech)",
+        "3": "+3D (outstanding)",
+        "-2": "−2D (miserable)",
+        "-1": "−1D (poor)"
+      },
+      "advantageKinds": {
+        "vorteil": "Advantage",
+        "nachteil": "Disadvantage"
+      },
+      "augmentKinds": {
+        "implantat": "Implant",
+        "robotik": "Robotics (body zone)",
+        "biomechanik": "Biomechanics",
+        "upgrade": "Robotics upgrade",
+        "design": "Awakened design option"
+      },
+      "bioTraitKinds": {
+        "sichtbar": "Visible",
+        "verborgen": "Hidden",
+        "auffaelligkeit": "Conspicuousness"
+      },
+      "styleSkillKinds": {
+        "expert": "Expert ability",
+        "kampfkunst": "Martial art"
+      },
+      "modifierTargets": {
+        "dice": {
+          "klettern": "Bonus dice: Climbing",
+          "nahkampf": "Bonus dice: Melee",
+          "einschuechtern": {
+            "st": "Bonus dice: Intimidation with Strength"
+          }
+        },
+        "attributes": {
+          "ge": "Attribute: Dexterity",
+          "st": "Attribute: Strength",
+          "ko": "Attribute: Constitution",
+          "be": "Attribute: Agility",
+          "wa": "Attribute: Perception",
+          "wi": "Attribute: Knowledge",
+          "ch": "Attribute: Charisma",
+          "ha": "Attribute: Craftsmanship"
+        },
+        "adrenalin": "Adrenaline (level)",
+        "schmerztoleranz": "Pain tolerance (level)",
+        "meditation": "Meditation (level)",
+        "tp": "Hit points per body zone",
+        "organismus": "Organism (max./loss)",
+        "psyche": "Psyche (max./loss)",
+        "irDice": "Infection resistance (dice)",
+        "irPoints": "Infection resistance (points)",
+        "regSpeed": "Regeneration speed",
+        "regPool": "Regeneration pool",
+        "movement": "Movement range (m)",
+        "bloodMax": "Blood points (max.)",
+        "armorAll": "Armor on all zones (points)",
+        "chassisArmor": "Awakened: chassis armor (points)",
+        "chassisMk": "Awakened: chassis MK:B (value 1)",
+        "capacity": "Awakened: capacity per zone",
+        "skills": {
+          "bodenfahrzeuge": "Skill: Ground Vehicles",
+          "fluggeraete": "Skill: Aircraft",
+          "geschuetze": "Skill: Heavy Guns",
+          "projektilwaffen": "Skill: Projectile Weapons",
+          "raumjaeger": "Skill: Space Fighters",
+          "raumschiff": "Skill: Spaceship",
+          "schiessen": "Skill: Shooting",
+          "schwereWaffen": "Skill: Heavy Weapons",
+          "spruehwaffen": "Skill: Spray Weapons",
+          "taschendiebstahl": "Skill: Pickpocketing",
+          "wasserfahrzeuge": "Skill: Watercraft",
+          "wurfwaffen": "Skill: Thrown Weapons",
+          "stemmen": "Skill: Lifting",
+          "ausdauer": "Skill: Endurance",
+          "blocken": "Skill: Blocking",
+          "saufen": "Skill: Drinking",
+          "akrobatik": "Skill: Acrobatics",
+          "ausweichen": "Skill: Dodging",
+          "klettern": "Skill: Climbing",
+          "nahkampf": "Skill: Melee",
+          "reiten": "Skill: Riding",
+          "rennen": "Skill: Running",
+          "schwimmen": "Skill: Swimming",
+          "springen": "Skill: Jumping",
+          "waffenkampf": "Skill: Weapon Combat",
+          "zeroG": "Skill: Zero-G",
+          "heimlichkeit": "Skill: Stealth",
+          "nachforschen": "Skill: Investigation",
+          "orientierung": "Skill: Orientation",
+          "reaktion": "Skill: Reaction",
+          "schaetzen": "Skill: Estimating",
+          "astronomie": "Skill: Astronomy",
+          "chemie": "Skill: Chemistry",
+          "computer": "Skill: Computer",
+          "gassenwissen": "Skill: Street Knowledge",
+          "grossraumschiff": "Skill: Capital Ship",
+          "medizin": "Skill: Medicine",
+          "naturkunde": "Skill: Natural Science",
+          "sagenMythen": "Skill: Legends & Myths",
+          "spezies": "Skill: Species Lore",
+          "willenskraft": "Skill: Willpower",
+          "dressieren": "Skill: Animal Training",
+          "einschuechtern": "Skill: Intimidation",
+          "inspirieren": "Skill: Inspiring",
+          "menschenkenntnis": "Skill: Insight",
+          "schauspiel": "Skill: Acting",
+          "ueberreden": "Skill: Persuasion",
+          "verhandeln": "Skill: Negotiation",
+          "basteln": "Skill: Tinkering",
+          "elektronik": "Skill: Electronics",
+          "feuerwaffenbau": "Skill: Firearm Smithing",
+          "kunst": "Skill: Art",
+          "mechanik": "Skill: Mechanics",
+          "robotik": "Skill: Robotics",
+          "ruestungsbau": "Skill: Armor Smithing",
+          "sicherheitstechnik": "Skill: Security Systems",
+          "waffenbau": "Skill: Weapon Smithing"
+        }
+      }
+    },
+    "Txt": {
+      "Malus": {
+        "Wounds": "Wounds −{n}",
+        "NonLethal": "Stun −{n}",
+        "Temp": "Temporary {sign}{n}",
+        "PsiCollect": "Gathering power −{n}",
+        "Hold": "Hold −{n}"
+      },
+      "Opt": {
+        "NoAttribute": "– (no attribute)",
+        "DefaultSkill": "– (category default)",
+        "PickTarget": "– Select target –",
+        "BodyArmor": "Natural armor: {zone}",
+        "AmmoCartridge": "Cartridges",
+        "AmmoProjectile": "Arrows/Bolts",
+        "AmmoGrenade": "Grenade",
+        "AmmoRocket": "Rocket",
+        "AmmoExplosive": "Explosive",
+        "AmmoLiquid": "Liquid"
+      },
+      "Stats": {
+        "Damage": "Damage {v}",
+        "AttackDice": "Attack +{n}D",
+        "ParryDice": "Parry +{n}D",
+        "BlockDice": "Block +{n}D",
+        "Mode": "Mode {v}",
+        "Rd": "RoF {v}",
+        "Charge": "Load {v}/{max}({c})",
+        "Armor": "AV {rw}p. {mk}",
+        "Comfort": "Comfort {v}",
+        "Zones": "Zones {v}",
+        "BonusDamage": "Bonus damage {v}",
+        "Radius": "Radius {v}",
+        "Hold": "Hold {v}",
+        "Defensive": "Defensive action",
+        "Prerequisites": "Prerequisite: {v}",
+        "PerLevel": " per level",
+        "Markers": "{kind}: {n} markers",
+        "Tp": "HP {v}",
+        "Ir": "IR {v}",
+        "Adrenalin": "Adrenaline {v}",
+        "Psyche": "Psyche {v}",
+        "OrgLoss": "Organism −{v}",
+        "PsycheLoss": "Psyche −{v}"
+      }
     }
   }
 }
