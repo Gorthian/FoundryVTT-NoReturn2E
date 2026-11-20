@@ -529,7 +529,8 @@
    "prerequisites": "Inspirieren 4, Überreden 4; CH 5",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Soziale Proben auch in unpassenden Situationen; das angesprochene Ziel muss die Interaktion zulassen. <em class=\"nr-ref\">(NoReturn 2E, S. 181)</em></p>"
+   "description": "<p>Soziale Proben auch in unpassenden Situationen; das angesprochene Ziel muss die Interaktion zulassen. <em class=\"nr-ref\">(NoReturn 2E, S. 181)</em></p>",
+   "hint": "<p>Soziale Proben sind auch in unpassenden Situationen möglich; das angesprochene Ziel muss die Interaktion zulassen (eine Person).</p>"
   },
   "effects": [],
   "folder": null,

@@ -318,6 +318,7 @@ STYLE_EXTRA = {
     "CrapGyver": {"hint": "Die Crafting-Dauer sinkt um 50 % (außer bei Computer). Das System führt keine Crafting-Dauer; auf Handwerk-Proben erscheint ein Hinweis, die Dauer halbiert die Spielleitung."},
     "Crash-Override": {"hint": "Hacken/Programmieren zählt als Crafting; die Dauer der Computer-Proben verkürzt sich um 50 %. Das System führt keine Crafting-Dauer; die Spielleitung halbiert sie anhand des Hinweises auf der Computer-Probe."},
     "Fast Talk": {"hint": "Je vorbereitender Aktion +2W auf die folgende Sozialfertigkeit, bis zu dreimal kumulativ: im Probendialog sozialer Fertigkeiten (Attribut CH) die Zahl der Aktionen eintragen."},
+    "Goldene Zunge": {"hint": "Soziale Proben sind auch in unpassenden Situationen möglich; das angesprochene Ziel muss die Interaktion zulassen (eine Person)."},
     # (Ende STYLE_EXTRA)
 }
 
