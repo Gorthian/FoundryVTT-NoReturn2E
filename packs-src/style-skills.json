@@ -412,7 +412,8 @@
    "prerequisites": "Waffenkampf 5; WA 3",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Mehrfachangriff mit zwei Nahkampfwaffen in einem Angriffswurf. <em class=\"nr-ref\">(NoReturn 2E, S. 181)</em></p>"
+   "description": "<p>Mehrfachangriff mit zwei Nahkampfwaffen in einem Angriffswurf. <em class=\"nr-ref\">(NoReturn 2E, S. 181)</em></p>",
+   "hint": "<p>Mehrfachangriff mit zwei Nahkampfwaffen in einem Wurf: im Angriffsdialog „Mehrfachangriff“ auf 2 setzen. Kein Adrenalin/Meditation; jedes Ziel verteidigt gegen jeden Angriff einzeln.</p>"
   },
   "effects": [],
   "folder": null,
