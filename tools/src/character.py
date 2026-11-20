@@ -349,6 +349,7 @@ STYLE_EXTRA = {
     "ZPC (Zentrum Power Combat)": {"mods": [mod("attack.zpc", 3, 1), mod("damage.zpc", 3, 2)], "hint": "Stufe 1: Nahkampf mit dem linken Arm/Bein +3W (Option „Mit linkem Arm/Bein“ im Angriffsdialog). Stufe 2: Schaden mit dem linken Arm/Bein +3W. Stufe 3: Nahkampfangriffe dürfen mit Nahkampf pariert werden."},
     "Sado": {"mods": [mod("dice.nahkampf", 3, 2)], "hint": "Stufe 1: Gute Treffer im Nahkampf schon je 5 Punkte Überschuss (automatisch). Stufe 2: Nahkampf +3W. Stufe 3: Nahkampf-Parade; Nahkampfwaffen werden mit Nahkampf statt Waffenkampf geführt (Fertigkeitswahl im Angriffsdialog)."},
     "Escrima": {"mods": [mod("attack.multi", 3, 3), mod("damage.multi", 3, 3)], "hint": "Stufe 1: Parade mit Nahkampf oder Waffenkampf. Stufe 2: Nahkampf und Waffenkampf sind austauschbar (Fertigkeitswahl im Angriffsdialog, bessere Fertigkeit bei der Parade). Stufe 3: Mehrfachangriffe im Nahkampf +3W auf Angriff und Schaden."},
+    "Gun-Fu": {"mods": [mod("attack.multi", 3, 3), mod("damage.multi", 3, 3)], "hint": "Stufe 1: Parade mit Nahkampf auch mit Feuerwaffen in den Händen (Waffe im Verteidigungsdialog wählen). Stufe 2: Einhändige Feuerwaffen im Nahkampf mit Nahkampf statt Schießen (nur HM, kein Nachteil; Fertigkeitswahl im Angriffsdialog). Stufe 3: Mehrfachangriffe mit Feuerwaffen im Nahkampf +3W auf Angriff und Schaden; kompatibel mit Akimbo."},
     # (Ende STYLE_EXTRA)
 }
 

@@ -1776,8 +1776,20 @@
      "effect": "Mehrfachangriffe im Nahkampf +3W; kompatibel mit Akimbo."
     }
    ],
-   "modifiers": [],
-   "description": "<p>Feuerwaffen als Verlängerung der Arme. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>"
+   "modifiers": [
+    {
+     "target": "attack.multi",
+     "value": 3,
+     "level": 3
+    },
+    {
+     "target": "damage.multi",
+     "value": 3,
+     "level": 3
+    }
+   ],
+   "description": "<p>Feuerwaffen als Verlängerung der Arme. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>",
+   "hint": "<p>Stufe 1: Parade mit Nahkampf auch mit Feuerwaffen in den Händen (Waffe im Verteidigungsdialog wählen). Stufe 2: Einhändige Feuerwaffen im Nahkampf mit Nahkampf statt Schießen (nur HM, kein Nachteil; Fertigkeitswahl im Angriffsdialog). Stufe 3: Mehrfachangriffe mit Feuerwaffen im Nahkampf +3W auf Angriff und Schaden; kompatibel mit Akimbo.</p>"
   },
   "effects": [],
   "folder": null,
