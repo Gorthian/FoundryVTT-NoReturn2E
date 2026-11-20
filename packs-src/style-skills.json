@@ -573,7 +573,8 @@
    "prerequisites": "WI 4; drei Sprachen auf 4",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Drei zusätzliche Sprachen auf Stufe 3 kostenlos. <em class=\"nr-ref\">(NoReturn 2E, S. 181)</em></p>"
+   "description": "<p>Drei zusätzliche Sprachen auf Stufe 3 kostenlos. <em class=\"nr-ref\">(NoReturn 2E, S. 181)</em></p>",
+   "hint": "<p>Drei zusätzliche Fremdsprachen bis Stufe 3 sind kostenlos: Bei der GP-Bilanz (Charakterbogen und Charaktergenerator) werden die Kosten der drei höchsten Fremdsprachen bis Stufe 3 (2 GP je Stufe) automatisch abgezogen.</p>"
   },
   "effects": [],
   "folder": null,

@@ -348,6 +348,7 @@ export class CreatureData extends foundry.abstract.TypeDataModel {
     const p = sys.progress;
     const level = NR.powerLevels[p.powerLevel] ?? NR.powerLevels.standard;
     const gp = { attributes: 0, skills: 0, psi: 0, languages: 0, special: 0, items: 0, money: p.gpMoney };
+    const foreignLanguages = [];
     for (const key of Object.keys(NR.attributes)) {
       // Erwachte: Körperattribute (GE, ST, KO, BE, WA) werden nur über Upgrades gesteigert
       if (sys.awakened && (key in NR.awakened.physical || key === "wa")) continue;
@@ -372,12 +373,17 @@ export class CreatureData extends foundry.abstract.TypeDataModel {
           else gp.psi += Math.max(0, s.value - s.free) * 5;
           break;
         case "skill":
-          if (s.category === "sprache") gp.languages += s.native ? Math.max(0, s.value - 5) * 2 : s.value * 2;
+          if (s.category === "sprache") {
+            gp.languages += s.native ? Math.max(0, s.value - 5) * 2 : s.value * 2;
+            if (!s.native) foreignLanguages.push(s.value);
+          }
           else if (s.category === "elite") gp.special += s.value * 4;
           else if (s.category === "fertigkeit") gp.special += s.value * 2;
           break;
       }
     }
+    // Linguist: drei Fremdsprachen bis Stufe 3 kostenlos
+    if (sys.styles.linguist) gp.languages = Math.max(0, gp.languages - NR.linguistSavings(foreignLanguages));
     if (actor.items.some(i => i.type === "abnormality" && i.name.startsWith("HMO")) && actor.items.some(i => i.type === "psiPower" && i.system.key === "kategorieB")) gp.psi -= 7;
     // Meditation: Stufe 1 liefert der Style-Skill (Modifikator), jede Basisstufe darüber 5 GP (S. 182)
     gp.special += Math.max(0, sys.special.meditation?.value ?? 0) * 5;

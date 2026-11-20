@@ -404,6 +404,13 @@ NR.styleKeyFromName = name => {
   return Object.entries(NR.styleSkillKeys).find(([, prefix]) => n.startsWith(prefix))?.[0] ?? "";
 };
 
+/**
+ * Linguist (S. 181): Drei zusätzliche Sprachen auf Stufe 3 sind kostenlos. Ermittelt die eingesparten GP
+ * (2 GP je Stufe) für die drei höchsten Fremdsprachen, je bis Stufe 3.
+ * @param {number[]} values  Stufen aller Fremdsprachen (ohne Muttersprache)
+ */
+NR.linguistSavings = values => [...values].sort((a, b) => b - a).slice(0, 3).reduce((sum, v) => sum + Math.min(v, 3) * 2, 0);
+
 /** Ordne einen Freitext (z. B. Auswahl „Telekinese“ oder „Hitze“) einer PSI-Kraft zu; "" wenn unbekannt. */
 NR.psiPowerFromText = text => {
   const t = String(text ?? "").toLowerCase().trim();
