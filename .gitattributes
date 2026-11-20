@@ -1,0 +1,13 @@
+# Textdateien automatisch normalisieren (LF im Repository)
+* text=auto
+
+# Quelltext und Daten explizit als Text mit LF
+*.mjs text eol=lf
+*.js text eol=lf
+*.json text eol=lf
+*.hbs text eol=lf
+*.css text eol=lf
+*.md text eol=lf
+
+# Foundry-Compendium-Datenbanken (LevelDB) sind binär
+packs/** binary
