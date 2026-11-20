@@ -2072,8 +2072,25 @@
      "effect": "Nahkampf +2W."
     }
    ],
-   "modifiers": [],
-   "description": "<p>Schnell und tödlich. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>"
+   "modifiers": [
+    {
+     "target": "attack.knee",
+     "value": 2,
+     "level": 2
+    },
+    {
+     "target": "damage.knee",
+     "value": 2,
+     "level": 2
+    },
+    {
+     "target": "dice.nahkampf",
+     "value": 2,
+     "level": 3
+    }
+   ],
+   "description": "<p>Schnell und tödlich. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>",
+   "hint": "<p>Stufe 1: Nahkampf statt Blocken (Verteidigungsdialog: „Blocken mit Nahkampf“). Stufe 2: Knieangriffe +2W auf Angriff und Schaden (Angriffsart „Knie“). Stufe 3: Nahkampf +2W.</p>"
   },
   "effects": [],
   "folder": null,
