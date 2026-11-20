@@ -69,7 +69,7 @@
       <h3 class="nr-section-title">{{#if awakened}}{{localize "NR.Gen.Adaption"}}{{else}}{{localize "NR.Section.BioTraits"}}{{/if}} <a class="nr-add" data-action="createItem" data-type="bioTrait"><i class="fa-solid fa-plus"></i></a></h3>
       <ol class="nr-list">{{#each bioTraits as |r|}}{{> "systems/noreturn/templates/actor/parts/item-row.hbs" item=r.item stats=r.stats}}{{else}}<li class="nr-empty">–</li>{{/each}}</ol>
 
-      <h3 class="nr-section-title">{{localize "NR.Section.StyleSkills"}} <a class="nr-add" data-action="createItem" data-type="styleSkill"><i class="fa-solid fa-plus"></i></a></h3>
+      <h3 class="nr-section-title">{{localize "NR.Section.StyleSkills"}} <a class="nr-add" data-action="createItem" data-type="styleSkill"><i class="fa-solid fa-plus"></i></a>{{#if hasSplit}} <a data-action="switchPersonality" data-tooltip="{{localize 'NR.Style.SplitTitle'}}"><i class="fa-solid fa-masks-theater"></i></a>{{/if}}</h3>
       <ol class="nr-list">{{#each styleSkills as |r|}}{{> "systems/noreturn/templates/actor/parts/item-row.hbs" item=r.item stats=r.stats}}{{else}}<li class="nr-empty">–</li>{{/each}}</ol>
 
       <div class="nr-columns tight">

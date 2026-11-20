@@ -501,7 +501,15 @@
       "KenjutsuDraw": "Kenjutsu 1: Das Schwert darf in derselben Aktion gezogen und zum Angriff genutzt werden.",
       "TwoHits": "Trifft ein Treffer, zählt er als zwei Treffer an zwei Zonen (zwei Schadenswürfe)",
       "EscrimaSwap": "Escrima: {skill} statt der gewählten Fertigkeit (austauschbar)",
-      "LegResist": "Kick-Boxen: Treffer an den Beinen +{n}W auf den Schadenswiderstand"
+      "LegResist": "Kick-Boxen: Treffer an den Beinen +{n}W auf den Schadenswiderstand",
+      "SplitDefaultName": "Persönlichkeit {n}",
+      "SplitActive": "aktiv",
+      "SplitTitle": "Split: Persönlichkeit wechseln",
+      "SplitHint": "Körper, Attribute, Inventar, Wunden und Adrenalin bleiben gleich. Fertigkeiten, PSI-Kräfte/-Apps, Charaktermerkmale und besondere Fertigkeiten (ohne Sprachen) gehören zum Profil der Persönlichkeit und werden beim Wechsel ausgetauscht. Jeder Split-Style-Skill schaltet eine weitere Persönlichkeit frei.",
+      "SplitSwitchTo": "Wechseln zu",
+      "SplitRename": "Umbenennen (Ziel-Persönlichkeit)",
+      "SplitApply": "Anwenden",
+      "SplitSwitched": "{actor}: Persönlichkeit „{name}“ ist jetzt aktiv."
     },
     "Species": {
       "TP": "Trefferpunkte je Zone",

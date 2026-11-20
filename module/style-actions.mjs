@@ -97,3 +97,42 @@ export async function usePowerNap(actor) {
   applyChatMode(msgData);
   return ChatMessage.create(msgData);
 }
+
+/* -------------------------------------------- */
+/*  Split (S. 184): Persönlichkeitsprofile        */
+/* -------------------------------------------- */
+
+
+/**
+ * Split als Profil-Umschalter: Körper, Attribute, Inventar, Wunden und Adrenalin bleiben gemeinsam; Fertigkeiten,
+ * PSI-Kräfte/-Apps, Merkmale und besondere Fertigkeiten gehören je Persönlichkeit zum Profil.
+ * Die Profile liegen im Flag `noreturn.split`; jeder Split-Style-Skill schaltet eine weitere Persönlichkeit frei.
+ */
+export async function useSplit(actor) {
+  const count = 1 + actor.items.filter(i => i.type === "styleSkill" && i.system.key === "split").length;
+  const data = foundry.utils.deepClone(actor.getFlag("noreturn", "split") ?? {});
+  data.active ??= 0;
+  data.sets ??= [];
+  data.names ??= [];
+  const name = i => data.names[i] || game.i18n.format("NR.Style.SplitDefaultName", { n: i + 1 });
+  const options = Array.from({ length: count }, (_, i) => `<option value="${i}" ${i === data.active ? "selected" : ""}>${esc(name(i))}${i === data.active ? ` (${esc(game.i18n.localize("NR.Style.SplitActive"))})` : ""}</option>`).join("");
+  const res = await foundry.applications.api.DialogV2.prompt({
+    window: { title: game.i18n.localize("NR.Style.SplitTitle") },
+    content: `<p class="nr-hint">${esc(game.i18n.localize("NR.Style.SplitHint"))}</p>
+      <div class="form-group"><label>${esc(game.i18n.localize("NR.Style.SplitSwitchTo"))}</label><select name="target">${options}</select></div>
+      <div class="form-group"><label>${esc(game.i18n.localize("NR.Style.SplitRename"))}</label><input type="text" name="rename" placeholder="${esc(name(data.active))}"></div>`,
+    ok: { label: game.i18n.localize("NR.Style.SplitApply"), callback: (event, button) => ({ target: Number(button.form.elements.target.value), rename: button.form.elements.rename.value.trim() }) },
+    rejectClose: false
+  }).catch(() => null);
+  if (!res) return null;
+
+  const active = await actor.switchPersonality(res.target, res.rename);
+  data.active = active;
+  data.names = actor.getFlag("noreturn", "split")?.names ?? data.names;
+  const msgData = {
+    speaker: ChatMessage.getSpeaker({ actor }),
+    content: `<div class="nr-card"><p class="nr-result"><i class="fa-solid fa-masks-theater"></i> ${esc(game.i18n.format("NR.Style.SplitSwitched", { actor: actor.name, name: name(data.active) }))}</p></div>`
+  };
+  applyChatMode(msgData);
+  return ChatMessage.create(msgData);
+}

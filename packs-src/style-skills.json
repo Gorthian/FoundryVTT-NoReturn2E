@@ -1211,7 +1211,7 @@
    "levels": [],
    "modifiers": [],
    "description": "<p>Weitere Persönlichkeit mit eigenen Fertigkeiten, PSI und Merkmalen (mehrfach wählbar). <em class=\"nr-ref\">(NoReturn 2E, S. 184)</em></p>",
-   "hint": "<p>Weitere Persönlichkeit mit eigenen Fertigkeiten, PSI und Merkmalen (mehrfach wählbar). Wird noch nicht automatisch abgebildet (Designentscheidung offen, siehe Issue): Persönlichkeiten bis dahin als eigener Charakterbogen führen.</p>"
+   "hint": "<p>Einsetzen öffnet den Profil-Umschalter: Körper, Attribute, Inventar, Wunden und Adrenalin bleiben gleich; Fertigkeiten, PSI-Kräfte/-Apps, Charaktermerkmale und besondere Fertigkeiten (ohne Sprachen) werden je Persönlichkeit getauscht. Jeder Split-Style-Skill schaltet eine weitere Persönlichkeit frei (mehrfach wählbar). EP für Fertigkeiten werden der gerade aktiven Persönlichkeit zugewiesen.</p>"
   },
   "effects": [],
   "folder": null,

@@ -120,6 +120,34 @@ export class NRActor extends foundry.documents.Actor {
     return this.system.styles?.[key] ?? 0;
   }
 
+  /**
+   * Split (S. 184): Wechselt die aktive Persönlichkeit. Je Persönlichkeit eigen sind Fertigkeiten, PSI-Kräfte/-Apps,
+   * Charaktermerkmale und besondere Fertigkeiten (ohne Sprachen); Körper, Attribute, Inventar, Wunden, Adrenalin und
+   * Style-Skills bleiben gemeinsam. Das aktuelle Profil wird im Flag `noreturn.split` gesichert, Zurückwechseln stellt es wieder her.
+   * @param {number} target    Index der Ziel-Persönlichkeit (0 = Grundpersönlichkeit)
+   * @param {string} [rename]  Neuer Name der Ziel-Persönlichkeit
+   * @returns {Promise<number>} Index der aktiven Persönlichkeit
+   */
+  async switchPersonality(target, rename = "") {
+    const count = 1 + this.items.filter(i => i.type === "styleSkill" && i.system.key === "split").length;
+    if (target < 0 || target >= count) return this.getFlag("noreturn", "split")?.active ?? 0;
+    const data = foundry.utils.deepClone(this.getFlag("noreturn", "split") ?? {});
+    data.active ??= 0; data.sets ??= []; data.names ??= [];
+    if (rename) data.names[target] = rename;
+    if (target !== data.active) {
+      const bound = i => ["psiPower", "psiApp", "trait"].includes(i.type) || (i.type === "skill" && i.system.category !== "sprache");
+      data.sets[data.active] = { skills: foundry.utils.deepClone(this.system.toObject().skills), items: this.items.filter(bound).map(i => i.toObject()) };
+      const next = data.sets[target] ?? { skills: Object.fromEntries(Object.keys(this.system.skills).map(k => [k, { value: 0 }])), items: [] };
+      const old = this.items.filter(bound).map(i => i.id);
+      if (old.length) await this.deleteEmbeddedDocuments("Item", old);
+      await this.update({ "system.skills": next.skills });
+      if (next.items.length) await this.createEmbeddedDocuments("Item", next.items.map(i => { const c = foundry.utils.deepClone(i); delete c._id; return c; }));
+      data.active = target;
+    }
+    await this.setFlag("noreturn", "split", data);
+    return data.active;
+  }
+
   /** Maluswürfel auf körperliche Aktionen (GE, ST, KO, BE) aus Items, z. B. Metamorphose. */
   physicalMalus(attrKey) {
     return ["ge", "st", "ko", "be"].includes(attrKey) ? (this.system.mods?.["malus.physical"] ?? 0) : 0;

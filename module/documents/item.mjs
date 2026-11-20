@@ -1,7 +1,7 @@
 import { NR } from "../config.mjs";
 import { attackWithWeapon } from "../combat.mjs";
 import { castPsiApp } from "../psi.mjs";
-import { useDoctor, useCraftedBuff, useHover, usePowerNap } from "../style-actions.mjs";
+import { useDoctor, useCraftedBuff, useHover, usePowerNap, useSplit } from "../style-actions.mjs";
 
 const { renderTemplate } = foundry.applications.handlebars;
 
@@ -100,6 +100,7 @@ export class NRItem extends foundry.documents.Item {
       case "sterneKueche": return useCraftedBuff(this.actor, { skillName: "Kochen", source: this.name });
       case "ruettelflug": return useHover(this.actor);
       case "powerNap": return usePowerNap(this.actor);
+      case "split": return useSplit(this.actor);
     }
     let usesText = null;
     if (s.uses.max > 0) {

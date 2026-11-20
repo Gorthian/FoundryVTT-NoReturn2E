@@ -501,7 +501,15 @@
       "KenjutsuDraw": "Kenjutsu 1: the sword may be drawn and used to attack in the same action.",
       "TwoHits": "A hit counts as two hits on two zones (two damage rolls)",
       "EscrimaSwap": "Escrima: {skill} instead of the chosen skill (interchangeable)",
-      "LegResist": "Kick-Boxing: hits to the legs +{n}D on damage resistance"
+      "LegResist": "Kick-Boxing: hits to the legs +{n}D on damage resistance",
+      "SplitDefaultName": "Personality {n}",
+      "SplitActive": "active",
+      "SplitTitle": "Split: switch personality",
+      "SplitHint": "Body, attributes, inventory, wounds and adrenaline stay the same. Skills, PSI powers/apps, character traits and special skills (without languages) belong to the personality's profile and are swapped on switching. Each Split style skill unlocks one more personality.",
+      "SplitSwitchTo": "Switch to",
+      "SplitRename": "Rename (target personality)",
+      "SplitApply": "Apply",
+      "SplitSwitched": "{actor}: personality “{name}” is now active."
     },
     "Species": {
       "TP": "HP per zone",
