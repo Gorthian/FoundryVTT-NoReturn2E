@@ -324,6 +324,7 @@ STYLE_EXTRA = {
     "Trickster": {"hint": "Taschenspielertricks (MW 15). Entfesseln, Verstecken oder Taschendiebstahl einmal je Kampfrunde ohne Aktion."},
     "Trusty Engineer": {"hint": "Crafting-Mindestwurf −5 (auch als Helfer; höchstens zwei Engineers, also max. −10). Im Probendialog von Handwerk-Proben die Zahl der Engineers eintragen."},
     "Parkour": {"hint": "Klettern- und Springen-Proben mit Mindestwurf unter 30 gelingen automatisch. Beim Sprung-/Sturzschaden den Springen-Wert addieren (manuelle Schadenseingabe)."},
+    "Rage of Gods": {"hint": "Adrenalin auf Stärke(-Fertigkeiten) gibt zusätzlich +3W. Beim Adrenalineinsatz auf Proben mit Stärke wird der Bonus automatisch eingerechnet."},
     # (Ende STYLE_EXTRA)
 }
 
