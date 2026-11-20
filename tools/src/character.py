@@ -322,6 +322,7 @@ STYLE_EXTRA = {
     "Neo": {"hint": "Die Spielleitung nennt dir vor Computerproben die Risiken und den Mindestwurf; du kannst dich noch entscheiden, die Probe abzulegen."},
     "Pet Pal": {"hint": "Du verstehst animalische Sprache in Grenzen. Rein erzählerisch: Absprache mit der Spielleitung; Hinweis auf Dressieren-Proben."},
     "Trickster": {"hint": "Taschenspielertricks (MW 15). Entfesseln, Verstecken oder Taschendiebstahl einmal je Kampfrunde ohne Aktion."},
+    "Trusty Engineer": {"hint": "Crafting-Mindestwurf −5 (auch als Helfer; höchstens zwei Engineers, also max. −10). Im Probendialog von Handwerk-Proben die Zahl der Engineers eintragen."},
     # (Ende STYLE_EXTRA)
 }
 
