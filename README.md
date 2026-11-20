@@ -93,7 +93,7 @@ https://github.com/Gorthian/FoundryVTT-NoReturn2E/releases/latest/download/syste
 
 > Funktioniert erst, wenn das Repository öffentlich ist – Foundry kann private Releases nicht abrufen.
 
-Neue Version veröffentlichen: Auf GitHub unter *Releases → Draft a new release* einen Tag wie `v1.0.1` anlegen und veröffentlichen. Der Workflow `.github/workflows/release.yml` setzt daraufhin `version` und `download` in der `system.json`, baut `noreturn.zip` und hängt beide Dateien an den Release.
+Neue Version veröffentlichen: Auf GitHub unter *Actions → Release → Run workflow* den Versionssprung (patch/minor/major) oder eine genaue Version wählen. Der Workflow `.github/workflows/release.yml` zählt `version` in der `system.json` hoch, baut Compendien und `noreturn.zip`, committet die Version nach `main`, setzt den Tag `vX.Y.Z` und legt den Release samt `system.json` + ZIP an. Alternativ löst auch das Pushen eines Tags `vX.Y.Z` den Build aus. In Foundry/The Forge erscheint danach unter *Systeme* ein „Update“-Button.
 
 
 ## Compendien neu bauen
