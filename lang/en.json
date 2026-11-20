@@ -236,7 +236,8 @@
       "HitZone": "Roll hit zone",
       "Resist": "Resist",
       "Through": "Through",
-      "Retaliation": "retaliation"
+      "Retaliation": "retaliation",
+      "Block": "Block"
     },
     "Damage": {
       "Manual": "Take damage",
@@ -414,7 +415,35 @@
       "Kind": "Kind",
       "Prerequisites": "Prerequisites",
       "Level": "Level",
-      "Levels": "Levels"
+      "Levels": "Levels",
+      "AttackSkill": "Skill",
+      "Limb": "Strike type",
+      "ZpcLimb": "With left arm/leg (ZPC)",
+      "MultiAllowed": "Allowed by style skills up to",
+      "MultiExceeded": "More attacks than the style skills allow (max. {n}) – only by agreement with the GM",
+      "AttackBonus": "+{n}D attack (style)",
+      "DamageBonus": "+{n}D damage (style)",
+      "DefenseBonus": "+{n}D defense (style)",
+      "DefendMulti": "Attack {i} of {n} of the multi-attack",
+      "BlademasterNote": "Blademaster: parry ranged attacks with a blade ≥ 30 cm (disadvantage −2D)",
+      "NoRangedParry": "Ranged attacks can only be parried with Blademaster (GM decides)",
+      "SameDefenseAction": "Same defensive action as against the previous attack of the multi-attack",
+      "Kampfkunst": "Martial art",
+      "BlockWithNahkampf": "Block using Melee (Krav Maga)",
+      "NahkampfParryNeedsStyle": "Parrying with Melee requires a matching martial art (Aikido, Jiu Jitsu, Escrima, Gun-Fu, Sado, ZPC).",
+      "NahkampfParryVia": "Melee parry possible through",
+      "StyleSkill": "Style",
+      "Via": {
+        "escrima": "Escrima",
+        "sado": "Sado",
+        "gunFu": "Gun-Fu"
+      },
+      "Key": "Key",
+      "KeyHint": "Stable key the game mechanics use to recognise this style skill (do not change).",
+      "Uses": "Uses",
+      "UsesHint": "Remaining / maximum (0 = unlimited) and period, e.g. “session”.",
+      "UsesPer": "Period",
+      "Hint": "Hint text"
     },
     "Species": {
       "TP": "HP per zone",
@@ -477,7 +506,8 @@
     "Modifier": {
       "Hint": "Modifiers apply automatically to the owner.",
       "None": "No modifiers.",
-      "Add": "Add modifier"
+      "Add": "Add modifier",
+      "FromLevel": "Applies from level (martial arts only; 0 = always)"
     },
     "Vehicle": {
       "Category": "Type",
@@ -1444,6 +1474,62 @@
           "ruestungsbau": "Skill: Armor Smithing",
           "sicherheitstechnik": "Skill: Security Systems",
           "waffenbau": "Skill: Weapon Smithing"
+        },
+        "attack": {
+          "fist": "Attack: punches (bonus dice)",
+          "leg": "Attack: leg attacks (bonus dice)",
+          "emk": "Attack: elbow/knee/shin (bonus dice)",
+          "knee": "Attack: knee attacks (bonus dice)",
+          "claw": "Attack: claws (bonus dice)",
+          "blade": "Attack: bladed weapons (bonus dice)",
+          "multi": "Attack: multi-attack (bonus dice)",
+          "zpc": "Attack: left arm/leg, ZPC (bonus dice)"
+        },
+        "damage": {
+          "melee": "Damage: all melee attacks (dice)",
+          "unarmed": "Damage: unarmed (dice)",
+          "fist": "Damage: punches (dice)",
+          "leg": "Damage: leg attacks (dice)",
+          "emk": "Damage: elbow/knee/shin (dice)",
+          "knee": "Damage: knee attacks (dice)",
+          "multi": "Damage: multi-attack (dice)",
+          "zpc": "Damage: left arm/leg, ZPC (dice)",
+          "blade": "Damage: bladed weapons (dice)"
+        },
+        "defense": {
+          "blockUnarmed": "Defense: unarmed block (bonus dice)",
+          "blockMelee": "Defense: block against melee (bonus dice)",
+          "dodgeMelee": "Defense: dodge against melee (bonus dice)",
+          "parryBlade": "Defense: parry with bladed weapon (bonus dice)"
+        },
+        "resist": {
+          "leg": "Damage resistance: hits to the legs (bonus dice)"
+        }
+      },
+      "strikeLimbs": {
+        "fist": {
+          "label": "Fist"
+        },
+        "elbow": {
+          "label": "Elbow"
+        },
+        "knee": {
+          "label": "Knee"
+        },
+        "shin": {
+          "label": "Shin"
+        },
+        "leg": {
+          "label": "Kick (foot/leg)"
+        },
+        "claw": {
+          "label": "Claws"
+        },
+        "bite": {
+          "label": "Bite"
+        },
+        "head": {
+          "label": "Head/horn"
         }
       }
     },

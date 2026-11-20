@@ -236,7 +236,8 @@
       "HitZone": "Trefferzone würfeln",
       "Resist": "Widerstand",
       "Through": "Durch",
-      "Retaliation": "Rückschaden"
+      "Retaliation": "Rückschaden",
+      "Block": "Blocken"
     },
     "Damage": {
       "Manual": "Schaden erleiden",
@@ -414,7 +415,35 @@
       "Kind": "Art",
       "Prerequisites": "Voraussetzungen",
       "Level": "Stufe",
-      "Levels": "Stufen"
+      "Levels": "Stufen",
+      "AttackSkill": "Fertigkeit",
+      "Limb": "Angriffsart",
+      "ZpcLimb": "Mit linkem Arm/Bein (ZPC)",
+      "MultiAllowed": "Durch Style-Skills erlaubt bis zu",
+      "MultiExceeded": "Mehr Angriffe als die Style-Skills erlauben (max. {n}) – nur nach Absprache mit der SL",
+      "AttackBonus": "+{n}W Angriff (Style)",
+      "DamageBonus": "+{n}W Schaden (Style)",
+      "DefenseBonus": "+{n}W Verteidigung (Style)",
+      "DefendMulti": "Angriff {i} von {n} des Mehrfachangriffs",
+      "BlademasterNote": "Blademaster: Parade gegen Fernkampf mit Klingenwaffe ≥ 30 cm (Nachteil −2W)",
+      "NoRangedParry": "Fernkampfangriffe lassen sich nur mit Blademaster parieren (SL entscheidet)",
+      "SameDefenseAction": "Dieselbe Defensivaktion wie beim vorigen Angriff des Mehrfachangriffs",
+      "Kampfkunst": "Kampfkunst",
+      "BlockWithNahkampf": "Blocken mit Nahkampf (Krav Maga)",
+      "NahkampfParryNeedsStyle": "Eine Parade mit Nahkampf ist nur mit passender Kampfkunst vorgesehen (Aikido, Jiu Jitsu, Escrima, Gun-Fu, Sado, ZPC).",
+      "NahkampfParryVia": "Nahkampf-Parade möglich durch",
+      "StyleSkill": "Style",
+      "Via": {
+        "escrima": "Escrima",
+        "sado": "Sado",
+        "gunFu": "Gun-Fu"
+      },
+      "Key": "Schlüssel",
+      "KeyHint": "Stabiler Schlüssel, über den die Spielmechanik den Style-Skill erkennt (nicht ändern).",
+      "Uses": "Einsätze",
+      "UsesHint": "Verbleibend / Maximum (0 = unbegrenzt) und Zeitraum, z. B. „Sitzung“.",
+      "UsesPer": "Zeitraum",
+      "Hint": "Hinweistext"
     },
     "Species": {
       "TP": "Trefferpunkte je Zone",
@@ -477,7 +506,8 @@
     "Modifier": {
       "Hint": "Modifikatoren wirken automatisch auf den Besitzer (Rüstung/Ausrüstung nur wenn ausgerüstet, Augmentierung nur wenn eingebaut).",
       "None": "Keine Modifikatoren.",
-      "Add": "Modifikator hinzufügen"
+      "Add": "Modifikator hinzufügen",
+      "FromLevel": "Gilt ab Stufe (nur Kampfkünste; 0 = immer)"
     },
     "Vehicle": {
       "Category": "Art",
@@ -1444,6 +1474,62 @@
           "ruestungsbau": "Fertigkeit: Rüstungsbau",
           "sicherheitstechnik": "Fertigkeit: Sicherheitstechnik",
           "waffenbau": "Fertigkeit: Waffenbau"
+        },
+        "attack": {
+          "fist": "Angriff: Faustschläge (Bonuswürfel)",
+          "leg": "Angriff: Beinangriffe (Bonuswürfel)",
+          "emk": "Angriff: Ellenbogen/Knie/Schienbein (Bonuswürfel)",
+          "knee": "Angriff: Knieangriffe (Bonuswürfel)",
+          "claw": "Angriff: Krallen (Bonuswürfel)",
+          "blade": "Angriff: Klingenwaffen (Bonuswürfel)",
+          "multi": "Angriff: Mehrfachangriff (Bonuswürfel)",
+          "zpc": "Angriff: linker Arm/Bein, ZPC (Bonuswürfel)"
+        },
+        "damage": {
+          "melee": "Schaden: alle Nahkampfangriffe (Würfel)",
+          "unarmed": "Schaden: waffenlos (Würfel)",
+          "fist": "Schaden: Faustschläge (Würfel)",
+          "leg": "Schaden: Beinangriffe (Würfel)",
+          "emk": "Schaden: Ellenbogen/Knie/Schienbein (Würfel)",
+          "knee": "Schaden: Knieangriffe (Würfel)",
+          "multi": "Schaden: Mehrfachangriff (Würfel)",
+          "zpc": "Schaden: linker Arm/Bein, ZPC (Würfel)",
+          "blade": "Schaden: Klingenwaffen (Würfel)"
+        },
+        "defense": {
+          "blockUnarmed": "Verteidigung: waffenlos Blocken (Bonuswürfel)",
+          "blockMelee": "Verteidigung: Blocken gegen Nahkampf (Bonuswürfel)",
+          "dodgeMelee": "Verteidigung: Ausweichen gegen Nahkampf (Bonuswürfel)",
+          "parryBlade": "Verteidigung: Parade mit Klingenwaffe (Bonuswürfel)"
+        },
+        "resist": {
+          "leg": "Schadenswiderstand: Treffer an den Beinen (Bonuswürfel)"
+        }
+      },
+      "strikeLimbs": {
+        "fist": {
+          "label": "Faust"
+        },
+        "elbow": {
+          "label": "Ellenbogen"
+        },
+        "knee": {
+          "label": "Knie"
+        },
+        "shin": {
+          "label": "Schienbein"
+        },
+        "leg": {
+          "label": "Tritt (Fuß/Bein)"
+        },
+        "claw": {
+          "label": "Krallen"
+        },
+        "bite": {
+          "label": "Biss"
+        },
+        "head": {
+          "label": "Kopf/Horn"
         }
       }
     },

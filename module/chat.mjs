@@ -51,9 +51,9 @@ async function onAction(message, btn) {
   const f = message.flags?.noreturn ?? {};
   switch (action) {
     case "defend":
-      return defendAgainst(message, btn.dataset.tokenUuid, false);
+      return defendAgainst(message, btn.dataset.tokenUuid, false, Number(btn.dataset.index) || 1);
     case "noDefense":
-      return defendAgainst(message, btn.dataset.tokenUuid, true);
+      return defendAgainst(message, btn.dataset.tokenUuid, true, Number(btn.dataset.index) || 1);
     case "damage":
       return rollDamage(f.defense);
     case "resist":

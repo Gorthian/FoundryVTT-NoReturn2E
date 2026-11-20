@@ -1,8 +1,9 @@
 <div class="nr-card nr-defense {{#if hit}}failure{{else}}success{{/if}}">
   <header class="nr-card-head">
-    <h3>{{localize "NR.Combat.Defense"}}: {{defender.name}}</h3>
+    <h3>{{localize "NR.Combat.Defense"}}: {{defender.name}}{{#if multiLabel}} <small>({{multiLabel}})</small>{{/if}}</h3>
     <div class="nr-card-sub">{{defLabel}} {{localize "NR.Roll.Vs"}} {{weaponName}}</div>
   </header>
+  {{#if styleNotes.length}}<div class="nr-attack-tags">{{#each styleNotes as |n|}}<span class="nr-chip good"><i class="fa-solid fa-star"></i> {{n}}</span>{{/each}}</div>{{/if}}
   {{#if dice.length}}
   <div class="nr-dice-row">
     {{#each dice as |d|}}<span class="nr-die {{d.kind}} {{#if d.max}}max{{/if}}" {{#if d.chain}}data-tooltip="Hazard-Di: {{d.chain}}"{{/if}}>{{d.value}}</span>{{/each}}

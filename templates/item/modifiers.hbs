@@ -5,6 +5,7 @@
     <li class="nr-modifier">
       <select name="system.modifiers.{{i}}.target">{{selectOptions @root.options.modifierTargets selected=m.target}}</select>
       <input type="number" name="system.modifiers.{{i}}.value" value="{{m.value}}" step="any">
+      {{#if @root.isType.styleSkill}}<input type="number" name="system.modifiers.{{i}}.level" value="{{m.level}}" min="0" max="3" data-tooltip="{{localize 'NR.Modifier.FromLevel'}}" placeholder="{{localize 'NR.Style.Level'}}">{{/if}}
       <a data-action="removeModifier" data-index="{{i}}"><i class="fa-solid fa-trash"></i></a>
     </li>
     {{else}}<li class="nr-empty">{{localize "NR.Modifier.None"}}</li>{{/each}}
