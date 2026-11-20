@@ -36,14 +36,9 @@ export function rangeBand(weapon, distance, strength = 3) {
   return { key: "out", label: game.i18n.localize("NR.Combat.OutOfRange"), mw: 999 };
 }
 
-function hasStyle(actor, name) {
-  const n = name.toLowerCase();
-  return actor.items.some(i => i.type === "styleSkill" && i.name.toLowerCase().startsWith(n));
-}
-
 /** Gewählte Waffenspezialisierung? (+1W auf alle Proben mit der Waffe) */
 function specializationBonus(actor, weapon) {
-  const specs = actor.items.filter(i => i.type === "styleSkill" && i.name.toLowerCase().startsWith("waffenspezialisierung"));
+  const specs = actor.items.filter(i => i.type === "styleSkill" && i.system.key === "waffenspezialisierung");
   const wn = weapon.name.toLowerCase();
   return specs.some(s => {
     const m = s.name.match(/\(([^)]+)\)|\[([^\]]+)\]|:\s*(.+)$/);
@@ -87,7 +82,7 @@ export async function attackWithWeapon(actor, weapon) {
     aiming: NR.aiming, zones: NR.zones, targets, distance, band, rangeBands: NR.rangeBands,
     hasRange: !melee && sys.range !== "none", ammoItems, hasAmmo: sys.hasAmmo, ammo: sys.ammo,
     woundMalus: actor.getMalus(), adrenalinLeft: actor.system.adrenalinLeft, adrenalinBonus: actor.system.adrenalinBonus,
-    meditationLeft: actor.system.meditationLeft, recoilMastery: hasStyle(actor, "recoil mastery"), triggerFinger: hasStyle(actor, "trigger finger")
+    meditationLeft: actor.system.meditationLeft, recoilMastery: actor.styleLevel("recoilMastery") > 0, triggerFinger: actor.styleLevel("triggerFinger") > 0
   });
 
   const opts = await DialogV2.wait({
@@ -151,7 +146,7 @@ export async function attackWithWeapon(actor, weapon) {
   let recoilInfo = "";
   if (!melee && mode) {
     let recoil = mode.recoil + (ammoSys?.recoil ?? 0) + (opts.triggerFinger && opts.mode === "HM" ? 2 : 0);
-    const rd = (opts.braced ? sys.rd + opts.braced : sys.rd) + Math.floor(actor.system.attr.st.total / 5) + (hasStyle(actor, "recoil mastery") ? 2 : 0);
+    const rd = (opts.braced ? sys.rd + opts.braced : sys.rd) + Math.floor(actor.system.attr.st.total / 5) + (actor.styleLevel("recoilMastery") ? 2 : 0);
     recoilMalus = Math.max(0, recoil - rd);
     recoilInfo = `Rückstoß ${recoil} − RD ${rd}`;
   }
@@ -196,7 +191,7 @@ export async function attackWithWeapon(actor, weapon) {
     aim, zone: opts.zone, half: opts.half,
     rangeMw: melee ? 0 : opts.rangeMw,
     dmg,
-    goodHitStep: hasStyle(actor, "sado") && melee ? 5 : (mode?.goodHitStep ?? 10),
+    goodHitStep: actor.styleLevel("sado") > 0 && melee ? 5 : (mode?.goodHitStep ?? 10),
     noGoodHits: !!mode?.noGoodHits || zonesMode === "all",
     zonesMode,
     multi: opts.multi,

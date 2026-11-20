@@ -11,7 +11,9 @@ const html = () => new fields.HTMLField({ required: true, blank: true });
 /** Generische Modifikatoren: {target, value} – siehe NR.modifierTargets. */
 const modifiers = () => new fields.ArrayField(new fields.SchemaField({
   target: str(""),
-  value: num(0)
+  value: num(0),
+  /** Nur bei Kampfkünsten: Modifikator gilt ab dieser Stufe (0 = immer). */
+  level: int(0, { min: 0, max: 3 })
 }));
 
 /** Gemeinsame Felder physischer Gegenstände. */
@@ -208,6 +210,8 @@ export class PsiAppData extends NRItemData {
 export class StyleSkillData extends NRItemData {
   static defineSchema() {
     return {
+      /** Stabiler Schlüssel (siehe NR.styleSkillKeys); die Spiellogik fragt ihn statt des Namens ab. */
+      key: str(""),
       kind: str("expert", { choices: Object.keys(NR.styleSkillKinds) }),
       gp: int(0, { min: 0 }),
       ep: int(0, { min: 0 }),
@@ -215,8 +219,18 @@ export class StyleSkillData extends NRItemData {
       prerequisites: str(""),
       levels: new fields.ArrayField(new fields.SchemaField({ prerequisites: str(""), effect: str("") })),
       modifiers: modifiers(),
+      /** Hinweistext für „Einsetzen“ (Chatkarte), z. B. für rein erzählerische Effekte. */
+      hint: html(),
+      /** Begrenzte Einsätze (z. B. Déjà-vu einmal je Sitzung); max 0 = unbegrenzt. */
+      uses: new fields.SchemaField({ max: int(0, { min: 0 }), value: int(0, { min: 0 }), per: str("") }),
       description: html()
     };
+  }
+
+  /** @override – Bestehende Items ohne Schlüssel anhand des Namens zuordnen (nur zur Laufzeit, nichts wird gespeichert). */
+  prepareBaseData() {
+    super.prepareBaseData();
+    if (!this.key) this.key = NR.styleKeyFromName(this.parent?.name);
   }
 }
 

@@ -111,6 +111,8 @@ export class CreatureData extends foundry.abstract.TypeDataModel {
         : (item.type === "augment" && item.system.fullBody) ? Math.max(1, item.system.quantity || 1) : 1;
       for (const m of list) {
         if (!m.target) continue;
+        // Kampfkünste: Stufen-Modifikatoren wirken erst ab der gewählten Stufe
+        if (item.type === "styleSkill" && m.level > 0 && item.system.level < m.level) continue;
         mods[m.target] = (mods[m.target] ?? 0) + (Number(m.value) || 0) * factor;
       }
     }
@@ -122,6 +124,14 @@ export class CreatureData extends foundry.abstract.TypeDataModel {
     const actor = this.parent;
     const mods = this._collectModifiers();
     sys.mods = mods;
+
+    // Style-Skills: Schlüssel → Stufe (Expertenfähigkeiten 1, Kampfkünste 1–3)
+    sys.styles = {};
+    for (const item of actor.items) {
+      if (item.type !== "styleSkill" || !item.system.key) continue;
+      const lvl = item.system.kind === "kampfkunst" ? item.system.level : 1;
+      sys.styles[item.system.key] = Math.max(sys.styles[item.system.key] ?? 0, lvl);
+    }
 
     // Robotik je Körperzone
     const robotics = {};

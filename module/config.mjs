@@ -378,6 +378,48 @@ NR.awakened = {
 NR.styleSkillKinds = { expert: "Expertenfähigkeit", kampfkunst: "Kampfkunst" };
 
 /**
+ * Stabile Schlüssel der Style-Skills (`system.key`). Wert = Namensanfang (kleingeschrieben), über den
+ * bestehende Items ohne Schlüssel einmalig zugeordnet werden (siehe StyleSkillData#migrateData).
+ * Muss mit tools/src/character.py (STYLE_KEYS) übereinstimmen.
+ */
+NR.styleSkillKeys = {
+  aimForTheHeart: "aim for the heart", akimbo: "akimbo", anonymous: "anonymous", beastmaster: "beastmaster",
+  billyTheKid: "billy the kid", blademaster: "blademaster", crapGyver: "crapgyver", crashOverride: "crash-override",
+  dejaVu: "déjà-vu", derDoktor: "der doktor", driftKing: "drift king", dualWielding: "dual wielding",
+  fastTalk: "fast talk", fistOfRage: "fist of rage", goldeneZunge: "goldene zunge", linguist: "linguist",
+  meditation: "meditation", memorum: "memorum", metamorphose: "metamorphose", mixology: "mixology",
+  multipleWielding: "multiple wielding", neo: "neo", petPal: "pet pal", powerNap: "power nap", parkour: "parkour",
+  psionischeVielfaeltigkeit: "psionische vielfältigkeit", quadrupleAkimbo: "quadruple akimbo", rageOfGods: "rage of gods",
+  recoilMastery: "recoil mastery", ruettelflug: "rüttelflug", shieldMaster: "shield master", sollbruchstelle: "sollbruchstelle",
+  split: "split", sterneKueche: "sterne-küche", stormOfFists: "storm of fists", trickster: "trickster",
+  triggerFinger: "trigger finger", trustyEngineer: "trusty engineer", waffenspezialisierung: "waffenspezialisierung",
+  aikido: "aikido", baKaiDo: "ba-kai-do", boxen: "boxen", capoeira: "capoeira", escrima: "escrima", gunFu: "gun-fu",
+  jiuJitsu: "jiu jitsu", karate: "karate", kenjutsu: "kenjutsu", kickBoxen: "kick-boxen", kravMaga: "krav maga",
+  muayThai: "muay thai", ringen: "ringen", sado: "sado", taeKwonDo: "tae-kwon-do", zpc: "zpc"
+};
+
+/** Ordne einen Style-Skill-Namen seinem stabilen Schlüssel zu ("" wenn unbekannt). */
+NR.styleKeyFromName = name => {
+  const n = String(name ?? "").toLowerCase().trim();
+  return Object.entries(NR.styleSkillKeys).find(([, prefix]) => n.startsWith(prefix))?.[0] ?? "";
+};
+
+/**
+ * Körperteil/Angriffsart waffenloser Angriffe. `groups` sind die Modifikator-Gruppen (attack.<g>/damage.<g>),
+ * die für diese Angriffsart gelten.
+ */
+NR.strikeLimbs = {
+  fist: { label: "Faust", groups: ["fist"] },
+  elbow: { label: "Ellenbogen", groups: ["elbow", "emk"] },
+  knee: { label: "Knie", groups: ["knee", "emk", "leg"] },
+  shin: { label: "Schienbein", groups: ["shin", "emk", "leg"] },
+  leg: { label: "Tritt (Fuß/Bein)", groups: ["leg"] },
+  claw: { label: "Krallen", groups: ["claw"] },
+  bite: { label: "Biss", groups: ["bite"] },
+  head: { label: "Kopf/Horn", groups: ["head"] }
+};
+
+/**
  * Ziele für Item-Modifikatoren. Diese werden in Actor#prepareDerivedData angewendet,
  * damit Spezies, Abnormitäten, Vorteile und Implantate ihre Werte automatisch einbringen.
  */
@@ -385,6 +427,29 @@ NR.modifierTargets = {
   "dice.klettern": "Bonuswürfel: Klettern",
   "dice.nahkampf": "Bonuswürfel: Nahkampf",
   "dice.einschuechtern.st": "Bonuswürfel: Einschüchtern mit Stärke",
+  // Kampf (Style-Skills/Kampfkünste): Bonuswürfel auf den Angriff bzw. Schadenswürfel
+  "attack.fist": "Angriff: Faustschläge (Bonuswürfel)",
+  "attack.leg": "Angriff: Beinangriffe (Bonuswürfel)",
+  "attack.emk": "Angriff: Ellenbogen/Knie/Schienbein (Bonuswürfel)",
+  "attack.knee": "Angriff: Knieangriffe (Bonuswürfel)",
+  "attack.claw": "Angriff: Krallen (Bonuswürfel)",
+  "attack.blade": "Angriff: Klingenwaffen (Bonuswürfel)",
+  "attack.multi": "Angriff: Mehrfachangriff (Bonuswürfel)",
+  "attack.zpc": "Angriff: linker Arm/Bein, ZPC (Bonuswürfel)",
+  "damage.melee": "Schaden: alle Nahkampfangriffe (Würfel)",
+  "damage.unarmed": "Schaden: waffenlos (Würfel)",
+  "damage.fist": "Schaden: Faustschläge (Würfel)",
+  "damage.leg": "Schaden: Beinangriffe (Würfel)",
+  "damage.emk": "Schaden: Ellenbogen/Knie/Schienbein (Würfel)",
+  "damage.knee": "Schaden: Knieangriffe (Würfel)",
+  "damage.multi": "Schaden: Mehrfachangriff (Würfel)",
+  "damage.zpc": "Schaden: linker Arm/Bein, ZPC (Würfel)",
+  "damage.blade": "Schaden: Klingenwaffen (Würfel)",
+  "defense.blockUnarmed": "Verteidigung: waffenlos Blocken (Bonuswürfel)",
+  "defense.blockMelee": "Verteidigung: Blocken gegen Nahkampf (Bonuswürfel)",
+  "defense.dodgeMelee": "Verteidigung: Ausweichen gegen Nahkampf (Bonuswürfel)",
+  "defense.parryBlade": "Verteidigung: Parade mit Klingenwaffe (Bonuswürfel)",
+  "resist.leg": "Schadenswiderstand: Treffer an den Beinen (Bonuswürfel)",
   "attributes.ge": "Attribut: Geschick",
   "attributes.st": "Attribut: Stärke",
   "attributes.ko": "Attribut: Konstitution",

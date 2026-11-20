@@ -274,12 +274,33 @@ def traits():
     return T
 
 
+# Stabile Schlüssel (system.key) – muss mit NR.styleSkillKeys in module/config.mjs übereinstimmen.
+STYLE_KEYS = {
+    "Aim for the Heart": "aimForTheHeart", "Akimbo": "akimbo", "Anonymous": "anonymous", "Beastmaster": "beastmaster",
+    "Billy the Kid": "billyTheKid", "Blademaster": "blademaster", "CrapGyver": "crapGyver", "Crash-Override": "crashOverride",
+    "Déjà-vu": "dejaVu", "Der Doktor": "derDoktor", "Drift King": "driftKing", "Dual Wielding": "dualWielding",
+    "Fast Talk": "fastTalk", "Fist of Rage": "fistOfRage", "Goldene Zunge": "goldeneZunge", "Linguist": "linguist",
+    "Meditation": "meditation", "Memorum [PSI-Kraft]": "memorum", "Metamorphose [Element]": "metamorphose",
+    "Mixology": "mixology", "Multiple Wielding": "multipleWielding", "Neo": "neo", "Pet Pal": "petPal",
+    "Power Nap": "powerNap", "Parkour": "parkour", "Psionische Vielfältigkeit": "psionischeVielfaeltigkeit",
+    "Quadruple Akimbo": "quadrupleAkimbo", "Rage of Gods": "rageOfGods", "Recoil Mastery": "recoilMastery",
+    "Rüttelflug": "ruettelflug", "Shield Master": "shieldMaster", "Sollbruchstelle": "sollbruchstelle", "Split": "split",
+    "Sterne-Küche": "sterneKueche", "Storm of Fists": "stormOfFists", "Trickster": "trickster",
+    "Trigger Finger": "triggerFinger", "Trusty Engineer": "trustyEngineer",
+    "Waffenspezialisierung (Waffenart)": "waffenspezialisierung",
+    "Aikido": "aikido", "Ba-Kai-Do": "baKaiDo", "Boxen": "boxen", "Capoeira": "capoeira", "Escrima": "escrima",
+    "Gun-Fu": "gunFu", "Jiu Jitsu": "jiuJitsu", "Karate": "karate", "Kenjutsu": "kenjutsu", "Kick-Boxen": "kickBoxen",
+    "Krav Maga": "kravMaga", "Muay Thai": "muayThai", "Ringen": "ringen", "Sado": "sado", "Tae-Kwon-Do": "taeKwonDo",
+    "ZPC (Zentrum Power Combat)": "zpc",
+}
+
+
 def style_skills():
     X = []
 
     def ss(name, gp, ep, pre, desc, page, mods=None):
         return {"name": name, "type": "styleSkill", "img": icon("svg", "combat"),
-                "system": {"kind": "expert", "gp": gp, "ep": ep, "level": 1, "prerequisites": pre, "levels": [], "modifiers": mods or [], "description": p(desc, page)}}
+                "system": {"key": STYLE_KEYS[name], "kind": "expert", "gp": gp, "ep": ep, "level": 1, "prerequisites": pre, "levels": [], "modifiers": mods or [], "description": p(desc, page)}}
 
     data = [
         ("Aim for the Heart", 7, 15, "Fahrzeug-Fertigkeit 4; WA 3", "Gezielte Angriffe dürfen auch nicht sichtbare vitale Stellen treffen; der −2W-Malus für gezielte Fahrzeugangriffe entfällt.", 179),
@@ -345,7 +366,7 @@ def style_skills():
     }
     for name, (desc, levels) in arts.items():
         X.append({"name": name, "type": "styleSkill", "img": icon("weapons/fist", "boxing") if name == "Boxen" else icon("svg", "combat"),
-                  "system": {"kind": "kampfkunst", "gp": 5, "ep": 10, "level": 1, "prerequisites": levels[0][0],
+                  "system": {"key": STYLE_KEYS[name], "kind": "kampfkunst", "gp": 5, "ep": 10, "level": 1, "prerequisites": levels[0][0],
                              "levels": [{"prerequisites": pr, "effect": ef} for pr, ef in levels], "modifiers": [],
                              "description": p(desc + " Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen.", 186)}})
     return X

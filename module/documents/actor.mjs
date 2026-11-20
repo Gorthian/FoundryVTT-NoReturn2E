@@ -110,6 +110,15 @@ export class NRActor extends foundry.documents.Actor {
     return true;
   }
 
+  /**
+   * Stufe eines Style-Skills (0 = nicht vorhanden). Expertenfähigkeiten haben Stufe 1,
+   * Kampfkünste ihre gewählte Stufe.
+   * @param {string} key   Schlüssel aus NR.styleSkillKeys
+   */
+  styleLevel(key) {
+    return this.system.styles?.[key] ?? 0;
+  }
+
   /** Stelle Adrenalin, Meditation und Regenerationspool wieder her (Rast: 6 h Schlaf + Nahrung). */
   async rest() {
     await this.update({
