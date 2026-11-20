@@ -236,7 +236,8 @@
    "prerequisites": "3 Handwerk-Fertigkeiten auf 4",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Crafting-Dauer −50 % (außer Computer). <em class=\"nr-ref\">(NoReturn 2E, S. 180)</em></p>"
+   "description": "<p>Crafting-Dauer −50 % (außer Computer). <em class=\"nr-ref\">(NoReturn 2E, S. 180)</em></p>",
+   "hint": "<p>Die Crafting-Dauer sinkt um 50 % (außer bei Computer). Das System führt keine Crafting-Dauer; auf Handwerk-Proben erscheint ein Hinweis, die Dauer halbiert die Spielleitung.</p>"
   },
   "effects": [],
   "folder": null,

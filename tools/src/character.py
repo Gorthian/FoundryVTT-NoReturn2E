@@ -315,6 +315,7 @@ STYLE_EXTRA = {
     "Billy the Kid": {"hint": "Einhändige Feuerwaffen werden in einer einzigen Aktion gezogen und abgefeuert; das Ziehen kostet keine eigene Aktion. Der Angriffsdialog weist bei passenden Waffen darauf hin."},
     "Anonymous": {"hint": "Computeraktionen sind nicht zurückverfolgbar; Seiteneffekte werden automatisch bedacht und brauchen keine Probe. Sicherheitsbarrieren erfordern weiterhin Proben. Auf Computer-Proben erscheint ein Hinweis."},
     "Beastmaster": {"hint": "Kreaturen sehen dich als Freund und greifen dich zuletzt an; zwei Dressieren-Proben weniger sind nötig, um Sturheit zu überwinden; unkontrollierte Kreaturen reagieren positiv. Die Angriffsreihenfolge bestimmt die Spielleitung."},
+    "CrapGyver": {"hint": "Die Crafting-Dauer sinkt um 50 % (außer bei Computer). Das System führt keine Crafting-Dauer; auf Handwerk-Proben erscheint ein Hinweis, die Dauer halbiert die Spielleitung."},
     # (Ende STYLE_EXTRA)
 }
 
