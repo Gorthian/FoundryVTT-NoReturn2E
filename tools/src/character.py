@@ -10,10 +10,10 @@ def mod(target, value):
 def species():
     S = []
 
-    def sp(name, gp, tp, ir, irp, adr, psy, org, psi, free, bio, ident, special, mods, desc, page):
-        return {"name": name, "type": "species", "img": icon("svg", "mystery-man"),
+    def sp(name, gp, tp, ir, irp, adr, psy, org, psi, free, bio, ident, special, mods, desc, page, awakened=False):
+        return {"name": name, "type": "species", "img": icon("svg", "mystery-man" if not awakened else "clockwork"),
                 "system": {"gp": gp, "tp": tp, "irDice": ir, "irPoints": irp, "adrenalin": adr, "psyche": psy, "organismus": org,
-                           "psi": psi, "freePsi": free, "bioGp": bio, "identification": ident, "special": special,
+                           "psi": psi, "awakened": awakened, "freePsi": free, "bioGp": bio, "identification": ident, "special": special,
                            "modifiers": mods, "description": p(desc, page)}}
 
     S.append(sp("Mensch", 0, 30, 1, 0, 2, 80, 100, True, 0, 0, "Spezieswissen MW 0",
@@ -39,9 +39,9 @@ def species():
     S.append(sp("Prodigy", 15, 30, 1, -1, 2, 60, 100, True, 3, 0, "Spezieswissen MW 30",
                 "Drei kostenlose PSI-Kräfte auf Stufe 3.", [],
                 "Extrem selten, schlank und menschenähnlich – Unterscheidung nur für wahre Experten.", 145))
-    S.append(sp("Erwachter", 100, 70, 0, 0, 0, 80, 100, False, 0, 0, "–",
-                "GE, ST, KO, BE starten mit 2 (Steigerung über Robotik-Upgrades), WI/CH/HA mit 1, WA 3 (Cybersense). Schmerztoleranz 10. Infektionsresistenz, Adrenalin und Organismus entfallen. Robotik-Overdrive möglich.",
-                [mod("schmerztoleranz", 7)], "Neuralprojektion in einem robotischen Körper – ein Mythos für viele Fleischwesen.", 145))
+    S.append(sp("Erwachter", 100, 70, 0, 0, 0, 80, 100, False, 0, 0, "Menschenkenntnis MW 30 oder Robotik MW 25",
+                "GE, ST, KO, BE starten mit 2 (nur über Robotik-Upgrades steigerbar), WI/CH/HA mit 1, WA 3 (nur über Cybersense). Schmerztoleranz 10. Infektionsresistenz, Adrenalin und Organismus entfallen. Jede Zone: 70 TP, Kapazität 16, Chassis 10p. MK:A. Nur Zonen 12, 6 und 8 sind lebensnotwendig. Robotik-Overdrive möglich. Keine Abnormitäten (außer Mysteriöses Implantat), immun gegen Gifte, Viren und Drogen, nicht hackbar; EMP/Technokinese: nur 2W6 − (Willenskraft + Wissen) KR handlungsunfähig.",
+                [], "Neuralprojektion in einem robotischen Körper – nicht als intelligente Lebensform anerkannt, Kopfgeld 8.000 N$. Designoptionen und Ganzkörper-Upgrades findest du im Compendium „Augmentierung“.", 145, awakened=True))
     return S
 
 
@@ -106,10 +106,10 @@ def abnormalities():
 def bio_traits():
     B = []
 
-    def bt(name, kind, gp, desc, page, mods=None, per=False, maxl=1, consp="", charges=0, covers=0):
+    def bt(name, kind, gp, desc, page, mods=None, per=False, maxl=1, consp="", charges=0, covers=0, grants=None):
         return {"name": name, "type": "bioTrait", "img": icon("svg", "pawprint" if kind != "auffaelligkeit" else "eye"),
                 "system": {"kind": kind, "gp": gp, "level": 1, "maxLevel": maxl, "perLevel": per, "covers": covers, "conspicuity": consp,
-                           "charges": {"value": charges, "max": charges}, "modifiers": mods or [], "description": p(desc, page)}}
+                           "charges": {"value": charges, "max": charges}, "modifiers": mods or [], "grants": grants or [], "description": p(desc, page)}}
 
     vis = "sichtbar"
     B.append(bt("Amphibie", vis, 5, "Kiemen – atmet unter Wasser.", 162, consp="Offensichtliche Kiemen"))
@@ -119,16 +119,17 @@ def bio_traits():
     B.append(bt("Flughäute oder Schwingen", vis, 10, "Gleitflug: besondere Fertigkeit „Gleiten“ (BE) 1, MW 5, Wurf × 2 m/KR; verdoppelt Springen.", 162, consp="Flughäute"))
     B.append(bt("Gifthaut (toxisch)", vis, 30, "Nässende Giftschicht wirkt bei Berührung ohne Kleidung/Rüstung wie Giftdrüsen (toxisch).", 163, consp="Feuchter Film (Wahrnehmung 15)"))
     B.append(bt("Gifthaut (narkotisch)", vis, 40, "Wie oben mit narkotischem Gift.", 163, consp="Feuchter Film (Wahrnehmung 15)"))
-    B.append(bt("Horn, Hörner oder Stoßzähne", vis, 10, "Schaden ST+30p., durch Anlauf (Rennen) erhöht.", 163, consp="Offensichtlich"))
-    B.append(bt("Krallen, Klauen oder scharfe Nägel", vis, 10, "Klettern +1W; Nahkampf +1W; Schaden ST+20p.", 163, consp="1–2 cm Krallen"))
+    B.append(bt("Horn, Hörner oder Stoßzähne", vis, 10, "Schaden ST+30p., durch Anlauf (Rennen) erhöht. Bringt die Waffe „Hornstoß (körpereigen)“ mit.", 163, consp="Offensichtlich", grants=["Hornstoß (körpereigen)"]))
+    B.append(bt("Krallen, Klauen oder scharfe Nägel", vis, 10, "Klettern +1W (automatisch); Nahkampf +1W und Schaden ST+20p. über die Waffe „Krallen (körpereigen)“, die automatisch hinzugefügt wird.", 163,
+                [mod("dice.klettern", 1)], consp="1–2 cm Krallen", grants=["Krallen (körpereigen)"]))
     B.append(bt("Mehrgliedrig", vis, 10, "Je Stufe ein zusätzliches Paar Arme (+4W Stärke wenn alle beteiligt) oder Beine (+4W Rennen). Max. 2.", 163, per=True, maxl=2, consp="Zusätzliche Gliedmaßen"))
     B.append(bt("Panzer (flexibel)", vis, 5, "Je Stufe drei Zonen mit 20p. MK:A (Modifikator „Körperpanzer“ je Zone setzen). Weichteile ungeschützt.", 163, per=True, maxl=4, consp="Horn-/Knochenschicht"))
     B.append(bt("Panzer (massiv)", vis, 5, "Je Stufe zwei Zonen mit 30p. MK:B (Modifikator „Körperpanzer“ je Zone). Weichteile ungeschützt.", 163, per=True, maxl=5, consp="Chitin-/Knochenplatten"))
     B.append(bt("Rundumsicht", vis, 15, "Augen seitlich – sieht auch hinter sich. Ultraschall-Rundumsicht: 25 GP.", 163, consp="Seitliche Augen / große Ohren"))
-    B.append(bt("Scharfe Zähne oder Schnabel", vis, 10, "Biss ST+30p. (mit zermalmendem Kiefer ST+40p.).", 164, consp="Offensichtlich"))
+    B.append(bt("Scharfe Zähne oder Schnabel", vis, 10, "Biss ST+30p. (mit zermalmendem Kiefer ST+40p.).", 164, consp="Offensichtlich", grants=["Biss (körpereigen)"]))
     B.append(bt("Schwimmflossen oder Schwimmhäute", vis, 5, "Je Stufe +10 Punkte auf Schwimmen.", 164, per=True, maxl=3, consp="Häute/Flossen"))
     B.append(bt("Selektive Entwicklung", vis, 5, "Nur Demigod: je 5 GP fünf Stufen ST/KO/BE frei auf Körperzonen verteilen. Max. 4×.", 164, per=True, maxl=4, consp="Unproportionierte Muskeln"))
-    B.append(bt("Stachel(n)", vis, 10, "Verteidigend KO+15p. gegen Angreifer, ein großer Stachel ST+30p.", 164, consp="Schwer zu verbergen"))
+    B.append(bt("Stachel(n)", vis, 10, "Verteidigend: Trifft dich ein waffenloser/körpereigener Nahkampfangriff, erleidet der Angreifer KO+15p. Schaden (Schadenskarte erscheint automatisch). Alternativ ein einzelner großer Stachel ST+30p.: dann die Waffe „Großer Stachel (körpereigen)“ aus dem Compendium Waffen hinzufügen – der Rückschaden entfällt.", 164, consp="Schwer zu verbergen"))
     B.append(bt("Zehengänger", vis, 10, "Rennen +4.", 164, [mod("skills.rennen", 4)], consp="Deformierte Unterschenkel"))
     hid = "verborgen"
     B.append(bt("Adrenalinkammern", hid, 10, "Je Stufe Adrenalin +1. Max. 2.", 165, [mod("adrenalin", 1)], per=True, maxl=2))
@@ -144,7 +145,7 @@ def bio_traits():
     B.append(bt("Hauttaschen", hid, 5, "Bis zu drei Liter Stauraum.", 167))
     B.append(bt("Nachtsicht", hid, 10, "Keine Erschwernis bei optischer Wahrnehmung im Dunkeln.", 167))
     B.append(bt("Regeneration", hid, 30, "Regenerationsgeschwindigkeit 10, Pool 100.", 167, [mod("regSpeed", 10), mod("regPool", 100)]))
-    B.append(bt("Roar", hid, 10, "+5W auf Einschüchtern mit Stärke.", 167))
+    B.append(bt("Roar", hid, 10, "+5W auf Einschüchtern, wenn mit Stärke statt Charisma gewürfelt wird (automatisch bei Attributwahl ST).", 167, [mod("dice.einschuechtern.st", 5)]))
     B.append(bt("Roh und Blutig", hid, 5, "Verdaut rohe Nahrung; +1 auf Infektionsresistenz.", 167, [mod("irPoints", 1)]))
     B.append(bt("Odemwaffe", hid, 20, "Feuer- oder Säurestoß SP 6/6 alle 6 h; Fertigkeit „Odemwaffe“ (GE) 1; Schaden = doppelter Stärkewurf, andauernd 1W6 KR. +5 GP je Ladung (max. 5).", 167, charges=1))
     B.append(bt("Schmerzresistenz", hid, 15, "Je Stufe Schmerztoleranz +2. Max. 2.", 168, [mod("schmerztoleranz", 2)], per=True, maxl=2))

@@ -2,6 +2,7 @@ import { NR } from "../config.mjs";
 import { manualDamageDialog } from "../combat.mjs";
 import { collectPower, rollPsiFail } from "../psi.mjs";
 import { rollHitZone } from "../dice/pool.mjs";
+import { downloadMannifest, promptImport } from "../apps/mannifest.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -19,6 +20,8 @@ export class NRActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
     form: { submitOnChange: true },
     actions: {
       rollAttribute: NRActorSheet.#onRollAttribute,
+      mannifestExport: NRActorSheet.#onMannifestExport,
+      mannifestImport: NRActorSheet.#onMannifestImport,
       rollSkill: NRActorSheet.#onRollSkill,
       useItem: NRActorSheet.#onUseItem,
       editItem: NRActorSheet.#onEditItem,
@@ -41,7 +44,9 @@ export class NRActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       resetDefenses: NRActorSheet.#onResetDefenses,
       hitZone: NRActorSheet.#onHitZone,
       itemQuantity: NRActorSheet.#onItemQuantity,
-      itemValue: NRActorSheet.#onItemValue
+      itemValue: NRActorSheet.#onItemValue,
+      overdrive: NRActorSheet.#onOverdrive,
+      empHit: NRActorSheet.#onEmpHit
     }
   };
 
@@ -126,6 +131,7 @@ export class NRActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       actor, system: sys, source: actor.system._source ?? actor._source.system, config: NR,
       isCharacter: actor.type === "character", isNpc: actor.type === "npc",
       editable: this.isEditable, owner: actor.isOwner, gm: game.user.isGM,
+      awakened: sys.awakened, upgradeOnly: sys.awakened ? { ge: true, st: true, ko: true, be: true, wa: true } : {},
       skillGroups, customSkills, weapons, armor, komfort, komfortMalus: Math.max(0, komfort - sys.attr.ko.total),
       body, zones: Object.values(z),
       powers, orphanApps, heldApps, psiAllowed: sys.speciesItem ? sys.speciesItem.system.psi : true,
@@ -174,6 +180,25 @@ export class NRActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
   /* -------------------------------------------- */
   /*  Aktionen                                     */
   /* -------------------------------------------- */
+
+  /** Kopfzeilen-Menü: Im-/Export im Format des Verlags-Charaktergenerators. */
+  _getHeaderControls() {
+    const controls = super._getHeaderControls();
+    if (this.document.type !== "character") return controls;
+    controls.push(
+      { icon: "fa-solid fa-file-export", label: "NR.Mannifest.Export", action: "mannifestExport" },
+      { icon: "fa-solid fa-file-import", label: "NR.Mannifest.Import", action: "mannifestImport", visible: () => this.document.isOwner }
+    );
+    return controls;
+  }
+
+  static #onMannifestExport() {
+    downloadMannifest(this.document);
+  }
+
+  static async #onMannifestImport() {
+    await promptImport(this.document);
+  }
 
   static async #onRollAttribute(event, target) {
     return this.actor.rollAttribute(target.dataset.attr);
@@ -310,6 +335,14 @@ export class NRActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
     if (!item) return;
     const delta = Number(target.dataset.delta) || 0;
     return item.update({ "system.quantity": Math.max(0, item.system.quantity + delta) });
+  }
+
+  static async #onOverdrive() {
+    return this.actor.overdrive();
+  }
+
+  static async #onEmpHit() {
+    return this.actor.empHit();
   }
 
   static async #onItemValue(event, target) {

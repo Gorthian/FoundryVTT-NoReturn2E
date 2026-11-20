@@ -231,6 +231,7 @@ export class SpeciesData extends NRItemData {
       psyche: int(80),
       organismus: int(100),
       psi: bool(true),
+      awakened: bool(false),
       freePsi: int(0, { min: 0 }),
       bioGp: int(0, { min: 0 }),
       identification: str(""),
@@ -267,6 +268,7 @@ export class BioTraitData extends NRItemData {
       conspicuity: str(""),
       charges: new fields.SchemaField({ value: int(0, { min: 0 }), max: int(0, { min: 0 }) }),
       modifiers: modifiers(),
+      grants: new fields.ArrayField(str("")),
       description: html()
     };
   }
@@ -317,6 +319,8 @@ export class AugmentData extends NRItemData {
       orgLoss: int(0, { min: 0 }),
       psycheLoss: int(0, { min: 0 }),
       installed: bool(true),
+      fullBody: bool(false),
+      gp: int(0, { min: 0 }),
       modifiers: modifiers(),
       description: html()
     };

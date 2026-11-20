@@ -1,0 +1,477 @@
+<div class="nr-gen">
+  {{#*inline "bioRow"}}
+  <div class="nr-gen-row {{#if x.selected}}selected{{/if}}">
+    <input type="checkbox" {{checked x.selected}} data-action="toggle" data-list="bioTraits" data-uuid="{{x.uuid}}">
+    <a class="nr-gen-name" data-action="showItem" data-uuid="{{x.uuid}}">{{x.doc.name}}</a>
+    {{#if x.doc.system.covers}}<span class="nr-chip good">deckt {{x.doc.system.covers}}</span>{{else}}<span class="nr-chip">{{x.doc.system.gp}} GP{{#if x.doc.system.perLevel}}/St.{{/if}}</span>{{/if}}
+    {{#if (and x.selected x.canRetract)}}
+    <label class="nr-gen-flag" data-tooltip="{{localize 'NR.Gen.RetractHint'}}"><input type="checkbox" {{checked x.retract}} data-action="toggle" data-list="retractable" data-uuid="{{x.uuid}}"> {{localize "NR.Gen.Retract"}}</label>
+    {{/if}}
+    {{#if (and x.selected x.doc.system.perLevel)}}
+    <span class="nr-gen-stepper">
+      <a data-action="level" data-list="bioTraits" data-uuid="{{x.uuid}}" data-delta="-1" data-max="{{x.doc.system.maxLevel}}"><i class="fa-solid fa-minus"></i></a>
+      <span class="nr-gen-num">{{x.level}}</span>
+      <a data-action="level" data-list="bioTraits" data-uuid="{{x.uuid}}" data-delta="1" data-max="{{x.doc.system.maxLevel}}"><i class="fa-solid fa-plus"></i></a>
+    </span>
+    {{/if}}
+    <span class="nr-gen-desc">{{{x.doc.system.description}}}</span>
+  </div>
+  {{/inline}}
+  <aside class="nr-gen-nav">
+    {{#each steps as |st|}}
+    <a class="nr-gen-step {{#if st.active}}active{{/if}} {{#if st.done}}done{{/if}}" data-action="goto" data-step="{{st.index}}">
+      <i class="fa-solid {{st.icon}}"></i><span>{{st.label}}</span>
+      {{#if st.issues}}<span class="nr-gen-badge" data-tooltip="{{st.issues}}">!</span>{{/if}}
+    </a>
+    {{/each}}
+  </aside>
+
+  <section class="nr-gen-main">
+    <header class="nr-gen-budget {{#if (lt c.left 0)}}over{{/if}}">
+      <div class="nr-gen-gp">
+        <span class="nr-stat-label">{{localize "NR.Gen.Gp"}}</span>
+        <span class="nr-gen-gp-value">{{c.left}}</span>
+        <span class="nr-hint">/ {{c.available}}</span>
+      </div>
+      <div class="nr-bar wide"><div class="nr-bar-fill gp" style="width: {{nrPct c.spent c.available}}%"></div></div>
+      <div class="nr-gen-breakdown">
+        <span data-tooltip="{{localize 'TYPES.Item.species'}}">Sp {{c.gp.species}}</span>
+        <span data-tooltip="{{localize 'NR.Section.Abnormalities'}}">Ab {{c.gp.abnormal}}</span>
+        {{#if c.awakened}}<span data-tooltip="{{localize 'NR.Gen.RoboticBody'}} ({{localize 'NR.Gen.Designs'}} {{c.gp.design}} + {{localize 'NR.Gen.Adaption'}} {{c.gp.bio}})">Rob {{nrAdd c.gp.design c.gp.bio}}</span>
+        {{else}}<span data-tooltip="{{localize 'NR.Section.BioTraits'}}">Bio {{c.gp.bio}}</span>{{/if}}
+        <span data-tooltip="{{localize 'NR.Section.Attributes'}}">Att {{c.gp.attributes}}</span>
+        <span data-tooltip="{{localize 'NR.Section.Skills'}}">Fer {{c.gp.skills}}</span>
+        <span data-tooltip="{{localize 'NR.Creation.Languages'}}">Spr {{c.gp.languages}}</span>
+        <span data-tooltip="PSI">PSI {{c.gp.psi}}</span>
+        {{#if c.hmo}}<span data-tooltip="{{localize 'NR.Gen.HmoPowers'}}">HMO {{c.gp.hmo}}</span>{{/if}}
+        <span data-tooltip="{{localize 'NR.Section.StyleSkills'}}">Sty {{c.gp.style}}</span>
+        <span data-tooltip="{{localize 'NR.Creation.Money'}}">N$ {{c.gp.money}}</span>
+      </div>
+    </header>
+
+    <div class="nr-gen-body">
+    {{!-- 0 Konzept ------------------------------------------------ --}}
+    {{#if (eq stepId "concept")}}
+      <h2>{{localize "NR.Gen.Step.concept"}}</h2>
+      <p class="nr-hint">{{localize "NR.Gen.Hint.concept"}}</p>
+      <div class="nr-gen-concept">
+        <img src="{{s.img}}" class="nr-portrait" data-action="pickImage" alt="">
+        <div class="nr-form-grid">
+          <label>{{localize "NR.Sheet.Name"}}</label><input type="text" data-field="name" value="{{s.name}}" placeholder="Name des Charakters">
+          <label>{{localize "NR.Detail.concept"}}</label><input type="text" data-field="concept" value="{{s.concept}}" placeholder="Jack, Riot, Softie, Streetfighter, Scrapper, Billy, Angel, Rebell …">
+          <label>{{localize "NR.Detail.gender"}}</label><input type="text" data-field="gender" value="{{s.gender}}">
+          <label>{{localize "NR.Detail.age"}}</label><input type="text" data-field="age" value="{{s.age}}">
+        </div>
+      </div>
+      <h3 class="nr-section-title">{{localize "NR.Creation.PowerLevel"}}</h3>
+      <div class="nr-gen-cards three">
+        {{#each powerLevels as |p|}}
+        <label class="nr-gen-card {{#if p.selected}}selected{{/if}}">
+          <input type="radio" name="powerLevel" data-field="powerLevel" value="{{p.key}}" {{checked p.selected}}>
+          <strong>{{p.label}}</strong>
+          <span>{{p.gp}} GP</span>
+          <span class="nr-hint">1 GP = {{nrMoney p.money}}</span>
+        </label>
+        {{/each}}
+      </div>
+      <h3 class="nr-section-title">{{localize "NR.Section.Biography"}}</h3>
+      <textarea data-field="biography" rows="4" placeholder="{{localize 'NR.Gen.Hint.biography'}}">{{s.biography}}</textarea>
+    {{/if}}
+
+    {{!-- 1 Spezies ------------------------------------------------ --}}
+    {{#if (eq stepId "species")}}
+      <h2>{{localize "NR.Gen.Step.species"}}</h2>
+      <p class="nr-hint">{{localize "NR.Gen.Hint.species"}}</p>
+      <div class="nr-gen-cards two">
+        {{#each species as |x|}}
+        <a class="nr-gen-card {{#if x.selected}}selected{{/if}}" data-action="toggle" data-list="species" data-uuid="{{x.uuid}}">
+          <div class="nr-gen-card-head"><strong>{{x.doc.name}}</strong><span class="nr-chip">{{x.doc.system.gp}} GP</span></div>
+          <span class="nr-hint">TP {{x.doc.system.tp}} · IR {{x.doc.system.irDice}}W6{{#if x.doc.system.irPoints}}{{nrSigned x.doc.system.irPoints}}{{/if}} · Adrenalin {{x.doc.system.adrenalin}} · Psyche {{x.doc.system.psyche}} · {{#if x.doc.system.psi}}PSI-begabt{{else}}kein PSI{{/if}}</span>
+          {{#if x.mods}}<span class="nr-good">{{x.mods}}</span>{{/if}}
+          <span>{{x.doc.system.special}}</span>
+        </a>
+        {{/each}}
+      </div>
+      {{#if c.isMutant}}
+      <h3 class="nr-section-title">{{localize "NR.Gen.MutantAttrs"}}</h3>
+      <div class="nr-gen-chips">
+        {{#each attrChoices as |a|}}<a class="nr-chip big {{#if a.selected}}good{{/if}}" data-action="toggle" data-list="mutantAttrs" data-key="{{a.key}}" data-max="2">{{a.label}} +1</a>{{/each}}
+      </div>
+      {{/if}}
+    {{/if}}
+
+    {{#if (and (eq stepId "species") c.awakened)}}
+      <h3 class="nr-section-title"><i class="fa-solid fa-robot"></i> {{localize "NR.Gen.Designs"}}</h3>
+      <p class="nr-hint">{{localize "NR.Gen.Hint.awakened"}}</p>
+      <div class="nr-gen-list">
+        {{#each designs as |x|}}
+        <div class="nr-gen-row {{#if x.selected}}selected{{/if}}">
+          <input type="checkbox" {{checked x.selected}} data-action="toggle" data-list="designs" data-uuid="{{x.uuid}}">
+          <a class="nr-gen-name" data-action="showItem" data-uuid="{{x.uuid}}">{{x.doc.name}}</a>
+          <span class="nr-chip">{{x.doc.system.gp}} GP</span>
+          <span class="nr-gen-desc">{{{x.doc.system.description}}}</span>
+        </div>
+        {{/each}}
+      </div>
+      <h3 class="nr-section-title"><i class="fa-solid fa-gears"></i> {{localize "NR.Gen.Adaption"}} –
+        <span class="{{#if (gt c.bioTotal c.bioBudget)}}nr-bad{{else}}nr-good{{/if}}">{{c.bioTotal}} / {{c.bioBudget}} GP</span></h3>
+      <p class="nr-hint">{{localize "NR.Gen.Hint.adaption"}}</p>
+      <div class="nr-gen-list">{{#each adaptionVisible as |x|}}{{> bioRow x=x}}{{/each}}</div>
+      <p class="nr-hint"><strong>{{localize "NR.Gen.RoboticBody"}}:</strong> {{nrAdd c.gp.design c.gp.bio}} GP ({{localize "NR.Gen.Designs"}} {{c.gp.design}} + {{localize "NR.Gen.Adaption"}} {{c.gp.bio}})</p>
+    {{/if}}
+
+    {{!-- 2 Abnormitäten & bio. Eigenschaften ------------------------- --}}
+    {{#if (eq stepId "abnormal")}}
+      <h2>{{localize "NR.Gen.Step.abnormal"}}</h2>
+      <p class="nr-hint">{{localize "NR.Gen.Hint.abnormal"}}</p>
+      {{#if c.awakened}}<p class="nr-alert"><i class="fa-solid fa-robot"></i> {{localize "NR.Gen.Hint.awakenedAbnormal"}}</p>{{/if}}
+      <div class="nr-gen-list">
+        {{#each abnormalities as |x|}}
+        <div class="nr-gen-row {{#if x.selected}}selected{{/if}}">
+          <input type="checkbox" {{checked x.selected}} data-action="toggle" data-list="abnormalities" data-uuid="{{x.uuid}}">
+          <a class="nr-gen-name" data-action="showItem" data-uuid="{{x.uuid}}">{{x.doc.name}}</a>
+          <span class="nr-chip">{{x.doc.system.gp}} GP</span>
+          <span class="nr-gen-desc">{{{x.doc.system.description}}}</span>
+        </div>
+        {{/each}}
+      </div>
+      {{#if c.awakened}}
+      <p class="nr-hint"><i class="fa-solid fa-gears"></i> {{localize "NR.Gen.Hint.adaptionMoved"}}</p>
+      {{else if showBio}}
+      <h3 class="nr-section-title">{{localize "NR.Section.BioTraits"}} – {{c.bioTotal}} / {{c.bioBudget}} GP
+        {{#if c.hiddenTotal}}<span class="nr-hint">· verborgen {{c.hiddenTotal}}, gedeckt {{c.covers}}</span>{{/if}}</h3>
+      <p class="nr-hint">{{#if c.isMutant}}{{localize "NR.Gen.Hint.bioMutant"}}{{else}}{{localize "NR.Gen.Hint.bioMutation"}}{{/if}}</p>
+      <div class="nr-columns">
+        <div class="nr-col">
+          <h4>{{localize "NR.Gen.Visible"}}</h4>
+          {{#each bioVisible as |x|}}{{> bioRow x=x}}{{/each}}
+          <h4>{{localize "NR.Gen.Conspicuity"}}</h4>
+          {{#each bioConspicuity as |x|}}{{> bioRow x=x}}{{/each}}
+        </div>
+        <div class="nr-col">
+          <h4>{{localize "NR.Gen.Hidden"}}</h4>
+          {{#each bioHidden as |x|}}{{> bioRow x=x}}{{/each}}
+        </div>
+      </div>
+      {{else}}
+      <p class="nr-hint">{{localize "NR.Gen.Hint.noBio"}}</p>
+      {{/if}}
+    {{/if}}
+
+    {{!-- 3 Attribute ------------------------------------------------ --}}
+    {{#if (eq stepId "attributes")}}
+      <h2>{{localize "NR.Gen.Step.attributes"}}</h2>
+      <p class="nr-hint">{{localize "NR.Gen.Hint.attributes"}}</p>
+      {{#if c.awakened}}<p class="nr-alert"><i class="fa-solid fa-robot"></i> {{localize "NR.Gen.Hint.awakenedAttributes"}}</p>{{/if}}
+      <table class="nr-gen-table">
+        <tr><th>{{localize "NR.Roll.Attribute"}}</th><th>{{localize "NR.Gen.Bought"}}</th><th></th><th>{{localize "NR.Gen.Bonus"}}</th><th>{{localize "NR.Gen.Final"}}</th><th>GP</th><th>{{localize "NR.Gen.NextLevel"}}</th></tr>
+        {{#each attributes as |a|}}
+        <tr>
+          <td><strong>{{a.label}}</strong> <span class="nr-hint">{{a.abbr}}</span></td>
+          <td class="nr-gen-stepper">
+            {{#if a.fixed}}<span class="nr-big">{{a.value}}</span> <i class="fa-solid fa-robot nr-dim" data-tooltip="{{localize 'NR.Awakened.UpgradeOnly'}}"></i>
+            {{else}}
+            <a data-action="attr" data-key="{{a.key}}" data-delta="-1"><i class="fa-solid fa-minus"></i></a>
+            <span class="nr-big">{{a.value}}</span>
+            <a data-action="attr" data-key="{{a.key}}" data-delta="1" {{#if a.atMax}}class="disabled"{{/if}}><i class="fa-solid fa-plus"></i></a>
+            {{/if}}
+          </td>
+          <td>{{#if a.fixed}}<span class="nr-chip">Upgrade</span>{{else if (lt a.max 99)}}<span class="nr-chip bad">max {{a.max}}</span>{{/if}}</td>
+          <td>{{#if a.bonus}}<span class="nr-good">{{nrSigned a.bonus}}</span>{{/if}}</td>
+          <td><span class="nr-derived strong">{{a.final}}</span></td>
+          <td>{{a.cost}}</td>
+          <td class="nr-hint">{{#unless a.fixed}}+{{a.next}} GP{{/unless}}</td>
+        </tr>
+        {{/each}}
+      </table>
+      <p class="nr-hint">{{localize "NR.Gen.Hint.attrCost"}}</p>
+    {{/if}}
+
+    {{!-- 4 Fertigkeiten & Sprachen ------------------------------------ --}}
+    {{#if (eq stepId "skills")}}
+      <h2>{{localize "NR.Gen.Step.skills"}}</h2>
+      <p class="nr-hint">{{localize "NR.Gen.Hint.skills"}}</p>
+      {{#if (or c.hasN2 c.hasMastery c.hasImplant)}}
+      <p class="nr-alert"><i class="fa-solid fa-star"></i>
+        {{#if c.hasN2}}<span class="nr-chip good">N²</span> {{localize "NR.Gen.Hint.n2"}} {{/if}}
+        {{#if c.hasMastery}}<span class="nr-chip good">M</span> {{localize "NR.Gen.Hint.mastery"}} {{/if}}
+        {{#if c.hasImplant}}<span class="nr-chip good">MI</span> {{localize "NR.Gen.Hint.implant"}}{{/if}}
+      </p>
+      {{/if}}
+      <div class="nr-skill-groups three">
+        {{#each skillGroups as |g|}}
+        <div class="nr-skill-group">
+          <h4>{{g.label}} <span class="nr-badge">{{g.final}}</span></h4>
+          {{#each g.skills as |sk|}}
+          <div class="nr-skill-row {{#unless sk.value}}untrained{{/unless}}">
+            <span class="nr-skill-name">{{sk.label}}{{#if sk.mod}} <span class="nr-good">{{nrSigned sk.mod}}</span>{{/if}}</span>
+            <a data-action="skill" data-key="{{sk.key}}" data-delta="-1"><i class="fa-solid fa-minus"></i></a>
+            <span class="nr-gen-num">{{sk.value}}</span>
+            <a data-action="skill" data-key="{{sk.key}}" data-delta="1" {{#if sk.atMax}}class="disabled"{{/if}}><i class="fa-solid fa-plus"></i></a>
+            <span class="nr-pool">{{sk.pool}}W</span>
+            {{#if @root.c.hasN2}}<a class="nr-flag {{#if sk.n2}}on{{/if}}" data-action="toggle" data-list="n2Skills" data-key="{{sk.key}}" data-max="2" data-tooltip="N²">N²</a>{{/if}}
+            {{#if @root.c.hasMastery}}<a class="nr-flag {{#if sk.mastery}}on{{/if}}" data-action="toggle" data-list="masterySkills" data-key="{{sk.key}}" data-tooltip="{{localize 'NR.Gen.Mastery'}}">M</a>{{/if}}
+            {{#if sk.canImplant}}<a class="nr-flag {{#if sk.implant}}on{{/if}}" data-action="toggle" data-list="implantSkills" data-key="{{sk.key}}" data-max="2" data-tooltip="{{localize 'NR.Gen.Implant'}}">MI</a>{{/if}}
+          </div>
+          {{/each}}
+        </div>
+        {{/each}}
+      </div>
+      <h3 class="nr-section-title">{{localize "NR.Gen.Languages"}} <a class="nr-add" data-action="addLanguage"><i class="fa-solid fa-plus"></i></a></h3>
+      <div class="nr-form-grid">
+        <label>{{localize "NR.Skill.Native"}}</label>
+        <span><input type="text" data-field="nativeName" value="{{s.nativeName}}"> {{localize "NR.Skill.Value"}} {{c.nativeLevel}}</span>
+        {{#each languages as |l|}}
+        <label>{{localize "NR.Gen.ExtraLanguage"}}</label>
+        <span><input type="text" data-field="lang.{{l.index}}.name" value="{{l.name}}">
+          <input type="number" data-field="lang.{{l.index}}.value" value="{{l.value}}" min="1" max="6">
+          <a data-action="removeLanguage" data-index="{{l.index}}"><i class="fa-solid fa-trash"></i></a></span>
+        {{/each}}
+      </div>
+    {{/if}}
+
+    {{!-- 5 PSI ---------------------------------------------------- --}}
+    {{#if (eq stepId "psi")}}
+      <h2>{{localize "NR.Gen.Step.psi"}}</h2>
+      {{#unless c.psiAllowed}}<p class="nr-alert">{{localize "NR.Psi.NotGifted"}}</p>{{/unless}}
+      <p class="nr-hint">{{localize "NR.Gen.Hint.psi"}}{{#if c.freePowers}} {{localize "NR.Gen.FreePowers"}}: <strong>{{c.freePowers}}</strong>{{/if}}</p>
+      <p class="nr-hint">{{localize "NR.Gen.Hierarchy"}}: Ebene 1 = {{c.tiers.[1]}} · Ebene 2 = {{c.tiers.[2]}} · Ebene 3 = {{c.tiers.[3]}} {{#unless c.hierarchyOk}}<span class="nr-bad">✗</span>{{/unless}}</p>
+      {{#if c.hmo}}
+      <h3 class="nr-section-title"><i class="fa-solid fa-droplet"></i> {{localize "NR.Gen.HmoPowers"}} <span class="nr-chip">{{c.hmoVariant}}</span></h3>
+      <p class="nr-hint">{{localize "NR.Gen.Hint.hmo"}}</p>
+      <div class="nr-gen-list">
+        {{#each hmoPowers as |x|}}
+        <div class="nr-gen-row {{#if x.selected}}selected{{/if}}">
+          <input type="checkbox" {{checked x.selected}} data-action="toggle" data-list="hmoPowers" data-uuid="{{x.uuid}}">
+          <a class="nr-gen-name" data-action="showItem" data-uuid="{{x.uuid}}">{{x.doc.name}}</a>
+          <span class="nr-gen-desc">{{{x.doc.system.description}}}</span>
+        </div>
+        {{/each}}
+      </div>
+      {{/if}}
+      {{#if c.psiAllowed}}
+      {{#each powers as |p|}}
+      <div class="nr-psi-power tier-{{p.tier}} {{#if p.level}}selected{{/if}}">
+        <div class="nr-psi-power-head">
+          <img src="{{p.doc.img}}" alt="">
+          <h4>{{p.doc.name}} <span class="nr-chip">Ebene {{p.tier}}</span>{{#if p.free}} <span class="nr-chip good">3 Stufen frei</span>{{/if}}</h4>
+          <a data-action="psiLevel" data-key="{{p.key}}" data-delta="-1"><i class="fa-solid fa-minus"></i></a>
+          <span class="nr-gen-num big">{{p.level}}</span>
+          <a data-action="psiLevel" data-key="{{p.key}}" data-delta="1"><i class="fa-solid fa-plus"></i></a>
+          {{#if p.level}}<span class="nr-hint">Apps {{p.appsChosen}}/{{p.level}}</span>{{/if}}
+        </div>
+        {{#if p.level}}
+        <div class="nr-gen-apps">
+          {{#each p.apps as |a|}}
+          <label class="nr-gen-app {{#if a.selected}}selected{{/if}}" data-tooltip="{{a.doc.system.effect}}">
+            <input type="checkbox" {{checked a.selected}} data-action="toggle" data-list="psiApps" data-uuid="{{a.uuid}}">
+            {{a.doc.name}} <span class="nr-hint">{{a.diff}}{{#if a.doc.system.hold}} · H{{a.doc.system.hold}}{{/if}}</span>
+          </label>
+          {{/each}}
+        </div>
+        {{/if}}
+      </div>
+      {{/each}}
+      {{/if}}
+    {{/if}}
+
+    {{!-- 6 Style-Skills ------------------------------------------- --}}
+    {{#if (eq stepId "style")}}
+      <h2>{{localize "NR.Gen.Step.style"}}</h2>
+      <p class="nr-hint">{{localize "NR.Gen.Hint.style"}}</p>
+      <div class="nr-gen-list">
+        {{#each styleExpert as |x|}}
+        <div class="nr-gen-row {{#if x.selected}}selected{{/if}}">
+          <input type="checkbox" {{checked x.selected}} data-action="toggle" data-list="styleSkills" data-uuid="{{x.uuid}}">
+          <a class="nr-gen-name" data-action="showItem" data-uuid="{{x.uuid}}">{{x.doc.name}}</a>
+          <span class="nr-chip">{{x.doc.system.gp}} GP</span>
+          <span class="nr-gen-desc"><em>{{x.doc.system.prerequisites}}</em> – {{{x.doc.system.description}}}</span>
+        </div>
+        {{/each}}
+      </div>
+      {{#if c.hasMeditation}}
+      <div class="nr-gen-row selected">
+        <strong>{{localize "NR.Gen.MeditationLevel"}}</strong>
+        <span class="nr-gen-stepper">
+          <a data-action="meditation" data-delta="-1"><i class="fa-solid fa-minus"></i></a>
+          <span class="nr-gen-num">{{meditation}}</span>
+          <a data-action="meditation" data-delta="1"><i class="fa-solid fa-plus"></i></a>
+        </span>
+        <span class="nr-hint">{{localize "NR.Gen.Hint.meditation"}}</span>
+      </div>
+      {{/if}}
+      <h3 class="nr-section-title">{{localize "NR.Gen.MartialArts"}}</h3>
+      <div class="nr-gen-cards two">
+        {{#each styleArts as |x|}}
+        <div class="nr-gen-card {{#if x.level}}selected{{/if}}">
+          <div class="nr-gen-card-head"><strong>{{x.doc.name}}</strong>
+            <span class="nr-gen-stepper">
+              <a data-action="level" data-list="styleSkills" data-uuid="{{x.uuid}}" data-delta="-1" data-max="3"><i class="fa-solid fa-minus"></i></a>
+              <span class="nr-gen-num">{{x.level}}</span>
+              <a data-action="level" data-list="styleSkills" data-uuid="{{x.uuid}}" data-delta="1" data-max="3"><i class="fa-solid fa-plus"></i></a>
+            </span>
+          </div>
+          {{#each x.levels as |l|}}<div class="nr-gen-level {{#if l.active}}active{{/if}}"><strong>{{l.n}}</strong> <em>{{l.prerequisites}}</em>: {{l.effect}}</div>{{/each}}
+        </div>
+        {{/each}}
+      </div>
+    {{/if}}
+
+    {{!-- 7 Vor- & Nachteile ---------------------------------------- --}}
+    {{#if (eq stepId "advantages")}}
+      <h2>{{localize "NR.Gen.Step.advantages"}}</h2>
+      <p class="nr-hint">{{localize "NR.Gen.Hint.advantages"}}</p>
+      <p class="{{#if (gt c.markersSpent c.markersGained)}}nr-bad{{else}}nr-good{{/if}}"><strong>{{localize "NR.Sheet.Markers"}}: {{c.markersSpent}} / {{c.markersGained}}</strong> · {{localize "NR.Gen.Disadvantages"}} {{c.disadvantages}}/4</p>
+      <div class="nr-columns">
+        <div class="nr-col">
+          <h3 class="nr-section-title">{{localize "NR.Section.Disadvantages"}}</h3>
+          {{#each nachteile as |x|}}
+          <div class="nr-gen-row {{#if x.selected}}selected{{/if}}">
+            <input type="checkbox" {{checked x.selected}} data-action="toggle" data-list="advantages" data-uuid="{{x.uuid}}">
+            <a class="nr-gen-name" data-action="showItem" data-uuid="{{x.uuid}}">{{x.doc.name}}</a>
+            {{#if x.selected}}<span class="nr-gen-stepper"><a data-action="advMarkers" data-uuid="{{x.uuid}}" data-delta="-1"><i class="fa-solid fa-minus"></i></a><span class="nr-chip good">+{{x.markers}}</span><a data-action="advMarkers" data-uuid="{{x.uuid}}" data-delta="1"><i class="fa-solid fa-plus"></i></a></span>{{else}}<span class="nr-chip good">+{{x.markers}}</span>{{/if}}
+            <span class="nr-gen-desc">{{{x.doc.system.description}}}</span>
+          </div>
+          {{/each}}
+          {{#if weakSelected}}
+          <h4>{{localize "NR.Gen.WeakAttrs"}}</h4>
+          <div class="nr-gen-chips">{{#each attrChoices as |a|}}<a class="nr-chip {{#if a.weak}}bad{{/if}}" data-action="toggle" data-list="weakAttrs" data-key="{{a.key}}" data-max="3">{{a.label}}</a>{{/each}}</div>
+          {{/if}}
+        </div>
+        <div class="nr-col">
+          <h3 class="nr-section-title">{{localize "NR.Section.Advantages"}}</h3>
+          {{#each vorteile as |x|}}
+          <div class="nr-gen-row {{#if x.selected}}selected{{/if}}">
+            <input type="checkbox" {{checked x.selected}} data-action="toggle" data-list="advantages" data-uuid="{{x.uuid}}">
+            <a class="nr-gen-name" data-action="showItem" data-uuid="{{x.uuid}}">{{x.doc.name}}</a>
+            {{#if x.selected}}<span class="nr-gen-stepper"><a data-action="advMarkers" data-uuid="{{x.uuid}}" data-delta="-1"><i class="fa-solid fa-minus"></i></a><span class="nr-chip bad">−{{x.markers}}</span><a data-action="advMarkers" data-uuid="{{x.uuid}}" data-delta="1"><i class="fa-solid fa-plus"></i></a></span>{{else}}<span class="nr-chip bad">−{{x.markers}}</span>{{/if}}
+            <span class="nr-gen-desc">{{{x.doc.system.description}}}</span>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    {{/if}}
+
+    {{!-- 8 Ausrüstung --------------------------------------------- --}}
+    {{#if (eq stepId "gear")}}
+      <h2>{{localize "NR.Gen.Step.gear"}}</h2>
+      <p class="nr-hint">{{localize "NR.Gen.Hint.gear"}}</p>
+      <div class="nr-form-grid">
+        <label>{{localize "NR.Creation.GpMoney"}}</label>
+        <span><input type="number" data-field="moneyGp" value="{{s.moneyGp}}" min="0"> GP → <strong>{{nrMoney c.money}}</strong>{{#if c.restricted}} <span class="nr-bad">(halbiert, nur TS I–II)</span>{{/if}}</span>
+        {{#if c.awakened}}
+        <label>{{localize "NR.Gen.Capacity"}}</label>
+        <span class="{{#if (gt c.capacity 16)}}nr-bad{{else}}nr-good{{/if}}">{{c.capacity}} / 16 {{localize "NR.Gen.PerZone"}} · <span class="nr-hint">{{localize "NR.Gen.Hint.awakenedGear"}}</span>
+          {{#if c.capacityParts.length}}<br><span class="nr-hint">{{#each c.capacityParts as |p|}}{{p.name}} {{p.q}} × {{p.per}} = <strong>{{p.total}}</strong>{{#unless @last}} · {{/unless}}{{/each}}</span>{{/if}}</span>
+        {{/if}}
+        <label>{{localize "NR.Gen.Remaining"}}</label>
+        <span class="{{#if (lt c.moneyLeft 0)}}nr-bad{{else}}nr-good{{/if}}"><strong>{{nrMoney c.moneyLeft}}</strong> ({{localize "NR.Gen.Cart"}} {{nrMoney c.cartCost}})</span>
+      </div>
+      <div class="nr-gen-shop">
+        <div class="nr-gen-shop-list">
+          <nav class="nr-gen-tabs">{{#each shopTabs as |t|}}<label class="{{#if t.active}}active{{/if}}"><input type="radio" name="shopFilter" data-field="shopFilter" value="{{t.key}}" {{checked t.active}}> {{t.label}}</label>{{/each}}</nav>
+          <input type="text" name="shopSearch" value="{{s.shopSearch}}" placeholder="{{localize 'NR.Gen.Search'}}">
+          <table class="nr-gen-table">
+            {{#each shop as |i|}}
+            <tr class="{{#if i.qty}}selected{{/if}}">
+              <td><a data-action="showItem" data-uuid="{{i.uuid}}">{{i.doc.name}}</a><div class="nr-hint">{{nrJoin i.stats " · "}}</div></td>
+              <td class="nr-num">{{nrMoney i.price}}</td>
+              <td class="nr-gen-stepper">
+                <a data-action="cart" data-uuid="{{i.uuid}}" data-delta="-1"><i class="fa-solid fa-minus"></i></a>
+                <span>{{i.qty}}</span>
+                <a data-action="cart" data-uuid="{{i.uuid}}" data-delta="1"><i class="fa-solid fa-plus"></i></a>
+              </td>
+            </tr>
+            {{/each}}
+          </table>
+        </div>
+        <div class="nr-gen-cart">
+          <h4><i class="fa-solid fa-cart-shopping"></i> {{localize "NR.Gen.Cart"}}</h4>
+          {{#each cart as |i|}}<div class="nr-gen-cart-row"><span>{{i.qty}}× {{i.name}}</span><span>{{nrMoney i.total}}</span></div>{{else}}<p class="nr-hint">{{localize "NR.Gen.CartEmpty"}}</p>{{/each}}
+          <p class="nr-hint">{{localize "NR.Gen.StartGear"}}</p>
+        </div>
+      </div>
+    {{/if}}
+
+    {{!-- 9 Merkmale & Butterfly ------------------------------------ --}}
+    {{#if (eq stepId "traits")}}
+      <h2>{{localize "NR.Gen.Step.traits"}}</h2>
+      <p class="nr-hint">{{localize "NR.Gen.Hint.traits"}} <a class="nr-btn tiny" data-action="randomTraits"><i class="fa-solid fa-shuffle"></i> {{localize "NR.Gen.Random"}}</a> · {{s.traits.length}}/3</p>
+      <div class="nr-columns">
+        <div class="nr-col">
+          <h3 class="nr-section-title justice">{{localize "NR.Section.Justice"}}</h3>
+          <div class="nr-gen-chips">{{#each justice as |x|}}<a class="nr-chip {{#if x.selected}}good{{/if}}" data-action="toggle" data-list="traits" data-uuid="{{x.uuid}}" data-max="3" data-tooltip="{{x.doc.system.psycheRange}}">{{x.doc.name}}</a>{{/each}}</div>
+        </div>
+        <div class="nr-col">
+          <h3 class="nr-section-title chaos">{{localize "NR.Section.Chaos"}}</h3>
+          <div class="nr-gen-chips">{{#each chaos as |x|}}<a class="nr-chip {{#if x.selected}}bad{{/if}}" data-action="toggle" data-list="traits" data-uuid="{{x.uuid}}" data-max="3" data-tooltip="{{x.doc.system.psycheRange}}">{{x.doc.name}}</a>{{/each}}</div>
+        </div>
+      </div>
+      <h3 class="nr-section-title">Butterfly Effect</h3>
+      <p class="nr-hint">{{localize "NR.Gen.Hint.butterfly"}}</p>
+      <div class="nr-button-row">
+        <a class="nr-btn" data-action="rollButterfly"><i class="fa-solid fa-dice"></i> {{localize "NR.Gen.RollButterfly"}}</a>
+        {{#if s.butterfly.red}}<span class="nr-die-pair"><span class="nr-die hazard">{{s.butterfly.red}}</span><span class="nr-die">{{s.butterfly.white}}</span></span>{{/if}}
+      </div>
+      <div class="nr-form-grid">
+        <label>{{localize "NR.Progress.Butterfly"}}</label>
+        <select data-field="butterfly.choice">
+          <option value="">–</option>
+          {{#each butterflyOptions as |b|}}<option value="{{b.key}}" {{#if b.selected}}selected{{/if}}>{{#if b.rolled}}★ {{/if}}{{b.label}}{{#if b.skills}} – {{b.skills}}{{/if}}</option>{{/each}}
+        </select>
+        {{#if c.extraTalented}}
+        <label>{{localize "NR.Progress.Butterfly2"}}</label>
+        <select data-field="butterfly.choice2">
+          <option value="">–</option>
+          {{#each butterflyOptions as |b|}}<option value="{{b.key}}" {{#if b.selected2}}selected{{/if}}>{{b.label}}{{#if b.skills}} – {{b.skills}}{{/if}}</option>{{/each}}
+        </select>
+        {{/if}}
+      </div>
+      <p class="nr-hint">{{localize "NR.Gen.Hint.butterflyChoice"}}</p>
+    {{/if}}
+
+    {{!-- 10 Zusammenfassung ----------------------------------------- --}}
+    {{#if (eq stepId "summary")}}
+      <h2>{{localize "NR.Gen.Step.summary"}}</h2>
+      <div class="nr-gen-summary">
+        <img src="{{s.img}}" class="nr-portrait" alt="">
+        <div>
+          <h3>{{#if s.name}}{{s.name}}{{else}}<span class="nr-bad">{{localize "NR.Gen.Issue.Name"}}</span>{{/if}}</h3>
+          <p>{{sp.name}} · {{s.concept}} · {{c.level.label}}</p>
+        </div>
+      </div>
+      <table class="nr-gen-table summary">
+        <tr><th>{{localize "NR.Section.Attributes"}}</th><td>{{summary.attributes}}</td></tr>
+        <tr><th>{{localize "NR.Section.Skills"}}</th><td>{{summary.skills}}</td></tr>
+        <tr><th>{{localize "NR.Gen.Languages"}}</th><td>{{summary.languages}}</td></tr>
+        <tr><th>{{localize "NR.Section.Abnormalities"}}</th><td>{{summary.abnormal}}</td></tr>
+        <tr><th>{{localize "NR.Section.BioTraits"}}</th><td>{{summary.bio}}</td></tr>
+        <tr><th>PSI</th><td>{{summary.psi}}<br><span class="nr-hint">{{summary.apps}}</span></td></tr>
+        <tr><th>{{localize "NR.Section.StyleSkills"}}</th><td>{{summary.style}}</td></tr>
+        <tr><th>{{localize "NR.Gen.Step.advantages"}}</th><td>{{summary.advantages}}</td></tr>
+        <tr><th>{{localize "NR.Gen.Traits"}}</th><td>{{summary.traits}}</td></tr>
+        <tr><th>Butterfly Effect</th><td>{{summary.butterfly}}</td></tr>
+        <tr><th>GP</th><td>{{c.spent}} / {{c.available}}</td></tr>
+        <tr><th>New Dollar</th><td>{{nrMoney c.moneyLeft}}</td></tr>
+      </table>
+      {{#if c.issues.length}}
+      <div class="nr-alert"><strong>{{localize "NR.Gen.OpenIssues"}}</strong>
+        <ul>{{#each c.issues as |i|}}<li><a data-action="goto" data-step="{{i.step}}">{{i.msg}}</a></li>{{/each}}</ul>
+      </div>
+      {{else}}
+      <p class="nr-good"><i class="fa-solid fa-check"></i> {{localize "NR.Gen.AllGood"}}</p>
+      {{/if}}
+    {{/if}}
+    </div>
+
+    <footer class="nr-gen-footer">
+      {{#unless isFirst}}<a class="nr-btn" data-action="prev"><i class="fa-solid fa-arrow-left"></i> {{localize "NR.Gen.Prev"}}</a>{{/unless}}
+      <span class="nr-gen-issues">{{#each c.issues as |i|}}{{#if (eq i.step ../step)}}<span class="nr-bad"><i class="fa-solid fa-triangle-exclamation"></i> {{i.msg}}</span>{{/if}}{{/each}}</span>
+      {{#if isLast}}
+      <a class="nr-btn primary" data-action="create"><i class="fa-solid fa-user-check"></i> {{localize "NR.Gen.Create"}}</a>
+      {{else}}
+      <a class="nr-btn primary" data-action="next">{{localize "NR.Gen.Next"}} <i class="fa-solid fa-arrow-right"></i></a>
+      {{/if}}
+    </footer>
+  </section>
+</div>

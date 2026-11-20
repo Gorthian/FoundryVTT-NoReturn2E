@@ -16,8 +16,12 @@
 
       <h3 class="nr-section-title">{{localize "NR.Section.Organism"}}</h3>
       <div class="nr-grid-2">
+        {{#if awakened}}
+        <label>{{localize "NR.Status.Organism"}}</label><span class="nr-hint">{{localize "NR.Awakened.NoOrganism"}}</span>
+        {{else}}
         <label>{{localize "NR.Status.Organism"}}</label>
         <span><span class="nr-derived strong">{{system.org.value}}</span> · {{system.org.band.label}}</span>
+        {{/if}}
         <label>{{localize "NR.Sheet.Base"}} / {{localize "NR.Sheet.Loss"}}</label>
         <span><input type="number" name="system.organismus.base" value="{{system.organismus.base}}"> / <input type="number" name="system.organismus.loss" value="{{system.organismus.loss}}">{{#if system.org.implantLoss}} <span class="nr-hint">(Implantate −{{system.org.implantLoss}})</span>{{/if}}</span>
         <label>{{localize "NR.Status.Psyche"}}</label>
@@ -62,7 +66,7 @@
       <h3 class="nr-section-title">{{localize "NR.Section.Abnormalities"}} <a class="nr-add" data-action="createItem" data-type="abnormality"><i class="fa-solid fa-plus"></i></a></h3>
       <ol class="nr-list">{{#each abnormalities as |r|}}{{> "systems/noreturn/templates/actor/parts/item-row.hbs" item=r.item stats=r.stats}}{{else}}<li class="nr-empty">–</li>{{/each}}</ol>
 
-      <h3 class="nr-section-title">{{localize "NR.Section.BioTraits"}} <a class="nr-add" data-action="createItem" data-type="bioTrait"><i class="fa-solid fa-plus"></i></a></h3>
+      <h3 class="nr-section-title">{{#if awakened}}{{localize "NR.Gen.Adaption"}}{{else}}{{localize "NR.Section.BioTraits"}}{{/if}} <a class="nr-add" data-action="createItem" data-type="bioTrait"><i class="fa-solid fa-plus"></i></a></h3>
       <ol class="nr-list">{{#each bioTraits as |r|}}{{> "systems/noreturn/templates/actor/parts/item-row.hbs" item=r.item stats=r.stats}}{{else}}<li class="nr-empty">–</li>{{/each}}</ol>
 
       <h3 class="nr-section-title">{{localize "NR.Section.StyleSkills"}} <a class="nr-add" data-action="createItem" data-type="styleSkill"><i class="fa-solid fa-plus"></i></a></h3>
