@@ -723,7 +723,8 @@
    "prerequisites": "GE 4, HA 4, WI 3",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Fertigkeit „Ambrosia“ (HA): Getränke mit Inspirieren-Bonus für zwei Stunden. <em class=\"nr-ref\">(NoReturn 2E, S. 182)</em></p>"
+   "description": "<p>Fertigkeit „Ambrosia“ (HA): Getränke mit Inspirieren-Bonus für zwei Stunden. <em class=\"nr-ref\">(NoReturn 2E, S. 182)</em></p>",
+   "hint": "<p>Einsetzen: Probe auf die Zusatzfertigkeit „Ambrosia“ (HA), die beim ersten Einsatz freigeschaltet wird. Das Getränk gibt dem Ziel für zwei Stunden Bonuswürfel wie Inspirieren (+1W je 20 Punkte); Ziel vorher markieren.</p>"
   },
   "effects": [],
   "folder": null,
