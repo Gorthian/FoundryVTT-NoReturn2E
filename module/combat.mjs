@@ -211,7 +211,9 @@ export async function attackWithWeapon(actor, weapon) {
     strengthMalusPoints = diff * 10;
   }
 
-  const malus = actor.getMalus() + opts.malusDice + opts.disadvantages * 2 + aimMalus + recoilMalus + strengthMalusDice;
+  const physMalus = actor.physicalMalus(skill.attr);
+  if (physMalus) styleNotes.push(game.i18n.format("NR.Style.PhysicalMalus", { n: physMalus }));
+  const malus = actor.getMalus() + opts.malusDice + opts.disadvantages * 2 + aimMalus + recoilMalus + strengthMalusDice + physMalus;
   // Schadenswürfel aus Style-Skills (Bonuswürfel auf die Schadensprobe, nie Hazard-Di)
   const styleDamageDice = styleDice(actor, "damage", groups);
   if (styleDamageDice) styleNotes.push(game.i18n.format("NR.Style.DamageBonus", { n: styleDamageDice }));
@@ -421,7 +423,9 @@ export async function defendAgainst(message, tokenUuid, none = false, index = 1)
     }
 
     // Steigender Malus je weiterer Defensivaktion – ohne 1-Würfel-Regel
-    const malus = actor.getMalus() + opts.malusDice + actionMalus + extraMalus;
+    const physMalus = skillKey ? actor.physicalMalus(actor.system.skillList[skillKey]?.attr) : 0;
+    if (physMalus) styleNotes.push(game.i18n.format("NR.Style.PhysicalMalus", { n: physMalus }));
+    const malus = actor.getMalus() + opts.malusDice + actionMalus + extraMalus + physMalus;
     const effective = dice + bonus - malus;
     if (!freeRide) await actor.update({ "system.combat.defenses": count + 1 });
     if (effective < 1) {

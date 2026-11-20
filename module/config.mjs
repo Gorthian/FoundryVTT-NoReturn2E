@@ -460,6 +460,7 @@ NR.modifierTargets = {
   "defense.dodgeMelee": "Verteidigung: Ausweichen gegen Nahkampf (Bonuswürfel)",
   "defense.parryBlade": "Verteidigung: Parade mit Klingenwaffe (Bonuswürfel)",
   "resist.leg": "Schadenswiderstand: Treffer an den Beinen (Bonuswürfel)",
+  "malus.physical": "Malus: körperliche Aktionen (Würfel)",
   "attributes.ge": "Attribut: Geschick",
   "attributes.st": "Attribut: Stärke",
   "attributes.ko": "Attribut: Konstitution",

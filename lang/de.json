@@ -470,7 +470,10 @@
       "VariantHint": "Gewählte PSI-Kraft, Element oder Waffenart (z. B. Telekinese, Hitze, Pistole).",
       "ExtraTargets": "Zusätzliche Ziele (Psionische Vielfältigkeit)",
       "ExtraTargetsHint": "Je weiterem Ziel sinkt die effektive Kraftstufe (KS) um 1.",
-      "MetamorphoseKs": "Metamorphose: +1 KS für Apps dieser Kraft"
+      "MetamorphoseKs": "Metamorphose: +1 KS für Apps dieser Kraft",
+      "PhysicalMalus": "−{n}W auf körperliche Aktionen (Style)",
+      "StateOn": "Zustand: aktiv",
+      "StateOff": "Zustand: inaktiv"
     },
     "Species": {
       "TP": "Trefferpunkte je Zone",
@@ -1531,6 +1534,9 @@
         },
         "resist": {
           "leg": "Schadenswiderstand: Treffer an den Beinen (Bonuswürfel)"
+        },
+        "malus": {
+          "physical": "Malus: körperliche Aktionen (Würfel)"
         }
       },
       "strikeLimbs": {

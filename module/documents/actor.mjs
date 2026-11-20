@@ -120,6 +120,11 @@ export class NRActor extends foundry.documents.Actor {
     return this.system.styles?.[key] ?? 0;
   }
 
+  /** Maluswürfel auf körperliche Aktionen (GE, ST, KO, BE) aus Items, z. B. Metamorphose. */
+  physicalMalus(attrKey) {
+    return ["ge", "st", "ko", "be"].includes(attrKey) ? (this.system.mods?.["malus.physical"] ?? 0) : 0;
+  }
+
   /** Stelle Adrenalin, Meditation und Regenerationspool wieder her (Rast: 6 h Schlaf + Nahrung). */
   async rest() {
     await this.update({
@@ -218,8 +223,10 @@ export class NRActor extends foundry.documents.Actor {
       await this.update({ "system.combat.overdrive": 0 });
     }
     if (overdrive) extraHtml += `<p class="nr-warn"><i class="fa-solid fa-gears"></i> Overdrive +${overdrive} Stärke</p>`;
+    const physMalus = resist ? 0 : this.physicalMalus(attrUsed);
+    if (physMalus) styleNotes.push(game.i18n.format("NR.Style.PhysicalMalus", { n: physMalus }));
     for (const n of styleNotes) extraHtml += `<p class="nr-good"><i class="fa-solid fa-star"></i> ${n}</p>`;
-    const malusTotal = (resist ? 0 : malus) + opts.malusDice + opts.disadvantages * 2;
+    const malusTotal = (resist ? 0 : malus) + opts.malusDice + opts.disadvantages * 2 + physMalus;
     const leiden = attrUsed ? (this.system.attr[attrUsed]?.leiden ?? 0) : 0;
     const sub = subtitle || (attrUsed ? `${this.system.attr[attrUsed].abbr} ${this.system.attr[attrUsed].total}` : "");
     return rollPool({

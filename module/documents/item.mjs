@@ -86,6 +86,12 @@ export class NRItem extends foundry.documents.Item {
   async useStyle() {
     const s = this.system;
     if (!this.actor) return this.toChat({ hint: s.hint });
+    // Umschaltbare Zustände (Metamorphose): Einsetzen wechselt zwischen aktiv und inaktiv
+    if (s.key === "metamorphose") {
+      const active = !s.active;
+      await this.update({ "system.active": active });
+      return this.toChat({ hint: s.hint, usesText: game.i18n.localize(active ? "NR.Style.StateOn" : "NR.Style.StateOff") });
+    }
     let usesText = null;
     if (s.uses.max > 0) {
       if (s.uses.value <= 0) {

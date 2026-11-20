@@ -470,7 +470,10 @@
       "VariantHint": "Chosen PSI power, element or weapon type (e.g. Telekinesis, heat, pistol).",
       "ExtraTargets": "Additional targets (Psionic Versatility)",
       "ExtraTargetsHint": "Each additional target lowers the effective power level (KS) by 1.",
-      "MetamorphoseKs": "Metamorphosis: +1 KS for apps of this power"
+      "MetamorphoseKs": "Metamorphosis: +1 KS for apps of this power",
+      "PhysicalMalus": "−{n}D on physical actions (style)",
+      "StateOn": "State: active",
+      "StateOff": "State: inactive"
     },
     "Species": {
       "TP": "HP per zone",
@@ -1531,6 +1534,9 @@
         },
         "resist": {
           "leg": "Damage resistance: hits to the legs (bonus dice)"
+        },
+        "malus": {
+          "physical": "Penalty: physical actions (dice)"
         }
       },
       "strikeLimbs": {

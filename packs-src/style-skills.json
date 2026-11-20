@@ -679,8 +679,14 @@
    "level": 1,
    "prerequisites": "Pyro-, Cryo- oder Elektrokinese 6; Willenskraft 6; WI 4",
    "levels": [],
-   "modifiers": [],
-   "description": "<p>Als Aktion Körper mit dem Element überziehen: 5 Schaden bei Berührung, immun gegen das Element, −1W körperlich, +1 KS für passende Apps. <em class=\"nr-ref\">(NoReturn 2E, S. 182)</em></p>"
+   "modifiers": [
+    {
+     "target": "malus.physical",
+     "value": 1
+    }
+   ],
+   "description": "<p>Als Aktion Körper mit dem Element überziehen: 5 Schaden bei Berührung, immun gegen das Element, −1W körperlich, +1 KS für passende Apps. <em class=\"nr-ref\">(NoReturn 2E, S. 182)</em></p>",
+   "hint": "<p>Einsetzen schaltet den Zustand um: Der Körper ist mit dem Element überzogen (Elektro/Hitze/Kälte, im Feld „Auswahl“ eintragen). Berührung verursacht 5 Elementarschaden, du bist immun gegen das Element, −1W auf körperliche Aktionen (automatisch) und +1 KS für Apps der passenden Kraft (automatisch).</p>"
   },
   "effects": [],
   "folder": null,
