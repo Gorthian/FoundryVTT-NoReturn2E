@@ -196,7 +196,8 @@
    "prerequisites": "Reaktion 6, Waffenkampf 6; GE, BE, WA 4",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Parade gegen Fernkampf mit Klingenwaffe ≥ 30 cm (mit Nachteil −2W). <em class=\"nr-ref\">(NoReturn 2E, S. 180)</em></p>"
+   "description": "<p>Parade gegen Fernkampf mit Klingenwaffe ≥ 30 cm (mit Nachteil −2W). <em class=\"nr-ref\">(NoReturn 2E, S. 180)</em></p>",
+   "hint": "<p>Defensivaktion: Fernkampfangriffe lassen sich mit einer Klingenwaffe ≥ 30 cm parieren (Nachteil −2W). Im Verteidigungsdialog Waffenkampf/Nahkampf wählen und die Klingenwaffe als Parade-Waffe angeben – der Malus wird automatisch eingerechnet.</p>"
   },
   "effects": [],
   "folder": null,
