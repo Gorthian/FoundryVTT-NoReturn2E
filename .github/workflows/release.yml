@@ -25,6 +25,15 @@ jobs:
           mv system.tmp system.json
           jq '{version, manifest, download}' system.json
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Compendien aus packs-src neu bauen
+        run: |
+          npm install --no-save classic-level
+          node tools/build-packs.mjs
+
       - name: Paket bauen
         run: |
           zip -r noreturn.zip system.json noreturn.mjs LICENSE.txt README.md \

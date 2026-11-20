@@ -4,7 +4,7 @@ import { poolDialog } from "../dice/roll-dialog.mjs";
 
 const { renderTemplate } = foundry.applications.handlebars;
 
-export class NRActor extends Actor {
+export class NRActor extends foundry.documents.Actor {
 
   /* -------------------------------------------- */
   /*  Datenaufbereitung                            */

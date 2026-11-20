@@ -63,7 +63,7 @@ export class NRItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     const context = await super._prepareContext(options);
     const item = this.item;
     const s = item.system;
-    const TE = foundry.applications.ux?.TextEditor?.implementation ?? TextEditor;
+    const TE = foundry.applications.ux.TextEditor.implementation;
     const opts = obj => Object.fromEntries(Object.entries(obj).map(([k, v]) => [k, typeof v === "string" ? v : v.label]));
     Object.assign(context, {
       item, system: s, source: item._source.system, config: NR, editable: this.isEditable,

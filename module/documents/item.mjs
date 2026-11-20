@@ -4,7 +4,7 @@ import { castPsiApp } from "../psi.mjs";
 
 const { renderTemplate } = foundry.applications.handlebars;
 
-export class NRItem extends Item {
+export class NRItem extends foundry.documents.Item {
 
   /** Standard-Icons je Typ. */
   static DEFAULT_ICONS = {
@@ -79,7 +79,7 @@ export class NRItem extends Item {
 
   /** Beschreibung als Chatkarte. */
   async toChat() {
-    const TE = foundry.applications.ux?.TextEditor?.implementation ?? TextEditor;
+    const TE = foundry.applications.ux.TextEditor.implementation;
     const description = await TE.enrichHTML(this.system.description ?? "", { relativeTo: this, secrets: this.isOwner });
     const content = await renderTemplate("systems/noreturn/templates/chat/item-card.hbs", {
       item: this, system: this.system, description, stats: this.chatStats()

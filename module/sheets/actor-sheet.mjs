@@ -6,7 +6,7 @@ import { downloadMannifest, promptImport } from "../apps/mannifest.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
-const TE = () => foundry.applications.ux?.TextEditor?.implementation ?? TextEditor;
+const TE = () => foundry.applications.ux.TextEditor.implementation;
 
 /**
  * Charakterbogen für Charaktere und NSC/Kreaturen.
