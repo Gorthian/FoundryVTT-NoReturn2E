@@ -326,6 +326,7 @@ STYLE_EXTRA = {
     "Parkour": {"hint": "Klettern- und Springen-Proben mit Mindestwurf unter 30 gelingen automatisch. Beim Sprung-/Sturzschaden den Springen-Wert addieren (manuelle Schadenseingabe)."},
     "Rage of Gods": {"hint": "Adrenalin auf Stärke(-Fertigkeiten) gibt zusätzlich +3W. Beim Adrenalineinsatz auf Proben mit Stärke wird der Bonus automatisch eingerechnet."},
     "Memorum [PSI-Kraft]": {"hint": "Die Haltungskosten aller Apps der gewählten PSI-Kraft sinken um 1 (mindestens 0). Die Kraft im Feld „Auswahl“ (oder im Namen in Klammern) eintragen, z. B. „Memorum [Telekinese]“. Je Kraft einmal wählbar."},
+    "Psionische Vielfältigkeit": {"hint": "Eine App kann zusätzliche Ziele erfassen; je zusätzlichem Ziel sinkt die effektive Kraftstufe (KS) um 1. Im PSI-Dialog das Feld „Zusätzliche Ziele“ ausfüllen."},
     # (Ende STYLE_EXTRA)
 }
 

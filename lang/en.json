@@ -467,7 +467,10 @@
       },
       "MemorumShort": "Memorum",
       "Variant": "Selection",
-      "VariantHint": "Chosen PSI power, element or weapon type (e.g. Telekinesis, heat, pistol)."
+      "VariantHint": "Chosen PSI power, element or weapon type (e.g. Telekinesis, heat, pistol).",
+      "ExtraTargets": "Additional targets (Psionic Versatility)",
+      "ExtraTargetsHint": "Each additional target lowers the effective power level (KS) by 1.",
+      "MetamorphoseKs": "Metamorphosis: +1 KS for apps of this power"
     },
     "Species": {
       "TP": "HP per zone",

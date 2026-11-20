@@ -467,7 +467,10 @@
       },
       "MemorumShort": "Memorum",
       "Variant": "Auswahl",
-      "VariantHint": "Gewählte PSI-Kraft, Element oder Waffenart (z. B. Telekinese, Hitze, Pistole)."
+      "VariantHint": "Gewählte PSI-Kraft, Element oder Waffenart (z. B. Telekinese, Hitze, Pistole).",
+      "ExtraTargets": "Zusätzliche Ziele (Psionische Vielfältigkeit)",
+      "ExtraTargetsHint": "Je weiterem Ziel sinkt die effektive Kraftstufe (KS) um 1.",
+      "MetamorphoseKs": "Metamorphose: +1 KS für Apps dieser Kraft"
     },
     "Species": {
       "TP": "Trefferpunkte je Zone",
