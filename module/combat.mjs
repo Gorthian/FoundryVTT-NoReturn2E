@@ -345,7 +345,10 @@ export async function defendAgainst(message, tokenUuid, none = false, index = 1)
     const skills = Object.values(actor.system.skillList).filter(s => s.defensive);
     const custom = actor.items.filter(i => i.type === "skill" && i.system.defensive);
     const psiApps = actor.items.filter(i => i.type === "psiApp" && i.system.defensive);
-    const gear = actor.items.filter(i => i.type === "weapon" && i.system.equipped && (i.system.parryDice || i.system.blockDice));
+    // Gun-Fu 1: Feuerwaffen in den Händen dürfen zum Parieren dienen
+    const gunFuParry = actor.styleLevel("gunFu") >= 1;
+    const gear = actor.items.filter(i => i.type === "weapon" && i.system.equipped
+      && (i.system.parryDice || i.system.blockDice || (gunFuParry && !isMeleeWeapon(i))));
     const blockAsNahkampf = actor.styleLevel("kravMaga") >= 1;
     const parryVia = nahkampfParryVia(actor);
     const tally = actor.getFlag("noreturn", "defTally");
@@ -384,6 +387,11 @@ export async function defendAgainst(message, tokenUuid, none = false, index = 1)
       const s = actor.system.skillList[key];
       dice = s.pool; defLabel = s.label; skillKey = key;
       isBlock = key === "blocken";
+      // Escrima 2: Nahkampf und Waffenkampf sind austauschbar – der bessere Wert zählt
+      if (actor.styleLevel("escrima") >= 2 && ["nahkampf", "waffenkampf"].includes(key)) {
+        const other = actor.system.skillList[key === "nahkampf" ? "waffenkampf" : "nahkampf"];
+        if (other.pool > dice) { dice = other.pool; styleNotes.push(game.i18n.format("NR.Style.EscrimaSwap", { skill: other.label })); }
+      }
     } else if (type === "block") {
       // Krav Maga 1: Nahkampf statt Blocken
       const s = actor.system.skillList[key];

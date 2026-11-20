@@ -1649,8 +1649,25 @@
      "effect": "Beinangriffe +3W."
     }
    ],
-   "modifiers": [],
-   "description": "<p>Brasilianischer Kampftanz. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>"
+   "modifiers": [
+    {
+     "target": "defense.dodgeMelee",
+     "value": 3,
+     "level": 1
+    },
+    {
+     "target": "damage.leg",
+     "value": 3,
+     "level": 2
+    },
+    {
+     "target": "attack.leg",
+     "value": 3,
+     "level": 3
+    }
+   ],
+   "description": "<p>Brasilianischer Kampftanz. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>",
+   "hint": "<p>Stufe 1: Ausweichen gegen Nahkampfangriffe +3W (automatisch). Stufe 2: Beinschaden +3W (Angriffsart „Tritt/Knie/Schienbein“). Stufe 3: Beinangriffe +3W auf den Angriff.</p>"
   },
   "effects": [],
   "folder": null,

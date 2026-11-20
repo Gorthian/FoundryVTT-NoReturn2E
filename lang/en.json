@@ -499,7 +499,9 @@
       "PowerNapDone": "{name}: Power Nap – adrenaline, meditation and regeneration pool are refilled.",
       "BaKaiDoBite": "Ba-Kai-Do 1: biting in melee carries no combat disadvantage.",
       "KenjutsuDraw": "Kenjutsu 1: the sword may be drawn and used to attack in the same action.",
-      "TwoHits": "A hit counts as two hits on two zones (two damage rolls)"
+      "TwoHits": "A hit counts as two hits on two zones (two damage rolls)",
+      "EscrimaSwap": "Escrima: {skill} instead of the chosen skill (interchangeable)",
+      "LegResist": "Kick-Boxing: hits to the legs +{n}D on damage resistance"
     },
     "Species": {
       "TP": "HP per zone",

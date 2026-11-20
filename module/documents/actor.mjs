@@ -1,7 +1,7 @@
 import { NR } from "../config.mjs";
 import { rollPool, applyChatMode, buildFormula } from "../dice/pool.mjs";
 import { poolDialog } from "../dice/roll-dialog.mjs";
-import { skillStyleEffects, styleDialogContent } from "../styles.mjs";
+import { skillStyleEffects, styleDialogContent, LEG_ZONES } from "../styles.mjs";
 
 const { renderTemplate } = foundry.applications.handlebars;
 
@@ -332,12 +332,16 @@ export class NRActor extends foundry.documents.Actor {
 
     let bonusDice = 0;
     let usedAdrenalin = false;
+    // Kick-Boxen: Treffer ausschließlich an den Beinen → Bonuswürfel auf den Widerstand (resist.leg)
+    const legBonus = zones.length && zones.every(z => LEG_ZONES.includes(String(z))) ? (this.system.mods?.["resist.leg"] ?? 0) : 0;
+    bonusDice += legBonus;
     if (!skipDialog) {
       const choice = await foundry.applications.api.DialogV2.wait({
         window: { title: game.i18n.localize("NR.Roll.Resist"), icon: "fa-solid fa-shield-heart" },
         classes: ["noreturn", "nr-roll-dialog"],
         content: `<p>${game.i18n.format("NR.Roll.ResistPrompt", { amount: effAmount, zone: zones.map(z => NR.zones[z].label).join(", "), armor: armor.points })}</p>
           ${armor.notes.length ? `<p class="nr-hint">${armor.notes.join("<br>")}</p>` : ""}
+          ${legBonus ? `<p class="nr-hint"><i class="fa-solid fa-star"></i> ${game.i18n.format("NR.Style.LegResist", { n: legBonus })}</p>` : ""}
           <div class="form-group"><label>${game.i18n.localize("NR.Roll.BonusDice")}</label><input type="number" name="bonus" value="0"></div>
           ${this.system.adrenalinLeft > 0 ? `<div class="form-group"><label>${game.i18n.format("NR.Roll.UseAdrenalin", { n: this.system.adrenalinBonus, left: this.system.adrenalinLeft })}</label><input type="checkbox" name="adrenalin"></div>` : ""}`,
         buttons: [{
@@ -346,7 +350,7 @@ export class NRActor extends foundry.documents.Actor {
         }, { action: "cancel", label: game.i18n.localize("Cancel") }]
       }).catch(() => null);
       if (!choice || choice === "cancel") return null;
-      bonusDice = choice.bonus;
+      bonusDice = legBonus + choice.bonus;
       if (choice.adrenalin && await this.spendAdrenalin()) { bonusDice += this.system.adrenalinBonus; usedAdrenalin = true; }
     }
 

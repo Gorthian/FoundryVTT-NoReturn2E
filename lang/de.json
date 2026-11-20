@@ -499,7 +499,9 @@
       "PowerNapDone": "{name}: Power Nap – Adrenalin, Meditation und Regenerationspool sind wieder aufgefüllt.",
       "BaKaiDoBite": "Ba-Kai-Do 1: Beißen im Nahkampf ist ohne Kampfnachteil möglich.",
       "KenjutsuDraw": "Kenjutsu 1: Das Schwert darf in derselben Aktion gezogen und zum Angriff genutzt werden.",
-      "TwoHits": "Trifft ein Treffer, zählt er als zwei Treffer an zwei Zonen (zwei Schadenswürfe)"
+      "TwoHits": "Trifft ein Treffer, zählt er als zwei Treffer an zwei Zonen (zwei Schadenswürfe)",
+      "EscrimaSwap": "Escrima: {skill} statt der gewählten Fertigkeit (austauschbar)",
+      "LegResist": "Kick-Boxen: Treffer an den Beinen +{n}W auf den Schadenswiderstand"
     },
     "Species": {
       "TP": "Trefferpunkte je Zone",
