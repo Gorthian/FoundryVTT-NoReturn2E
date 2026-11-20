@@ -1715,8 +1715,20 @@
      "effect": "Mehrfachangriffe +3W Angriff und Schaden."
     }
    ],
-   "modifiers": [],
-   "description": "<p>Philippinische Stock- und waffenlose Kunst. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>"
+   "modifiers": [
+    {
+     "target": "attack.multi",
+     "value": 3,
+     "level": 3
+    },
+    {
+     "target": "damage.multi",
+     "value": 3,
+     "level": 3
+    }
+   ],
+   "description": "<p>Philippinische Stock- und waffenlose Kunst. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>",
+   "hint": "<p>Stufe 1: Parade mit Nahkampf oder Waffenkampf. Stufe 2: Nahkampf und Waffenkampf sind austauschbar (Fertigkeitswahl im Angriffsdialog, bessere Fertigkeit bei der Parade). Stufe 3: Mehrfachangriffe im Nahkampf +3W auf Angriff und Schaden.</p>"
   },
   "effects": [],
   "folder": null,
