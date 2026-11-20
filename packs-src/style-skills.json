@@ -1874,8 +1874,25 @@
      "effect": "Waffenloser Schaden +4W."
     }
    ],
-   "modifiers": [],
-   "description": "<p>Traditioneller unbewaffneter Kampf. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>"
+   "modifiers": [
+    {
+     "target": "defense.blockUnarmed",
+     "value": 2,
+     "level": 1
+    },
+    {
+     "target": "dice.nahkampf",
+     "value": 2,
+     "level": 2
+    },
+    {
+     "target": "damage.unarmed",
+     "value": 4,
+     "level": 3
+    }
+   ],
+   "description": "<p>Traditioneller unbewaffneter Kampf. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>",
+   "hint": "<p>Stufe 1: waffenloses Blocken +2W (Block ohne Schild). Stufe 2: Nahkampf +2W. Stufe 3: waffenloser Schaden +4W.</p>"
   },
   "effects": [],
   "folder": null,
