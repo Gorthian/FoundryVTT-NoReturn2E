@@ -155,6 +155,7 @@ export async function attackWithWeapon(actor, weapon) {
   const groups = strikeGroups(weapon, { limb: opts.limb, zpc: opts.zpc, multi: opts.multi, gunFuMelee });
   const maxMulti = maxMultiAttacks(actor, weapon, { gunFuMelee });
   const styleNotes = [];
+  let skillBonusExtra = 0;
   if (opts.multi > maxMulti) styleNotes.push(game.i18n.format("NR.Style.MultiExceeded", { n: maxMulti }));
 
   const mode = opts.mode ? NR.fireModes[opts.mode] : null;
@@ -224,9 +225,17 @@ export async function attackWithWeapon(actor, weapon) {
 
   const physMalus = actor.physicalMalus(skill.attr);
   if (physMalus) styleNotes.push(game.i18n.format("NR.Style.PhysicalMalus", { n: physMalus }));
-  const malus = actor.getMalus() + opts.malusDice + opts.disadvantages * 2 + aimMalus + recoilMalus + strengthMalusDice + physMalus;
+  const malus = actor.getMalus() + opts.malusDice + opts.disadvantages * 2 + aimMalus + recoilMalus + strengthMalusDice + physMalus - skillBonusExtra;
   // Schadenswürfel aus Style-Skills (Bonuswürfel auf die Schadensprobe, nie Hazard-Di)
-  const styleDamageDice = styleDice(actor, "damage", groups);
+  let styleDamageDice = styleDice(actor, "damage", groups);
+  // Ringen 3: Im Clinch +2W auf Nahkampf und Schaden gegen den Clinch-Partner
+  const clinch = actor.getFlag("noreturn", "clinch");
+  if (clinch?.holder && targets.length && !targets.some(t => t.actorUuid === clinch.partnerUuid)) styleNotes.push(game.i18n.localize("NR.Style.ClinchOtherTarget"));
+  if (clinch?.holder && actor.styleLevel("ringen") >= 3 && melee && targets.some(t => t.actorUuid === clinch.partnerUuid)) {
+    styleDamageDice += 2;
+    skillBonusExtra = 2;
+    styleNotes.push(game.i18n.localize("NR.Style.ClinchBonus"));
+  }
   if (styleDamageDice) styleNotes.push(game.i18n.format("NR.Style.DamageBonus", { n: styleDamageDice }));
   const dice = skill.pool;
   const subtitle = `${attr.abbr} ${attr.total}${skill.trained ? ` + ${skill.label} ${skill.value}` : " − 2 (ungeübt)"}`;
@@ -480,7 +489,8 @@ export async function defendAgainst(message, tokenUuid, none = false, index = 1)
     index,
     attack,
     defender: { tokenUuid, actorUuid: actor.uuid, name: tokenDoc.name },
-    defTotal, defLabel, hit, diff, goodHits, blocked: blocked && !hit, blockedAll, damageAllowed
+    defTotal, defLabel, hit, diff, goodHits, blocked: blocked && !hit, blockedAll, damageAllowed,
+    canClinch: hit && attack.melee && (await fromUuid(attack.actorUuid))?.styleLevel?.("ringen") >= 1
   };
   const content = await renderTemplate("systems/noreturn/templates/chat/defense-card.hbs", {
     ...outcome, blockNote, attackTotal: attack.total, weaponName: attack.weaponName,
@@ -729,6 +739,14 @@ export class NRCombatant extends Combatant {
 
 /** Setze Defensivaktionen zu Beginn jeder Runde zurück, Regeneration zu Beginn des eigenen Zugs. */
 export function registerCombatHooks() {
+  // Ringen: Ein Clinch endet, wenn ein Beteiligter bewusstlos wird oder ausscheidet (nur Spielleitung, mit Hinweis)
+  Hooks.on("updateActor", async actor => {
+    if (!game.user.isGM || !actor.getFlag?.("noreturn", "clinch")) return;
+    if (actor.system.unconscious || actor.system.lethalDestroyed) {
+      const { endClinch } = await import("./style-actions.mjs");
+      await endClinch(actor, "NR.Style.ClinchOut");
+    }
+  });
   Hooks.on("updateCombat", async (combat, changed) => {
     if (!game.user.isGM) return;
     if ("round" in changed) {

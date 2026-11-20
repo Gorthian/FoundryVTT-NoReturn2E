@@ -1,4 +1,5 @@
-import { applyChatMode } from "./dice/pool.mjs";
+import { applyChatMode, rollPool } from "./dice/pool.mjs";
+import { applyBuffTo } from "./socket.mjs";
 
 /**
  * Aktive Style-Skills, die eine Probe mit anschließender Wirkung auf Ziele verbinden
@@ -135,4 +136,55 @@ export async function useSplit(actor) {
   };
   applyChatMode(msgData);
   return ChatMessage.create(msgData);
+}
+
+/* -------------------------------------------- */
+/*  Ringen: Clinch                                */
+/* -------------------------------------------- */
+
+const note = (actor, html) => {
+  const msgData = { speaker: ChatMessage.getSpeaker({ actor }), content: `<div class="nr-card"><p class="nr-result"><i class="fa-solid fa-hands-holding"></i> ${html}</p></div>` };
+  applyChatMode(msgData);
+  return ChatMessage.create(msgData);
+};
+
+/** Clinch ansetzen (Ringen 1): Statt Schaden hält der Angreifer das Ziel; ein Clinch je Ringer. */
+export async function startClinch(defense) {
+  const holder = await fromUuid(defense.attack.actorUuid);
+  const target = (await fromUuid(defense.defender.tokenUuid))?.actor ?? await fromUuid(defense.defender.actorUuid);
+  if (!holder || !target) return null;
+  if (holder.getFlag("noreturn", "clinch") || target.getFlag("noreturn", "clinch")) {
+    return ui.notifications.warn(game.i18n.localize("NR.Style.ClinchBusy"));
+  }
+  await applyBuffTo(holder.uuid, { kind: "clinch", partnerUuid: target.uuid, holder: true });
+  await applyBuffTo(target.uuid, { kind: "clinch", partnerUuid: holder.uuid, holder: false });
+  return note(holder, esc(game.i18n.format("NR.Style.ClinchStarted", { holder: holder.name, target: target.name })));
+}
+
+/** Clinch beenden (auf beiden Seiten). */
+export async function endClinch(actor, reasonKey = "NR.Style.ClinchEnded") {
+  const c = actor.getFlag("noreturn", "clinch");
+  if (!c) return null;
+  await applyBuffTo(actor.uuid, { kind: "clinchEnd" });
+  const partner = await fromUuid(c.partnerUuid);
+  if (partner) await applyBuffTo(partner.uuid, { kind: "clinchEnd" });
+  return note(actor, esc(game.i18n.format(reasonKey, { a: actor.name, b: partner?.name ?? "?" })));
+}
+
+/**
+ * Befreien (Gehaltener): konkurrierende Stärkeprobe gegen den Halter (Ringen 2: +3W für den Halter).
+ * Der Halter kann den Clinch jederzeit auflösen.
+ */
+export async function breakClinch(actor) {
+  const c = actor.getFlag("noreturn", "clinch");
+  if (!c) return null;
+  if (c.holder) return endClinch(actor);
+  const holder = await fromUuid(c.partnerUuid);
+  if (!holder) return endClinch(actor);
+  const mine = await actor.rollAttribute("st", { skipDialog: true, mw: 0 });
+  if (!mine) return null;
+  const bonus = holder.styleLevel("ringen") >= 2 ? 3 : 0;
+  const theirs = await rollPool({ actor: holder, label: game.i18n.localize("NR.Style.ClinchHold"), dice: holder.system.attr.st.total, bonusDice: bonus, malusDice: holder.getMalus() });
+  if (mine.total > theirs.total) return endClinch(actor, "NR.Style.ClinchBrokenFree");
+  return note(actor, esc(game.i18n.format("NR.Style.ClinchHeld", { a: actor.name, b: holder.name })));
 }

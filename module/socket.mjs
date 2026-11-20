@@ -53,10 +53,18 @@ export async function applyBuffTo(targetUuid, payload) {
   return "delegated";
 }
 
-async function applyBuff(actor, { kind, n }) {
+async function applyBuff(actor, payload) {
+  if (payload.kind === "clinch" || payload.kind === "clinchEnd") return applyClinch(actor, payload);
+  const { kind, n } = payload;
   if (kind === "bonus") return actor.update({ "system.tempBonus": actor.system.tempBonus + n });
   if (kind === "malus") return actor.update({ "system.tempMalus": actor.system.tempMalus + n });
   if (kind === "adrenalin") return actor.update({ "system.special.adrenalin.used": 0 });
+}
+
+/** Clinch (Ringen): Zustand am Akteur setzen oder beenden. */
+async function applyClinch(actor, { kind, partnerUuid, holder }) {
+  if (kind === "clinch") return actor.setFlag("noreturn", "clinch", { partnerUuid, holder: !!holder });
+  if (kind === "clinchEnd") return actor.unsetFlag("noreturn", "clinch");
 }
 
 async function onMessage(msg) {

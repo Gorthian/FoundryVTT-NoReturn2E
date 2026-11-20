@@ -3,6 +3,7 @@ import { applyPsiDamage } from "./psi.mjs";
 import { rollPool } from "./dice/pool.mjs";
 import { NR } from "./config.mjs";
 import { applyDamageTo, applyBuffTo } from "./socket.mjs";
+import { startClinch } from "./style-actions.mjs";
 
 /**
  * Chat-Interaktionen: Buttons in Würfelkarten.
@@ -35,7 +36,7 @@ function prepareButtons(message, el) {
       const doc = uuid ? fromUuidSync(uuid) : null;
       const actor = doc?.actor ?? doc;
       allowed = game.user.isGM || !!actor?.isOwner;
-    } else if (action === "damage") {
+    } else if (action === "damage" || action === "clinch") {
       const actor = f.defense?.attack?.actorUuid ? fromUuidSync(f.defense.attack.actorUuid) : null;
       allowed = game.user.isGM || !!actor?.isOwner;
     } else if (action === "reroll") {
@@ -56,6 +57,8 @@ async function onAction(message, btn) {
       return defendAgainst(message, btn.dataset.tokenUuid, true, Number(btn.dataset.index) || 1);
     case "damage":
       return rollDamage(f.defense);
+    case "clinch":
+      return startClinch(f.defense);
     case "resist":
       return resistFromMessage(message);
     case "psiDamage":

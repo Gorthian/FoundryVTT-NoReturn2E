@@ -150,7 +150,13 @@ export class NRActor extends foundry.documents.Actor {
 
   /** Maluswürfel auf körperliche Aktionen (GE, ST, KO, BE) aus Items, z. B. Metamorphose. */
   physicalMalus(attrKey) {
-    return ["ge", "st", "ko", "be"].includes(attrKey) ? (this.system.mods?.["malus.physical"] ?? 0) : 0;
+    return (["ge", "st", "ko", "be"].includes(attrKey) ? (this.system.mods?.["malus.physical"] ?? 0) : 0) + this.clinchMalus();
+  }
+
+  /** Ringen: Wer im Clinch gehalten wird, hat Kampfnachteil (−2W auf Proben, Angriff und Verteidigung). */
+  clinchMalus() {
+    const c = this.getFlag("noreturn", "clinch");
+    return c && !c.holder ? 2 : 0;
   }
 
   /** Stelle Adrenalin, Meditation und Regenerationspool wieder her (Rast: 6 h Schlaf + Nahrung). */

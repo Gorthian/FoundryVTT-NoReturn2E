@@ -49,7 +49,8 @@ export class NRActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       itemValue: NRActorSheet.#onItemValue,
       overdrive: NRActorSheet.#onOverdrive,
       empHit: NRActorSheet.#onEmpHit,
-      switchPersonality: NRActorSheet.#onSwitchPersonality
+      switchPersonality: NRActorSheet.#onSwitchPersonality,
+      breakClinch: NRActorSheet.#onBreakClinch
     }
   };
 
@@ -144,7 +145,7 @@ export class NRActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       disadvantages: rows("advantage", i => i.system.kind === "nachteil"),
       traitsJustice: rows("trait", i => i.system.kind === "justice"),
       traitsChaos: rows("trait", i => i.system.kind === "chaos"),
-      hasSplit: actor.styleLevel("split") > 0, styleSkills: rows("styleSkill"), augments: rows("augment"),
+      hasSplit: actor.styleLevel("split") > 0, clinch: actor.getFlag("noreturn", "clinch") ?? null, styleSkills: rows("styleSkill"), augments: rows("augment"),
       gear: rows("gear"), ammo: rows("ammo"),
       adrenalinPips: Array.from({ length: sys.adrenalinMax }, (_, i) => ({ used: i >= sys.adrenalinLeft })),
       meditationPips: Array.from({ length: sys.meditationMax }, (_, i) => ({ used: i >= sys.meditationLeft })),
@@ -220,6 +221,11 @@ export class NRActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
   _getItem(target) {
     const id = target.closest("[data-item-id]")?.dataset.itemId;
     return this.actor.items.get(id);
+  }
+
+  static async #onBreakClinch() {
+    const { breakClinch } = await import("../style-actions.mjs");
+    return breakClinch(this.actor);
   }
 
   static async #onSwitchPersonality() {

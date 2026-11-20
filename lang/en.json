@@ -509,7 +509,18 @@
       "SplitSwitchTo": "Switch to",
       "SplitRename": "Rename (target personality)",
       "SplitApply": "Apply",
-      "SplitSwitched": "{actor}: personality “{name}” is now active."
+      "SplitSwitched": "{actor}: personality “{name}” is now active.",
+      "ClinchBonus": "Wrestling 3: in the clinch +2D on attack and damage",
+      "ClinchStart": "Start clinch (instead of damage)",
+      "ClinchBreak": "Clinch: break free / release",
+      "ClinchBusy": "One of the fighters is already in a clinch (one clinch per wrestler).",
+      "ClinchStarted": "{holder} holds {target} in a clinch: {target} is at a combat disadvantage (−2D on all checks except damage resistance).",
+      "ClinchEnded": "The clinch between {a} and {b} is released.",
+      "ClinchOut": "Clinch between {a} and {b} ended because a participant is out (note for the GM).",
+      "ClinchBrokenFree": "{a} breaks free of the clinch with {b}.",
+      "ClinchHeld": "{a} cannot break free, {b} keeps holding.",
+      "ClinchHold": "Hold clinch (Strength)",
+      "ClinchOtherTarget": "In a clinch: attacking a target other than the clinch partner (allowed, clinch persists)."
     },
     "Species": {
       "TP": "HP per zone",

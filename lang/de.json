@@ -509,7 +509,18 @@
       "SplitSwitchTo": "Wechseln zu",
       "SplitRename": "Umbenennen (Ziel-Persönlichkeit)",
       "SplitApply": "Anwenden",
-      "SplitSwitched": "{actor}: Persönlichkeit „{name}“ ist jetzt aktiv."
+      "SplitSwitched": "{actor}: Persönlichkeit „{name}“ ist jetzt aktiv.",
+      "ClinchBonus": "Ringen 3: im Clinch +2W auf Angriff und Schaden",
+      "ClinchStart": "Clinch ansetzen (statt Schaden)",
+      "ClinchBreak": "Clinch: befreien bzw. auflösen",
+      "ClinchBusy": "Einer der Beteiligten ist bereits in einem Clinch (ein Clinch je Ringer).",
+      "ClinchStarted": "{holder} hält {target} im Clinch: {target} hat Kampfnachteil (−2W auf alle Proben außer Schadenswiderstand).",
+      "ClinchEnded": "Der Clinch zwischen {a} und {b} ist aufgelöst.",
+      "ClinchOut": "Clinch zwischen {a} und {b} beendet, weil ein Beteiligter ausgeschieden ist (Hinweis an die SL).",
+      "ClinchBrokenFree": "{a} befreit sich aus dem Clinch mit {b}.",
+      "ClinchHeld": "{a} kann sich nicht befreien, {b} hält weiter fest.",
+      "ClinchHold": "Clinch halten (Stärke)",
+      "ClinchOtherTarget": "Im Clinch: Angriff auf ein anderes Ziel als den Clinch-Partner (erlaubt, Clinch bleibt bestehen)."
     },
     "Species": {
       "TP": "Trefferpunkte je Zone",

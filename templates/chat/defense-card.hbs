@@ -26,6 +26,7 @@
   {{#if damageAllowed}}
   <div class="nr-card-buttons">
     <button type="button" data-nr-action="damage"><i class="fa-solid fa-burst"></i> {{localize "NR.Combat.RollDamage"}}</button>
+    {{#if canClinch}}<button type="button" data-nr-action="clinch"><i class="fa-solid fa-hands-holding"></i> {{localize "NR.Style.ClinchStart"}}</button>{{/if}}
   </div>
   {{/if}}
 </div>
