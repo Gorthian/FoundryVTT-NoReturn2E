@@ -356,7 +356,8 @@ export class NRActor extends foundry.documents.Actor {
     const resist = roll.total + armor;
     const through = Math.max(0, effAmount - resist);
     if (through > 0) await this.update({ "system.hp.value": Math.max(0, s.hp.value - through) });
-    const vital = through > 0 ? (await new Roll("1d6").evaluate()).total === 6 : false;
+    // Ungezielt: W6 = 6 → vitale Stelle; Aim for the Heart: gezielter Treffer auf eine vitale Stelle
+    const vital = through > 0 ? (attack.aimVital || (await new Roll("1d6").evaluate()).total === 6) : false;
     const content = `<div class="nr-card"><h3>${game.i18n.localize("NR.Chat.VehicleDamage")}</h3>
       <p>${game.i18n.format("NR.Chat.VehicleDamageText", { amount: effAmount, resist, armor, through })}</p>
       ${vital ? `<p class="nr-bad"><strong>${game.i18n.localize("NR.Chat.VitalHit")}</strong></p>` : ""}

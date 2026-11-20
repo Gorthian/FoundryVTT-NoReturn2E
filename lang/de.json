@@ -445,7 +445,8 @@
       "UsesPer": "Zeitraum",
       "Hint": "Hinweistext",
       "NoUsesLeft": "{name}: keine Einsätze mehr übrig.",
-      "UsesLeft": "Einsätze: {n}/{max} {per}"
+      "UsesLeft": "Einsätze: {n}/{max} {per}",
+      "AimForTheHeartNote": "Aim for the Heart: kein Malus für gezielte Fahrzeugangriffe, auch nicht sichtbare vitale Stellen sind erlaubt"
     },
     "Species": {
       "TP": "Trefferpunkte je Zone",

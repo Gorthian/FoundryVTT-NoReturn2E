@@ -301,7 +301,11 @@ STYLE_KEYS = {
 
 # Mechanische Ergänzungen je Style-Skill: mods (Item-Modifikatoren, Kampfkünste mit Stufe), hint (Hinweistext der
 # „Einsetzen“-Chatkarte), uses ((Anzahl, Zeitraum) für begrenzte Einsätze). Details siehe module/styles.mjs/combat.mjs.
-STYLE_EXTRA = {}
+STYLE_EXTRA = {
+
+    "Aim for the Heart": {"hint": "Gezielte Angriffe auf Fahrzeuge erhalten keinen −2W-Malus und dürfen auch nicht sichtbare vitale Stellen treffen: Bei Schaden am Fahrzeug gilt der gezielte Treffer dann als vitale Stelle (wird im Angriffsdialog/Schadenswurf automatisch berücksichtigt)."},
+    # (Ende STYLE_EXTRA)
+}
 
 
 def style_skills():

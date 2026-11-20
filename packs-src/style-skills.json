@@ -14,7 +14,8 @@
    "prerequisites": "Fahrzeug-Fertigkeit 4; WA 3",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Gezielte Angriffe dürfen auch nicht sichtbare vitale Stellen treffen; der −2W-Malus für gezielte Fahrzeugangriffe entfällt. <em class=\"nr-ref\">(NoReturn 2E, S. 179)</em></p>"
+   "description": "<p>Gezielte Angriffe dürfen auch nicht sichtbare vitale Stellen treffen; der −2W-Malus für gezielte Fahrzeugangriffe entfällt. <em class=\"nr-ref\">(NoReturn 2E, S. 179)</em></p>",
+   "hint": "<p>Gezielte Angriffe auf Fahrzeuge erhalten keinen −2W-Malus und dürfen auch nicht sichtbare vitale Stellen treffen: Bei Schaden am Fahrzeug gilt der gezielte Treffer dann als vitale Stelle (wird im Angriffsdialog/Schadenswurf automatisch berücksichtigt).</p>"
   },
   "effects": [],
   "folder": null,

@@ -176,6 +176,18 @@ export async function attackWithWeapon(actor, weapon) {
   if (!mode?.noAim) aimMalus = melee ? NR.aiming[opts.aim].melee : NR.aiming[opts.aim].ranged;
   const aim = mode?.noAim ? "random" : opts.aim;
 
+  // Gezielte Angriffe auf Fahrzeuge: pauschal −2W statt der Körperzonen-Mali (sichtbare Komponenten, S. 105). Aim for the Heart hebt den Malus auf
+  // und erlaubt auch nicht sichtbare vitale Stellen.
+  const vehicleTarget = targets[0]?.token?.actor?.type === "vehicle";
+  let aimVital = false;
+  if (vehicleTarget && aim !== "random") {
+    if (actor.styleLevel("aimForTheHeart")) {
+      aimVital = true;
+      aimMalus = 0;
+      styleNotes.push(game.i18n.localize("NR.Style.AimForTheHeartNote"));
+    } else aimMalus = 2;
+  }
+
   let recoilMalus = 0;
   let recoilInfo = "";
   if (!melee && mode) {
@@ -234,6 +246,7 @@ export async function attackWithWeapon(actor, weapon) {
     zonesMode,
     multi: opts.multi,
     groups: [...groups],
+    aimVital,
     limb: isUnarmed(weapon) ? opts.limb : null,
     targets: targets.map(t => ({ uuid: t.uuid, name: t.name, actorUuid: t.actorUuid }))
   };
@@ -515,7 +528,7 @@ export async function rollDamage(defense) {
   const payload = {
     kind: "damage", amount: roll.total, zones, attack: {
       pierce: dmg.pierce, damageType: dmg.damageType, noDamageVs: dmg.noDamageVs,
-      nonLethal: dmg.nonLethal, structure: dmg.structure, continuous: dmg.continuous
+      nonLethal: dmg.nonLethal, structure: dmg.structure, continuous: dmg.continuous, aimVital: !!attack.aimVital
     },
     target: defense.defender, weaponName: attack.weaponName, blocked: defense.blocked
   };
