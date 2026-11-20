@@ -16,6 +16,7 @@ import { registerSocket } from "./module/socket.mjs";
 import { rollPool, rollHitZone } from "./module/dice/pool.mjs";
 import { castPsiApp, collectPower, rollPsiFail } from "./module/psi.mjs";
 import { NRCharacterGenerator, openCharacterGenerator } from "./module/apps/character-generator.mjs";
+import { registerNoticeSettings, showStartupNotice } from "./module/notice.mjs";
 import { importMannifest, exportMannifest, promptImport } from "./module/apps/mannifest.mjs";
 
 Hooks.once("init", () => {
@@ -25,7 +26,8 @@ Hooks.once("init", () => {
   game.noreturn = {
     config: NR, rollPool, rollHitZone, attackWithWeapon, manualDamageDialog, castPsiApp, collectPower, rollPsiFail,
     useItem: useItemMacro, characterGenerator: openCharacterGenerator, NRCharacterGenerator,
-    mannifest: { import: importMannifest, export: exportMannifest, promptImport }
+    mannifest: { import: importMannifest, export: exportMannifest, promptImport },
+    showNotice: () => showStartupNotice({ force: true })
   };
 
   // Dokumentklassen
@@ -70,6 +72,7 @@ Hooks.once("init", () => {
 
   registerHandlebarsHelpers();
   registerSettings();
+  registerNoticeSettings();
   registerChatHooks();
   registerCombatHooks();
 });
@@ -148,6 +151,7 @@ Hooks.once("ready", async () => {
     createItemMacro(data, slot);
     return false;
   });
+  showStartupNotice();
   console.log("NoReturn 2E | Bereit. Nicht umdrehen – es gibt kein Zurück.");
 });
 

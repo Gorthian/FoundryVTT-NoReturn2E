@@ -1,7 +1,7 @@
 {
   "id": "noreturn",
   "title": "NoReturn 2E",
-  "description": "Inoffizielles Spielsystem für NoReturn 2. Edition (Vario-D6 2.0) von Mannifest Games. Charakterbögen, Würfelmechanik mit Hazard-Di, Körperzonen-Schaden, Kampfablauf, PSI-Apps, Degeneration und Compendien.",
+  "description": "Inoffizielles Fan-Projekt (KI-generiert, frühe Beta, Nutzung auf eigene Gefahr – vor Updates Welt-Backup anlegen) für NoReturn 2. Edition (Vario-D6 2.0) von Mannifest Games; alle Rechte bei Mannifest Games. Charakterbögen, Würfelmechanik mit Hazard-Di, Körperzonen-Schaden, Kampfablauf, PSI-Apps, Degeneration und Compendien.",
   "version": "1.0.0",
   "compatibility": {
     "minimum": "13",

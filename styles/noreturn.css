@@ -716,3 +716,8 @@
 .noreturn.nr-generator .nr-flag.on { opacity: 1; background: var(--nr-accent, #c0392b); color: #fff; border-color: transparent; }
 .noreturn.nr-generator .nr-gen-flag { font-size: 0.75rem; white-space: nowrap; display: inline-flex; align-items: center; gap: 3px; }
 .noreturn.nr-generator a.disabled { opacity: 0.3; pointer-events: none; }
+
+/* Startup-Hinweis */
+.nr-notice ul { padding-left: 1.2em; margin: 0.5em 0; }
+.nr-notice li { margin-bottom: 0.4em; }
+.nr-notice-dismiss { display: flex; align-items: center; gap: 0.4em; margin-top: 0.8em; }
