@@ -347,6 +347,7 @@ STYLE_EXTRA = {
     "Muay Thai": {"mods": [mod("defense.blockMelee", 3, 1), mod("damage.emk", 3, 2), mod("attack.emk", 3, 3)], "hint": "Stufe 1: Blocken gegen Nahkampfangriffe +3W. Stufe 2: Ellenbogen-/Knie-/Schienbeinschaden +3W (Angriffsart wählen). Stufe 3: diese Angriffe +3W auf den Angriff."},
     "Tae-Kwon-Do": {"mods": [mod("attack.leg", 3, 1), mod("damage.leg", 3, 2)], "hint": "Stufe 1: Beinangriffe +3W. Stufe 2: Beinschaden +3W. Stufe 3: Ein Beinangriff, der trifft, gilt als zwei Treffer an zwei Zonen (Schaden zweimal)."},
     "ZPC (Zentrum Power Combat)": {"mods": [mod("attack.zpc", 3, 1), mod("damage.zpc", 3, 2)], "hint": "Stufe 1: Nahkampf mit dem linken Arm/Bein +3W (Option „Mit linkem Arm/Bein“ im Angriffsdialog). Stufe 2: Schaden mit dem linken Arm/Bein +3W. Stufe 3: Nahkampfangriffe dürfen mit Nahkampf pariert werden."},
+    "Sado": {"mods": [mod("dice.nahkampf", 3, 2)], "hint": "Stufe 1: Gute Treffer im Nahkampf schon je 5 Punkte Überschuss (automatisch). Stufe 2: Nahkampf +3W. Stufe 3: Nahkampf-Parade; Nahkampfwaffen werden mit Nahkampf statt Waffenkampf geführt (Fertigkeitswahl im Angriffsdialog)."},
     # (Ende STYLE_EXTRA)
 }
 

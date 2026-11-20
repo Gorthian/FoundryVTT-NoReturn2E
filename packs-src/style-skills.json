@@ -2253,8 +2253,15 @@
      "effect": "Parade mit Nahkampf; Nahkampfwaffen mit Nahkampf führen."
     }
    ],
-   "modifiers": [],
-   "description": "<p>Kampfkunst der „Zeugen“. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>"
+   "modifiers": [
+    {
+     "target": "dice.nahkampf",
+     "value": 3,
+     "level": 2
+    }
+   ],
+   "description": "<p>Kampfkunst der „Zeugen“. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>",
+   "hint": "<p>Stufe 1: Gute Treffer im Nahkampf schon je 5 Punkte Überschuss (automatisch). Stufe 2: Nahkampf +3W. Stufe 3: Nahkampf-Parade; Nahkampfwaffen werden mit Nahkampf statt Waffenkampf geführt (Fertigkeitswahl im Angriffsdialog).</p>"
   },
   "effects": [],
   "folder": null,
