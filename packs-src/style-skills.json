@@ -2363,8 +2363,20 @@
      "effect": "Paraden mit Nahkampf."
     }
    ],
-   "modifiers": [],
-   "description": "<p>Militärische Kampfkunst des Zentrums. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>"
+   "modifiers": [
+    {
+     "target": "attack.zpc",
+     "value": 3,
+     "level": 1
+    },
+    {
+     "target": "damage.zpc",
+     "value": 3,
+     "level": 2
+    }
+   ],
+   "description": "<p>Militärische Kampfkunst des Zentrums. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>",
+   "hint": "<p>Stufe 1: Nahkampf mit dem linken Arm/Bein +3W (Option „Mit linkem Arm/Bein“ im Angriffsdialog). Stufe 2: Schaden mit dem linken Arm/Bein +3W. Stufe 3: Nahkampfangriffe dürfen mit Nahkampf pariert werden.</p>"
   },
   "effects": [],
   "folder": null,
