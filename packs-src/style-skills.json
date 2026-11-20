@@ -1813,8 +1813,20 @@
      "effect": "Waffenloser Schaden +2W."
     }
    ],
-   "modifiers": [],
-   "description": "<p>Fließende waffenlose Kunst der Samurai. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>"
+   "modifiers": [
+    {
+     "target": "dice.nahkampf",
+     "value": 2,
+     "level": 2
+    },
+    {
+     "target": "damage.unarmed",
+     "value": 2,
+     "level": 3
+    }
+   ],
+   "description": "<p>Fließende waffenlose Kunst der Samurai. Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen. <em class=\"nr-ref\">(NoReturn 2E, S. 186)</em></p>",
+   "hint": "<p>Stufe 1: Nahkampf darf Nahkampfangriffe parieren. Stufe 2: Nahkampf +2W (Proben, Angriffe, Paraden). Stufe 3: waffenloser Schaden +2W.</p>"
   },
   "effects": [],
   "folder": null,

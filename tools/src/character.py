@@ -340,6 +340,7 @@ STYLE_EXTRA = {
     "Kenjutsu": {"mods": [mod("attack.blade", 2, 2), mod("defense.parryBlade", 2, 2)], "hint": "Stufe 1: Schwert ziehen und in derselben Aktion angreifen (Hinweis im Angriffsdialog). Stufe 2: Angriffe und Paraden mit Klingenwaffen +2W (automatisch). Stufe 3: Jede erfolgreiche Parade mit einer Klingenwaffe verursacht deren Schaden an einer zufälligen Zone des Angreifers (automatische Schadenskarte)."},
     "Boxen": {"mods": [mod("damage.fist", 3, 1), mod("defense.blockUnarmed", 3, 2)], "hint": "Stufe 1: Faustschaden +3W (Angriffsart „Faust“). Stufe 2: waffenloses Blocken +3W (Verteidigungsdialog, Block ohne Schild). Stufe 3: Ein Faustangriff, der trifft, gilt als zwei Treffer an zwei Zonen – der Schaden wird zweimal gewürfelt."},
     "Capoeira": {"mods": [mod("defense.dodgeMelee", 3, 1), mod("damage.leg", 3, 2), mod("attack.leg", 3, 3)], "hint": "Stufe 1: Ausweichen gegen Nahkampfangriffe +3W (automatisch). Stufe 2: Beinschaden +3W (Angriffsart „Tritt/Knie/Schienbein“). Stufe 3: Beinangriffe +3W auf den Angriff."},
+    "Jiu Jitsu": {"mods": [mod("dice.nahkampf", 2, 2), mod("damage.unarmed", 2, 3)], "hint": "Stufe 1: Nahkampf darf Nahkampfangriffe parieren. Stufe 2: Nahkampf +2W (Proben, Angriffe, Paraden). Stufe 3: waffenloser Schaden +2W."},
     # (Ende STYLE_EXTRA)
 }
 
