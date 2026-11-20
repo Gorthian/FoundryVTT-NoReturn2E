@@ -898,7 +898,8 @@
    "prerequisites": "Akrobatik 3, Klettern 3, Springen 3; BE 3",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Klettern- und Springen-Proben unter MW 30 gelingen automatisch; beim Sprungschaden Springen addieren. <em class=\"nr-ref\">(NoReturn 2E, S. 183)</em></p>"
+   "description": "<p>Klettern- und Springen-Proben unter MW 30 gelingen automatisch; beim Sprungschaden Springen addieren. <em class=\"nr-ref\">(NoReturn 2E, S. 183)</em></p>",
+   "hint": "<p>Klettern- und Springen-Proben mit Mindestwurf unter 30 gelingen automatisch. Beim Sprung-/Sturzschaden den Springen-Wert addieren (manuelle Schadenseingabe).</p>"
   },
   "effects": [],
   "folder": null,

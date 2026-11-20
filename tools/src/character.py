@@ -323,6 +323,7 @@ STYLE_EXTRA = {
     "Pet Pal": {"hint": "Du verstehst animalische Sprache in Grenzen. Rein erzählerisch: Absprache mit der Spielleitung; Hinweis auf Dressieren-Proben."},
     "Trickster": {"hint": "Taschenspielertricks (MW 15). Entfesseln, Verstecken oder Taschendiebstahl einmal je Kampfrunde ohne Aktion."},
     "Trusty Engineer": {"hint": "Crafting-Mindestwurf −5 (auch als Helfer; höchstens zwei Engineers, also max. −10). Im Probendialog von Handwerk-Proben die Zahl der Engineers eintragen."},
+    "Parkour": {"hint": "Klettern- und Springen-Proben mit Mindestwurf unter 30 gelingen automatisch. Beim Sprung-/Sturzschaden den Springen-Wert addieren (manuelle Schadenseingabe)."},
     # (Ende STYLE_EXTRA)
 }
 
