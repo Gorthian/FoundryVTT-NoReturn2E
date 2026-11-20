@@ -3,8 +3,12 @@
 from .common import icon, p
 
 
-def mod(target, value):
-    return {"target": target, "value": value}
+def mod(target, value, level=None):
+    """Modifikator; `level` (nur Kampfkünste): gilt ab dieser Stufe."""
+    m = {"target": target, "value": value}
+    if level:
+        m["level"] = level
+    return m
 
 
 def species():
@@ -295,6 +299,11 @@ STYLE_KEYS = {
 }
 
 
+# Mechanische Ergänzungen je Style-Skill: mods (Item-Modifikatoren, Kampfkünste mit Stufe), hint (Hinweistext der
+# „Einsetzen“-Chatkarte), uses ((Anzahl, Zeitraum) für begrenzte Einsätze). Details siehe module/styles.mjs/combat.mjs.
+STYLE_EXTRA = {}
+
+
 def style_skills():
     X = []
 
@@ -369,6 +378,17 @@ def style_skills():
                   "system": {"key": STYLE_KEYS[name], "kind": "kampfkunst", "gp": 5, "ep": 10, "level": 1, "prerequisites": levels[0][0],
                              "levels": [{"prerequisites": pr, "effect": ef} for pr, ef in levels], "modifiers": [],
                              "description": p(desc + " Jede Stufe kostet 5 GP / 10 EP; Stufe im Itembogen setzen.", 186)}})
+    for x in X:
+        ex = STYLE_EXTRA.get(x["name"])
+        if not ex:
+            continue
+        sysd = x["system"]
+        if "mods" in ex:
+            sysd["modifiers"] = ex["mods"]
+        if "hint" in ex:
+            sysd["hint"] = p(ex["hint"])
+        if "uses" in ex:
+            sysd["uses"] = {"max": ex["uses"][0], "value": ex["uses"][0], "per": ex["uses"][1]}
     return X
 
 

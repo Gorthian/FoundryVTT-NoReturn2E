@@ -443,7 +443,9 @@
       "Uses": "Einsätze",
       "UsesHint": "Verbleibend / Maximum (0 = unbegrenzt) und Zeitraum, z. B. „Sitzung“.",
       "UsesPer": "Zeitraum",
-      "Hint": "Hinweistext"
+      "Hint": "Hinweistext",
+      "NoUsesLeft": "{name}: keine Einsätze mehr übrig.",
+      "UsesLeft": "Einsätze: {n}/{max} {per}"
     },
     "Species": {
       "TP": "Trefferpunkte je Zone",

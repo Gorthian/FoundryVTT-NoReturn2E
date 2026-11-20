@@ -443,7 +443,9 @@
       "Uses": "Uses",
       "UsesHint": "Remaining / maximum (0 = unlimited) and period, e.g. “session”.",
       "UsesPer": "Period",
-      "Hint": "Hint text"
+      "Hint": "Hint text",
+      "NoUsesLeft": "{name}: no uses left.",
+      "UsesLeft": "Uses: {n}/{max} {per}"
     },
     "Species": {
       "TP": "HP per zone",

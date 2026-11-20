@@ -128,6 +128,10 @@ export class NRActor extends foundry.documents.Actor {
       "system.combat.defenses": 0,
       "system.combat.psiCollected": 0
     });
+    // Style-Skills mit begrenzten Einsätzen (außer „je Sitzung“) füllen sich bei der Rast wieder auf
+    const refill = this.items.filter(i => i.type === "styleSkill" && i.system.uses.max > 0 && i.system.uses.value < i.system.uses.max
+      && !/^(sitzung|session)/i.test(i.system.uses.per));
+    if (refill.length) await this.updateEmbeddedDocuments("Item", refill.map(i => ({ _id: i.id, "system.uses.value": i.system.uses.max })));
     ui.notifications.info(game.i18n.format("NR.Notify.Rested", { name: this.name }));
   }
 

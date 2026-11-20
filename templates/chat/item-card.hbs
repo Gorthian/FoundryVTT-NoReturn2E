@@ -11,5 +11,7 @@
   {{#if system.levels.length}}
   <ol class="nr-levels-chat">{{#each system.levels as |l|}}<li><em>{{l.prerequisites}}</em><br>{{l.effect}}</li>{{/each}}</ol>
   {{/if}}
+  {{#if hint}}<div class="nr-psi-effect"><i class="fa-solid fa-star"></i> {{{hint}}}</div>{{/if}}
+  {{#if usesText}}<div class="nr-card-pool"><span class="nr-chip">{{usesText}}</span></div>{{/if}}
   {{#if description}}<div class="nr-card-desc">{{{description}}}</div>{{/if}}
 </div>

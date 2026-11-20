@@ -72,17 +72,38 @@ export class NRItem extends foundry.documents.Item {
       case "psiPower":
         if (!actor) return this.toChat();
         return actor.rollCheck({ label: this.name, dice: this.system.value, subtitle: `${this.name} ${this.system.value}`, allowPass: false });
+      case "styleSkill":
+        return this.useStyle();
       default:
         return this.toChat();
     }
   }
 
+  /**
+   * Style-Skill einsetzen: Chatkarte mit Hinweistext; bei begrenzten Einsätzen (z. B. Déjà-vu einmal je Sitzung)
+   * wird einer verbraucht.
+   */
+  async useStyle() {
+    const s = this.system;
+    if (!this.actor) return this.toChat({ hint: s.hint });
+    let usesText = null;
+    if (s.uses.max > 0) {
+      if (s.uses.value <= 0) {
+        ui.notifications.warn(game.i18n.format("NR.Style.NoUsesLeft", { name: this.name }));
+        return null;
+      }
+      if (this.isOwner) await this.update({ "system.uses.value": s.uses.value - 1 });
+      usesText = game.i18n.format("NR.Style.UsesLeft", { n: Math.max(0, s.uses.value - 1), max: s.uses.max, per: s.uses.per });
+    }
+    return this.toChat({ hint: s.hint, usesText });
+  }
+
   /** Beschreibung als Chatkarte. */
-  async toChat() {
+  async toChat({ hint = "", usesText = null } = {}) {
     const TE = foundry.applications.ux.TextEditor.implementation;
     const description = await TE.enrichHTML(this.system.description ?? "", { relativeTo: this, secrets: this.isOwner });
     const content = await renderTemplate("systems/noreturn/templates/chat/item-card.hbs", {
-      item: this, system: this.system, description, stats: this.chatStats()
+      item: this, system: this.system, description, stats: this.chatStats(), hint, usesText
     });
     return ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor: this.actor }), content });
   }
