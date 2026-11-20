@@ -1,0 +1,40 @@
+# Prüft bei jedem Push/PR: system.json (Pflichtfelder, Verweise), JS-Syntax und ob sich
+# die Compendium-Quellen (packs-src) zu LevelDB-Packs bauen lassen.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: system.json prüfen
+        run: |
+          jq -e '
+            (.id and .title and .version and .compatibility.minimum and .compatibility.verified and .url and .manifest and .download and .license) and
+            ([.esmodules[], .styles[], .languages[].path, .license, .readme] | all(. != null)) and
+            (.packs | all(.name and .label and .path and .type and .system))
+          ' system.json > /dev/null || { echo "system.json: Pflichtfelder fehlen"; exit 1; }
+          for f in $(jq -r '.esmodules[], .styles[], .languages[].path, .license, .readme' system.json); do
+            test -e "$f" || { echo "system.json verweist auf fehlende Datei: $f"; exit 1; }
+          done
+          for p in $(jq -r '.packs[].name' system.json); do
+            test -f "packs-src/$p.json" || { echo "Keine Quelle packs-src/$p.json für Pack $p"; exit 1; }
+          done
+
+      - name: JavaScript-Syntax prüfen
+        run: find noreturn.mjs module tools -name '*.mjs' -print0 | xargs -0 -n1 node --check
+
+      - name: Compendium-Quellen bauen
+        run: |
+          npm install --no-save classic-level
+          node tools/build-packs.mjs

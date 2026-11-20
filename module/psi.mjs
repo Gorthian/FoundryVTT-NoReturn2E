@@ -131,7 +131,7 @@ export async function castPsiApp(actor, app) {
 }
 
 async function enrich(html, doc) {
-  const TE = foundry.applications.ux?.TextEditor?.implementation ?? TextEditor;
+  const TE = foundry.applications.ux.TextEditor.implementation;
   return TE.enrichHTML(html ?? "", { relativeTo: doc, secrets: doc.isOwner });
 }
 

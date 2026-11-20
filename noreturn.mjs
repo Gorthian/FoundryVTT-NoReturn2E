@@ -63,20 +63,54 @@ Hooks.once("init", () => {
 
   // Bögen
   const DSC = foundry.applications.apps.DocumentSheetConfig;
-  DSC.registerSheet(Actor, "noreturn", NRActorSheet, { types: ["character", "npc"], makeDefault: true, label: "NR.Sheet.Character" });
-  DSC.registerSheet(Actor, "noreturn", NRVehicleSheet, { types: ["vehicle"], makeDefault: true, label: "NR.Sheet.Vehicle" });
-  DSC.registerSheet(Item, "noreturn", NRItemSheet, { makeDefault: true, label: "NR.Sheet.Item" });
+  DSC.registerSheet(foundry.documents.Actor, "noreturn", NRActorSheet, { types: ["character", "npc"], makeDefault: true, label: "NR.Sheet.Character" });
+  DSC.registerSheet(foundry.documents.Actor, "noreturn", NRVehicleSheet, { types: ["vehicle"], makeDefault: true, label: "NR.Sheet.Vehicle" });
+  DSC.registerSheet(foundry.documents.Item, "noreturn", NRItemSheet, { makeDefault: true, label: "NR.Sheet.Item" });
 
   registerHandlebarsHelpers();
   registerSettings();
   registerChatHooks();
   registerCombatHooks();
+});
 
-  return foundry.applications.handlebars.loadTemplates([
+/** Alle Templates des Systems (Partials und Chat-/Dialog-Vorlagen) vorladen. */
+const TEMPLATES = [
+    "systems/noreturn/templates/actor/header.hbs",
     "systems/noreturn/templates/actor/parts/item-row.hbs",
     "systems/noreturn/templates/actor/parts/zone.hbs",
-    "systems/noreturn/templates/chat/roll-card.hbs"
-  ]);
+    "systems/noreturn/templates/actor/tab-bio.hbs",
+    "systems/noreturn/templates/actor/tab-combat.hbs",
+    "systems/noreturn/templates/actor/tab-inventory.hbs",
+    "systems/noreturn/templates/actor/tab-psi.hbs",
+    "systems/noreturn/templates/actor/tab-stats.hbs",
+    "systems/noreturn/templates/actor/tab-traits.hbs",
+    "systems/noreturn/templates/actor/vehicle-sheet.hbs",
+    "systems/noreturn/templates/apps/character-generator.hbs",
+    "systems/noreturn/templates/chat/attack-extra.hbs",
+    "systems/noreturn/templates/chat/damage-card.hbs",
+    "systems/noreturn/templates/chat/damage-result.hbs",
+    "systems/noreturn/templates/chat/defense-card.hbs",
+    "systems/noreturn/templates/chat/item-card.hbs",
+    "systems/noreturn/templates/chat/psi-card.hbs",
+    "systems/noreturn/templates/chat/psi-fail.hbs",
+    "systems/noreturn/templates/chat/roll-card.hbs",
+    "systems/noreturn/templates/dialog/attack-dialog.hbs",
+    "systems/noreturn/templates/dialog/damage-dialog.hbs",
+    "systems/noreturn/templates/dialog/defense-dialog.hbs",
+    "systems/noreturn/templates/dialog/psi-dialog.hbs",
+    "systems/noreturn/templates/dialog/roll-dialog.hbs",
+    "systems/noreturn/templates/item/description.hbs",
+    "systems/noreturn/templates/item/details.hbs",
+    "systems/noreturn/templates/item/header.hbs",
+    "systems/noreturn/templates/item/modifiers.hbs"
+];
+
+/** Neue Szenen starten mit 1 m Rasterdistanz (früher system.json "grid"). */
+Hooks.on("preCreateScene", (scene, data) => {
+  const update = {};
+  if (data.grid?.distance === undefined) update["grid.distance"] = 1;
+  if (data.grid?.units === undefined) update["grid.units"] = "m";
+  scene.updateSource(update);
 });
 
 /** Button „Charaktergenerator“ in der Actor-Seitenleiste. */
@@ -98,11 +132,14 @@ Hooks.on("renderActorDirectory", (app, html) => {
   target.append(btn, imp);
 });
 
-Hooks.once("ready", () => {
+Hooks.once("ready", async () => {
+  await foundry.applications.handlebars.loadTemplates(TEMPLATES);
   document.body.classList.toggle("nr-hide-dice", !game.settings.get("noreturn", "showDice"));
   // Makros per Drag & Drop auf die Hotbar
   Hooks.on("hotbarDrop", (bar, data, slot) => {
-    if (data.type !== "Item") return;
+    if (data.type !== "Item" || !data.uuid) return;
+    // Nur Items an einem Actor (eingebettete UUID) werden zu Makros; andere Drops bleiben Foundry überlassen
+    if (!foundry.utils.parseUuid(data.uuid).embedded?.length) return;
     createItemMacro(data, slot);
     return false;
   });
@@ -154,7 +191,7 @@ async function createItemMacro(data, slot) {
   const command = `game.noreturn.useItem(${JSON.stringify(item.name)}, ${JSON.stringify(item.id)});`;
   let macro = game.macros.find(m => m.command === command);
   if (!macro) {
-    macro = await Macro.create({ name: item.name, type: "script", img: item.img, command, flags: { "noreturn.itemMacro": true } });
+    macro = await foundry.documents.Macro.create({ name: item.name, type: "script", img: item.img, command, flags: { "noreturn.itemMacro": true } });
   }
   game.user.assignHotbarMacro(macro, slot);
 }

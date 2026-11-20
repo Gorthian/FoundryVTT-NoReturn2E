@@ -33,7 +33,7 @@ export class NRVehicleSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
 
   async _prepareContext(options) {
     const context = await super._prepareContext(options);
-    const TE = foundry.applications.ux?.TextEditor?.implementation ?? TextEditor;
+    const TE = foundry.applications.ux.TextEditor.implementation;
     Object.assign(context, {
       actor: this.actor, system: this.actor.system, config: NR, editable: this.isEditable,
       fields: this.actor.system.schema.fields,
