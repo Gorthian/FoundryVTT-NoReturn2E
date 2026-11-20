@@ -51,7 +51,8 @@
    "prerequisites": "Schießen 5; WA 3",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Mehrfachangriff mit zwei Fernkampfwaffen in einem Angriffswurf. <em class=\"nr-ref\">(NoReturn 2E, S. 179)</em></p>"
+   "description": "<p>Mehrfachangriff mit zwei Fernkampfwaffen in einem Angriffswurf. <em class=\"nr-ref\">(NoReturn 2E, S. 179)</em></p>",
+   "hint": "<p>Mehrfachangriff mit zwei Fernkampfwaffen in einem Wurf: im Angriffsdialog „Mehrfachangriff“ auf 2 setzen. Es gelten der jeweils höchste Malus/niedrigste Wert; kein Adrenalin/Meditation; jedes Ziel muss sich gegen jeden Angriff verteidigen, Schaden je Treffer.</p>"
   },
   "effects": [],
   "folder": null,

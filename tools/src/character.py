@@ -304,6 +304,7 @@ STYLE_KEYS = {
 STYLE_EXTRA = {
 
     "Aim for the Heart": {"hint": "Gezielte Angriffe auf Fahrzeuge erhalten keinen −2W-Malus und dürfen auch nicht sichtbare vitale Stellen treffen: Bei Schaden am Fahrzeug gilt der gezielte Treffer dann als vitale Stelle (wird im Angriffsdialog/Schadenswurf automatisch berücksichtigt)."},
+    "Akimbo": {"hint": "Mehrfachangriff mit zwei Fernkampfwaffen in einem Wurf: im Angriffsdialog „Mehrfachangriff“ auf 2 setzen. Es gelten der jeweils höchste Malus/niedrigste Wert; kein Adrenalin/Meditation; jedes Ziel muss sich gegen jeden Angriff verteidigen, Schaden je Treffer."},
     # (Ende STYLE_EXTRA)
 }
 
