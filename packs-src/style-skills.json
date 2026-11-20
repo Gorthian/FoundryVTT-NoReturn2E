@@ -1210,7 +1210,8 @@
    "prerequisites": "Passend zum Hintergrund",
    "levels": [],
    "modifiers": [],
-   "description": "<p>Weitere Persönlichkeit mit eigenen Fertigkeiten, PSI und Merkmalen (mehrfach wählbar). <em class=\"nr-ref\">(NoReturn 2E, S. 184)</em></p>"
+   "description": "<p>Weitere Persönlichkeit mit eigenen Fertigkeiten, PSI und Merkmalen (mehrfach wählbar). <em class=\"nr-ref\">(NoReturn 2E, S. 184)</em></p>",
+   "hint": "<p>Weitere Persönlichkeit mit eigenen Fertigkeiten, PSI und Merkmalen (mehrfach wählbar). Wird noch nicht automatisch abgebildet (Designentscheidung offen, siehe Issue): Persönlichkeiten bis dahin als eigener Charakterbogen führen.</p>"
   },
   "effects": [],
   "folder": null,

@@ -351,6 +351,7 @@ STYLE_EXTRA = {
     "Escrima": {"mods": [mod("attack.multi", 3, 3), mod("damage.multi", 3, 3)], "hint": "Stufe 1: Parade mit Nahkampf oder Waffenkampf. Stufe 2: Nahkampf und Waffenkampf sind austauschbar (Fertigkeitswahl im Angriffsdialog, bessere Fertigkeit bei der Parade). Stufe 3: Mehrfachangriffe im Nahkampf +3W auf Angriff und Schaden."},
     "Gun-Fu": {"mods": [mod("attack.multi", 3, 3), mod("damage.multi", 3, 3)], "hint": "Stufe 1: Parade mit Nahkampf auch mit Feuerwaffen in den Händen (Waffe im Verteidigungsdialog wählen). Stufe 2: Einhändige Feuerwaffen im Nahkampf mit Nahkampf statt Schießen (nur HM, kein Nachteil; Fertigkeitswahl im Angriffsdialog). Stufe 3: Mehrfachangriffe mit Feuerwaffen im Nahkampf +3W auf Angriff und Schaden; kompatibel mit Akimbo."},
     "Linguist": {"hint": "Drei zusätzliche Fremdsprachen bis Stufe 3 sind kostenlos: Bei der GP-Bilanz (Charakterbogen und Charaktergenerator) werden die Kosten der drei höchsten Fremdsprachen bis Stufe 3 (2 GP je Stufe) automatisch abgezogen."},
+    "Split": {"hint": "Weitere Persönlichkeit mit eigenen Fertigkeiten, PSI und Merkmalen (mehrfach wählbar). Wird noch nicht automatisch abgebildet (Designentscheidung offen, siehe Issue): Persönlichkeiten bis dahin als eigener Charakterbogen führen."},
     # (Ende STYLE_EXTRA)
 }
 
