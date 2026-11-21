@@ -661,7 +661,13 @@
       "TimeHudPlayers": "Time HUD for players (display only)",
       "TimeHudPlayersHint": "Players see date and time but cannot change it.",
       "TimeLight": "Link scene lighting to time of day",
-      "TimeLightHint": "Adjusts scene darkness to the time. Can be turned off per scene in the time HUD."
+      "TimeLightHint": "Adjusts scene darkness to the time. Can be turned off per scene in the time HUD.",
+      "TimedAutomation": "Automate time-based processes",
+      "TimedAutomationHint": "Run with world time: natural healing, long-term medication, blood points at sunrise and recharging of bio traits.",
+      "NaturalHealing": "Natural healing per day",
+      "NaturalHealingHint": "For every 24 hours of elapsed time, injured characters and creatures heal automatically (KO per zone, see Healing).",
+      "TimedDamage": "Damage over time in combat",
+      "TimedDamageHint": "Effects with damage per combat round (e.g. Ignite, Boiling Point) deal it automatically at the start of every new round."
     },
     "Sync": {
       "Title": "Update from compendium",
@@ -1928,6 +1934,69 @@
         "week": "Weeks (5 days)",
         "zonat": "Zonats (20 days)"
       }
+    },
+    "Timed": {
+      "Title": "Timed effects",
+      "Open": "open",
+      "Expired": "Effects expired",
+      "Buff": "Effect",
+      "TickLabel": "{name}: damage per round",
+      "TickHint": "Damage per combat round",
+      "End": "End effect",
+      "Unit": {
+        "round": "{n} CR",
+        "minute": "{n} min",
+        "hour": "{n} h",
+        "day": "{n} d"
+      },
+      "UnitName": {
+        "round": "Combat rounds",
+        "minute": "Minutes",
+        "hour": "Hours",
+        "day": "Days"
+      },
+      "Short": {
+        "rounds": "{n} CR",
+        "days": "{n} d",
+        "hours": "{n} h",
+        "minutes": "{n} min"
+      },
+      "Duration": {
+        "label": "Duration (formula)"
+      },
+      "DurationText": "Duration {text}",
+      "Tick": "{n} damage per combat round",
+      "TickCumulative": "{n} damage per combat round, stacking",
+      "NoTargets": "no targets marked, effect not created",
+      "AppliedTo": "effect on {names}",
+      "AppEffect": "{name} (KS {ks})",
+      "BonusActive": "Timed bonus",
+      "MalusActive": "Timed penalty",
+      "NaturalHealing": "Natural healing",
+      "Healed": "{name}: {n} points healed per zone",
+      "Chronic": "Chronic illness",
+      "ChronicOk": "{name}: medication taken ({used} doses)",
+      "ChronicMissed": "{name}: {missed} days without care, Organism −{missed}",
+      "Blood": "Blood points at sunrise",
+      "BloodGain": "{name}: +{n} blood point(s) ({value}/{max})",
+      "Recharge": "Recharge",
+      "Recharged": "{name}: {item} +{n} charge(s) ({value}/{max})",
+      "RechargeHint": "One charge per n hours of game time (0 = no automatic recharge)",
+      "Rest": "Rest",
+      "RestHint": "Advances time and lets the selected tokens rest (early bird 4 h, sleepyhead 8 h, otherwise 6 h).",
+      "RestNoTokens": "No tokens selected.",
+      "RestDone": "{names} rested for {n} h and are recovered.",
+      "RestShort": "Not enough sleep for: {names}.",
+      "TargetSelf": "Caster",
+      "TargetMarked": "Marked targets",
+      "Affects": "Affects",
+      "ZonesRandom": "Random zone",
+      "ZonesAll": "All zones",
+      "FormulaHint": "Formula with KS, e.g. KS*2 or 30-KS. Empty = no duration.",
+      "TickFormulaHint": "Damage per combat round as a formula with KS, e.g. KS*5. Empty = no damage over time.",
+      "TickLabelField": "Damage per round",
+      "Cumulative": "stacks",
+      "TickType": "Damage type, zones, armor piercing"
     }
   }
 }

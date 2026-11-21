@@ -60,6 +60,9 @@ function creatureSchema() {
     nonLethal: int(0, { min: 0 }),
     tempMalus: int(0),
     tempBonus: int(0),
+    /** Zeitlich begrenzte Bonus-/Maluswürfel aus ActiveEffects (siehe timed.mjs); nie von Hand befüllt, damit das Blatt sie nicht festschreibt. */
+    timedBonus: int(0),
+    timedMalus: int(0),
     combat: new fields.SchemaField({
       defenses: int(0, { min: 0 }),
       psiCollected: int(0, { min: 0 }),
@@ -288,15 +291,17 @@ export class CreatureData extends foundry.abstract.TypeDataModel {
     const nlMalus = pain >= 10 ? 0 : Math.floor(sys.nonLethal / 10);
     const holdMalus = actor.items.filter(i => i.type === "psiApp" && i.system.held).reduce((acc, i) => acc + sys.psiHold(i), 0);
     const alcMalus = 0;
+    sys.bonusDice = Math.max(0, sys.tempBonus) + Math.max(0, sys.timedBonus);
+    const tempMalus = sys.tempMalus + sys.timedMalus;
     sys.malus = {
       wounds: woundMalus,
       nonLethal: nlMalus,
-      temp: sys.tempMalus,
+      temp: tempMalus,
       psiCollect: sys.combat.psiCollected,
       hold: holdMalus,
       alcohol: alcMalus,
-      physical: woundMalus + nlMalus + Math.max(0, sys.tempMalus),
-      total: Math.max(0, woundMalus + nlMalus + sys.tempMalus + sys.combat.psiCollected + holdMalus + alcMalus)
+      physical: woundMalus + nlMalus + Math.max(0, tempMalus),
+      total: Math.max(0, woundMalus + nlMalus + tempMalus + sys.combat.psiCollected + holdMalus + alcMalus)
     };
     sys.unconscious = sys.malus.physical > 0 && sys.malus.physical >= sys.attr.ko.total;
     sys.immobile = sys.malus.physical > 0 && sys.malus.physical >= sys.attr.be.total;

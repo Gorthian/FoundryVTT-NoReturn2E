@@ -1,5 +1,7 @@
 import { NR } from "./config.mjs";
 import { rollPool, applyChatMode, diceSummary, postPoolMessage, rollHitZone } from "./dice/pool.mjs";
+import { appTiming, appEffectSpec, durationText } from "./timed.mjs";
+import { applyBuffTo } from "./socket.mjs";
 
 const { renderTemplate } = foundry.applications.handlebars;
 const { DialogV2 } = foundry.applications.api;
@@ -120,7 +122,9 @@ export async function castPsiApp(actor, app) {
   let fail = null;
   if (!success) fail = await rollPsiFail(ks, { post: false });
 
-  const effectHtml = success ? resolveKsText(s.effect || "", ks) : "";
+  let effectHtml = success ? resolveKsText(s.effect || "", ks) : "";
+  const timing = success ? appTiming(app, ks) : null;
+  if (timing) effectHtml += await applyAppTiming(actor, app, ks, timing);
   const damagePayload = success && s.damageMult ? {
     kind: "damage", amount: ks * s.damageMult, zones: s.allZones ? Object.keys(NR.zones) : null,
     attack: { pierce: s.pierce || "", damageType: "psi", nonLethal: false, structure: false, continuous: false },
@@ -140,6 +144,25 @@ export async function castPsiApp(actor, app) {
   };
   applyChatMode(msgData);
   return ChatMessage.create(msgData);
+}
+
+/**
+ * Dauer bzw. Schaden über Zeit einer gewirkten App als zeitlich begrenzten Effekt anlegen (auf die Wirkende selbst
+ * oder die markierten Ziele) und eine Zeile für die Chatkarte liefern.
+ */
+async function applyAppTiming(actor, app, ks, timing) {
+  const spec = appEffectSpec(app, ks, timing);
+  const targets = timing.target === "self" ? [actor] : Array.from(game.user.targets).map(t => t.actor).filter(Boolean);
+  const parts = [];
+  if (timing.value != null) parts.push(game.i18n.format("NR.Timed.DurationText", { text: durationText(timing.value, timing.unit) }));
+  if (timing.tick) parts.push(game.i18n.format(timing.tick.cumulative ? "NR.Timed.TickCumulative" : "NR.Timed.Tick", { n: timing.tick.amount }));
+  let note;
+  if (!targets.length) note = game.i18n.localize("NR.Timed.NoTargets");
+  else {
+    for (const t of targets) await applyBuffTo(t.uuid, { kind: "timed", spec });
+    note = game.i18n.format("NR.Timed.AppliedTo", { names: targets.map(t => foundry.utils.escapeHTML(t.name)).join(", ") });
+  }
+  return `<p class="nr-hint"><i class="fa-solid fa-hourglass-half"></i> ${parts.join(" · ")} — ${note}</p>`;
 }
 
 async function enrich(html, doc) {

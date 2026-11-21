@@ -1,4 +1,4 @@
-/* ===================================================================
+/* ============================================================
    NoReturn 2E – Foundry VTT System Styles
    Basiert auf dem NoReturn Design System (Tokens, Typografie, Layout).
    Tusche und Papier, Blutrot nur als Warnsignal. Ecken bleiben eckig.
@@ -736,6 +736,13 @@
 .nr-time-row select[name=unit] { flex: 1; }
 .nr-time-quick { display: flex; gap: 4px; flex-wrap: wrap; }
 .nr-time-quick button { flex: 1; width: auto; }
+
+/* Zeitliche Effekte (Charakterbogen) */
+.noreturn .nr-timed-list { list-style: none; margin: 0 0 .5rem; padding: 0; }
+.noreturn .nr-timed-list li { display: flex; align-items: center; gap: .4rem; padding: 2px 0; }
+.noreturn .nr-timed-list img { width: 20px; height: 20px; border: 0; }
+.noreturn .nr-timed-list .nr-timed-name { flex: 1; }
+.noreturn .nr-timed-fields { margin: .5rem 0; }
 
 /* Abgleich mit dem Kompendium */
 #actors .nr-sync-open { flex: 1 1 100%; margin-top: 2px; }

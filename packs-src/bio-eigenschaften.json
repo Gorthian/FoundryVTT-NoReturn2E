@@ -1417,7 +1417,10 @@
    },
    "modifiers": [],
    "grants": [],
-   "description": "<p>Feuer- oder Säurestoß SP 6/6 alle 6 h; Fertigkeit „Odemwaffe“ (GE) 1; Schaden = doppelter Stärkewurf, andauernd 1W6 KR. +5 GP je Ladung (max. 5). <em class=\"nr-ref\">(NoReturn 2E, S. 167)</em></p>"
+   "description": "<p>Feuer- oder Säurestoß SP 6/6 alle 6 h; Fertigkeit „Odemwaffe“ (GE) 1; Schaden = doppelter Stärkewurf, andauernd 1W6 KR. +5 GP je Ladung (max. 5). <em class=\"nr-ref\">(NoReturn 2E, S. 167)</em></p>",
+   "recharge": {
+    "hours": 6
+   }
   },
   "effects": [],
   "folder": null,

@@ -24,6 +24,7 @@ import { registerSyncSettings, checkSyncAfterUpdate, openCompendiumSync } from "
 import { importMannifest, exportMannifest, promptImport } from "./module/apps/mannifest.mjs";
 import { NRTimeHud } from "./module/apps/time-hud.mjs";
 import { registerTimeSettings, registerTimeHooks, initTime, timeApi } from "./module/time.mjs";
+import { registerTimedSettings, registerTimedHooks, timedApi } from "./module/timed.mjs";
 
 Hooks.once("init", () => {
   console.log("NoReturn 2E | Initialisiere System");
@@ -37,7 +38,8 @@ Hooks.once("init", () => {
     infect, advanceDisease, cure, infectDialog, applyElapsed, elapsedDialog,
     syncCompendium: openCompendiumSync,
     showNotice: () => showStartupNotice({ force: true }),
-    time: timeApi(NRTimeHud)
+    time: timeApi(NRTimeHud),
+    timed: timedApi()
   };
 
   // Dokumentklassen
@@ -87,12 +89,14 @@ Hooks.once("init", () => {
   registerHandlebarsHelpers();
   registerSettings();
   registerTimeSettings({ onHudChange: () => NRTimeHud.refresh() });
+  registerTimedSettings();
   initTime();
   registerNoticeSettings();
   registerSyncSettings();
   registerChatHooks();
   registerCombatHooks();
   registerTimeHooks();
+  registerTimedHooks();
   Hooks.on("updateWorldTime", () => NRTimeHud.instance?.onTimeChanged());
 });
 

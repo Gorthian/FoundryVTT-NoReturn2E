@@ -260,9 +260,9 @@ export class NRActor extends foundry.documents.Actor {
     const physMalus = resist ? 0 : this.physicalMalus(attrUsed);
     if (physMalus) styleNotes.push(game.i18n.format("NR.Style.PhysicalMalus", { n: physMalus }));
     // Temporäre Bonuswürfel (Der Doktor, Mixology, Sterne-Küche, Inspirieren) – nicht auf Schadenswiderstand
-    if (!resist && (this.system.tempBonus ?? 0) > 0) {
-      bonus += this.system.tempBonus;
-      styleNotes.push(game.i18n.format("NR.Style.TempBonus", { n: this.system.tempBonus }));
+    if (!resist && (this.system.bonusDice ?? 0) > 0) {
+      bonus += this.system.bonusDice;
+      styleNotes.push(game.i18n.format("NR.Style.TempBonus", { n: this.system.bonusDice }));
     }
     for (const n of styleNotes) extraHtml += `<p class="nr-good"><i class="fa-solid fa-star"></i> ${n}</p>`;
     const malusTotal = (resist ? 0 : malus) + opts.malusDice + opts.disadvantages * 2 + physMalus;
@@ -461,8 +461,8 @@ export class NRActor extends foundry.documents.Actor {
   }
 
   /** Heilung (S. 103): natürliche Heilung = KO je Zone, mit Medizin verdoppelt. */
-  async healNatural({ doubled = false, days = 1 } = {}) {
-    if (this.system.awakened) return ui.notifications.warn(game.i18n.localize("NR.Awakened.NoHealing"));
+  async healNatural({ doubled = false, days = 1, silent = false } = {}) {
+    if (this.system.awakened) return silent ? 0 : ui.notifications.warn(game.i18n.localize("NR.Awakened.NoHealing"));
     const good = this.items.some(i => i.type === "advantage" && i.name.toLowerCase().includes("heilfleisch"));
     const bad = this.items.some(i => i.type === "advantage" && i.name.toLowerCase().includes("verdorbenes"));
     let perDay = good ? 20 : this.system.attr.ko.total;
@@ -477,7 +477,8 @@ export class NRActor extends foundry.documents.Actor {
     }
     updates["system.nonLethal"] = 0;
     await this.update(updates);
-    ui.notifications.info(game.i18n.format("NR.Notify.Healed", { name: this.name, heal }));
+    if (!silent) ui.notifications.info(game.i18n.format("NR.Notify.Healed", { name: this.name, heal }));
+    return heal;
   }
 
   /** Regeneration zu Beginn der Kampfrunde (S. 103). */

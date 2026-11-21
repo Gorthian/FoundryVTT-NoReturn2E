@@ -107,6 +107,18 @@
     <label>{{localize "NR.Psi.DamageMult"}}</label><span>KS × <input type="number" name="system.damageMult" value="{{system.damageMult}}"> <label><input type="checkbox" name="system.allZones" {{checked system.allZones}}> {{localize "NR.Psi.AllZones"}}</label></span>
     <label>{{localize "NR.Weapon.Pierce"}}</label><select name="system.pierce">{{selectOptions options.pierce selected=system.pierce}}</select>
   </div>
+  <fieldset class="nr-timed-fields">
+    <legend>{{localize "NR.Timed.Title"}}</legend>
+    <div class="nr-form-grid">
+      <label data-tooltip="{{localize 'NR.Timed.FormulaHint'}}">{{localize "NR.Timed.Duration.label"}}</label>
+      <span><input type="text" name="system.duration.formula" value="{{system.duration.formula}}" placeholder="KS*2"> <select name="system.duration.unit">{{selectOptions options.timedUnits selected=system.duration.unit}}</select></span>
+      <label>{{localize "NR.Timed.Affects"}}</label><select name="system.duration.target">{{selectOptions options.timedTargets selected=system.duration.target}}</select>
+      <label data-tooltip="{{localize 'NR.Timed.TickFormulaHint'}}">{{localize "NR.Timed.TickLabelField"}}</label>
+      <span><input type="text" name="system.duration.tick.formula" value="{{system.duration.tick.formula}}" placeholder="KS*5"> <label><input type="checkbox" name="system.duration.tick.cumulative" {{checked system.duration.tick.cumulative}}> {{localize "NR.Timed.Cumulative"}}</label></span>
+      <label>{{localize "NR.Timed.TickType"}}</label>
+      <span><select name="system.duration.tick.damageType">{{selectOptions options.damageTypes selected=system.duration.tick.damageType}}</select> <select name="system.duration.tick.zones">{{selectOptions options.tickZones selected=system.duration.tick.zones}}</select> <select name="system.duration.tick.pierce">{{selectOptions options.pierce selected=system.duration.tick.pierce}}</select></span>
+    </div>
+  </fieldset>
   <label class="nr-block-label">{{localize "NR.Psi.Effect"}}</label>
   <textarea name="system.effect" rows="5">{{system.effect}}</textarea>
   <p class="nr-hint">{{localize "NR.Psi.EffectHint"}}</p>
@@ -177,6 +189,7 @@
     <label>{{localize "NR.Bio.Covers"}}</label><input type="number" name="system.covers" value="{{system.covers}}">
     <label>{{localize "NR.Bio.Conspicuity"}}</label><input type="text" name="system.conspicuity" value="{{system.conspicuity}}">
     <label>{{localize "NR.Bio.Charges"}}</label><span><input type="number" name="system.charges.value" value="{{system.charges.value}}"> / <input type="number" name="system.charges.max" value="{{system.charges.max}}"></span>
+    <label data-tooltip="{{localize 'NR.Timed.RechargeHint'}}">{{localize "NR.Timed.Recharge"}}</label><span><input type="number" step="0.5" min="0" name="system.recharge.hours" value="{{system.recharge.hours}}"> h</span>
   </div>
 {{/if}}
 
