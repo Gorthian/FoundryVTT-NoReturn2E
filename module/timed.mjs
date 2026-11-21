@@ -8,7 +8,7 @@
  * Foundry-Dauer gesetzt, damit die Restzeit im Token-HUD und am Effekt sichtbar ist.
  */
 import { NR } from "./config.mjs";
-import { TIME, getDate, advance } from "./time.mjs";
+import { TIME, advance } from "./time.mjs";
 import { rollHitZone } from "./dice/pool.mjs";
 
 const SYSTEM_ID = "noreturn";

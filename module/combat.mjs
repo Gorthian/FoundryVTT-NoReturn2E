@@ -2,7 +2,7 @@ import { NR } from "./config.mjs";
 import { rollPool, rollHitZone, buildFormula, applyChatMode, postPoolMessage, diceSummary } from "./dice/pool.mjs";
 import {
   isUnarmed, isMeleeWeapon, defaultLimb, strikeGroups, styleDice, maxMultiAttacks, attackSkillOptions,
-  nahkampfParryVia, LEG_ZONES
+  nahkampfParryVia
 } from "./styles.mjs";
 
 const { renderTemplate } = foundry.applications.handlebars;

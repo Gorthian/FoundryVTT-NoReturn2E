@@ -6,16 +6,10 @@
  */
 import { advanceDisease } from "./disease.mjs";
 import { radiationEffect } from "./status.mjs";
+import { allActors } from "./timed.mjs";
 
 const DAYS_PER_ZONAT = 20;
 const L = key => game.i18n.localize(key);
-
-/** Alle Actors, die betroffen sein können: Welt-Actors plus Token-Actors der aktuellen Szene. */
-function allActors() {
-  const set = new Set(game.actors.contents);
-  for (const t of canvas.scene?.tokens ?? []) if (t.actor && !t.actorLink) set.add(t.actor);
-  return [...set];
-}
 
 /** Strahlungswirkung für einen Actor; liefert Textzeilen. */
 async function applyRadiation(actor, { days, zonats }) {
