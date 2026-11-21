@@ -28,7 +28,7 @@ In Foundry unter *Spielsysteme → Spielsystem installieren* diese **Manifest-UR
 https://github.com/Gorthian/FoundryVTT-NoReturn2E/releases/latest/download/system.json
 ```
 
-Das funktioniert auch auf The Forge. Updates erscheinen danach im Reiter *Spielsysteme*. **Lege vor jedem Update ein Backup deiner Welt an.** Details (Git/ZIP, Updates, Backup): [Wiki → Installation](https://github.com/Gorthian/FoundryVTT-NoReturn2E/wiki/Installation).
+Das funktioniert auch auf The Forge. Updates erscheinen danach im Reiter *Spielsysteme*. **Lege vor jedem Update ein Backup deiner Welt an.** Die Compendien sind nur im Release enthalten (sie werden dort aus `packs-src` gebaut); bei einer Installation direkt aus dem Git-Repository fehlen sie, siehe [Entwicklung](#entwicklung-compendien-bauen). Details (Git/ZIP, Updates, Backup): [Wiki → Installation](https://github.com/Gorthian/FoundryVTT-NoReturn2E/wiki/Installation).
 
 ## Dokumentation
 
