@@ -13,6 +13,11 @@
   <p class="nr-zones"><i class="fa-solid fa-person"></i> {{zoneLabels}}</p>
   {{#if blocked}}<p class="nr-hint">{{localize "NR.Combat.BlockHit"}}</p>{{/if}}
   <div class="nr-card-buttons">
+    {{#unless target}}
+    <button type="button" data-nr-action="applyTargets"><i class="fa-solid fa-bullseye"></i> {{localize "NR.Combat.ApplyToTargets"}}</button>
+    <button type="button" data-nr-action="resist"><i class="fa-solid fa-shield-heart"></i> {{localize "NR.Combat.ResistForSelected"}}</button>
+    {{else}}
     <button type="button" data-nr-action="resist" data-token-uuid="{{target.tokenUuid}}" data-actor-uuid="{{target.actorUuid}}"><i class="fa-solid fa-shield-heart"></i> {{localize "NR.Combat.ResistFor"}} {{target.name}}</button>
+    {{/unless}}
   </div>
 </div>

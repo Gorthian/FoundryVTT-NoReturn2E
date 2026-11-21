@@ -33,8 +33,13 @@ function prepareButtons(message, el) {
     let allowed = true;
     if (["defend", "noDefense", "resist", "psiDamage"].includes(action)) {
       const uuid = btn.dataset.tokenUuid || btn.dataset.actorUuid;
+      // Schadenskarte ohne festes Ziel: Widerstand für markierte/ausgewählte Tokens, Rechte prüft resistFromMessage
+      if (action === "resist" && !uuid) return;
       const doc = uuid ? fromUuidSync(uuid) : null;
       const actor = doc?.actor ?? doc;
+      allowed = game.user.isGM || !!actor?.isOwner;
+    } else if (action === "damageNoTarget") {
+      const actor = f.attack?.actorUuid ? fromUuidSync(f.attack.actorUuid) : null;
       allowed = game.user.isGM || !!actor?.isOwner;
     } else if (action === "damage" || action === "clinch") {
       const actor = f.defense?.attack?.actorUuid ? fromUuidSync(f.defense.attack.actorUuid) : null;
@@ -57,6 +62,10 @@ async function onAction(message, btn) {
       return defendAgainst(message, btn.dataset.tokenUuid, true, Number(btn.dataset.index) || 1);
     case "damage":
       return rollDamage(f.defense);
+    case "damageNoTarget":
+      // Schaden ohne Ziel/Verteidigung (Objekte, vergessene Markierung, Flächenschaden): Treffer ohne Gute Treffer
+      if (!f.attack) return;
+      return rollDamage({ attack: f.attack, defender: null, goodHits: 0, blocked: false, hit: true });
     case "clinch":
       return startClinch(f.defense);
     case "resist":
@@ -77,7 +86,9 @@ async function onAction(message, btn) {
       if (!payload) return;
       let delegated = 0;
       const missing = [];
-      for (const t of game.user.targets) {
+      const tokens = game.user.targets.size ? Array.from(game.user.targets) : (canvas.tokens?.controlled ?? []);
+      if (!tokens.length) return ui.notifications.warn(game.i18n.localize("NR.Notify.NoTargetsForDamage"));
+      for (const t of tokens) {
         const result = await applyDamageTo(t.actor?.uuid ?? t.document.uuid, {
           amount: payload.amount, zones: payload.zones, attack: payload.attack, label: payload.weaponName
         });

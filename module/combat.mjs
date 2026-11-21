@@ -644,7 +644,7 @@ async function rollDamageOnce(defense, attacker, hit) {
  */
 async function spikeRetaliation(defense, attacker) {
   const attack = defense.attack;
-  if (!attack.melee || attack.category !== "unbewaffnet") return;
+  if (!defense.defender || !attack.melee || attack.category !== "unbewaffnet") return;
   const defTok = defense.defender.tokenUuid ? await fromUuid(defense.defender.tokenUuid) : null;
   const defender = defTok?.actor ?? await fromUuid(defense.defender.actorUuid);
   if (!defender) return;
@@ -673,10 +673,19 @@ async function spikeRetaliation(defense, attacker) {
 export async function resistFromMessage(message, zoneOverride = null) {
   const payload = message.flags.noreturn?.damage;
   if (!payload) return;
-  const actor = (await fromUuid(payload.target.actorUuid)) ?? (await fromUuid(payload.target.tokenUuid))?.actor;
-  // Bei unverlinkten Tokens den Token-Actor verwenden
-  const tokenDoc = payload.target.tokenUuid ? await fromUuid(payload.target.tokenUuid) : null;
-  const target = tokenDoc?.actor ?? actor;
+  let target;
+  if (payload.target) {
+    const actor = (await fromUuid(payload.target.actorUuid)) ?? (await fromUuid(payload.target.tokenUuid))?.actor;
+    // Bei unverlinkten Tokens den Token-Actor verwenden
+    const tokenDoc = payload.target.tokenUuid ? await fromUuid(payload.target.tokenUuid) : null;
+    target = tokenDoc?.actor ?? actor;
+  } else {
+    // Schaden ohne festes Ziel: markierte, sonst ausgewählte Tokens (erstes Token)
+    const tokens = game.user.targets.size ? Array.from(game.user.targets) : (canvas.tokens?.controlled ?? []);
+    if (!tokens.length) return ui.notifications.warn(game.i18n.localize("NR.Notify.NoTargetsForDamage"));
+    if (tokens.length > 1) ui.notifications.info(game.i18n.localize("NR.Notify.ResistFirstTarget"));
+    target = tokens[0].actor;
+  }
   if (!target) return;
   if (!target.isOwner) return ui.notifications.warn(game.i18n.localize("NR.Notify.NotOwner"));
   return target.resistDamage({

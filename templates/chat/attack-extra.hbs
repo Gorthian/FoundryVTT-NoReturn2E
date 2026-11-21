@@ -27,5 +27,12 @@
   </div>
   {{else}}
   <p class="nr-hint">{{localize "NR.Combat.NoTargets"}}</p>
+  {{#unless attackData.rangeFail}}
+  <div class="nr-card-buttons">
+    {{#each attackIndices as |i|}}
+    <button type="button" data-nr-action="damageNoTarget" data-index="{{i}}"><i class="fa-solid fa-burst"></i> {{localize "NR.Combat.RollDamageNoTarget"}}{{#if (gt @root.attackData.multi 1)}} {{i}}/{{@root.attackData.multi}}{{/if}}</button>
+    {{/each}}
+  </div>
+  {{/unless}}
   {{/if}}
 </div>
