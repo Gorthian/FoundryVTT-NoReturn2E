@@ -22,6 +22,8 @@ import { NRCharacterGenerator, openCharacterGenerator } from "./module/apps/char
 import { registerNoticeSettings, showStartupNotice } from "./module/notice.mjs";
 import { registerSyncSettings, checkSyncAfterUpdate, openCompendiumSync } from "./module/sync.mjs";
 import { importMannifest, exportMannifest, promptImport } from "./module/apps/mannifest.mjs";
+import { NRTimeHud } from "./module/apps/time-hud.mjs";
+import { registerTimeSettings, registerTimeHooks, initTime, timeApi } from "./module/time.mjs";
 
 Hooks.once("init", () => {
   console.log("NoReturn 2E | Initialisiere System");
@@ -34,7 +36,8 @@ Hooks.once("init", () => {
     hazard: hazardDialog, applyHazard, setStatus,
     infect, advanceDisease, cure, infectDialog, applyElapsed, elapsedDialog,
     syncCompendium: openCompendiumSync,
-    showNotice: () => showStartupNotice({ force: true })
+    showNotice: () => showStartupNotice({ force: true }),
+    time: timeApi(NRTimeHud)
   };
 
   // Dokumentklassen
@@ -83,10 +86,14 @@ Hooks.once("init", () => {
   registerElapsedHook();
   registerHandlebarsHelpers();
   registerSettings();
+  registerTimeSettings({ onHudChange: () => NRTimeHud.refresh() });
+  initTime();
   registerNoticeSettings();
   registerSyncSettings();
   registerChatHooks();
   registerCombatHooks();
+  registerTimeHooks();
+  Hooks.on("updateWorldTime", () => NRTimeHud.instance?.onTimeChanged());
 });
 
 /** Konfigurationstexte (Attribute, Fertigkeiten, Zonen …) in die gewählte Sprache übersetzen. */
@@ -106,6 +113,7 @@ const TEMPLATES = [
     "systems/noreturn/templates/actor/tab-traits.hbs",
     "systems/noreturn/templates/actor/vehicle-sheet.hbs",
     "systems/noreturn/templates/apps/character-generator.hbs",
+    "systems/noreturn/templates/apps/time-hud.hbs",
     "systems/noreturn/templates/apps/compendium-sync.hbs",
     "systems/noreturn/templates/chat/attack-extra.hbs",
     "systems/noreturn/templates/chat/damage-card.hbs",
@@ -132,6 +140,33 @@ Hooks.on("preCreateScene", (scene, data) => {
   if (data.grid?.distance === undefined) update["grid.distance"] = 1;
   if (data.grid?.units === undefined) update["grid.units"] = "m";
   scene.updateSource(update);
+});
+
+/** Szenensteuerung (linke Icon-Leiste): NoReturn-Gruppe mit Zeit-HUD, Charaktergenerator und Startinfo. */
+Hooks.on("getSceneControlButtons", controls => {
+  const tools = {
+    // Platzhalter als aktives Werkzeug: Das Aktivieren der Gruppe soll das HUD nicht umschalten
+    select: { name: "select", order: 0, title: "NR.Controls.Title", icon: "fa-solid fa-hand-pointer", onChange: () => {} },
+    timeHud: {
+      name: "timeHud", order: 1, title: "NR.Controls.TimeHud", icon: "fa-solid fa-clock", toggle: true,
+      active: !!NRTimeHud.instance?.rendered,
+      visible: game.user.isGM || game.settings.get("noreturn", "timeHudPlayers"),
+      onChange: (event, active) => (active ? NRTimeHud.show({ force: true }) : NRTimeHud.instance?.close())
+    },
+    generator: {
+      name: "generator", order: 2, title: "NR.Gen.Title", icon: "fa-solid fa-user-plus", button: true,
+      visible: game.user.can("ACTOR_CREATE"),
+      onChange: () => openCharacterGenerator()
+    },
+    notice: {
+      name: "notice", order: 3, title: "NR.Controls.Notice", icon: "fa-solid fa-circle-info", button: true,
+      onChange: () => showStartupNotice({ force: true })
+    }
+  };
+  controls.noreturn = {
+    name: "noreturn", order: 100, title: "NR.Controls.Title", icon: "fa-solid fa-biohazard",
+    activeTool: "select", tools, onChange: () => {}
+  };
 });
 
 /** Button „Charaktergenerator“ in der Actor-Seitenleiste. */
@@ -173,6 +208,7 @@ Hooks.once("ready", async () => {
     createItemMacro(data, slot);
     return false;
   });
+  NRTimeHud.refresh();
   showStartupNotice();
   checkSyncAfterUpdate().catch(err => console.error("NoReturn 2E | Kompendium-Abgleich", err));
   console.log("NoReturn 2E | Bereit. Nicht umdrehen – es gibt kein Zurück.");
