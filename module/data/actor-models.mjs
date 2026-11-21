@@ -326,6 +326,8 @@ export class CreatureData extends foundry.abstract.TypeDataModel {
     const regPool = sys.regeneration.pool + (mods.regPool ?? 0);
     sys.reg = {
       speed: sys.regeneration.speed + (mods.regSpeed ?? 0),
+      modSpeed: mods.regSpeed ?? 0,
+      modPool: mods.regPool ?? 0,
       pool: regPool,
       left: Math.max(0, regPool - sys.regeneration.poolUsed)
     };

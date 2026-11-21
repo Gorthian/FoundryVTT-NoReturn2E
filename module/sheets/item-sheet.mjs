@@ -70,6 +70,7 @@ export class NRItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
       item, system: s, source: item._source.system, config: NR, editable: this.isEditable,
       fields: s.schema.fields, isType: Object.fromEntries([[item.type, true]]),
       typeLabel: game.i18n.localize(`TYPES.Item.${item.type}`),
+      enrichedHint: await TE.enrichHTML(s.hint ?? "", { relativeTo: item, secrets: item.isOwner }),
       enrichedDescription: await TE.enrichHTML(s.description ?? "", { relativeTo: item, secrets: item.isOwner }),
       options: {
         attributes: opts(NR.attributes),
