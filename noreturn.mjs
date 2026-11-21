@@ -13,6 +13,9 @@ import { NRItemSheet } from "./module/sheets/item-sheet.mjs";
 import { NRCombatant, registerCombatHooks, attackWithWeapon, manualDamageDialog } from "./module/combat.mjs";
 import { registerChatHooks } from "./module/chat.mjs";
 import { registerSocket } from "./module/socket.mjs";
+import { registerStatusEffects, hazardDialog, applyHazard, setStatus } from "./module/status.mjs";
+import { infect, advanceDisease, cure, infectDialog } from "./module/disease.mjs";
+import { applyElapsed, elapsedDialog, registerElapsedHook } from "./module/elapsed.mjs";
 import { rollPool, rollHitZone } from "./module/dice/pool.mjs";
 import { castPsiApp, collectPower, rollPsiFail } from "./module/psi.mjs";
 import { NRCharacterGenerator, openCharacterGenerator } from "./module/apps/character-generator.mjs";
@@ -28,6 +31,8 @@ Hooks.once("init", () => {
     config: NR, rollPool, rollHitZone, attackWithWeapon, manualDamageDialog, castPsiApp, collectPower, rollPsiFail,
     useItem: useItemMacro, characterGenerator: openCharacterGenerator, NRCharacterGenerator,
     mannifest: { import: importMannifest, export: exportMannifest, promptImport },
+    hazard: hazardDialog, applyHazard, setStatus,
+    infect, advanceDisease, cure, infectDialog, applyElapsed, elapsedDialog,
     syncCompendium: openCompendiumSync,
     showNotice: () => showStartupNotice({ force: true })
   };
@@ -53,7 +58,9 @@ Hooks.once("init", () => {
     bioTrait: ItemModels.BioTraitData,
     advantage: ItemModels.AdvantageData,
     trait: ItemModels.TraitData,
-    augment: ItemModels.AugmentData
+    augment: ItemModels.AugmentData,
+    disease: ItemModels.DiseaseData,
+    flora: ItemModels.FloraData
   };
 
   // Token-Leisten
@@ -72,6 +79,8 @@ Hooks.once("init", () => {
   DSC.registerSheet(foundry.documents.Actor, "noreturn", NRVehicleSheet, { types: ["vehicle"], makeDefault: true, label: "NR.Sheet.Vehicle" });
   DSC.registerSheet(foundry.documents.Item, "noreturn", NRItemSheet, { makeDefault: true, label: "NR.Sheet.Item" });
 
+  registerStatusEffects();
+  registerElapsedHook();
   registerHandlebarsHelpers();
   registerSettings();
   registerNoticeSettings();

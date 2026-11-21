@@ -23,10 +23,11 @@ const itemModels = {
   gear: ItemModels.GearData, skill: ItemModels.SkillData, psiPower: ItemModels.PsiPowerData,
   psiApp: ItemModels.PsiAppData, styleSkill: ItemModels.StyleSkillData, species: ItemModels.SpeciesData,
   abnormality: ItemModels.AbnormalityData, bioTrait: ItemModels.BioTraitData,
-  advantage: ItemModels.AdvantageData, trait: ItemModels.TraitData, augment: ItemModels.AugmentData
+  advantage: ItemModels.AdvantageData, trait: ItemModels.TraitData, augment: ItemModels.AugmentData,
+  disease: ItemModels.DiseaseData, flora: ItemModels.FloraData
 };
 const actorModels = { character: CharacterData, npc: NpcData, vehicle: VehicleData };
-const sublevels = { Item: "items", Actor: "actors", JournalEntry: "journal", RollTable: "tables" };
+const sublevels = { Item: "items", Actor: "actors", JournalEntry: "journal", RollTable: "tables", Macro: "macros" };
 
 // Typen aus noreturn.mjs gegenprüfen, damit die Tabelle oben nicht veraltet
 const main = fs.readFileSync(path.join(root, "noreturn.mjs"), "utf8");

@@ -42,6 +42,8 @@ export class NRActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       heal: NRActorSheet.#onHeal,
       regenerate: NRActorSheet.#onRegenerate,
       rollInfection: NRActorSheet.#onRollInfection,
+      diseaseAdvance: NRActorSheet.#onDiseaseAdvance,
+      diseaseCure: NRActorSheet.#onDiseaseCure,
       degeneration: NRActorSheet.#onDegeneration,
       advance: NRActorSheet.#onAdvance,
       reload: NRActorSheet.#onReload,
@@ -147,7 +149,7 @@ export class NRActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       disadvantages: rows("advantage", i => i.system.kind === "nachteil"),
       traitsJustice: rows("trait", i => i.system.kind === "justice"),
       traitsChaos: rows("trait", i => i.system.kind === "chaos"),
-      hasSplit: actor.styleLevel("split") > 0, clinch: actor.getFlag("noreturn", "clinch") ?? null, styleSkills: rows("styleSkill"), augments: rows("augment"),
+      hasSplit: actor.styleLevel("split") > 0, clinch: actor.getFlag("noreturn", "clinch") ?? null, styleSkills: rows("styleSkill"), augments: rows("augment"), diseases: rows("disease"),
       gear: rows("gear"), ammo: rows("ammo"),
       adrenalinPips: Array.from({ length: sys.adrenalinMax }, (_, i) => ({ used: i >= sys.adrenalinLeft })),
       meditationPips: Array.from({ length: sys.meditationMax }, (_, i) => ({ used: i >= sys.meditationLeft })),
@@ -243,6 +245,16 @@ export class NRActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
 
   static async #onUseItem(event, target) {
     return this._getItem(target)?.use();
+  }
+
+  static async #onDiseaseAdvance(event, target) {
+    const item = this._getItem(target);
+    if (item) return game.noreturn.advanceDisease(this.actor, item, Number(target.dataset.days) || 1);
+  }
+
+  static async #onDiseaseCure(event, target) {
+    const item = this._getItem(target);
+    if (item) return game.noreturn.cure(this.actor, item);
   }
 
   static async #onEditItem(event, target) {

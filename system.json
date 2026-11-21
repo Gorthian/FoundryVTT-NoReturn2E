@@ -301,6 +301,39 @@
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       }
+    },
+    {
+      "name": "makros",
+      "label": "SL-Makros",
+      "path": "packs/makros",
+      "type": "Macro",
+      "system": "noreturn",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "krankheiten",
+      "label": "Krankheiten",
+      "path": "packs/krankheiten",
+      "type": "Item",
+      "system": "noreturn",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "flora",
+      "label": "Flora",
+      "path": "packs/flora",
+      "type": "Item",
+      "system": "noreturn",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
     }
   ],
   "packFolders": [
@@ -310,7 +343,8 @@
       "color": "#7a2e12",
       "packs": [
         "regeln",
-        "tabellen"
+        "tabellen",
+        "makros"
       ],
       "folders": [
         {
@@ -343,6 +377,14 @@
           "packs": [
             "psi-kraefte",
             "psi-apps"
+          ]
+        },
+        {
+          "name": "Welt",
+          "sorting": "m",
+          "packs": [
+            "krankheiten",
+            "flora"
           ]
         }
       ]

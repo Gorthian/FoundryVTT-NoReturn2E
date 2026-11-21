@@ -19,7 +19,9 @@
       "bioTrait": "Biological Trait",
       "advantage": "Advantage/Disadvantage",
       "trait": "Character Trait",
-      "augment": "Augmentation"
+      "augment": "Augmentation",
+      "disease": "Disease",
+      "flora": "Flora"
     }
   },
   "NR": {
@@ -61,7 +63,8 @@
       "Wanted": "Wanted Poster",
       "Notes": "Notes",
       "Description": "Description",
-      "Physical": "Object"
+      "Physical": "Object",
+      "Diseases": "Diseases"
     },
     "Special": {
       "adrenalin": "Adrenaline",
@@ -641,14 +644,16 @@
       "Bugs": "<strong>Report bugs:</strong> Please file them as a <a href=\"{issues}\" target=\"_blank\" rel=\"noopener\">GitHub issue</a>.",
       "Unofficial": "<strong>Unofficial fan project</strong> in consultation with <a href=\"{url}\" target=\"_blank\" rel=\"noopener\">Mannifest Games</a>, not an official Mannifest Games product.",
       "Rights": "<strong>Rights:</strong> All rights to NoReturn, its setting and rules remain with Mannifest Games. The code license (MIT) covers the code only, not rules content. The core book is required for the full rules.",
-          "Dismiss": "Don't show again until the next version",
+      "Dismiss": "Don't show again until the next version",
       "Ok": "Understood"
     },
     "Settings": {
       "AutoRegen": "Automatic regeneration",
       "AutoRegenHint": "Regenerate combatants at the start of their turn.",
       "ShowDice": "Show dice",
-      "ShowDiceHint": "Show individual dice in roll cards."
+      "ShowDiceHint": "Show individual dice in roll cards.",
+      "TimeEffects": "Elapsed time affects diseases and radiation",
+      "TimeEffectsHint": "Reacts to the GM time control: elapsed days and zonats advance diseases and cause radiation losses (on the GM client only)."
     },
     "Sync": {
       "Title": "Update from compendium",
@@ -1738,6 +1743,104 @@
         "OrgLoss": "Organism −{v}",
         "PsycheLoss": "Psyche −{v}"
       }
+    },
+    "Condition": {
+      "nrTemp1": "Extreme temperature −1D",
+      "nrTemp2": "Extreme temperature −2D",
+      "nrTemp3": "Extreme temperature −3D",
+      "nrRadiation": "Irradiated",
+      "nrDisease": "Diseased",
+      "nrContinuous": "Continuous damage"
+    },
+    "Hazard": {
+      "Title": "Trigger hazard",
+      "Type": "Hazard",
+      "Category": "Category / level",
+      "CategoryShort": "Cat.",
+      "Apply": "Apply",
+      "Targets": "Affects {n} selected token(s).",
+      "NoTokens": "No tokens selected.",
+      "GMOnly": "Only the GM can trigger hazards.",
+      "temperature": {
+        "name": "Extreme temperature",
+        "hint": "Applies −1D to −3D to all values per temperature band (cat. 1–3). Check every 10 minutes; adjust the status manually afterwards."
+      },
+      "acidRain": {
+        "name": "Acid rain",
+        "hint": "−1 organism and 1 damage per hour of exposure; material −1 stability per zonat."
+      },
+      "sandstorm": {
+        "name": "Sandstorm",
+        "hint": "10 damage per category every 15 minutes, duration category × D6 hours."
+      },
+      "deathFog": {
+        "name": "Death fog",
+        "hint": "20 continuous damage."
+      },
+      "toxicWater": {
+        "name": "Toxic water",
+        "hint": "60 continuous damage (+10 per combat round in the water)."
+      },
+      "radiation": {
+        "name": "Radiation",
+        "hint": "Organism loss per zonat/day by category (enter manually); from cat. 7 70–90 continuous damage. Anti-radiation drugs halve it."
+      },
+      "Protected": "Protective gear sealed (MK:C, closed)",
+      "radiationLeave": {
+        "name": "Leave radiation area",
+        "hint": "Ends ongoing exposure; the aftereffect (−1 organism per zonat) remains."
+      }
+    },
+    "Radiation": {
+      "Title": "Radiation",
+      "Exposure": "Organism −{v} (exposure)",
+      "Aftermath": "Organism −{v} (aftereffect)"
+    },
+    "Elapsed": {
+      "Title": "Time passes",
+      "Days": "Days",
+      "Zonats": "Zonats",
+      "Apply": "Apply",
+      "Hint": "Advances diseases and applies radiation loss (1 zonat = 20 days). Happens automatically with the GM time control."
+    },
+    "Disease": {
+      "Classification": "Classification",
+      "Transmission": "Transmission",
+      "Vector": "Carrier",
+      "IncubationText": "Incubation",
+      "Duration": "Duration",
+      "Cure": "Cure",
+      "Identification": "Identification TN",
+      "Intensity": "Intensity",
+      "MalusDice": "Malus dice (all actions)",
+      "Course": "Course",
+      "IncubationDays": "Incubation (days)",
+      "StepDays": "Step every (days)",
+      "StepOrganism": "Organism per step",
+      "StepPsyche": "Psyche per step",
+      "StepDamage": "Damage per step (random zone)",
+      "Active": "Active",
+      "Days": "Course (days)",
+      "CourseHint": "Each step applies organism, psyche and damage (dice formula or number). Steps follow every X days after incubation.",
+      "AdvanceDay": "Advance one day",
+      "Infect": "Infection check",
+      "Infected": "{name} falls ill.",
+      "Incubation": "Incubation",
+      "OrgLoss": "Organism −{v}",
+      "PsycheLoss": "Psyche −{v}",
+      "ZoneDamage": "{v} damage to {zone}",
+      "Progress": "Progress:",
+      "NoPack": "The compendium \"Diseases\" was not found.",
+      "InfectTitle": "Transmit disease",
+      "Which": "Disease",
+      "SkipRoll": "Infect without a check",
+      "IntensityStat": "Intensity {v}",
+      "IdentStat": "Ident. TN {v}",
+      "DaysStat": "Day {v}"
+    },
+    "Flora": {
+      "Region": "Distribution",
+      "Effect": "Effect"
     }
   }
 }

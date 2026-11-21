@@ -19,7 +19,9 @@
       "bioTrait": "Biologische Eigenschaft",
       "advantage": "Vor-/Nachteil",
       "trait": "Charaktermerkmal",
-      "augment": "Augmentierung"
+      "augment": "Augmentierung",
+      "disease": "Krankheit",
+      "flora": "Flora"
     }
   },
   "NR": {
@@ -61,7 +63,8 @@
       "Wanted": "Steckbrief",
       "Notes": "Notizen",
       "Description": "Beschreibung",
-      "Physical": "Gegenstand"
+      "Physical": "Gegenstand",
+      "Diseases": "Krankheiten"
     },
     "Special": {
       "adrenalin": "Adrenalin",
@@ -641,14 +644,16 @@
       "Bugs": "<strong>Fehler melden:</strong> Bitte als <a href=\"{issues}\" target=\"_blank\" rel=\"noopener\">GitHub-Issue</a> melden.",
       "Unofficial": "<strong>Inoffizielles Fan-Projekt</strong> in Rücksprache mit <a href=\"{url}\" target=\"_blank\" rel=\"noopener\">Mannifest Games</a>, kein offizielles Produkt von Mannifest Games.",
       "Rights": "<strong>Rechte:</strong> Alle Rechte an NoReturn, Setting und Regelwerk verbleiben bei Mannifest Games. Die Code-Lizenz (MIT) gilt nur für den Code, nicht für Regelinhalte. Für die vollständigen Regeln wird das Corebook benötigt.",
-          "Dismiss": "Bis zur nächsten Version nicht mehr anzeigen",
+      "Dismiss": "Bis zur nächsten Version nicht mehr anzeigen",
       "Ok": "Verstanden"
     },
     "Settings": {
       "AutoRegen": "Automatische Regeneration",
       "AutoRegenHint": "Regeneriert Kämpfer mit Regeneration zu Beginn ihres Zuges.",
       "ShowDice": "Würfel anzeigen",
-      "ShowDiceHint": "Einzelne Würfel in Probenkarten anzeigen."
+      "ShowDiceHint": "Einzelne Würfel in Probenkarten anzeigen.",
+      "TimeEffects": "Zeitablauf wirkt auf Krankheiten und Strahlung",
+      "TimeEffectsHint": "Reagiert auf die SL-Zeitsteuerung: Verstrichene Tage und Zonate rücken Krankheitsverläufe vor und verursachen Strahlungsverluste (nur auf dem Client der Spielleitung)."
     },
     "Sync": {
       "Title": "Aus Kompendium aktualisieren",
@@ -1738,6 +1743,104 @@
         "OrgLoss": "Organismus −{v}",
         "PsycheLoss": "Psyche −{v}"
       }
+    },
+    "Condition": {
+      "nrTemp1": "Extreme Temperatur −1W",
+      "nrTemp2": "Extreme Temperatur −2W",
+      "nrTemp3": "Extreme Temperatur −3W",
+      "nrRadiation": "Verstrahlt",
+      "nrDisease": "Erkrankt",
+      "nrContinuous": "Andauernder Schaden"
+    },
+    "Hazard": {
+      "Title": "Gefahr auslösen",
+      "Type": "Gefahr",
+      "Category": "Kategorie / Stufe",
+      "CategoryShort": "Kat.",
+      "Apply": "Anwenden",
+      "Targets": "Wirkt auf {n} markierte(s) Token.",
+      "NoTokens": "Keine Tokens markiert.",
+      "GMOnly": "Nur die Spielleitung kann Gefahren auslösen.",
+      "temperature": {
+        "name": "Extreme Temperatur",
+        "hint": "Setzt −1W bis −3W auf alle Werte je Temperaturband (Kat. 1–3). Probe alle 10 Minuten, Zustand danach manuell anpassen."
+      },
+      "acidRain": {
+        "name": "Fress-Regen",
+        "hint": "−1 Organismus und 1 Schaden je Stunde Aufenthalt; Material −1 Stabilität je Zonat."
+      },
+      "sandstorm": {
+        "name": "Sandsturm",
+        "hint": "10 Schaden je Kategorie alle 15 Minuten, Dauer Kategorie × W6 Stunden."
+      },
+      "deathFog": {
+        "name": "Todesnebel",
+        "hint": "20 andauernder Schaden."
+      },
+      "toxicWater": {
+        "name": "Toxisches Gewässer",
+        "hint": "60 andauernder Schaden (+10 je Kampfrunde im Gewässer)."
+      },
+      "radiation": {
+        "name": "Verstrahlung",
+        "hint": "Organismusverlust je Zonat/Tag laut Kategorie (manuell eintragen); ab Kat. 7 70–90 andauernder Schaden. Antistrahlungsmittel halbieren."
+      },
+      "Protected": "Schutzkleidung dicht (MK:C, geschlossen)",
+      "radiationLeave": {
+        "name": "Strahlungsgebiet verlassen",
+        "hint": "Beendet die laufende Strahlungsbelastung; die Nachwirkung (−1 Organismus je Zonat) bleibt."
+      }
+    },
+    "Radiation": {
+      "Title": "Strahlung",
+      "Exposure": "Organismus −{v} (Strahlungsbelastung)",
+      "Aftermath": "Organismus −{v} (Nachwirkung)"
+    },
+    "Elapsed": {
+      "Title": "Zeit vergeht",
+      "Days": "Tage",
+      "Zonats": "Zonate",
+      "Apply": "Anwenden",
+      "Hint": "Rückt Krankheitsverläufe vor und wendet den Strahlungsverlust an (1 Zonat = 20 Tage). Mit der SL-Zeitsteuerung geschieht das automatisch."
+    },
+    "Disease": {
+      "Classification": "Klassifizierung",
+      "Transmission": "Ansteckung",
+      "Vector": "Überträger",
+      "IncubationText": "Inkubationszeit",
+      "Duration": "Dauer",
+      "Cure": "Heilung",
+      "Identification": "Identifizierung MW",
+      "Intensity": "Intensität",
+      "MalusDice": "Maluswürfel (alle Aktionen)",
+      "Course": "Verlauf",
+      "IncubationDays": "Inkubation (Tage)",
+      "StepDays": "Schritt alle (Tage)",
+      "StepOrganism": "Organismus je Schritt",
+      "StepPsyche": "Psyche je Schritt",
+      "StepDamage": "Schaden je Schritt (Zufallszone)",
+      "Active": "Aktiv",
+      "Days": "Verlauf (Tage)",
+      "CourseHint": "Je Schritt wirken Organismus, Psyche und Schaden (Würfelformel oder Zahl). Die Schritte folgen nach der Inkubation alle X Tage.",
+      "AdvanceDay": "Einen Tag vorrücken",
+      "Infect": "Infektionsprobe",
+      "Infected": "{name} erkrankt.",
+      "Incubation": "Inkubationszeit",
+      "OrgLoss": "Organismus −{v}",
+      "PsycheLoss": "Psyche −{v}",
+      "ZoneDamage": "{v} Schaden an {zone}",
+      "Progress": "Verlauf:",
+      "NoPack": "Das Compendium „Krankheiten“ wurde nicht gefunden.",
+      "InfectTitle": "Krankheit übertragen",
+      "Which": "Krankheit",
+      "SkipRoll": "Ohne Infektionsprobe erkranken",
+      "IntensityStat": "Intensität {v}",
+      "IdentStat": "Ident. MW {v}",
+      "DaysStat": "Tag {v}"
+    },
+    "Flora": {
+      "Region": "Verbreitung",
+      "Effect": "Wirkung"
     }
   }
 }
