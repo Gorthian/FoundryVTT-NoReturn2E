@@ -18,7 +18,7 @@ Die Compendien enthalten Spielwerte und eigene Kurzfassungen mit Seitenverweisen
 
 ## Was kann das System?
 
-Charakterbogen mit 11 Körperzonen, Würfelpool mit Hazard-Di, Kampf im Chat (Angriff, Verteidigung, Schaden, Widerstand), PSI, Fahrzeuge, ein Charaktergenerator in elf Schritten (inkl. Umbau bestehender Charaktere und Import aus dem Verlags-Generator), Style-Skills und Kampfkünste sowie 16 Compendien mit über 750 Einträgen.
+Charakterbogen mit 11 Körperzonen, Würfelpool mit Hazard-Di, Kampf im Chat (Angriff, Verteidigung, Schaden, Widerstand), PSI, Fahrzeuge, ein Charaktergenerator in elf Schritten (inkl. Umbau bestehender Charaktere und Import aus dem Verlags-Generator), Abgleich der Items mit dem Kompendium („Aus Kompendium aktualisieren“, pro Charakter und weltweit mit Vorschau), Style-Skills und Kampfkünste sowie 16 Compendien mit über 750 Einträgen.
 
 ## Installation
 
