@@ -1,0 +1,29 @@
+[
+ {
+  "_id": "csTNCDQWnY2l3txy",
+  "_key": "!macros!csTNCDQWnY2l3txy",
+  "name": "Gefahr auslösen",
+  "type": "script",
+  "img": "icons/svg/biohazard.svg",
+  "scope": "global",
+  "command": "game.noreturn.hazard();",
+  "author": null,
+  "folder": null,
+  "sort": 1000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "0.1.0",
+   "createdTime": 1795256687405,
+   "modifiedTime": 1795256687405,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ }
+]

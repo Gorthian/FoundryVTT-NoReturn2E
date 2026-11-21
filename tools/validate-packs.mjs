@@ -26,7 +26,7 @@ const itemModels = {
   advantage: ItemModels.AdvantageData, trait: ItemModels.TraitData, augment: ItemModels.AugmentData
 };
 const actorModels = { character: CharacterData, npc: NpcData, vehicle: VehicleData };
-const sublevels = { Item: "items", Actor: "actors", JournalEntry: "journal", RollTable: "tables" };
+const sublevels = { Item: "items", Actor: "actors", JournalEntry: "journal", RollTable: "tables", Macro: "macros" };
 
 // Typen aus noreturn.mjs gegenprüfen, damit die Tabelle oben nicht veraltet
 const main = fs.readFileSync(path.join(root, "noreturn.mjs"), "utf8");

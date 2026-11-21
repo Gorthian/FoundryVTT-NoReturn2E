@@ -14,7 +14,7 @@ Inoffizielles Spielsystem für **NoReturn 2. Edition** (Vario-D6 2.0, Mannifest 
 >
 > Beim Start einer Welt zeigt das System diesen Hinweis als Dialog (pro Spieler bis zur nächsten Version ausblendbar; erneut per Makro `game.noreturn.showNotice()`).
 
-**Zustände und Umweltgefahren:** Im Token-HUD gibt es die Zustände Extreme Temperatur (−1W bis −3W), Verstrahlt, Erkrankt und Andauernder Schaden. Die Spielleitung löst Gefahren (Temperatur, Fress-Regen, Sandsturm, Todesnebel, Toxisches Gewässer, Verstrahlung) für markierte Tokens per Makro `game.noreturn.hazard()` aus. Zeiträume (alle 10 min, je Stunde, je Tag) erscheinen nur als Hinweis im Chat.
+**Zustände und Umweltgefahren:** Im Token-HUD gibt es die Zustände Extreme Temperatur (−1W bis −3W), Verstrahlt, Erkrankt und Andauernder Schaden. Die Spielleitung löst Gefahren (Temperatur, Fress-Regen, Sandsturm, Todesnebel, Toxisches Gewässer, Verstrahlung) für markierte Tokens per Makro „Gefahr auslösen“ aus dem Compendium „SL-Makros“ (oder `game.noreturn.hazard()`) aus. Zeiträume (alle 10 min, je Stunde, je Tag) erscheinen nur als Hinweis im Chat.
 
 Die Compendien enthalten Spielwerte und eigene Kurzfassungen mit Seitenverweisen auf das Corebook 2E – für die vollständigen Regeln wird das Buch benötigt.
 

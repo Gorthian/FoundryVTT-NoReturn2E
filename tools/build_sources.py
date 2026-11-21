@@ -78,6 +78,20 @@ def journal_docs(j):
              "_embedded": pages}]
 
 
+def macro_docs():
+    """SL-Makros (Compendium „Makros“)."""
+    macros = [
+        {"name": "Gefahr auslösen", "img": "icons/svg/biohazard.svg", "command": "game.noreturn.hazard();"},
+    ]
+    docs = []
+    for i, m in enumerate(macros):
+        _id = stable_id("makros", m["name"])
+        docs.append({"_id": _id, "_key": f"!macros!{_id}", "name": m["name"], "type": "script", "img": m["img"],
+                     "scope": "global", "command": m["command"], "author": None, "folder": None, "sort": (i + 1) * 1000,
+                     "ownership": {"default": 0}, "flags": {}, "_stats": stats()})
+    return docs
+
+
 def main():
     os.makedirs(OUT, exist_ok=True)
     psi_apps, missing = psi.apps(os.path.join(HERE, "data", "psi_params.json"))
@@ -100,6 +114,7 @@ def main():
         "fertigkeiten": item_docs("fertigkeiten", character.special_skills()),
         "tabellen": table_docs(tables.rolltables()),
         "regeln": journal_docs(tables.journal()),
+        "makros": macro_docs(),
     }
     total = 0
     for name, docs in packs.items():

@@ -301,6 +301,17 @@
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       }
+    },
+    {
+      "name": "makros",
+      "label": "SL-Makros",
+      "path": "packs/makros",
+      "type": "Macro",
+      "system": "noreturn",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
     }
   ],
   "packFolders": [
@@ -310,7 +321,8 @@
       "color": "#7a2e12",
       "packs": [
         "regeln",
-        "tabellen"
+        "tabellen",
+        "makros"
       ],
       "folders": [
         {
