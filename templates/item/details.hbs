@@ -248,6 +248,39 @@
   {{#if (eq system.kind "robotik")}}<p class="nr-hint">{{localize "NR.Augment.RoboticHint"}}</p>{{/if}}
 {{/if}}
 
+{{#if isType.disease}}
+  <div class="nr-form-grid">
+    <label>{{localize "NR.Disease.Classification"}}</label><input type="text" name="system.classification" value="{{system.classification}}">
+    <label>{{localize "NR.Disease.Transmission"}}</label><input type="text" name="system.transmission" value="{{system.transmission}}">
+    <label>{{localize "NR.Disease.Vector"}}</label><input type="text" name="system.vector" value="{{system.vector}}">
+    <label>{{localize "NR.Disease.IncubationText"}}</label><input type="text" name="system.incubation" value="{{system.incubation}}">
+    <label>{{localize "NR.Disease.Duration"}}</label><input type="text" name="system.duration" value="{{system.duration}}">
+    <label>{{localize "NR.Disease.Cure"}}</label><input type="text" name="system.cure" value="{{system.cure}}">
+    <label>{{localize "NR.Disease.Identification"}}</label><input type="number" name="system.identification" value="{{system.identification}}" min="0">
+    <label>{{localize "NR.Disease.Intensity"}}</label><input type="number" name="system.intensity" value="{{system.intensity}}" min="0">
+    <label>{{localize "NR.Disease.MalusDice"}}</label><input type="number" name="system.malusDice" value="{{system.malusDice}}" min="0">
+  </div>
+  <h4 class="nr-section-title">{{localize "NR.Disease.Course"}}</h4>
+  <div class="nr-form-grid">
+    <label>{{localize "NR.Disease.IncubationDays"}}</label><input type="number" name="system.incubationDays" value="{{system.incubationDays}}" min="0" step="0.5">
+    <label>{{localize "NR.Disease.StepDays"}}</label><input type="number" name="system.stepDays" value="{{system.stepDays}}" min="0" step="0.5">
+    <label>{{localize "NR.Disease.StepOrganism"}}</label><input type="text" name="system.stepOrganismus" value="{{system.stepOrganismus}}">
+    <label>{{localize "NR.Disease.StepPsyche"}}</label><input type="text" name="system.stepPsyche" value="{{system.stepPsyche}}">
+    <label>{{localize "NR.Disease.StepDamage"}}</label><input type="number" name="system.stepDamage" value="{{system.stepDamage}}" min="0">
+    <label>{{localize "NR.Disease.Active"}}</label><input type="checkbox" name="system.active" {{checked system.active}}>
+    <label>{{localize "NR.Disease.Days"}}</label><input type="number" name="system.days" value="{{system.days}}" min="0" step="0.5">
+  </div>
+  <p class="nr-hint">{{localize "NR.Disease.CourseHint"}}</p>
+{{/if}}
+
+{{#if isType.flora}}
+  <div class="nr-form-grid">
+    <label>{{localize "NR.Flora.Region"}}</label><input type="text" name="system.region" value="{{system.region}}">
+    <label>{{localize "NR.Flora.Effect"}}</label><input type="text" name="system.effect" value="{{system.effect}}">
+    <label>{{localize "NR.Sheet.Price"}}</label><span><input type="number" name="system.price" value="{{system.price}}" min="0"> <input type="text" name="system.priceUnit" value="{{system.priceUnit}}"></span>
+  </div>
+{{/if}}
+
 {{#if (or isType.weapon isType.ammo isType.armor isType.gear isType.augment)}}
   <h4 class="nr-section-title">{{localize "NR.Section.Physical"}}</h4>
   <div class="nr-form-grid">
@@ -257,6 +290,11 @@
     <label>{{localize "NR.Sheet.Price"}}</label><input type="number" name="system.price" value="{{system.price}}">
     <label>{{localize "NR.Physical.Taped"}}</label><input type="checkbox" name="system.taped" {{checked system.taped}}>
     <label>{{localize "NR.Sheet.Equip"}}</label><input type="checkbox" name="system.equipped" {{checked system.equipped}}>
+  </div>
+{{/if}}
+{{#if item.parent}}
+  <div class="nr-form-grid">
+    <label data-tooltip="{{localize 'NR.Sync.NoSyncHint'}}">{{localize "NR.Sync.NoSync"}}</label><input type="checkbox" name="flags.noreturn.noSync" {{checked item.flags.noreturn.noSync}}>
   </div>
 {{/if}}
 </section>

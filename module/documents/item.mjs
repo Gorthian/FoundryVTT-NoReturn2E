@@ -1,6 +1,7 @@
 import { NR } from "../config.mjs";
 import { attackWithWeapon } from "../combat.mjs";
 import { castPsiApp } from "../psi.mjs";
+import { infect } from "../disease.mjs";
 import { useDoctor, useCraftedBuff, useHover, usePowerNap, useSplit } from "../style-actions.mjs";
 
 const { renderTemplate } = foundry.applications.handlebars;
@@ -22,7 +23,9 @@ export class NRItem extends foundry.documents.Item {
     bioTrait: "icons/svg/pawprint.svg",
     advantage: "icons/svg/upgrade.svg",
     trait: "icons/svg/heal.svg",
-    augment: "icons/svg/clockwork.svg"
+    augment: "icons/svg/clockwork.svg",
+    disease: "icons/svg/biohazard.svg",
+    flora: "icons/svg/pawprint.svg"
   };
 
   /** @override */
@@ -75,6 +78,10 @@ export class NRItem extends foundry.documents.Item {
         return actor.rollCheck({ label: this.name, dice: this.system.value, subtitle: `${this.name} ${this.system.value}`, allowPass: false });
       case "styleSkill":
         return this.useStyle();
+      case "disease":
+        // Nicht aktive Krankheit am Actor: Infektionsprobe; sonst Chatkarte
+        if (actor && !this.system.active) return infect(actor, this);
+        return this.toChat();
       default:
         return this.toChat();
     }
@@ -167,6 +174,13 @@ export class NRItem extends foundry.documents.Item {
         break;
       case "species":
         st.push(`${s.gp} GP`, t("Tp", { v: s.tp }), t("Ir", { v: `${s.irDice}W6${s.irPoints ? s.irPoints : ""}` }), t("Adrenalin", { v: s.adrenalin }), t("Psyche", { v: s.psyche }));
+        break;
+      case "disease":
+        st.push(game.i18n.format("NR.Disease.IntensityStat", { v: s.intensity }), game.i18n.format("NR.Disease.IdentStat", { v: s.identification }));
+        if (s.active) st.push(game.i18n.format("NR.Disease.DaysStat", { v: s.days }));
+        break;
+      case "flora":
+        if (s.region) st.push(s.region);
         break;
       case "augment":
         st.push(NR.augmentKinds[s.kind]);
