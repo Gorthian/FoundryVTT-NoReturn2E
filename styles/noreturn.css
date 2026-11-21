@@ -736,3 +736,10 @@
 .nr-time-row select[name=unit] { flex: 1; }
 .nr-time-quick { display: flex; gap: 4px; flex-wrap: wrap; }
 .nr-time-quick button { flex: 1; width: auto; }
+
+/* Zeitliche Effekte (Charakterbogen) */
+.noreturn .nr-timed-list { list-style: none; margin: 0 0 .5rem; padding: 0; }
+.noreturn .nr-timed-list li { display: flex; align-items: center; gap: .4rem; padding: 2px 0; }
+.noreturn .nr-timed-list img { width: 20px; height: 20px; border: 0; }
+.noreturn .nr-timed-list .nr-timed-name { flex: 1; }
+.noreturn .nr-timed-fields { margin: .5rem 0; }

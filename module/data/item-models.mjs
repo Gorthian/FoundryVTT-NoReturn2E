@@ -202,6 +202,22 @@ export class PsiAppData extends NRItemData {
       damageMult: int(0, { min: 0 }),
       allZones: bool(false),
       pierce: str("", { choices: Object.keys(NR.armorPiercing) }),
+      /**
+       * Zeitlicher Ablauf nach erfolgreichem Wirken: Dauer als Formel mit KS (z. B. „KS*2“) in einer Einheit,
+       * betroffen ist die Wirkende selbst oder die markierten Ziele; optional Schaden je Kampfrunde (siehe timed.mjs).
+       */
+      duration: new fields.SchemaField({
+        formula: str(""),
+        unit: str("minute", { choices: ["round", "minute", "hour", "day"] }),
+        target: str("self", { choices: ["self", "target"] }),
+        tick: new fields.SchemaField({
+          formula: str(""),
+          cumulative: bool(false),
+          damageType: str("hitze", { choices: Object.keys(NR.damageTypes) }),
+          zones: str("random", { choices: ["random", "all"] }),
+          pierce: str("", { choices: Object.keys(NR.armorPiercing) })
+        })
+      }),
       description: html()
     };
   }
@@ -296,6 +312,8 @@ export class BioTraitData extends NRItemData {
       covers: int(0, { min: 0 }),
       conspicuity: str(""),
       charges: new fields.SchemaField({ value: int(0, { min: 0 }), max: int(0, { min: 0 }) }),
+      /** Aufladung mit der Weltzeit: eine Ladung je n Stunden (0 = keine automatische Aufladung). */
+      recharge: new fields.SchemaField({ hours: num(0, { min: 0 }) }),
       modifiers: modifiers(),
       grants: new fields.ArrayField(str("")),
       description: html()

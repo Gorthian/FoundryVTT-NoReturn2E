@@ -51,6 +51,8 @@
         <label data-tooltip="{{localize 'NR.Malus.tempBonusHint'}}">{{localize "NR.Malus.tempBonus"}}</label><span><input type="number" name="system.tempBonus" value="{{system.tempBonus}}" min="0"></span>
         <label>{{localize "NR.Malus.psi"}}</label><span class="nr-derived">−{{system.malus.psiCollect}}W / −{{system.malus.hold}}W</span>
         <label>{{localize "NR.Malus.total"}}</label><span class="nr-derived strong">−{{system.malus.total}}W</span>
+        {{#if system.timedBonus}}<label>{{localize "NR.Timed.BonusActive"}}</label><span class="nr-derived nr-good">+{{system.timedBonus}}W</span>{{/if}}
+        {{#if system.timedMalus}}<label>{{localize "NR.Timed.MalusActive"}}</label><span class="nr-derived nr-bad">−{{system.timedMalus}}W</span>{{/if}}
         <label>{{localize "NR.Combat.Defenses"}}</label><span><span class="nr-derived">{{system.combat.defenses}}</span> <a data-action="resetDefenses" data-tooltip="{{localize 'NR.Combat.ResetDefenses'}}"><i class="fa-solid fa-rotate-left"></i></a></span>
         <label>{{localize "NR.Status.Movement"}}</label><span class="nr-derived">{{system.movement}} m ({{localize "NR.Sheet.RunHint"}})</span>
         <label>{{localize "NR.Sheet.Komfort"}}</label><span class="nr-derived {{#if komfortMalus}}nr-bad{{/if}}">{{komfort}}{{#if komfortMalus}} → −{{komfortMalus}}W Bewegung{{/if}}</span>
@@ -59,6 +61,15 @@
         {{/if}}
         <label>{{localize "NR.Sheet.Alcohol"}}</label><span><input type="number" name="system.alcohol" value="{{system.alcohol}}" min="0"></span>
       </div>
+      {{#if timedEffects.length}}
+      <h3 class="nr-section-title">{{localize "NR.Timed.Title"}}</h3>
+      <ul class="nr-timed-list">
+        {{#each timedEffects}}
+        <li><img src="{{img}}" alt=""> <span class="nr-timed-name">{{name}}</span> <span class="nr-derived">{{#if tick}}<i class="fa-solid fa-fire" data-tooltip="NR.Timed.TickHint"></i> {{/if}}{{remaining}}</span>
+          {{#if ../editable}}<a data-action="endTimed" data-effect-id="{{id}}" data-tooltip="NR.Timed.End"><i class="fa-solid fa-xmark"></i></a>{{/if}}</li>
+        {{/each}}
+      </ul>
+      {{/if}}
 
       <h3 class="nr-section-title">{{localize "NR.Section.Weapons"}}
         <a class="nr-add" data-action="createItem" data-type="weapon"><i class="fa-solid fa-plus"></i></a>

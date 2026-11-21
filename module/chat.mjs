@@ -76,7 +76,7 @@ async function onAction(message, btn) {
       return rerollWithAdrenalin(message);
     case "styleBuff": {
       const d = btn.dataset;
-      const result = await applyBuffTo(d.targetUuid, { kind: d.kind, n: Number(d.n) || 0 });
+      const result = await applyBuffTo(d.targetUuid, { kind: d.kind, n: Number(d.n) || 0, hours: Number(d.hours) || 0, source: d.source });
       const key = result === "applied" ? "NR.Style.Buff.Applied" : result === "delegated" ? "NR.Style.Buff.Delegated" : "NR.Style.Buff.Unavailable";
       return ui.notifications.info(game.i18n.format(key, { source: d.source }));
     }

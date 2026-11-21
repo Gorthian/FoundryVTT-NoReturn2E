@@ -38,6 +38,15 @@
     </div>
   </fieldset>
 
+  <fieldset>
+    <legend>{{localize "NR.Timed.Rest"}}</legend>
+    <div class="nr-time-quick" data-tooltip="NR.Timed.RestHint">
+      <button type="button" data-action="rest" data-hours="4"><i class="fa-solid fa-bed"></i> 4 h</button>
+      <button type="button" data-action="rest" data-hours="6"><i class="fa-solid fa-bed"></i> 6 h</button>
+      <button type="button" data-action="rest" data-hours="8"><i class="fa-solid fa-bed"></i> 8 h</button>
+    </div>
+  </fieldset>
+
   {{#if lightEnabled}}
   <div class="nr-time-light">
     <button type="button" data-action="toggleLight" {{#unless lightScene}}disabled{{/unless}}>

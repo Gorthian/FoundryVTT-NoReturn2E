@@ -4,6 +4,7 @@ import { collectPower, rollPsiFail } from "../psi.mjs";
 import { rollHitZone } from "../dice/pool.mjs";
 import { downloadMannifest, promptImport } from "../apps/mannifest.mjs";
 import { openCharacterGenerator } from "../apps/character-generator.mjs";
+import { timedEffects, endTimedEffect } from "../timed.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -50,7 +51,8 @@ export class NRActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       overdrive: NRActorSheet.#onOverdrive,
       empHit: NRActorSheet.#onEmpHit,
       switchPersonality: NRActorSheet.#onSwitchPersonality,
-      breakClinch: NRActorSheet.#onBreakClinch
+      breakClinch: NRActorSheet.#onBreakClinch,
+      endTimed: NRActorSheet.#onEndTimed
     }
   };
 
@@ -146,7 +148,7 @@ export class NRActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       traitsJustice: rows("trait", i => i.system.kind === "justice"),
       traitsChaos: rows("trait", i => i.system.kind === "chaos"),
       hasSplit: actor.styleLevel("split") > 0, clinch: actor.getFlag("noreturn", "clinch") ?? null, styleSkills: rows("styleSkill"), augments: rows("augment"),
-      gear: rows("gear"), ammo: rows("ammo"),
+      gear: rows("gear"), ammo: rows("ammo"), timedEffects: timedEffects(actor),
       adrenalinPips: Array.from({ length: sys.adrenalinMax }, (_, i) => ({ used: i >= sys.adrenalinLeft })),
       meditationPips: Array.from({ length: sys.meditationMax }, (_, i) => ({ used: i >= sys.meditationLeft })),
       enrichedBiography: await enrich(sys.biography),
@@ -314,6 +316,10 @@ export class NRActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
     }).catch(() => null);
     if (!res || res === "cancel") return;
     return this.actor.healNatural(res);
+  }
+
+  static async #onEndTimed(event, target) {
+    return endTimedEffect(this.actor, target.dataset.effectId);
   }
 
   static async #onRegenerate() {

@@ -179,7 +179,7 @@ export async function attackWithWeapon(actor, weapon) {
   // Situative Bonuswürfel auf die Fertigkeit (z. B. Nahkampf +2W) und Style-/Kampfkunst-Boni auf den Angriff
   const skillSit = actor.system.mods?.[`dice.${skillKey}`] ?? 0;
   const styleAttack = styleDice(actor, "attack", groups);
-  const tempBonus = actor.system.tempBonus ?? 0;
+  const tempBonus = actor.system.bonusDice ?? 0;
   bonus += skillSit + styleAttack + tempBonus;
   if (tempBonus) styleNotes.push(game.i18n.format("NR.Style.TempBonus", { n: tempBonus }));
   if (skillSit + styleAttack) styleNotes.push(game.i18n.format("NR.Style.AttackBonus", { n: skillSit + styleAttack }));
@@ -428,7 +428,7 @@ export async function defendAgainst(message, tokenUuid, none = false, index = 1)
     }
     if (skillKey === "ausweichen" && attack.melee) styleBonus += mods["defense.dodgeMelee"] ?? 0;
     if (isParry && g?.system.damageType === "klinge") styleBonus += mods["defense.parryBlade"] ?? 0;
-    const tempBonus = actor.system.tempBonus ?? 0;
+    const tempBonus = actor.system.bonusDice ?? 0;
     if (tempBonus) { bonus += tempBonus; styleNotes.push(game.i18n.format("NR.Style.TempBonus", { n: tempBonus })); }
     if (styleBonus) { bonus += styleBonus; styleNotes.push(game.i18n.format("NR.Style.DefenseBonus", { n: styleBonus })); }
     if (isParry) parryGear = g;

@@ -60,7 +60,19 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Animakinese · leicht (8–12) <em class=\"nr-ref\">(NoReturn 2E, S. 197)</em></p>"
+   "description": "<p>Animakinese · leicht (8–12) <em class=\"nr-ref\">(NoReturn 2E, S. 197)</em></p>",
+   "duration": {
+    "formula": "5",
+    "unit": "minute",
+    "target": "target",
+    "tick": {
+     "formula": "",
+     "cumulative": false,
+     "damageType": "hitze",
+     "zones": "random",
+     "pierce": ""
+    }
+   }
   },
   "effects": [],
   "folder": null,
@@ -142,7 +154,19 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Animakinese · schwer (15–19) <em class=\"nr-ref\">(NoReturn 2E, S. 197)</em></p>"
+   "description": "<p>Animakinese · schwer (15–19) <em class=\"nr-ref\">(NoReturn 2E, S. 197)</em></p>",
+   "duration": {
+    "formula": "5",
+    "unit": "minute",
+    "target": "self",
+    "tick": {
+     "formula": "",
+     "cumulative": false,
+     "damageType": "hitze",
+     "zones": "random",
+     "pierce": ""
+    }
+   }
   },
   "effects": [],
   "folder": null,
@@ -183,7 +207,19 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Animakinese · sehr schwer (19–22) · Haltung 3 <em class=\"nr-ref\">(NoReturn 2E, S. 197)</em></p>"
+   "description": "<p>Animakinese · sehr schwer (19–22) · Haltung 3 <em class=\"nr-ref\">(NoReturn 2E, S. 197)</em></p>",
+   "duration": {
+    "formula": "KS",
+    "unit": "minute",
+    "target": "self",
+    "tick": {
+     "formula": "",
+     "cumulative": false,
+     "damageType": "hitze",
+     "zones": "random",
+     "pierce": ""
+    }
+   }
   },
   "effects": [],
   "folder": null,
@@ -224,7 +260,19 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Animakinese · ultimativ (23–25) <em class=\"nr-ref\">(NoReturn 2E, S. 197)</em></p>"
+   "description": "<p>Animakinese · ultimativ (23–25) <em class=\"nr-ref\">(NoReturn 2E, S. 197)</em></p>",
+   "duration": {
+    "formula": "KS",
+    "unit": "minute",
+    "target": "target",
+    "tick": {
+     "formula": "",
+     "cumulative": false,
+     "damageType": "hitze",
+     "zones": "random",
+     "pierce": ""
+    }
+   }
   },
   "effects": [],
   "folder": null,
@@ -265,7 +313,19 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Animakinese · mittel (11–15) <em class=\"nr-ref\">(NoReturn 2E, S. 197)</em></p>"
+   "description": "<p>Animakinese · mittel (11–15) <em class=\"nr-ref\">(NoReturn 2E, S. 197)</em></p>",
+   "duration": {
+    "formula": "KS*2",
+    "unit": "round",
+    "target": "target",
+    "tick": {
+     "formula": "",
+     "cumulative": false,
+     "damageType": "hitze",
+     "zones": "random",
+     "pierce": ""
+    }
+   }
   },
   "effects": [],
   "folder": null,
@@ -552,7 +612,19 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Animakinese · schwer (15–19) <em class=\"nr-ref\">(NoReturn 2E, S. 197)</em></p>"
+   "description": "<p>Animakinese · schwer (15–19) <em class=\"nr-ref\">(NoReturn 2E, S. 197)</em></p>",
+   "duration": {
+    "formula": "KS*2",
+    "unit": "round",
+    "target": "self",
+    "tick": {
+     "formula": "",
+     "cumulative": false,
+     "damageType": "hitze",
+     "zones": "random",
+     "pierce": ""
+    }
+   }
   },
   "effects": [],
   "folder": null,
@@ -593,7 +665,19 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Animakinese · mittel (11–15) <em class=\"nr-ref\">(NoReturn 2E, S. 197)</em></p>"
+   "description": "<p>Animakinese · mittel (11–15) <em class=\"nr-ref\">(NoReturn 2E, S. 197)</em></p>",
+   "duration": {
+    "formula": "KS",
+    "unit": "minute",
+    "target": "target",
+    "tick": {
+     "formula": "",
+     "cumulative": false,
+     "damageType": "hitze",
+     "zones": "random",
+     "pierce": ""
+    }
+   }
   },
   "effects": [],
   "folder": null,
@@ -1126,7 +1210,19 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Biokinese · schwer (15–19) <em class=\"nr-ref\">(NoReturn 2E, S. 198)</em></p>"
+   "description": "<p>Biokinese · schwer (15–19) <em class=\"nr-ref\">(NoReturn 2E, S. 198)</em></p>",
+   "duration": {
+    "formula": "30-KS",
+    "unit": "minute",
+    "target": "target",
+    "tick": {
+     "formula": "",
+     "cumulative": false,
+     "damageType": "hitze",
+     "zones": "random",
+     "pierce": ""
+    }
+   }
   },
   "effects": [],
   "folder": null,
@@ -1659,7 +1755,19 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Chronokinese · schwer (15–19) <em class=\"nr-ref\">(NoReturn 2E, S. 200)</em></p>"
+   "description": "<p>Chronokinese · schwer (15–19) <em class=\"nr-ref\">(NoReturn 2E, S. 200)</em></p>",
+   "duration": {
+    "formula": "KS",
+    "unit": "hour",
+    "target": "self",
+    "tick": {
+     "formula": "",
+     "cumulative": false,
+     "damageType": "hitze",
+     "zones": "random",
+     "pierce": ""
+    }
+   }
   },
   "effects": [],
   "folder": null,
@@ -1700,7 +1808,19 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Chronokinese · schwer (15–19) <em class=\"nr-ref\">(NoReturn 2E, S. 200)</em></p>"
+   "description": "<p>Chronokinese · schwer (15–19) <em class=\"nr-ref\">(NoReturn 2E, S. 200)</em></p>",
+   "duration": {
+    "formula": "KS",
+    "unit": "round",
+    "target": "self",
+    "tick": {
+     "formula": "",
+     "cumulative": false,
+     "damageType": "hitze",
+     "zones": "random",
+     "pierce": ""
+    }
+   }
   },
   "effects": [],
   "folder": null,
@@ -1741,7 +1861,19 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Chronokinese · mittel (11–15) <em class=\"nr-ref\">(NoReturn 2E, S. 200)</em></p>"
+   "description": "<p>Chronokinese · mittel (11–15) <em class=\"nr-ref\">(NoReturn 2E, S. 200)</em></p>",
+   "duration": {
+    "formula": "KS",
+    "unit": "minute",
+    "target": "self",
+    "tick": {
+     "formula": "",
+     "cumulative": false,
+     "damageType": "hitze",
+     "zones": "random",
+     "pierce": ""
+    }
+   }
   },
   "effects": [],
   "folder": null,
@@ -1905,7 +2037,19 @@
    "damageMult": 100,
    "allZones": true,
    "pierce": "",
-   "description": "<p>Cryokinese · ultimativ (23–25) · Haltung 3 <em class=\"nr-ref\">(NoReturn 2E, S. 201)</em></p>"
+   "description": "<p>Cryokinese · ultimativ (23–25) · Haltung 3 <em class=\"nr-ref\">(NoReturn 2E, S. 201)</em></p>",
+   "duration": {
+    "formula": "",
+    "unit": "round",
+    "target": "target",
+    "tick": {
+     "formula": "KS*100",
+     "cumulative": false,
+     "damageType": "kaelte",
+     "zones": "all",
+     "pierce": ""
+    }
+   }
   },
   "effects": [],
   "folder": null,
@@ -2274,7 +2418,19 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Cryokinese · leicht (8–12) <em class=\"nr-ref\">(NoReturn 2E, S. 201)</em></p>"
+   "description": "<p>Cryokinese · leicht (8–12) <em class=\"nr-ref\">(NoReturn 2E, S. 201)</em></p>",
+   "duration": {
+    "formula": "KS*12",
+    "unit": "hour",
+    "target": "target",
+    "tick": {
+     "formula": "",
+     "cumulative": false,
+     "damageType": "hitze",
+     "zones": "random",
+     "pierce": ""
+    }
+   }
   },
   "effects": [],
   "folder": null,
@@ -2397,7 +2553,19 @@
    "damageMult": 5,
    "allZones": true,
    "pierce": "",
-   "description": "<p>Cryokinese · leicht (8–12) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 201)</em></p>"
+   "description": "<p>Cryokinese · leicht (8–12) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 201)</em></p>",
+   "duration": {
+    "formula": "",
+    "unit": "round",
+    "target": "target",
+    "tick": {
+     "formula": "KS*5",
+     "cumulative": false,
+     "damageType": "kaelte",
+     "zones": "all",
+     "pierce": ""
+    }
+   }
   },
   "effects": [],
   "folder": null,
@@ -2438,7 +2606,19 @@
    "damageMult": 5,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Cryokinese · sehr schwer (19–22) · Haltung 3 <em class=\"nr-ref\">(NoReturn 2E, S. 201)</em></p>"
+   "description": "<p>Cryokinese · sehr schwer (19–22) · Haltung 3 <em class=\"nr-ref\">(NoReturn 2E, S. 201)</em></p>",
+   "duration": {
+    "formula": "",
+    "unit": "round",
+    "target": "target",
+    "tick": {
+     "formula": "KS*5",
+     "cumulative": true,
+     "damageType": "kaelte",
+     "zones": "random",
+     "pierce": ""
+    }
+   }
   },
   "effects": [],
   "folder": null,
@@ -2848,7 +3028,19 @@
    "damageMult": 5,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Elektrokinese · leicht (8–12) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 203)</em></p>"
+   "description": "<p>Elektrokinese · leicht (8–12) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 203)</em></p>",
+   "duration": {
+    "formula": "",
+    "unit": "round",
+    "target": "target",
+    "tick": {
+     "formula": "KS*5",
+     "cumulative": true,
+     "damageType": "hitze",
+     "zones": "random",
+     "pierce": ""
+    }
+   }
   },
   "effects": [],
   "folder": null,
@@ -2930,7 +3122,19 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Elektrokinese · schwer (15–19) <em class=\"nr-ref\">(NoReturn 2E, S. 203)</em></p>"
+   "description": "<p>Elektrokinese · schwer (15–19) <em class=\"nr-ref\">(NoReturn 2E, S. 203)</em></p>",
+   "duration": {
+    "formula": "KS",
+    "unit": "round",
+    "target": "target",
+    "tick": {
+     "formula": "",
+     "cumulative": false,
+     "damageType": "hitze",
+     "zones": "random",
+     "pierce": ""
+    }
+   }
   },
   "effects": [],
   "folder": null,
@@ -3545,7 +3749,19 @@
    "damageMult": 5,
    "allZones": true,
    "pierce": "all",
-   "description": "<p>Haimakinese · mittel (11–15) · Haltung 4 <em class=\"nr-ref\">(NoReturn 2E, S. 204)</em></p>"
+   "description": "<p>Haimakinese · mittel (11–15) · Haltung 4 <em class=\"nr-ref\">(NoReturn 2E, S. 204)</em></p>",
+   "duration": {
+    "formula": "",
+    "unit": "round",
+    "target": "target",
+    "tick": {
+     "formula": "KS*5",
+     "cumulative": true,
+     "damageType": "hitze",
+     "zones": "all",
+     "pierce": "all"
+    }
+   }
   },
   "effects": [],
   "folder": null,
@@ -3709,7 +3925,19 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Morphokinese · leicht (8–12) <em class=\"nr-ref\">(NoReturn 2E, S. 206)</em></p>"
+   "description": "<p>Morphokinese · leicht (8–12) <em class=\"nr-ref\">(NoReturn 2E, S. 206)</em></p>",
+   "duration": {
+    "formula": "10-KS",
+    "unit": "round",
+    "target": "self",
+    "tick": {
+     "formula": "",
+     "cumulative": false,
+     "damageType": "hitze",
+     "zones": "random",
+     "pierce": ""
+    }
+   }
   },
   "effects": [],
   "folder": null,
@@ -4201,7 +4429,19 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Morphokinese · ultimativ (23–25) <em class=\"nr-ref\">(NoReturn 2E, S. 206)</em></p>"
+   "description": "<p>Morphokinese · ultimativ (23–25) <em class=\"nr-ref\">(NoReturn 2E, S. 206)</em></p>",
+   "duration": {
+    "formula": "KS",
+    "unit": "minute",
+    "target": "self",
+    "tick": {
+     "formula": "",
+     "cumulative": false,
+     "damageType": "hitze",
+     "zones": "random",
+     "pierce": ""
+    }
+   }
   },
   "effects": [],
   "folder": null,
@@ -5103,7 +5343,19 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Psychokinese · schwer (15–19) <em class=\"nr-ref\">(NoReturn 2E, S. 209)</em></p>"
+   "description": "<p>Psychokinese · schwer (15–19) <em class=\"nr-ref\">(NoReturn 2E, S. 209)</em></p>",
+   "duration": {
+    "formula": "KS",
+    "unit": "minute",
+    "target": "target",
+    "tick": {
+     "formula": "",
+     "cumulative": false,
+     "damageType": "hitze",
+     "zones": "random",
+     "pierce": ""
+    }
+   }
   },
   "effects": [],
   "folder": null,
@@ -5185,7 +5437,19 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Psychokinese · sehr schwer (19–22) <em class=\"nr-ref\">(NoReturn 2E, S. 209)</em></p>"
+   "description": "<p>Psychokinese · sehr schwer (19–22) <em class=\"nr-ref\">(NoReturn 2E, S. 209)</em></p>",
+   "duration": {
+    "formula": "KS*2",
+    "unit": "hour",
+    "target": "target",
+    "tick": {
+     "formula": "",
+     "cumulative": false,
+     "damageType": "hitze",
+     "zones": "random",
+     "pierce": ""
+    }
+   }
   },
   "effects": [],
   "folder": null,
@@ -5513,7 +5777,19 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Psychokinese · leicht (8–12) · Haltung 3 <em class=\"nr-ref\">(NoReturn 2E, S. 209)</em></p>"
+   "description": "<p>Psychokinese · leicht (8–12) · Haltung 3 <em class=\"nr-ref\">(NoReturn 2E, S. 209)</em></p>",
+   "duration": {
+    "formula": "5",
+    "unit": "minute",
+    "target": "target",
+    "tick": {
+     "formula": "",
+     "cumulative": false,
+     "damageType": "hitze",
+     "zones": "random",
+     "pierce": ""
+    }
+   }
   },
   "effects": [],
   "folder": null,
@@ -5595,7 +5871,19 @@
    "damageMult": 5,
    "allZones": true,
    "pierce": "all",
-   "description": "<p>Pyrokinese · mittel (11–15) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 211)</em></p>"
+   "description": "<p>Pyrokinese · mittel (11–15) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 211)</em></p>",
+   "duration": {
+    "formula": "",
+    "unit": "round",
+    "target": "target",
+    "tick": {
+     "formula": "KS*5",
+     "cumulative": false,
+     "damageType": "hitze",
+     "zones": "all",
+     "pierce": "all"
+    }
+   }
   },
   "effects": [],
   "folder": null,
@@ -5677,7 +5965,19 @@
    "damageMult": 5,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Pyrokinese · leicht (8–12) <em class=\"nr-ref\">(NoReturn 2E, S. 211)</em></p>"
+   "description": "<p>Pyrokinese · leicht (8–12) <em class=\"nr-ref\">(NoReturn 2E, S. 211)</em></p>",
+   "duration": {
+    "formula": "",
+    "unit": "round",
+    "target": "target",
+    "tick": {
+     "formula": "KS*5",
+     "cumulative": false,
+     "damageType": "hitze",
+     "zones": "random",
+     "pierce": ""
+    }
+   }
   },
   "effects": [],
   "folder": null,
@@ -5759,7 +6059,19 @@
    "damageMult": 20,
    "allZones": true,
    "pierce": "",
-   "description": "<p>Pyrokinese · sehr schwer (19–22) <em class=\"nr-ref\">(NoReturn 2E, S. 211)</em></p>"
+   "description": "<p>Pyrokinese · sehr schwer (19–22) <em class=\"nr-ref\">(NoReturn 2E, S. 211)</em></p>",
+   "duration": {
+    "formula": "",
+    "unit": "round",
+    "target": "target",
+    "tick": {
+     "formula": "KS*5",
+     "cumulative": false,
+     "damageType": "hitze",
+     "zones": "random",
+     "pierce": ""
+    }
+   }
   },
   "effects": [],
   "folder": null,
@@ -5923,7 +6235,19 @@
    "damageMult": 100,
    "allZones": true,
    "pierce": "",
-   "description": "<p>Pyrokinese · ultimativ (23–25) · Haltung 3 <em class=\"nr-ref\">(NoReturn 2E, S. 211)</em></p>"
+   "description": "<p>Pyrokinese · ultimativ (23–25) · Haltung 3 <em class=\"nr-ref\">(NoReturn 2E, S. 211)</em></p>",
+   "duration": {
+    "formula": "",
+    "unit": "round",
+    "target": "target",
+    "tick": {
+     "formula": "KS*100",
+     "cumulative": false,
+     "damageType": "hitze",
+     "zones": "random",
+     "pierce": ""
+    }
+   }
   },
   "effects": [],
   "folder": null,
@@ -6087,7 +6411,19 @@
    "damageMult": 10,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Pyrokinese · sehr schwer (19–22) · Haltung 4 <em class=\"nr-ref\">(NoReturn 2E, S. 211)</em></p>"
+   "description": "<p>Pyrokinese · sehr schwer (19–22) · Haltung 4 <em class=\"nr-ref\">(NoReturn 2E, S. 211)</em></p>",
+   "duration": {
+    "formula": "",
+    "unit": "round",
+    "target": "target",
+    "tick": {
+     "formula": "KS*10",
+     "cumulative": true,
+     "damageType": "hitze",
+     "zones": "random",
+     "pierce": ""
+    }
+   }
   },
   "effects": [],
   "folder": null,
@@ -6210,7 +6546,19 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Technokinese · schwer (15–19) <em class=\"nr-ref\">(NoReturn 2E, S. 212)</em></p>"
+   "description": "<p>Technokinese · schwer (15–19) <em class=\"nr-ref\">(NoReturn 2E, S. 212)</em></p>",
+   "duration": {
+    "formula": "24",
+    "unit": "hour",
+    "target": "self",
+    "tick": {
+     "formula": "",
+     "cumulative": false,
+     "damageType": "hitze",
+     "zones": "random",
+     "pierce": ""
+    }
+   }
   },
   "effects": [],
   "folder": null,
@@ -6538,7 +6886,19 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Technokinese · leicht (8–12) <em class=\"nr-ref\">(NoReturn 2E, S. 212)</em></p>"
+   "description": "<p>Technokinese · leicht (8–12) <em class=\"nr-ref\">(NoReturn 2E, S. 212)</em></p>",
+   "duration": {
+    "formula": "KS",
+    "unit": "day",
+    "target": "self",
+    "tick": {
+     "formula": "",
+     "cumulative": false,
+     "damageType": "hitze",
+     "zones": "random",
+     "pierce": ""
+    }
+   }
   },
   "effects": [],
   "folder": null,

@@ -2,6 +2,8 @@
  * Socket-Anbindung: Aktionen, für die Spieler keine Rechte haben (z. B. Schaden an fremden
  * Zielen bei Flächenangriffen), werden an eine aktive Spielleitung delegiert.
  */
+import { addTimedEffect, addChange } from "./timed.mjs";
+
 const CHANNEL = "system.noreturn";
 
 export function registerSocket() {
@@ -55,7 +57,17 @@ export async function applyBuffTo(targetUuid, payload) {
 
 async function applyBuff(actor, payload) {
   if (payload.kind === "clinch" || payload.kind === "clinchEnd") return applyClinch(actor, payload);
-  const { kind, n } = payload;
+  if (payload.kind === "timed") return addTimedEffect(actor, payload.spec);
+  const { kind, n, hours, source } = payload;
+  if ((kind === "bonus" || kind === "malus") && hours > 0 && n > 0) {
+    // Zeitlich begrenzt (Der Doktor 4 h/12 h, Mixology/Sterne-Küche 2 h): ActiveEffect, der von selbst abläuft
+    const field = kind === "bonus" ? "system.timedBonus" : "system.timedMalus";
+    return addTimedEffect(actor, {
+      name: `${source || game.i18n.localize("NR.Timed.Buff")}: ${kind === "bonus" ? "+" : "−"}${n}W`,
+      img: kind === "bonus" ? "icons/svg/upgrade.svg" : "icons/svg/downgrade.svg",
+      value: hours, unit: "hour", source, changes: [addChange(field, n)]
+    });
+  }
   if (kind === "bonus") return actor.update({ "system.tempBonus": actor.system.tempBonus + n });
   if (kind === "malus") return actor.update({ "system.tempMalus": actor.system.tempMalus + n });
   if (kind === "adrenalin") return actor.update({ "system.special.adrenalin.used": 0 });

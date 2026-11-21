@@ -1,3 +1,4 @@
+import { restParty } from "../timed.mjs";
 import { TIME, getDate, formatDate, formatTime, isDaytime, advance, setDate, sceneSynced } from "../time.mjs";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
@@ -16,6 +17,7 @@ export class NRTimeHud extends HandlebarsApplicationMixin(ApplicationV2) {
     actions: {
       step: NRTimeHud.#onStep,
       quick: NRTimeHud.#onQuick,
+      rest: NRTimeHud.#onRest,
       apply: NRTimeHud.#onApply,
       sync: NRTimeHud.#onSync,
       toggleLight: NRTimeHud.#onToggleLight
@@ -117,6 +119,11 @@ export class NRTimeHud extends HandlebarsApplicationMixin(ApplicationV2) {
 
   static async #onQuick(event, target) {
     await advance({ seconds: Number(target.dataset.n) * TIME.units[target.dataset.unit] });
+  }
+
+  /** Rast für die markierten Tokens: Zeit vorspulen, Adrenalin/Regenerationspool erholen. */
+  static async #onRest(event, target) {
+    await restParty(Number(target.dataset.hours) || 8);
   }
 
   static async #onApply(event, target) {
