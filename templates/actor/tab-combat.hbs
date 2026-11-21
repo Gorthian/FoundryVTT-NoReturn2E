@@ -55,7 +55,7 @@
         <label>{{localize "NR.Status.Movement"}}</label><span class="nr-derived">{{system.movement}} m ({{localize "NR.Sheet.RunHint"}})</span>
         <label>{{localize "NR.Sheet.Komfort"}}</label><span class="nr-derived {{#if komfortMalus}}nr-bad{{/if}}">{{komfort}}{{#if komfortMalus}} → −{{komfortMalus}}W Bewegung{{/if}}</span>
         {{#if system.hasRegeneration}}
-        <label>{{localize "NR.Sheet.Regeneration"}}</label><span class="nr-derived">{{system.reg.speed}}/Runde · Pool {{system.reg.left}}/{{system.reg.pool}}</span>
+        <label>{{localize "NR.Sheet.Regeneration"}}</label>{{> "systems/noreturn/templates/actor/parts/regeneration.hbs"}}
         {{/if}}
         <label>{{localize "NR.Sheet.Alcohol"}}</label><span><input type="number" name="system.alcohol" value="{{system.alcohol}}" min="0"></span>
       </div>

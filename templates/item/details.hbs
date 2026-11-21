@@ -124,7 +124,7 @@
     <span><input type="number" name="system.uses.value" value="{{system.uses.value}}" min="0"> / <input type="number" name="system.uses.max" value="{{system.uses.max}}" min="0"> <input type="text" name="system.uses.per" value="{{system.uses.per}}" placeholder="{{localize 'NR.Style.UsesPer'}}"></span>
   </div>
   <div class="nr-form-grid">
-    <label>{{localize "NR.Style.Hint"}}</label><textarea name="system.hint" rows="3">{{system.hint}}</textarea>
+    <label>{{localize "NR.Style.Hint"}}</label>{{formInput fields.hint value=system.hint enriched=enrichedHint toggled=true}}
   </div>
   {{#if (eq system.kind "kampfkunst")}}
   <h4>{{localize "NR.Style.Levels"}} <a data-action="addLevel"><i class="fa-solid fa-plus"></i></a></h4>

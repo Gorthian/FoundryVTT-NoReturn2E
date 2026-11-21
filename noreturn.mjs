@@ -85,6 +85,7 @@ const TEMPLATES = [
     "systems/noreturn/templates/actor/header.hbs",
     "systems/noreturn/templates/actor/parts/item-row.hbs",
     "systems/noreturn/templates/actor/parts/zone.hbs",
+    "systems/noreturn/templates/actor/parts/regeneration.hbs",
     "systems/noreturn/templates/actor/tab-bio.hbs",
     "systems/noreturn/templates/actor/tab-combat.hbs",
     "systems/noreturn/templates/actor/tab-inventory.hbs",

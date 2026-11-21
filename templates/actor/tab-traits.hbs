@@ -33,7 +33,11 @@
         <label>{{localize "NR.Sheet.Infection"}}</label>
         <span><input type="number" name="system.infection.dice" value="{{system.infection.dice}}" min="0">W6 + <input type="number" name="system.infection.points" value="{{system.infection.points}}"></span>
         <label>{{localize "NR.Sheet.Regeneration"}}</label>
-        <span><input type="number" name="system.regeneration.speed" value="{{system.regeneration.speed}}" min="0"> / Pool <input type="number" name="system.regeneration.pool" value="{{system.regeneration.pool}}" min="0"> · verbraucht <input type="number" name="system.regeneration.poolUsed" value="{{system.regeneration.poolUsed}}" min="0"></span>
+        <span>{{> "systems/noreturn/templates/actor/parts/regeneration.hbs"}}</span>
+        <label>{{localize "NR.Sheet.Base"}} ({{localize "NR.Sheet.RegSpeed"}} / {{localize "NR.Sheet.RegPool"}})</label>
+        <span><input type="number" name="system.regeneration.speed" value="{{system.regeneration.speed}}" min="0"> / <input type="number" name="system.regeneration.pool" value="{{system.regeneration.pool}}" min="0">{{#if (or system.reg.modSpeed system.reg.modPool)}} <span class="nr-hint">(Mods {{system.reg.modSpeed}} / {{system.reg.modPool}})</span>{{/if}}</span>
+        <label data-tooltip="{{localize 'NR.Sheet.RegUsedHint'}}">{{localize "NR.Sheet.RegUsed"}}</label>
+        <span><input type="number" name="system.regeneration.poolUsed" value="{{system.regeneration.poolUsed}}" min="0"></span>
         <label>{{localize "NR.Sheet.Blood"}}</label>
         <span><input type="number" name="system.blood.value" value="{{system.blood.value}}" min="0"> / <input type="number" name="system.blood.max" value="{{system.blood.max}}" min="0"></span>
       </div>
