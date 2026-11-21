@@ -27,7 +27,12 @@ export async function contract(actor, source) {
   if (!item) {
     const data = source.toObject();
     delete data._id;
-    [item] = await actor.createEmbeddedDocuments("Item", [data]);
+    try {
+      [item] = await actor.createEmbeddedDocuments("Item", [data]);
+    } catch (err) {
+      console.error("NoReturn 2E | Krankheit konnte nicht angelegt werden", err);
+    }
+    if (!item) return null;
   }
   await item.update({ "system.active": true, "system.days": 0 });
   await syncEffect(actor, item);
@@ -49,6 +54,7 @@ export async function infect(actor, source, { skipRoll = false } = {}) {
   }
   if (!infected) return { infected: false };
   const item = await contract(actor, source);
+  if (!item) return { infected: false, failed: true };
   await ChatMessage.create({
     speaker: ChatMessage.getSpeaker({ actor }),
     content: `<div class="nr-card"><h3>${source.name}</h3><p class="nr-bad">${game.i18n.format("NR.Disease.Infected", { name: actor.name })}</p><p>${L("NR.Disease.Incubation")}: ${item.system.incubation || "–"}</p></div>`
