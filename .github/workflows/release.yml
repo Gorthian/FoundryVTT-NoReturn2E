@@ -1,9 +1,18 @@
 # Erzeugt ein Release (Tag, system.json, noreturn.zip) für die Installation/Updates in Foundry/The Forge.
 #
 #  - Manuell: Actions -> "Release" -> "Run workflow" -> bump wählen (patch/minor/major)
-#    oder eine genaue Version angeben (z. B. 1.2.0). Version wird in system.json hochgezählt
-#    und nach main committet, danach wird getaggt und das Release gebaut.
+#    oder eine genaue Version angeben (z. B. 1.2.0).
+#    Da main per Ruleset geschützt ist (Änderungen nur per Pull Request), pusht der Workflow
+#    nicht direkt: Er legt die Versionsänderung (version + download in system.json) auf dem
+#    Branch release/vX.Y.Z an, öffnet einen PR, mergt ihn (Squash) und erstellt danach Tag,
+#    Pack-Build, ZIP und Release. Blockiert die Regel den Merge (z. B. Pflicht-Review oder
+#    Pflicht-Checks), bricht der Workflow sauber ab, räumt PR/Branch wieder auf und meldet das.
+#  - "dry_run": Alles wird gebaut und geprüft (inkl. noreturn.zip als Artefakt), aber es werden
+#    weder Branch, PR, Tag noch Release erzeugt.
 #  - Alternativ: ein Tag "vX.Y.Z" pushen; dann wird nur gebaut und veröffentlicht.
+#
+# Voraussetzung (einmalig): Repo -> Settings -> Actions -> General -> Workflow permissions:
+#   "Allow GitHub Actions to create and approve pull requests" aktivieren.
 #
 # Foundry-Manifest-URL: https://github.com/<owner>/<repo>/releases/latest/download/system.json
 name: Release
@@ -20,11 +29,16 @@ on:
         description: "Genaue Version, z. B. 1.2.0 (optional)"
         type: string
         required: false
+      dry_run:
+        description: "Trockenlauf: bauen und prüfen, aber keinen PR/Tag/Release erzeugen"
+        type: boolean
+        default: false
   push:
     tags: ["v*"]
 
 permissions:
   contents: write
+  pull-requests: write
 
 concurrency:
   group: release
@@ -33,6 +47,8 @@ concurrency:
 jobs:
   release:
     runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -97,20 +113,78 @@ jobs:
             lang module styles templates packs \
             -x "packs/*/LOCK" "packs/*/LOG" "packs/*/LOG.old"
 
-      - name: Versionsänderung nach main committen
-        if: github.event_name == 'workflow_dispatch'
+      - name: Trockenlauf – Paket als Artefakt ablegen
+        if: github.event_name == 'workflow_dispatch' && inputs.dry_run
+        uses: actions/upload-artifact@v4
+        with:
+          name: noreturn-${{ steps.v.outputs.tag }}-dry-run
+          path: |
+            system.json
+            noreturn.zip
+
+      - name: Trockenlauf – Zusammenfassung
+        if: github.event_name == 'workflow_dispatch' && inputs.dry_run
         run: |
+          {
+            echo "### Trockenlauf für ${{ steps.v.outputs.tag }}"
+            echo "Build und Validierung erfolgreich. Es wurden **kein** Branch, PR, Tag oder Release erzeugt."
+            echo "Das Paket liegt als Artefakt am Lauf."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Versionsänderung per Pull Request nach main bringen
+        id: pr
+        if: github.event_name == 'workflow_dispatch' && !inputs.dry_run
+        env:
+          TAG: ${{ steps.v.outputs.tag }}
+        run: |
+          BRANCH="release/${TAG}"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if git diff --quiet -- system.json; then
+            echo "system.json ist bereits auf dieser Version, es ist kein PR nötig."
+            echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          if git ls-remote --exit-code --heads origin "$BRANCH" > /dev/null; then
+            echo "::error::Branch $BRANCH existiert bereits (alter, abgebrochener Release-Versuch?). Bitte löschen und neu starten."
+            exit 1
+          fi
+
+          git checkout -b "$BRANCH"
           git add system.json
-          git commit -m "Release ${{ steps.v.outputs.tag }}" || echo "system.json unverändert"
-          git push origin HEAD:main
+          git commit -m "Release ${TAG}"
+          git push origin "$BRANCH"
+
+          PR_URL=$(gh pr create --base main --head "$BRANCH" \
+            --title "Release ${TAG}" \
+            --body "Automatische Versionsänderung (version + download in system.json) für Release ${TAG}, erstellt vom Release-Workflow.")
+          echo "PR: $PR_URL"
+
+          # Squash-Merge; schlägt fehl, wenn das Ruleset z. B. Review oder Pflicht-Checks verlangt.
+          # (Mit GITHUB_TOKEN erstellte PRs lösen keine weiteren Workflows aus; Build und
+          # Validierung wurden oben bereits in diesem Lauf ausgeführt.)
+          if ! gh pr merge "$PR_URL" --squash --delete-branch; then
+            echo "::error::Der Merge von ${PR_URL} wurde abgelehnt (vermutlich Ruleset: Pflicht-Review oder Pflicht-Checks). Es wurde kein Tag und kein Release erstellt."
+            {
+              echo "### Release ${TAG} abgebrochen"
+              echo "Der automatische Merge des Versions-PRs wurde von den Branch-Regeln blockiert: ${PR_URL}"
+              echo "Der PR wird geschlossen und der Branch gelöscht. Es wurde kein Tag und kein Release erstellt."
+            } >> "$GITHUB_STEP_SUMMARY"
+            gh pr close "$PR_URL" --delete-branch || true
+            exit 1
+          fi
+
+          git fetch origin main
+          echo "sha=$(git rev-parse origin/main)" >> "$GITHUB_OUTPUT"
 
       - name: Release veröffentlichen
+        if: github.event_name == 'push' || !inputs.dry_run
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.v.outputs.tag }}
-          target_commitish: ${{ github.event_name == 'workflow_dispatch' && 'main' || github.sha }}
+          target_commitish: ${{ github.event_name == 'workflow_dispatch' && steps.pr.outputs.sha || github.sha }}
           generate_release_notes: true
           make_latest: true
           files: |
