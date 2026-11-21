@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Erzeugt packs-src/<pack>.json aus den Python-Quelldaten.
 Aufruf:  python tools/build_sources.py   (aus dem Systemordner)
-Danach:  tools/build-packs.cmd           (schreibt die LevelDB-Compendien)"""
+Danach:  npm run build   bzw. tools/build-packs.cmd  (prüft die Quellen und baut die LevelDB-Compendien)"""
 import json
 import os
 import sys

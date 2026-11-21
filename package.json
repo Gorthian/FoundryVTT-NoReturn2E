@@ -1,0 +1,14 @@
+{
+  "name": "foundryvtt-noreturn2e",
+  "private": true,
+  "type": "module",
+  "description": "Build-Werkzeuge für das NoReturn-2E-System (Compendien aus packs-src bauen und prüfen).",
+  "scripts": {
+    "build:packs": "node tools/build-packs.mjs",
+    "validate:packs": "node tools/validate-packs.mjs",
+    "build": "npm run validate:packs && npm run build:packs"
+  },
+  "devDependencies": {
+    "@foundryvtt/foundryvtt-cli": "^3.0.3"
+  }
+}
