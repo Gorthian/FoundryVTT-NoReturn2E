@@ -359,3 +359,46 @@ export class AugmentData extends NRItemData {
     return this.installed;
   }
 }
+
+/** Krankheit (Kap. 1, S. 40–45). Bei Aktiven zählt `days` den Verlauf; Schritte wirken auf Organismus, Psyche, Schaden. */
+export class DiseaseData extends NRItemData {
+  static defineSchema() {
+    return {
+      classification: str(""),
+      transmission: str(""),
+      vector: str(""),
+      incubation: str(""),
+      duration: str(""),
+      cure: str(""),
+      identification: int(10, { min: 0 }),
+      intensity: int(0, { min: 0 }),
+      /** Temporäre Maluswürfel auf alle Aktionen, solange aktiv. */
+      malusDice: int(0, { min: 0 }),
+      /** Inkubationszeit in Tagen (Verlauf beginnt danach). */
+      incubationDays: num(0, { min: 0 }),
+      /** Abstand der Verlaufsschritte in Tagen (0 = keine automatischen Schritte). */
+      stepDays: num(0, { min: 0 }),
+      /** Wirkung je Schritt: Würfelformel oder Zahl (leer = keine). */
+      stepOrganismus: str(""),
+      stepPsyche: str(""),
+      /** Dauerhafter Schaden je Schritt auf eine zufällige Körperzone. */
+      stepDamage: int(0, { min: 0 }),
+      active: bool(false),
+      days: num(0, { min: 0 }),
+      description: html()
+    };
+  }
+}
+
+/** Flora (Kap. 1, S. 20–22): Pflanzen und Pilze mit Verbreitung, Preis und Wirkung. */
+export class FloraData extends NRItemData {
+  static defineSchema() {
+    return {
+      region: str(""),
+      price: num(0, { min: 0 }),
+      priceUnit: str(""),
+      effect: str(""),
+      description: html()
+    };
+  }
+}

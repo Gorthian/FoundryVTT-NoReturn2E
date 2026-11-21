@@ -4,6 +4,7 @@ import { collectPower, rollPsiFail } from "../psi.mjs";
 import { rollHitZone } from "../dice/pool.mjs";
 import { downloadMannifest, promptImport } from "../apps/mannifest.mjs";
 import { openCharacterGenerator } from "../apps/character-generator.mjs";
+import { openCompendiumSync } from "../sync.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -24,6 +25,7 @@ export class NRActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       mannifestExport: NRActorSheet.#onMannifestExport,
       mannifestImport: NRActorSheet.#onMannifestImport,
       openGenerator: NRActorSheet.#onOpenGenerator,
+      syncCompendium: NRActorSheet.#onSyncCompendium,
       rollSkill: NRActorSheet.#onRollSkill,
       useItem: NRActorSheet.#onUseItem,
       editItem: NRActorSheet.#onEditItem,
@@ -40,6 +42,8 @@ export class NRActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       heal: NRActorSheet.#onHeal,
       regenerate: NRActorSheet.#onRegenerate,
       rollInfection: NRActorSheet.#onRollInfection,
+      diseaseAdvance: NRActorSheet.#onDiseaseAdvance,
+      diseaseCure: NRActorSheet.#onDiseaseCure,
       degeneration: NRActorSheet.#onDegeneration,
       advance: NRActorSheet.#onAdvance,
       reload: NRActorSheet.#onReload,
@@ -145,7 +149,7 @@ export class NRActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       disadvantages: rows("advantage", i => i.system.kind === "nachteil"),
       traitsJustice: rows("trait", i => i.system.kind === "justice"),
       traitsChaos: rows("trait", i => i.system.kind === "chaos"),
-      hasSplit: actor.styleLevel("split") > 0, clinch: actor.getFlag("noreturn", "clinch") ?? null, styleSkills: rows("styleSkill"), augments: rows("augment"),
+      hasSplit: actor.styleLevel("split") > 0, clinch: actor.getFlag("noreturn", "clinch") ?? null, styleSkills: rows("styleSkill"), augments: rows("augment"), diseases: rows("disease"),
       gear: rows("gear"), ammo: rows("ammo"),
       adrenalinPips: Array.from({ length: sys.adrenalinMax }, (_, i) => ({ used: i >= sys.adrenalinLeft })),
       meditationPips: Array.from({ length: sys.meditationMax }, (_, i) => ({ used: i >= sys.meditationLeft })),
@@ -191,6 +195,7 @@ export class NRActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
     if (this.document.type !== "character") return controls;
     controls.push(
       { icon: "fa-solid fa-user-pen", label: "NR.Gen.Edit", action: "openGenerator", visible: () => this.document.isOwner },
+      { icon: "fa-solid fa-arrows-rotate", label: "NR.Sync.Open", action: "syncCompendium", visible: () => this.document.isOwner },
       { icon: "fa-solid fa-file-export", label: "NR.Mannifest.Export", action: "mannifestExport" },
       { icon: "fa-solid fa-file-import", label: "NR.Mannifest.Import", action: "mannifestImport", visible: () => this.document.isOwner }
     );
@@ -204,6 +209,11 @@ export class NRActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
   /** Charaktergenerator mit den Werten dieses Actors öffnen (Umbau). */
   static async #onOpenGenerator() {
     await openCharacterGenerator(this.document);
+  }
+
+  /** Items dieses Actors mit dem Kompendium abgleichen (Vorschau). */
+  static #onSyncCompendium() {
+    return openCompendiumSync(this.document);
   }
 
   static async #onMannifestImport() {
@@ -235,6 +245,16 @@ export class NRActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
 
   static async #onUseItem(event, target) {
     return this._getItem(target)?.use();
+  }
+
+  static async #onDiseaseAdvance(event, target) {
+    const item = this._getItem(target);
+    if (item) return game.noreturn.advanceDisease(this.actor, item, Number(target.dataset.days) || 1);
+  }
+
+  static async #onDiseaseCure(event, target) {
+    const item = this._getItem(target);
+    if (item) return game.noreturn.cure(this.actor, item);
   }
 
   static async #onEditItem(event, target) {

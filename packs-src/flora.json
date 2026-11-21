@@ -1,0 +1,386 @@
+[
+ {
+  "_id": "XuqbGRmySP3WYUDR",
+  "_key": "!items!XuqbGRmySP3WYUDR",
+  "name": "Asphaltpilze",
+  "type": "flora",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "region": "F.A.L., weite Teile Eurasiens",
+   "price": 0,
+   "priceUnit": "",
+   "effect": "Ungewaschen verzehrt Überträger von Flugnekrose und Fleischrost.",
+   "description": "<p>Kleine schwarz-graue Pilze, die auf Beton wachsen. In Ruinenstädten beliebte Zutat für Suppen. <em class=\"nr-ref\">(NoReturn 2E, S. 20)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 1000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "0.1.0",
+   "createdTime": 1795258706017,
+   "modifiedTime": 1795258706017,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "ZBlVkGZnmLfe0SUr",
+  "_key": "!items!ZBlVkGZnmLfe0SUr",
+  "name": "Bohrkäferpilz",
+  "type": "flora",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "region": "urbane Gebiete",
+   "price": 0,
+   "priceUnit": "",
+   "effect": "Macht Stein und Beton porös; Gebäude nach etwa einem halben Jahr einsturzgefährdet. Fungizide helfen.",
+   "description": "<p>Sporenpilz, der Bausubstanz zersetzt. <em class=\"nr-ref\">(NoReturn 2E, S. 20)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 2000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "0.1.0",
+   "createdTime": 1795258706017,
+   "modifiedTime": 1795258706017,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "ePtViLkXOfSJa0lK",
+  "_key": "!items!ePtViLkXOfSJa0lK",
+  "name": "Eisenrinde",
+  "type": "flora",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "region": "Götterfall",
+   "price": 5,
+   "priceUnit": "N$ je kg",
+   "effect": "Verarbeitet Stabilität 25 MK:B. Mad Suit: 3 kg Eisenrinde, Rüstungsteil 25p MK:B, Komfort 4, 110 N$ je Körperzone.",
+   "description": "<p>Baum mit stahlartig stabiler, nachwachsender Rinde; wird ähnlich wie Metall verarbeitet. <em class=\"nr-ref\">(NoReturn 2E, S. 20)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 3000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "0.1.0",
+   "createdTime": 1795258706017,
+   "modifiedTime": 1795258706017,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "aV1zi3ytg9OoSnDY",
+  "_key": "!items!aV1zi3ytg9OoSnDY",
+  "name": "Fettalgen",
+  "type": "flora",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "region": "Küsten toxischer Gewässer",
+   "price": 0,
+   "priceUnit": "",
+   "effect": "Fleischfressend: bis zu 2 m lange Fangfäden, ritzen Oberflächen auf und legen sie dem Säurewasser frei.",
+   "description": "<p>Säureresistentes Moos auf und unter Wasser, das Beute fängt. <em class=\"nr-ref\">(NoReturn 2E, S. 21)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 4000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "0.1.0",
+   "createdTime": 1795258706017,
+   "modifiedTime": 1795258706017,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "lfudqa7NvTmxQV87",
+  "_key": "!items!lfudqa7NvTmxQV87",
+  "name": "Feuerblatt",
+  "type": "flora",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "region": "Sand- und Steinwüsten",
+   "price": 0,
+   "priceUnit": "",
+   "effect": "Nesselgift. Adivasi (Giftresistenz 1) spüren kaum etwas; sonst Brennen für Stunden ohne Wertänderung, Grollhornmilch lindert.",
+   "description": "<p>Anspruchsloser Wüstenbusch mit Brennnessel-Blättern; Grollhörner werden davon berauscht. <em class=\"nr-ref\">(NoReturn 2E, S. 21)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 5000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "0.1.0",
+   "createdTime": 1795258706017,
+   "modifiedTime": 1795258706017,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "0QD1HVfIZqt3r1yi",
+  "_key": "!items!0QD1HVfIZqt3r1yi",
+  "name": "Rankenefeu",
+  "type": "flora",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "region": "Dschungel, Eurasien, S.P.L.",
+   "price": 0,
+   "priceUnit": "",
+   "effect": "Reißfestigkeit 40 Punkte MK:A, sonstige Stabilität 25 MK:[A].",
+   "description": "<p>Sehr reißfeste Rankenpflanze, die Eingeborene für Handwerk nutzen. <em class=\"nr-ref\">(NoReturn 2E, S. 21)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 6000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "0.1.0",
+   "createdTime": 1795258706017,
+   "modifiedTime": 1795258706017,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "t1nJ0yaaAivzWyev",
+  "_key": "!items!t1nJ0yaaAivzWyev",
+  "name": "Psynoperus",
+  "type": "flora",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "region": "Eurasien, Republik 13, teils S.P.L.",
+   "price": 0,
+   "priceUnit": "",
+   "effect": "Sporen mit Intensität 7, Reichweite meist unter 4 m; Infizierte suchen dunkle, feuchte Orte und verhungern. Starke Hitze entfernt die Sporen.",
+   "description": "<p>Leuchtender, faustgroßer Porling, dessen Sporen Appetit und Wahrnehmung beeinflussen. <em class=\"nr-ref\">(NoReturn 2E, S. 21)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 7000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "0.1.0",
+   "createdTime": 1795258706017,
+   "modifiedTime": 1795258706017,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "JlEf99UqGGenQ1nd",
+  "_key": "!items!JlEf99UqGGenQ1nd",
+  "name": "Sirkohra-Pflanze",
+  "type": "flora",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "region": "Götterfall",
+   "price": 25,
+   "priceUnit": "N$ je 10 g",
+   "effect": "Halluzinogen für etwa 1 Stunde je Dosis. Überdosis ab mehr als 30 g in einer Stunde: Organismus −1 je weitere angefangene 10 g.",
+   "description": "<p>Moosartige, weiß beflaumte Pflanze; wird aufgekocht oder geraucht. <em class=\"nr-ref\">(NoReturn 2E, S. 21)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 8000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "0.1.0",
+   "createdTime": 1795258706017,
+   "modifiedTime": 1795258706017,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "qRXqaxSB4AphisNz",
+  "_key": "!items!qRXqaxSB4AphisNz",
+  "name": "Smródpiz",
+  "type": "flora",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "region": "südliches Eurasien, Götterfall, Republik 13",
+   "price": 0,
+   "priceUnit": "",
+   "effect": "Alkoholreicher Pilz; Verzehr kann zur Alkoholvergiftung führen.",
+   "description": "<p>Stark nach Alkohol riechender brauner Pilz, der Fruchtreste einlagert. <em class=\"nr-ref\">(NoReturn 2E, S. 22)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 9000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "0.1.0",
+   "createdTime": 1795258706017,
+   "modifiedTime": 1795258706017,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "A4MqZ8yRvb0GuPLI",
+  "_key": "!items!A4MqZ8yRvb0GuPLI",
+  "name": "Steppengras",
+  "type": "flora",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "region": "sehr warme oder verstrahlte Regionen, vor allem F.A.L.",
+   "price": 0,
+   "priceUnit": "",
+   "effect": "Tiere brechen es auf, um an den nahrhaften Saft zu kommen.",
+   "description": "<p>Trockene, blattlose Buschpflanze mit sehr tiefen Wurzeln. <em class=\"nr-ref\">(NoReturn 2E, S. 22)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 10000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "0.1.0",
+   "createdTime": 1795258706017,
+   "modifiedTime": 1795258706017,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "O71BWeQuuxQFiT6L",
+  "_key": "!items!O71BWeQuuxQFiT6L",
+  "name": "Schattenaegis",
+  "type": "flora",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "region": "weltweit extrem selten",
+   "price": 150000,
+   "priceUnit": "N$ je Blüte (Schwarzmarkt)",
+   "effect": "Als Tee: +25 Organismus, heilt Vergiftungen, stellt über 3 Stunden alle Trefferpunkte wieder her; Körperteile wachsen nach (robotische Einbauten werden abgestoßen).",
+   "description": "<p>Seltene tiefblaue Sternblume mit starker Heilwirkung; wächst bei etwa 19 °C an frischen Wasserquellen. <em class=\"nr-ref\">(NoReturn 2E, S. 22)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 11000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "0.1.0",
+   "createdTime": 1795258706017,
+   "modifiedTime": 1795258706017,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "nhr2t6WOsEi3li7Y",
+  "_key": "!items!nhr2t6WOsEi3li7Y",
+  "name": "Stinkkaktus",
+  "type": "flora",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "region": "warme Regionen weltweit",
+   "price": 0,
+   "priceUnit": "",
+   "effect": "Stacheln mit Kontaktgift: 3 Giftschaden je Kampfrunde für 2 Kampfrunden (Giftresistenz −1 je Runde). Fleisch nahrhaft, aber übelriechend.",
+   "description": "<p>Bis zu 4 m hoher Kaktus mit essbaren Blüten und saftigem Fleisch. <em class=\"nr-ref\">(NoReturn 2E, S. 22)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 12000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "0.1.0",
+   "createdTime": 1795258706017,
+   "modifiedTime": 1795258706017,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ }
+]
