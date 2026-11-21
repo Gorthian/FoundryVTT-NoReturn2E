@@ -44,6 +44,12 @@ export class NRTimeHud extends HandlebarsApplicationMixin(ApplicationV2) {
     else NRTimeHud.instance?.close();
   }
 
+  /** Zeigt das HUD oder schließt es, wenn es offen ist (Szenensteuerung). */
+  static toggle() {
+    if (NRTimeHud.instance?.rendered) return NRTimeHud.instance.close();
+    return NRTimeHud.show({ force: true });
+  }
+
   static show({ force = false } = {}) {
     if (!force && !NRTimeHud.enabled) return;
     if (force && !game.user.isGM && !game.settings.get(SYSTEM_ID, "timeHudPlayers")) return;

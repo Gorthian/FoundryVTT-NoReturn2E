@@ -644,6 +644,11 @@
           "Dismiss": "Bis zur nächsten Version nicht mehr anzeigen",
       "Ok": "Verstanden"
     },
+    "Controls": {
+      "Title": "NoReturn",
+      "TimeHud": "Zeit-HUD ein-/ausblenden",
+      "Notice": "Startinfo"
+    },
     "Time": {
       "Title": "Zeit",
       "CalendarName": "NoReturn-Kalender (IPK)",

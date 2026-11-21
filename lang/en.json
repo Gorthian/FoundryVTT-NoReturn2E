@@ -644,6 +644,11 @@
           "Dismiss": "Don't show again until the next version",
       "Ok": "Understood"
     },
+    "Controls": {
+      "Title": "NoReturn",
+      "TimeHud": "Show/hide time HUD",
+      "Notice": "Start notice"
+    },
     "Time": {
       "Title": "Time",
       "CalendarName": "NoReturn calendar (IPC)",

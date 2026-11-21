@@ -129,6 +129,30 @@ Hooks.on("preCreateScene", (scene, data) => {
   scene.updateSource(update);
 });
 
+/** Szenensteuerung (linke Icon-Leiste): NoReturn-Gruppe mit Zeit-HUD, Charaktergenerator und Startinfo. */
+Hooks.on("getSceneControlButtons", controls => {
+  const tools = {
+    timeHud: {
+      name: "timeHud", order: 1, title: "NR.Controls.TimeHud", icon: "fa-solid fa-clock", button: true,
+      visible: game.user.isGM || game.settings.get("noreturn", "timeHudPlayers"),
+      onChange: () => NRTimeHud.toggle()
+    },
+    generator: {
+      name: "generator", order: 2, title: "NR.Gen.Title", icon: "fa-solid fa-user-plus", button: true,
+      visible: game.user.can("ACTOR_CREATE"),
+      onChange: () => openCharacterGenerator()
+    },
+    notice: {
+      name: "notice", order: 3, title: "NR.Controls.Notice", icon: "fa-solid fa-circle-info", button: true,
+      onChange: () => showStartupNotice({ force: true })
+    }
+  };
+  controls.noreturn = {
+    name: "noreturn", order: 100, title: "NR.Controls.Title", icon: "fa-solid fa-biohazard",
+    activeTool: "timeHud", tools, onChange: () => {}
+  };
+});
+
 /** Button „Charaktergenerator“ in der Actor-Seitenleiste. */
 Hooks.on("renderActorDirectory", (app, html) => {
   const el = html instanceof HTMLElement ? html : html[0];
