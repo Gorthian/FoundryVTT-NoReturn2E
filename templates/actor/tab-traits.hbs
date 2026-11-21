@@ -64,6 +64,27 @@
         </li>
         {{else}}<li class="nr-empty">–</li>{{/each}}
       </ol>
+
+      <h3 class="nr-section-title">{{localize "NR.Section.Diseases"}} <a class="nr-add" data-action="createItem" data-type="disease"><i class="fa-solid fa-plus"></i></a></h3>
+      <ol class="nr-list">
+        {{#each diseases as |r|}}
+        <li class="nr-item-row draggable" data-item-id="{{r.item.id}}">
+          <div class="nr-item-main">
+            <img src="{{r.item.img}}" alt="">
+            <a class="nr-item-name" data-action="toggleDescription">{{r.item.name}}</a>
+            {{#if r.item.system.active}}
+            <a data-action="diseaseAdvance" data-days="1" data-tooltip="{{localize 'NR.Disease.AdvanceDay'}}"><i class="fa-solid fa-forward-step"></i></a>
+            <a data-action="diseaseCure" data-tooltip="{{localize 'NR.Disease.Cure'}}"><i class="fa-solid fa-notes-medical"></i></a>
+            {{else}}
+            <a data-action="useItem" data-tooltip="{{localize 'NR.Disease.Infect'}}"><i class="fa-solid fa-virus"></i></a>
+            {{/if}}
+            <a data-action="editItem"><i class="fa-solid fa-pen"></i></a>
+            <a data-action="deleteItem"><i class="fa-solid fa-trash"></i></a>
+          </div>
+          <div class="nr-item-details">{{#each r.stats as |s|}}<span class="nr-chip">{{s}}</span>{{/each}}</div>
+        </li>
+        {{else}}<li class="nr-empty">–</li>{{/each}}
+      </ol>
     </div>
 
     <div class="nr-col">

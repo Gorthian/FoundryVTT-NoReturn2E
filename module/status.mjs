@@ -7,7 +7,7 @@
 const ICON = "icons/svg/";
 
 /** Änderung „addiere n auf system.tempMalus“ (v13: mode, v14: type). */
-function addTempMalus(n) {
+export function addTempMalus(n) {
   const base = { key: "system.tempMalus", value: String(n) };
   return game.release?.generation >= 14 ? { ...base, type: "add" } : { ...base, mode: CONST.ACTIVE_EFFECT_MODES.ADD };
 }
@@ -28,6 +28,11 @@ const STATUS_DEFS = [
  * genutzt) bleibt erhalten.
  */
 export function registerStatusEffects() {
+  game.settings.register("noreturn", "timeEffects", {
+    name: "NR.Settings.TimeEffects",
+    hint: "NR.Settings.TimeEffectsHint",
+    scope: "world", config: true, type: Boolean, default: true
+  });
   const defeatedId = CONFIG.specialStatusEffects?.DEFEATED ?? "dead";
   const defeated = CONFIG.statusEffects.find(e => e.id === defeatedId)
     ?? { id: defeatedId, name: "EFFECT.StatusDead", img: `${ICON}skull.svg` };
@@ -55,14 +60,15 @@ export const HAZARDS = {
   toxicWater: { damage: () => 60, continuous: true, status: () => "nrContinuous" },
   radiation: {
     cat: [1, 2, 3, 4, 5, 6, 7, 8, 9], status: () => "nrRadiation",
-    damage: cat => (cat >= 7 ? 70 + 10 * (cat - 7) : 0), continuous: true
-  }
+    damage: cat => (cat >= 7 ? 70 + 10 * (cat - 7) : 0), continuous: true, protectable: true
+  },
+  radiationLeave: { leave: true }
 };
 
 const TEMP_IDS = ["nrTemp1", "nrTemp2", "nrTemp3"];
 
 /** Zustand am Actor setzen; ersetzt einen vorhandenen gleichen Zustand (bei Temperatur jede Stufe). */
-export async function setStatus(actor, statusId, { category = null } = {}) {
+export async function setStatus(actor, statusId, { category = null, flags = {} } = {}) {
   const remove = (TEMP_IDS.includes(statusId) ? TEMP_IDS : [statusId]);
   const old = actor.effects.filter(e => remove.some(s => e.statuses.has(s))).map(e => e.id);
   if (old.length) await actor.deleteEmbeddedDocuments("ActiveEffect", old);
@@ -72,19 +78,37 @@ export async function setStatus(actor, statusId, { category = null } = {}) {
     data.name = `${game.i18n.localize(`NR.Condition.${statusId}`)} ${category}`;
     foundry.utils.setProperty(data, "flags.noreturn.category", category);
   }
+  for (const [k, v] of Object.entries(flags)) foundry.utils.setProperty(data, `flags.noreturn.${k}`, v);
   await actor.createEmbeddedDocuments("ActiveEffect", [data]);
 }
 
+/** Der Zustand „Verstrahlt“ eines Actors (oder undefined). */
+export function radiationEffect(actor) {
+  return actor.effects.find(e => e.statuses.has("nrRadiation"));
+}
+
 /** Gefahr auf einen Actor anwenden (Zustand + Schaden/Organismusverlust). */
-export async function applyHazard(actor, hazardId, category = 1) {
+export async function applyHazard(actor, hazardId, category = 1, { protectedGear = false } = {}) {
   const h = HAZARDS[hazardId];
   if (!h || actor.type === "vehicle") return;
   const label = game.i18n.localize(`NR.Hazard.${hazardId}.name`);
-  if (h.status) await setStatus(actor, h.status(category), { category: hazardId === "radiation" ? category : null });
+  if (h.leave) {
+    const eff = radiationEffect(actor);
+    if (eff) await eff.setFlag("noreturn", "exposed", false);
+    return;
+  }
+  if (h.status) {
+    let flags = {};
+    if (hazardId === "radiation") {
+      const old = radiationEffect(actor)?.flags?.noreturn ?? {};
+      flags = { exposed: true, protected: !!protectedGear, aftermath: !!old.aftermath || (category >= 7 && !protectedGear), zonatProgress: old.zonatProgress ?? 0 };
+    }
+    await setStatus(actor, h.status(category), { category: hazardId === "radiation" ? category : null, flags });
+  }
   if (h.organismLoss && actor.system.organismus) {
     await actor.update({ "system.organismus.loss": actor.system.organismus.loss + h.organismLoss });
   }
-  const amount = h.damage?.(category) ?? 0;
+  const amount = (h.protectable && protectedGear) ? 0 : (h.damage?.(category) ?? 0);
   if (amount > 0) {
     await actor.resistDamage({ amount, zones: ["7"], attack: { continuous: !!h.continuous }, label, skipDialog: true });
   }
@@ -102,14 +126,15 @@ export async function hazardDialog() {
     window: { title: game.i18n.localize("NR.Hazard.Title"), icon: "fa-solid fa-biohazard" },
     content: `<p>${game.i18n.format("NR.Hazard.Targets", { n: actors.length })}</p>
       <div class="form-group"><label>${game.i18n.localize("NR.Hazard.Type")}</label><select name="hazard">${opts}</select></div>
-      <div class="form-group"><label>${game.i18n.localize("NR.Hazard.Category")}</label><input type="number" name="cat" value="1" min="1" max="9"></div>`,
+      <div class="form-group"><label>${game.i18n.localize("NR.Hazard.Category")}</label><input type="number" name="cat" value="1" min="1" max="9"></div>
+      <div class="form-group"><label>${game.i18n.localize("NR.Hazard.Protected")}</label><input type="checkbox" name="protected"></div>`,
     ok: { label: game.i18n.localize("NR.Hazard.Apply") }
   }).catch(() => null);
   if (!result) return null;
 
   const h = HAZARDS[result.hazard];
   const cat = h.cat ? Math.min(Math.max(Number(result.cat) || 1, h.cat[0]), h.cat.at(-1)) : 1;
-  for (const actor of actors) await applyHazard(actor, result.hazard, cat);
+  for (const actor of actors) await applyHazard(actor, result.hazard, cat, { protectedGear: !!result.protected });
 
   const name = game.i18n.localize(`NR.Hazard.${result.hazard}.name`) + (h.cat ? ` (${game.i18n.localize("NR.Hazard.CategoryShort")} ${cat})` : "");
   await ChatMessage.create({

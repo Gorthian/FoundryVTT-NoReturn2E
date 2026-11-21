@@ -19,7 +19,9 @@
       "bioTrait": "Biologische Eigenschaft",
       "advantage": "Vor-/Nachteil",
       "trait": "Charaktermerkmal",
-      "augment": "Augmentierung"
+      "augment": "Augmentierung",
+      "disease": "Krankheit",
+      "flora": "Flora"
     }
   },
   "NR": {
@@ -61,7 +63,8 @@
       "Wanted": "Steckbrief",
       "Notes": "Notizen",
       "Description": "Beschreibung",
-      "Physical": "Gegenstand"
+      "Physical": "Gegenstand",
+      "Diseases": "Krankheiten"
     },
     "Special": {
       "adrenalin": "Adrenalin",
@@ -648,7 +651,9 @@
       "AutoRegen": "Automatische Regeneration",
       "AutoRegenHint": "Regeneriert Kämpfer mit Regeneration zu Beginn ihres Zuges.",
       "ShowDice": "Würfel anzeigen",
-      "ShowDiceHint": "Einzelne Würfel in Probenkarten anzeigen."
+      "ShowDiceHint": "Einzelne Würfel in Probenkarten anzeigen.",
+      "TimeEffects": "Zeitablauf wirkt auf Krankheiten und Strahlung",
+      "TimeEffectsHint": "Reagiert auf die SL-Zeitsteuerung: Verstrichene Tage und Zonate rücken Krankheitsverläufe vor und verursachen Strahlungsverluste (nur auf dem Client der Spielleitung)."
     },
     "Gen": {
       "Edit": "Im Charaktergenerator umbauen",
@@ -1722,7 +1727,63 @@
       "radiation": {
         "name": "Verstrahlung",
         "hint": "Organismusverlust je Zonat/Tag laut Kategorie (manuell eintragen); ab Kat. 7 70–90 andauernder Schaden. Antistrahlungsmittel halbieren."
+      },
+      "Protected": "Schutzkleidung dicht (MK:C, geschlossen)",
+      "radiationLeave": {
+        "name": "Strahlungsgebiet verlassen",
+        "hint": "Beendet die laufende Strahlungsbelastung; die Nachwirkung (−1 Organismus je Zonat) bleibt."
       }
+    },
+    "Radiation": {
+      "Title": "Strahlung",
+      "Exposure": "Organismus −{v} (Strahlungsbelastung)",
+      "Aftermath": "Organismus −{v} (Nachwirkung)"
+    },
+    "Elapsed": {
+      "Title": "Zeit vergeht",
+      "Days": "Tage",
+      "Zonats": "Zonate",
+      "Apply": "Anwenden",
+      "Hint": "Rückt Krankheitsverläufe vor und wendet den Strahlungsverlust an (1 Zonat = 20 Tage). Mit der SL-Zeitsteuerung geschieht das automatisch."
+    },
+    "Disease": {
+      "Classification": "Klassifizierung",
+      "Transmission": "Ansteckung",
+      "Vector": "Überträger",
+      "IncubationText": "Inkubationszeit",
+      "Duration": "Dauer",
+      "Cure": "Heilung",
+      "Identification": "Identifizierung MW",
+      "Intensity": "Intensität",
+      "MalusDice": "Maluswürfel (alle Aktionen)",
+      "Course": "Verlauf",
+      "IncubationDays": "Inkubation (Tage)",
+      "StepDays": "Schritt alle (Tage)",
+      "StepOrganism": "Organismus je Schritt",
+      "StepPsyche": "Psyche je Schritt",
+      "StepDamage": "Schaden je Schritt (Zufallszone)",
+      "Active": "Aktiv",
+      "Days": "Verlauf (Tage)",
+      "CourseHint": "Je Schritt wirken Organismus, Psyche und Schaden (Würfelformel oder Zahl). Die Schritte folgen nach der Inkubation alle X Tage.",
+      "AdvanceDay": "Einen Tag vorrücken",
+      "Infect": "Infektionsprobe",
+      "Infected": "{name} erkrankt.",
+      "Incubation": "Inkubationszeit",
+      "OrgLoss": "Organismus −{v}",
+      "PsycheLoss": "Psyche −{v}",
+      "ZoneDamage": "{v} Schaden an {zone}",
+      "Progress": "Verlauf:",
+      "NoPack": "Das Compendium „Krankheiten“ wurde nicht gefunden.",
+      "InfectTitle": "Krankheit übertragen",
+      "Which": "Krankheit",
+      "SkipRoll": "Ohne Infektionsprobe erkranken",
+      "IntensityStat": "Intensität {v}",
+      "IdentStat": "Ident. MW {v}",
+      "DaysStat": "Tag {v}"
+    },
+    "Flora": {
+      "Region": "Verbreitung",
+      "Effect": "Wirkung"
     }
   }
 }

@@ -19,7 +19,9 @@
       "bioTrait": "Biological Trait",
       "advantage": "Advantage/Disadvantage",
       "trait": "Character Trait",
-      "augment": "Augmentation"
+      "augment": "Augmentation",
+      "disease": "Disease",
+      "flora": "Flora"
     }
   },
   "NR": {
@@ -61,7 +63,8 @@
       "Wanted": "Wanted Poster",
       "Notes": "Notes",
       "Description": "Description",
-      "Physical": "Object"
+      "Physical": "Object",
+      "Diseases": "Diseases"
     },
     "Special": {
       "adrenalin": "Adrenaline",
@@ -648,7 +651,9 @@
       "AutoRegen": "Automatic regeneration",
       "AutoRegenHint": "Regenerate combatants at the start of their turn.",
       "ShowDice": "Show dice",
-      "ShowDiceHint": "Show individual dice in roll cards."
+      "ShowDiceHint": "Show individual dice in roll cards.",
+      "TimeEffects": "Elapsed time affects diseases and radiation",
+      "TimeEffectsHint": "Reacts to the GM time control: elapsed days and zonats advance diseases and cause radiation losses (on the GM client only)."
     },
     "Gen": {
       "Edit": "Rebuild in character generator",
@@ -1722,7 +1727,63 @@
       "radiation": {
         "name": "Radiation",
         "hint": "Organism loss per zonat/day by category (enter manually); from cat. 7 70–90 continuous damage. Anti-radiation drugs halve it."
+      },
+      "Protected": "Protective gear sealed (MK:C, closed)",
+      "radiationLeave": {
+        "name": "Leave radiation area",
+        "hint": "Ends ongoing exposure; the aftereffect (−1 organism per zonat) remains."
       }
+    },
+    "Radiation": {
+      "Title": "Radiation",
+      "Exposure": "Organism −{v} (exposure)",
+      "Aftermath": "Organism −{v} (aftereffect)"
+    },
+    "Elapsed": {
+      "Title": "Time passes",
+      "Days": "Days",
+      "Zonats": "Zonats",
+      "Apply": "Apply",
+      "Hint": "Advances diseases and applies radiation loss (1 zonat = 20 days). Happens automatically with the GM time control."
+    },
+    "Disease": {
+      "Classification": "Classification",
+      "Transmission": "Transmission",
+      "Vector": "Carrier",
+      "IncubationText": "Incubation",
+      "Duration": "Duration",
+      "Cure": "Cure",
+      "Identification": "Identification TN",
+      "Intensity": "Intensity",
+      "MalusDice": "Malus dice (all actions)",
+      "Course": "Course",
+      "IncubationDays": "Incubation (days)",
+      "StepDays": "Step every (days)",
+      "StepOrganism": "Organism per step",
+      "StepPsyche": "Psyche per step",
+      "StepDamage": "Damage per step (random zone)",
+      "Active": "Active",
+      "Days": "Course (days)",
+      "CourseHint": "Each step applies organism, psyche and damage (dice formula or number). Steps follow every X days after incubation.",
+      "AdvanceDay": "Advance one day",
+      "Infect": "Infection check",
+      "Infected": "{name} falls ill.",
+      "Incubation": "Incubation",
+      "OrgLoss": "Organism −{v}",
+      "PsycheLoss": "Psyche −{v}",
+      "ZoneDamage": "{v} damage to {zone}",
+      "Progress": "Progress:",
+      "NoPack": "The compendium \"Diseases\" was not found.",
+      "InfectTitle": "Transmit disease",
+      "Which": "Disease",
+      "SkipRoll": "Infect without a check",
+      "IntensityStat": "Intensity {v}",
+      "IdentStat": "Ident. TN {v}",
+      "DaysStat": "Day {v}"
+    },
+    "Flora": {
+      "Region": "Distribution",
+      "Effect": "Effect"
     }
   }
 }

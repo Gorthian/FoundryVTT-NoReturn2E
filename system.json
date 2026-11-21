@@ -312,6 +312,28 @@
         "PLAYER": "NONE",
         "ASSISTANT": "OWNER"
       }
+    },
+    {
+      "name": "krankheiten",
+      "label": "Krankheiten",
+      "path": "packs/krankheiten",
+      "type": "Item",
+      "system": "noreturn",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "flora",
+      "label": "Flora",
+      "path": "packs/flora",
+      "type": "Item",
+      "system": "noreturn",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
     }
   ],
   "packFolders": [
@@ -355,6 +377,14 @@
           "packs": [
             "psi-kraefte",
             "psi-apps"
+          ]
+        },
+        {
+          "name": "Welt",
+          "sorting": "m",
+          "packs": [
+            "krankheiten",
+            "flora"
           ]
         }
       ]

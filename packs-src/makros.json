@@ -18,8 +18,62 @@
    "coreVersion": "14.368",
    "systemId": "noreturn",
    "systemVersion": "0.1.0",
-   "createdTime": 1795256687405,
-   "modifiedTime": 1795256687405,
+   "createdTime": 1795258706017,
+   "modifiedTime": 1795258706017,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "4V3fAn0c7vhDtL68",
+  "_key": "!macros!4V3fAn0c7vhDtL68",
+  "name": "Krankheit übertragen",
+  "type": "script",
+  "img": "icons/svg/poison.svg",
+  "scope": "global",
+  "command": "game.noreturn.infectDialog();",
+  "author": null,
+  "folder": null,
+  "sort": 2000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "0.1.0",
+   "createdTime": 1795258706017,
+   "modifiedTime": 1795258706017,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "zminWdvi7Q9dpsOu",
+  "_key": "!macros!zminWdvi7Q9dpsOu",
+  "name": "Zeit vergeht (Strahlung, Krankheiten)",
+  "type": "script",
+  "img": "icons/svg/clockwork.svg",
+  "scope": "global",
+  "command": "game.noreturn.elapsedDialog();",
+  "author": null,
+  "folder": null,
+  "sort": 3000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "0.1.0",
+   "createdTime": 1795258706017,
+   "modifiedTime": 1795258706017,
    "lastModifiedBy": null,
    "compendiumSource": null,
    "duplicateSource": null,
