@@ -132,10 +132,13 @@ Hooks.on("preCreateScene", (scene, data) => {
 /** Szenensteuerung (linke Icon-Leiste): NoReturn-Gruppe mit Zeit-HUD, Charaktergenerator und Startinfo. */
 Hooks.on("getSceneControlButtons", controls => {
   const tools = {
+    // Platzhalter als aktives Werkzeug: Das Aktivieren der Gruppe soll das HUD nicht umschalten
+    select: { name: "select", order: 0, title: "NR.Controls.Title", icon: "fa-solid fa-hand-pointer", onChange: () => {} },
     timeHud: {
-      name: "timeHud", order: 1, title: "NR.Controls.TimeHud", icon: "fa-solid fa-clock", button: true,
+      name: "timeHud", order: 1, title: "NR.Controls.TimeHud", icon: "fa-solid fa-clock", toggle: true,
+      active: !!NRTimeHud.instance?.rendered,
       visible: game.user.isGM || game.settings.get("noreturn", "timeHudPlayers"),
-      onChange: () => NRTimeHud.toggle()
+      onChange: (event, active) => (active ? NRTimeHud.show({ force: true }) : NRTimeHud.instance?.close())
     },
     generator: {
       name: "generator", order: 2, title: "NR.Gen.Title", icon: "fa-solid fa-user-plus", button: true,
@@ -149,7 +152,7 @@ Hooks.on("getSceneControlButtons", controls => {
   };
   controls.noreturn = {
     name: "noreturn", order: 100, title: "NR.Controls.Title", icon: "fa-solid fa-biohazard",
-    activeTool: "timeHud", tools, onChange: () => {}
+    activeTool: "select", tools, onChange: () => {}
   };
 });
 

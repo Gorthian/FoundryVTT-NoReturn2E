@@ -84,6 +84,16 @@ export class NRTimeHud extends HandlebarsApplicationMixin(ApplicationV2) {
     };
   }
 
+  _onFirstRender(context, options) {
+    super._onFirstRender?.(context, options);
+    ui.controls?.render();
+  }
+
+  _onClose(options) {
+    super._onClose?.(options);
+    ui.controls?.render();
+  }
+
   _onRender(context, options) {
     super._onRender?.(context, options);
     this.element.querySelectorAll(".nr-time-pick input, .nr-time-pick select").forEach(el => el.addEventListener("input", () => { this.#dirty = true; }));
