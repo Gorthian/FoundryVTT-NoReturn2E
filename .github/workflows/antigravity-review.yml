@@ -1,0 +1,31 @@
+name: Antigravity PR Review
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  review:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Run Antigravity Review
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ secrets.CUSTOM_PAT }}
+        run: |
+          $prNumber = "${{ github.event.pull_request.number }}"
+          gh pr diff $prNumber > pr.diff
+
+          # Hier deinen konkreten Antigravity-CLI-Befehl für das Diff-Review einsetzen:
+          $reviewText = antigravity review --diff pr.diff --context "FoundryVTT Module" | Out-String
+
+          if ($reviewText -match "LGTM") {
+            gh pr review $prNumber --approve --body "✅ **Antigravity Review:** Keine Beanstandungen (LGTM)."
+          } else {
+            gh pr review $prNumber --request-changes --body "🤖 **Antigravity Review:**`n`n$reviewText"
+          }
