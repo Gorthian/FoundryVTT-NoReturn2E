@@ -20,6 +20,7 @@ import { rollPool, rollHitZone } from "./module/dice/pool.mjs";
 import { castPsiApp, collectPower, rollPsiFail } from "./module/psi.mjs";
 import { NRCharacterGenerator, openCharacterGenerator } from "./module/apps/character-generator.mjs";
 import { registerNoticeSettings, showStartupNotice } from "./module/notice.mjs";
+import { registerSyncSettings, checkSyncAfterUpdate, openCompendiumSync } from "./module/sync.mjs";
 import { importMannifest, exportMannifest, promptImport } from "./module/apps/mannifest.mjs";
 
 Hooks.once("init", () => {
@@ -32,6 +33,7 @@ Hooks.once("init", () => {
     mannifest: { import: importMannifest, export: exportMannifest, promptImport },
     hazard: hazardDialog, applyHazard, setStatus,
     infect, advanceDisease, cure, infectDialog, applyElapsed, elapsedDialog,
+    syncCompendium: openCompendiumSync,
     showNotice: () => showStartupNotice({ force: true })
   };
 
@@ -82,6 +84,7 @@ Hooks.once("init", () => {
   registerHandlebarsHelpers();
   registerSettings();
   registerNoticeSettings();
+  registerSyncSettings();
   registerChatHooks();
   registerCombatHooks();
 });
@@ -103,6 +106,7 @@ const TEMPLATES = [
     "systems/noreturn/templates/actor/tab-traits.hbs",
     "systems/noreturn/templates/actor/vehicle-sheet.hbs",
     "systems/noreturn/templates/apps/character-generator.hbs",
+    "systems/noreturn/templates/apps/compendium-sync.hbs",
     "systems/noreturn/templates/chat/attack-extra.hbs",
     "systems/noreturn/templates/chat/damage-card.hbs",
     "systems/noreturn/templates/chat/damage-result.hbs",
@@ -147,6 +151,14 @@ Hooks.on("renderActorDirectory", (app, html) => {
   imp.innerHTML = `<i class="fa-solid fa-file-import"></i> ${game.i18n.localize("NR.Mannifest.ImportNew")}`;
   imp.addEventListener("click", ev => { ev.preventDefault(); promptImport(); });
   target.append(btn, imp);
+  if (game.user.isGM) {
+    const sync = document.createElement("button");
+    sync.type = "button";
+    sync.className = "nr-sync-open";
+    sync.innerHTML = `<i class="fa-solid fa-arrows-rotate"></i> ${game.i18n.localize("NR.Sync.OpenWorld")}`;
+    sync.addEventListener("click", ev => { ev.preventDefault(); openCompendiumSync(); });
+    target.append(sync);
+  }
 });
 
 Hooks.once("ready", async () => {
@@ -162,6 +174,7 @@ Hooks.once("ready", async () => {
     return false;
   });
   showStartupNotice();
+  checkSyncAfterUpdate().catch(err => console.error("NoReturn 2E | Kompendium-Abgleich", err));
   console.log("NoReturn 2E | Bereit. Nicht umdrehen – es gibt kein Zurück.");
 });
 
