@@ -22,8 +22,16 @@ const STATUS_DEFS = [
   { id: "nrContinuous", img: `${ICON}acid.svg` }
 ];
 
-/** Eigene Zustände zu CONFIG.statusEffects hinzufügen (im init-Hook, Namen zur Anzeige übersetzt). */
+/**
+ * CONFIG.statusEffects durch die NoReturn-Zustände ersetzen (im init-Hook). Foundry-Standards wie
+ * „Magisches Schild“ entfallen; nur „Besiegt“ (CONFIG.specialStatusEffects.DEFEATED, vom Kampf-Tracker
+ * genutzt) bleibt erhalten.
+ */
 export function registerStatusEffects() {
+  const defeatedId = CONFIG.specialStatusEffects?.DEFEATED ?? "dead";
+  const defeated = CONFIG.statusEffects.find(e => e.id === defeatedId)
+    ?? { id: defeatedId, name: "EFFECT.StatusDead", img: `${ICON}skull.svg` };
+  CONFIG.statusEffects = [defeated];
   for (const def of STATUS_DEFS) {
     CONFIG.statusEffects.push({
       id: def.id,
