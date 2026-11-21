@@ -1,4 +1,5 @@
 import { NR } from "../config.mjs";
+import { makeCatalog, findCatalogDoc } from "../sync-diff.mjs";
 
 const { HandlebarsApplicationMixin, ApplicationV2, DialogV2 } = foundry.applications.api;
 
@@ -673,15 +674,8 @@ export class NRCharacterGenerator extends HandlebarsApplicationMixin(Application
 
   /** Katalogeintrag (Compendium) zu einem Item des Actors – über Herkunft, sonst über den Namen. */
   _catalogDoc(item) {
-    const d = this.data;
-    const src = item._stats?.compendiumSource ?? item.flags?.core?.sourceId;
-    if (src && d.byId.has(src)) return d.byId.get(src);
-    const base = n => String(n ?? "").replace(/\s*\(.*\)\s*$/, "").trim();
-    const cands = [...d.byId.values()].filter(x => x.type === item.type);
-    return cands.find(x => x.name === item.name)
-      ?? cands.find(x => base(x.name) && base(x.name) === base(item.name))
-      ?? (item.type === "advantage" && item.name.startsWith("Schwaches Attribut") ? cands.find(x => x.name.startsWith("Schwaches Attribut")) : null)
-      ?? null;
+    this.data.catalog ??= makeCatalog(this.data.byId.values());
+    return findCatalogDoc(item, this.data.catalog)?.doc ?? null;
   }
 
   /** Wird dieses Item vom Generator verwaltet (und beim Umbau ggf. ersetzt)? Alles andere bleibt unangetastet. */

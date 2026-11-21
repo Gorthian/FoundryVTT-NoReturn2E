@@ -1,0 +1,76 @@
+<div class="nr-sync">
+  <p class="nr-sync-note"><i class="fa-solid fa-triangle-exclamation"></i> {{localize "NR.Sync.BackupHint"}}</p>
+
+  {{#if result}}
+  <div class="nr-sync-result">
+    <h3>{{localize "NR.Sync.ResultTitle"}}</h3>
+    <ul>
+      <li>{{localize "NR.Sync.ResultUpdated"}}: <strong>{{result.updated}}</strong>{{#if result.actors}} ({{result.actors}} {{localize "NR.Sync.Characters"}}){{/if}}</li>
+      <li>{{localize "NR.Sync.ResultSkipped"}}: <strong>{{result.skipped}}</strong></li>
+      <li>{{localize "NR.Sync.ResultOrphans"}}: <strong>{{result.orphans}}</strong></li>
+      {{#if result.deleted}}<li>{{localize "NR.Sync.ResultDeleted"}}: <strong>{{result.deleted}}</strong></li>{{/if}}
+    </ul>
+    {{#each result.errors as |err|}}<p class="nr-sync-error">{{err}}</p>{{/each}}
+  </div>
+  {{else}}
+  {{#if empty}}
+  <p class="nr-sync-empty"><i class="fa-solid fa-circle-check"></i> {{localize "NR.Sync.UpToDate"}}</p>
+  {{else}}
+  <div class="nr-sync-toolbar">
+    <span>{{localize "NR.Sync.Summary" n=total}}</span>
+    <span class="nr-sync-toolbar-btns">
+      <button type="button" data-action="selectAll">{{localize "NR.Sync.SelectAll"}}</button>
+      <button type="button" data-action="selectNone">{{localize "NR.Sync.SelectNone"}}</button>
+    </span>
+  </div>
+  {{/if}}
+  <div class="nr-sync-list">
+    {{#each plans as |p|}}
+    <section class="nr-sync-actor">
+      <header>
+        {{#if p.entries.length}}<input type="checkbox" data-action="toggleActor" data-actor="{{p.id}}" checked>{{/if}}
+        <strong>{{p.name}}</strong>
+        <span class="nr-chip">{{p.entries.length}} {{localize "NR.Sync.Changes"}}</span>
+        <span class="nr-hint">{{localize "NR.Sync.Stats" current=p.current custom=p.custom excluded=p.excluded}}</span>
+      </header>
+      {{#each p.entries as |e|}}
+      <div class="nr-sync-item">
+        <label>
+          <input type="checkbox" data-sel="update" data-actor="{{p.id}}" data-item="{{e.id}}" {{checked e.selected}}>
+          <strong>{{e.name}}</strong> <span class="nr-chip">{{e.type}}</span>
+          {{#if e.fuzzy}}<span class="nr-chip warn" data-tooltip="{{localize 'NR.Sync.FuzzyHint'}}">{{localize "NR.Sync.Fuzzy"}}</span>{{/if}}
+          {{#if e.byName}}<span class="nr-chip" data-tooltip="{{localize 'NR.Sync.ByNameHint'}}">{{localize "NR.Sync.ByName"}}</span>{{/if}}
+        </label>
+        <ul class="nr-sync-changes">
+          {{#each e.changes as |c|}}
+          <li><code>{{c.label}}</code>
+            {{#if c.text}}{{c.text}}{{else}}<del>{{c.from}}</del> → <ins>{{c.to}}</ins>{{/if}}
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+      {{/each}}
+      {{#each p.orphans as |o|}}
+      <div class="nr-sync-item orphan">
+        <label>
+          <input type="checkbox" data-sel="orphan" data-actor="{{p.id}}" data-item="{{o.id}}">
+          <strong>{{o.name}}</strong> <span class="nr-chip">{{o.type}}</span>
+          <span class="nr-chip warn">{{localize "NR.Sync.Orphan"}}</span>
+        </label>
+        <p class="nr-hint">{{localize "NR.Sync.OrphanHint"}}</p>
+      </div>
+      {{/each}}
+    </section>
+    {{/each}}
+  </div>
+  {{/if}}
+
+  <footer class="nr-sync-footer">
+    {{#if result}}
+    <button type="button" data-action="close"><i class="fa-solid fa-check"></i> {{localize "NR.Sync.Close"}}</button>
+    {{else}}
+    {{#unless empty}}<button type="button" data-action="apply"><i class="fa-solid fa-arrows-rotate"></i> {{localize "NR.Sync.Apply"}}</button>{{/unless}}
+    <button type="button" data-action="close">{{localize "NR.Sync.Cancel"}}</button>
+    {{/if}}
+  </footer>
+</div>

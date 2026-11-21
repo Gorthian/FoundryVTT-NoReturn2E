@@ -721,3 +721,24 @@
 .nr-notice ul { padding-left: 1.2em; margin: 0.5em 0; }
 .nr-notice li { margin-bottom: 0.4em; }
 .nr-notice-dismiss { display: flex; align-items: center; gap: 0.4em; margin-top: 0.8em; }
+
+/* Abgleich mit dem Kompendium */
+#actors .nr-sync-open { flex: 1 1 100%; margin-top: 2px; }
+.nr-sync { display: flex; flex-direction: column; gap: 8px; height: 100%; }
+.nr-sync-note { margin: 0; padding: 6px 8px; font-size: 0.85em; border-left: 3px solid var(--accent); background: var(--parchment-100); }
+.nr-sync-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.nr-sync-toolbar-btns { display: flex; gap: 4px; }
+.nr-sync-toolbar-btns button { width: auto; line-height: 1.4; }
+.nr-sync-list { flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; }
+.nr-sync-actor > header { display: flex; align-items: center; gap: 6px; padding-bottom: 3px; border-bottom: 1px solid var(--parchment-100); }
+.nr-sync-item { padding: 4px 0 4px 22px; }
+.nr-sync-item label { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.nr-sync-changes { margin: 2px 0 0 22px; padding: 0; list-style: none; font-size: 0.85em; }
+.nr-sync-changes code { margin-right: 4px; }
+.nr-sync-changes del { opacity: 0.65; }
+.nr-sync-changes ins { text-decoration: none; font-weight: bold; }
+.nr-sync-item.orphan .nr-hint { margin: 0 0 0 22px; }
+.nr-sync-footer { display: flex; justify-content: flex-end; gap: 6px; }
+.nr-sync-footer button { width: auto; }
+.nr-sync-error { color: var(--accent); }
+.nr-sync-empty { text-align: center; padding: 12px; }
