@@ -39,6 +39,9 @@ const errors = [];
 function fail(msg) { errors.push(msg); }
 
 const system = JSON.parse(fs.readFileSync(path.join(root, "system.json"), "utf8"));
+for (const type of Object.keys(itemModels)) {
+  if (!system.documentTypes?.Item?.[type]) fail(`Item-Typ "${type}" fehlt in system.json unter documentTypes.Item`);
+}
 const models = { Item: itemModels, Actor: actorModels };
 let total = 0;
 

@@ -122,6 +122,16 @@
         "htmlFields": [
           "description"
         ]
+      },
+      "disease": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "flora": {
+        "htmlFields": [
+          "description"
+        ]
       }
     }
   },
