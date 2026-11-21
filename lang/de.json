@@ -495,7 +495,7 @@
       "Buff": {
         "Doctor": "Der Doktor: Behandlung",
         "Result": "Ergebnis {total} → {n} Würfel (1 je 20 Punkte)",
-        "Hint": "Ziele markieren und die gewünschte Wirkung anwenden. Die Dauer läuft nicht automatisch ab – den Wert im Reiter Kampf nach Ablauf zurücksetzen.",
+        "Hint": "Ziele markieren und die gewünschte Wirkung anwenden. Bonus und Malus mit Dauer laufen über die Weltzeit von selbst ab; ohne Dauer den Wert im Reiter Kampf von Hand zurücksetzen.",
         "Bonus": "+{n}W Bonus ({h} h)",
         "Malus": "−{n}W Malus ({h} h)",
         "Adrenalin": "Adrenalin auffüllen (≈ {h} h)",
@@ -1797,7 +1797,7 @@
       },
       "radiation": {
         "name": "Verstrahlung",
-        "hint": "Organismusverlust je Zonat/Tag laut Kategorie (manuell eintragen); ab Kat. 7 70–90 andauernder Schaden. Antistrahlungsmittel halbieren."
+        "hint": "Kat. 1–3: Organismusverlust (= Kategorie) je 6 Zonate, Kat. 4–6: je Tag; ab Kat. 7 70–90 andauernder Schaden. Der Verlust wird mit der SL-Zeitsteuerung bzw. dem Makro „Zeit vergeht“ automatisch eingetragen. Nachwirkung: −1 Organismus je Zonat."
       },
       "Protected": "Schutzkleidung dicht (MK:C, geschlossen)",
       "radiationLeave": {

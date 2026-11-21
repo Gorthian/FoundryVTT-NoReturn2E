@@ -1,6 +1,4 @@
 import { NR } from "../config.mjs";
-import { rollPool } from "../dice/pool.mjs";
-import { manualDamageDialog } from "../combat.mjs";
 
 const { HandlebarsApplicationMixin, DialogV2 } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;

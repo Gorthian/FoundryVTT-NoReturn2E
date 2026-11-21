@@ -160,13 +160,6 @@ export function applyChatMode(msgData) {
   return msgData;
 }
 
-/**
- * Einfache Würfelprobe ohne Pool (z. B. 2W6 Trefferzone).
- */
-export async function simpleRoll(formula) {
-  return new Roll(formula).evaluate();
-}
-
 /** Würfle eine Trefferzone (2W6, S. 90). Optional auf eine Körperhälfte eingeschränkt. */
 export async function rollHitZone(half = null) {
   for (let i = 0; i < 50; i++) {

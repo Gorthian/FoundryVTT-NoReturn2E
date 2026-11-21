@@ -495,7 +495,7 @@
       "Buff": {
         "Doctor": "The Doctor: treatment",
         "Result": "Result {total} → {n} dice (1 per 20 points)",
-        "Hint": "Target tokens and apply the desired effect. The duration does not expire automatically – reset the value on the Combat tab afterwards.",
+        "Hint": "Target tokens and apply the desired effect. Bonuses and maluses with a duration expire by themselves with world time; without a duration, reset the value on the Combat tab by hand.",
         "Bonus": "+{n}D bonus ({h} h)",
         "Malus": "−{n}D penalty ({h} h)",
         "Adrenalin": "Refill adrenaline (≈ {h} h)",
@@ -1797,7 +1797,7 @@
       },
       "radiation": {
         "name": "Radiation",
-        "hint": "Organism loss per zonat/day by category (enter manually); from cat. 7 70–90 continuous damage. Anti-radiation drugs halve it."
+        "hint": "Cat. 1–3: organism loss (= category) per 6 zonats, cat. 4–6: per day; from cat. 7 70–90 continuous damage. The loss is applied automatically by the GM time control or the “Time passes” macro. Aftereffect: −1 organism per zonat."
       },
       "Protected": "Protective gear sealed (MK:C, closed)",
       "radiationLeave": {
