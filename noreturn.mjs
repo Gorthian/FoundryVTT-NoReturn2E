@@ -13,10 +13,14 @@ import { NRItemSheet } from "./module/sheets/item-sheet.mjs";
 import { NRCombatant, registerCombatHooks, attackWithWeapon, manualDamageDialog } from "./module/combat.mjs";
 import { registerChatHooks } from "./module/chat.mjs";
 import { registerSocket } from "./module/socket.mjs";
+import { registerStatusEffects, hazardDialog, applyHazard, setStatus } from "./module/status.mjs";
+import { infect, advanceDisease, cure, infectDialog } from "./module/disease.mjs";
+import { applyElapsed, elapsedDialog, registerElapsedHook } from "./module/elapsed.mjs";
 import { rollPool, rollHitZone } from "./module/dice/pool.mjs";
 import { castPsiApp, collectPower, rollPsiFail } from "./module/psi.mjs";
 import { NRCharacterGenerator, openCharacterGenerator } from "./module/apps/character-generator.mjs";
 import { registerNoticeSettings, showStartupNotice } from "./module/notice.mjs";
+import { registerSyncSettings, checkSyncAfterUpdate, openCompendiumSync } from "./module/sync.mjs";
 import { importMannifest, exportMannifest, promptImport } from "./module/apps/mannifest.mjs";
 import { NRTimeHud } from "./module/apps/time-hud.mjs";
 import { registerTimeSettings, registerTimeHooks, initTime, timeApi } from "./module/time.mjs";
@@ -29,6 +33,9 @@ Hooks.once("init", () => {
     config: NR, rollPool, rollHitZone, attackWithWeapon, manualDamageDialog, castPsiApp, collectPower, rollPsiFail,
     useItem: useItemMacro, characterGenerator: openCharacterGenerator, NRCharacterGenerator,
     mannifest: { import: importMannifest, export: exportMannifest, promptImport },
+    hazard: hazardDialog, applyHazard, setStatus,
+    infect, advanceDisease, cure, infectDialog, applyElapsed, elapsedDialog,
+    syncCompendium: openCompendiumSync,
     showNotice: () => showStartupNotice({ force: true }),
     time: timeApi(NRTimeHud)
   };
@@ -54,7 +61,9 @@ Hooks.once("init", () => {
     bioTrait: ItemModels.BioTraitData,
     advantage: ItemModels.AdvantageData,
     trait: ItemModels.TraitData,
-    augment: ItemModels.AugmentData
+    augment: ItemModels.AugmentData,
+    disease: ItemModels.DiseaseData,
+    flora: ItemModels.FloraData
   };
 
   // Token-Leisten
@@ -73,11 +82,14 @@ Hooks.once("init", () => {
   DSC.registerSheet(foundry.documents.Actor, "noreturn", NRVehicleSheet, { types: ["vehicle"], makeDefault: true, label: "NR.Sheet.Vehicle" });
   DSC.registerSheet(foundry.documents.Item, "noreturn", NRItemSheet, { makeDefault: true, label: "NR.Sheet.Item" });
 
+  registerStatusEffects();
+  registerElapsedHook();
   registerHandlebarsHelpers();
   registerSettings();
   registerTimeSettings({ onHudChange: () => NRTimeHud.refresh() });
   initTime();
   registerNoticeSettings();
+  registerSyncSettings();
   registerChatHooks();
   registerCombatHooks();
   registerTimeHooks();
@@ -102,6 +114,7 @@ const TEMPLATES = [
     "systems/noreturn/templates/actor/vehicle-sheet.hbs",
     "systems/noreturn/templates/apps/character-generator.hbs",
     "systems/noreturn/templates/apps/time-hud.hbs",
+    "systems/noreturn/templates/apps/compendium-sync.hbs",
     "systems/noreturn/templates/chat/attack-extra.hbs",
     "systems/noreturn/templates/chat/damage-card.hbs",
     "systems/noreturn/templates/chat/damage-result.hbs",
@@ -173,6 +186,14 @@ Hooks.on("renderActorDirectory", (app, html) => {
   imp.innerHTML = `<i class="fa-solid fa-file-import"></i> ${game.i18n.localize("NR.Mannifest.ImportNew")}`;
   imp.addEventListener("click", ev => { ev.preventDefault(); promptImport(); });
   target.append(btn, imp);
+  if (game.user.isGM) {
+    const sync = document.createElement("button");
+    sync.type = "button";
+    sync.className = "nr-sync-open";
+    sync.innerHTML = `<i class="fa-solid fa-arrows-rotate"></i> ${game.i18n.localize("NR.Sync.OpenWorld")}`;
+    sync.addEventListener("click", ev => { ev.preventDefault(); openCompendiumSync(); });
+    target.append(sync);
+  }
 });
 
 Hooks.once("ready", async () => {
@@ -189,6 +210,7 @@ Hooks.once("ready", async () => {
   });
   NRTimeHud.refresh();
   showStartupNotice();
+  checkSyncAfterUpdate().catch(err => console.error("NoReturn 2E | Kompendium-Abgleich", err));
   console.log("NoReturn 2E | Bereit. Nicht umdrehen – es gibt kein Zurück.");
 });
 

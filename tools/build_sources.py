@@ -12,7 +12,7 @@ ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 
 from src.common import stable_id, FOUNDRY_ICONS  # noqa: E402
-from src import arsenal, character, psi, tables  # noqa: E402
+from src import arsenal, character, psi, tables, world  # noqa: E402
 
 SYSTEM_VERSION = json.load(open(os.path.join(ROOT, "system.json"), encoding="utf-8"))["version"]
 NOW = int(time.time() * 1000)
@@ -78,6 +78,22 @@ def journal_docs(j):
              "_embedded": pages}]
 
 
+def macro_docs():
+    """SL-Makros (Compendium „Makros“)."""
+    macros = [
+        {"name": "Gefahr auslösen", "img": "icons/svg/biohazard.svg", "command": "game.noreturn.hazard();"},
+        {"name": "Krankheit übertragen", "img": "icons/svg/poison.svg", "command": "game.noreturn.infectDialog();"},
+        {"name": "Zeit vergeht (Strahlung, Krankheiten)", "img": "icons/svg/clockwork.svg", "command": "game.noreturn.elapsedDialog();"},
+    ]
+    docs = []
+    for i, m in enumerate(macros):
+        _id = stable_id("makros", m["name"])
+        docs.append({"_id": _id, "_key": f"!macros!{_id}", "name": m["name"], "type": "script", "img": m["img"],
+                     "scope": "global", "command": m["command"], "author": None, "folder": None, "sort": (i + 1) * 1000,
+                     "ownership": {"default": 0}, "flags": {}, "_stats": stats()})
+    return docs
+
+
 def main():
     os.makedirs(OUT, exist_ok=True)
     psi_apps, missing = psi.apps(os.path.join(HERE, "data", "psi_params.json"))
@@ -100,6 +116,9 @@ def main():
         "fertigkeiten": item_docs("fertigkeiten", character.special_skills()),
         "tabellen": table_docs(tables.rolltables()),
         "regeln": journal_docs(tables.journal()),
+        "makros": macro_docs(),
+        "krankheiten": item_docs("krankheiten", world.diseases()),
+        "flora": item_docs("flora", world.flora()),
     }
     total = 0
     for name, docs in packs.items():
