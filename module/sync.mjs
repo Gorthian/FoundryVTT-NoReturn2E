@@ -4,7 +4,7 @@
  * Zuordnung und Unterschiede: sync-diff.mjs.
  */
 import { NRItem } from "./documents/item.mjs";
-import { makeCatalog, findCatalogDoc, diffItemData, diffEffects } from "./sync-diff.mjs";
+import { makeCatalog, findCatalogDoc, diffItemData, diffEffects, diffMacro, diffTable, diffJournal } from "./sync-diff.mjs";
 
 const { ApplicationV2, HandlebarsApplicationMixin, DialogV2 } = foundry.applications.api;
 
@@ -39,8 +39,24 @@ export async function loadCatalog() {
     const pack = game.packs.get(`${SYSTEM_ID}.${name}`);
     if (pack) docs.push(...await pack.getDocuments());
   }
-  return makeCatalog(docs);
+  const catalog = makeCatalog(docs);
+  // Makros, Würfeltabellen und Journale aus allen Kompendien des Systems (neue Packs werden automatisch erfasst)
+  catalog.worldDocs = new Map();
+  for (const pack of game.packs) {
+    if (pack.metadata.packageName !== SYSTEM_ID || !WORLD_DOC_TYPES[pack.documentName]) continue;
+    for (const d of await pack.getDocuments()) catalog.worldDocs.set(d.uuid, d);
+  }
+  return catalog;
 }
+
+/** Weltdokumente, die aus Kompendien importiert sein können, mit ihrer Sammlung und ihrem Diff. */
+const WORLD_DOC_TYPES = {
+  Macro: { collection: () => game.macros, diff: diffMacro },
+  RollTable: { collection: () => game.tables, diff: diffTable },
+  JournalEntry: { collection: () => game.journal, diff: diffJournal }
+};
+
+const sourceOf = doc => doc._stats?.compendiumSource ?? doc.flags?.core?.sourceId;
 
 const isCompendiumLinked = item => String(item._stats?.compendiumSource ?? item.flags?.core?.sourceId ?? "").startsWith(`Compendium.${SYSTEM_ID}.`)
   || (item.type === "styleSkill" && !!item._source.system.key);
@@ -74,10 +90,65 @@ export function planActor(actor, catalog) {
 /** Pläne für alle Actors der Welt, die der Nutzer ändern darf. */
 export async function planWorld(catalog = null) {
   catalog ??= await loadCatalog();
-  return game.actors.contents
+  const plans = game.actors.contents
     .filter(a => a.isOwner && a.items.size)
     .sort((a, b) => a.name.localeCompare(b.name, game.i18n.lang))
     .map(a => planActor(a, catalog));
+  const docs = planWorldDocs(catalog);
+  if (docs.entries.length || docs.orphans.length) plans.push(docs);
+  return plans;
+}
+
+/**
+ * Abgleich für Weltdokumente (Makros, Würfeltabellen, Journale, Items der Welt), die aus Systemkompendien
+ * importiert wurden. Zugeordnet wird nur über die Herkunft (compendiumSource / sourceId), nie über den Namen.
+ */
+export function planWorldDocs(catalog) {
+  const plan = {
+    actor: { id: "world-docs", name: L("NR.Sync.WorldDocs"), isOwner: true },
+    docs: true, entries: [], orphans: [], current: 0, custom: 0, excluded: 0
+  };
+  const defaultIcons = [Item.DEFAULT_ICON, ...Object.values(NRItem.DEFAULT_ICONS)];
+  const collections = [
+    ...Object.entries(WORLD_DOC_TYPES).map(([name, t]) => [name, t.collection(), t.diff]),
+    ["Item", game.items, null]
+  ];
+  for (const [name, collection, diff] of collections) {
+    for (const doc of collection) {
+      if (!doc.isOwner) continue;
+      const src = sourceOf(doc);
+      if (!String(src ?? "").startsWith(`Compendium.${SYSTEM_ID}.`)) { plan.custom++; continue; }
+      if (doc.getFlag(SYSTEM_ID, "noSync")) { plan.excluded++; continue; }
+      const cat = name === "Item" ? catalog.byUuid.get(src) : catalog.worldDocs.get(src);
+      if (!cat) { plan.orphans.push(doc); continue; }
+      let r;
+      if (name === "Item") {
+        const d = diffItemData(doc.toObject(), cat.toObject(), { defaultIcons });
+        const fx = diffEffects(doc.effects.map(e => e.toObject()), cat.effects.map(e => e.toObject()));
+        r = { changes: [...d.changes, ...fx.changes], patch: d.patch, ops: { effects: fx } };
+        if (!d.changes.length && !fx.changes.length) r.changes = [];
+      } else r = diff(doc.toObject(), cat.toObject());
+      if (!r.changes.length) { plan.current++; continue; }
+      plan.entries.push({ item: doc, doc: cat, how: "source", changes: r.changes, fx: { changes: [] }, patch: r.patch, ops: r.ops, selected: true });
+    }
+  }
+  return plan;
+}
+
+/** Weltdokumente anwenden: Kopfdaten, Ergebnisse (Tabellen), Seiten (Journale), Effekte (Items). */
+async function applyDocEntry(e) {
+  const doc = e.item;
+  if (Object.keys(e.patch).length) await doc.update(e.patch);
+  const ops = e.ops ?? {};
+  if (ops.results) {
+    const old = doc.results.map(r => r.id);
+    if (old.length) await doc.deleteEmbeddedDocuments("TableResult", old);
+    if (ops.results.length) await doc.createEmbeddedDocuments("TableResult", ops.results);
+  }
+  if (ops.pages?.create.length) await doc.createEmbeddedDocuments("JournalEntryPage", ops.pages.create);
+  if (ops.pages?.update.length) await doc.updateEmbeddedDocuments("JournalEntryPage", ops.pages.update);
+  if (ops.effects?.create.length) await doc.createEmbeddedDocuments("ActiveEffect", ops.effects.create);
+  if (ops.effects?.update.length) await doc.updateEmbeddedDocuments("ActiveEffect", ops.effects.update);
 }
 
 /** Plan anwenden: nur ausgewählte Updates und Löschungen. */
@@ -86,6 +157,14 @@ async function applyPlan(plan, { updateIds, deleteIds }) {
   const chosen = plan.entries.filter(e => updateIds.has(e.item.id));
   result.skipped = plan.entries.length - chosen.length;
   try {
+    if (plan.docs) {
+      for (const e of chosen) await applyDocEntry(e);
+      result.updated = chosen.length;
+      const del = plan.orphans.filter(d => deleteIds.has(d.id));
+      for (const d of del) await d.delete();
+      result.deleted = del.length;
+      return result;
+    }
     const patches = chosen.map(e => ({ _id: e.item.id, ...e.patch })).filter(p => Object.keys(p).length > 1);
     if (patches.length) await plan.actor.updateEmbeddedDocuments("Item", patches);
     for (const e of chosen) {
@@ -123,7 +202,10 @@ function describeChange(c) {
   const last = field.split(".").pop();
   const label = FIELD_LABELS[last] ? L(FIELD_LABELS[last]) : field;
   if (c.html) return { label, text: L("NR.Sync.TextChanged") };
-  if (c.text) return { label: c.path, text: L(c.text === "new" ? "NR.Sync.EffectNew" : "NR.Sync.EffectChanged") };
+  if (c.text) {
+    const key = c.text.startsWith("NR.") ? c.text : (c.text === "new" ? "NR.Sync.EffectNew" : "NR.Sync.EffectChanged");
+    return { label: c.path, text: c.n ? `${L(key)} (${c.n})` : L(key) };
+  }
   return { label, from: formatValue(c.from), to: formatValue(c.to) };
 }
 
@@ -183,7 +265,7 @@ export class NRCompendiumSync extends HandlebarsApplicationMixin(ApplicationV2) 
     const context = await super._prepareContext(options);
     if (this.result) return Object.assign(context, { result: this.result, isWorld: this.isWorld });
     const plans = await this._loadPlans();
-    const typeLabel = t => L(`TYPES.Item.${t}`);
+    const typeLabel = d => (d.documentName === "Item" ? L(`TYPES.Item.${d.type}`) : L(`DOCUMENT.${d.documentName}`));
     const view = plans.map(p => ({
       id: p.actor.id,
       name: p.actor.name,
@@ -194,13 +276,13 @@ export class NRCompendiumSync extends HandlebarsApplicationMixin(ApplicationV2) 
       entries: p.entries.map(e => ({
         id: e.item.id,
         name: e.item.name,
-        type: typeLabel(e.item.type),
+        type: typeLabel(e.item),
         selected: e.selected,
         fuzzy: e.how === "fuzzy",
         byName: e.how === "name",
         changes: [...e.changes, ...e.fx.changes].map(describeChange)
       })),
-      orphans: p.orphans.map(i => ({ id: i.id, name: i.name, type: typeLabel(i.type) }))
+      orphans: p.orphans.map(i => ({ id: i.id, name: i.name, type: typeLabel(i) }))
     })).filter(p => p.hasWork || !this.isWorld);
     return Object.assign(context, {
       plans: view,

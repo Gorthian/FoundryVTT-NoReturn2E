@@ -148,3 +148,81 @@ export function diffEffects(curEffects, tgtEffects) {
   }
   return { create, update, changes };
 }
+
+/* -------------------------------------------- */
+/*  Weltdokumente: Makros, Würfeltabellen, Journale */
+/* -------------------------------------------- */
+
+/** Felder, die bei Makros abgeglichen werden. */
+const MACRO_FIELDS = ["name", "img", "type", "scope", "command"];
+/** Felder einer Würfeltabelle (die Ergebnisse werden getrennt verglichen). */
+const TABLE_FIELDS = ["name", "description", "formula", "replacement", "displayRoll"];
+const RESULT_FIELDS = ["type", "name", "description", "img", "weight", "range", "documentUuid", "text"];
+/** Felder einer Journalseite (Reihenfolge und Zustand wie Sichtbarkeit bleiben beim Nutzer). */
+const PAGE_FIELDS = ["type", "src", "text.content", "text.format", "title.show", "title.level"];
+
+const getPath = (o, p) => p.split(".").reduce((v, k) => v?.[k], o);
+const setPath = (o, p, v) => {
+  const ks = p.split(".");
+  const last = ks.pop();
+  const parent = ks.reduce((x, k) => (x[k] ??= {}), o);
+  parent[last] = v;
+};
+
+function diffFields(cur, tgt, fields) {
+  const changes = [];
+  for (const f of fields) {
+    const to = getPath(tgt, f);
+    if (to === undefined) continue;
+    const from = getPath(cur, f);
+    if (!eq(from, to)) changes.push({ path: f, from, to, html: f === "text.content" });
+  }
+  return changes;
+}
+
+/** Makro: Name, Bild, Typ, Geltungsbereich und Befehl. */
+export function diffMacro(cur, tgt) {
+  const changes = diffFields(cur, tgt, MACRO_FIELDS);
+  return { changes, patch: Object.fromEntries(changes.map(c => [c.path, c.to])), ops: {} };
+}
+
+const normResult = r => Object.fromEntries(RESULT_FIELDS.filter(f => r[f] !== undefined).map(f => [f, r[f]]));
+
+/** Würfeltabelle: Kopfdaten per Update, Ergebnisse (bei Abweichung) komplett ersetzt. */
+export function diffTable(cur, tgt) {
+  const changes = diffFields(cur, tgt, TABLE_FIELDS);
+  const patch = Object.fromEntries(changes.map(c => [c.path, c.to]));
+  const ops = {};
+  const a = (cur.results ?? []).map(normResult);
+  const b = (tgt.results ?? []).map(normResult);
+  if (!eq(a, b)) {
+    ops.results = (tgt.results ?? []).map(r => { const o = structuredClone(r); delete o._id; delete o._stats; delete o.drawn; return o; });
+    changes.push({ path: "results", text: "NR.Sync.ResultsChanged", n: `${a.length} → ${b.length}` });
+  }
+  return { changes, patch, ops };
+}
+
+/** Journal: Name sowie Seiten über den Seitennamen; eigene Zusatzseiten bleiben unberührt. */
+export function diffJournal(cur, tgt) {
+  const changes = diffFields(cur, tgt, ["name"]);
+  const patch = Object.fromEntries(changes.map(c => [c.path, c.to]));
+  const create = [], update = [];
+  for (const tp of tgt.pages ?? []) {
+    const cp = (cur.pages ?? []).find(p => p.name === tp.name);
+    if (!cp) {
+      const o = structuredClone(tp);
+      delete o._id; delete o._stats;
+      create.push(o);
+      changes.push({ path: `pages.${tp.name}`, text: "NR.Sync.PageNew" });
+      continue;
+    }
+    const fields = diffFields(cp, tp, PAGE_FIELDS);
+    if (fields.length) {
+      const u = { _id: cp._id };
+      for (const f of fields) setPath(u, f.path, f.to);
+      update.push(u);
+      changes.push({ path: `pages.${tp.name}`, text: "NR.Sync.PageChanged" });
+    }
+  }
+  return { changes, patch, ops: { pages: { create, update } } };
+}
