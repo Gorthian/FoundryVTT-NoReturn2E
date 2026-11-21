@@ -1,0 +1,50 @@
+<section class="nr-time-hud-body">
+  <div class="nr-time-display">
+    <i class="fa-solid {{#if day}}fa-sun{{else}}fa-moon{{/if}}" data-nr-daynight></i>
+    <div>
+      <div class="nr-time-date" data-nr-date>{{dateText}}</div>
+      <div class="nr-time-clock" data-nr-time>{{timeText}}</div>
+    </div>
+  </div>
+  {{#unless auto}}<p class="nr-time-note">{{localize "NR.Time.AutoOff"}}</p>{{/unless}}
+
+  {{#if isGM}}
+  <fieldset class="nr-time-pick">
+    <legend>{{localize "NR.Time.SetDate"}}</legend>
+    <div class="nr-time-row">
+      <label>{{localize "NR.Time.Day"}} <input type="number" name="day" min="1" max="{{maxDay}}" value="{{date.day}}"></label>
+      <label>{{localize "NR.Time.Zonat"}}
+        <select name="zonat">{{#each zonats}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select>
+      </label>
+      <label>{{localize "NR.Time.Year"}} <input type="number" name="year" value="{{date.year}}"></label>
+    </div>
+    <div class="nr-time-row">
+      <label>{{localize "NR.Time.Clock"}} <input type="time" name="time" value="{{timeValue}}"></label>
+      <button type="button" data-action="apply"><i class="fa-solid fa-check"></i> {{localize "NR.Time.Apply"}}</button>
+      <button type="button" data-action="sync" data-tooltip="NR.Time.Reset"><i class="fa-solid fa-rotate"></i></button>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>{{localize "NR.Time.Shift"}}</legend>
+    <div class="nr-time-row">
+      <button type="button" data-action="step" data-dir="-1"><i class="fa-solid fa-minus"></i></button>
+      <input type="number" name="amount" min="0" value="1">
+      <select name="unit">{{#each units}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select>
+      <button type="button" data-action="step" data-dir="1"><i class="fa-solid fa-plus"></i></button>
+    </div>
+    <div class="nr-time-quick">
+      {{#each quick}}<button type="button" data-action="quick" data-unit="{{unit}}" data-n="{{n}}">{{label}}</button>{{/each}}
+    </div>
+  </fieldset>
+
+  {{#if lightEnabled}}
+  <div class="nr-time-light">
+    <button type="button" data-action="toggleLight" {{#unless lightScene}}disabled{{/unless}}>
+      <i class="fa-solid {{#if lightActive}}fa-lightbulb{{else}}fa-ban{{/if}}"></i>
+      {{#if lightActive}}{{localize "NR.Time.LightOn"}}{{else}}{{localize "NR.Time.LightOff"}}{{/if}}
+    </button>
+  </div>
+  {{/if}}
+  {{/if}}
+</section>

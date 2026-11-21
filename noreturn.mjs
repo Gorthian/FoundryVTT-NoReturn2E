@@ -18,6 +18,8 @@ import { castPsiApp, collectPower, rollPsiFail } from "./module/psi.mjs";
 import { NRCharacterGenerator, openCharacterGenerator } from "./module/apps/character-generator.mjs";
 import { registerNoticeSettings, showStartupNotice } from "./module/notice.mjs";
 import { importMannifest, exportMannifest, promptImport } from "./module/apps/mannifest.mjs";
+import { NRTimeHud } from "./module/apps/time-hud.mjs";
+import { registerTimeSettings, registerTimeHooks, initTime, timeApi } from "./module/time.mjs";
 
 Hooks.once("init", () => {
   console.log("NoReturn 2E | Initialisiere System");
@@ -27,7 +29,8 @@ Hooks.once("init", () => {
     config: NR, rollPool, rollHitZone, attackWithWeapon, manualDamageDialog, castPsiApp, collectPower, rollPsiFail,
     useItem: useItemMacro, characterGenerator: openCharacterGenerator, NRCharacterGenerator,
     mannifest: { import: importMannifest, export: exportMannifest, promptImport },
-    showNotice: () => showStartupNotice({ force: true })
+    showNotice: () => showStartupNotice({ force: true }),
+    time: timeApi(NRTimeHud)
   };
 
   // Dokumentklassen
@@ -72,9 +75,13 @@ Hooks.once("init", () => {
 
   registerHandlebarsHelpers();
   registerSettings();
+  registerTimeSettings({ onHudChange: () => NRTimeHud.refresh() });
+  initTime();
   registerNoticeSettings();
   registerChatHooks();
   registerCombatHooks();
+  registerTimeHooks();
+  Hooks.on("updateWorldTime", () => NRTimeHud.instance?.onTimeChanged());
 });
 
 /** Konfigurationstexte (Attribute, Fertigkeiten, Zonen …) in die gewählte Sprache übersetzen. */
@@ -94,6 +101,7 @@ const TEMPLATES = [
     "systems/noreturn/templates/actor/tab-traits.hbs",
     "systems/noreturn/templates/actor/vehicle-sheet.hbs",
     "systems/noreturn/templates/apps/character-generator.hbs",
+    "systems/noreturn/templates/apps/time-hud.hbs",
     "systems/noreturn/templates/chat/attack-extra.hbs",
     "systems/noreturn/templates/chat/damage-card.hbs",
     "systems/noreturn/templates/chat/damage-result.hbs",
@@ -152,6 +160,7 @@ Hooks.once("ready", async () => {
     createItemMacro(data, slot);
     return false;
   });
+  NRTimeHud.refresh();
   showStartupNotice();
   console.log("NoReturn 2E | Bereit. Nicht umdrehen – es gibt kein Zurück.");
 });
