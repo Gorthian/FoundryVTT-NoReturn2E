@@ -1,5 +1,5 @@
 # Prüft bei jedem Push/PR: system.json (Pflichtfelder, Verweise), JS-Syntax und ob sich
-# die Compendium-Quellen (packs-src) zu LevelDB-Packs bauen lassen.
+# die Compendium-Quellen (packs-src) zu den DataModels passen und sich zu LevelDB-Packs bauen lassen.
 name: CI
 
 on:
@@ -16,6 +16,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: npm
 
       - name: system.json prüfen
         run: |
@@ -34,7 +35,11 @@ jobs:
       - name: JavaScript-Syntax prüfen
         run: find noreturn.mjs module tools -name '*.mjs' -print0 | xargs -0 -n1 node --check
 
+      - name: Abhängigkeiten installieren
+        run: npm ci
+
+      - name: Compendium-Quellen gegen die DataModels prüfen
+        run: npm run validate:packs
+
       - name: Compendium-Quellen bauen
-        run: |
-          npm install --no-save classic-level
-          node tools/build-packs.mjs
+        run: npm run build:packs

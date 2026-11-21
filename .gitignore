@@ -1,7 +1,5 @@
-# Foundry LevelDB-Laufzeitdateien der Compendien
-packs/**/LOCK
-packs/**/LOG
-packs/**/LOG.old
+# Gebaute Compendien (LevelDB): entstehen aus packs-src per `npm run build:packs` bzw. im Release
+packs/
 
 # Python
 __pycache__/

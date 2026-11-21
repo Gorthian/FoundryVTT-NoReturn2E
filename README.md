@@ -28,7 +28,7 @@ In Foundry unter *Spielsysteme → Spielsystem installieren* diese **Manifest-UR
 https://github.com/Gorthian/FoundryVTT-NoReturn2E/releases/latest/download/system.json
 ```
 
-Das funktioniert auch auf The Forge. Updates erscheinen danach im Reiter *Spielsysteme*. **Lege vor jedem Update ein Backup deiner Welt an.** Details (Git/ZIP, Updates, Backup): [Wiki → Installation](https://github.com/Gorthian/FoundryVTT-NoReturn2E/wiki/Installation).
+Das funktioniert auch auf The Forge. Updates erscheinen danach im Reiter *Spielsysteme*. **Lege vor jedem Update ein Backup deiner Welt an.** Die Compendien sind nur im Release enthalten (sie werden dort aus `packs-src` gebaut); bei einer Installation direkt aus dem Git-Repository fehlen sie, siehe [Entwicklung](#entwicklung-compendien-bauen). Details (Git/ZIP, Updates, Backup): [Wiki → Installation](https://github.com/Gorthian/FoundryVTT-NoReturn2E/wiki/Installation).
 
 ## Dokumentation
 
@@ -39,6 +39,19 @@ Die ausführliche Dokumentation steht im **[Wiki](https://github.com/Gorthian/Fo
 - [Proben und Würfelpool](https://github.com/Gorthian/FoundryVTT-NoReturn2E/wiki/Proben-und-Wuerfelpool) · [Kampf und Schaden](https://github.com/Gorthian/FoundryVTT-NoReturn2E/wiki/Kampf-und-Schaden) · [PSI](https://github.com/Gorthian/FoundryVTT-NoReturn2E/wiki/PSI) · [Style-Skills](https://github.com/Gorthian/FoundryVTT-NoReturn2E/wiki/Style-Skills) · [Fahrzeuge](https://github.com/Gorthian/FoundryVTT-NoReturn2E/wiki/Fahrzeuge)
 - [Kompendien](https://github.com/Gorthian/FoundryVTT-NoReturn2E/wiki/Kompendien) · [Bekannte Lücken](https://github.com/Gorthian/FoundryVTT-NoReturn2E/wiki/Bekannte-Luecken)
 - [Mitwirken und Releases](https://github.com/Gorthian/FoundryVTT-NoReturn2E/wiki/Mitwirken-und-Releases) (Compendien bauen, Release veröffentlichen)
+
+## Entwicklung: Compendien bauen
+
+Im Repository liegen nur die Quellen der Compendien (`packs-src/*.json`). Die LevelDB-Packs in `packs/` sind ein Build-Artefakt (stehen in `.gitignore`) und werden vom Release-Workflow gebaut und ins Release-ZIP gelegt. Eine reine Git-Installation (ohne Release) enthält deshalb **keine** Compendien – dafür das Manifest bzw. das Release-ZIP verwenden oder lokal bauen:
+
+```
+npm install          # einmalig (Node.js 20+), holt @foundryvtt/foundryvtt-cli
+npm run validate:packs   # prüft packs-src gegen die DataModels (module/data)
+npm run build:packs      # schreibt packs/<name> (LevelDB)
+npm run build            # beides nacheinander
+```
+
+Unter Windows genügt `tools\build-packs.cmd`. Foundry sollte beim Bauen geschlossen sein, falls das System dort installiert ist. CI (`.github/workflows/ci.yml`) führt Prüfung und Build bei jedem Push/PR aus. Bearbeitet werden nur die JSON-Dateien in `packs-src/`; `tools/build_sources.py` kann sie optional aus den Python-Quelldaten in `tools/src` neu erzeugen.
 
 ## Fehler melden
 
