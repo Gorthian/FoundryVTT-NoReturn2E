@@ -4,6 +4,7 @@ import { collectPower, rollPsiFail } from "../psi.mjs";
 import { rollHitZone } from "../dice/pool.mjs";
 import { downloadMannifest, promptImport } from "../apps/mannifest.mjs";
 import { openCharacterGenerator } from "../apps/character-generator.mjs";
+import { openCompendiumSync } from "../sync.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -24,6 +25,7 @@ export class NRActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       mannifestExport: NRActorSheet.#onMannifestExport,
       mannifestImport: NRActorSheet.#onMannifestImport,
       openGenerator: NRActorSheet.#onOpenGenerator,
+      syncCompendium: NRActorSheet.#onSyncCompendium,
       rollSkill: NRActorSheet.#onRollSkill,
       useItem: NRActorSheet.#onUseItem,
       editItem: NRActorSheet.#onEditItem,
@@ -193,6 +195,7 @@ export class NRActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
     if (this.document.type !== "character") return controls;
     controls.push(
       { icon: "fa-solid fa-user-pen", label: "NR.Gen.Edit", action: "openGenerator", visible: () => this.document.isOwner },
+      { icon: "fa-solid fa-arrows-rotate", label: "NR.Sync.Open", action: "syncCompendium", visible: () => this.document.isOwner },
       { icon: "fa-solid fa-file-export", label: "NR.Mannifest.Export", action: "mannifestExport" },
       { icon: "fa-solid fa-file-import", label: "NR.Mannifest.Import", action: "mannifestImport", visible: () => this.document.isOwner }
     );
@@ -206,6 +209,11 @@ export class NRActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
   /** Charaktergenerator mit den Werten dieses Actors öffnen (Umbau). */
   static async #onOpenGenerator() {
     await openCharacterGenerator(this.document);
+  }
+
+  /** Items dieses Actors mit dem Kompendium abgleichen (Vorschau). */
+  static #onSyncCompendium() {
+    return openCompendiumSync(this.document);
   }
 
   static async #onMannifestImport() {

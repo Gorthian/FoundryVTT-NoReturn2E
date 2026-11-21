@@ -279,4 +279,9 @@
     <label>{{localize "NR.Sheet.Equip"}}</label><input type="checkbox" name="system.equipped" {{checked system.equipped}}>
   </div>
 {{/if}}
+{{#if item.parent}}
+  <div class="nr-form-grid">
+    <label data-tooltip="{{localize 'NR.Sync.NoSyncHint'}}">{{localize "NR.Sync.NoSync"}}</label><input type="checkbox" name="flags.noreturn.noSync" {{checked item.flags.noreturn.noSync}}>
+  </div>
+{{/if}}
 </section>
