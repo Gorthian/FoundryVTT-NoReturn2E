@@ -14,11 +14,15 @@ Inoffizielles Spielsystem für **NoReturn 2. Edition** (Vario-D6 2.0, Mannifest 
 >
 > Beim Start einer Welt zeigt das System diesen Hinweis als Dialog (pro Spieler bis zur nächsten Version ausblendbar; erneut per Makro `game.noreturn.showNotice()`).
 
+**Zustände und Umweltgefahren:** Im Token-HUD gibt es die Zustände Extreme Temperatur (−1W bis −3W), Verstrahlt, Erkrankt und Andauernder Schaden. Die Spielleitung löst Gefahren (Temperatur, Fress-Regen, Sandsturm, Todesnebel, Toxisches Gewässer, Verstrahlung) für markierte Tokens per Makro „Gefahr auslösen“ aus dem Compendium „SL-Makros“ (oder `game.noreturn.hazard()`) aus. Zeiträume (alle 10 min, je Stunde, je Tag) erscheinen nur als Hinweis im Chat.
+
+**Krankheiten und Flora:** Compendium „Krankheiten“ (Item-Typ Krankheit mit Intensität, Inkubation, Verlaufsschritten; Infektionsprobe über das Virus-Symbol am Charakterbogen) und „Flora“ (Pflanzen mit Verbreitung, Preis und Wirkung). Das Makro „Zeit vergeht“ rückt Krankheitsverläufe vor und wendet den Strahlungsverlust an; mit der SL-Zeitsteuerung geschieht das automatisch über den Hook `noreturn.timeAdvanced` (Systemeinstellung „Zeitablauf wirkt auf Krankheiten und Strahlung“).
+
 Die Compendien enthalten Spielwerte und eigene Kurzfassungen mit Seitenverweisen auf das Corebook 2E – für die vollständigen Regeln wird das Buch benötigt.
 
 ## Was kann das System?
 
-Charakterbogen mit 11 Körperzonen, Würfelpool mit Hazard-Di, Kampf im Chat (Angriff, Verteidigung, Schaden, Widerstand), PSI, Fahrzeuge, ein Charaktergenerator in elf Schritten (inkl. Umbau bestehender Charaktere und Import aus dem Verlags-Generator), Style-Skills und Kampfkünste sowie 16 Compendien mit über 750 Einträgen.
+Charakterbogen mit 11 Körperzonen, Würfelpool mit Hazard-Di, Kampf im Chat (Angriff, Verteidigung, Schaden, Widerstand), PSI, Fahrzeuge, ein Charaktergenerator in elf Schritten (inkl. Umbau bestehender Charaktere und Import aus dem Verlags-Generator), Abgleich der Items mit dem Kompendium („Aus Kompendium aktualisieren“, pro Charakter und weltweit mit Vorschau), Style-Skills und Kampfkünste sowie 16 Compendien mit über 750 Einträgen.
 
 ## Installation
 
