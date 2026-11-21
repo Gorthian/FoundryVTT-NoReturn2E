@@ -641,7 +641,7 @@
       "Bugs": "<strong>Report bugs:</strong> Please file them as a <a href=\"{issues}\" target=\"_blank\" rel=\"noopener\">GitHub issue</a>.",
       "Unofficial": "<strong>Unofficial fan project</strong> in consultation with <a href=\"{url}\" target=\"_blank\" rel=\"noopener\">Mannifest Games</a>, not an official Mannifest Games product.",
       "Rights": "<strong>Rights:</strong> All rights to NoReturn, its setting and rules remain with Mannifest Games. The code license (MIT) covers the code only, not rules content. The core book is required for the full rules.",
-          "Dismiss": "Don't show again until the next version",
+      "Dismiss": "Don't show again until the next version",
       "Ok": "Understood"
     },
     "Settings": {
@@ -1680,6 +1680,48 @@
         "Psyche": "Psyche {v}",
         "OrgLoss": "Organism −{v}",
         "PsycheLoss": "Psyche −{v}"
+      }
+    },
+    "Condition": {
+      "nrTemp1": "Extreme temperature −1D",
+      "nrTemp2": "Extreme temperature −2D",
+      "nrTemp3": "Extreme temperature −3D",
+      "nrRadiation": "Irradiated",
+      "nrDisease": "Diseased",
+      "nrContinuous": "Continuous damage"
+    },
+    "Hazard": {
+      "Title": "Trigger hazard",
+      "Type": "Hazard",
+      "Category": "Category / level",
+      "CategoryShort": "Cat.",
+      "Apply": "Apply",
+      "Targets": "Affects {n} selected token(s).",
+      "NoTokens": "No tokens selected.",
+      "GMOnly": "Only the GM can trigger hazards.",
+      "temperature": {
+        "name": "Extreme temperature",
+        "hint": "Applies −1D to −3D to all values per temperature band (cat. 1–3). Check every 10 minutes; adjust the status manually afterwards."
+      },
+      "acidRain": {
+        "name": "Acid rain",
+        "hint": "−1 organism and 1 damage per hour of exposure; material −1 stability per zonat."
+      },
+      "sandstorm": {
+        "name": "Sandstorm",
+        "hint": "10 damage per category every 15 minutes, duration category × D6 hours."
+      },
+      "deathFog": {
+        "name": "Death fog",
+        "hint": "20 continuous damage."
+      },
+      "toxicWater": {
+        "name": "Toxic water",
+        "hint": "60 continuous damage (+10 per combat round in the water)."
+      },
+      "radiation": {
+        "name": "Radiation",
+        "hint": "Organism loss per zonat/day by category (enter manually); from cat. 7 70–90 continuous damage. Anti-radiation drugs halve it."
       }
     }
   }

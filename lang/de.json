@@ -641,7 +641,7 @@
       "Bugs": "<strong>Fehler melden:</strong> Bitte als <a href=\"{issues}\" target=\"_blank\" rel=\"noopener\">GitHub-Issue</a> melden.",
       "Unofficial": "<strong>Inoffizielles Fan-Projekt</strong> in Rücksprache mit <a href=\"{url}\" target=\"_blank\" rel=\"noopener\">Mannifest Games</a>, kein offizielles Produkt von Mannifest Games.",
       "Rights": "<strong>Rechte:</strong> Alle Rechte an NoReturn, Setting und Regelwerk verbleiben bei Mannifest Games. Die Code-Lizenz (MIT) gilt nur für den Code, nicht für Regelinhalte. Für die vollständigen Regeln wird das Corebook benötigt.",
-          "Dismiss": "Bis zur nächsten Version nicht mehr anzeigen",
+      "Dismiss": "Bis zur nächsten Version nicht mehr anzeigen",
       "Ok": "Verstanden"
     },
     "Settings": {
@@ -1680,6 +1680,48 @@
         "Psyche": "Psyche {v}",
         "OrgLoss": "Organismus −{v}",
         "PsycheLoss": "Psyche −{v}"
+      }
+    },
+    "Condition": {
+      "nrTemp1": "Extreme Temperatur −1W",
+      "nrTemp2": "Extreme Temperatur −2W",
+      "nrTemp3": "Extreme Temperatur −3W",
+      "nrRadiation": "Verstrahlt",
+      "nrDisease": "Erkrankt",
+      "nrContinuous": "Andauernder Schaden"
+    },
+    "Hazard": {
+      "Title": "Gefahr auslösen",
+      "Type": "Gefahr",
+      "Category": "Kategorie / Stufe",
+      "CategoryShort": "Kat.",
+      "Apply": "Anwenden",
+      "Targets": "Wirkt auf {n} markierte(s) Token.",
+      "NoTokens": "Keine Tokens markiert.",
+      "GMOnly": "Nur die Spielleitung kann Gefahren auslösen.",
+      "temperature": {
+        "name": "Extreme Temperatur",
+        "hint": "Setzt −1W bis −3W auf alle Werte je Temperaturband (Kat. 1–3). Probe alle 10 Minuten, Zustand danach manuell anpassen."
+      },
+      "acidRain": {
+        "name": "Fress-Regen",
+        "hint": "−1 Organismus und 1 Schaden je Stunde Aufenthalt; Material −1 Stabilität je Zonat."
+      },
+      "sandstorm": {
+        "name": "Sandsturm",
+        "hint": "10 Schaden je Kategorie alle 15 Minuten, Dauer Kategorie × W6 Stunden."
+      },
+      "deathFog": {
+        "name": "Todesnebel",
+        "hint": "20 andauernder Schaden."
+      },
+      "toxicWater": {
+        "name": "Toxisches Gewässer",
+        "hint": "60 andauernder Schaden (+10 je Kampfrunde im Gewässer)."
+      },
+      "radiation": {
+        "name": "Verstrahlung",
+        "hint": "Organismusverlust je Zonat/Tag laut Kategorie (manuell eintragen); ab Kat. 7 70–90 andauernder Schaden. Antistrahlungsmittel halbieren."
       }
     }
   }
