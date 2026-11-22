@@ -444,6 +444,9 @@ NR.modifierTargets = {
   "dice.klettern": "Bonuswürfel: Klettern",
   "dice.nahkampf": "Bonuswürfel: Nahkampf",
   "dice.einschuechtern.st": "Bonuswürfel: Einschüchtern mit Stärke",
+  "dice.einschuechtern": "Bonuswürfel: Einschüchtern",
+  "dice.inspirieren": "Bonuswürfel: Inspirieren",
+  "dice.schauspiel": "Bonuswürfel: Schauspiel",
   // Kampf (Style-Skills/Kampfkünste): Bonuswürfel auf den Angriff bzw. Schadenswürfel
   "attack.fist": "Angriff: Faustschläge (Bonuswürfel)",
   "attack.leg": "Angriff: Beinangriffe (Bonuswürfel)",

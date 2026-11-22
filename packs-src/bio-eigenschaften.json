@@ -356,6 +356,10 @@
     {
      "target": "dice.klettern",
      "value": 1
+    },
+    {
+     "target": "attack.claw",
+     "value": 1
     }
    ],
    "grants": [
@@ -986,7 +990,20 @@
     "value": 0,
     "max": 0
    },
-   "modifiers": [],
+   "modifiers": [
+    {
+     "target": "dice.einschuechtern",
+     "value": 2
+    },
+    {
+     "target": "dice.inspirieren",
+     "value": 2
+    },
+    {
+     "target": "dice.schauspiel",
+     "value": 2
+    }
+   ],
    "grants": [],
    "description": "<p>+2W auf Einschüchtern, Inspirieren, Schauspiel (für sich oder andere). <em class=\"nr-ref\">(NoReturn 2E, S. 166)</em></p>"
   },

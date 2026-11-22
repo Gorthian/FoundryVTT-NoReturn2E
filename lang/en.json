@@ -313,6 +313,8 @@
       "OrphanApps": "Apps without matching power",
       "NotGifted": "This species is not PSI-gifted.",
       "NoPower": "The character does not have the PSI power {power}.",
+      "Abnormal": "You cannot cast PSI (Psionic Aberration).",
+      "Immune": "{name} is immune to {app} (Psionic Aberration/Transcendence).",
       "TooMany": "Too many dice assigned (pool {pool}).",
       "Summary": "Pool {pool}: PL {ks} · check {probe}d · compensation {comp} → target range {min}–{max}",
       "Pool": "Pool",

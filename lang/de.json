@@ -313,6 +313,8 @@
       "OrphanApps": "Apps ohne passende PSI-Kraft",
       "NotGifted": "Die gewählte Spezies ist nicht PSI-begabt.",
       "NoPower": "Der Charakter besitzt die PSI-Kraft {power} nicht.",
+      "Abnormal": "Du kannst kein PSI wirken (Psionische Abartigkeit).",
+      "Immune": "{name} ist gegen {app} immun (Psionische Abartigkeit/Transzendenz).",
       "TooMany": "Zu viele Würfel verteilt (Pool {pool}).",
       "Summary": "Pool {pool}: KS {ks} · Probe {probe}W · Kompensation {comp} → Zielbereich {min}–{max}",
       "Pool": "Pool",
