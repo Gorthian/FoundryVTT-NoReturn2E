@@ -1,5 +1,5 @@
 import { restParty } from "../timed.mjs";
-import { TIME, getDate, formatDate, formatTime, isDaytime, advance, setDate, sceneSynced } from "../time.mjs";
+import { TIME, getDate, formatDate, formatTime, isDaytime, advance, setDate, sceneSynced, syncLighting } from "../time.mjs";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 const SYSTEM_ID = "noreturn";
@@ -31,6 +31,10 @@ export class NRTimeHud extends HandlebarsApplicationMixin(ApplicationV2) {
   /** Eingabefelder wurden bearbeitet und werden bei Zeitänderungen nicht überschrieben. */
   #dirty = false;
 
+  /** Gewählte Schrittweite für „Zeit verschieben“ (bleibt über Neuzeichnen erhalten). */
+  #amount = 1;
+  #unit = "hour";
+
   /** @type {NRTimeHud|undefined} */
   static instance;
 
@@ -44,12 +48,6 @@ export class NRTimeHud extends HandlebarsApplicationMixin(ApplicationV2) {
   static refresh() {
     if (NRTimeHud.enabled) NRTimeHud.show();
     else NRTimeHud.instance?.close();
-  }
-
-  /** Zeigt das HUD oder schließt es, wenn es offen ist (Szenensteuerung). */
-  static toggle() {
-    if (NRTimeHud.instance?.rendered) return NRTimeHud.instance.close();
-    return NRTimeHud.show({ force: true });
   }
 
   static show({ force = false } = {}) {
@@ -73,10 +71,11 @@ export class NRTimeHud extends HandlebarsApplicationMixin(ApplicationV2) {
       day: isDaytime(date),
       zonats: zonats.map(z => ({ ...z, selected: z.value === (date.liberation ? 0 : date.zonat) })),
       timeValue: formatTime(date),
-      units: ["round", "minute", "hour", "day", "week", "zonat"].map(k => ({ key: k, label: i18n.localize(`NR.Time.Unit.${k}`), selected: k === "hour" })),
+      amount: this.#amount,
+      units: ["round", "minute", "hour", "day", "week", "zonat"].map(k => ({ key: k, label: i18n.localize(`NR.Time.Unit.${k}`), selected: k === this.#unit })),
       quick: [
-        { label: "+1 KR", unit: "round", n: 1 }, { label: "+1 min", unit: "minute", n: 1 }, { label: "+10 min", unit: "minute", n: 10 },
-        { label: "+1 h", unit: "hour", n: 1 }, { label: "+8 h", unit: "hour", n: 8 }, { label: "+1 Tag", unit: "day", n: 1 }
+        { label: i18n.localize("NR.Time.QuickRound"), unit: "round", n: 1 }, { label: "+1 min", unit: "minute", n: 1 }, { label: "+10 min", unit: "minute", n: 10 },
+        { label: "+1 h", unit: "hour", n: 1 }, { label: "+8 h", unit: "hour", n: 8 }, { label: i18n.localize("NR.Time.QuickDay"), unit: "day", n: 1 }
       ],
       lightEnabled: game.settings.get(SYSTEM_ID, "timeLightSync"),
       lightScene: !!scene,
@@ -97,11 +96,18 @@ export class NRTimeHud extends HandlebarsApplicationMixin(ApplicationV2) {
   }
 
   _onRender(context, options) {
+    // Nach jedem Render zeigen die Eingabefelder wieder die aktuelle Weltzeit.
+    this.#dirty = false;
     super._onRender?.(context, options);
     this.element.querySelectorAll(".nr-time-pick input, .nr-time-pick select").forEach(el => el.addEventListener("input", () => { this.#dirty = true; }));
+    this.element.querySelector("[name=amount]")?.addEventListener("input", ev => { this.#amount = Math.max(0, Number(ev.currentTarget.value) || 0); });
+    this.element.querySelector("[name=unit]")?.addEventListener("change", ev => { this.#unit = ev.currentTarget.value; });
     this.element.querySelector("[name=zonat]")?.addEventListener("change", ev => {
       const day = this.element.querySelector("[name=day]");
-      if (day) day.max = Number(ev.currentTarget.value) === 0 ? TIME.liberationDays : TIME.daysPerZonat;
+      if (!day) return;
+      const max = Number(ev.currentTarget.value) === 0 ? TIME.liberationDays : TIME.daysPerZonat;
+      day.max = max;
+      if (Number(day.value) > max) day.value = max;
     });
   }
 
@@ -140,9 +146,14 @@ export class NRTimeHud extends HandlebarsApplicationMixin(ApplicationV2) {
     const el = target.closest(".nr-time-hud");
     const val = name => el.querySelector(`[name=${name}]`)?.value;
     const [hour, minute] = String(val("time") || "00:00").split(":").map(Number);
-    const zonat = Number(val("zonat"));
+    const cur = getDate();
+    const num = (v, fallback) => (String(v ?? "").trim() !== "" && Number.isFinite(Number(v)) ? Number(v) : fallback);
+    const zonat = num(val("zonat"), cur.liberation ? 0 : cur.zonat);
     this.#dirty = false;
-    await setDate({ year: Number(val("year")), zonat, liberation: zonat === 0, day: Number(val("day")), hour: hour || 0, minute: minute || 0 });
+    await setDate({
+      year: num(val("year"), cur.year), zonat, liberation: zonat === 0,
+      day: num(val("day"), 1), hour: Number.isFinite(hour) ? hour : 0, minute: Number.isFinite(minute) ? minute : 0
+    });
     this.render();
   }
 
@@ -155,6 +166,7 @@ export class NRTimeHud extends HandlebarsApplicationMixin(ApplicationV2) {
     const scene = canvas?.scene;
     if (!scene) return;
     await scene.setFlag(SYSTEM_ID, "timeLight", scene.getFlag(SYSTEM_ID, "timeLight") === false);
+    await syncLighting();
     this.render();
   }
 }

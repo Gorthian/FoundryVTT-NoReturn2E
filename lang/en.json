@@ -1933,7 +1933,9 @@
         "day": "Days",
         "week": "Weeks (5 days)",
         "zonat": "Zonats (20 days)"
-      }
+      },
+      "QuickRound": "+1 round",
+      "QuickDay": "+1 day"
     },
     "Timed": {
       "Title": "Timed effects",

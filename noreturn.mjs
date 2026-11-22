@@ -88,7 +88,7 @@ Hooks.once("init", () => {
   registerElapsedHook();
   registerHandlebarsHelpers();
   registerSettings();
-  registerTimeSettings({ onHudChange: () => NRTimeHud.refresh() });
+  registerTimeSettings({ onHudChange: () => NRTimeHud.refresh(), onHudRender: () => NRTimeHud.instance?.render() });
   registerTimedSettings();
   initTime();
   registerNoticeSettings();
@@ -98,6 +98,7 @@ Hooks.once("init", () => {
   registerTimeHooks();
   registerTimedHooks();
   Hooks.on("updateWorldTime", () => NRTimeHud.instance?.onTimeChanged());
+  Hooks.on("canvasReady", () => NRTimeHud.instance?.render());
 });
 
 /** Konfigurationstexte (Attribute, Fertigkeiten, Zonen …) in die gewählte Sprache übersetzen. */
