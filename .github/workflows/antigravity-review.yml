@@ -130,14 +130,17 @@ jobs:
                 $block = "#### $relName`n$($text.TrimEnd())`n`n"
                 if ($sb.Length + $block.Length -gt $maxChars) {
                   $rem = $maxChars - $sb.Length
-                  if ($rem -gt 200) { [void]$sb.Append($block.Substring(0, $rem) + "`n... (gekürzt bei $maxChars Zeichen)`n") }
+                  if ($rem -gt 200) {
+                    [void]$sb.Append($block.Substring(0, $rem) + "`n... (gekürzt bei $maxChars Zeichen)`n")
+                    $loaded++
+                  }
                   Write-Warning "Regelreferenz überschreitet $maxChars Zeichen – Rest gekürzt."
                   break
                 }
                 [void]$sb.Append($block)
                 $loaded++
               }
-              if ($loaded -gt 0) {
+              if ($sb.Length -gt 0) {
                 Write-Host "Lokale Regelreferenz geladen: $loaded Datei(en), $($sb.Length) Zeichen."
                 $rulesSection = @(
                   "### Lokale Regelreferenz (vertraulich – nur zur inhaltlichen Prüfung; NIEMALS wörtlich im PR-Kommentar zitieren und keine lokalen Pfade nennen!)"
