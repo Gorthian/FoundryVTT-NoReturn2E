@@ -123,12 +123,14 @@ export async function applyHazard(actor, hazardId, category = 1, { protectedGear
   if (hazardId === "temperature") {
     // Hitze-/Kälteresistenz (Dicke Haut / dickes Fell) mindert den Malus um die Stufen (S. 16).
     const resist = traitLevel(actor, "bioTrait", ["Dicke Haut"]);
-    const effective = Math.max(0, category - resist);
-    const tempIds = TEMP_IDS.map(id => actor.effects.filter(e => e.statuses.has(id)).map(e => e.id)).flat();
-    if (tempIds.length) await actor.deleteEmbeddedDocuments("ActiveEffect", tempIds);
+    const effective = Math.min(TEMP_IDS.length, Math.max(0, category - resist));
     if (resist) notes.push(game.i18n.format("NR.Hazard.TempResist", { resist, malus: effective }));
     if (effective > 0) {
+      // setStatus ersetzt vorhandene Temperaturzustände selbst
       await setStatus(actor, `nrTemp${effective}`, { nameSuffix: resist ? game.i18n.format("NR.Hazard.TempResistShort", { resist }) : "" });
+    } else {
+      const old = actor.effects.filter(e => TEMP_IDS.some(id => e.statuses.has(id))).map(e => e.id);
+      if (old.length) await actor.deleteEmbeddedDocuments("ActiveEffect", old);
     }
     return notes;
   }
