@@ -181,7 +181,7 @@ def item_doc(pack, actor_id, sort, it):
     _id = stable_id(pack, actor_id, it["name"])
     return _id, {"_id": _id, "_key": f"!actors.items!{actor_id}.{_id}", "name": it["name"], "type": it["type"],
                  "img": it["img"], "system": it["system"], "effects": [], "folder": None, "sort": sort,
-                 "ownership": {"default": 0}, "flags": {}}
+                 "ownership": {"default": 0}, "flags": {"noreturn": {"noSync": True}}}
 
 
 def creature_items(c):

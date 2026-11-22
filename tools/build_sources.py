@@ -108,7 +108,8 @@ def actor_docs(pack, creature_list):
         docs.append({"_id": _id, "_key": f"!actors!{_id}", "name": c["name"], "type": "npc", "img": "icons/svg/pawprint.svg",
                      "system": creatures.actor_system(c), "effects": [], "folder": None, "sort": (i + 1) * 1000,
                      "ownership": {"default": 0}, "flags": {},
-                     "prototypeToken": {"name": c["name"], "disposition": -1, "actorLink": False},
+                     "prototypeToken": {"name": c["name"], "disposition": -1, "actorLink": False,
+                                        "texture": {"src": "icons/svg/pawprint.svg"}},
                      "_stats": stats(), "_embedded": embedded})
     return docs
 
