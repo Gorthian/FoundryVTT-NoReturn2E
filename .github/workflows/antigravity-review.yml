@@ -69,6 +69,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.CUSTOM_PAT }}
           PR_NUMBER: ${{ steps.pr.outputs.number }}
+          RULES_REF_PATH: ${{ vars.NORETURN_RULES_REF }}
         run: |
           $ErrorActionPreference = "Stop"
           $utf8 = [System.Text.UTF8Encoding]::new($false)
@@ -105,8 +106,53 @@ jobs:
           }
           $checkSummary = if ($checkLines.Count -gt 0) { $checkLines -join "`n" } else { "(keine lokalen Checks ausgeführt)" }
 
+          # Optionale lokale Regelreferenz vom Runner laden (einzelne .md/.txt-Datei oder Ordner)
+          # Konfiguration über GitHub-Variable NORETURN_RULES_REF oder lokale Umgebungsvariable NORETURN_RULES_REF auf dem Runner
+          $rulesPath = if (-not [string]::IsNullOrWhiteSpace($env:RULES_REF_PATH)) { $env:RULES_REF_PATH } else { $env:NORETURN_RULES_REF }
+          $rulesSection = ""
+          if (-not [string]::IsNullOrWhiteSpace($rulesPath)) {
+            if (Test-Path -LiteralPath $rulesPath) {
+              $item = Get-Item -LiteralPath $rulesPath
+              $ruleFiles = if ($item.PSIsContainer) {
+                @(Get-ChildItem -LiteralPath $rulesPath -Recurse -File | Where-Object { $_.Extension -in ".md", ".txt" } | Sort-Object FullName)
+              } elseif ($item.Extension -in ".md", ".txt") {
+                @($item)
+              } else {
+                Write-Warning "NORETURN_RULES_REF unterstützt nur .md/.txt-Dateien (gefunden: $($item.Extension)) – übersprungen."
+                @()
+              }
+              $maxChars = 250000
+              $sb = [System.Text.StringBuilder]::new()
+              $loaded = 0
+              foreach ($rf in $ruleFiles) {
+                $relName = if ($item.PSIsContainer) { [System.IO.Path]::GetRelativePath($item.FullName, $rf.FullName) } else { $rf.Name }
+                $text = [System.IO.File]::ReadAllText($rf.FullName, $utf8)
+                $block = "#### $relName`n$($text.TrimEnd())`n`n"
+                if ($sb.Length + $block.Length -gt $maxChars) {
+                  $rem = $maxChars - $sb.Length
+                  if ($rem -gt 200) { [void]$sb.Append($block.Substring(0, $rem) + "`n... (gekürzt bei $maxChars Zeichen)`n") }
+                  Write-Warning "Regelreferenz überschreitet $maxChars Zeichen – Rest gekürzt."
+                  break
+                }
+                [void]$sb.Append($block)
+                $loaded++
+              }
+              if ($loaded -gt 0) {
+                Write-Host "Lokale Regelreferenz geladen: $loaded Datei(en), $($sb.Length) Zeichen."
+                $rulesSection = @(
+                  "### Lokale Regelreferenz (vertraulich – nur zur inhaltlichen Prüfung; NIEMALS wörtlich im PR-Kommentar zitieren und keine lokalen Pfade nennen!)"
+                  $sb.ToString().TrimEnd()
+                ) -join "`n"
+              } elseif ($ruleFiles.Count -eq 0 -and $item.PSIsContainer) {
+                Write-Warning "Keine .md/.txt-Dateien im konfigurierten Regelreferenz-Ordner gefunden."
+              }
+            } else {
+              Write-Warning "NORETURN_RULES_REF ist gesetzt, aber der konfigurierte Pfad wurde auf dem Runner nicht gefunden (ohne Regelreferenz fortgefahren)."
+            }
+          }
+
           $instructions = if (Test-Path "GEMINI.md") { Get-Content -Path "GEMINI.md" -Raw } else { "" }
-          $fullPrompt = @(
+          $promptParts = @(
             "Führe ein fokussiertes Code-Review für Pull Request #$($env:PR_NUMBER) im Repository FoundryVTT-NoReturn2E durch."
             "WICHTIG für den Headless-Modus: Führe KEINE Terminal-/Shell-Befehle (run_command) aus und ändere KEINE Dateien. Alle relevanten Prüfdaten und der vollständige Diff stehen unten; nutze bei Bedarf ausschließlich Datei-Lese-Tools."
             "Halte dich strikt an das folgende Regelwerk und Ausgabeformat (entweder exakt 'LGTM' oder eine kurze nummerierte Mängelliste OHNE das Wort 'LGTM'):"
@@ -115,12 +161,18 @@ jobs:
             ""
             "### Ergebnisse automatischer Vorab-Checks"
             $checkSummary
+          )
+          if (-not [string]::IsNullOrWhiteSpace($rulesSection)) {
+            $promptParts += @("", $rulesSection)
+          }
+          $promptParts += @(
             ""
             "### Git-Diff des Pull Requests"
             '```diff'
             $diff.TrimEnd()
             '```'
-          ) -join "`n"
+          )
+          $fullPrompt = $promptParts -join "`n"
 
           $errFile = Join-Path $env:RUNNER_TEMP "review-stderr.log"
           $reviewText = ""
