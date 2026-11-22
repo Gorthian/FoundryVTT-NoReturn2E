@@ -248,7 +248,13 @@ export async function applyPsiDamage(message, tokenUuid) {
       return;
     }
     const ks = message.flags.noreturn?.psi?.ks;
-    if (has("psi-resistenz") && ks > 0) amount = Math.round(amount / ks * Math.max(0, ks - 2));
+    if (has("psi-resistenz") && ks > 0) {
+      amount = Math.round(amount / ks * Math.max(0, ks - 2));
+      if (amount <= 0) {
+        await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }), content: `<p class="nr-hint">${game.i18n.format("NR.Psi.Resisted", { name: foundry.utils.escapeHTML(actor.name), app: foundry.utils.escapeHTML(payload.weaponName ?? "") })}</p>` });
+        return;
+      }
+    }
   }
   const zones = payload.zones ?? [(await rollHitZone()).zone];
   return actor.resistDamage({ amount, zones, attack: payload.attack, label: payload.weaponName });

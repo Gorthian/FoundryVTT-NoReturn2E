@@ -356,10 +356,6 @@
     {
      "target": "dice.klettern",
      "value": 1
-    },
-    {
-     "target": "attack.claw",
-     "value": 1
     }
    ],
    "grants": [

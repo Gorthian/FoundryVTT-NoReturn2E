@@ -315,6 +315,7 @@
       "NoPower": "The character does not have the PSI power {power}.",
       "Abnormal": "You cannot cast PSI (Psionic Aberration).",
       "Immune": "{name} is immune to {app} (Psionic Aberration/Transcendence).",
+      "Resisted": "{name} fully resists {app} thanks to PSI resistance.",
       "TooMany": "Too many dice assigned (pool {pool}).",
       "Summary": "Pool {pool}: PL {ks} · check {probe}d · compensation {comp} → target range {min}–{max}",
       "Pool": "Pool",
@@ -1569,8 +1570,11 @@
           "klettern": "Bonus dice: Climbing",
           "nahkampf": "Bonus dice: Melee",
           "einschuechtern": {
+            "_": "Bonus dice: Intimidation",
             "st": "Bonus dice: Intimidation with Strength"
-          }
+          },
+          "inspirieren": "Bonus dice: Inspiring",
+          "schauspiel": "Bonus dice: Acting"
         },
         "attributes": {
           "ge": "Attribute: Dexterity",
