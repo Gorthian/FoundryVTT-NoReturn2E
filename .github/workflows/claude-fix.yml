@@ -1,47 +1,118 @@
 name: Claude Code Auto-Fix
 
 on:
-  pull_request_review:
-    types: [submitted]
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: claude-fix-${{ github.event.issue.number }}
+  cancel-in-progress: false
 
 jobs:
   fix-review-comments:
+    # Nur auf PR-Kommentare mit Änderungs-Marker von berechtigten Repo-Mitgliedern reagieren
     if: >
-      github.event.review.state == 'changes_requested' &&
-      contains(github.event.review.body, 'Antigravity Review')
+      github.event.issue.pull_request != null &&
+      contains(github.event.comment.body, '<!-- antigravity-review:changes-requested -->') &&
+      (github.event.comment.author_association == 'OWNER' || github.event.comment.author_association == 'MEMBER' || github.event.comment.author_association == 'COLLABORATOR')
     runs-on: self-hosted
     steps:
+      - name: PR-Metadaten prüfen
+        id: pr
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ secrets.CUSTOM_PAT }}
+          PR_NUMBER: ${{ github.event.issue.number }}
+          REPO: ${{ github.repository }}
+        run: |
+          $ErrorActionPreference = "Stop"
+          $pr = gh api "repos/$($env:REPO)/pulls/$($env:PR_NUMBER)" | ConvertFrom-Json
+          if ($LASTEXITCODE -ne 0) { throw "Konnte PR #$($env:PR_NUMBER) nicht laden." }
+          if ($pr.state -ne "open") {
+            Write-Host "PR #$($env:PR_NUMBER) ist nicht offen ($($pr.state)) – abgebrochen."
+            "run=false" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
+            exit 0
+          }
+          if ($pr.head.repo.full_name -ne $env:REPO) {
+            Write-Host "Externer Fork-PR – aus Sicherheitsgründen auf self-hosted Runner übersprungen."
+            "run=false" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
+            exit 0
+          }
+          "run=true" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
+          "head_ref=$($pr.head.ref)" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
+          "base_ref=$($pr.base.ref)" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
+
       - name: Checkout PR Branch
+        if: steps.pr.outputs.run == 'true'
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.ref }}
+          ref: ${{ steps.pr.outputs.head_ref }}
+          fetch-depth: 0
           token: ${{ secrets.CUSTOM_PAT }}
 
-      - name: Guardrail - Max 3 Auto-Fix Runden prüfen
+      - name: Guardrail – Max. 3 Auto-Fix-Runden pro PR prüfen
+        if: steps.pr.outputs.run == 'true'
         shell: pwsh
+        env:
+          GH_TOKEN: ${{ secrets.CUSTOM_PAT }}
+          PR_NUMBER: ${{ github.event.issue.number }}
+          BASE_REF: ${{ steps.pr.outputs.base_ref }}
         run: |
-          $botCommits = (git log --author="Claude Code Bot" --oneline | Measure-Object).Count
+          $ErrorActionPreference = "Stop"
+          git fetch origin $env:BASE_REF
+          $botCommits = @(git log "origin/$($env:BASE_REF)..HEAD" --author="Claude Code Bot" --oneline).Count
+          Write-Host "Auto-Fix-Commits in diesem PR: $botCommits / 3"
           if ($botCommits -ge 3) {
-            Write-Error "Maximale Anzahl von 3 Auto-Fix-Iterationen erreicht. Bitte manuell prüfen."
+            gh pr comment $env:PR_NUMBER --body "⚠️ **Claude Code Auto-Fix:** Maximale Anzahl von 3 Auto-Fix-Iterationen in diesem PR erreicht. Bitte manuell prüfen."
             exit 1
           }
 
       - name: Execute Claude Code on Feedback
+        if: steps.pr.outputs.run == 'true'
         shell: pwsh
+        env:
+          REVIEW_BODY: ${{ github.event.comment.body }}
         run: |
-          $feedback = @"
-          ${{ github.event.review.body }}
-          "@
-          claude -p --max-turns 10 "Analysiere das folgende Code-Review für dieses FoundryVTT-Modul und setze alle geforderten Änderungen im Code um. Committe die Änderungen nicht selbst: $feedback"
+          $ErrorActionPreference = "Stop"
+          [Console]::InputEncoding  = [System.Text.UTF8Encoding]::new($false)
+          [Console]::OutputEncoding = [System.Text.UTF8Encoding]::new($false)
+
+          if (-not (Get-Command claude -ErrorAction SilentlyContinue)) {
+            Write-Error "'claude' (Claude Code CLI) nicht im PATH auf dem Runner gefunden."
+            exit 1
+          }
+
+          $prompt = @(
+            "Analysiere das folgende Code-Review für dieses FoundryVTT-System (FoundryVTT-NoReturn2E) und setze alle geforderten Änderungen sauber im Code um."
+            "Prüfe danach relevante Checks (z. B. 'node tools/validate-packs.mjs' und 'node --check' für geänderte .mjs-Dateien)."
+            "Committe und pushe die Änderungen NICHT selbst."
+            ""
+            $env:REVIEW_BODY
+          ) -join "`n"
+
+          $prompt | claude -p --max-turns 10 --permission-mode acceptEdits --allowedTools "Bash(node --check *),Bash(node tools/validate-packs.mjs),Bash(npm run validate:packs)"
+          if ($LASTEXITCODE -ne 0) { throw "Claude Code CLI fehlgeschlagen (Exit $LASTEXITCODE)" }
 
       - name: Commit and Push Changes
+        if: steps.pr.outputs.run == 'true'
         shell: pwsh
+        env:
+          GH_TOKEN: ${{ secrets.CUSTOM_PAT }}
+          PR_NUMBER: ${{ github.event.issue.number }}
         run: |
+          $ErrorActionPreference = "Stop"
           git config user.name "Claude Code Bot"
           git config user.email "claude-bot@users.noreply.github.com"
-          git add .
+          git add -A
           git diff --cached --quiet
           if ($LASTEXITCODE -ne 0) {
             git commit -m "fix: address Antigravity review comments"
             git push
+          } else {
+            Write-Host "Keine Dateiänderungen durch Claude Code."
+            gh pr comment $env:PR_NUMBER --body "ℹ️ **Claude Code Auto-Fix:** Keine Dateiänderungen vorgenommen. Bitte Review-Feedback manuell prüfen."
           }

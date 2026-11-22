@@ -12,5 +12,5 @@ Prüfe den übergebenen Git-Diff fokussiert auf:
 Ignoriere reine Stil-Geschmacksfragen, solange der Code sauber, lesbar und wartbar ist, damit der automatische Fix-Loop (max. 3 Iterationen) nicht unnötig blockiert wird.
 
 ### Verbindliches Ausgabeformat für die CI-Pipeline
-- **Wenn der Code fehlerfrei und merge-bereit ist:** Antworte ausschließlich mit dem exakten Schlüsselwort `LGTM` (ohne zusätzlichen Text), damit die Pipeline den PR automatisch genehmigt (`--approve`).
+- **Wenn der Code fehlerfrei und merge-bereit ist:** Antworte ausschließlich mit dem exakten Schlüsselwort `LGTM` (ohne zusätzlichen Text), damit die Pipeline den PR automatisch als merge-bereit markiert.
 - **Wenn Änderungen erforderlich sind:** Verwende **nicht** das Wort `LGTM`. Liste stattdessen die konkreten Mängel als kurze, nummerierte Liste mit Dateiname, Problembeschreibung und klarem Lösungsvorschlag auf, damit Claude Code die Korrekturen im nächsten automatischen Schritt gezielt umsetzen kann.
