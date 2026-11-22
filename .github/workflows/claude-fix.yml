@@ -8,10 +8,6 @@ permissions:
   contents: write
   pull-requests: write
 
-concurrency:
-  group: claude-fix-${{ github.event.issue.number }}
-  cancel-in-progress: false
-
 jobs:
   fix-review-comments:
     # Nur auf PR-Kommentare mit Änderungs-Marker von berechtigten Repo-Mitgliedern reagieren
@@ -19,6 +15,9 @@ jobs:
       github.event.issue.pull_request != null &&
       contains(github.event.comment.body, '<!-- antigravity-review:changes-requested -->') &&
       (github.event.comment.author_association == 'OWNER' || github.event.comment.author_association == 'MEMBER' || github.event.comment.author_association == 'COLLABORATOR')
+    concurrency:
+      group: claude-fix-${{ github.event.issue.number }}
+      cancel-in-progress: false
     runs-on: self-hosted
     steps:
       - name: PR-Metadaten prüfen
