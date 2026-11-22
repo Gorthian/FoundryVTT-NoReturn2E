@@ -1971,6 +1971,7 @@
       "TickCumulative": "{n} damage per combat round, stacking",
       "NoTargets": "no targets marked, effect not created",
       "AppliedTo": "effect on {names}",
+      "AppUnavailable": "no effect on {names} (no GM online to create it)",
       "AppEffect": "{name} (KS {ks})",
       "BonusActive": "Timed bonus",
       "MalusActive": "Timed penalty",

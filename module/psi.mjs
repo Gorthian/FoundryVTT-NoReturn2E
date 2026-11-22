@@ -159,8 +159,15 @@ async function applyAppTiming(actor, app, ks, timing) {
   let note;
   if (!targets.length) note = game.i18n.localize("NR.Timed.NoTargets");
   else {
-    for (const t of targets) await applyBuffTo(t.uuid, { kind: "timed", spec });
-    note = game.i18n.format("NR.Timed.AppliedTo", { names: targets.map(t => foundry.utils.escapeHTML(t.name)).join(", ") });
+    const done = [], failed = [];
+    for (const t of targets) {
+      const result = await applyBuffTo(t.uuid, { kind: "timed", spec });
+      (result === "unavailable" ? failed : done).push(foundry.utils.escapeHTML(t.name));
+    }
+    const notes = [];
+    if (done.length) notes.push(game.i18n.format("NR.Timed.AppliedTo", { names: done.join(", ") }));
+    if (failed.length) notes.push(game.i18n.format("NR.Timed.AppUnavailable", { names: failed.join(", ") }));
+    note = notes.join("; ");
   }
   return `<p class="nr-hint"><i class="fa-solid fa-hourglass-half"></i> ${parts.join(" · ")} — ${note}</p>`;
 }
