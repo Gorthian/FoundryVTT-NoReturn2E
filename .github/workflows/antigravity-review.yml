@@ -10,10 +10,6 @@ permissions:
   contents: read
   pull-requests: write
 
-concurrency:
-  group: pr-review-${{ github.event.pull_request.number || github.event.issue.number }}
-  cancel-in-progress: true
-
 jobs:
   review:
     # Sicherheit auf self-hosted Runner: keine externen Fork-PRs und keine Drafts; /review nur durch Repo-Mitglieder
@@ -26,6 +22,10 @@ jobs:
         !contains(github.event.comment.body, '<!-- antigravity-review:') &&
         contains(github.event.comment.body, '/review') &&
         (github.event.comment.author_association == 'OWNER' || github.event.comment.author_association == 'MEMBER' || github.event.comment.author_association == 'COLLABORATOR'))
+    # Concurrency auf Job-Ebene: übersprungene Kommentare (ohne /review) brechen laufende Reviews nicht ab
+    concurrency:
+      group: pr-review-${{ github.event.pull_request.number || github.event.issue.number }}
+      cancel-in-progress: true
     runs-on: self-hosted
     steps:
       - name: PR-Metadaten prüfen
