@@ -29,7 +29,7 @@
     <legend>{{localize "NR.Time.Shift"}}</legend>
     <div class="nr-time-row">
       <button type="button" data-action="step" data-dir="-1"><i class="fa-solid fa-minus"></i></button>
-      <input type="number" name="amount" min="0" value="1">
+      <input type="number" name="amount" min="0" value="{{amount}}">
       <select name="unit">{{#each units}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select>
       <button type="button" data-action="step" data-dir="1"><i class="fa-solid fa-plus"></i></button>
     </div>

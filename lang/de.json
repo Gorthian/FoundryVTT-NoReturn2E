@@ -1933,7 +1933,9 @@
         "day": "Tage",
         "week": "Wochen (5 Tage)",
         "zonat": "Zonate (20 Tage)"
-      }
+      },
+      "QuickRound": "+1 KR",
+      "QuickDay": "+1 Tag"
     },
     "Timed": {
       "Title": "Zeitliche Effekte",

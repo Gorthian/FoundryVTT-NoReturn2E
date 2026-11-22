@@ -63,7 +63,7 @@ export function calendarConfig() {
  * Zerlegt eine Weltzeit in Datumsbestandteile.
  * @param {number} [t]  Weltzeit in Sekunden (Standard: aktuelle)
  * @returns {{year:number, liberation:boolean, zonat:number, day:number, weekday:number, hour:number, minute:number, second:number, dayIndex:number, segment:number}}
- *   zonat: 1–18 (0 in der Befreiungswoche), day: 1–20 (bzw. 1–5), weekday: 1–5, segment: 0–18 (laufende Periode im Jahr)
+ *   zonat: 1–18 (0 in der Befreiungswoche), day: 1–20 (bzw. 1–5), weekday: 1–5, segment: 0–17 (Zonat-Index im Jahr; die Befreiungswoche zählt zum 9. Zonat)
  */
 export function getDate(t = game.time.worldTime) {
   const dayIndex = Math.floor(t / TIME.secondsPerDay);
@@ -75,10 +75,10 @@ export function getDate(t = game.time.worldTime) {
   if (doy < firstHalf) {
     zonat = Math.floor(doy / TIME.daysPerZonat) + 1; day = (doy % TIME.daysPerZonat) + 1; segment = zonat - 1;
   } else if (doy < firstHalf + TIME.liberationDays) {
-    zonat = 0; day = doy - firstHalf + 1; liberation = true; segment = TIME.zonatsPerHalf;
+    zonat = 0; day = doy - firstHalf + 1; liberation = true; segment = TIME.zonatsPerHalf - 1;
   } else {
     const r = doy - firstHalf - TIME.liberationDays;
-    zonat = TIME.zonatsPerHalf + Math.floor(r / TIME.daysPerZonat) + 1; day = (r % TIME.daysPerZonat) + 1; segment = zonat;
+    zonat = TIME.zonatsPerHalf + Math.floor(r / TIME.daysPerZonat) + 1; day = (r % TIME.daysPerZonat) + 1; segment = zonat - 1;
   }
   return {
     year: TIME.yearZero + yearIdx, liberation, zonat, day, weekday: mod(dayIndex, TIME.daysPerWeek) + 1,
@@ -90,18 +90,21 @@ export function getDate(t = game.time.worldTime) {
 /** Weltzeit aus Datumsangaben. Fehlende Felder werden aus dem aktuellen Datum übernommen. */
 export function toWorldTime({ year, zonat, liberation, day, hour, minute, second } = {}) {
   const cur = getDate();
-  year = Math.trunc(year ?? cur.year);
+  const num = (v, fallback) => (v === null || v === undefined || v === "" || !Number.isFinite(Number(v)) ? fallback : Math.trunc(Number(v)));
+  year = num(year, cur.year);
+  zonat = zonat === undefined ? undefined : num(zonat, undefined);
+  day = num(day, 1); hour = num(hour, cur.hour); minute = num(minute, cur.minute); second = num(second, 0);
   const lib = liberation ?? (zonat === 0 ? true : (zonat === undefined ? cur.liberation : false));
   const half = TIME.zonatsPerHalf * TIME.daysPerZonat;
   let doy;
   if (lib) {
-    doy = half + Math.min(Math.max(Math.trunc(day ?? 1), 1), TIME.liberationDays) - 1;
+    doy = half + Math.min(Math.max(day, 1), TIME.liberationDays) - 1;
   } else {
-    const z = Math.min(Math.max(Math.trunc(zonat ?? (cur.zonat || 1)), 1), 18);
-    const d = Math.min(Math.max(Math.trunc(day ?? 1), 1), TIME.daysPerZonat) - 1;
+    const z = Math.min(Math.max(zonat ?? (cur.zonat || 1), 1), 18);
+    const d = Math.min(Math.max(day, 1), TIME.daysPerZonat) - 1;
     doy = z <= TIME.zonatsPerHalf ? (z - 1) * TIME.daysPerZonat + d : half + TIME.liberationDays + (z - TIME.zonatsPerHalf - 1) * TIME.daysPerZonat + d;
   }
-  const secs = Math.trunc(hour ?? cur.hour) * 3600 + Math.trunc(minute ?? cur.minute) * 60 + Math.trunc(second ?? 0);
+  const secs = hour * 3600 + minute * 60 + second;
   return ((year - TIME.yearZero) * TIME.daysPerYear + doy) * TIME.secondsPerDay + secs;
 }
 
@@ -176,9 +179,9 @@ export async function syncLighting() {
   const target = darknessAt(date.hour + date.minute / 60);
   const scenes = new Set([game.scenes?.active, canvas?.scene].filter(Boolean));
   for (const scene of scenes) {
-    if (!sceneSynced(scene)) continue;
-    if (Math.abs((scene.environment?.darkness ?? 0) - target) < 0.01) continue;
-    await scene.update({ "environment.darkness": target }, { animateDarkness: 2000 });
+    if (!sceneSynced(scene) || scene.environment?.darknessLock) continue;
+    if (Math.abs((scene.environment?.darknessLevel ?? 0) - target) < 0.01) continue;
+    await scene.update({ "environment.darknessLevel": target }, { animateDarkness: 2000 });
   }
 }
 
@@ -202,7 +205,7 @@ export function registerTimeSettings({ onHudChange } = {}) {
   game.settings.register(SYSTEM_ID, "timeAuto", {
     name: "NR.Settings.TimeAuto", hint: "NR.Settings.TimeAutoHint",
     scope: "world", config: true, type: Boolean, default: true,
-    onChange: () => applyRoundTime()
+    onChange: () => { applyRoundTime(); onHudChange?.(); }
   });
   game.settings.register(SYSTEM_ID, "timeHud", {
     name: "NR.Settings.TimeHud", hint: "NR.Settings.TimeHudHint",
@@ -212,12 +215,12 @@ export function registerTimeSettings({ onHudChange } = {}) {
   game.settings.register(SYSTEM_ID, "timeHudPlayers", {
     name: "NR.Settings.TimeHudPlayers", hint: "NR.Settings.TimeHudPlayersHint",
     scope: "world", config: true, type: Boolean, default: false,
-    onChange: () => onHudChange?.()
+    onChange: () => { ui.controls?.render(); onHudChange?.(); }
   });
   game.settings.register(SYSTEM_ID, "timeLightSync", {
     name: "NR.Settings.TimeLight", hint: "NR.Settings.TimeLightHint",
     scope: "world", config: true, type: Boolean, default: false,
-    onChange: () => syncLighting()
+    onChange: () => { syncLighting(); onHudChange?.(); }
   });
 }
 
@@ -226,7 +229,7 @@ function emitAdvanced(worldTime, delta) {
   if (!delta || game.users.activeGM?.id !== game.user.id) return;
   const from = worldTime - delta;
   const crossed = (unit) => Math.floor(worldTime / unit) - Math.floor(from / unit);
-  const periods = t => { const d = getDate(t); return (d.year - TIME.yearZero) * 19 + d.segment; };
+  const periods = t => { const d = getDate(t); return (d.year - TIME.yearZero) * 18 + d.segment; };
   const info = {
     from, to: worldTime, delta, date: getDate(worldTime), previous: getDate(from),
     crossed: {
@@ -237,7 +240,7 @@ function emitAdvanced(worldTime, delta) {
   /**
    * @event noreturn.timeAdvanced
    * Wird nur auf dem aktiven GM-Client ausgelöst. `crossed` enthält die Anzahl der überschrittenen Grenzen
-   * (negativ bei Rückwärtssprüngen). Zonate zählen auch die Befreiungswoche als eigene Periode.
+   * (negativ bei Rückwärtssprüngen). Die Befreiungswoche zählt nicht als eigener Zonat (18 Zonate pro Jahr).
    */
   Hooks.callAll("noreturn.timeAdvanced", info);
 }

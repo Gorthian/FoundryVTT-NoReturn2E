@@ -98,6 +98,7 @@ Hooks.once("init", () => {
   registerTimeHooks();
   registerTimedHooks();
   Hooks.on("updateWorldTime", () => NRTimeHud.instance?.onTimeChanged());
+  Hooks.on("canvasReady", () => NRTimeHud.instance?.render());
 });
 
 /** Konfigurationstexte (Attribute, Fertigkeiten, Zonen …) in die gewählte Sprache übersetzen. */
