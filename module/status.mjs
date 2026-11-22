@@ -17,6 +17,9 @@ const STATUS_DEFS = [
   { id: "nrTemp1", img: `${ICON}frozen.svg`, malus: 1 },
   { id: "nrTemp2", img: `${ICON}frozen.svg`, malus: 2 },
   { id: "nrTemp3", img: `${ICON}fire.svg`, malus: 3 },
+  { id: "nrTemp4", img: `${ICON}fire.svg`, malus: 4 },
+  { id: "nrTemp5", img: `${ICON}fire.svg`, malus: 5 },
+  { id: "nrTemp6", img: `${ICON}fire.svg`, malus: 6 },
   { id: "nrRadiation", img: `${ICON}radiation.svg` },
   { id: "nrDisease", img: `${ICON}biohazard.svg` },
   { id: "nrContinuous", img: `${ICON}acid.svg` }
@@ -53,7 +56,7 @@ export function registerStatusEffects() {
  * Werte aus dem Regelwerk; Zeiträume erscheinen nur als Hinweis (NR.Hazard.<id>.hint).
  */
 export const HAZARDS = {
-  temperature: { cat: [1, 2, 3], status: cat => `nrTemp${cat}` },
+  temperature: { cat: [1, 2, 3, 4, 5, 6], status: cat => `nrTemp${cat}` },
   acidRain: { damage: () => 1, organismLoss: 1 },
   sandstorm: { cat: [1, 2, 3, 4, 5], damage: cat => 10 * cat },
   deathFog: { damage: () => 20, continuous: true, status: () => "nrContinuous" },
@@ -65,10 +68,10 @@ export const HAZARDS = {
   radiationLeave: { leave: true }
 };
 
-const TEMP_IDS = ["nrTemp1", "nrTemp2", "nrTemp3"];
+const TEMP_IDS = ["nrTemp1", "nrTemp2", "nrTemp3", "nrTemp4", "nrTemp5", "nrTemp6"];
 
 /** Zustand am Actor setzen; ersetzt einen vorhandenen gleichen Zustand (bei Temperatur jede Stufe). */
-export async function setStatus(actor, statusId, { category = null, flags = {} } = {}) {
+export async function setStatus(actor, statusId, { category = null, flags = {}, nameSuffix = "" } = {}) {
   const remove = (TEMP_IDS.includes(statusId) ? TEMP_IDS : [statusId]);
   const old = actor.effects.filter(e => remove.some(s => e.statuses.has(s))).map(e => e.id);
   if (old.length) await actor.deleteEmbeddedDocuments("ActiveEffect", old);
@@ -78,6 +81,7 @@ export async function setStatus(actor, statusId, { category = null, flags = {} }
     data.name = `${game.i18n.localize(`NR.Condition.${statusId}`)} ${category}`;
     foundry.utils.setProperty(data, "flags.noreturn.category", category);
   }
+  if (nameSuffix) data.name += ` ${nameSuffix}`;
   for (const [k, v] of Object.entries(flags)) foundry.utils.setProperty(data, `flags.noreturn.${k}`, v);
   await actor.createEmbeddedDocuments("ActiveEffect", [data]);
 }
@@ -87,15 +91,46 @@ export function radiationEffect(actor) {
   return actor.effects.find(e => e.statuses.has("nrRadiation"));
 }
 
-/** Gefahr auf einen Actor anwenden (Zustand + Schaden/Organismusverlust). */
+/** Summe der Stufen aller Items eines Typs, deren Name mit einem der Präfixe beginnt. */
+function traitLevel(actor, type, prefixes) {
+  return actor.items.filter(i => i.type === type && prefixes.some(p => i.name.startsWith(p)))
+    .reduce((sum, i) => sum + (i.system.level ?? 1), 0);
+}
+
+/** Immun gegen Fress-Regen: Wassertauglichkeit oder Amphibia Humanis (S. 17). */
+function immuneToAcidRain(actor) {
+  return actor.items.some(i => ["Wassertauglichkeit", "Amphibia Humanis"].some(n => i.name.startsWith(n)));
+}
+
+/**
+ * Gefahr auf einen Actor anwenden (Zustand + Schaden/Organismusverlust).
+ * @returns {Promise<string[]>} Hinweiszeilen zum Actor (Resistenzen, Immunität, Folgen) für die Chatkarte
+ */
 export async function applyHazard(actor, hazardId, category = 1, { protectedGear = false } = {}) {
   const h = HAZARDS[hazardId];
-  if (!h || actor.type === "vehicle") return;
+  const notes = [];
+  if (!h || actor.type === "vehicle") return notes;
   const label = game.i18n.localize(`NR.Hazard.${hazardId}.name`);
   if (h.leave) {
     const eff = radiationEffect(actor);
     if (eff) await eff.setFlag("noreturn", "exposed", false);
-    return;
+    return notes;
+  }
+  if (hazardId === "acidRain") {
+    if (immuneToAcidRain(actor)) return [game.i18n.localize("NR.Hazard.acidRainImmune")];
+    if (traitLevel(actor, "bioTrait", ["Dicke Haut", "Panzer"])) notes.push(game.i18n.localize("NR.Hazard.acidRainSlow"));
+  }
+  if (hazardId === "temperature") {
+    // Hitze-/Kälteresistenz (Dicke Haut / dickes Fell) mindert den Malus um die Stufen (S. 16).
+    const resist = traitLevel(actor, "bioTrait", ["Dicke Haut"]);
+    const effective = Math.max(0, category - resist);
+    const tempIds = TEMP_IDS.map(id => actor.effects.filter(e => e.statuses.has(id)).map(e => e.id)).flat();
+    if (tempIds.length) await actor.deleteEmbeddedDocuments("ActiveEffect", tempIds);
+    if (resist) notes.push(game.i18n.format("NR.Hazard.TempResist", { resist, malus: effective }));
+    if (effective > 0) {
+      await setStatus(actor, `nrTemp${effective}`, { nameSuffix: resist ? game.i18n.format("NR.Hazard.TempResistShort", { resist }) : "" });
+    }
+    return notes;
   }
   if (h.status) {
     let flags = {};
@@ -110,8 +145,15 @@ export async function applyHazard(actor, hazardId, category = 1, { protectedGear
   }
   const amount = (h.protectable && protectedGear) ? 0 : (h.damage?.(category) ?? 0);
   if (amount > 0) {
-    await actor.resistDamage({ amount, zones: ["7"], attack: { continuous: !!h.continuous }, label, skipDialog: true });
+    const result = await actor.resistDamage({ amount, zones: ["7"], attack: { continuous: !!h.continuous }, label, skipDialog: true });
+    // Wunden im Sandsturm in verstrahlten Gebieten: −3 Organismus je Verwundung (S. 18)
+    const rad = radiationEffect(actor);
+    if (hazardId === "sandstorm" && result?.totalApplied > 0 && actor.system.organismus && rad && rad.flags?.noreturn?.exposed !== false) {
+      await actor.update({ "system.organismus.loss": actor.system.organismus.loss + 3 });
+      notes.push(game.i18n.localize("NR.Hazard.SandstormRadiation"));
+    }
   }
+  return notes;
 }
 
 /** SL-Dialog: Gefahr wählen, auf markierte Tokens anwenden und Zeitraum-Hinweis im Chat ausgeben. */
@@ -134,13 +176,17 @@ export async function hazardDialog() {
 
   const h = HAZARDS[result.hazard];
   const cat = h.cat ? Math.min(Math.max(Number(result.cat) || 1, h.cat[0]), h.cat.at(-1)) : 1;
-  for (const actor of actors) await applyHazard(actor, result.hazard, cat, { protectedGear: !!result.protected });
+  const lines = [];
+  for (const actor of actors) {
+    const notes = await applyHazard(actor, result.hazard, cat, { protectedGear: !!result.protected });
+    lines.push(notes.length ? `${actor.name} (${notes.join("; ")})` : actor.name);
+  }
 
   const name = game.i18n.localize(`NR.Hazard.${result.hazard}.name`) + (h.cat ? ` (${game.i18n.localize("NR.Hazard.CategoryShort")} ${cat})` : "");
   await ChatMessage.create({
     speaker: ChatMessage.getSpeaker({ alias: game.i18n.localize("NR.Hazard.Title") }),
     content: `<div class="nr-card"><h3>${name}</h3><p>${game.i18n.localize(`NR.Hazard.${result.hazard}.hint`)}</p>
-      <p>${actors.map(a => a.name).join(", ")}</p></div>`
+      <p>${lines.join(", ")}</p></div>`
   });
   return { hazard: result.hazard, category: cat, actors };
 }

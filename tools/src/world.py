@@ -4,12 +4,12 @@ from .common import p
 
 
 def disease(name, page, cls, transmission, vector, incubation, duration, cure, ident, intensity, desc, rules, malus=0,
-            inc_days=0, step_days=0, step_org="", step_psy="", step_dmg=0):
+            inc_days=0, step_days=0, step_org="", step_psy="", step_dmg=0, intensity_alt=0):
     ds = p(desc, page) + (f"<p><strong>Regeln:</strong> {rules}</p>" if rules else "")
     return {"name": name, "type": "disease", "img": "icons/svg/biohazard.svg",
             "system": {"classification": cls, "transmission": transmission, "vector": vector, "incubation": incubation,
                        "duration": duration, "cure": cure, "identification": ident, "intensity": intensity,
-                       "malusDice": malus, "incubationDays": inc_days, "stepDays": step_days, "stepOrganismus": step_org,
+                       "intensityAlt": intensity_alt, "malusDice": malus, "incubationDays": inc_days, "stepDays": step_days, "stepOrganismus": step_org,
                        "stepPsyche": step_psy, "stepDamage": step_dmg, "active": False, "days": 0, "description": ds}}
 
 
@@ -22,9 +22,9 @@ def diseases():
                      step_days=2, step_dmg=9))
     D.append(disease("Flugnekrose", 41, "Lebensgefahr", "Körperflüssigkeiten", "Erkrankte, körperschädigende Situationen", "1 Tag", "bis zur Behandlung",
                      "Neopenicillin (2 Tabletten täglich, 5 Tage)", 10, 3,
-                     "Ein im Körper schlummerndes Virus bricht bei geschwächtem Immunsystem aus und lässt Gewebe absterben. Identifizierung in den ersten 5 Tagen MW 20; Intensität bei Tröpfchen/Schleimhaut 6.",
+                     "Ein im Körper schlummerndes Virus bricht bei geschwächtem Immunsystem aus und lässt Gewebe absterben. Identifizierung in den ersten 5 Tagen MW 20; Intensität bei Tröpfchen/Schleimhaut 6 (beim Infizieren „Alternative Intensität“ wählen).",
                      "Nach der Inkubationszeit verliert der Körper mit jedem vollen Tag 1W6 Organismus. Neopenicillin (2 Tabletten täglich, 5 Tage lang) stoppt die Ausbreitung.",
-                     inc_days=1, step_days=1, step_org="1d6"))
+                     inc_days=1, step_days=1, step_org="1d6", intensity_alt=6))
     D.append(disease("Grippe", 42, "Lästig bis gefährlich", "Tröpfcheninfektion", "andere Infizierte", "½ bis 2 Tage", "3 Tage bis 3 Wochen",
                      "Vitalaiser", 10, 4, "Gewöhnliche Grippe mit Kopf- und Gliederschmerzen, in schweren Fällen mit hohem Fieber.",
                      "Während der Infektion gilt ein Malus von 2 Würfeln auf alle Aktionen.", malus=2))
@@ -43,8 +43,8 @@ def diseases():
     D.append(disease("SMF-V", 43, "Lebensgefahr, Pandemiewarnung", "Einatmen sporenähnlicher Kapseln", "Ausscheidungen Infizierter", "ca. 4–8 Tage", "Lebenszeit",
                      "keines", 20, 10,
                      "Künstlich geschaffener Flechten-Virus: Der Körper verändert sich in einer Metamorphose und lebt nach dem scheinbaren Tod (Cardo) als neues Wesen weiter. Infektionen müssen dem Zentrum gemeldet werden.",
-                     "Der Erkrankte hat noch so viele Tage zu leben, wie sein doppelter Konstitutionswert beträgt. Jeder angebrochene Tag gibt eine Stufe SMF-Instinkt und einen festen Punkt Infektionsresistenz, kostet aber 5 Psyche und 5 Organismus. Nach 3 Stunden entsteht „Scharfe Zähne“, nach 6 Stunden „Krallen“. Ab dem 4. Tag −1 Stufe Wissen und Charisma, +2 Stufen Schmerztoleranz.",
-                     inc_days=4, step_days=1, step_org="5", step_psy="5"))
+                     "Der Erkrankte hat noch so viele Tage zu leben, wie sein doppelter Konstitutionswert beträgt. Jeder angebrochene Tag gibt eine Stufe SMF-Instinkt und einen festen Punkt Infektionsresistenz, kostet aber 5 Psyche und 5 Organismus. Nach 3 Stunden entsteht „Scharfe Zähne“, nach 6 Stunden „Krallen“. Wer länger als den vierten Tag überlebt (ab dem 5. Tag), verliert 1 Stufe Wissen und Charisma und erhält +2 Stufen Schmerztoleranz. Der Verlust beginnt mit der Infektion; die Inkubationszeit (4–8 Tage) betrifft nur den Verlauf bis zu den sichtbaren Anzeichen.",
+                     step_days=1, step_org="5", step_psy="5"))
     D.append(disease("Stumpf", 45, "Lästig", "nicht übertragbar", "–", "0 Tage", "2 Tage",
                      "Bantha Salbe (nach Ausbruch) oder Bantha Zäpfchen (vorher)", 10, 2,
                      "Kurzzeitiges Nerventrauma nach körperlichen Schäden, das eine zufällige Körperzone taub macht.",

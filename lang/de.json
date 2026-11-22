@@ -1762,6 +1762,9 @@
       "nrTemp1": "Extreme Temperatur −1W",
       "nrTemp2": "Extreme Temperatur −2W",
       "nrTemp3": "Extreme Temperatur −3W",
+      "nrTemp4": "Extreme Temperatur −4W",
+      "nrTemp5": "Extreme Temperatur −5W",
+      "nrTemp6": "Extreme Temperatur −6W",
       "nrRadiation": "Verstrahlt",
       "nrDisease": "Erkrankt",
       "nrContinuous": "Andauernder Schaden"
@@ -1777,15 +1780,15 @@
       "GMOnly": "Nur die Spielleitung kann Gefahren auslösen.",
       "temperature": {
         "name": "Extreme Temperatur",
-        "hint": "Setzt −1W bis −3W auf alle Werte je Temperaturband (Kat. 1–3). Probe alle 10 Minuten, Zustand danach manuell anpassen."
+        "hint": "Kategorie = Maluswürfel auf alle Werte (0–9 °C / 31–40 °C: 1, −1…−10 °C / 41–50 °C: 2, −11…−20 °C / 51–60 °C: 3, je weitere 10 °C +1; bis 6). Dicke Haut / dickes Fell mindert den Malus um die Stufe. Alle 10 Minuten steigt der Malus um den Bereichsmalus (Gefahr erneut auslösen bzw. Zustand anpassen); sinkt KO unter 0, werden überzählige Maluswürfel als Schaden an allen Zonen gewürfelt (manuell)."
       },
       "acidRain": {
         "name": "Fress-Regen",
-        "hint": "−1 Organismus und 1 Schaden je Stunde Aufenthalt; Material −1 Stabilität je Zonat."
+        "hint": "−1 Organismus und 1 Schaden je Stunde Aufenthalt (mit Dicker Haut, Fell oder Panzer erst nach 2 Stunden); Material −1 Stabilität je Zonat. Wassertauglichkeit und Amphibia Humanis sind immun."
       },
       "sandstorm": {
         "name": "Sandsturm",
-        "hint": "10 Schaden je Kategorie alle 15 Minuten, Dauer Kategorie × W6 Stunden."
+        "hint": "10 Schaden je Kategorie alle 15 Minuten, Dauer Kategorie × W6 Stunden. In verstrahlten Gebieten: −3 Organismus je Verwundung."
       },
       "deathFog": {
         "name": "Todesnebel",
@@ -1793,13 +1796,18 @@
       },
       "toxicWater": {
         "name": "Toxisches Gewässer",
-        "hint": "60 andauernder Schaden (+10 je Kampfrunde im Gewässer)."
+        "hint": "60 andauernder Schaden an allem unter MK:C (außer Gummi, Kunststoff, Fett); +10 je weiterer Kampfrunde im Gewässer manuell nachtragen."
       },
       "radiation": {
         "name": "Verstrahlung",
-        "hint": "Kat. 1–3: Organismusverlust (= Kategorie) je 6 Zonate, Kat. 4–6: je Tag; ab Kat. 7 70–90 andauernder Schaden. Der Verlust wird mit der SL-Zeitsteuerung bzw. dem Makro „Zeit vergeht“ automatisch eingetragen. Nachwirkung: −1 Organismus je Zonat."
+        "hint": "Kat. 1–3: Organismusverlust (= Kategorie) je 6 Zonate, Kat. 4–6: je Tag (nur ohne Schutzkleidung); ab Kat. 7 70–90 andauernder Schaden (Schutz nur mit dichter Kleidung MK:C+ oder Strahlenschutz). Der Verlust wird mit der SL-Zeitsteuerung bzw. dem Makro „Zeit vergeht“ automatisch eingetragen. Nachwirkung: −1 Organismus je Zonat."
       },
-      "Protected": "Schutzkleidung dicht (MK:C, geschlossen)",
+      "Protected": "Schutzkleidung dicht (MK:C, geschlossen; nur Kat. 4–9)",
+      "acidRainImmune": "immun (Wassertauglichkeit/Amphibia Humanis)",
+      "acidRainSlow": "Schaden erst nach 2 Stunden statt 1 Stunde",
+      "SandstormRadiation": "Organismus −3 (Wunde im verstrahlten Sandsturm)",
+      "TempResist": "Resistenz {resist}W, wirksamer Malus {malus}W",
+      "TempResistShort": "(Resistenz −{resist}W)",
       "radiationLeave": {
         "name": "Strahlungsgebiet verlassen",
         "hint": "Beendet die laufende Strahlungsbelastung; die Nachwirkung (−1 Organismus je Zonat) bleibt."
@@ -1848,6 +1856,8 @@
       "InfectTitle": "Krankheit übertragen",
       "Which": "Krankheit",
       "SkipRoll": "Ohne Infektionsprobe erkranken",
+      "UseAlt": "Alternative Intensität verwenden (z. B. Tröpfchen/Schleimhaut)",
+      "IntensityAlt": "Alternative Intensität (0 = keine)",
       "IntensityStat": "Intensität {v}",
       "IdentStat": "Ident. MW {v}",
       "DaysStat": "Tag {v}"

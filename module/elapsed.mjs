@@ -2,7 +2,7 @@
  * Verstrichene Zeit (Tage, Zonate): Verlauf von Krankheiten und Strahlungswirkung (Kap. 1).
  * Wird vom Hook `noreturn.timeAdvanced` (SL-Zeitsteuerung) oder vom Makro „Zeit vergeht“ ausgelöst.
  * Strahlung (S. 19): Kat. 1–3 je 6 Zonate Organismusverlust = Kategorie; Kat. 4–6 jeden Tag Verlust = Kategorie
- * (jeweils nur im Strahlungsgebiet und ohne dichte Schutzkleidung); nach erstem Strahlungsschaden −1 Organismus je Zonat.
+ * (jeweils nur im Strahlungsgebiet; ab Kat. 4 ohne dichte Schutzkleidung); nach erstem Strahlungsschaden −1 Organismus je Zonat.
  */
 import { advanceDisease } from "./disease.mjs";
 import { radiationEffect } from "./status.mjs";
@@ -23,7 +23,8 @@ async function applyRadiation(actor, { days, zonats }) {
   const lines = [];
   // Nachwirkung (nur wenn schon Strahlungsschaden erlitten wurde)
   if (aftermath && zonats > 0) { loss += zonats; lines.push(game.i18n.format("NR.Radiation.Aftermath", { v: zonats })); }
-  if (f.exposed !== false && !f.protected) {
+  // Schutzkleidung wird nur für Kat. 4–9 genannt (S. 19); Kat. 1–3 wirken auch bei dichter Kleidung.
+  if (f.exposed !== false && (cat <= 3 || !f.protected)) {
     if (cat <= 3 && zonats > 0) {
       progress += zonats;
       const n = Math.floor(progress / 6);
