@@ -1971,6 +1971,7 @@
       "TickCumulative": "{n} Schaden je Kampfrunde, addiert sich",
       "NoTargets": "keine Ziele markiert, Effekt nicht angelegt",
       "AppliedTo": "Effekt auf {names}",
+      "AppUnavailable": "kein Effekt auf {names} (keine Spielleitung online, die ihn anlegen kann)",
       "AppEffect": "{name} (KS {ks})",
       "BonusActive": "Zeitlicher Bonus",
       "MalusActive": "Zeitlicher Malus",

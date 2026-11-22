@@ -6244,7 +6244,7 @@
      "formula": "KS*100",
      "cumulative": false,
      "damageType": "hitze",
-     "zones": "random",
+     "zones": "all",
      "pierce": ""
     }
    }

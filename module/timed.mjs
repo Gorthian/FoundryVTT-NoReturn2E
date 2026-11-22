@@ -36,7 +36,7 @@ export function addChange(key, n) {
 export function evalFormula(formula, { ks = 0 } = {}) {
   const text = String(formula ?? "").trim();
   if (!text) return null;
-  const expr = text.replace(/\bKS\b/g, String(ks)).replace(/[x×]/g, "*");
+  const expr = text.replace(/\bKS\b/gi, String(ks)).replace(/[x×]/g, "*");
   if (!/^[\d+\-*/().\s]+$/.test(expr)) return null;
   try {
     const total = new Roll(expr).evaluateSync().total;
@@ -75,11 +75,28 @@ export function allActors() {
 const isCreature = actor => actor && actor.type !== "vehicle";
 const gmOnly = () => game.user.isGM && game.users.activeGM?.id === game.user.id;
 
-function gmWhisper(content, { actors = [] } = {}) {
-  const ids = new Set(game.users.filter(u => u.isGM).map(u => u.id));
-  for (const a of actors) for (const u of game.users) if (a.testUserPermission(u, "OWNER")) ids.add(u.id);
-  return ChatMessage.create({ content, whisper: [...ids] });
+/**
+ * Meldungen je Actor an die Spielleitung und die Besitzer dieses Actors flüstern. Actors mit gleichem Besitzerkreis
+ * teilen sich eine Karte, Actors ohne Spielerbesitzer (NSCs) gehen gesammelt nur an die Spielleitung – so sehen Spieler nichts über fremde Actors.
+ * @param {{actor: Actor, line: string}[]} entries  `line` ist fertiges, bereits escaptes HTML
+ * @param {(lines: string[]) => string} build       baut den Karteninhalt aus den Zeilen
+ */
+async function whisperReport(entries, build) {
+  if (!entries.length) return;
+  const gmIds = game.users.filter(u => u.isGM).map(u => u.id);
+  const groups = new Map();
+  for (const { actor, line } of entries) {
+    const owners = game.users.filter(u => !u.isGM && actor.testUserPermission(u, "OWNER")).map(u => u.id).sort();
+    const key = owners.join(",");
+    if (!groups.has(key)) groups.set(key, { owners, lines: [] });
+    groups.get(key).lines.push(line);
+  }
+  for (const { owners, lines } of groups.values()) {
+    await ChatMessage.create({ content: build(lines), whisper: [...new Set([...gmIds, ...owners])] });
+  }
 }
+
+const reportCard = (icon, title) => lines => `<div class="nr-card"><h3><i class="fa-solid ${icon}"></i> ${esc(L(title))}</h3><ul>${lines.map(l => `<li>${l}</li>`).join("")}</ul></div>`;
 
 /* -------------------------------------------- */
 /*  Zeitlich begrenzte Effekte                   */
@@ -157,8 +174,10 @@ async function removeExpired(list) {
     byActor.get(actor).push(effect.name);
   }
   if (!byActor.size) return;
-  const rows = [...byActor].map(([actor, names]) => `<li><strong>${esc(actor.name)}</strong>: ${names.map(esc).join(", ")}</li>`).join("");
-  await gmWhisper(`<div class="nr-card"><h3><i class="fa-solid fa-hourglass-end"></i> ${esc(L("NR.Timed.Expired"))}</h3><ul>${rows}</ul></div>`, { actors: [...byActor.keys()] });
+  await whisperReport(
+    [...byActor].map(([actor, names]) => ({ actor, line: `<strong>${esc(actor.name)}</strong>: ${names.map(esc).join(", ")}` })),
+    reportCard("fa-hourglass-end", "NR.Timed.Expired")
+  );
 }
 
 /** Weltzeit hat sich bewegt: abgelaufene Effekte entfernen. */
@@ -200,9 +219,11 @@ async function onCombatRound(combat, delta) {
   const auto = game.settings.get(SYSTEM_ID, "timeAuto");
   const damage = game.settings.get(SYSTEM_ID, "timedDamage");
   const due = [];
+  const seen = new Set();
   for (const combatant of combat.combatants) {
     const actor = combatant.actor;
-    if (!isCreature(actor)) continue;
+    if (!isCreature(actor) || combatant.isDefeated || seen.has(actor.uuid)) continue;
+    seen.add(actor.uuid); // mehrere Combatants desselben Actors ticken nur einmal
     for (const effect of [...actor.effects]) {
       const t = effect.getFlag(SYSTEM_ID, "timed");
       if (!t) continue;
@@ -239,41 +260,47 @@ export function restHours(actor) {
 
 /** Natürliche Heilung je 24 Stunden verstrichener Zeit. */
 async function naturalHealing(days) {
-  const lines = [];
-  const touched = [];
+  const entries = [];
   for (const actor of allActors().filter(a => isCreature(a) && !a.system.awakened)) {
     const s = actor.system;
     const damaged = Object.keys(NR.zones).some(z => s.zones[z].damage > 0) || s.nonLethal > 0;
     if (!damaged) continue;
     const heal = await actor.healNatural({ days, silent: true });
-    if (heal) { lines.push(F("NR.Timed.Healed", { name: actor.name, n: heal })); touched.push(actor); }
+    if (heal) entries.push({ actor, line: esc(F("NR.Timed.Healed", { name: actor.name, n: heal })) });
   }
-  if (lines.length) await gmWhisper(`<div class="nr-card"><h3><i class="fa-solid fa-bandage"></i> ${esc(L("NR.Timed.NaturalHealing"))}</h3><ul>${lines.map(l => `<li>${esc(l)}</li>`).join("")}</ul></div>`, { actors: touched });
+  await whisperReport(entries, reportCard("fa-bandage", "NR.Timed.NaturalHealing"));
 }
 
 /** Chronische Erkrankung: je Tag eine Dosis Langzeit-Medikation (20 Dosen je Packung), sonst −1 Organismus. */
 async function chronicIllness(days) {
-  const lines = [];
+  const perPack = 20;
+  const entries = [];
   for (const actor of allActors().filter(isCreature)) {
     if (!actor.items.some(i => i.type === "advantage" && i.name.toLowerCase().startsWith("chronische erkrankung"))) continue;
-    const pack = actor.items.find(i => nameHas(i, "langzeit-medikation") && i.system.quantity > 0);
-    const perPack = 20;
-    const left = pack ? (pack.getFlag(SYSTEM_ID, "doses") ?? pack.system.quantity * perPack) : 0;
-    const used = Math.min(days, left);
-    const missed = days - used;
-    if (pack && used > 0) {
-      const rest = left - used;
+    let remaining = days;
+    for (const pack of actor.items.filter(i => nameHas(i, "langzeit-medikation") && i.system.quantity > 0)) {
+      if (remaining <= 0) break;
+      // Dosen aus dem Flag; nachgekaufte (mehr Packungen als erwartet) bzw. abgegebene Packungen werden berücksichtigt
+      const qty = pack.system.quantity;
+      const stored = pack.getFlag(SYSTEM_ID, "doses");
+      const left = stored == null ? qty * perPack
+        : Math.min(qty * perPack, stored + Math.max(0, qty - Math.ceil(stored / perPack)) * perPack);
+      const take = Math.min(remaining, left);
+      if (take <= 0) continue;
+      const rest = left - take;
       await pack.update({ "system.quantity": Math.ceil(rest / perPack), [`flags.${SYSTEM_ID}.doses`]: rest });
+      remaining -= take;
     }
-    if (missed > 0) await actor.update({ "system.organismus.loss": actor.system.organismus.loss + missed });
-    lines.push(F(missed > 0 ? "NR.Timed.ChronicMissed" : "NR.Timed.ChronicOk", { name: actor.name, used, missed }));
+    const used = days - remaining;
+    if (remaining > 0) await actor.update({ "system.organismus.loss": actor.system.organismus.loss + remaining });
+    entries.push({ actor, line: esc(F(remaining > 0 ? "NR.Timed.ChronicMissed" : "NR.Timed.ChronicOk", { name: actor.name, used, missed: remaining })) });
   }
-  if (lines.length) await gmWhisper(`<div class="nr-card"><h3><i class="fa-solid fa-pills"></i> ${esc(L("NR.Timed.Chronic"))}</h3><ul>${lines.map(l => `<li>${esc(l)}</li>`).join("")}</ul></div>`);
+  await whisperReport(entries, reportCard("fa-pills", "NR.Timed.Chronic"));
 }
 
 /** iHMO: 1 Blutpunkt je Sonnenaufgang (bis zum Maximum). */
 async function sunriseBlood(sunrises) {
-  const lines = [];
+  const entries = [];
   for (const actor of allActors().filter(isCreature)) {
     if (!actor.items.some(i => i.type === "abnormality" && /ihmo/i.test(i.name))) continue;
     const max = actor.system.bloodMax;
@@ -282,28 +309,29 @@ async function sunriseBlood(sunrises) {
     const next = Math.min(max, cur + sunrises);
     if (next === cur) continue;
     await actor.update({ "system.blood.value": next });
-    lines.push(F("NR.Timed.BloodGain", { name: actor.name, n: next - cur, value: next, max }));
+    entries.push({ actor, line: esc(F("NR.Timed.BloodGain", { name: actor.name, n: next - cur, value: next, max })) });
   }
-  if (lines.length) await gmWhisper(`<div class="nr-card"><h3><i class="fa-solid fa-droplet"></i> ${esc(L("NR.Timed.Blood"))}</h3><ul>${lines.map(l => `<li>${esc(l)}</li>`).join("")}</ul></div>`);
+  await whisperReport(entries, reportCard("fa-droplet", "NR.Timed.Blood"));
 }
 
 /** Bio-Eigenschaften mit Ladungen (Odemwaffe: alle 6 h eine Ladung) laden sich mit der Zeit auf. */
 async function rechargeBio(seconds) {
-  const lines = [];
+  const entries = [];
   for (const actor of allActors().filter(isCreature)) {
     for (const item of actor.items.filter(i => i.type === "bioTrait" && i.system.recharge?.hours > 0 && i.system.charges.value < i.system.charges.max)) {
       const period = item.system.recharge.hours * 3600;
       const progress = (item.getFlag(SYSTEM_ID, "rechargeProgress") ?? 0) + seconds;
       const gain = Math.min(Math.floor(progress / period), item.system.charges.max - item.system.charges.value);
-      const full = item.system.charges.value + gain >= item.system.charges.max;
+      const next = item.system.charges.value + gain;
+      const full = next >= item.system.charges.max;
       await item.update({
-        "system.charges.value": item.system.charges.value + gain,
+        "system.charges.value": next,
         [`flags.${SYSTEM_ID}.rechargeProgress`]: full ? 0 : progress - gain * period
       });
-      if (gain) lines.push(F("NR.Timed.Recharged", { name: actor.name, item: item.name, n: gain, value: item.system.charges.value + gain, max: item.system.charges.max }));
+      if (gain) entries.push({ actor, line: esc(F("NR.Timed.Recharged", { name: actor.name, item: item.name, n: gain, value: next, max: item.system.charges.max })) });
     }
   }
-  if (lines.length) await gmWhisper(`<div class="nr-card"><h3><i class="fa-solid fa-battery-half"></i> ${esc(L("NR.Timed.Recharge"))}</h3><ul>${lines.map(l => `<li>${esc(l)}</li>`).join("")}</ul></div>`);
+  await whisperReport(entries, reportCard("fa-battery-half", "NR.Timed.Recharge"));
 }
 
 let queue = Promise.resolve();
@@ -366,6 +394,8 @@ export function appTiming(app, ks) {
   if (!d || (!d.formula && !d.tick?.formula)) return null;
   const value = evalFormula(d.formula, { ks });
   const amount = evalFormula(d.tick?.formula, { ks });
+  // Keine (gültige) Dauer und kein Schaden: sonst entstünde ein unbegrenzter bzw. sofort ablaufender Effekt
+  if ((value == null || value <= 0) && !amount) return null;
   return {
     value, unit: d.unit, target: d.target,
     tick: amount ? { amount, cumulative: d.tick.cumulative, damageType: d.tick.damageType, zones: d.tick.zones, pierce: d.tick.pierce } : null
@@ -412,7 +442,7 @@ export function registerTimedHooks() {
   });
   Hooks.on("updateCombat", (combat, changed, options) => {
     if (!gmOnly() || !("round" in changed)) return;
-    if (options?.direction === -1 || !(changed.round > 0)) return; // zurückgeblättert oder Kampf noch nicht gestartet
+    if (options?.direction === -1 || !(changed.round > 1)) return; // zurückgeblättert oder Kampfstart (0 → 1): noch kein Rundenwechsel
     queue = queue.then(() => onCombatRound(combat, 1)).catch(err => console.error("NoReturn 2E | Kampfrunde:", err));
   });
 }
