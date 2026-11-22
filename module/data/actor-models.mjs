@@ -430,6 +430,9 @@ export class NpcData extends CreatureData {
     return {
       ...creatureSchema(),
       threat: str(""),
+      /** Kreaturen: Komplexität instinktiven Verhaltens (Wildlife, S. 24). */
+      instinct: int(0, { min: 0 }),
+      /** Kreaturen: Gegenpart zu Willenskraft/Dressieren (Anzahl erfolgreicher Dressieren-Proben). */
       stubbornness: int(0, { min: 0 }),
       money: int(0)
     };

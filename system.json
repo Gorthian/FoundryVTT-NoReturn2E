@@ -344,6 +344,17 @@
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       }
+    },
+    {
+      "name": "kreaturen",
+      "label": "Kreaturen",
+      "path": "packs/kreaturen",
+      "type": "Actor",
+      "system": "noreturn",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
     }
   ],
   "packFolders": [
@@ -394,7 +405,8 @@
           "sorting": "m",
           "packs": [
             "krankheiten",
-            "flora"
+            "flora",
+            "kreaturen"
           ]
         }
       ]

@@ -63,6 +63,12 @@ for (const pack of system.packs) {
       total++;
       add(where, emb._key);
       if (!emb._key.startsWith(`!${sublevel}.`) || !emb._key.includes(`!${doc._id}.`)) fail(`${where}: eingebetteter _key "${emb._key}" gehört nicht zu diesem Dokument`);
+      // Items in Actors gegen die Item-DataModels prüfen
+      if (pack.type === "Actor" && emb._key.startsWith("!actors.items!")) {
+        const ItemModel = itemModels[emb.type];
+        if (!ItemModel) fail(`${where}/${emb.name}: unbekannter Item-Typ "${emb.type}"`);
+        else for (const e of ItemModel.validateSource(emb.system ?? {})) fail(`${where}/${emb.name} (${emb.type}): ${e}`);
+      }
     }
     const modelSet = models[pack.type];
     if (!modelSet) continue;

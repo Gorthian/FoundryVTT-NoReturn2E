@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Erzeugt packs-src/<pack>.json aus den Python-Quelldaten.
-Aufruf:  python tools/build_sources.py   (aus dem Systemordner)
+Aufruf:  python tools/build_sources.py [pack ...]   (aus dem Systemordner; ohne Angabe alle Packs, sonst nur die genannten)
 Danach:  npm run build   bzw. tools/build-packs.cmd  (prüft die Quellen und baut die LevelDB-Compendien)"""
 import json
 import os
@@ -12,7 +12,7 @@ ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 
 from src.common import stable_id, FOUNDRY_ICONS  # noqa: E402
-from src import arsenal, character, psi, tables, world  # noqa: E402
+from src import arsenal, character, creatures, psi, tables, world  # noqa: E402
 
 SYSTEM_VERSION = json.load(open(os.path.join(ROOT, "system.json"), encoding="utf-8"))["version"]
 NOW = int(time.time() * 1000)
@@ -25,7 +25,7 @@ def stats():
 
 
 def check_img(path):
-    if not path or path.startswith("systems/"):
+    if not path or path.startswith("systems/") or not os.path.isdir(FOUNDRY_ICONS):
         return path
     rel = path[len("icons/"):] if path.startswith("icons/") else path
     full = os.path.join(FOUNDRY_ICONS, *rel.split("/"))
@@ -94,7 +94,28 @@ def macro_docs():
     return docs
 
 
+def actor_docs(pack, creature_list):
+    """Kreaturen als Actor-Dokumente mit eingebetteten Items (Waffen, Panzerung, Eigenschaften, Fertigkeiten)."""
+    docs = []
+    for i, c in enumerate(creature_list):
+        _id = stable_id(pack, c["name"])
+        embedded = []
+        for j, it in enumerate(creatures.creature_items(c)):
+            it["img"] = check_img(it["img"])
+            _, doc = creatures.item_doc(pack, _id, (j + 1) * 1000, it)
+            doc["_stats"] = stats()
+            embedded.append(doc)
+        docs.append({"_id": _id, "_key": f"!actors!{_id}", "name": c["name"], "type": "npc", "img": "icons/svg/pawprint.svg",
+                     "system": creatures.actor_system(c), "effects": [], "folder": None, "sort": (i + 1) * 1000,
+                     "ownership": {"default": 0}, "flags": {},
+                     "prototypeToken": {"name": c["name"], "disposition": -1, "actorLink": False,
+                                        "texture": {"src": "icons/svg/pawprint.svg"}},
+                     "_stats": stats(), "_embedded": embedded})
+    return docs
+
+
 def main():
+    only = sys.argv[1:]
     os.makedirs(OUT, exist_ok=True)
     psi_apps, missing = psi.apps(os.path.join(HERE, "data", "psi_params.json"))
     if missing:
@@ -119,7 +140,10 @@ def main():
         "makros": macro_docs(),
         "krankheiten": item_docs("krankheiten", world.diseases()),
         "flora": item_docs("flora", world.flora()),
+        "kreaturen": actor_docs("kreaturen", creatures.creatures()),
     }
+    if only:
+        packs = {k: v for k, v in packs.items() if k in only}
     total = 0
     for name, docs in packs.items():
         with open(os.path.join(OUT, f"{name}.json"), "w", encoding="utf-8") as f:
