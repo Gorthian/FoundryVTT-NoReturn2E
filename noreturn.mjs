@@ -88,7 +88,7 @@ Hooks.once("init", () => {
   registerElapsedHook();
   registerHandlebarsHelpers();
   registerSettings();
-  registerTimeSettings({ onHudChange: () => NRTimeHud.refresh() });
+  registerTimeSettings({ onHudChange: () => NRTimeHud.refresh(), onHudRender: () => NRTimeHud.instance?.render() });
   registerTimedSettings();
   initTime();
   registerNoticeSettings();

@@ -144,12 +144,12 @@ export class NRTimeHud extends HandlebarsApplicationMixin(ApplicationV2) {
     const el = target.closest(".nr-time-hud");
     const val = name => el.querySelector(`[name=${name}]`)?.value;
     const [hour, minute] = String(val("time") || "00:00").split(":").map(Number);
-    const zonat = Number(val("zonat"));
     const cur = getDate();
     const num = (v, fallback) => (String(v ?? "").trim() !== "" && Number.isFinite(Number(v)) ? Number(v) : fallback);
+    const zonat = num(val("zonat"), cur.liberation ? 0 : cur.zonat);
     this.#dirty = false;
     await setDate({
-      year: num(val("year"), cur.year), zonat: num(zonat, cur.liberation ? 0 : cur.zonat), liberation: zonat === 0,
+      year: num(val("year"), cur.year), zonat, liberation: zonat === 0,
       day: num(val("day"), 1), hour: Number.isFinite(hour) ? hour : 0, minute: Number.isFinite(minute) ? minute : 0
     });
     this.render();

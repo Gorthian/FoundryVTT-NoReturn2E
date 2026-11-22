@@ -201,11 +201,11 @@ export function applyRoundTime() {
   CONFIG.time.turnTime = 0;
 }
 
-export function registerTimeSettings({ onHudChange } = {}) {
+export function registerTimeSettings({ onHudChange, onHudRender } = {}) {
   game.settings.register(SYSTEM_ID, "timeAuto", {
     name: "NR.Settings.TimeAuto", hint: "NR.Settings.TimeAutoHint",
     scope: "world", config: true, type: Boolean, default: true,
-    onChange: () => { applyRoundTime(); onHudChange?.(); }
+    onChange: () => { applyRoundTime(); onHudRender?.(); }
   });
   game.settings.register(SYSTEM_ID, "timeHud", {
     name: "NR.Settings.TimeHud", hint: "NR.Settings.TimeHudHint",
@@ -220,7 +220,7 @@ export function registerTimeSettings({ onHudChange } = {}) {
   game.settings.register(SYSTEM_ID, "timeLightSync", {
     name: "NR.Settings.TimeLight", hint: "NR.Settings.TimeLightHint",
     scope: "world", config: true, type: Boolean, default: false,
-    onChange: () => { syncLighting(); onHudChange?.(); }
+    onChange: () => { syncLighting(); onHudRender?.(); }
   });
 }
 
