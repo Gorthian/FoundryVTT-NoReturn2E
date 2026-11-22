@@ -96,9 +96,9 @@ export class NRTimeHud extends HandlebarsApplicationMixin(ApplicationV2) {
   }
 
   _onRender(context, options) {
-    super._onRender?.(context, options);
     // Nach jedem Render zeigen die Eingabefelder wieder die aktuelle Weltzeit.
     this.#dirty = false;
+    super._onRender?.(context, options);
     this.element.querySelectorAll(".nr-time-pick input, .nr-time-pick select").forEach(el => el.addEventListener("input", () => { this.#dirty = true; }));
     this.element.querySelector("[name=amount]")?.addEventListener("input", ev => { this.#amount = Math.max(0, Number(ev.currentTarget.value) || 0); });
     this.element.querySelector("[name=unit]")?.addEventListener("change", ev => { this.#unit = ev.currentTarget.value; });
