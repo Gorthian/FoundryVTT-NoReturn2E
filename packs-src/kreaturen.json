@@ -1,0 +1,5231 @@
+[
+ {
+  "_id": "aM19EuAnUfrF7LWt",
+  "_key": "!actors!aM19EuAnUfrF7LWt",
+  "name": "Abomination",
+  "type": "npc",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "attributes": {
+    "ge": {
+     "value": 2,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "st": {
+     "value": 15,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "ko": {
+     "value": 15,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "be": {
+     "value": 3,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "wa": {
+     "value": 3,
+     "bonus": 0,
+     "leiden": 0
+    }
+   },
+   "skills": {
+    "einschuechtern": {
+     "value": 5
+    },
+    "nahkampf": {
+     "value": 6
+    },
+    "reaktion": {
+     "value": 2
+    },
+    "rennen": {
+     "value": 7
+    }
+   },
+   "special": {
+    "adrenalin": {
+     "value": 5,
+     "used": 0
+    },
+    "schmerztoleranz": {
+     "value": 5
+    }
+   },
+   "tpBase": 70,
+   "infection": {
+    "dice": 2,
+    "points": 0,
+    "malus": 0
+   },
+   "regeneration": {
+    "speed": 10,
+    "pool": 100,
+    "poolUsed": 0
+   },
+   "details": {
+    "species": "Kreatur",
+    "concept": "Wildlife"
+   },
+   "instinct": 5,
+   "stubbornness": 14,
+   "biography": "<p>Kreatur aus dem Wildlife-Kapitel. Schmerztoleranz vereinfacht: Hat eine Zone die Hälfte ihrer TP verloren, gilt −1 Würfel auf alle Aktionen; bei Konstitution 0 oder weniger ist die Kreatur kampfunfähig. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p><p>Krallen und Zähne treten häufig auf; die Waffen liegen deshalb als körpereigene Angriffe bei.</p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 1000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "prototypeToken": {
+   "name": "Abomination",
+   "disposition": -1,
+   "actorLink": false
+  },
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "0.2.0",
+   "createdTime": 1795344674751,
+   "modifiedTime": 1795344674751,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  },
+  "_embedded": [
+   {
+    "_id": "VAEaHj7KqsS0EzzH",
+    "_key": "!actors.items!aM19EuAnUfrF7LWt.VAEaHj7KqsS0EzzH",
+    "name": "Körperpanzer",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+     "rw": 20,
+     "mk": "A",
+     "zones": [
+      12,
+      11,
+      10,
+      9,
+      8,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2
+     ],
+     "equipped": true,
+     "komfort": 0,
+     "description": "<p>Körpereigene Panzerung der Kreatur. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 1000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "xXhd1xzPJdTPWZVy",
+    "_key": "!actors.items!aM19EuAnUfrF7LWt.xXhd1xzPJdTPWZVy",
+    "name": "Krallen (körpereigen)",
+    "type": "weapon",
+    "img": "icons/svg/combat.svg",
+    "system": {
+     "category": "unbewaffnet",
+     "skill": "nahkampf",
+     "damageType": "klinge",
+     "equipped": true,
+     "damage": {
+      "strength": true,
+      "points": 20
+     },
+     "range": "none",
+     "description": "<p>Körpereigener Angriff, Schaden ST+20 Punkte. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 2000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "91WIgU33LZ4BDbaz",
+    "_key": "!actors.items!aM19EuAnUfrF7LWt.91WIgU33LZ4BDbaz",
+    "name": "Scharfe Zähne (körpereigen)",
+    "type": "weapon",
+    "img": "icons/svg/combat.svg",
+    "system": {
+     "category": "unbewaffnet",
+     "skill": "nahkampf",
+     "damageType": "stich",
+     "equipped": true,
+     "damage": {
+      "strength": true,
+      "points": 30
+     },
+     "range": "none",
+     "description": "<p>Körpereigener Angriff, Schaden ST+30 Punkte. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 3000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "x9qme9oPMr2zwmGe",
+    "_key": "!actors.items!aM19EuAnUfrF7LWt.x9qme9oPMr2zwmGe",
+    "name": "Thermalsicht",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>Sieht Wärmequellen. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 4000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "zlCDRjjvoEEaO6PJ",
+    "_key": "!actors.items!aM19EuAnUfrF7LWt.zlCDRjjvoEEaO6PJ",
+    "name": "Abnormitäten: ALLES-Fresser, Caecitas, Toxic",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>Typische Abnormitäten dieser Kreatur; Kurzbeschreibung siehe Compendium Abnormitäten. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 5000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   }
+  ]
+ },
+ {
+  "_id": "Gjng2mpOZXDCfvfW",
+  "_key": "!actors!Gjng2mpOZXDCfvfW",
+  "name": "Aashornbär",
+  "type": "npc",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "attributes": {
+    "ge": {
+     "value": 2,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "st": {
+     "value": 8,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "ko": {
+     "value": 8,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "be": {
+     "value": 2,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "wa": {
+     "value": 3,
+     "bonus": 0,
+     "leiden": 0
+    }
+   },
+   "skills": {
+    "ausweichen": {
+     "value": 2
+    },
+    "klettern": {
+     "value": 3
+    },
+    "nahkampf": {
+     "value": 4
+    },
+    "rennen": {
+     "value": 5
+    }
+   },
+   "special": {
+    "adrenalin": {
+     "value": 5,
+     "used": 0
+    },
+    "schmerztoleranz": {
+     "value": 5
+    }
+   },
+   "tpBase": 50,
+   "infection": {
+    "dice": 2,
+    "points": 0,
+    "malus": 0
+   },
+   "details": {
+    "species": "Kreatur",
+    "concept": "Wildlife"
+   },
+   "instinct": 3,
+   "stubbornness": 6,
+   "biography": "<p>Kreatur aus dem Wildlife-Kapitel. Schmerztoleranz vereinfacht: Hat eine Zone die Hälfte ihrer TP verloren, gilt −1 Würfel auf alle Aktionen; bei Konstitution 0 oder weniger ist die Kreatur kampfunfähig. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p><p>Klettern erhält einen Bonus von +2 Würfeln.</p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 2000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "prototypeToken": {
+   "name": "Aashornbär",
+   "disposition": -1,
+   "actorLink": false
+  },
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "0.2.0",
+   "createdTime": 1795344674751,
+   "modifiedTime": 1795344674751,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  },
+  "_embedded": [
+   {
+    "_id": "oJeUThJXSxabh1gf",
+    "_key": "!actors.items!Gjng2mpOZXDCfvfW.oJeUThJXSxabh1gf",
+    "name": "Krallen (körpereigen)",
+    "type": "weapon",
+    "img": "icons/svg/combat.svg",
+    "system": {
+     "category": "unbewaffnet",
+     "skill": "nahkampf",
+     "damageType": "klinge",
+     "equipped": true,
+     "damage": {
+      "strength": true,
+      "points": 20
+     },
+     "range": "none",
+     "description": "<p>Körpereigener Angriff, Schaden ST+20 Punkte. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 1000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "VTOyhejMek0LbM9f",
+    "_key": "!actors.items!Gjng2mpOZXDCfvfW.VTOyhejMek0LbM9f",
+    "name": "Scharfe Zähne (körpereigen)",
+    "type": "weapon",
+    "img": "icons/svg/combat.svg",
+    "system": {
+     "category": "unbewaffnet",
+     "skill": "nahkampf",
+     "damageType": "stich",
+     "equipped": true,
+     "damage": {
+      "strength": true,
+      "points": 30
+     },
+     "range": "none",
+     "description": "<p>Körpereigener Angriff, Schaden ST+30 Punkte. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 2000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "dekt5Dra8T5ndC4g",
+    "_key": "!actors.items!Gjng2mpOZXDCfvfW.dekt5Dra8T5ndC4g",
+    "name": "Nachtsicht",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>Sieht auch bei sehr wenig Licht. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 3000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "NGBLbidnpS1bGmzN",
+    "_key": "!actors.items!Gjng2mpOZXDCfvfW.NGBLbidnpS1bGmzN",
+    "name": "Riechen",
+    "type": "skill",
+    "img": "icons/svg/book.svg",
+    "system": {
+     "category": "besondere",
+     "attribute": "wa",
+     "value": 4,
+     "description": "<p>Besondere Kreaturenfertigkeit. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 4000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   }
+  ]
+ },
+ {
+  "_id": "mwNjec1TKYu2LJZX",
+  "_key": "!actors!mwNjec1TKYu2LJZX",
+  "name": "Beutelsegler",
+  "type": "npc",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "attributes": {
+    "ge": {
+     "value": 4,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "st": {
+     "value": 2,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "ko": {
+     "value": 2,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "be": {
+     "value": 5,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "wa": {
+     "value": 5,
+     "bonus": 0,
+     "leiden": 0
+    }
+   },
+   "skills": {
+    "ausdauer": {
+     "value": 3
+    },
+    "ausweichen": {
+     "value": 1
+    },
+    "heimlichkeit": {
+     "value": 2
+    },
+    "klettern": {
+     "value": 3
+    },
+    "nahkampf": {
+     "value": 2
+    },
+    "reaktion": {
+     "value": 3
+    },
+    "rennen": {
+     "value": 1
+    },
+    "springen": {
+     "value": 3
+    }
+   },
+   "special": {
+    "adrenalin": {
+     "value": 0,
+     "used": 0
+    },
+    "schmerztoleranz": {
+     "value": 5
+    }
+   },
+   "tpBase": 10,
+   "infection": {
+    "dice": 2,
+    "points": 0,
+    "malus": 0
+   },
+   "details": {
+    "species": "Kreatur",
+    "concept": "Wildlife"
+   },
+   "instinct": 5,
+   "stubbornness": 5,
+   "biography": "<p>Kreatur aus dem Wildlife-Kapitel. Schmerztoleranz vereinfacht: Hat eine Zone die Hälfte ihrer TP verloren, gilt −1 Würfel auf alle Aktionen; bei Konstitution 0 oder weniger ist die Kreatur kampfunfähig. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p><p>Klettern erhält +2 Würfel.</p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 3000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "prototypeToken": {
+   "name": "Beutelsegler",
+   "disposition": -1,
+   "actorLink": false
+  },
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "0.2.0",
+   "createdTime": 1795344674751,
+   "modifiedTime": 1795344674751,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  },
+  "_embedded": [
+   {
+    "_id": "ibjRG8wqN4lupcSu",
+    "_key": "!actors.items!mwNjec1TKYu2LJZX.ibjRG8wqN4lupcSu",
+    "name": "Scharfe Zähne (körpereigen)",
+    "type": "weapon",
+    "img": "icons/svg/combat.svg",
+    "system": {
+     "category": "unbewaffnet",
+     "skill": "nahkampf",
+     "damageType": "stich",
+     "equipped": true,
+     "damage": {
+      "strength": true,
+      "points": 25
+     },
+     "range": "none",
+     "description": "<p>Körpereigener Angriff, Schaden ST+25 Punkte. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 1000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "19ACjEFpzpGjNIxN",
+    "_key": "!actors.items!mwNjec1TKYu2LJZX.19ACjEFpzpGjNIxN",
+    "name": "Einziehbare Krallen (körpereigen)",
+    "type": "weapon",
+    "img": "icons/svg/combat.svg",
+    "system": {
+     "category": "unbewaffnet",
+     "skill": "nahkampf",
+     "damageType": "klinge",
+     "equipped": true,
+     "damage": {
+      "strength": true,
+      "points": 15
+     },
+     "range": "none",
+     "description": "<p>Körpereigener Angriff, Schaden ST+15 Punkte. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 2000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "xdJmjiDVwhj0oVOe",
+    "_key": "!actors.items!mwNjec1TKYu2LJZX.xdJmjiDVwhj0oVOe",
+    "name": "Nachtsicht",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>Sieht auch bei sehr wenig Licht. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 3000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "aW7OLuNNjrQ2El2a",
+    "_key": "!actors.items!mwNjec1TKYu2LJZX.aW7OLuNNjrQ2El2a",
+    "name": "Vierbeiner",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>Rennen zählt doppelt für die Geschwindigkeit. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 4000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "Eum7PPo0O6yVv3uP",
+    "_key": "!actors.items!mwNjec1TKYu2LJZX.Eum7PPo0O6yVv3uP",
+    "name": "Gleiten",
+    "type": "skill",
+    "img": "icons/svg/book.svg",
+    "system": {
+     "category": "besondere",
+     "attribute": "be",
+     "value": 3,
+     "description": "<p>Besondere Kreaturenfertigkeit. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 5000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   }
+  ]
+ },
+ {
+  "_id": "0ZR2gc0ARBEKafkv",
+  "_key": "!actors!0ZR2gc0ARBEKafkv",
+  "name": "Crawler",
+  "type": "npc",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "attributes": {
+    "ge": {
+     "value": 4,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "st": {
+     "value": 6,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "ko": {
+     "value": 6,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "be": {
+     "value": 4,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "wa": {
+     "value": 4,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "ch": {
+     "value": 3,
+     "bonus": 0,
+     "leiden": 0
+    }
+   },
+   "skills": {
+    "ausweichen": {
+     "value": 6
+    },
+    "einschuechtern": {
+     "value": 4
+    },
+    "nahkampf": {
+     "value": 6
+    },
+    "rennen": {
+     "value": 6
+    },
+    "ueberreden": {
+     "value": 3
+    }
+   },
+   "special": {
+    "adrenalin": {
+     "value": 5,
+     "used": 0
+    },
+    "schmerztoleranz": {
+     "value": 5
+    }
+   },
+   "tpBase": 50,
+   "infection": {
+    "dice": 1,
+    "points": 0,
+    "malus": 0
+   },
+   "details": {
+    "species": "Kreatur",
+    "concept": "Wildlife"
+   },
+   "instinct": 8,
+   "stubbornness": 10,
+   "biography": "<p>Kreatur aus dem Wildlife-Kapitel. Schmerztoleranz vereinfacht: Hat eine Zone die Hälfte ihrer TP verloren, gilt −1 Würfel auf alle Aktionen; bei Konstitution 0 oder weniger ist die Kreatur kampfunfähig. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p><p>Ausweichen, Nahkampf und Rennen erhalten +10 Punkte, BE gilt mit +10 Punkten; Rennen zählt doppelt.</p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 4000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "prototypeToken": {
+   "name": "Crawler",
+   "disposition": -1,
+   "actorLink": false
+  },
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "0.2.0",
+   "createdTime": 1795344674751,
+   "modifiedTime": 1795344674751,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  },
+  "_embedded": [
+   {
+    "_id": "HFPFpLnvTQcACPJC",
+    "_key": "!actors.items!0ZR2gc0ARBEKafkv.HFPFpLnvTQcACPJC",
+    "name": "Krallen (körpereigen)",
+    "type": "weapon",
+    "img": "icons/svg/combat.svg",
+    "system": {
+     "category": "unbewaffnet",
+     "skill": "nahkampf",
+     "damageType": "klinge",
+     "equipped": true,
+     "damage": {
+      "strength": true,
+      "points": 20
+     },
+     "range": "none",
+     "description": "<p>Körpereigener Angriff, Schaden ST+20 Punkte. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 1000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "ZyUxKtRySnoeY1fM",
+    "_key": "!actors.items!0ZR2gc0ARBEKafkv.ZyUxKtRySnoeY1fM",
+    "name": "Zähne (körpereigen)",
+    "type": "weapon",
+    "img": "icons/svg/combat.svg",
+    "system": {
+     "category": "unbewaffnet",
+     "skill": "nahkampf",
+     "damageType": "stich",
+     "equipped": true,
+     "damage": {
+      "strength": true,
+      "points": 30
+     },
+     "range": "none",
+     "description": "<p>Körpereigener Angriff, Schaden ST+30 Punkte. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 2000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "7KGRnqM0BD7ROgnA",
+    "_key": "!actors.items!0ZR2gc0ARBEKafkv.7KGRnqM0BD7ROgnA",
+    "name": "Nachtsicht",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>Sieht auch bei sehr wenig Licht. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 3000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "w57x2lGWcPE1fPfz",
+    "_key": "!actors.items!0ZR2gc0ARBEKafkv.w57x2lGWcPE1fPfz",
+    "name": "UV-empfindlich",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>Reagiert auf UV-Licht wie HMO. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 4000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "ddxjKIa57iRpW36j",
+    "_key": "!actors.items!0ZR2gc0ARBEKafkv.ddxjKIa57iRpW36j",
+    "name": "PSI-Resistenz",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>Widersteht PSI-Einflüssen. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 5000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "qP37yMLKjMAgiFMk",
+    "_key": "!actors.items!0ZR2gc0ARBEKafkv.qP37yMLKjMAgiFMk",
+    "name": "PSI Kat. B: Schleier der Hast, Unaufhaltsamer Schatten",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>Beherrscht diese beiden Kräfte der Kategorie B. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 6000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "nD5ZJS7JuqbwtXPg",
+    "_key": "!actors.items!0ZR2gc0ARBEKafkv.nD5ZJS7JuqbwtXPg",
+    "name": "Wunden: Flugnekrose",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>Wunden dieser Kreatur übertragen Flugnekrose (Infektionsresistenz gegen 6). <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 7000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "P91zUz9t7BbsxpnV",
+    "_key": "!actors.items!0ZR2gc0ARBEKafkv.P91zUz9t7BbsxpnV",
+    "name": "Fiktives Charisma",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>CH 3 gilt nur für Imitation und Überreden. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 8000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   }
+  ]
+ },
+ {
+  "_id": "e90jGzR4TPDqfIel",
+  "_key": "!actors!e90jGzR4TPDqfIel",
+  "name": "Gargoyle (Schlüpfling)",
+  "type": "npc",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "attributes": {
+    "ge": {
+     "value": 2,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "st": {
+     "value": 4,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "ko": {
+     "value": 4,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "be": {
+     "value": 3,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "wa": {
+     "value": 3,
+     "bonus": 0,
+     "leiden": 0
+    }
+   },
+   "skills": {
+    "ausweichen": {
+     "value": 3
+    },
+    "heimlichkeit": {
+     "value": 2
+    },
+    "klettern": {
+     "value": 1
+    },
+    "nahkampf": {
+     "value": 1
+    },
+    "springen": {
+     "value": 1
+    }
+   },
+   "special": {
+    "adrenalin": {
+     "value": 0,
+     "used": 0
+    },
+    "schmerztoleranz": {
+     "value": 5
+    }
+   },
+   "tpBase": 30,
+   "infection": {
+    "dice": 2,
+    "points": 0,
+    "malus": 0
+   },
+   "details": {
+    "species": "Kreatur",
+    "concept": "Wildlife"
+   },
+   "instinct": 3,
+   "stubbornness": 5,
+   "biography": "<p>Kreatur aus dem Wildlife-Kapitel. Schmerztoleranz vereinfacht: Hat eine Zone die Hälfte ihrer TP verloren, gilt −1 Würfel auf alle Aktionen; bei Konstitution 0 oder weniger ist die Kreatur kampfunfähig. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 5000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "prototypeToken": {
+   "name": "Gargoyle (Schlüpfling)",
+   "disposition": -1,
+   "actorLink": false
+  },
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "0.2.0",
+   "createdTime": 1795344674751,
+   "modifiedTime": 1795344674751,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  },
+  "_embedded": [
+   {
+    "_id": "xrroDUDwk2xymoav",
+    "_key": "!actors.items!e90jGzR4TPDqfIel.xrroDUDwk2xymoav",
+    "name": "Krallen/Zähne (körpereigen)",
+    "type": "weapon",
+    "img": "icons/svg/combat.svg",
+    "system": {
+     "category": "unbewaffnet",
+     "skill": "nahkampf",
+     "damageType": "klinge",
+     "equipped": true,
+     "damage": {
+      "strength": true,
+      "points": 10
+     },
+     "range": "none",
+     "description": "<p>Körpereigener Angriff, Schaden ST+10 Punkte. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 1000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "Jn2k3Nm31mhTdSxa",
+    "_key": "!actors.items!e90jGzR4TPDqfIel.Jn2k3Nm31mhTdSxa",
+    "name": "Giftresistenz 3",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>Dämpft Gifte um 3 Stufen. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 2000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "yp16E4yRcMJTjHNI",
+    "_key": "!actors.items!e90jGzR4TPDqfIel.yp16E4yRcMJTjHNI",
+    "name": "Nachtsicht",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>Sieht auch bei sehr wenig Licht. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 3000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   }
+  ]
+ },
+ {
+  "_id": "e18lG7WwZdiPfxqO",
+  "_key": "!actors!e18lG7WwZdiPfxqO",
+  "name": "Gargoyle (Jüngling)",
+  "type": "npc",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "attributes": {
+    "ge": {
+     "value": 2,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "st": {
+     "value": 6,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "ko": {
+     "value": 6,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "be": {
+     "value": 4,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "wa": {
+     "value": 4,
+     "bonus": 0,
+     "leiden": 0
+    }
+   },
+   "skills": {
+    "ausweichen": {
+     "value": 4
+    },
+    "heimlichkeit": {
+     "value": 3
+    },
+    "klettern": {
+     "value": 3
+    },
+    "reaktion": {
+     "value": 1
+    },
+    "nahkampf": {
+     "value": 3
+    },
+    "springen": {
+     "value": 3
+    }
+   },
+   "special": {
+    "adrenalin": {
+     "value": 0,
+     "used": 0
+    },
+    "schmerztoleranz": {
+     "value": 5
+    }
+   },
+   "tpBase": 50,
+   "infection": {
+    "dice": 2,
+    "points": 0,
+    "malus": 0
+   },
+   "details": {
+    "species": "Kreatur",
+    "concept": "Wildlife"
+   },
+   "instinct": 5,
+   "stubbornness": 9,
+   "biography": "<p>Kreatur aus dem Wildlife-Kapitel. Schmerztoleranz vereinfacht: Hat eine Zone die Hälfte ihrer TP verloren, gilt −1 Würfel auf alle Aktionen; bei Konstitution 0 oder weniger ist die Kreatur kampfunfähig. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 6000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "prototypeToken": {
+   "name": "Gargoyle (Jüngling)",
+   "disposition": -1,
+   "actorLink": false
+  },
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "0.2.0",
+   "createdTime": 1795344674751,
+   "modifiedTime": 1795344674751,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  },
+  "_embedded": [
+   {
+    "_id": "OGFluv1TiqpYB8IV",
+    "_key": "!actors.items!e18lG7WwZdiPfxqO.OGFluv1TiqpYB8IV",
+    "name": "Panzerung",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+     "rw": 20,
+     "mk": "A",
+     "zones": [
+      12,
+      11,
+      10,
+      9,
+      8,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2
+     ],
+     "equipped": true,
+     "komfort": 0,
+     "description": "<p>Körpereigene Panzerung der Kreatur. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 1000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "UrT6o7qjX4IHasBw",
+    "_key": "!actors.items!e18lG7WwZdiPfxqO.UrT6o7qjX4IHasBw",
+    "name": "Krallen/Zähne (körpereigen)",
+    "type": "weapon",
+    "img": "icons/svg/combat.svg",
+    "system": {
+     "category": "unbewaffnet",
+     "skill": "nahkampf",
+     "damageType": "klinge",
+     "equipped": true,
+     "damage": {
+      "strength": true,
+      "points": 20
+     },
+     "range": "none",
+     "description": "<p>Körpereigener Angriff, Schaden ST+20 Punkte. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 2000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "KgVKNP97NePmff4C",
+    "_key": "!actors.items!e18lG7WwZdiPfxqO.KgVKNP97NePmff4C",
+    "name": "Giftresistenz 3",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>Dämpft Gifte um 3 Stufen. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 3000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "yBj1d1nGXDK7B8Yi",
+    "_key": "!actors.items!e18lG7WwZdiPfxqO.yBj1d1nGXDK7B8Yi",
+    "name": "Gleiten",
+    "type": "skill",
+    "img": "icons/svg/book.svg",
+    "system": {
+     "category": "besondere",
+     "attribute": "be",
+     "value": 2,
+     "description": "<p>Besondere Kreaturenfertigkeit. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 4000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   }
+  ]
+ },
+ {
+  "_id": "Mbfn2zQpnUNuWQ8E",
+  "_key": "!actors!Mbfn2zQpnUNuWQ8E",
+  "name": "Gargoyle",
+  "type": "npc",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "attributes": {
+    "ge": {
+     "value": 2,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "st": {
+     "value": 10,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "ko": {
+     "value": 10,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "be": {
+     "value": 5,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "wa": {
+     "value": 5,
+     "bonus": 0,
+     "leiden": 0
+    }
+   },
+   "skills": {
+    "ausweichen": {
+     "value": 4
+    },
+    "einschuechtern": {
+     "value": 1
+    },
+    "heimlichkeit": {
+     "value": 3
+    },
+    "klettern": {
+     "value": 4
+    },
+    "reaktion": {
+     "value": 2
+    },
+    "nahkampf": {
+     "value": 5
+    },
+    "springen": {
+     "value": 3
+    }
+   },
+   "special": {
+    "adrenalin": {
+     "value": 0,
+     "used": 0
+    },
+    "schmerztoleranz": {
+     "value": 5
+    }
+   },
+   "tpBase": 70,
+   "infection": {
+    "dice": 2,
+    "points": 0,
+    "malus": 0
+   },
+   "details": {
+    "species": "Kreatur",
+    "concept": "Wildlife"
+   },
+   "instinct": 7,
+   "stubbornness": 13,
+   "biography": "<p>Kreatur aus dem Wildlife-Kapitel. Schmerztoleranz vereinfacht: Hat eine Zone die Hälfte ihrer TP verloren, gilt −1 Würfel auf alle Aktionen; bei Konstitution 0 oder weniger ist die Kreatur kampfunfähig. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p><p>Einschüchtern +5 und Heimlichkeit +40 Punkte als Zusatzwerte.</p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 7000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "prototypeToken": {
+   "name": "Gargoyle",
+   "disposition": -1,
+   "actorLink": false
+  },
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "0.2.0",
+   "createdTime": 1795344674751,
+   "modifiedTime": 1795344674751,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  },
+  "_embedded": [
+   {
+    "_id": "KWX2MXPZWVF8gwlI",
+    "_key": "!actors.items!Mbfn2zQpnUNuWQ8E.KWX2MXPZWVF8gwlI",
+    "name": "Panzerung",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+     "rw": 40,
+     "mk": "B",
+     "zones": [
+      12,
+      11,
+      10,
+      9,
+      8,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2
+     ],
+     "equipped": true,
+     "komfort": 0,
+     "description": "<p>Körpereigene Panzerung der Kreatur. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 1000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "2OMgIFt6LSISQ3GZ",
+    "_key": "!actors.items!Mbfn2zQpnUNuWQ8E.2OMgIFt6LSISQ3GZ",
+    "name": "Krallen (körpereigen)",
+    "type": "weapon",
+    "img": "icons/svg/combat.svg",
+    "system": {
+     "category": "unbewaffnet",
+     "skill": "nahkampf",
+     "damageType": "klinge",
+     "equipped": true,
+     "damage": {
+      "strength": true,
+      "points": 20
+     },
+     "range": "none",
+     "description": "<p>Körpereigener Angriff, Schaden ST+20 Punkte. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 2000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "N57egWU2OMaL7JGO",
+    "_key": "!actors.items!Mbfn2zQpnUNuWQ8E.N57egWU2OMaL7JGO",
+    "name": "Zähne (körpereigen)",
+    "type": "weapon",
+    "img": "icons/svg/combat.svg",
+    "system": {
+     "category": "unbewaffnet",
+     "skill": "nahkampf",
+     "damageType": "stich",
+     "equipped": true,
+     "damage": {
+      "strength": true,
+      "points": 40
+     },
+     "range": "none",
+     "description": "<p>Körpereigener Angriff, Schaden ST+40 Punkte. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 3000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "thz0R4vmjNqM77uF",
+    "_key": "!actors.items!Mbfn2zQpnUNuWQ8E.thz0R4vmjNqM77uF",
+    "name": "Giftresistenz 3",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>Dämpft Gifte um 3 Stufen. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 4000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "46r9I0mVhwqQd40T",
+    "_key": "!actors.items!Mbfn2zQpnUNuWQ8E.46r9I0mVhwqQd40T",
+    "name": "Farbliche und strukturelle Tarnung",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>Passt Farbe und Oberfläche der Umgebung an. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 5000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "o4qqiaVBTBYzx8oc",
+    "_key": "!actors.items!Mbfn2zQpnUNuWQ8E.o4qqiaVBTBYzx8oc",
+    "name": "Nachtsicht",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>Sieht auch bei sehr wenig Licht. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 6000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "Dv56EY3hDvFPQdMB",
+    "_key": "!actors.items!Mbfn2zQpnUNuWQ8E.Dv56EY3hDvFPQdMB",
+    "name": "Zermalmende Kiefer",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>Verstärkt den Biss (bereits im Zahnschaden enthalten). <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 7000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "wBRRyhQfJdBsnsvZ",
+    "_key": "!actors.items!Mbfn2zQpnUNuWQ8E.wBRRyhQfJdBsnsvZ",
+    "name": "Rüttelflug (Style-Skill)",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>Kann in der Luft schweben. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 8000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "um9cQARFDv2BG0r6",
+    "_key": "!actors.items!Mbfn2zQpnUNuWQ8E.um9cQARFDv2BG0r6",
+    "name": "Fliegen",
+    "type": "skill",
+    "img": "icons/svg/book.svg",
+    "system": {
+     "category": "besondere",
+     "attribute": "be",
+     "value": 5,
+     "description": "<p>Besondere Kreaturenfertigkeit. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 9000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   }
+  ]
+ },
+ {
+  "_id": "WDwD7qv2ehxNMvbk",
+  "_key": "!actors!WDwD7qv2ehxNMvbk",
+  "name": "Gremlin",
+  "type": "npc",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "attributes": {
+    "ge": {
+     "value": 2,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "st": {
+     "value": 3,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "ko": {
+     "value": 3,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "be": {
+     "value": 3,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "wa": {
+     "value": 3,
+     "bonus": 0,
+     "leiden": 0
+    }
+   },
+   "skills": {
+    "ausweichen": {
+     "value": 2
+    },
+    "heimlichkeit": {
+     "value": 1
+    },
+    "nahkampf": {
+     "value": 3
+    }
+   },
+   "special": {
+    "adrenalin": {
+     "value": 3,
+     "used": 0
+    },
+    "schmerztoleranz": {
+     "value": 5
+    }
+   },
+   "tpBase": 30,
+   "infection": {
+    "dice": 2,
+    "points": 0,
+    "malus": 0
+   },
+   "details": {
+    "species": "Kreatur",
+    "concept": "Wildlife"
+   },
+   "instinct": 5,
+   "stubbornness": 8,
+   "biography": "<p>Kreatur aus dem Wildlife-Kapitel. Schmerztoleranz vereinfacht: Hat eine Zone die Hälfte ihrer TP verloren, gilt −1 Würfel auf alle Aktionen; bei Konstitution 0 oder weniger ist die Kreatur kampfunfähig. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 8000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "prototypeToken": {
+   "name": "Gremlin",
+   "disposition": -1,
+   "actorLink": false
+  },
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "0.2.0",
+   "createdTime": 1795344674751,
+   "modifiedTime": 1795344674751,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  },
+  "_embedded": [
+   {
+    "_id": "qA8huZbZqjxTYHOX",
+    "_key": "!actors.items!WDwD7qv2ehxNMvbk.qA8huZbZqjxTYHOX",
+    "name": "Krallen (körpereigen)",
+    "type": "weapon",
+    "img": "icons/svg/combat.svg",
+    "system": {
+     "category": "unbewaffnet",
+     "skill": "nahkampf",
+     "damageType": "klinge",
+     "equipped": true,
+     "damage": {
+      "strength": true,
+      "points": 20
+     },
+     "range": "none",
+     "description": "<p>Körpereigener Angriff, Schaden ST+20 Punkte. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 1000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "HClWL8deUhajoJrS",
+    "_key": "!actors.items!WDwD7qv2ehxNMvbk.HClWL8deUhajoJrS",
+    "name": "Nachtsicht",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>Sieht auch bei sehr wenig Licht. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 2000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "Ecc8KYBwEOLBSNRK",
+    "_key": "!actors.items!WDwD7qv2ehxNMvbk.Ecc8KYBwEOLBSNRK",
+    "name": "Atemratio",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>Besonders effiziente Atmung. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 3000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "k6uO31XKpv9FGTxJ",
+    "_key": "!actors.items!WDwD7qv2ehxNMvbk.k6uO31XKpv9FGTxJ",
+    "name": "Herdeninstinkt",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>In der Gruppe steigen Instinkt auf 10 und Sturheit auf 15. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 4000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "1Lvvy6cx6t3F8FWL",
+    "_key": "!actors.items!WDwD7qv2ehxNMvbk.1Lvvy6cx6t3F8FWL",
+    "name": "Kleine Zielfläche",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>Angriffe gelten als Körperhälfte (−1 Würfel). <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 5000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   }
+  ]
+ },
+ {
+  "_id": "0qsZF8MTymSh07df",
+  "_key": "!actors!0qsZF8MTymSh07df",
+  "name": "Grollhorn",
+  "type": "npc",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "attributes": {
+    "ge": {
+     "value": 2,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "st": {
+     "value": 10,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "ko": {
+     "value": 10,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "be": {
+     "value": 2,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "wa": {
+     "value": 4,
+     "bonus": 0,
+     "leiden": 0
+    }
+   },
+   "skills": {
+    "ausdauer": {
+     "value": 5
+    },
+    "einschuechtern": {
+     "value": 2
+    },
+    "nahkampf": {
+     "value": 4
+    },
+    "rennen": {
+     "value": 6
+    },
+    "stemmen": {
+     "value": 10
+    }
+   },
+   "special": {
+    "adrenalin": {
+     "value": 0,
+     "used": 0
+    },
+    "schmerztoleranz": {
+     "value": 5
+    }
+   },
+   "tpBase": 50,
+   "infection": {
+    "dice": 2,
+    "points": 0,
+    "malus": 0
+   },
+   "details": {
+    "species": "Kreatur",
+    "concept": "Wildlife"
+   },
+   "instinct": 4,
+   "stubbornness": 4,
+   "biography": "<p>Kreatur aus dem Wildlife-Kapitel. Schmerztoleranz vereinfacht: Hat eine Zone die Hälfte ihrer TP verloren, gilt −1 Würfel auf alle Aktionen; bei Konstitution 0 oder weniger ist die Kreatur kampfunfähig. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p><p>Einschüchtern +5 Punkte als Zusatzwert.</p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 9000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "prototypeToken": {
+   "name": "Grollhorn",
+   "disposition": -1,
+   "actorLink": false
+  },
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "0.2.0",
+   "createdTime": 1795344674751,
+   "modifiedTime": 1795344674751,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  },
+  "_embedded": [
+   {
+    "_id": "hMmxVd7tQL9eEuwd",
+    "_key": "!actors.items!0qsZF8MTymSh07df.hMmxVd7tQL9eEuwd",
+    "name": "Körperpanzer",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+     "rw": 30,
+     "mk": "A",
+     "zones": [
+      11,
+      10,
+      9,
+      8,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2
+     ],
+     "equipped": true,
+     "komfort": 0,
+     "description": "<p>Körpereigene Panzerung der Kreatur. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 1000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "Rot2ByDe8Ezxuic0",
+    "_key": "!actors.items!0qsZF8MTymSh07df.Rot2ByDe8Ezxuic0",
+    "name": "Körperpanzer (Kopf)",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+     "rw": 30,
+     "mk": "B",
+     "zones": [
+      12
+     ],
+     "equipped": true,
+     "komfort": 0,
+     "description": "<p>Körpereigene Panzerung der Kreatur. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 2000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "tDRwWQXvFeeEUckm",
+    "_key": "!actors.items!0qsZF8MTymSh07df.tDRwWQXvFeeEUckm",
+    "name": "Hörner (körpereigen)",
+    "type": "weapon",
+    "img": "icons/svg/combat.svg",
+    "system": {
+     "category": "unbewaffnet",
+     "skill": "nahkampf",
+     "damageType": "stich",
+     "equipped": true,
+     "damage": {
+      "strength": true,
+      "points": 20
+     },
+     "range": "none",
+     "description": "<p>Körpereigener Angriff, Schaden ST+20 Punkte. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 3000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "tT9BH1wvxZuiN8Fd",
+    "_key": "!actors.items!0qsZF8MTymSh07df.tT9BH1wvxZuiN8Fd",
+    "name": "Roar",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>Einschüchterndes Gebrüll. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 4000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "AEQShf9elryiJo9U",
+    "_key": "!actors.items!0qsZF8MTymSh07df.AEQShf9elryiJo9U",
+    "name": "Herdeninstinkt",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>In der Gruppe steigen Instinkt und Sturheit auf je 9. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 5000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "6yEQlNN4TYAQ1vYn",
+    "_key": "!actors.items!0qsZF8MTymSh07df.6yEQlNN4TYAQ1vYn",
+    "name": "Vierbeiner",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>Rennen zählt doppelt für die Geschwindigkeit. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 6000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "B4HqF7qQFtPR5ANy",
+    "_key": "!actors.items!0qsZF8MTymSh07df.B4HqF7qQFtPR5ANy",
+    "name": "Riechen",
+    "type": "skill",
+    "img": "icons/svg/book.svg",
+    "system": {
+     "category": "besondere",
+     "attribute": "wa",
+     "value": 4,
+     "description": "<p>Besondere Kreaturenfertigkeit. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 7000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   }
+  ]
+ },
+ {
+  "_id": "AKKDiCuWoFxCmfeZ",
+  "_key": "!actors!AKKDiCuWoFxCmfeZ",
+  "name": "Knochenspinne",
+  "type": "npc",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "attributes": {
+    "ge": {
+     "value": 3,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "st": {
+     "value": 5,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "ko": {
+     "value": 3,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "be": {
+     "value": 5,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "wa": {
+     "value": 5,
+     "bonus": 0,
+     "leiden": 0
+    }
+   },
+   "skills": {
+    "heimlichkeit": {
+     "value": 5
+    },
+    "klettern": {
+     "value": 10
+    },
+    "nahkampf": {
+     "value": 3
+    },
+    "rennen": {
+     "value": 9
+    }
+   },
+   "special": {
+    "adrenalin": {
+     "value": 0,
+     "used": 0
+    },
+    "schmerztoleranz": {
+     "value": 5
+    }
+   },
+   "tpBase": 20,
+   "infection": {
+    "dice": 2,
+    "points": 0,
+    "malus": 0
+   },
+   "details": {
+    "species": "Kreatur",
+    "concept": "Wildlife"
+   },
+   "instinct": 7,
+   "stubbornness": 10,
+   "biography": "<p>Kreatur aus dem Wildlife-Kapitel. Schmerztoleranz vereinfacht: Hat eine Zone die Hälfte ihrer TP verloren, gilt −1 Würfel auf alle Aktionen; bei Konstitution 0 oder weniger ist die Kreatur kampfunfähig. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p><p>Die Stachelhaare wirken über KO+15; Rennen zählt doppelt.</p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 10000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "prototypeToken": {
+   "name": "Knochenspinne",
+   "disposition": -1,
+   "actorLink": false
+  },
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "0.2.0",
+   "createdTime": 1795344674751,
+   "modifiedTime": 1795344674751,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  },
+  "_embedded": [
+   {
+    "_id": "OTYa2mw556rf6OKH",
+    "_key": "!actors.items!AKKDiCuWoFxCmfeZ.OTYa2mw556rf6OKH",
+    "name": "Biss (körpereigen)",
+    "type": "weapon",
+    "img": "icons/svg/combat.svg",
+    "system": {
+     "category": "unbewaffnet",
+     "skill": "nahkampf",
+     "damageType": "stich",
+     "equipped": true,
+     "damage": {
+      "strength": true,
+      "points": 40
+     },
+     "range": "none",
+     "description": "<p>Körpereigener Angriff, Schaden ST+40 Punkte. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 1000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "B4dzXGXxkNXVRW4t",
+    "_key": "!actors.items!AKKDiCuWoFxCmfeZ.B4dzXGXxkNXVRW4t",
+    "name": "Stachelhaare",
+    "type": "weapon",
+    "img": "icons/svg/combat.svg",
+    "system": {
+     "category": "unbewaffnet",
+     "skill": "nahkampf",
+     "damageType": "stich",
+     "equipped": true,
+     "damage": {
+      "strength": true,
+      "points": 15
+     },
+     "range": "none",
+     "description": "<p>Körpereigener Angriff, Schaden ST+15 Punkte. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 2000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "qrOjGZB4V7kciUEn",
+    "_key": "!actors.items!AKKDiCuWoFxCmfeZ.qrOjGZB4V7kciUEn",
+    "name": "Erschütterungssinn",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>Nimmt Vibrationen in der Umgebung wahr. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 3000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "H25i3DKIu274HeYQ",
+    "_key": "!actors.items!AKKDiCuWoFxCmfeZ.H25i3DKIu274HeYQ",
+    "name": "Giftresistenz 3",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>Dämpft Gifte um 3 Stufen. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 4000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "t2Upa942pSwDSfIe",
+    "_key": "!actors.items!AKKDiCuWoFxCmfeZ.t2Upa942pSwDSfIe",
+    "name": "Spinnenseide",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>Klebriges, reißfestes Netz zum Fangen von Beute. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 5000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "vH2py2tEWEUdLt7l",
+    "_key": "!actors.items!AKKDiCuWoFxCmfeZ.vH2py2tEWEUdLt7l",
+    "name": "Gift",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>−5 Würfel auf alle Attribute für 1 Minute (−1 je Giftresistenzstufe); Nemo-Virus. Fallen Attribute unter 0, erleidet jede Zone je Würfel 1 Schaden ohne Widerstand. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 6000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "ZKu83ShlKot4HfWj",
+    "_key": "!actors.items!AKKDiCuWoFxCmfeZ.ZKu83ShlKot4HfWj",
+    "name": "Kleine Zielfläche",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>Angriffe gegen die Kreatur erhalten −1 Würfel. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 7000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "StuMMZw3zD6aEi0u",
+    "_key": "!actors.items!AKKDiCuWoFxCmfeZ.StuMMZw3zD6aEi0u",
+    "name": "Spinnenseide (Werfen)",
+    "type": "skill",
+    "img": "icons/svg/book.svg",
+    "system": {
+     "category": "besondere",
+     "attribute": "ge",
+     "value": 3,
+     "description": "<p>Besondere Kreaturenfertigkeit. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 8000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "nlFq74LsRHogkQGW",
+    "_key": "!actors.items!AKKDiCuWoFxCmfeZ.nlFq74LsRHogkQGW",
+    "name": "Spinnenseide (Stabilität)",
+    "type": "skill",
+    "img": "icons/svg/book.svg",
+    "system": {
+     "category": "besondere",
+     "attribute": "st",
+     "value": 2,
+     "description": "<p>Besondere Kreaturenfertigkeit. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 9000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   }
+  ]
+ },
+ {
+  "_id": "cFCfQ4thz3AJ9uDW",
+  "_key": "!actors!cFCfQ4thz3AJ9uDW",
+  "name": "Lochdingo",
+  "type": "npc",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "attributes": {
+    "ge": {
+     "value": 2,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "st": {
+     "value": 3,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "ko": {
+     "value": 3,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "be": {
+     "value": 5,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "wa": {
+     "value": 5,
+     "bonus": 0,
+     "leiden": 0
+    }
+   },
+   "skills": {
+    "ausweichen": {
+     "value": 3
+    },
+    "heimlichkeit": {
+     "value": 3
+    },
+    "klettern": {
+     "value": 3
+    },
+    "nahkampf": {
+     "value": 3
+    },
+    "rennen": {
+     "value": 5
+    }
+   },
+   "special": {
+    "adrenalin": {
+     "value": 0,
+     "used": 0
+    },
+    "schmerztoleranz": {
+     "value": 5
+    }
+   },
+   "tpBase": 20,
+   "infection": {
+    "dice": 2,
+    "points": 0,
+    "malus": 0
+   },
+   "details": {
+    "species": "Kreatur",
+    "concept": "Wildlife"
+   },
+   "instinct": 6,
+   "stubbornness": 6,
+   "biography": "<p>Kreatur aus dem Wildlife-Kapitel. Schmerztoleranz vereinfacht: Hat eine Zone die Hälfte ihrer TP verloren, gilt −1 Würfel auf alle Aktionen; bei Konstitution 0 oder weniger ist die Kreatur kampfunfähig. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p><p>Rennen zählt doppelt (Vierbeiner).</p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 11000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "prototypeToken": {
+   "name": "Lochdingo",
+   "disposition": -1,
+   "actorLink": false
+  },
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "0.2.0",
+   "createdTime": 1795344674751,
+   "modifiedTime": 1795344674751,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  },
+  "_embedded": [
+   {
+    "_id": "aeF601CPnSCZCBnj",
+    "_key": "!actors.items!cFCfQ4thz3AJ9uDW.aeF601CPnSCZCBnj",
+    "name": "Krallen (körpereigen)",
+    "type": "weapon",
+    "img": "icons/svg/combat.svg",
+    "system": {
+     "category": "unbewaffnet",
+     "skill": "nahkampf",
+     "damageType": "klinge",
+     "equipped": true,
+     "damage": {
+      "strength": true,
+      "points": 20
+     },
+     "range": "none",
+     "description": "<p>Körpereigener Angriff, Schaden ST+20 Punkte. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 1000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "cypBQqSDlkjkhq4k",
+    "_key": "!actors.items!cFCfQ4thz3AJ9uDW.cypBQqSDlkjkhq4k",
+    "name": "Zähne (körpereigen)",
+    "type": "weapon",
+    "img": "icons/svg/combat.svg",
+    "system": {
+     "category": "unbewaffnet",
+     "skill": "nahkampf",
+     "damageType": "stich",
+     "equipped": true,
+     "damage": {
+      "strength": true,
+      "points": 30
+     },
+     "range": "none",
+     "description": "<p>Körpereigener Angriff, Schaden ST+30 Punkte. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 2000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "WfsDwiVPCtHRYBzd",
+    "_key": "!actors.items!cFCfQ4thz3AJ9uDW.WfsDwiVPCtHRYBzd",
+    "name": "Kleine Zielfläche",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>Angriffe gelten wie auf eine Körperzone. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 3000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "OBI4rVB2PRHAMVUT",
+    "_key": "!actors.items!cFCfQ4thz3AJ9uDW.OBI4rVB2PRHAMVUT",
+    "name": "Riechen",
+    "type": "skill",
+    "img": "icons/svg/book.svg",
+    "system": {
+     "category": "besondere",
+     "attribute": "wa",
+     "value": 2,
+     "description": "<p>Besondere Kreaturenfertigkeit. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 4000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   }
+  ]
+ },
+ {
+  "_id": "ogPSj8GJhz5Dta9x",
+  "_key": "!actors!ogPSj8GJhz5Dta9x",
+  "name": "Nemoratte",
+  "type": "npc",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "attributes": {
+    "ge": {
+     "value": 2,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "st": {
+     "value": 4,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "ko": {
+     "value": 5,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "be": {
+     "value": 3,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "wa": {
+     "value": 4,
+     "bonus": 0,
+     "leiden": 0
+    }
+   },
+   "skills": {
+    "ausdauer": {
+     "value": 3
+    },
+    "ausweichen": {
+     "value": 1
+    },
+    "heimlichkeit": {
+     "value": 1
+    },
+    "klettern": {
+     "value": 1
+    },
+    "nahkampf": {
+     "value": 4
+    },
+    "reaktion": {
+     "value": 3
+    },
+    "rennen": {
+     "value": 2
+    }
+   },
+   "special": {
+    "adrenalin": {
+     "value": 0,
+     "used": 0
+    },
+    "schmerztoleranz": {
+     "value": 5
+    }
+   },
+   "tpBase": 30,
+   "infection": {
+    "dice": 2,
+    "points": 0,
+    "malus": 0
+   },
+   "details": {
+    "species": "Kreatur",
+    "concept": "Wildlife"
+   },
+   "instinct": 5,
+   "stubbornness": 7,
+   "biography": "<p>Kreatur aus dem Wildlife-Kapitel. Schmerztoleranz vereinfacht: Hat eine Zone die Hälfte ihrer TP verloren, gilt −1 Würfel auf alle Aktionen; bei Konstitution 0 oder weniger ist die Kreatur kampfunfähig. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p><p>Klettern +2 Würfel, Rennen zählt doppelt.</p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 12000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "prototypeToken": {
+   "name": "Nemoratte",
+   "disposition": -1,
+   "actorLink": false
+  },
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "0.2.0",
+   "createdTime": 1795344674751,
+   "modifiedTime": 1795344674751,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  },
+  "_embedded": [
+   {
+    "_id": "BwhFoHvyfxu8zBv2",
+    "_key": "!actors.items!ogPSj8GJhz5Dta9x.BwhFoHvyfxu8zBv2",
+    "name": "Körperpanzer",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+     "rw": 30,
+     "mk": "B",
+     "zones": [
+      12,
+      11,
+      10,
+      9,
+      8,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2
+     ],
+     "equipped": true,
+     "komfort": 0,
+     "description": "<p>Körpereigene Panzerung der Kreatur. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 1000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "eCkTSwywEzM2t33O",
+    "_key": "!actors.items!ogPSj8GJhz5Dta9x.eCkTSwywEzM2t33O",
+    "name": "Zähne mit Zermalmenden Kiefern (körpereigen)",
+    "type": "weapon",
+    "img": "icons/svg/combat.svg",
+    "system": {
+     "category": "unbewaffnet",
+     "skill": "nahkampf",
+     "damageType": "stich",
+     "equipped": true,
+     "damage": {
+      "strength": true,
+      "points": 40
+     },
+     "range": "none",
+     "description": "<p>Körpereigener Angriff, Schaden ST+40 Punkte. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 2000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "B9WyyYLIzxSlzBbr",
+    "_key": "!actors.items!ogPSj8GJhz5Dta9x.B9WyyYLIzxSlzBbr",
+    "name": "Krallen (körpereigen)",
+    "type": "weapon",
+    "img": "icons/svg/combat.svg",
+    "system": {
+     "category": "unbewaffnet",
+     "skill": "nahkampf",
+     "damageType": "klinge",
+     "equipped": true,
+     "damage": {
+      "strength": true,
+      "points": 15
+     },
+     "range": "none",
+     "description": "<p>Körpereigener Angriff, Schaden ST+15 Punkte. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 3000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "ycds60fXWwXJnWlz",
+    "_key": "!actors.items!ogPSj8GJhz5Dta9x.ycds60fXWwXJnWlz",
+    "name": "Nachtsicht",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>Sieht auch bei sehr wenig Licht. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 4000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "1bqmdo3uKsLcBXFY",
+    "_key": "!actors.items!ogPSj8GJhz5Dta9x.1bqmdo3uKsLcBXFY",
+    "name": "Nemo-Virus",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>Überträgt das Nemo-Virus. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 5000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "nbSLrGlB3LxuGRaN",
+    "_key": "!actors.items!ogPSj8GJhz5Dta9x.nbSLrGlB3LxuGRaN",
+    "name": "Herdeninstinkt",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>In der Gruppe steigen Instinkt auf 6 und Sturheit auf 10. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 6000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "yDg9pPVYnJZiQlpa",
+    "_key": "!actors.items!ogPSj8GJhz5Dta9x.yDg9pPVYnJZiQlpa",
+    "name": "Riechen",
+    "type": "skill",
+    "img": "icons/svg/book.svg",
+    "system": {
+     "category": "besondere",
+     "attribute": "wa",
+     "value": 6,
+     "description": "<p>Besondere Kreaturenfertigkeit. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 7000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   }
+  ]
+ },
+ {
+  "_id": "6QXr4WmLbv4CMqor",
+  "_key": "!actors!6QXr4WmLbv4CMqor",
+  "name": "Nemotaube",
+  "type": "npc",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "attributes": {
+    "ge": {
+     "value": 2,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "st": {
+     "value": 3,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "ko": {
+     "value": 3,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "be": {
+     "value": 4,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "wa": {
+     "value": 4,
+     "bonus": 0,
+     "leiden": 0
+    }
+   },
+   "skills": {
+    "ausdauer": {
+     "value": 3
+    },
+    "ausweichen": {
+     "value": 2
+    },
+    "heimlichkeit": {
+     "value": 1
+    },
+    "nahkampf": {
+     "value": 2
+    }
+   },
+   "special": {
+    "adrenalin": {
+     "value": 0,
+     "used": 0
+    },
+    "schmerztoleranz": {
+     "value": 5
+    }
+   },
+   "tpBase": 20,
+   "infection": {
+    "dice": 2,
+    "points": 0,
+    "malus": 0
+   },
+   "details": {
+    "species": "Kreatur",
+    "concept": "Wildlife"
+   },
+   "instinct": 2,
+   "stubbornness": 3,
+   "biography": "<p>Kreatur aus dem Wildlife-Kapitel. Schmerztoleranz vereinfacht: Hat eine Zone die Hälfte ihrer TP verloren, gilt −1 Würfel auf alle Aktionen; bei Konstitution 0 oder weniger ist die Kreatur kampfunfähig. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p><p>Fliegen zählt doppelt für die Geschwindigkeit.</p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 13000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "prototypeToken": {
+   "name": "Nemotaube",
+   "disposition": -1,
+   "actorLink": false
+  },
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "0.2.0",
+   "createdTime": 1795344674751,
+   "modifiedTime": 1795344674751,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  },
+  "_embedded": [
+   {
+    "_id": "SsSFDm74urz86pIX",
+    "_key": "!actors.items!6QXr4WmLbv4CMqor.SsSFDm74urz86pIX",
+    "name": "Krallen (körpereigen)",
+    "type": "weapon",
+    "img": "icons/svg/combat.svg",
+    "system": {
+     "category": "unbewaffnet",
+     "skill": "nahkampf",
+     "damageType": "klinge",
+     "equipped": true,
+     "damage": {
+      "strength": true,
+      "points": 15
+     },
+     "range": "none",
+     "description": "<p>Körpereigener Angriff, Schaden ST+15 Punkte. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 1000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "GonvrAmBJCV19dCs",
+    "_key": "!actors.items!6QXr4WmLbv4CMqor.GonvrAmBJCV19dCs",
+    "name": "Zähne (körpereigen)",
+    "type": "weapon",
+    "img": "icons/svg/combat.svg",
+    "system": {
+     "category": "unbewaffnet",
+     "skill": "nahkampf",
+     "damageType": "stich",
+     "equipped": true,
+     "damage": {
+      "strength": true,
+      "points": 30
+     },
+     "range": "none",
+     "description": "<p>Körpereigener Angriff, Schaden ST+30 Punkte. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 2000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "TBoS2M9rFW2RrmTB",
+    "_key": "!actors.items!6QXr4WmLbv4CMqor.TBoS2M9rFW2RrmTB",
+    "name": "Nachtsicht",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>Sieht auch bei sehr wenig Licht. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 3000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "LKdmBLiYBUOJiWrw",
+    "_key": "!actors.items!6QXr4WmLbv4CMqor.LKdmBLiYBUOJiWrw",
+    "name": "Nemo-Überträger",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>Überträgt das Nemo-Virus. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 4000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "ueElnaTeIubZlp3I",
+    "_key": "!actors.items!6QXr4WmLbv4CMqor.ueElnaTeIubZlp3I",
+    "name": "Kleine Zielfläche",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>Angriffe gelten wie auf eine Körperzone. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 5000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "O0J2HS1fdKrlwNxU",
+    "_key": "!actors.items!6QXr4WmLbv4CMqor.O0J2HS1fdKrlwNxU",
+    "name": "Fliegen",
+    "type": "skill",
+    "img": "icons/svg/book.svg",
+    "system": {
+     "category": "besondere",
+     "attribute": "be",
+     "value": 6,
+     "description": "<p>Besondere Kreaturenfertigkeit. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 6000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "C9MV2YfCr8T1r8TT",
+    "_key": "!actors.items!6QXr4WmLbv4CMqor.C9MV2YfCr8T1r8TT",
+    "name": "Sehen",
+    "type": "skill",
+    "img": "icons/svg/book.svg",
+    "system": {
+     "category": "besondere",
+     "attribute": "wa",
+     "value": 3,
+     "description": "<p>Besondere Kreaturenfertigkeit. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 7000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   }
+  ]
+ },
+ {
+  "_id": "yJeTBEVUiUQmLBPC",
+  "_key": "!actors!yJeTBEVUiUQmLBPC",
+  "name": "Oryx",
+  "type": "npc",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "attributes": {
+    "ge": {
+     "value": 1,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "st": {
+     "value": 7,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "ko": {
+     "value": 9,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "be": {
+     "value": 2,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "wa": {
+     "value": 2,
+     "bonus": 0,
+     "leiden": 0
+    }
+   },
+   "skills": {
+    "ausdauer": {
+     "value": 10
+    },
+    "nahkampf": {
+     "value": 4
+    },
+    "rennen": {
+     "value": 2
+    },
+    "stemmen": {
+     "value": 8
+    }
+   },
+   "special": {
+    "adrenalin": {
+     "value": 0,
+     "used": 0
+    },
+    "schmerztoleranz": {
+     "value": 5
+    }
+   },
+   "tpBase": 50,
+   "infection": {
+    "dice": 2,
+    "points": 0,
+    "malus": 0
+   },
+   "details": {
+    "species": "Kreatur",
+    "concept": "Wildlife"
+   },
+   "instinct": 5,
+   "stubbornness": 8,
+   "biography": "<p>Kreatur aus dem Wildlife-Kapitel. Schmerztoleranz vereinfacht: Hat eine Zone die Hälfte ihrer TP verloren, gilt −1 Würfel auf alle Aktionen; bei Konstitution 0 oder weniger ist die Kreatur kampfunfähig. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p><p>Rennen zählt doppelt.</p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 14000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "prototypeToken": {
+   "name": "Oryx",
+   "disposition": -1,
+   "actorLink": false
+  },
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "0.2.0",
+   "createdTime": 1795344674751,
+   "modifiedTime": 1795344674751,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  },
+  "_embedded": [
+   {
+    "_id": "PXY1ZykcsEfx0TJO",
+    "_key": "!actors.items!yJeTBEVUiUQmLBPC.PXY1ZykcsEfx0TJO",
+    "name": "Hörner (körpereigen)",
+    "type": "weapon",
+    "img": "icons/svg/combat.svg",
+    "system": {
+     "category": "unbewaffnet",
+     "skill": "nahkampf",
+     "damageType": "stich",
+     "equipped": true,
+     "damage": {
+      "strength": true,
+      "points": 40
+     },
+     "range": "none",
+     "description": "<p>Körpereigener Angriff, Schaden ST+40 Punkte. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 1000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "U7wVm2MJtq7pKkV0",
+    "_key": "!actors.items!yJeTBEVUiUQmLBPC.U7wVm2MJtq7pKkV0",
+    "name": "Hitzeresistenz 3W",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>Dämpft Hitze um 3 Würfel. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 2000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "1dG7EUlwkIMQP6LL",
+    "_key": "!actors.items!yJeTBEVUiUQmLBPC.1dG7EUlwkIMQP6LL",
+    "name": "Riechen",
+    "type": "skill",
+    "img": "icons/svg/book.svg",
+    "system": {
+     "category": "besondere",
+     "attribute": "wa",
+     "value": 5,
+     "description": "<p>Besondere Kreaturenfertigkeit. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 3000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   }
+  ]
+ },
+ {
+  "_id": "I1JYz5mmx5JnESBh",
+  "_key": "!actors!I1JYz5mmx5JnESBh",
+  "name": "Pyräne",
+  "type": "npc",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "attributes": {
+    "ge": {
+     "value": 3,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "st": {
+     "value": 8,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "ko": {
+     "value": 6,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "be": {
+     "value": 4,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "wa": {
+     "value": 3,
+     "bonus": 0,
+     "leiden": 0
+    }
+   },
+   "skills": {
+    "ausweichen": {
+     "value": 3
+    },
+    "einschuechtern": {
+     "value": 2
+    },
+    "heimlichkeit": {
+     "value": 3
+    },
+    "nahkampf": {
+     "value": 4
+    },
+    "reaktion": {
+     "value": 2
+    },
+    "rennen": {
+     "value": 5
+    }
+   },
+   "special": {
+    "adrenalin": {
+     "value": 3,
+     "used": 0
+    },
+    "schmerztoleranz": {
+     "value": 5
+    }
+   },
+   "tpBase": 50,
+   "infection": {
+    "dice": 2,
+    "points": 0,
+    "malus": 0
+   },
+   "details": {
+    "species": "Kreatur",
+    "concept": "Wildlife"
+   },
+   "instinct": 7,
+   "stubbornness": 5,
+   "biography": "<p>Kreatur aus dem Wildlife-Kapitel. Schmerztoleranz vereinfacht: Hat eine Zone die Hälfte ihrer TP verloren, gilt −1 Würfel auf alle Aktionen; bei Konstitution 0 oder weniger ist die Kreatur kampfunfähig. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p><p>Rennen zählt doppelt.</p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 15000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "prototypeToken": {
+   "name": "Pyräne",
+   "disposition": -1,
+   "actorLink": false
+  },
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "0.2.0",
+   "createdTime": 1795344674751,
+   "modifiedTime": 1795344674751,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  },
+  "_embedded": [
+   {
+    "_id": "GaUsGhTIqy4WJPQr",
+    "_key": "!actors.items!I1JYz5mmx5JnESBh.GaUsGhTIqy4WJPQr",
+    "name": "Körperpanzer",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+     "rw": 15,
+     "mk": "A",
+     "zones": [
+      12,
+      11,
+      10,
+      9,
+      8,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2
+     ],
+     "equipped": true,
+     "komfort": 0,
+     "description": "<p>Körpereigene Panzerung der Kreatur. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 1000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "MDilhretVi3Qv1Qm",
+    "_key": "!actors.items!I1JYz5mmx5JnESBh.MDilhretVi3Qv1Qm",
+    "name": "Krallen (körpereigen)",
+    "type": "weapon",
+    "img": "icons/svg/combat.svg",
+    "system": {
+     "category": "unbewaffnet",
+     "skill": "nahkampf",
+     "damageType": "klinge",
+     "equipped": true,
+     "damage": {
+      "strength": true,
+      "points": 20
+     },
+     "range": "none",
+     "description": "<p>Körpereigener Angriff, Schaden ST+20 Punkte. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 2000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "BhcsAGKwpgqU307K",
+    "_key": "!actors.items!I1JYz5mmx5JnESBh.BhcsAGKwpgqU307K",
+    "name": "Zähne (körpereigen)",
+    "type": "weapon",
+    "img": "icons/svg/combat.svg",
+    "system": {
+     "category": "unbewaffnet",
+     "skill": "nahkampf",
+     "damageType": "stich",
+     "equipped": true,
+     "damage": {
+      "strength": true,
+      "points": 30
+     },
+     "range": "none",
+     "description": "<p>Körpereigener Angriff, Schaden ST+30 Punkte. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 3000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "et0Lkk7qVHTvEP0a",
+    "_key": "!actors.items!I1JYz5mmx5JnESBh.et0Lkk7qVHTvEP0a",
+    "name": "Elektroresistenz 10W",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>Widersteht elektrischem Schaden. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 4000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "41xQnQRrajNkLOZF",
+    "_key": "!actors.items!I1JYz5mmx5JnESBh.41xQnQRrajNkLOZF",
+    "name": "Giftresistenz 2",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>Dämpft Gifte um 2 Stufen. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 5000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "FlAF5HFXb3Hs5IB1",
+    "_key": "!actors.items!I1JYz5mmx5JnESBh.FlAF5HFXb3Hs5IB1",
+    "name": "Hören & Sehen",
+    "type": "skill",
+    "img": "icons/svg/book.svg",
+    "system": {
+     "category": "besondere",
+     "attribute": "wa",
+     "value": 5,
+     "description": "<p>Besondere Kreaturenfertigkeit. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 6000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   }
+  ]
+ },
+ {
+  "_id": "WwSB8Qqh6TN4e9B4",
+  "_key": "!actors!WwSB8Qqh6TN4e9B4",
+  "name": "Schatten (PSI)",
+  "type": "npc",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "attributes": {
+    "ge": {
+     "value": 10,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "st": {
+     "value": 10,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "ko": {
+     "value": 10,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "be": {
+     "value": 10,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "wa": {
+     "value": 10,
+     "bonus": 0,
+     "leiden": 0
+    }
+   },
+   "skills": {},
+   "special": {
+    "adrenalin": {
+     "value": 0,
+     "used": 0
+    },
+    "schmerztoleranz": {
+     "value": 5
+    }
+   },
+   "tpBase": 30,
+   "infection": {
+    "dice": 1,
+    "points": 0,
+    "malus": 0
+   },
+   "details": {
+    "species": "Kreatur",
+    "concept": "Wildlife"
+   },
+   "instinct": 0,
+   "stubbornness": 0,
+   "biography": "<p>Kreatur aus dem Wildlife-Kapitel. Schmerztoleranz vereinfacht: Hat eine Zone die Hälfte ihrer TP verloren, gilt −1 Würfel auf alle Aktionen; bei Konstitution 0 oder weniger ist die Kreatur kampfunfähig. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p><p>Alle Attribute entsprechen dem doppelten KS des erzeugenden PSI-Anwenders. Die hinterlegten 10 gelten für KS 5; passe GE, ST, KO, BE und WA an. Der Schatten hat keine Fertigkeiten und erleidet keinen Malus.</p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 16000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "prototypeToken": {
+   "name": "Schatten (PSI)",
+   "disposition": -1,
+   "actorLink": false
+  },
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "0.2.0",
+   "createdTime": 1795344674751,
+   "modifiedTime": 1795344674751,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  },
+  "_embedded": [
+   {
+    "_id": "VkHqlWqXxKedKKFj",
+    "_key": "!actors.items!WwSB8Qqh6TN4e9B4.VkHqlWqXxKedKKFj",
+    "name": "Krallen (körpereigen)",
+    "type": "weapon",
+    "img": "icons/svg/combat.svg",
+    "system": {
+     "category": "unbewaffnet",
+     "skill": "nahkampf",
+     "damageType": "klinge",
+     "equipped": true,
+     "damage": {
+      "strength": true,
+      "points": 20
+     },
+     "range": "none",
+     "description": "<p>Körpereigener Angriff, Schaden ST+20 Punkte. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 1000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "Pz39nf3xuoWSTLUY",
+    "_key": "!actors.items!WwSB8Qqh6TN4e9B4.Pz39nf3xuoWSTLUY",
+    "name": "Zähne (körpereigen)",
+    "type": "weapon",
+    "img": "icons/svg/combat.svg",
+    "system": {
+     "category": "unbewaffnet",
+     "skill": "nahkampf",
+     "damageType": "stich",
+     "equipped": true,
+     "damage": {
+      "strength": true,
+      "points": 30
+     },
+     "range": "none",
+     "description": "<p>Körpereigener Angriff, Schaden ST+30 Punkte. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 2000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "BzRQoRmpqX4aBJSV",
+    "_key": "!actors.items!WwSB8Qqh6TN4e9B4.BzRQoRmpqX4aBJSV",
+    "name": "Nachtsicht",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>Sieht auch bei sehr wenig Licht. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 3000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "XLUpyT804XJ2VOpa",
+    "_key": "!actors.items!WwSB8Qqh6TN4e9B4.XLUpyT804XJ2VOpa",
+    "name": "Nicht biologisch",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>Erleidet durch Licht und Hitze doppelten Schaden. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 4000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   }
+  ]
+ },
+ {
+  "_id": "isEQbSOrWL8ewXDL",
+  "_key": "!actors!isEQbSOrWL8ewXDL",
+  "name": "Skorpionskrähe",
+  "type": "npc",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "attributes": {
+    "ge": {
+     "value": 1,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "st": {
+     "value": 2,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "ko": {
+     "value": 2,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "be": {
+     "value": 1,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "wa": {
+     "value": 4,
+     "bonus": 0,
+     "leiden": 0
+    }
+   },
+   "skills": {
+    "ausweichen": {
+     "value": 4
+    },
+    "nahkampf": {
+     "value": 5
+    }
+   },
+   "special": {
+    "adrenalin": {
+     "value": 0,
+     "used": 0
+    },
+    "schmerztoleranz": {
+     "value": 5
+    }
+   },
+   "tpBase": 1,
+   "infection": {
+    "dice": 2,
+    "points": 0,
+    "malus": 0
+   },
+   "details": {
+    "species": "Kreatur",
+    "concept": "Wildlife"
+   },
+   "instinct": 4,
+   "stubbornness": 4,
+   "biography": "<p>Kreatur aus dem Wildlife-Kapitel. Schmerztoleranz vereinfacht: Hat eine Zone die Hälfte ihrer TP verloren, gilt −1 Würfel auf alle Aktionen; bei Konstitution 0 oder weniger ist die Kreatur kampfunfähig. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p><p>Ausweichen und Nahkampf gelten im Flug, ebenso der Schnabelangriff ohne Malus (am Boden −5). Im Flugangriff sind +5 Schaden enthalten. Sehen +4 bei gedämpftem Licht.</p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 17000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "prototypeToken": {
+   "name": "Skorpionskrähe",
+   "disposition": -1,
+   "actorLink": false
+  },
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "0.2.0",
+   "createdTime": 1795344674751,
+   "modifiedTime": 1795344674751,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  },
+  "_embedded": [
+   {
+    "_id": "MaQ1gvtpCNYCUA5c",
+    "_key": "!actors.items!isEQbSOrWL8ewXDL.MaQ1gvtpCNYCUA5c",
+    "name": "Krallen (körpereigen)",
+    "type": "weapon",
+    "img": "icons/svg/combat.svg",
+    "system": {
+     "category": "unbewaffnet",
+     "skill": "nahkampf",
+     "damageType": "klinge",
+     "equipped": true,
+     "damage": {
+      "strength": true,
+      "points": 20
+     },
+     "range": "none",
+     "description": "<p>Körpereigener Angriff, Schaden ST+20 Punkte. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 1000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "sOOTahVtez0ha8nQ",
+    "_key": "!actors.items!isEQbSOrWL8ewXDL.sOOTahVtez0ha8nQ",
+    "name": "Schnabel (körpereigen)",
+    "type": "weapon",
+    "img": "icons/svg/combat.svg",
+    "system": {
+     "category": "unbewaffnet",
+     "skill": "nahkampf",
+     "damageType": "stich",
+     "equipped": true,
+     "damage": {
+      "strength": true,
+      "points": 30
+     },
+     "range": "none",
+     "description": "<p>Körpereigener Angriff, Schaden ST+30 Punkte. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 2000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "jn62pF1qA8Sglvcd",
+    "_key": "!actors.items!isEQbSOrWL8ewXDL.jn62pF1qA8Sglvcd",
+    "name": "Giftdrüsen (narkotisch)",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>Betäubendes Gift. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 3000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "jsGdSLVw50Z6c1Z6",
+    "_key": "!actors.items!isEQbSOrWL8ewXDL.jsGdSLVw50Z6c1Z6",
+    "name": "Rundumsicht",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>Sieht auch nach hinten. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 4000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "LWRi5shRDZ15DbU2",
+    "_key": "!actors.items!isEQbSOrWL8ewXDL.LWRi5shRDZ15DbU2",
+    "name": "Sechster Sinn",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>Spürt Gefahr früh. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 5000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "3B54dIipeAE7SreT",
+    "_key": "!actors.items!isEQbSOrWL8ewXDL.3B54dIipeAE7SreT",
+    "name": "Schwarm",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>Im Schwarm steigt die Sturheit auf 8. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 6000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "nx1jg8wOPXK5zLfI",
+    "_key": "!actors.items!isEQbSOrWL8ewXDL.nx1jg8wOPXK5zLfI",
+    "name": "Kleine Zielfläche",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>Angriffe gelten wie auf eine Körperzone. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 7000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "zOIjiJQri9wTrcYC",
+    "_key": "!actors.items!isEQbSOrWL8ewXDL.zOIjiJQri9wTrcYC",
+    "name": "Fliegen",
+    "type": "skill",
+    "img": "icons/svg/book.svg",
+    "system": {
+     "category": "besondere",
+     "attribute": "be",
+     "value": 5,
+     "description": "<p>Besondere Kreaturenfertigkeit. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 8000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "ch2T4VpGkiFRTBUt",
+    "_key": "!actors.items!isEQbSOrWL8ewXDL.ch2T4VpGkiFRTBUt",
+    "name": "Sehen",
+    "type": "skill",
+    "img": "icons/svg/book.svg",
+    "system": {
+     "category": "besondere",
+     "attribute": "wa",
+     "value": 2,
+     "description": "<p>Besondere Kreaturenfertigkeit. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 9000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   }
+  ]
+ },
+ {
+  "_id": "VQCqFxU8qUl1t96p",
+  "_key": "!actors!VQCqFxU8qUl1t96p",
+  "name": "Stein-/Grascobra",
+  "type": "npc",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "attributes": {
+    "ge": {
+     "value": 1,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "st": {
+     "value": 2,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "ko": {
+     "value": 3,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "be": {
+     "value": 3,
+     "bonus": 0,
+     "leiden": 0
+    },
+    "wa": {
+     "value": 3,
+     "bonus": 0,
+     "leiden": 0
+    }
+   },
+   "skills": {
+    "ausweichen": {
+     "value": 5
+    },
+    "heimlichkeit": {
+     "value": 4
+    },
+    "nahkampf": {
+     "value": 9
+    },
+    "schwimmen": {
+     "value": 7
+    }
+   },
+   "special": {
+    "adrenalin": {
+     "value": 0,
+     "used": 0
+    },
+    "schmerztoleranz": {
+     "value": 5
+    }
+   },
+   "tpBase": 20,
+   "infection": {
+    "dice": 2,
+    "points": 0,
+    "malus": 0
+   },
+   "details": {
+    "species": "Kreatur",
+    "concept": "Wildlife"
+   },
+   "instinct": 9,
+   "stubbornness": 9,
+   "biography": "<p>Kreatur aus dem Wildlife-Kapitel. Schmerztoleranz vereinfacht: Hat eine Zone die Hälfte ihrer TP verloren, gilt −1 Würfel auf alle Aktionen; bei Konstitution 0 oder weniger ist die Kreatur kampfunfähig. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 18000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "prototypeToken": {
+   "name": "Stein-/Grascobra",
+   "disposition": -1,
+   "actorLink": false
+  },
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "0.2.0",
+   "createdTime": 1795344674751,
+   "modifiedTime": 1795344674751,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  },
+  "_embedded": [
+   {
+    "_id": "wSW9hyAPzpvXQYfu",
+    "_key": "!actors.items!VQCqFxU8qUl1t96p.wSW9hyAPzpvXQYfu",
+    "name": "Zähne (körpereigen)",
+    "type": "weapon",
+    "img": "icons/svg/combat.svg",
+    "system": {
+     "category": "unbewaffnet",
+     "skill": "nahkampf",
+     "damageType": "stich",
+     "equipped": true,
+     "damage": {
+      "strength": true,
+      "points": 20
+     },
+     "range": "none",
+     "description": "<p>Körpereigener Angriff, Schaden ST+20 Punkte. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 1000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "7D9cCPXxq5vwglvb",
+    "_key": "!actors.items!VQCqFxU8qUl1t96p.7D9cCPXxq5vwglvb",
+    "name": "Giftspucke",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>Reichweite 3 m, einmal je Kampfrunde: 5 Runden lang je 9 Schaden am Kopf (Zone 12). <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 2000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "aK8O6YtBXgYlN4IZ",
+    "_key": "!actors.items!VQCqFxU8qUl1t96p.aK8O6YtBXgYlN4IZ",
+    "name": "Gegengift",
+    "type": "bioTrait",
+    "img": "icons/svg/pawprint.svg",
+    "system": {
+     "kind": "sichtbar",
+     "gp": 0,
+     "description": "<p>Gegen das Zahngift existiert ein Gegengift. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 3000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "iBFuUBmyLcpv9Ueb",
+    "_key": "!actors.items!VQCqFxU8qUl1t96p.iBFuUBmyLcpv9Ueb",
+    "name": "Schlängeln",
+    "type": "skill",
+    "img": "icons/svg/book.svg",
+    "system": {
+     "category": "besondere",
+     "attribute": "be",
+     "value": 1,
+     "description": "<p>Besondere Kreaturenfertigkeit. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 4000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   },
+   {
+    "_id": "KyF5w9utyOmQt5EU",
+    "_key": "!actors.items!VQCqFxU8qUl1t96p.KyF5w9utyOmQt5EU",
+    "name": "Spucken",
+    "type": "skill",
+    "img": "icons/svg/book.svg",
+    "system": {
+     "category": "besondere",
+     "attribute": "ge",
+     "value": 4,
+     "description": "<p>Besondere Kreaturenfertigkeit. <em class=\"nr-ref\">(NoReturn 2E, S. 24–39)</em></p>"
+    },
+    "effects": [],
+    "folder": null,
+    "sort": 5000,
+    "ownership": {
+     "default": 0
+    },
+    "flags": {},
+    "_stats": {
+     "coreVersion": "14.368",
+     "systemId": "noreturn",
+     "systemVersion": "0.2.0",
+     "createdTime": 1795344674751,
+     "modifiedTime": 1795344674751,
+     "lastModifiedBy": null,
+     "compendiumSource": null,
+     "duplicateSource": null,
+     "exportSource": null
+    }
+   }
+  ]
+ }
+]

@@ -14,6 +14,12 @@
       <label>{{localize "NR.Detail.threat"}}
         <input type="text" name="system.threat" value="{{system.threat}}">
       </label>
+      <label data-tooltip="{{localize 'NR.Detail.instinctHint'}}">{{localize "NR.Detail.instinct"}}
+        <input type="number" name="system.instinct" value="{{system.instinct}}" min="0">
+      </label>
+      <label data-tooltip="{{localize 'NR.Detail.stubbornnessHint'}}">{{localize "NR.Detail.stubbornness"}}
+        <input type="number" name="system.stubbornness" value="{{system.stubbornness}}" min="0">
+      </label>
       {{/if}}
     </div>
     <div class="nr-status-strip nr-vitals">
