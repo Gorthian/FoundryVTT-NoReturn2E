@@ -97,9 +97,9 @@ function traitLevel(actor, type, prefixes) {
     .reduce((sum, i) => sum + (i.system.level ?? 1), 0);
 }
 
-/** Immun gegen Fress-Regen: Wassertauglichkeit oder Amphibia Humanis (S. 17). */
+/** Immun gegen Fress-Regen: Wassertauglichkeit, Toxische Anpassung oder Amphibia Humanis (S. 17). */
 function immuneToAcidRain(actor) {
-  return actor.items.some(i => ["Wassertauglichkeit", "Amphibia Humanis"].some(n => i.name.startsWith(n)));
+  return actor.items.some(i => ["Wassertauglichkeit", "Toxische Anpassung", "Amphibia Humanis"].some(n => i.name.startsWith(n)));
 }
 
 /**
