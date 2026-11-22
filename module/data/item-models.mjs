@@ -392,6 +392,8 @@ export class DiseaseData extends NRItemData {
       intensity: int(0, { min: 0 }),
       /** Temporäre Maluswürfel auf alle Aktionen, solange aktiv. */
       malusDice: int(0, { min: 0 }),
+      /** Alternative Intensität bei besonderer Übertragung (z. B. Flugnekrose 6 bei Tröpfchen/Schleimhaut); 0 = keine. */
+      intensityAlt: int(0, { min: 0 }),
       /** Inkubationszeit in Tagen (Verlauf beginnt danach). */
       incubationDays: num(0, { min: 0 }),
       /** Abstand der Verlaufsschritte in Tagen (0 = keine automatischen Schritte). */

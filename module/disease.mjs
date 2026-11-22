@@ -40,7 +40,7 @@ export async function contract(actor, source) {
 }
 
 /** Infektionsprobe gegen die Intensität der Krankheit; bei Misserfolg erkrankt der Actor. */
-export async function infect(actor, source, { skipRoll = false } = {}) {
+export async function infect(actor, source, { skipRoll = false, useAlt = false } = {}) {
   if (!actor || actor.type === "vehicle") return null;
   if (actor.system.awakened) { ui.notifications.info(L("NR.Awakened.Immune")); return null; }
   let infected = skipRoll;
@@ -48,7 +48,7 @@ export async function infect(actor, source, { skipRoll = false } = {}) {
     const ir = actor.system.ir;
     const res = await rollPool({
       actor, label: `${L("NR.Roll.Infection")}: ${source.name}`, subtitle: ir.label, dice: ir.dice, points: ir.points,
-      hazard: false, oneDieRule: false, mw: source.system.intensity
+      hazard: false, oneDieRule: false, mw: useAlt && source.system.intensityAlt ? source.system.intensityAlt : source.system.intensity
     });
     infected = res.success === false;
   }
@@ -121,11 +121,12 @@ export async function infectDialog() {
     window: { title: L("NR.Disease.InfectTitle"), icon: "fa-solid fa-virus" },
     content: `<p>${game.i18n.format("NR.Hazard.Targets", { n: actors.length })}</p>
       <div class="form-group"><label>${L("NR.Disease.Which")}</label><select name="disease">${opts}</select></div>
+      <div class="form-group"><label>${L("NR.Disease.UseAlt")}</label><input type="checkbox" name="alt"></div>
       <div class="form-group"><label>${L("NR.Disease.SkipRoll")}</label><input type="checkbox" name="skip"></div>`,
     ok: { label: L("NR.Disease.Infect") }
   }).catch(() => null);
   if (!result) return null;
   const source = docs.find(d => d.id === result.disease);
-  for (const actor of actors) await infect(actor, source, { skipRoll: !!result.skip });
+  for (const actor of actors) await infect(actor, source, { skipRoll: !!result.skip, useAlt: !!result.alt });
   return source;
 }

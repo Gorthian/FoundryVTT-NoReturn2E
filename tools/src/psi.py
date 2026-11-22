@@ -77,7 +77,7 @@ E = {
     "Zweite Chance": ("Misslungene Probe wiederholen mit +KS×5 Punkten; kostet 1 Psyche, keine Aktion. Nur bei Bewusstsein.", {}),
     # Cryokinese
     "Abkühlen": ("Hebt im Radius KS×2 m alle Hitze- und Feuereffekte auf.", {}),
-    "Blizzard": ("Eissturm KS×10 m Radius im Sichtfeld: jede KR KS×100 Kälteschaden an allen Zonen und Unterkühlung (5 KR, KS×5/KR).", {"damageMult": 100, "allZones": True}),
+    "Blizzard": ("Eissturm KS×10 m Radius im Sichtfeld: jede KR KS×100 Kälteschaden an allen Zonen und Unterkühlung (KS×5/KR, wirkt 5 KR nach) – insgesamt KS×105 je KR.", {"damageMult": 105, "allZones": True}),
     "Bridge": ("Gefriert Flüssigkeit KS×2 m breit, KS×10 m lang, trägt KS×500 kg.", {}),
     "Eisbarriere": ("Eisschicht verschließt einen Durchgang oder stabilisiert eine Fläche: Stabilität KS×20 MK:B. Defensivaktion (Block).", {}),
     "Eisnadeln": ("Eisnadeln: Angriffswurf KS×10, Treffer KS×15 Kälteschaden.", {"damageMult": 15}),
@@ -181,7 +181,7 @@ E = {
     "Flammenbändiger": ("Kontrolliert Flammen im Radius KS×5 m; ein bestehendes Feuer einmalig +KS×5 Schaden.", {}),
     "Flammenhand": ("Hände, Fäuste oder Nahkampfwaffen brennen: +KS×5 Hitzeschaden.", {}),
     "Hitzeschock": ("Ziel erleidet bei jedem Schaden zusätzlich KS×5 Hitzeschaden.", {}),
-    "Inferno": ("Feuersturm KS×10 m Radius: jede KR KS×100 Hitzeschaden und Brand.", {"damageMult": 100, "allZones": True}),
+    "Inferno": ("Feuersturm KS×10 m Radius: jede KR KS×100 Hitzeschaden plus Brand (KS×5) – insgesamt KS×105 je KR.", {"damageMult": 105, "allZones": True}),
     "Kauterisieren": ("Kauterisiert eine frische Wunde (2 KR): KS Hitzeschaden ohne Widerstand, dafür +KS W auf Infektionsresistenz dieser Wunde.", {}),
     "Lavafalle": ("Lavafläche KS m Radius: KS×15 Hitzeschaden, BE −3W (≤ 0: bewegungsunfähig).", {"damageMult": 15, "allZones": True}),
     "Rauchbombe": ("Thermischer Rauch KS×5 m: optische Wahrnehmung −KS×2 W.", {}),

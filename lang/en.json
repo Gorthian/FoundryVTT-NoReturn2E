@@ -1766,6 +1766,9 @@
       "nrTemp1": "Extreme temperature −1D",
       "nrTemp2": "Extreme temperature −2D",
       "nrTemp3": "Extreme temperature −3D",
+      "nrTemp4": "Extreme temperature −4D",
+      "nrTemp5": "Extreme temperature −5D",
+      "nrTemp6": "Extreme temperature −6D",
       "nrRadiation": "Irradiated",
       "nrDisease": "Diseased",
       "nrContinuous": "Continuous damage"
@@ -1781,15 +1784,15 @@
       "GMOnly": "Only the GM can trigger hazards.",
       "temperature": {
         "name": "Extreme temperature",
-        "hint": "Applies −1D to −3D to all values per temperature band (cat. 1–3). Check every 10 minutes; adjust the status manually afterwards."
+        "hint": "Category = malus dice on all values (0–9 °C / 31–40 °C: 1, −1…−10 °C / 41–50 °C: 2, −11…−20 °C / 51–60 °C: 3, +1 per further 10 °C; up to 6). Thick skin / fur reduces the malus by its level. Every 10 minutes the malus grows by the band malus (trigger again or adjust the status); if CON drops below 0, excess malus dice are rolled as damage to all zones (manually)."
       },
       "acidRain": {
         "name": "Acid rain",
-        "hint": "−1 organism and 1 damage per hour of exposure; material −1 stability per zonat."
+        "hint": "−1 organism and 1 damage per hour of exposure (2 hours with thick skin, fur or armor plating); material −1 stability per zonat. Water compatibility and Amphibia Humanis are immune."
       },
       "sandstorm": {
         "name": "Sandstorm",
-        "hint": "10 damage per category every 15 minutes, duration category × D6 hours."
+        "hint": "10 damage per category every 15 minutes, duration category × D6 hours. In irradiated areas: −3 organism per wound."
       },
       "deathFog": {
         "name": "Death fog",
@@ -1797,13 +1800,18 @@
       },
       "toxicWater": {
         "name": "Toxic water",
-        "hint": "60 continuous damage (+10 per combat round in the water)."
+        "hint": "60 continuous damage to everything below MK:C (except rubber, plastic, fat); add +10 per further combat round in the water manually."
       },
       "radiation": {
         "name": "Radiation",
-        "hint": "Cat. 1–3: organism loss (= category) per 6 zonats, cat. 4–6: per day; from cat. 7 70–90 continuous damage. The loss is applied automatically by the GM time control or the “Time passes” macro. Aftereffect: −1 organism per zonat."
+        "hint": "Cat. 1–3: organism loss (= category) per 6 zonats, cat. 4–6: per day (only without protective gear); from cat. 7 70–90 continuous damage (protection only by sealed MK:C+ clothing or radiation shielding). The loss is applied automatically by the GM time control or the “Time passes” macro. Aftereffect: −1 organism per zonat."
       },
-      "Protected": "Protective gear sealed (MK:C, closed)",
+      "Protected": "Protective gear sealed (MK:C, closed; cat. 4–9 only)",
+      "acidRainImmune": "immune (water compatibility / Amphibia Humanis)",
+      "acidRainSlow": "damage only after 2 hours instead of 1 hour",
+      "SandstormRadiation": "Organism −3 (wound in irradiated sandstorm)",
+      "TempResist": "Resistance {resist}D, effective malus {malus}D",
+      "TempResistShort": "(resistance −{resist}D)",
       "radiationLeave": {
         "name": "Leave radiation area",
         "hint": "Ends ongoing exposure; the aftereffect (−1 organism per zonat) remains."
@@ -1852,6 +1860,8 @@
       "InfectTitle": "Transmit disease",
       "Which": "Disease",
       "SkipRoll": "Infect without a check",
+      "UseAlt": "Use alternative intensity (e.g. droplet/mucous membrane)",
+      "IntensityAlt": "Alternative intensity (0 = none)",
       "IntensityStat": "Intensity {v}",
       "IdentStat": "Ident. TN {v}",
       "DaysStat": "Day {v}"
