@@ -23,6 +23,7 @@ jobs:
         github.event.pull_request.head.repo.full_name == github.repository) ||
       (github.event_name == 'issue_comment' &&
         github.event.issue.pull_request != null &&
+        !contains(github.event.comment.body, '<!-- antigravity-review:') &&
         contains(github.event.comment.body, '/review') &&
         (github.event.comment.author_association == 'OWNER' || github.event.comment.author_association == 'MEMBER' || github.event.comment.author_association == 'COLLABORATOR'))
     runs-on: self-hosted
@@ -35,9 +36,15 @@ jobs:
           EVENT_NAME: ${{ github.event_name }}
           PR_NUMBER: ${{ github.event.pull_request.number || github.event.issue.number }}
           REPO: ${{ github.repository }}
+          COMMENT_BODY: ${{ github.event.comment.body }}
         run: |
           $ErrorActionPreference = "Stop"
           if ($env:EVENT_NAME -eq "issue_comment") {
+            if ($env:COMMENT_BODY -notmatch '(?m)^\s*/review\s*$') {
+              Write-Host "Kommentar enthält keine eigenständige '/review'-Zeile – übersprungen."
+              "run=false" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
+              exit 0
+            }
             $pr = gh api "repos/$($env:REPO)/pulls/$($env:PR_NUMBER)" | ConvertFrom-Json
             if ($LASTEXITCODE -ne 0) { throw "Konnte PR #$($env:PR_NUMBER) nicht laden." }
             if ($pr.state -ne "open" -or $pr.head.repo.full_name -ne $env:REPO) {
