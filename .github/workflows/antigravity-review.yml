@@ -2,10 +2,22 @@ name: Antigravity PR Review
 
 on:
   pull_request:
-    types: [opened, synchronize]
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: pr-review-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
 
 jobs:
   review:
+    # Sicherheit auf self-hosted Runner: keine externen Fork-PRs und keine Drafts ausführen
+    if: >
+      !github.event.pull_request.draft &&
+      github.event.pull_request.head.repo.full_name == github.repository
     runs-on: self-hosted
     steps:
       - name: Checkout Code
@@ -13,19 +25,59 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Run Antigravity Review
+      - name: Run Gemini/Antigravity PR Review
         shell: pwsh
         env:
           GH_TOKEN: ${{ secrets.CUSTOM_PAT }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
         run: |
-          $prNumber = "${{ github.event.pull_request.number }}"
-          gh pr diff $prNumber > pr.diff
+          $ErrorActionPreference = "Stop"
+          [Console]::InputEncoding  = [System.Text.UTF8Encoding]::new($false)
+          [Console]::OutputEncoding = [System.Text.UTF8Encoding]::new($false)
 
-          # Hier deinen konkreten Antigravity-CLI-Befehl für das Diff-Review einsetzen:
-          $reviewText = antigravity review --diff pr.diff --context "FoundryVTT Module" | Out-String
-
-          if ($reviewText -match "LGTM") {
-            gh pr review $prNumber --approve --body "✅ **Antigravity Review:** Keine Beanstandungen (LGTM)."
-          } else {
-            gh pr review $prNumber --request-changes --body "🤖 **Antigravity Review:**`n`n$reviewText"
+          $diff = gh pr diff $env:PR_NUMBER | Out-String
+          if ($LASTEXITCODE -ne 0) { throw "gh pr diff fehlgeschlagen (Exit $LASTEXITCODE)" }
+          if ([string]::IsNullOrWhiteSpace($diff)) {
+            Write-Host "Kein Diff vorhanden – Review übersprungen."
+            exit 0
           }
+
+          $prompt = "Führe ein fokussiertes Code-Review für den übergebenen Git-Diff dieses Pull Requests (FoundryVTT-NoReturn2E) exakt nach den Regeln in GEMINI.md durch. Antworte entweder ausschließlich mit dem exakten Wort LGTM oder mit einer kurzen, nummerierten Mängelliste ohne das Wort LGTM."
+          $errFile = Join-Path $env:RUNNER_TEMP "review-stderr.log"
+
+          if (Get-Command gemini -ErrorAction SilentlyContinue) {
+            Write-Host "Nutze Gemini CLI (gemini)..."
+            $reviewText = ($diff | gemini -p $prompt 2>$errFile | Out-String).Trim()
+            $cliExit = $LASTEXITCODE
+          } elseif (Get-Command agy -ErrorAction SilentlyContinue) {
+            Write-Host "Nutze Antigravity CLI (agy)..."
+            $diffPath = Join-Path $PWD "pr.diff"
+            [System.IO.File]::WriteAllText($diffPath, $diff, [System.Text.UTF8Encoding]::new($false))
+            try {
+              $reviewText = (agy --mode plan -p "$prompt Der vollständige Diff liegt in pr.diff im Arbeitsverzeichnis." 2>$errFile | Out-String).Trim()
+              $cliExit = $LASTEXITCODE
+            } finally {
+              Remove-Item -Path $diffPath -ErrorAction SilentlyContinue
+            }
+          } else {
+            Write-Error "Weder 'gemini' (@google/gemini-cli) noch 'agy' (Antigravity CLI) im PATH auf dem Runner gefunden. Bitte auf dem Runner installieren und anmelden."
+            exit 1
+          }
+
+          if ($cliExit -ne 0 -or [string]::IsNullOrWhiteSpace($reviewText)) {
+            $errText = if (Test-Path $errFile) { Get-Content -Path $errFile -Raw } else { "" }
+            Write-Error "Review-CLI fehlgeschlagen (Exit $cliExit).`nSTDOUT:`n$reviewText`nSTDERR:`n$errText"
+            exit 1
+          }
+
+          # Kommentar statt gh pr review (--approve/--request-changes), da GitHub Selbst-Reviews auf eigene PRs blockiert
+          if ($reviewText -match '^\s*`?LGTM`?[.!]?\s*$') {
+            $body = '<!-- antigravity-review:lgtm -->' + "`n" + '✅ **Antigravity Review:** Keine Beanstandungen (`LGTM`). Bereit zum Merge.'
+          } else {
+            $body = '<!-- antigravity-review:changes-requested -->' + "`n" + '🤖 **Antigravity Review:**' + "`n`n" + $reviewText
+          }
+
+          $commentFile = Join-Path $env:RUNNER_TEMP "review-comment.md"
+          [System.IO.File]::WriteAllText($commentFile, $body, [System.Text.UTF8Encoding]::new($false))
+          gh pr comment $env:PR_NUMBER --body-file $commentFile
+          if ($LASTEXITCODE -ne 0) { throw "gh pr comment fehlgeschlagen (Exit $LASTEXITCODE)" }
