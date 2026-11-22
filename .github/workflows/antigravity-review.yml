@@ -3,37 +3,71 @@ name: Antigravity PR Review
 on:
   pull_request:
     types: [opened, synchronize, reopened]
+  issue_comment:
+    types: [created]
 
 permissions:
   contents: read
   pull-requests: write
 
 concurrency:
-  group: pr-review-${{ github.event.pull_request.number }}
+  group: pr-review-${{ github.event.pull_request.number || github.event.issue.number }}
   cancel-in-progress: true
 
 jobs:
   review:
-    # Sicherheit auf self-hosted Runner: keine externen Fork-PRs und keine Drafts ausführen
+    # Sicherheit auf self-hosted Runner: keine externen Fork-PRs und keine Drafts; /review nur durch Repo-Mitglieder
     if: >
-      !github.event.pull_request.draft &&
-      github.event.pull_request.head.repo.full_name == github.repository
+      (github.event_name == 'pull_request' &&
+        !github.event.pull_request.draft &&
+        github.event.pull_request.head.repo.full_name == github.repository) ||
+      (github.event_name == 'issue_comment' &&
+        github.event.issue.pull_request != null &&
+        contains(github.event.comment.body, '/review') &&
+        (github.event.comment.author_association == 'OWNER' || github.event.comment.author_association == 'MEMBER' || github.event.comment.author_association == 'COLLABORATOR'))
     runs-on: self-hosted
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Run Gemini/Antigravity PR Review
+      - name: PR-Metadaten prüfen
+        id: pr
         shell: pwsh
         env:
           GH_TOKEN: ${{ secrets.CUSTOM_PAT }}
-          PR_NUMBER: ${{ github.event.pull_request.number }}
+          EVENT_NAME: ${{ github.event_name }}
+          PR_NUMBER: ${{ github.event.pull_request.number || github.event.issue.number }}
+          REPO: ${{ github.repository }}
         run: |
           $ErrorActionPreference = "Stop"
-          [Console]::InputEncoding  = [System.Text.UTF8Encoding]::new($false)
-          [Console]::OutputEncoding = [System.Text.UTF8Encoding]::new($false)
+          if ($env:EVENT_NAME -eq "issue_comment") {
+            $pr = gh api "repos/$($env:REPO)/pulls/$($env:PR_NUMBER)" | ConvertFrom-Json
+            if ($LASTEXITCODE -ne 0) { throw "Konnte PR #$($env:PR_NUMBER) nicht laden." }
+            if ($pr.state -ne "open" -or $pr.head.repo.full_name -ne $env:REPO) {
+              Write-Host "PR #$($env:PR_NUMBER) übersprungen (state=$($pr.state), repo=$($pr.head.repo.full_name))."
+              "run=false" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
+              exit 0
+            }
+          }
+          "run=true" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
+          "number=$($env:PR_NUMBER)" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
+
+      - name: Checkout Code
+        if: steps.pr.outputs.run == 'true'
+        uses: actions/checkout@v4
+        with:
+          ref: refs/pull/${{ steps.pr.outputs.number }}/merge
+          fetch-depth: 0
+
+      - name: Run Gemini/Antigravity PR Review
+        if: steps.pr.outputs.run == 'true'
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ secrets.CUSTOM_PAT }}
+          PR_NUMBER: ${{ steps.pr.outputs.number }}
+        run: |
+          $ErrorActionPreference = "Stop"
+          $utf8 = [System.Text.UTF8Encoding]::new($false)
+          $OutputEncoding           = $utf8
+          [Console]::InputEncoding  = $utf8
+          [Console]::OutputEncoding = $utf8
 
           $diff = gh pr diff $env:PR_NUMBER | Out-String
           if ($LASTEXITCODE -ne 0) { throw "gh pr diff fehlgeschlagen (Exit $LASTEXITCODE)" }
@@ -42,27 +76,86 @@ jobs:
             exit 0
           }
 
-          $prompt = "Führe ein fokussiertes Code-Review für den übergebenen Git-Diff dieses Pull Requests (FoundryVTT-NoReturn2E) exakt nach den Regeln in GEMINI.md durch. Antworte entweder ausschließlich mit dem exakten Wort LGTM oder mit einer kurzen, nummerierten Mängelliste ohne das Wort LGTM."
-          $errFile = Join-Path $env:RUNNER_TEMP "review-stderr.log"
+          # Lokale Basis-Checks direkt im Runner ausführen, damit das Review-CLI keine Shell-Befehle ausführen muss
+          $checkLines = @()
+          if (Get-Command node -ErrorAction SilentlyContinue) {
+            $ErrorActionPreference = "Continue"
+            $syntaxErrors = @()
+            Get-ChildItem -Path noreturn.mjs, module, tools -Filter "*.mjs" -Recurse -ErrorAction SilentlyContinue | ForEach-Object {
+              $out = node --check $_.FullName 2>&1 | Out-String
+              if ($LASTEXITCODE -ne 0) { $syntaxErrors += "$($_.FullName): $($out.Trim())" }
+            }
+            if ($syntaxErrors.Count -eq 0) {
+              $checkLines += "- JS-Syntax (node --check): OK"
+            } else {
+              $checkLines += "- JS-Syntax FEHLER:`n$($syntaxErrors -join "`n")"
+            }
+            if (Test-Path "tools/validate-packs.mjs") {
+              $packOut = (node tools/validate-packs.mjs 2>&1 | Out-String).Trim()
+              $checkLines += "- Pack-Validierung (Exit $LASTEXITCODE): $packOut"
+            }
+            $ErrorActionPreference = "Stop"
+          }
+          $checkSummary = if ($checkLines.Count -gt 0) { $checkLines -join "`n" } else { "(keine lokalen Checks ausgeführt)" }
 
+          $instructions = if (Test-Path "GEMINI.md") { Get-Content -Path "GEMINI.md" -Raw } else { "" }
+          $fullPrompt = @(
+            "Führe ein fokussiertes Code-Review für Pull Request #$($env:PR_NUMBER) im Repository FoundryVTT-NoReturn2E durch."
+            "WICHTIG für den Headless-Modus: Führe KEINE Terminal-/Shell-Befehle (run_command) aus und ändere KEINE Dateien. Alle relevanten Prüfdaten und der vollständige Diff stehen unten; nutze bei Bedarf ausschließlich Datei-Lese-Tools."
+            "Halte dich strikt an das folgende Regelwerk und Ausgabeformat (entweder exakt 'LGTM' oder eine kurze nummerierte Mängelliste OHNE das Wort 'LGTM'):"
+            ""
+            $instructions
+            ""
+            "### Ergebnisse automatischer Vorab-Checks"
+            $checkSummary
+            ""
+            "### Git-Diff des Pull Requests"
+            '```diff'
+            $diff.TrimEnd()
+            '```'
+          ) -join "`n"
+
+          $errFile = Join-Path $env:RUNNER_TEMP "review-stderr.log"
+          $reviewText = ""
+          $cliExit = 1
+
+          $ErrorActionPreference = "Continue"
           if (Get-Command gemini -ErrorAction SilentlyContinue) {
             Write-Host "Nutze Gemini CLI (gemini)..."
-            $reviewText = ($diff | gemini -p $prompt 2>$errFile | Out-String).Trim()
+            $reviewText = ($fullPrompt | gemini -p "Führe das Code-Review strikt gemäß den Anweisungen auf stdin durch." 2>$errFile | Out-String).Trim()
             $cliExit = $LASTEXITCODE
           } elseif (Get-Command agy -ErrorAction SilentlyContinue) {
-            Write-Host "Nutze Antigravity CLI (agy)..."
-            $diffPath = Join-Path $PWD "pr.diff"
-            [System.IO.File]::WriteAllText($diffPath, $diff, [System.Text.UTF8Encoding]::new($false))
-            try {
-              $reviewText = (agy --mode plan -p "$prompt Der vollständige Diff liegt in pr.diff im Arbeitsverzeichnis." 2>$errFile | Out-String).Trim()
-              $cliExit = $LASTEXITCODE
-            } finally {
-              Remove-Item -Path $diffPath -ErrorAction SilentlyContinue
+            Write-Host "Nutze Antigravity CLI (agy, stream-json)..."
+            $payload = @{
+              event   = "user"
+              message = @{ content = $fullPrompt }
+            } | ConvertTo-Json -Depth 5 -Compress
+
+            $rawLines = $payload | agy --input-format stream-json --output-format stream-json --print-timeout 10m 2>$errFile
+            $cliExit = $LASTEXITCODE
+            $resultEvent = $null
+            foreach ($line in $rawLines) {
+              if ([string]::IsNullOrWhiteSpace($line)) { continue }
+              try {
+                $ev = $line | ConvertFrom-Json
+                if ($ev.event -eq "result") { $resultEvent = $ev.result }
+              } catch { }
+            }
+            if ($resultEvent -and $resultEvent.status -eq "SUCCESS") {
+              $reviewText = ([string]$resultEvent.response).Trim()
+            } else {
+              $ErrorActionPreference = "Stop"
+              $errDetail = if ($resultEvent) { "status=$($resultEvent.status), error=$($resultEvent.error)" } else { "kein result-Event erhalten" }
+              $stderrText = if (Test-Path $errFile) { Get-Content -Path $errFile -Raw } else { "" }
+              Write-Error "Antigravity CLI fehlgeschlagen (Exit $cliExit, $errDetail).`nSTDERR:`n$stderrText"
+              exit 1
             }
           } else {
+            $ErrorActionPreference = "Stop"
             Write-Error "Weder 'gemini' (@google/gemini-cli) noch 'agy' (Antigravity CLI) im PATH auf dem Runner gefunden. Bitte auf dem Runner installieren und anmelden."
             exit 1
           }
+          $ErrorActionPreference = "Stop"
 
           if ($cliExit -ne 0 -or [string]::IsNullOrWhiteSpace($reviewText)) {
             $errText = if (Test-Path $errFile) { Get-Content -Path $errFile -Raw } else { "" }
@@ -78,6 +171,6 @@ jobs:
           }
 
           $commentFile = Join-Path $env:RUNNER_TEMP "review-comment.md"
-          [System.IO.File]::WriteAllText($commentFile, $body, [System.Text.UTF8Encoding]::new($false))
+          [System.IO.File]::WriteAllText($commentFile, $body, $utf8)
           gh pr comment $env:PR_NUMBER --body-file $commentFile
           if ($LASTEXITCODE -ne 0) { throw "gh pr comment fehlgeschlagen (Exit $LASTEXITCODE)" }
