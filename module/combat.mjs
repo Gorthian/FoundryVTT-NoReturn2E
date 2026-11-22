@@ -67,6 +67,14 @@ function styleAttackHints(actor, weapon) {
   return hints;
 }
 
+/** Caecitas (S. 148): gehärtete Weichteile – ohne Weichteil-Schwachstellen kein +10-Schaden bei „Exakte Stelle“. Gilt nur, wenn alle Ziele Caecitas haben. */
+function softSpotsHardened(targets) {
+  return targets.length > 0 && targets.every(t => {
+    const actor = t.actorUuid ? fromUuidSync(t.actorUuid) : null;
+    return actor?.items?.some(i => i.type === "abnormality" && i.name.toLowerCase().startsWith("caecitas"));
+  });
+}
+
 /** Tokens → UUIDs */
 function targetList() {
   return Array.from(game.user.targets).map(t => ({ uuid: t.document.uuid, name: t.name, actorUuid: t.actor?.uuid, token: t }));
@@ -243,7 +251,7 @@ export async function attackWithWeapon(actor, weapon) {
   // Schadensprofil
   const dmg = {
     strength: sys.damage.strength,
-    points: sys.damage.points + (ammoSys?.damageBonus ?? 0) + (mode?.damagePoints ?? 0) - strengthMalusPoints + (aim === "exact" ? 10 : 0),
+    points: sys.damage.points + (ammoSys?.damageBonus ?? 0) + (mode?.damagePoints ?? 0) - strengthMalusPoints + (aim === "exact" && !softSpotsHardened(targets) ? 10 : 0),
     formula: sys.damage.formula || ammoSys?.damage || "",
     pierce: pierceMax(sys.damage.pierce, ammoSys?.pierce, mode?.pierce),
     damageType: sys.damageType,

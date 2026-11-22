@@ -37,6 +37,9 @@ function powerFor(actor, app) {
 export async function castPsiApp(actor, app) {
   const power = powerFor(actor, app);
   if (!power) return ui.notifications.warn(game.i18n.format("NR.Psi.NoPower", { power: NR.psiPowers[app.system.power]?.label ?? app.system.power }));
+  if (actor.items.some(i => i.type === "abnormality" && i.name.toLowerCase().startsWith("psionische abartigkeit"))) {
+    return ui.notifications.warn(game.i18n.localize("NR.Psi.Abnormal"));
+  }
   const level = power.system.value;
   const collected = actor.system.combat.psiCollected;
   const s = app.system;
@@ -140,7 +143,7 @@ export async function castPsiApp(actor, app) {
   });
   const msgData = {
     speaker: ChatMessage.getSpeaker({ actor }), content: content2, rolls: [res.roll, ...(fail?.rolls ?? [])],
-    flags: { noreturn: { psi: { appId: app.id, ks, success, damage: damagePayload } } }
+    flags: { noreturn: { psi: { appId: app.id, power: s.power, ks, success, damage: damagePayload } } }
   };
   applyChatMode(msgData);
   return ChatMessage.create(msgData);
@@ -236,6 +239,23 @@ export async function applyPsiDamage(message, tokenUuid) {
   const actor = tokenDoc?.actor;
   if (!actor) return;
   if (!actor.isOwner) return ui.notifications.warn(game.i18n.localize("NR.Notify.NotOwner"));
+  let amount = payload.amount;
+  // Kat. A (alle Kräfte außer Kategorie B): Psionische Abartigkeit/Transzendenz sind immun, PSI-Resistenz senkt die Kraftstufe um 2 (S. 148–161)
+  if (message.flags.noreturn?.psi?.power !== "kategorieB") {
+    const has = prefix => actor.items.some(i => i.type === "abnormality" && i.name.toLowerCase().startsWith(prefix));
+    if (has("psionische abartigkeit") || has("psionische transzendenz")) {
+      await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }), content: `<p class="nr-hint">${game.i18n.format("NR.Psi.Immune", { name: foundry.utils.escapeHTML(actor.name), app: foundry.utils.escapeHTML(payload.weaponName ?? "") })}</p>` });
+      return;
+    }
+    const ks = message.flags.noreturn?.psi?.ks;
+    if (has("psi-resistenz") && ks > 0) {
+      amount = Math.round(amount / ks * Math.max(0, ks - 2));
+      if (amount <= 0) {
+        await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }), content: `<p class="nr-hint">${game.i18n.format("NR.Psi.Resisted", { name: foundry.utils.escapeHTML(actor.name), app: foundry.utils.escapeHTML(payload.weaponName ?? "") })}</p>` });
+        return;
+      }
+    }
+  }
   const zones = payload.zones ?? [(await rollHitZone()).zone];
-  return actor.resistDamage({ amount: payload.amount, zones, attack: payload.attack, label: payload.weaponName });
+  return actor.resistDamage({ amount, zones, attack: payload.attack, label: payload.weaponName });
 }

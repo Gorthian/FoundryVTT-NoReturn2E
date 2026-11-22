@@ -444,6 +444,9 @@ NR.modifierTargets = {
   "dice.klettern": "Bonuswürfel: Klettern",
   "dice.nahkampf": "Bonuswürfel: Nahkampf",
   "dice.einschuechtern.st": "Bonuswürfel: Einschüchtern mit Stärke",
+  "dice.einschuechtern": "Bonuswürfel: Einschüchtern",
+  "dice.inspirieren": "Bonuswürfel: Inspirieren",
+  "dice.schauspiel": "Bonuswürfel: Schauspiel",
   // Kampf (Style-Skills/Kampfkünste): Bonuswürfel auf den Angriff bzw. Schadenswürfel
   "attack.fist": "Angriff: Faustschläge (Bonuswürfel)",
   "attack.leg": "Angriff: Beinangriffe (Bonuswürfel)",
@@ -522,7 +525,12 @@ export function localizeConfig() {
   const i18n = game.i18n;
   const tr = (path, fallback) => {
     const key = `NR.Cfg.${path.map(p => p === "" ? "none" : p).join(".")}`;
-    return i18n.has(key) ? i18n.localize(key) : fallback;
+    // Blatt-Schlüssel `<key>._`, falls unter <key> bereits ein verschachteltes Objekt liegt (z. B. dice.einschuechtern / dice.einschuechtern.st)
+    for (const k of [key, `${key}._`]) {
+      const v = i18n.localize(k);
+      if (v !== k) return v;
+    }
+    return fallback;
   };
   const walk = (obj, path) => {
     for (const [k, v] of Object.entries(obj)) {
