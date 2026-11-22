@@ -78,8 +78,10 @@ jobs:
           REVIEW_BODY: ${{ github.event.comment.body }}
         run: |
           $ErrorActionPreference = "Stop"
-          [Console]::InputEncoding  = [System.Text.UTF8Encoding]::new($false)
-          [Console]::OutputEncoding = [System.Text.UTF8Encoding]::new($false)
+          $utf8 = [System.Text.UTF8Encoding]::new($false)
+          $OutputEncoding           = $utf8
+          [Console]::InputEncoding  = $utf8
+          [Console]::OutputEncoding = $utf8
 
           if (-not (Get-Command claude -ErrorAction SilentlyContinue)) {
             Write-Error "'claude' (Claude Code CLI) nicht im PATH auf dem Runner gefunden."
