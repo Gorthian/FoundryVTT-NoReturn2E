@@ -1,7 +1,9 @@
 import { NR } from "./config.mjs";
 import { rollPool, applyChatMode, diceSummary, postPoolMessage, rollHitZone } from "./dice/pool.mjs";
-import { appTiming, appEffectSpec, durationText } from "./timed.mjs";
+import { appTiming, appEffectSpec, durationText, evalFormula } from "./timed.mjs";
 import { applyBuffTo } from "./socket.mjs";
+
+const SYSTEM_ID = "noreturn";
 
 const { renderTemplate } = foundry.applications.handlebars;
 const { DialogV2 } = foundry.applications.api;
@@ -128,6 +130,7 @@ export async function castPsiApp(actor, app) {
   let effectHtml = success ? resolveKsText(s.effect || "", ks) : "";
   const timing = success ? appTiming(app, ks) : null;
   if (timing) effectHtml += await applyAppTiming(actor, app, ks, timing);
+  if (success) effectHtml += await spawnPsiWeapons(actor, app, ks);
   const damagePayload = success && s.damageMult ? {
     kind: "damage", amount: ks * s.damageMult, zones: s.allZones ? Object.keys(NR.zones) : null,
     attack: { pierce: s.pierce || "", damageType: "psi", nonLethal: false, structure: false, continuous: false },
@@ -173,6 +176,57 @@ async function applyAppTiming(actor, app, ks, timing) {
     note = notes.join("; ");
   }
   return `<p class="nr-hint"><i class="fa-solid fa-hourglass-half"></i> ${parts.join(" · ")} — ${note}</p>`;
+}
+
+/** Flag-Schlüssel an erzeugten Waffen-Items: ID der App, an deren Haltung sie hängen. */
+const PSI_WEAPON_FLAG = "psiWeapon";
+
+/**
+ * Waffe(n) der App (system.weapon) als Items am Actor anlegen. Vorhandene Waffen derselben App werden ersetzt;
+ * sie bleiben, solange die App gehalten wird (siehe removePsiWeapons / Hooks in noreturn.mjs).
+ * @returns {Promise<string>} Zeile für die Chatkarte (leer, wenn die App keine Waffe erzeugt)
+ */
+async function spawnPsiWeapons(actor, app, ks) {
+  const w = app.system.weapon;
+  if (!w?.count) return "";
+  await removePsiWeapons(actor, app.id);
+  const attackDice = evalFormula(w.attackDice, { ks }) ?? 0;
+  const parryDice = evalFormula(w.parryDice, { ks }) ?? 0;
+  const points = evalFormula(w.damage, { ks }) ?? 0;
+  const name = w.name || app.name;
+  const data = Array.from({ length: w.count }, () => ({
+    name, type: "weapon", img: app.img,
+    system: {
+      category: "nahkampf", damageType: w.damageType, attackDice, parryDice, twoHanded: !!w.twoHanded, equipped: true,
+      damage: { strength: !!w.strength, points },
+      description: `<p>${foundry.utils.escapeHTML(app.name)} (KS ${ks})</p>`
+    },
+    flags: { [SYSTEM_ID]: { [PSI_WEAPON_FLAG]: app.id } }
+  }));
+  const created = await actor.createEmbeddedDocuments("Item", data, { nrSkipGrants: true });
+  const parts = [`${created.length}× ${foundry.utils.escapeHTML(name)}`];
+  if (attackDice) parts.push(game.i18n.format("NR.Psi.WeaponAttack", { n: attackDice }));
+  if (parryDice) parts.push(game.i18n.format("NR.Psi.WeaponParry", { n: parryDice }));
+  parts.push(created[0]?.system.damageLabel ?? "");
+  return `<p class="nr-hint"><i class="fa-solid fa-hand-fist"></i> ${game.i18n.localize("NR.Psi.WeaponCreated")}: ${parts.join(" · ")}</p>`;
+}
+
+/** Von einer App erzeugte Waffen vom Actor entfernen (App nicht mehr gehalten oder gelöscht). */
+export async function removePsiWeapons(actor, appId) {
+  const ids = actor?.items.filter(i => i.type === "weapon" && i.getFlag(SYSTEM_ID, PSI_WEAPON_FLAG) === appId).map(i => i.id) ?? [];
+  if (ids.length) await actor.deleteEmbeddedDocuments("Item", ids);
+}
+
+/** Erzeugte Waffen verschwinden, wenn die App nicht mehr gehalten oder gelöscht wird. */
+export function registerPsiHooks() {
+  Hooks.on("updateItem", (item, changed, options, userId) => {
+    if (userId !== game.user.id || item.type !== "psiApp" || !item.actor) return;
+    if (foundry.utils.getProperty(changed, "system.held") === false) removePsiWeapons(item.actor, item.id).catch(err => console.error("NoReturn 2E | PSI-Waffen:", err));
+  });
+  Hooks.on("deleteItem", (item, options, userId) => {
+    if (userId !== game.user.id || item.type !== "psiApp" || !item.actor) return;
+    removePsiWeapons(item.actor, item.id).catch(err => console.error("NoReturn 2E | PSI-Waffen:", err));
+  });
 }
 
 async function enrich(html, doc) {

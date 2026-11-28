@@ -119,6 +119,18 @@
       <span><select name="system.duration.tick.damageType">{{selectOptions options.damageTypes selected=system.duration.tick.damageType}}</select> <select name="system.duration.tick.zones">{{selectOptions options.tickZones selected=system.duration.tick.zones}}</select> <select name="system.duration.tick.pierce">{{selectOptions options.pierce selected=system.duration.tick.pierce}}</select></span>
     </div>
   </fieldset>
+  <fieldset class="nr-timed-fields">
+    <legend>{{localize "NR.Psi.WeaponTitle"}}</legend>
+    <div class="nr-form-grid">
+      <label data-tooltip="{{localize 'NR.Psi.WeaponCountHint'}}">{{localize "NR.Psi.WeaponCount"}}</label><input type="number" name="system.weapon.count" value="{{system.weapon.count}}" min="0">
+      <label>{{localize "NR.Psi.WeaponName"}}</label><input type="text" name="system.weapon.name" value="{{system.weapon.name}}" placeholder="{{name}}">
+      <label data-tooltip="{{localize 'NR.Timed.FormulaHint'}}">{{localize "NR.Psi.WeaponDice"}}</label>
+      <span>{{localize "NR.Psi.WeaponAttackShort"}} <input type="text" name="system.weapon.attackDice" value="{{system.weapon.attackDice}}" placeholder="2"> {{localize "NR.Psi.WeaponParryShort"}} <input type="text" name="system.weapon.parryDice" value="{{system.weapon.parryDice}}" placeholder="KS"></span>
+      <label data-tooltip="{{localize 'NR.Timed.FormulaHint'}}">{{localize "NR.Psi.WeaponDamage"}}</label>
+      <span><label><input type="checkbox" name="system.weapon.strength" {{checked system.weapon.strength}}> ST +</label> <input type="text" name="system.weapon.damage" value="{{system.weapon.damage}}" placeholder="KS*10"></span>
+      <label>{{localize "NR.Psi.WeaponType"}}</label><span><select name="system.weapon.damageType">{{selectOptions options.damageTypes selected=system.weapon.damageType}}</select> <label><input type="checkbox" name="system.weapon.twoHanded" {{checked system.weapon.twoHanded}}> {{localize "NR.Weapon.TwoHanded"}}</label></span>
+    </div>
+  </fieldset>
   <label class="nr-block-label">{{localize "NR.Psi.Effect"}}</label>
   <textarea name="system.effect" rows="5">{{system.effect}}</textarea>
   <p class="nr-hint">{{localize "NR.Psi.EffectHint"}}</p>

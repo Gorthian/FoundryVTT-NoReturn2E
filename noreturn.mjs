@@ -18,7 +18,7 @@ import { infect, advanceDisease, cure, infectDialog } from "./module/disease.mjs
 import { applyElapsed, elapsedDialog, registerElapsedHook } from "./module/elapsed.mjs";
 import { rollPool, rollHitZone } from "./module/dice/pool.mjs";
 import { supportAction } from "./module/dice/support.mjs";
-import { castPsiApp, collectPower, rollPsiFail } from "./module/psi.mjs";
+import { castPsiApp, collectPower, rollPsiFail, registerPsiHooks } from "./module/psi.mjs";
 import { NRCharacterGenerator, openCharacterGenerator } from "./module/apps/character-generator.mjs";
 import { registerNoticeSettings, showStartupNotice } from "./module/notice.mjs";
 import { registerSyncSettings, checkSyncAfterUpdate, openCompendiumSync } from "./module/sync.mjs";
@@ -98,6 +98,7 @@ Hooks.once("init", () => {
   registerCombatHooks();
   registerTimeHooks();
   registerTimedHooks();
+  registerPsiHooks();
   Hooks.on("updateWorldTime", () => NRTimeHud.instance?.onTimeChanged());
   Hooks.on("canvasReady", () => NRTimeHud.instance?.render());
 });
