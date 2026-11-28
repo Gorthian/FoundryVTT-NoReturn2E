@@ -274,6 +274,11 @@
       "Block": "Block"
     },
     "Damage": {
+      "UnconsciousName": "Unconscious",
+      "UnconsciousText": "{name} is unconscious: {n} {unit} (2d6 = {n}).",
+      "UnconsciousMin": "minutes",
+      "UnconsciousRounds": "combat rounds (regeneration)",
+      "UnconsciousHint": "Medicine (DC 15) wakes them earlier. Any further damage triggers unconsciousness again while the penalty reaches Constitution.",
       "Manual": "Take damage",
       "Resist": "Roll resistance",
       "Amount": "Damage",
@@ -1795,6 +1800,7 @@
       "nrTemp6": "Extreme temperature −6D",
       "nrRadiation": "Irradiated",
       "nrDisease": "Diseased",
+      "nrUnconscious": "Unconscious",
       "nrContinuous": "Continuous damage"
     },
     "Hazard": {

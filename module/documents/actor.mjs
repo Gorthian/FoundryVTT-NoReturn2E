@@ -1,6 +1,7 @@
 import { NR } from "../config.mjs";
 import { rollPool, postPoolMessage, applyChatMode, buildFormula } from "../dice/pool.mjs";
 import { poolDialog } from "../dice/roll-dialog.mjs";
+import { addTimedEffect } from "../timed.mjs";
 import { skillStyleEffects, styleDialogContent, LEG_ZONES } from "../styles.mjs";
 
 const { renderTemplate } = foundry.applications.handlebars;
@@ -445,7 +446,32 @@ export class NRActor extends foundry.documents.Actor {
     const msgData = { speaker: ChatMessage.getSpeaker({ actor: this }), content, rolls: [roll], sound: CONFIG.sounds.dice };
     applyChatMode(msgData);
     await ChatMessage.create(msgData);
+    // Bewusstlosigkeit (S. 99): bei jedem Schaden, solange der Malus die Konstitution erreicht
+    if (totalApplied > 0 && this.system.unconscious && !after.some(r => r.lethal)) await this.fallUnconscious();
     return { roll, results: after, totalApplied };
+  }
+
+  /**
+   * Bewusstlos für 2W6 Minuten, mit Regeneration 2W6 Kampfrunden (S. 99). Eine laufende Bewusstlosigkeit wird neu ausgewürfelt.
+   * Medizin (MW 15) weckt früher: den Effekt am Charakterbogen beenden.
+   */
+  async fallUnconscious() {
+    const roll = await new Roll("2d6").evaluate();
+    const rounds = !!this.system.hasRegeneration;
+    const old = this.effects.filter(e => e.statuses.has("nrUnconscious")).map(e => e.id);
+    if (old.length) await this.deleteEmbeddedDocuments("ActiveEffect", old);
+    const name = game.i18n.localize("NR.Damage.UnconsciousName");
+    await addTimedEffect(this, {
+      name, img: "icons/svg/unconscious.svg", value: roll.total, unit: rounds ? "round" : "minute",
+      statuses: ["nrUnconscious"], description: game.i18n.localize("NR.Damage.UnconsciousHint"), source: name
+    });
+    const unit = game.i18n.localize(rounds ? "NR.Damage.UnconsciousRounds" : "NR.Damage.UnconsciousMin");
+    const msgData = {
+      speaker: ChatMessage.getSpeaker({ actor: this }), rolls: [roll],
+      content: `<div class="nr-card"><p class="nr-alert"><i class="fa-solid fa-bed-pulse"></i> ${game.i18n.format("NR.Damage.UnconsciousText", { name: foundry.utils.escapeHTML(this.name), n: roll.total, unit })}</p><p class="nr-hint">${game.i18n.localize("NR.Damage.UnconsciousHint")}</p></div>`
+    };
+    applyChatMode(msgData);
+    return ChatMessage.create(msgData);
   }
 
   /** Schaden an Fahrzeugen: Stabilität + Panzerung (S. 104). */
