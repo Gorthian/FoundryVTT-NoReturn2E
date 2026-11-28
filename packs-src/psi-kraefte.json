@@ -394,7 +394,12 @@
    "value": 1,
    "free": 0,
    "show": "",
-   "description": "<p>PSI-Kraft der Kategorie B (HMO). Voraussetzung: Abnormität „Demigod“. Blut perlt auf Wunsch von Körper und Kleidung ab; über nicht getrocknetes Blut kann man gehen, ohne einzusinken. Kräfte dieser Kategorie wirken nach einmaliger Aktivierung automatisch (auch im Schlaf); gleichzeitig aktiv: Stufe in Wissen. iHMO erhalten „Unaufhaltsamer Schatten“, gHMO wählen eine Kraft frei; weitere 7 GP bei Erschaffung bzw. 15 EP. <em class=\"nr-ref\">(NoReturn 2E, S. 215)</em></p>"
+   "description": "<p>PSI-Kraft der Kategorie B (HMO). Voraussetzung: Abnormität „Demigod“. Blut perlt auf Wunsch von Körper und Kleidung ab; über nicht getrocknetes Blut kann man gehen, ohne einzusinken. Kräfte dieser Kategorie wirken nach einmaliger Aktivierung automatisch (auch im Schlaf); gleichzeitig aktiv: Stufe in Wissen. iHMO erhalten „Unaufhaltsamer Schatten“, gHMO wählen eine Kraft frei; weitere 7 GP bei Erschaffung bzw. 15 EP. <em class=\"nr-ref\">(NoReturn 2E, S. 215)</em></p>",
+   "active": false,
+   "modifiers": [],
+   "bloodAction": "",
+   "bloodCost": 0,
+   "bloodValue": 0
   },
   "effects": [],
   "folder": null,
@@ -426,7 +431,17 @@
    "value": 1,
    "free": 0,
    "show": "",
-   "description": "<p>PSI-Kraft der Kategorie B (HMO). Der Charakter kann fünf Blutpunkte aufnehmen bzw. sein Maximum an Blutpunkten steigt um fünf. Kräfte dieser Kategorie wirken nach einmaliger Aktivierung automatisch (auch im Schlaf); gleichzeitig aktiv: Stufe in Wissen. iHMO erhalten „Unaufhaltsamer Schatten“, gHMO wählen eine Kraft frei; weitere 7 GP bei Erschaffung bzw. 15 EP. <em class=\"nr-ref\">(NoReturn 2E, S. 215)</em></p>"
+   "description": "<p>PSI-Kraft der Kategorie B (HMO). Der Charakter kann fünf Blutpunkte aufnehmen bzw. sein Maximum an Blutpunkten steigt um fünf. Kräfte dieser Kategorie wirken nach einmaliger Aktivierung automatisch (auch im Schlaf); gleichzeitig aktiv: Stufe in Wissen. iHMO erhalten „Unaufhaltsamer Schatten“, gHMO wählen eine Kraft frei; weitere 7 GP bei Erschaffung bzw. 15 EP. <em class=\"nr-ref\">(NoReturn 2E, S. 215)</em></p>",
+   "active": false,
+   "modifiers": [
+    {
+     "target": "bloodMax",
+     "value": 5
+    }
+   ],
+   "bloodAction": "",
+   "bloodCost": 0,
+   "bloodValue": 0
   },
   "effects": [],
   "folder": null,
@@ -458,7 +473,12 @@
    "value": 1,
    "free": 0,
    "show": "",
-   "description": "<p>PSI-Kraft der Kategorie B (HMO). 1 Blutpunkt: zehn Minuten keinen Schmerz – Schmerztoleranz zählt als Stufe 10. Kräfte dieser Kategorie wirken nach einmaliger Aktivierung automatisch (auch im Schlaf); gleichzeitig aktiv: Stufe in Wissen. iHMO erhalten „Unaufhaltsamer Schatten“, gHMO wählen eine Kraft frei; weitere 7 GP bei Erschaffung bzw. 15 EP. <em class=\"nr-ref\">(NoReturn 2E, S. 215)</em></p>"
+   "description": "<p>PSI-Kraft der Kategorie B (HMO). 1 Blutpunkt: zehn Minuten keinen Schmerz – Schmerztoleranz zählt als Stufe 10. Kräfte dieser Kategorie wirken nach einmaliger Aktivierung automatisch (auch im Schlaf); gleichzeitig aktiv: Stufe in Wissen. iHMO erhalten „Unaufhaltsamer Schatten“, gHMO wählen eine Kraft frei; weitere 7 GP bei Erschaffung bzw. 15 EP. <em class=\"nr-ref\">(NoReturn 2E, S. 215)</em></p>",
+   "active": false,
+   "modifiers": [],
+   "bloodAction": "pain",
+   "bloodCost": 1,
+   "bloodValue": 0
   },
   "effects": [],
   "folder": null,
@@ -490,7 +510,17 @@
    "value": 1,
    "free": 0,
    "show": "",
-   "description": "<p>PSI-Kraft der Kategorie B (HMO). Charisma temporär +2 Stufen. Kräfte dieser Kategorie wirken nach einmaliger Aktivierung automatisch (auch im Schlaf); gleichzeitig aktiv: Stufe in Wissen. iHMO erhalten „Unaufhaltsamer Schatten“, gHMO wählen eine Kraft frei; weitere 7 GP bei Erschaffung bzw. 15 EP. <em class=\"nr-ref\">(NoReturn 2E, S. 215)</em></p>"
+   "description": "<p>PSI-Kraft der Kategorie B (HMO). Charisma temporär +2 Stufen. Kräfte dieser Kategorie wirken nach einmaliger Aktivierung automatisch (auch im Schlaf); gleichzeitig aktiv: Stufe in Wissen. iHMO erhalten „Unaufhaltsamer Schatten“, gHMO wählen eine Kraft frei; weitere 7 GP bei Erschaffung bzw. 15 EP. <em class=\"nr-ref\">(NoReturn 2E, S. 215)</em></p>",
+   "active": false,
+   "modifiers": [
+    {
+     "target": "attributes.ch",
+     "value": 2
+    }
+   ],
+   "bloodAction": "",
+   "bloodCost": 0,
+   "bloodValue": 0
   },
   "effects": [],
   "folder": null,
@@ -522,7 +552,12 @@
    "value": 1,
    "free": 0,
    "show": "",
-   "description": "<p>PSI-Kraft der Kategorie B (HMO). 1 Blutpunkt (max. einer je KR, keine Aktion): sofort 30 TP regeneriert, Brüche heilen, Gliedmaßen wachsen nach. Verdrängt Robotik der betroffenen Zone. Kräfte dieser Kategorie wirken nach einmaliger Aktivierung automatisch (auch im Schlaf); gleichzeitig aktiv: Stufe in Wissen. iHMO erhalten „Unaufhaltsamer Schatten“, gHMO wählen eine Kraft frei; weitere 7 GP bei Erschaffung bzw. 15 EP. <em class=\"nr-ref\">(NoReturn 2E, S. 215)</em></p>"
+   "description": "<p>PSI-Kraft der Kategorie B (HMO). 1 Blutpunkt (max. einer je KR, keine Aktion): sofort 30 TP regeneriert, Brüche heilen, Gliedmaßen wachsen nach. Verdrängt Robotik der betroffenen Zone. Kräfte dieser Kategorie wirken nach einmaliger Aktivierung automatisch (auch im Schlaf); gleichzeitig aktiv: Stufe in Wissen. iHMO erhalten „Unaufhaltsamer Schatten“, gHMO wählen eine Kraft frei; weitere 7 GP bei Erschaffung bzw. 15 EP. <em class=\"nr-ref\">(NoReturn 2E, S. 215)</em></p>",
+   "active": false,
+   "modifiers": [],
+   "bloodAction": "heal",
+   "bloodCost": 1,
+   "bloodValue": 30
   },
   "effects": [],
   "folder": null,
@@ -554,7 +589,17 @@
    "value": 1,
    "free": 0,
    "show": "",
-   "description": "<p>PSI-Kraft der Kategorie B (HMO). Stärke temporär +2 Stufen. Kräfte dieser Kategorie wirken nach einmaliger Aktivierung automatisch (auch im Schlaf); gleichzeitig aktiv: Stufe in Wissen. iHMO erhalten „Unaufhaltsamer Schatten“, gHMO wählen eine Kraft frei; weitere 7 GP bei Erschaffung bzw. 15 EP. <em class=\"nr-ref\">(NoReturn 2E, S. 215)</em></p>"
+   "description": "<p>PSI-Kraft der Kategorie B (HMO). Stärke temporär +2 Stufen. Kräfte dieser Kategorie wirken nach einmaliger Aktivierung automatisch (auch im Schlaf); gleichzeitig aktiv: Stufe in Wissen. iHMO erhalten „Unaufhaltsamer Schatten“, gHMO wählen eine Kraft frei; weitere 7 GP bei Erschaffung bzw. 15 EP. <em class=\"nr-ref\">(NoReturn 2E, S. 215)</em></p>",
+   "active": false,
+   "modifiers": [
+    {
+     "target": "attributes.st",
+     "value": 2
+    }
+   ],
+   "bloodAction": "",
+   "bloodCost": 0,
+   "bloodValue": 0
   },
   "effects": [],
   "folder": null,
@@ -586,7 +631,12 @@
    "value": 1,
    "free": 0,
    "show": "",
-   "description": "<p>PSI-Kraft der Kategorie B (HMO). Wirkt harmlos und vertraut; als bestimmte Person ausgeben: Schauspiel gegen Willenskraft des Ziels. Mit Mentale Sklaverei kombinierbar. Kräfte dieser Kategorie wirken nach einmaliger Aktivierung automatisch (auch im Schlaf); gleichzeitig aktiv: Stufe in Wissen. iHMO erhalten „Unaufhaltsamer Schatten“, gHMO wählen eine Kraft frei; weitere 7 GP bei Erschaffung bzw. 15 EP. <em class=\"nr-ref\">(NoReturn 2E, S. 215)</em></p>"
+   "description": "<p>PSI-Kraft der Kategorie B (HMO). Wirkt harmlos und vertraut; als bestimmte Person ausgeben: Schauspiel gegen Willenskraft des Ziels. Mit Mentale Sklaverei kombinierbar. Kräfte dieser Kategorie wirken nach einmaliger Aktivierung automatisch (auch im Schlaf); gleichzeitig aktiv: Stufe in Wissen. iHMO erhalten „Unaufhaltsamer Schatten“, gHMO wählen eine Kraft frei; weitere 7 GP bei Erschaffung bzw. 15 EP. <em class=\"nr-ref\">(NoReturn 2E, S. 215)</em></p>",
+   "active": false,
+   "modifiers": [],
+   "bloodAction": "",
+   "bloodCost": 0,
+   "bloodValue": 0
   },
   "effects": [],
   "folder": null,
@@ -618,7 +668,12 @@
    "value": 1,
    "free": 0,
    "show": "",
-   "description": "<p>PSI-Kraft der Kategorie B (HMO). Ziele haben −3W auf Willenskraft, wenn sie sich dem Wirker widersetzen (z. B. gegen Einschüchtern oder Überreden). Kräfte dieser Kategorie wirken nach einmaliger Aktivierung automatisch (auch im Schlaf); gleichzeitig aktiv: Stufe in Wissen. iHMO erhalten „Unaufhaltsamer Schatten“, gHMO wählen eine Kraft frei; weitere 7 GP bei Erschaffung bzw. 15 EP. <em class=\"nr-ref\">(NoReturn 2E, S. 215)</em></p>"
+   "description": "<p>PSI-Kraft der Kategorie B (HMO). Ziele haben −3W auf Willenskraft, wenn sie sich dem Wirker widersetzen (z. B. gegen Einschüchtern oder Überreden). Kräfte dieser Kategorie wirken nach einmaliger Aktivierung automatisch (auch im Schlaf); gleichzeitig aktiv: Stufe in Wissen. iHMO erhalten „Unaufhaltsamer Schatten“, gHMO wählen eine Kraft frei; weitere 7 GP bei Erschaffung bzw. 15 EP. <em class=\"nr-ref\">(NoReturn 2E, S. 215)</em></p>",
+   "active": false,
+   "modifiers": [],
+   "bloodAction": "",
+   "bloodCost": 0,
+   "bloodValue": 0
   },
   "effects": [],
   "folder": null,
@@ -650,7 +705,17 @@
    "value": 1,
    "free": 0,
    "show": "",
-   "description": "<p>PSI-Kraft der Kategorie B (HMO). Beweglichkeit temporär +2 Stufen. Kräfte dieser Kategorie wirken nach einmaliger Aktivierung automatisch (auch im Schlaf); gleichzeitig aktiv: Stufe in Wissen. iHMO erhalten „Unaufhaltsamer Schatten“, gHMO wählen eine Kraft frei; weitere 7 GP bei Erschaffung bzw. 15 EP. <em class=\"nr-ref\">(NoReturn 2E, S. 215)</em></p>"
+   "description": "<p>PSI-Kraft der Kategorie B (HMO). Beweglichkeit temporär +2 Stufen. Kräfte dieser Kategorie wirken nach einmaliger Aktivierung automatisch (auch im Schlaf); gleichzeitig aktiv: Stufe in Wissen. iHMO erhalten „Unaufhaltsamer Schatten“, gHMO wählen eine Kraft frei; weitere 7 GP bei Erschaffung bzw. 15 EP. <em class=\"nr-ref\">(NoReturn 2E, S. 215)</em></p>",
+   "active": false,
+   "modifiers": [
+    {
+     "target": "attributes.be",
+     "value": 2
+    }
+   ],
+   "bloodAction": "",
+   "bloodCost": 0,
+   "bloodValue": 0
   },
   "effects": [],
   "folder": null,
@@ -682,7 +747,17 @@
    "value": 1,
    "free": 0,
    "show": "",
-   "description": "<p>PSI-Kraft der Kategorie B (HMO). Wahrnehmung temporär +2 Stufen. Kräfte dieser Kategorie wirken nach einmaliger Aktivierung automatisch (auch im Schlaf); gleichzeitig aktiv: Stufe in Wissen. iHMO erhalten „Unaufhaltsamer Schatten“, gHMO wählen eine Kraft frei; weitere 7 GP bei Erschaffung bzw. 15 EP. <em class=\"nr-ref\">(NoReturn 2E, S. 215)</em></p>"
+   "description": "<p>PSI-Kraft der Kategorie B (HMO). Wahrnehmung temporär +2 Stufen. Kräfte dieser Kategorie wirken nach einmaliger Aktivierung automatisch (auch im Schlaf); gleichzeitig aktiv: Stufe in Wissen. iHMO erhalten „Unaufhaltsamer Schatten“, gHMO wählen eine Kraft frei; weitere 7 GP bei Erschaffung bzw. 15 EP. <em class=\"nr-ref\">(NoReturn 2E, S. 215)</em></p>",
+   "active": false,
+   "modifiers": [
+    {
+     "target": "attributes.wa",
+     "value": 2
+    }
+   ],
+   "bloodAction": "",
+   "bloodCost": 0,
+   "bloodValue": 0
   },
   "effects": [],
   "folder": null,
@@ -714,7 +789,12 @@
    "value": 1,
    "free": 0,
    "show": "",
-   "description": "<p>PSI-Kraft der Kategorie B (HMO). Haftet an allen Oberflächen (kein Klettern nötig, Rennen −2W für die Geschwindigkeit); Sturzhöhe für Schaden −50 m × Wissen. Kräfte dieser Kategorie wirken nach einmaliger Aktivierung automatisch (auch im Schlaf); gleichzeitig aktiv: Stufe in Wissen. iHMO erhalten „Unaufhaltsamer Schatten“, gHMO wählen eine Kraft frei; weitere 7 GP bei Erschaffung bzw. 15 EP. <em class=\"nr-ref\">(NoReturn 2E, S. 215)</em></p>"
+   "description": "<p>PSI-Kraft der Kategorie B (HMO). Haftet an allen Oberflächen (kein Klettern nötig, Rennen −2W für die Geschwindigkeit); Sturzhöhe für Schaden −50 m × Wissen. Kräfte dieser Kategorie wirken nach einmaliger Aktivierung automatisch (auch im Schlaf); gleichzeitig aktiv: Stufe in Wissen. iHMO erhalten „Unaufhaltsamer Schatten“, gHMO wählen eine Kraft frei; weitere 7 GP bei Erschaffung bzw. 15 EP. <em class=\"nr-ref\">(NoReturn 2E, S. 215)</em></p>",
+   "active": false,
+   "modifiers": [],
+   "bloodAction": "",
+   "bloodCost": 0,
+   "bloodValue": 0
   },
   "effects": [],
   "folder": null,
@@ -746,7 +826,17 @@
    "value": 1,
    "free": 0,
    "show": "",
-   "description": "<p>PSI-Kraft der Kategorie B (HMO). Trefferpunkte jeder Körperzone +20 (Robotik ausgenommen). Kräfte dieser Kategorie wirken nach einmaliger Aktivierung automatisch (auch im Schlaf); gleichzeitig aktiv: Stufe in Wissen. iHMO erhalten „Unaufhaltsamer Schatten“, gHMO wählen eine Kraft frei; weitere 7 GP bei Erschaffung bzw. 15 EP. <em class=\"nr-ref\">(NoReturn 2E, S. 215)</em></p>"
+   "description": "<p>PSI-Kraft der Kategorie B (HMO). Trefferpunkte jeder Körperzone +20 (Robotik ausgenommen). Kräfte dieser Kategorie wirken nach einmaliger Aktivierung automatisch (auch im Schlaf); gleichzeitig aktiv: Stufe in Wissen. iHMO erhalten „Unaufhaltsamer Schatten“, gHMO wählen eine Kraft frei; weitere 7 GP bei Erschaffung bzw. 15 EP. <em class=\"nr-ref\">(NoReturn 2E, S. 215)</em></p>",
+   "active": false,
+   "modifiers": [
+    {
+     "target": "tp",
+     "value": 20
+    }
+   ],
+   "bloodAction": "",
+   "bloodCost": 0,
+   "bloodValue": 0
   },
   "effects": [],
   "folder": null,

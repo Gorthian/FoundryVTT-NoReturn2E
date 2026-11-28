@@ -5,6 +5,7 @@
       <input type="number" name="system.combat.psiCollected" value="{{system.combat.psiCollected}}" min="0"></div>
     <a class="nr-btn" data-action="collectPower" data-tooltip="{{localize 'NR.Psi.CollectHint'}}"><i class="fa-solid fa-hand-sparkles"></i> {{localize "NR.Psi.Collect"}}</a>
     <a class="nr-btn" data-action="psiFail" data-tooltip="{{localize 'NR.Psi.FailHint'}}"><i class="fa-solid fa-burst"></i> {{localize "NR.Psi.FailTable"}}</a>
+    {{#if system.combat.zeitpool}}<span class="nr-chip psi">{{localize "NR.Psi.Zeitpool"}}: {{system.combat.zeitpool}}/{{system.combat.zeitpoolMax}}</span>{{/if}}
     {{#if system.malus.hold}}<span class="nr-chip warn">{{localize "NR.Psi.HoldMalus"}}: −{{system.malus.hold}}W</span>{{/if}}
     <a class="nr-add" data-action="createItem" data-type="psiPower" data-tooltip="{{localize 'NR.Psi.AddPower'}}"><i class="fa-solid fa-plus"></i> {{localize "TYPES.Item.psiPower"}}</a>
   </div>
@@ -16,8 +17,13 @@
       <h4 class="nr-subhead">{{p.item.name}} <span class="nr-chip">Ebene {{p.tier}}</span></h4>
       <label>{{localize "NR.Psi.Level"}} <input type="number" data-item-field="system.value" value="{{p.item.system.value}}" min="0"></label>
       {{#if ../isCharacter}}<a data-action="advance" data-type="psi" data-tooltip="{{p.cost}} EP"><i class="fa-solid fa-circle-up"></i></a>{{/if}}
+      {{#if p.hmo}}
+      <a data-action="toggleActive" data-tooltip="{{localize 'NR.Psi.ToggleActive'}}"><i class="fa-solid fa-power-off {{#unless p.item.system.active}}nr-dim{{/unless}}"></i></a>
+      {{#if p.item.system.bloodAction}}<a data-action="bloodPower" data-tooltip="{{localize 'NR.Psi.BloodUse'}} ({{p.item.system.bloodCost}} {{localize 'NR.Psi.BloodPoints'}})"><i class="fa-solid fa-droplet"></i></a>{{/if}}
+      {{else}}
       <span class="nr-hint">{{localize "NR.Psi.AppsKnown"}}: {{p.apps.length}}/{{p.item.system.value}}</span>
       <a data-action="createItem" data-type="psiApp" data-power="{{p.item.system.key}}" data-tooltip="{{localize 'NR.Psi.AddApp'}}"><i class="fa-solid fa-plus"></i></a>
+      {{/if}}
       <a data-action="editItem"><i class="fa-solid fa-pen"></i></a>
       <a data-action="deleteItem"><i class="fa-solid fa-trash"></i></a>
     </div>

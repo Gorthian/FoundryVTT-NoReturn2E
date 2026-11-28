@@ -1,6 +1,6 @@
 import { NR } from "../config.mjs";
 import { manualDamageDialog } from "../combat.mjs";
-import { collectPower, rollPsiFail } from "../psi.mjs";
+import { collectPower, rollPsiFail, togglePsiActive, useBloodPower } from "../psi.mjs";
 import { rollHitZone } from "../dice/pool.mjs";
 import { downloadMannifest, promptImport } from "../apps/mannifest.mjs";
 import { openCharacterGenerator } from "../apps/character-generator.mjs";
@@ -34,6 +34,8 @@ export class NRActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
       createItem: NRActorSheet.#onCreateItem,
       toggleEquip: NRActorSheet.#onToggleEquip,
       toggleHeld: NRActorSheet.#onToggleHeld,
+      toggleActive: NRActorSheet.#onTogglePsiActive,
+      bloodPower: NRActorSheet.#onBloodPower,
       toggleDescription: NRActorSheet.#onToggleDescription,
       adrenalin: NRActorSheet.#onAdrenalin,
       rest: NRActorSheet.#onRest,
@@ -118,7 +120,7 @@ export class NRActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
 
     // PSI
     const powers = byType("psiPower").map(p => ({
-      item: p, label: NR.psiPowers[p.system.key]?.label, tier: p.system.tier,
+      item: p, label: NR.psiPowers[p.system.key]?.label, tier: p.system.tier, hmo: p.system.key === "kategorieB",
       cost: actor.type === "character" ? actor.advancementCost("psi", p.system.value) : null,
       apps: items.filter(i => i.type === "psiApp" && i.system.power === p.system.key).map(a => ({
         item: a, diff: NR.psiDifficulties[a.system.difficulty]?.label, hold: sys.psiHold(a)
@@ -288,6 +290,16 @@ export class NRActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
     if (!item) return;
     const path = item.type === "augment" ? "system.installed" : "system.equipped";
     return item.update({ [path]: !foundry.utils.getProperty(item, path) });
+  }
+
+  static async #onTogglePsiActive(event, target) {
+    const item = this._getItem(target);
+    return item ? togglePsiActive(this.actor, item) : null;
+  }
+
+  static async #onBloodPower(event, target) {
+    const item = this._getItem(target);
+    return item ? useBloodPower(this.actor, item) : null;
   }
 
   static async #onToggleHeld(event, target) {

@@ -12,7 +12,7 @@ export const USER_FIELDS = {
   gear: [...PHYSICAL, "uses.value"],
   augment: [...PHYSICAL, "installed"],
   skill: ["value", "native"],
-  psiPower: ["value", "free", "show"],
+  psiPower: ["value", "free", "show", "active"],
   psiApp: ["held"],
   styleSkill: ["variant", "active", "level", "uses.value"],
   abnormality: ["variant"],

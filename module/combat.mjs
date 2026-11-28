@@ -4,6 +4,8 @@ import {
   isUnarmed, isMeleeWeapon, defaultLimb, strikeGroups, styleDice, maxMultiAttacks, attackSkillOptions,
   nahkampfParryVia
 } from "./styles.mjs";
+import { resolveKsText } from "./psi.mjs";
+import { evalFormula } from "./timed.mjs";
 
 const { renderTemplate } = foundry.applications.handlebars;
 const { DialogV2 } = foundry.applications.api;
@@ -105,14 +107,16 @@ export async function attackWithWeapon(actor, weapon) {
   const ammoKinds = heavy ? ["granate", "rakete"] : sys.category === "projektil" ? ["projektil"] : sys.category === "spruehwaffe" ? ["liquid"] : ["patrone"];
   const ammoItems = actor.items.filter(i => i.type === "ammo" && i.system.quantity > 0 && ammoKinds.includes(i.system.ammoType));
 
+  const bestSkill = skillOptions.reduce((b, o) => actor.system.skillList[o.key].pool > actor.system.skillList[b.key].pool ? o : b, skillOptions[0]).key;
+  const bestAttr = actor.system.skillList[bestSkill]?.attr;
   const content = await renderTemplate("systems/noreturn/templates/dialog/attack-dialog.hbs", {
     weapon, melee, skill: actor.system.skillList[skillOptions[0].key], modes: modes.map(m => ({ key: m, label: NR.fireModes[m]?.label ?? m })),
     aiming: NR.aiming, zones: NR.zones, targets, distance, band, rangeBands: NR.rangeBands,
     hasRange: !melee && sys.range !== "none", ammoItems, hasAmmo: sys.hasAmmo, ammo: sys.ammo,
-    woundMalus: actor.getMalus(), adrenalinLeft: actor.system.adrenalinLeft, adrenalinBonus: actor.system.adrenalinBonus,
-    meditationLeft: actor.system.meditationLeft, recoilMastery: actor.styleLevel("recoilMastery") > 0, triggerFinger: actor.styleLevel("triggerFinger") > 0,
+    woundMalus: actor.getMalus({ boosted: [bestSkill, bestAttr && `attr.${bestAttr}`].filter(Boolean) }), adrenalinLeft: actor.system.adrenalinLeft, adrenalinBonus: actor.system.adrenalinBonus,
+    meditationLeft: actor.system.meditationLeft, zeitpoolLeft: actor.system.combat.zeitpool, zeitpoolBonus: actor.system.zeitpoolBonus, recoilMastery: actor.styleLevel("recoilMastery") > 0, triggerFinger: actor.styleLevel("triggerFinger") > 0,
     skillOptions: skillOptions.map(o => ({ key: o.key, label: `${actor.system.skillList[o.key].label} (${actor.system.skillList[o.key].pool}W)${o.via ? ` – ${game.i18n.localize(`NR.Style.Via.${o.via}`)}` : ""}` })),
-    skillChoice: skillOptions.length > 1, bestSkill: skillOptions.reduce((b, o) => actor.system.skillList[o.key].pool > actor.system.skillList[b.key].pool ? o : b, skillOptions[0]).key,
+    skillChoice: skillOptions.length > 1, bestSkill,
     limbs: unarmed ? Object.entries(NR.strikeLimbs).map(([key, l]) => ({ key, label: l.label, selected: key === defaultLimb(weapon) })) : null,
     zpcAvailable, sollbruchAvailable: actor.styleLevel("sollbruchstelle") > 0 && targets.some(t => t.token?.actor?.type === "vehicle"),
     maxMulti: maxMultiAttacks(actor, weapon, { gunFuMelee: actor.styleLevel("gunFu") >= 2 }),
@@ -140,6 +144,7 @@ export async function attackWithWeapon(actor, weapon) {
           points: Number(f.points.value) || 0,
           useAdrenalin: f.useAdrenalin?.checked ?? false,
           useMeditation: f.useMeditation?.checked ?? false,
+          useZeitpool: f.useZeitpool?.checked ?? false,
           ammoId: f.ammoId?.value ?? "",
           triggerFinger: f.triggerFinger?.checked ?? false,
           braced: Number(f.braced?.value) || 0,
@@ -197,6 +202,7 @@ export async function attackWithWeapon(actor, weapon) {
   if (opts.triggerFinger && opts.mode === "HM") bonus += 2;
   if (opts.useAdrenalin && opts.multi === 1 && await actor.spendAdrenalin()) bonus += actor.system.adrenalinBonus;
   if (opts.useMeditation && opts.multi === 1 && await actor.spendAdrenalin("meditation")) bonus += Math.min(5, actor.system.meditationMax);
+  if (opts.useZeitpool && opts.multi === 1) bonus += await actor.spendZeitpool();
 
   let aimMalus = 0;
   if (!mode?.noAim) aimMalus = melee ? NR.aiming[opts.aim].melee : NR.aiming[opts.aim].ranged;
@@ -239,7 +245,7 @@ export async function attackWithWeapon(actor, weapon) {
   // Zusatztätigkeit neben konzentrationsintensiver Handlung bzw. Rennen + andere Aktion: −2W (S. 88)
   const sideMalus = opts.sideTask ? 2 : 0;
   if (sideMalus) styleNotes.push(game.i18n.localize("NR.Roll.SideTaskNote"));
-  const malus = actor.getMalus() + opts.malusDice + opts.disadvantages * 2 + sideMalus + aimMalus + recoilMalus + strengthMalusDice + physMalus - skillBonusExtra;
+  const malus = actor.getMalus({ boosted: [skillKey, skill?.attr && `attr.${skill.attr}`].filter(Boolean) }) + opts.malusDice + opts.disadvantages * 2 + sideMalus + aimMalus + recoilMalus + strengthMalusDice + physMalus - skillBonusExtra;
   // Schadenswürfel aus Style-Skills (Bonuswürfel auf die Schadensprobe, nie Hazard-Di)
   let styleDamageDice = styleDice(actor, "damage", groups);
   // Ringen 3: Im Clinch +2W auf Nahkampf und Schaden gegen den Clinch-Partner
@@ -407,7 +413,8 @@ export async function defendAgainst(message, tokenUuid, none = false, index = 1)
     const count = actor.system.combat.defenses;
     const skills = Object.values(actor.system.skillList).filter(s => s.defensive);
     const custom = actor.items.filter(i => i.type === "skill" && i.system.defensive);
-    const psiApps = actor.items.filter(i => i.type === "psiApp" && i.system.defensive);
+    const psiBlocked = ["nrPsiLock", "nrIncapacitated", "nrUnconscious"].some(s => actor.statuses?.has(s));
+    const psiApps = psiBlocked ? [] : actor.items.filter(i => i.type === "psiApp" && i.system.defensive);
     // Gun-Fu 1: Feuerwaffen in den Händen dürfen zum Parieren dienen
     const gunFuParry = actor.styleLevel("gunFu") >= 1;
     const gear = actor.items.filter(i => i.type === "weapon" && i.system.equipped
@@ -468,6 +475,20 @@ export async function defendAgainst(message, tokenUuid, none = false, index = 1)
       const power = actor.items.find(i => i.type === "psiPower" && i.system.key === app.system.power);
       dice = (power?.system.value ?? 0) + actor.system.skillList.reaktion.value;
       defLabel = `${app.name} (PSI + Reaktion)`;
+      // Wirkung der App: KS der letzten Wirkung (mind. 1), Bonuswürfel der App und gehaltener Verstärker (z. B. Equilibrium),
+      // Art der Defensivaktion (Ausweichen/Block) und Stärke einer Barriere
+      const appKs = Math.max(1, app.getFlag("noreturn", "psiKs") ?? 1);
+      let appBonus = evalFormula(app.system.defenseBonus, { ks: appKs }) ?? 0;
+      for (const held of actor.items.filter(i => i.type === "psiApp" && i.system.held && i.id !== app.id && i.system.boosts?.includes("psi") && i.system.defenseBonus)) {
+        appBonus += evalFormula(held.system.defenseBonus, { ks: Math.max(1, held.getFlag("noreturn", "psiKs") ?? 1) }) ?? 0;
+      }
+      if (appBonus) { bonus += appBonus; styleNotes.push(game.i18n.format("NR.Psi.DefenseBonus", { n: appBonus })); }
+      if (app.system.defense === "dodge" && attack.melee) {
+        const dodgeBonus = mods["defense.dodgeMelee"] ?? 0;
+        if (dodgeBonus) { bonus += dodgeBonus; styleNotes.push(game.i18n.format("NR.Style.DefenseBonus", { n: dodgeBonus })); }
+      }
+      if (app.system.defense) styleNotes.push(game.i18n.format(`NR.Psi.DefenseKind.${app.system.defense}`, { ks: appKs }));
+      if (app.system.defense === "block" && app.system.effect) styleNotes.push(resolveKsText(app.system.effect, appKs).replace(/<[^>]+>/g, ""));
     }
     const g = opts.gearId ? actor.items.get(opts.gearId) : null;
     if (g) bonus += (isBlock ? g.system.blockDice : g.system.parryDice) || 0;
@@ -510,7 +531,7 @@ export async function defendAgainst(message, tokenUuid, none = false, index = 1)
     // Steigender Malus je weiterer Defensivaktion – ohne 1-Würfel-Regel
     const physMalus = skillKey ? actor.physicalMalus(actor.system.skillList[skillKey]?.attr) : 0;
     if (physMalus) styleNotes.push(game.i18n.format("NR.Style.PhysicalMalus", { n: physMalus }));
-    const malus = actor.getMalus() + opts.malusDice + actionMalus + extraMalus + physMalus;
+    const malus = actor.getMalus({ boosted: [skillKey, skillKey && actor.system.skillList[skillKey]?.attr && `attr.${actor.system.skillList[skillKey].attr}`, type === "psi" ? "psi" : null].filter(Boolean) }) + opts.malusDice + actionMalus + extraMalus + physMalus;
     const effective = dice + bonus - malus;
     if (!freeRide) await actor.update({ "system.combat.defenses": count + 1 });
     if (effective < 1) {
@@ -794,7 +815,7 @@ export class NRCombatant extends Combatant {
     const actor = this.actor;
     if (!actor || actor.type === "vehicle" || !actor.system.skillList) return super.getInitiativeRoll(formula);
     const pool = actor.system.skillList.reaktion.pool;
-    const f = buildFormula({ dice: pool, malusDice: actor.getMalus() }).formula;
+    const f = buildFormula({ dice: pool, malusDice: actor.getMalus({ boosted: ["reaktion", actor.system.skillList.reaktion?.attr && `attr.${actor.system.skillList.reaktion.attr}`].filter(Boolean) }) }).formula;
     return new Roll(f);
   }
 }

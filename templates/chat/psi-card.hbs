@@ -39,6 +39,7 @@
     <div class="nr-psi-fail">
       <h4><i class="fa-solid fa-burst"></i> {{localize "NR.Psi.FailTable"}} (KS {{fail.ks}})</h4>
       <ul>{{#each fail.results as |r|}}<li class="{{#if r.echo}}echo{{/if}}"><strong>{{r.roll}}</strong> {{r.text}}</li>{{/each}}</ul>
+      {{#each fail.lines}}<p class="nr-hint"><i class="fa-solid fa-bolt"></i> {{{this}}}</p>{{/each}}
     </div>
     {{/if}}
   {{/if}}

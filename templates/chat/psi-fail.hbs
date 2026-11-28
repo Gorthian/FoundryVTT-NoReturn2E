@@ -2,5 +2,6 @@
   <div class="nr-psi-fail">
     <h4><i class="fa-solid fa-burst"></i> {{localize "NR.Psi.FailTable"}} (KS {{ks}})</h4>
     <ul>{{#each results as |r|}}<li class="{{#if r.echo}}echo{{/if}}"><strong>{{r.roll}}</strong> {{r.text}}</li>{{/each}}</ul>
+    {{#each lines}}<p class="nr-hint"><i class="fa-solid fa-bolt"></i> {{{this}}}</p>{{/each}}
   </div>
 </div>

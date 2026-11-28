@@ -1,0 +1,10 @@
+{
+  "Blutlust": { "modifiers": [{ "target": "bloodMax", "value": 5 }] },
+  "Brutale Ignoranz": { "bloodAction": "pain", "bloodCost": 1 },
+  "Charme": { "modifiers": [{ "target": "attributes.ch", "value": 2 }] },
+  "Dunkler Balsam": { "bloodAction": "heal", "bloodCost": 1, "bloodValue": 30 },
+  "Gabe der Gewalt": { "modifiers": [{ "target": "attributes.st", "value": 2 }] },
+  "Schleier der Hast": { "modifiers": [{ "target": "attributes.be", "value": 2 }] },
+  "Schwarzes Orakel": { "modifiers": [{ "target": "attributes.wa", "value": 2 }] },
+  "Unheilige Beständigkeit": { "modifiers": [{ "target": "tp", "value": 20 }] }
+}

@@ -177,8 +177,20 @@ export class PsiPowerData extends NRItemData {
       value: int(1, { min: 0 }),
       free: int(0, { min: 0 }),
       show: str(""),
+      /** Kategorie B (HMO, S. 215): nach einmaliger Aktivierung dauerhaft wirksam; gleichzeitig aktiv höchstens Wissen */
+      active: bool(false),
+      /** Passiv-Boni der Kategorie-B-Kraft (wirken, solange sie aktiv ist) */
+      modifiers: modifiers(),
+      /** Einsatz von Blutpunkten: "heal" = Trefferpunkte wiederherstellen, "pain" = zehn Minuten keinen Schmerz */
+      bloodAction: str("", { choices: ["", "heal", "pain"] }),
+      bloodCost: int(0, { min: 0 }),
+      bloodValue: int(0, { min: 0 }),
       description: html()
     };
+  }
+
+  get modifiersActive() {
+    return this.key !== "kategorieB" || this.active;
   }
 
   get tier() {
@@ -196,6 +208,12 @@ export class PsiAppData extends NRItemData {
       hold: int(0, { min: 0 }),
       held: bool(false),
       defensive: bool(false),
+      /** Art der Defensivaktion bei PSI-Verteidigung: Ausweichen oder Block ("" = keine feste Art) */
+      defense: str("", { choices: ["", "dodge", "block"] }),
+      /** Zusätzliche Würfel auf die PSI-Verteidigung als Formel mit KS („KS“, „KS*2“) */
+      defenseBonus: str(""),
+      /** Aktionen, die die App boostet (Fertigkeitsschlüssel, „attr.st“, „psi“): dafür entfällt ihr Haltungsmalus (S. 193) */
+      boosts: new fields.ArrayField(str("")),
       actions: int(2, { min: 0 }),
       resist: str(""),
       effect: str(""),

@@ -250,9 +250,13 @@ def powers():
         out.append({"name": name, "type": "psiPower", "img": icon(folder, ""),
                     "system": {"key": key, "value": 1, "free": 0, "show": show,
                                "description": p(f"{desc} Hierarchieebene {tier}. Show-Effekt: {show} Erschaffung 5 GP je Stufe (max. 6), Steigern: neue Stufe × 4 EP. Je Stufe eine App.", page)}})
+    katb = json.load(open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "psi_katb.json"), encoding="utf-8"))
     for name, desc in HMO_POWERS:
+        rule = katb.get(name, {})
         out.append({"name": name, "type": "psiPower", "img": icon("magic/unholy", ""),
-                    "system": {"key": "kategorieB", "value": 1, "free": 0, "show": "",
+                    "system": {"key": "kategorieB", "value": 1, "free": 0, "show": "", "active": False,
+                               "modifiers": rule.get("modifiers", []), "bloodAction": rule.get("bloodAction", ""),
+                               "bloodCost": rule.get("bloodCost", 0), "bloodValue": rule.get("bloodValue", 0),
                                "description": p(f"PSI-Kraft der Kategorie B (HMO). {desc} Kräfte dieser Kategorie wirken nach einmaliger Aktivierung automatisch (auch im Schlaf); gleichzeitig aktiv: Stufe in Wissen. iHMO erhalten „Unaufhaltsamer Schatten“, gHMO wählen eine Kraft frei; weitere 7 GP bei Erschaffung bzw. 15 EP.", 215)}})
     return out
 
@@ -261,6 +265,8 @@ def apps(parsed_path):
     data = json.load(open(parsed_path, encoding="utf-8"))
     # Nachträgliche Regelpflege (Zeitabläufe, korrigierte Effekttexte) je App: tools/data/psi_overrides.json
     overrides = json.load(open(os.path.join(os.path.dirname(parsed_path), "psi_overrides.json"), encoding="utf-8"))
+    # Regelzuordnung je App (Art der Defensivaktion, Bonus auf die PSI-Verteidigung, geboostete Aktionen): tools/data/psi_rules.json
+    rules = json.load(open(os.path.join(os.path.dirname(parsed_path), "psi_rules.json"), encoding="utf-8"))
     out = []
     seen = set()
     for a in data:
@@ -285,6 +291,10 @@ def apps(parsed_path):
                                "description": p(f"{POWERS[key][0]} · {a['diff']} ({a['min']}–{a['max']})" + (f" · Haltung {hold}" if hold else ""), POWERS[key][4])}}
         if "duration" in ov:
             doc["system"]["duration"] = ov["duration"]
+        rule = rules.get(name, {})
+        doc["system"]["defense"] = rule.get("defense", "")
+        doc["system"]["defenseBonus"] = rule.get("defenseBonus", "")
+        doc["system"]["boosts"] = rule.get("boosts", [])
         out.append(doc)
     missing = sorted(set(E) - seen)
     return out, missing
