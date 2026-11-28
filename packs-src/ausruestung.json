@@ -1090,6 +1090,166 @@
   }
  },
  {
+  "_id": "tjWZMgbdzNCDFnCZ",
+  "_key": "!items!tjWZMgbdzNCDFnCZ",
+  "name": "Survival Pack: Noob",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "ts": 3,
+   "price": 1000,
+   "weight": 8,
+   "bonus": "",
+   "quantity": 1,
+   "toolQuality": 0,
+   "alk": 0,
+   "uses": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Die Basics des Überlebens: Rucksack (50 l), Decke, Feuerzeug, Flasche/Schüssel/Besteck, 10 Wasseraufbereitungstabs, Schütteltaschenlampe, 10 Kabelbinder, 2 Rollen Panzertape, Überlebensmesser, Straßenkleidung, 2 l Wasser und Konzentratnahrung für 5 Tage. <em class=\"nr-ref\">(NoReturn 2E, S. 254)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 28000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "0.2.0",
+   "createdTime": 1795856847369,
+   "modifiedTime": 1795856847369,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "pDa4EcOP8yTUjPjH",
+  "_key": "!items!pDa4EcOP8yTUjPjH",
+  "name": "Survival Pack: Ranger",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "ts": 3,
+   "price": 2000,
+   "weight": 11,
+   "bonus": "",
+   "quantity": 1,
+   "toolQuality": 0,
+   "alk": 0,
+   "uses": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Alles aus dem Noob Pack plus Schlafsack (bis −50 °C), 5 Signalfackeln, insgesamt 4 l Wasser, 10 Energieriegel und 10 m Kunststoffseil (500 kg Tragkraft). <em class=\"nr-ref\">(NoReturn 2E, S. 254)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 29000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "0.2.0",
+   "createdTime": 1795856847369,
+   "modifiedTime": 1795856847369,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "VQy2nKpONZdKpx8z",
+  "_key": "!items!VQy2nKpONZdKpx8z",
+  "name": "Survival Pack: Expert",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "ts": 3,
+   "price": 3500,
+   "weight": 13,
+   "bonus": "",
+   "quantity": 1,
+   "toolQuality": 0,
+   "alk": 0,
+   "uses": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Alles aus dem Ranger Pack plus Erste-Hilfe-Pack, 4 Painkiller, 2 Atemschutzmasken (Infektionsresistenz +2), Sprühdosen, mehr Tape und Kabelbinder, Feuerzeuge und Klappspaten. <em class=\"nr-ref\">(NoReturn 2E, S. 254)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 30000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "0.2.0",
+   "createdTime": 1795856847369,
+   "modifiedTime": 1795856847369,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
+  "_id": "8tpBj1iOsVf1FrAO",
+  "_key": "!items!8tpBj1iOsVf1FrAO",
+  "name": "Survival Pack: Global Elite",
+  "type": "gear",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+   "ts": 3,
+   "price": 6000,
+   "weight": 15,
+   "bonus": "",
+   "quantity": 1,
+   "toolQuality": 0,
+   "alk": 0,
+   "uses": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "description": "<p>Alles aus dem Expert Pack plus Nachtsichtbrille, Schabok-Karten, 5 W6, 70-l-Rucksack mit Solarfläche (lädt 5 Micro-ZEUS je Stunde), 5 Micro-ZEUS, Dietrichset, Zelt (2 Personen) und Gaskocher. <em class=\"nr-ref\">(NoReturn 2E, S. 254)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 31000,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "0.2.0",
+   "createdTime": 1795856847369,
+   "modifiedTime": 1795856847369,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
   "_id": "6i4b0Snmv2OzW1i0",
   "_key": "!items!6i4b0Snmv2OzW1i0",
   "name": "Langzeit-Medikation (20 Dosen)",
@@ -1112,7 +1272,7 @@
   },
   "effects": [],
   "folder": null,
-  "sort": 28000,
+  "sort": 32000,
   "ownership": {
    "default": 0
   },

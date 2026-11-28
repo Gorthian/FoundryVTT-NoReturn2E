@@ -203,6 +203,21 @@ export class PsiAppData extends NRItemData {
       allZones: bool(false),
       pierce: str("", { choices: Object.keys(NR.armorPiercing) }),
       /**
+       * Waffe(n), die die App beim erfolgreichen Wirken erzeugt (z. B. Knochensporn, Blutwaffe). Die Waffen-Items hängen an
+       * der Haltung der App und verschwinden, sobald sie nicht mehr gehalten wird. Formeln dürfen KS enthalten („KS*10“).
+       * `count` = 0: die App erzeugt keine Waffe.
+       */
+      weapon: new fields.SchemaField({
+        name: str(""),
+        count: int(0, { min: 0 }),
+        attackDice: str(""),
+        parryDice: str(""),
+        strength: bool(true),
+        damage: str(""),
+        damageType: str("wucht", { choices: Object.keys(NR.damageTypes) }),
+        twoHanded: bool(false)
+      }),
+      /**
        * Zeitlicher Ablauf nach erfolgreichem Wirken: Dauer als Formel mit KS (z. B. „KS*2“) in einer Einheit,
        * betroffen ist die Wirkende selbst oder die markierten Ziele; optional Schaden je Kampfrunde (siehe timed.mjs).
        */

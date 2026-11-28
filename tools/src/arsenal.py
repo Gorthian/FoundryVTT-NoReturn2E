@@ -319,6 +319,13 @@ def gear():
             ("Hightech-Werkstatt", 4, 50000, 0, "Gewährt +2 Bonuswürfel auf Crafting-Proben im Bereich Handwerk.", "+2W Crafting", None, 2),
             ("Verdreckte Laborantenkiste", 1, 50, 3, "Schlechte Ausrüstung: −1W auf Crafting-Proben.", "−1W Crafting", None, -1)]:
         G.append(gear_item(n, ts, pr, ds, 265 if "Werk" not in n and "Labor" not in n else 114, weight=w, bonus=bonus, mods=mods, tq=tq))
+    # Survival Packs („Fit im Alltag“, S. 254): jedes Pack enthält das vorherige und ergänzt es
+    for n, pr, w, ds in [
+            ("Survival Pack: Noob", 1000, 8, "Die Basics des Überlebens: Rucksack (50 l), Decke, Feuerzeug, Flasche/Schüssel/Besteck, 10 Wasseraufbereitungstabs, Schütteltaschenlampe, 10 Kabelbinder, 2 Rollen Panzertape, Überlebensmesser, Straßenkleidung, 2 l Wasser und Konzentratnahrung für 5 Tage."),
+            ("Survival Pack: Ranger", 2000, 11, "Alles aus dem Noob Pack plus Schlafsack (bis −50 °C), 5 Signalfackeln, insgesamt 4 l Wasser, 10 Energieriegel und 10 m Kunststoffseil (500 kg Tragkraft)."),
+            ("Survival Pack: Expert", 3500, 13, "Alles aus dem Ranger Pack plus Erste-Hilfe-Pack, 4 Painkiller, 2 Atemschutzmasken (Infektionsresistenz +2), Sprühdosen, mehr Tape und Kabelbinder, Feuerzeuge und Klappspaten."),
+            ("Survival Pack: Global Elite", 6000, 15, "Alles aus dem Expert Pack plus Nachtsichtbrille, Schabok-Karten, 5 W6, 70-l-Rucksack mit Solarfläche (lädt 5 Micro-ZEUS je Stunde), 5 Micro-ZEUS, Dietrichset, Zelt (2 Personen) und Gaskocher.")]:
+        G.append(gear_item(n, 3, pr, ds, 254, weight=w, img=icon("containers/bags", "")))
     G.append(gear_item("Langzeit-Medikation (20 Dosen)", 2, 100, "Tägliche Einnahme hält eine chronische Erkrankung unter Kontrolle.", 176, qty=20, uses=20,
                        img=icon("consumables/potions", "bottle")))
     return G
