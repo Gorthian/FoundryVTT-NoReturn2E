@@ -809,6 +809,14 @@ export function registerCombatHooks() {
       await endClinch(actor, "NR.Style.ClinchOut");
     }
   });
+  // Mexican Standoff (Reaktion-Initiative) gilt nur einmal je Szene – Hinweis an die SL beim Kampfbeginn (S. 88)
+  Hooks.on("combatStart", async () => {
+    if (!game.user.isGM) return;
+    await ChatMessage.create({
+      whisper: ChatMessage.getWhisperRecipients("GM").map(u => u.id),
+      content: `<div class="nr-card"><p class="nr-hint"><i class="fa-solid fa-crosshairs"></i> ${game.i18n.localize("NR.Combat.StandoffHint")}</p></div>`
+    });
+  });
   Hooks.on("updateCombat", async (combat, changed) => {
     if (!game.user.isGM) return;
     if ("round" in changed) {

@@ -248,6 +248,7 @@
       "MultiAttack": "Mehrfachangriff",
       "MultiHint": "Style-Skills wie Dual Wielding/Akimbo: ein Wurf zählt für mehrere Angriffe, kein Adrenalin erlaubt. Es gilt jeweils der höchste Malus bzw. der niedrigste Wert (Zielen, Deckung je Arm/Waffe); Zeitpool und Blutpunkte sind nicht erlaubt. Jeder Angriff muss einzeln verteidigt werden; Schaden und Widerstand werden je Angriff getrennt gewürfelt.",
       "NoTargets": "Kein Ziel markiert – Schaden kann trotzdem gewürfelt werden.",
+      "StandoffHint": "Mexican Standoff: Die Reaktion-Initiative gilt nur einmal je Szene – bei weiteren Kämpfen in derselben Szene nicht erneut würfeln lassen.",
       "CoupDeGrace": "Coup de Grace (wehrloses Ziel)",
       "CoupHint": "Ziel ist offensichtlich wehrlos (keine Regeneration/Sonderfähigkeiten): keine Probe, das Ziel wird ausgeschaltet. Erzeugt Chaospoints – die SL entscheidet.",
       "CoupTitle": "Coup de Grace",
