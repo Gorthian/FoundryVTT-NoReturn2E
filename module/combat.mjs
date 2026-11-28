@@ -411,7 +411,8 @@ export async function defendAgainst(message, tokenUuid, none = false, index = 1)
     const count = actor.system.combat.defenses;
     const skills = Object.values(actor.system.skillList).filter(s => s.defensive);
     const custom = actor.items.filter(i => i.type === "skill" && i.system.defensive);
-    const psiApps = actor.items.filter(i => i.type === "psiApp" && i.system.defensive);
+    const psiBlocked = ["nrPsiLock", "nrIncapacitated", "nrUnconscious"].some(s => actor.statuses?.has(s));
+    const psiApps = psiBlocked ? [] : actor.items.filter(i => i.type === "psiApp" && i.system.defensive);
     // Gun-Fu 1: Feuerwaffen in den Händen dürfen zum Parieren dienen
     const gunFuParry = actor.styleLevel("gunFu") >= 1;
     const gear = actor.items.filter(i => i.type === "weapon" && i.system.equipped

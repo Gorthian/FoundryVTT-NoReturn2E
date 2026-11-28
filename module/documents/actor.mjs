@@ -202,6 +202,8 @@ export class NRActor extends foundry.documents.Actor {
       "system.combat.zeitpool": 0,
       "system.combat.zeitpoolMax": 0
     });
+    const timeless = this.items.filter(i => i.type === "psiApp" && i.system.held && i.name.toLowerCase().startsWith("zeitloses wissen"));
+    if (timeless.length) await this.updateEmbeddedDocuments("Item", timeless.map(i => ({ _id: i.id, "system.held": false })));
     // Style-Skills mit begrenzten Einsätzen (außer „je Sitzung“) füllen sich bei der Rast wieder auf
     const refill = this.items.filter(i => i.type === "styleSkill" && i.system.uses.max > 0 && i.system.uses.value < i.system.uses.max
       && !/^(sitzung|session)/i.test(i.system.uses.per));
@@ -303,7 +305,9 @@ export class NRActor extends foundry.documents.Actor {
     // Zusatztätigkeit neben konzentrationsintensiver Handlung bzw. Rennen + andere Aktion: −2W (S. 88)
     const sideMalus = opts.sideTask && !resist ? 2 : 0;
     if (sideMalus) extraHtml += `<p class="nr-warn"><i class="fa-solid fa-people-carry-box"></i> ${game.i18n.localize("NR.Roll.SideTaskNote")}</p>`;
-    const malusTotal = (resist ? 0 : malus) + opts.malusDice + opts.disadvantages * 2 + physMalus + sideMalus;
+    // Bei Attributwechsel im Dialog zählt für die Haltungsmalus-Befreiung das tatsächlich verwendete Attribut
+    const rollMalus = attrUsed === attrKey ? malus : this.getMalus({ resist, psi, boosted: [skillKey, attrUsed && `attr.${attrUsed}`].filter(Boolean) });
+    const malusTotal = (resist ? 0 : rollMalus) + opts.malusDice + opts.disadvantages * 2 + physMalus + sideMalus;
     const leiden = attrUsed ? (this.system.attr[attrUsed]?.leiden ?? 0) : 0;
     const sub = subtitle || (attrUsed ? `${this.system.attr[attrUsed].abbr} ${this.system.attr[attrUsed].total}` : "");
 
