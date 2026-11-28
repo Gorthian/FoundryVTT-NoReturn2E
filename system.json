@@ -2,7 +2,7 @@
   "id": "noreturn",
   "title": "NoReturn 2E",
   "description": "Inoffizielles Fan-Projekt (KI-generiert, frühe Beta, Nutzung auf eigene Gefahr – vor Updates Welt-Backup anlegen) für NoReturn 2. Edition (Vario-D6 2.0) von Mannifest Games; alle Rechte bei Mannifest Games. Charakterbögen, Würfelmechanik mit Hazard-Di, Körperzonen-Schaden, Kampfablauf, PSI-Apps, Degeneration und Compendien.",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "compatibility": {
     "minimum": "13",
     "verified": "14"
@@ -419,7 +419,7 @@
   "bugs": "https://github.com/Gorthian/FoundryVTT-NoReturn2E/issues",
   "changelog": "https://github.com/Gorthian/FoundryVTT-NoReturn2E/releases",
   "manifest": "https://github.com/Gorthian/FoundryVTT-NoReturn2E/releases/latest/download/system.json",
-  "download": "https://github.com/Gorthian/FoundryVTT-NoReturn2E/releases/download/v0.2.0/noreturn.zip",
+  "download": "https://github.com/Gorthian/FoundryVTT-NoReturn2E/releases/download/v0.3.0/noreturn.zip",
   "license": "LICENSE.txt",
   "readme": "README.md"
 }
