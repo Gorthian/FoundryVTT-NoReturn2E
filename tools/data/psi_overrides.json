@@ -1,0 +1,424 @@
+{
+ "Analyse": {
+  "duration": {
+   "formula": "10-KS",
+   "target": "self",
+   "tick": {
+    "cumulative": false,
+    "damageType": "hitze",
+    "formula": "",
+    "pierce": "",
+    "zones": "random"
+   },
+   "unit": "round"
+  }
+ },
+ "Aufkochen": {
+  "duration": {
+   "formula": "",
+   "target": "target",
+   "tick": {
+    "cumulative": false,
+    "damageType": "hitze",
+    "formula": "KS*5",
+    "pierce": "all",
+    "zones": "all"
+   },
+   "unit": "round"
+  }
+ },
+ "Blizzard": {
+  "duration": {
+   "formula": "",
+   "target": "target",
+   "tick": {
+    "cumulative": false,
+    "damageType": "kaelte",
+    "formula": "KS*105",
+    "pierce": "",
+    "zones": "all"
+   },
+   "unit": "round"
+  },
+  "effect": "Eissturm KS×10 m Radius im Sichtfeld: jede KR KS×100 Kälteschaden an allen Zonen plus Unterkühlung (KS×5 Kälteschaden je KR) – insgesamt KS×105 je KR an allen Zonen; die Unterkühlung wirkt nach Ende der App noch 5 KR nach (manuell)."
+ },
+ "Blueprint": {
+  "duration": {
+   "formula": "24",
+   "target": "self",
+   "tick": {
+    "cumulative": false,
+    "damageType": "hitze",
+    "formula": "",
+    "pierce": "",
+    "zones": "random"
+   },
+   "unit": "hour"
+  }
+ },
+ "Dreamcatcher": {
+  "duration": {
+   "formula": "5",
+   "target": "target",
+   "tick": {
+    "cumulative": false,
+    "damageType": "hitze",
+    "formula": "",
+    "pierce": "",
+    "zones": "random"
+   },
+   "unit": "minute"
+  }
+ },
+ "Entzünden": {
+  "duration": {
+   "formula": "",
+   "target": "target",
+   "tick": {
+    "cumulative": false,
+    "damageType": "hitze",
+    "formula": "KS*5",
+    "pierce": "",
+    "zones": "random"
+   },
+   "unit": "round"
+  }
+ },
+ "Feuerwalze": {
+  "duration": {
+   "formula": "",
+   "target": "target",
+   "tick": {
+    "cumulative": false,
+    "damageType": "hitze",
+    "formula": "KS*5",
+    "pierce": "",
+    "zones": "random"
+   },
+   "unit": "round"
+  }
+ },
+ "Good Guess": {
+  "duration": {
+   "formula": "5",
+   "target": "self",
+   "tick": {
+    "cumulative": false,
+    "damageType": "hitze",
+    "formula": "",
+    "pierce": "",
+    "zones": "random"
+   },
+   "unit": "minute"
+  }
+ },
+ "Hirnsturz": {
+  "duration": {
+   "formula": "KS",
+   "target": "target",
+   "tick": {
+    "cumulative": false,
+    "damageType": "hitze",
+    "formula": "",
+    "pierce": "",
+    "zones": "random"
+   },
+   "unit": "minute"
+  }
+ },
+ "Inferno": {
+  "duration": {
+   "formula": "",
+   "target": "target",
+   "tick": {
+    "cumulative": false,
+    "damageType": "hitze",
+    "formula": "KS*105",
+    "pierce": "",
+    "zones": "all"
+   },
+   "unit": "round"
+  },
+  "effect": "Feuersturm KS×10 m Radius: jede KR KS×100 Hitzeschaden plus Brand (KS×5 Hitzeschaden je KR) – insgesamt KS×105 je KR an allen Zonen."
+ },
+ "Jenseitsbrücke": {
+  "duration": {
+   "formula": "KS",
+   "target": "self",
+   "tick": {
+    "cumulative": false,
+    "damageType": "hitze",
+    "formula": "",
+    "pierce": "",
+    "zones": "random"
+   },
+   "unit": "minute"
+  }
+ },
+ "Kerker": {
+  "duration": {
+   "formula": "KS*2",
+   "target": "target",
+   "tick": {
+    "cumulative": false,
+    "damageType": "hitze",
+    "formula": "",
+    "pierce": "",
+    "zones": "random"
+   },
+   "unit": "hour"
+  }
+ },
+ "Kick": {
+  "duration": {
+   "formula": "KS",
+   "target": "target",
+   "tick": {
+    "cumulative": false,
+    "damageType": "hitze",
+    "formula": "",
+    "pierce": "",
+    "zones": "random"
+   },
+   "unit": "minute"
+  }
+ },
+ "Körpertausch": {
+  "duration": {
+   "formula": "KS*2",
+   "target": "target",
+   "tick": {
+    "cumulative": false,
+    "damageType": "hitze",
+    "formula": "",
+    "pierce": "",
+    "zones": "random"
+   },
+   "unit": "round"
+  }
+ },
+ "Kühlschrank": {
+  "duration": {
+   "formula": "KS*12",
+   "target": "target",
+   "tick": {
+    "cumulative": false,
+    "damageType": "hitze",
+    "formula": "",
+    "pierce": "",
+    "zones": "random"
+   },
+   "unit": "hour"
+  }
+ },
+ "Memory": {
+  "duration": {
+   "formula": "KS",
+   "target": "self",
+   "tick": {
+    "cumulative": false,
+    "damageType": "hitze",
+    "formula": "",
+    "pierce": "",
+    "zones": "random"
+   },
+   "unit": "day"
+  }
+ },
+ "Plasmaschneider": {
+  "duration": {
+   "formula": "",
+   "target": "target",
+   "tick": {
+    "cumulative": true,
+    "damageType": "hitze",
+    "formula": "KS*5",
+    "pierce": "",
+    "zones": "random"
+   },
+   "unit": "round"
+  }
+ },
+ "Schmelzen": {
+  "duration": {
+   "formula": "",
+   "target": "target",
+   "tick": {
+    "cumulative": true,
+    "damageType": "hitze",
+    "formula": "KS*10",
+    "pierce": "",
+    "zones": "random"
+   },
+   "unit": "round"
+  }
+ },
+ "Schockfrost": {
+  "duration": {
+   "formula": "",
+   "target": "target",
+   "tick": {
+    "cumulative": false,
+    "damageType": "kaelte",
+    "formula": "KS*5",
+    "pierce": "",
+    "zones": "all"
+   },
+   "unit": "round"
+  }
+ },
+ "Siedepunkt": {
+  "duration": {
+   "formula": "",
+   "target": "target",
+   "tick": {
+    "cumulative": true,
+    "damageType": "hitze",
+    "formula": "KS*5",
+    "pierce": "all",
+    "zones": "all"
+   },
+   "unit": "round"
+  }
+ },
+ "Spiritwalk": {
+  "duration": {
+   "formula": "KS*2",
+   "target": "self",
+   "tick": {
+    "cumulative": false,
+    "damageType": "hitze",
+    "formula": "",
+    "pierce": "",
+    "zones": "random"
+   },
+   "unit": "round"
+  }
+ },
+ "Stun": {
+  "duration": {
+   "formula": "KS",
+   "target": "target",
+   "tick": {
+    "cumulative": false,
+    "damageType": "hitze",
+    "formula": "",
+    "pierce": "",
+    "zones": "random"
+   },
+   "unit": "round"
+  }
+ },
+ "Sub Zero": {
+  "duration": {
+   "formula": "",
+   "target": "target",
+   "tick": {
+    "cumulative": true,
+    "damageType": "kaelte",
+    "formula": "KS*5",
+    "pierce": "",
+    "zones": "random"
+   },
+   "unit": "round"
+  }
+ },
+ "Suche": {
+  "duration": {
+   "formula": "KS",
+   "target": "target",
+   "tick": {
+    "cumulative": false,
+    "damageType": "hitze",
+    "formula": "",
+    "pierce": "",
+    "zones": "random"
+   },
+   "unit": "minute"
+  }
+ },
+ "Transformation": {
+  "duration": {
+   "formula": "KS",
+   "target": "self",
+   "tick": {
+    "cumulative": false,
+    "damageType": "hitze",
+    "formula": "",
+    "pierce": "",
+    "zones": "random"
+   },
+   "unit": "minute"
+  }
+ },
+ "Transmutation": {
+  "duration": {
+   "formula": "30-KS",
+   "target": "target",
+   "tick": {
+    "cumulative": false,
+    "damageType": "hitze",
+    "formula": "",
+    "pierce": "",
+    "zones": "random"
+   },
+   "unit": "minute"
+  }
+ },
+ "Vergangene Weihnacht": {
+  "duration": {
+   "formula": "KS",
+   "target": "self",
+   "tick": {
+    "cumulative": false,
+    "damageType": "hitze",
+    "formula": "",
+    "pierce": "",
+    "zones": "random"
+   },
+   "unit": "hour"
+  }
+ },
+ "What if": {
+  "duration": {
+   "formula": "KS",
+   "target": "self",
+   "tick": {
+    "cumulative": false,
+    "damageType": "hitze",
+    "formula": "",
+    "pierce": "",
+    "zones": "random"
+   },
+   "unit": "round"
+  }
+ },
+ "Willen brechen": {
+  "duration": {
+   "formula": "5",
+   "target": "target",
+   "tick": {
+    "cumulative": false,
+    "damageType": "hitze",
+    "formula": "",
+    "pierce": "",
+    "zones": "random"
+   },
+   "unit": "minute"
+  }
+ },
+ "Yesterday": {
+  "duration": {
+   "formula": "KS",
+   "target": "self",
+   "tick": {
+    "cumulative": false,
+    "damageType": "hitze",
+    "formula": "",
+    "pierce": "",
+    "zones": "random"
+   },
+   "unit": "minute"
+  }
+ }
+}
