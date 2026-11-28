@@ -110,6 +110,11 @@ jobs:
           # Konfiguration über GitHub-Variable NORETURN_RULES_REF oder lokale Umgebungsvariable NORETURN_RULES_REF auf dem Runner
           $rulesPath = if (-not [string]::IsNullOrWhiteSpace($env:RULES_REF_PATH)) { $env:RULES_REF_PATH } else { $env:NORETURN_RULES_REF }
           $rulesSection = ""
+          # Gesamtbudget des Prompts: Der Diff darf nie abgeschnitten werden, die Regelreferenz bekommt nur den Rest
+          $instructions = if (Test-Path "GEMINI.md") { Get-Content -Path "GEMINI.md" -Raw } else { "" }
+          $totalBudget = 150000
+          $fixedChars = $instructions.Length + $checkSummary.Length + $diff.Length + 2000
+          $rulesBudget = [Math]::Max(0, $totalBudget - $fixedChars)
           if (-not [string]::IsNullOrWhiteSpace($rulesPath)) {
             if (Test-Path -LiteralPath $rulesPath) {
               $item = Get-Item -LiteralPath $rulesPath
@@ -121,7 +126,7 @@ jobs:
                 Write-Warning "NORETURN_RULES_REF unterstützt nur .md/.txt-Dateien (gefunden: $($item.Extension)) – übersprungen."
                 @()
               }
-              $maxChars = 250000
+              $maxChars = $rulesBudget
               $sb = [System.Text.StringBuilder]::new()
               $loaded = 0
               foreach ($rf in $ruleFiles) {
@@ -154,7 +159,6 @@ jobs:
             }
           }
 
-          $instructions = if (Test-Path "GEMINI.md") { Get-Content -Path "GEMINI.md" -Raw } else { "" }
           $promptParts = @(
             "Führe ein fokussiertes Code-Review für Pull Request #$($env:PR_NUMBER) im Repository FoundryVTT-NoReturn2E durch."
             "WICHTIG für den Headless-Modus: Führe KEINE Terminal-/Shell-Befehle (run_command) aus und ändere KEINE Dateien. Alle relevanten Prüfdaten und der vollständige Diff stehen unten; nutze bei Bedarf ausschließlich Datei-Lese-Tools."
@@ -165,9 +169,7 @@ jobs:
             "### Ergebnisse automatischer Vorab-Checks"
             $checkSummary
           )
-          if (-not [string]::IsNullOrWhiteSpace($rulesSection)) {
-            $promptParts += @("", $rulesSection)
-          }
+          # Diff zuerst, damit er auch bei großer Regelreferenz vollständig im Prompt steht
           $promptParts += @(
             ""
             "### Git-Diff des Pull Requests"
@@ -175,6 +177,9 @@ jobs:
             $diff.TrimEnd()
             '```'
           )
+          if (-not [string]::IsNullOrWhiteSpace($rulesSection)) {
+            $promptParts += @("", $rulesSection)
+          }
           $fullPrompt = $promptParts -join "`n"
 
           $errFile = Join-Path $env:RUNNER_TEMP "review-stderr.log"
