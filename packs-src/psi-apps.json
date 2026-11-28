@@ -29,7 +29,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Animakinese · schwer (15–19) · Haltung 3 <em class=\"nr-ref\">(NoReturn 2E, S. 197)</em></p>"
+   "description": "<p>Animakinese · schwer (15–19) · Haltung 3 <em class=\"nr-ref\">(NoReturn 2E, S. 197)</em></p>",
+   "defense": "block",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -92,7 +95,10 @@
      "zones": "random",
      "pierce": ""
     }
-   }
+   },
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -143,7 +149,12 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Animakinese · mittel (11–15) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 197)</em></p>"
+   "description": "<p>Animakinese · mittel (11–15) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 197)</em></p>",
+   "defense": "",
+   "defenseBonus": "KS*2",
+   "boosts": [
+    "psi"
+   ]
   },
   "effects": [],
   "folder": null,
@@ -206,7 +217,10 @@
      "zones": "random",
      "pierce": ""
     }
-   }
+   },
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -269,7 +283,10 @@
      "zones": "random",
      "pierce": ""
     }
-   }
+   },
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -332,7 +349,10 @@
      "zones": "random",
      "pierce": ""
     }
-   }
+   },
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -395,7 +415,10 @@
      "zones": "random",
      "pierce": ""
     }
-   }
+   },
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -446,7 +469,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Animakinese · leicht (8–12) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 197)</em></p>"
+   "description": "<p>Animakinese · leicht (8–12) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 197)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -497,7 +523,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Animakinese · leicht (8–12) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 197)</em></p>"
+   "description": "<p>Animakinese · leicht (8–12) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 197)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -548,7 +577,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Animakinese · mittel (11–15) <em class=\"nr-ref\">(NoReturn 2E, S. 197)</em></p>"
+   "description": "<p>Animakinese · mittel (11–15) <em class=\"nr-ref\">(NoReturn 2E, S. 197)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -599,7 +631,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Animakinese · leicht (8–12) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 197)</em></p>"
+   "description": "<p>Animakinese · leicht (8–12) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 197)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -650,7 +685,10 @@
    "damageMult": 10,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Animakinese · schwer (15–19) <em class=\"nr-ref\">(NoReturn 2E, S. 197)</em></p>"
+   "description": "<p>Animakinese · schwer (15–19) <em class=\"nr-ref\">(NoReturn 2E, S. 197)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -701,7 +739,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Animakinese · sehr schwer (19–22) <em class=\"nr-ref\">(NoReturn 2E, S. 197)</em></p>"
+   "description": "<p>Animakinese · sehr schwer (19–22) <em class=\"nr-ref\">(NoReturn 2E, S. 197)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -764,7 +805,10 @@
      "zones": "random",
      "pierce": ""
     }
-   }
+   },
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -827,7 +871,10 @@
      "zones": "random",
      "pierce": ""
     }
-   }
+   },
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -878,7 +925,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Biokinese · mittel (11–15) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 198)</em></p>"
+   "description": "<p>Biokinese · mittel (11–15) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 198)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -929,7 +979,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Biokinese · mittel (11–15) <em class=\"nr-ref\">(NoReturn 2E, S. 198)</em></p>"
+   "description": "<p>Biokinese · mittel (11–15) <em class=\"nr-ref\">(NoReturn 2E, S. 198)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -980,7 +1033,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Biokinese · schwer (15–19) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 198)</em></p>"
+   "description": "<p>Biokinese · schwer (15–19) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 198)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -1031,7 +1087,10 @@
    "damageMult": 5,
    "allZones": false,
    "pierce": "A",
-   "description": "<p>Biokinese · leicht (8–12) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 198)</em></p>"
+   "description": "<p>Biokinese · leicht (8–12) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 198)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -1082,7 +1141,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Biokinese · sehr schwer (19–22) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 198)</em></p>"
+   "description": "<p>Biokinese · sehr schwer (19–22) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 198)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -1133,7 +1195,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Biokinese · leicht (8–12) <em class=\"nr-ref\">(NoReturn 2E, S. 198)</em></p>"
+   "description": "<p>Biokinese · leicht (8–12) <em class=\"nr-ref\">(NoReturn 2E, S. 198)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -1184,7 +1249,13 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Biokinese · mittel (11–15) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 198)</em></p>"
+   "description": "<p>Biokinese · mittel (11–15) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 198)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": [
+    "nahkampf",
+    "waffenkampf"
+   ]
   },
   "effects": [],
   "folder": null,
@@ -1235,7 +1306,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Biokinese · mittel (11–15) <em class=\"nr-ref\">(NoReturn 2E, S. 198)</em></p>"
+   "description": "<p>Biokinese · mittel (11–15) <em class=\"nr-ref\">(NoReturn 2E, S. 198)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -1286,7 +1360,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Biokinese · leicht (8–12) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 198)</em></p>"
+   "description": "<p>Biokinese · leicht (8–12) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 198)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -1337,7 +1414,10 @@
    "damageMult": 20,
    "allZones": false,
    "pierce": "B",
-   "description": "<p>Biokinese · sehr schwer (19–22) <em class=\"nr-ref\">(NoReturn 2E, S. 198)</em></p>"
+   "description": "<p>Biokinese · sehr schwer (19–22) <em class=\"nr-ref\">(NoReturn 2E, S. 198)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -1388,7 +1468,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Biokinese · ultimativ (23–25) <em class=\"nr-ref\">(NoReturn 2E, S. 198)</em></p>"
+   "description": "<p>Biokinese · ultimativ (23–25) <em class=\"nr-ref\">(NoReturn 2E, S. 198)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -1439,7 +1522,10 @@
    "damageMult": 5,
    "allZones": true,
    "pierce": "",
-   "description": "<p>Biokinese · leicht (8–12) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 198)</em></p>"
+   "description": "<p>Biokinese · leicht (8–12) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 198)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -1502,7 +1588,10 @@
      "zones": "random",
      "pierce": ""
     }
-   }
+   },
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -1553,7 +1642,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Biokinese · schwer (15–19) <em class=\"nr-ref\">(NoReturn 2E, S. 198)</em></p>"
+   "description": "<p>Biokinese · schwer (15–19) <em class=\"nr-ref\">(NoReturn 2E, S. 198)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -1604,7 +1696,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Biokinese · schwer (15–19) <em class=\"nr-ref\">(NoReturn 2E, S. 198)</em></p>"
+   "description": "<p>Biokinese · schwer (15–19) <em class=\"nr-ref\">(NoReturn 2E, S. 198)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -1655,7 +1750,14 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Chronokinese · leicht (8–12) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 200)</em></p>"
+   "description": "<p>Chronokinese · leicht (8–12) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 200)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": [
+    "nahkampf",
+    "rennen",
+    "waffenkampf"
+   ]
   },
   "effects": [],
   "folder": null,
@@ -1706,7 +1808,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Chronokinese · schwer (15–19) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 200)</em></p>"
+   "description": "<p>Chronokinese · schwer (15–19) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 200)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -1757,7 +1862,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Chronokinese · ultimativ (23–25) <em class=\"nr-ref\">(NoReturn 2E, S. 200)</em></p>"
+   "description": "<p>Chronokinese · ultimativ (23–25) <em class=\"nr-ref\">(NoReturn 2E, S. 200)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -1808,7 +1916,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Chronokinese · sehr schwer (19–22) <em class=\"nr-ref\">(NoReturn 2E, S. 200)</em></p>"
+   "description": "<p>Chronokinese · sehr schwer (19–22) <em class=\"nr-ref\">(NoReturn 2E, S. 200)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -1859,7 +1970,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Chronokinese · leicht (8–12) <em class=\"nr-ref\">(NoReturn 2E, S. 200)</em></p>"
+   "description": "<p>Chronokinese · leicht (8–12) <em class=\"nr-ref\">(NoReturn 2E, S. 200)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -1910,7 +2024,14 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Chronokinese · leicht (8–12) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 200)</em></p>"
+   "description": "<p>Chronokinese · leicht (8–12) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 200)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": [
+    "geschuetze",
+    "projektilwaffen",
+    "schiessen"
+   ]
   },
   "effects": [],
   "folder": null,
@@ -1961,7 +2082,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Chronokinese · schwer (15–19) <em class=\"nr-ref\">(NoReturn 2E, S. 200)</em></p>"
+   "description": "<p>Chronokinese · schwer (15–19) <em class=\"nr-ref\">(NoReturn 2E, S. 200)</em></p>",
+   "defense": "dodge",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -2012,7 +2136,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Chronokinese · sehr schwer (19–22) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 200)</em></p>"
+   "description": "<p>Chronokinese · sehr schwer (19–22) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 200)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -2063,7 +2190,13 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Chronokinese · mittel (11–15) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 200)</em></p>"
+   "description": "<p>Chronokinese · mittel (11–15) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 200)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": [
+    "ausweichen",
+    "reaktion"
+   ]
   },
   "effects": [],
   "folder": null,
@@ -2114,7 +2247,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Chronokinese · leicht (8–12) <em class=\"nr-ref\">(NoReturn 2E, S. 200)</em></p>"
+   "description": "<p>Chronokinese · leicht (8–12) <em class=\"nr-ref\">(NoReturn 2E, S. 200)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -2177,7 +2313,10 @@
      "zones": "random",
      "pierce": ""
     }
-   }
+   },
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -2240,7 +2379,10 @@
      "zones": "random",
      "pierce": ""
     }
-   }
+   },
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -2303,7 +2445,10 @@
      "zones": "random",
      "pierce": ""
     }
-   }
+   },
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -2354,7 +2499,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Chronokinese · mittel (11–15) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 200)</em></p>"
+   "description": "<p>Chronokinese · mittel (11–15) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 200)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -2405,7 +2553,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Chronokinese · mittel (11–15) <em class=\"nr-ref\">(NoReturn 2E, S. 200)</em></p>"
+   "description": "<p>Chronokinese · mittel (11–15) <em class=\"nr-ref\">(NoReturn 2E, S. 200)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -2456,7 +2607,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Cryokinese · schwer (15–19) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 201)</em></p>"
+   "description": "<p>Cryokinese · schwer (15–19) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 201)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -2519,7 +2673,10 @@
      "zones": "all",
      "pierce": ""
     }
-   }
+   },
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -2570,7 +2727,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Cryokinese · mittel (11–15) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 201)</em></p>"
+   "description": "<p>Cryokinese · mittel (11–15) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 201)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -2621,7 +2781,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Cryokinese · schwer (15–19) · Haltung 3 <em class=\"nr-ref\">(NoReturn 2E, S. 201)</em></p>"
+   "description": "<p>Cryokinese · schwer (15–19) · Haltung 3 <em class=\"nr-ref\">(NoReturn 2E, S. 201)</em></p>",
+   "defense": "block",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -2672,7 +2835,10 @@
    "damageMult": 15,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Cryokinese · schwer (15–19) <em class=\"nr-ref\">(NoReturn 2E, S. 201)</em></p>"
+   "description": "<p>Cryokinese · schwer (15–19) <em class=\"nr-ref\">(NoReturn 2E, S. 201)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -2723,7 +2889,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Cryokinese · leicht (8–12) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 201)</em></p>"
+   "description": "<p>Cryokinese · leicht (8–12) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 201)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -2774,7 +2943,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Cryokinese · mittel (11–15) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 201)</em></p>"
+   "description": "<p>Cryokinese · mittel (11–15) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 201)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -2825,7 +2997,12 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Cryokinese · schwer (15–19) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 201)</em></p>"
+   "description": "<p>Cryokinese · schwer (15–19) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 201)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": [
+    "schiessen"
+   ]
   },
   "effects": [],
   "folder": null,
@@ -2876,7 +3053,12 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Cryokinese · sehr schwer (19–22) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 201)</em></p>"
+   "description": "<p>Cryokinese · sehr schwer (19–22) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 201)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": [
+    "nahkampf"
+   ]
   },
   "effects": [],
   "folder": null,
@@ -2927,7 +3109,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Cryokinese · mittel (11–15) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 201)</em></p>"
+   "description": "<p>Cryokinese · mittel (11–15) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 201)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -2990,7 +3175,10 @@
      "zones": "random",
      "pierce": ""
     }
-   }
+   },
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -3041,7 +3229,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Cryokinese · leicht (8–12) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 201)</em></p>"
+   "description": "<p>Cryokinese · leicht (8–12) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 201)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -3092,7 +3283,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Cryokinese · mittel (11–15) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 201)</em></p>"
+   "description": "<p>Cryokinese · mittel (11–15) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 201)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -3155,7 +3349,10 @@
      "zones": "all",
      "pierce": ""
     }
-   }
+   },
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -3218,7 +3415,10 @@
      "zones": "random",
      "pierce": ""
     }
-   }
+   },
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -3269,7 +3469,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Elektrokinese · leicht (8–12) · Haltung 3 <em class=\"nr-ref\">(NoReturn 2E, S. 203)</em></p>"
+   "description": "<p>Elektrokinese · leicht (8–12) · Haltung 3 <em class=\"nr-ref\">(NoReturn 2E, S. 203)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -3320,7 +3523,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Elektrokinese · schwer (15–19) <em class=\"nr-ref\">(NoReturn 2E, S. 203)</em></p>"
+   "description": "<p>Elektrokinese · schwer (15–19) <em class=\"nr-ref\">(NoReturn 2E, S. 203)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -3371,7 +3577,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Elektrokinese · mittel (11–15) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 203)</em></p>"
+   "description": "<p>Elektrokinese · mittel (11–15) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 203)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -3422,7 +3631,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Elektrokinese · leicht (8–12) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 203)</em></p>"
+   "description": "<p>Elektrokinese · leicht (8–12) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 203)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -3473,7 +3685,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Elektrokinese · schwer (15–19) <em class=\"nr-ref\">(NoReturn 2E, S. 203)</em></p>"
+   "description": "<p>Elektrokinese · schwer (15–19) <em class=\"nr-ref\">(NoReturn 2E, S. 203)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -3524,7 +3739,10 @@
    "damageMult": 10,
    "allZones": true,
    "pierce": "all",
-   "description": "<p>Elektrokinese · schwer (15–19) · Haltung 3 <em class=\"nr-ref\">(NoReturn 2E, S. 203)</em></p>"
+   "description": "<p>Elektrokinese · schwer (15–19) · Haltung 3 <em class=\"nr-ref\">(NoReturn 2E, S. 203)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -3575,7 +3793,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Elektrokinese · sehr schwer (19–22) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 203)</em></p>"
+   "description": "<p>Elektrokinese · sehr schwer (19–22) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 203)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -3626,7 +3847,10 @@
    "damageMult": 80,
    "allZones": true,
    "pierce": "all",
-   "description": "<p>Elektrokinese · ultimativ (23–25) <em class=\"nr-ref\">(NoReturn 2E, S. 203)</em></p>"
+   "description": "<p>Elektrokinese · ultimativ (23–25) <em class=\"nr-ref\">(NoReturn 2E, S. 203)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -3677,7 +3901,13 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Elektrokinese · mittel (11–15) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 203)</em></p>"
+   "description": "<p>Elektrokinese · mittel (11–15) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 203)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": [
+    "nahkampf",
+    "waffenkampf"
+   ]
   },
   "effects": [],
   "folder": null,
@@ -3740,7 +3970,10 @@
      "zones": "random",
      "pierce": ""
     }
-   }
+   },
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -3791,7 +4024,12 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Elektrokinese · leicht (8–12) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 203)</em></p>"
+   "description": "<p>Elektrokinese · leicht (8–12) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 203)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": [
+    "nahkampf"
+   ]
   },
   "effects": [],
   "folder": null,
@@ -3854,7 +4092,10 @@
      "zones": "random",
      "pierce": ""
     }
-   }
+   },
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -3905,7 +4146,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Elektrokinese · mittel (11–15) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 203)</em></p>"
+   "description": "<p>Elektrokinese · mittel (11–15) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 203)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -3956,7 +4200,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Elektrokinese · mittel (11–15) <em class=\"nr-ref\">(NoReturn 2E, S. 203)</em></p>"
+   "description": "<p>Elektrokinese · mittel (11–15) <em class=\"nr-ref\">(NoReturn 2E, S. 203)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -4007,7 +4254,10 @@
    "damageMult": 15,
    "allZones": false,
    "pierce": "all",
-   "description": "<p>Elektrokinese · sehr schwer (19–22) · Haltung 3 <em class=\"nr-ref\">(NoReturn 2E, S. 203)</em></p>"
+   "description": "<p>Elektrokinese · sehr schwer (19–22) · Haltung 3 <em class=\"nr-ref\">(NoReturn 2E, S. 203)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -4058,7 +4308,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Haimakinese · sehr schwer (19–22) <em class=\"nr-ref\">(NoReturn 2E, S. 204)</em></p>"
+   "description": "<p>Haimakinese · sehr schwer (19–22) <em class=\"nr-ref\">(NoReturn 2E, S. 204)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -4109,7 +4362,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Haimakinese · leicht (8–12) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 204)</em></p>"
+   "description": "<p>Haimakinese · leicht (8–12) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 204)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -4160,7 +4416,10 @@
    "damageMult": 5,
    "allZones": false,
    "pierce": "all",
-   "description": "<p>Haimakinese · mittel (11–15) <em class=\"nr-ref\">(NoReturn 2E, S. 204)</em></p>"
+   "description": "<p>Haimakinese · mittel (11–15) <em class=\"nr-ref\">(NoReturn 2E, S. 204)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -4211,7 +4470,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Haimakinese · schwer (15–19) <em class=\"nr-ref\">(NoReturn 2E, S. 204)</em></p>"
+   "description": "<p>Haimakinese · schwer (15–19) <em class=\"nr-ref\">(NoReturn 2E, S. 204)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -4262,7 +4524,10 @@
    "damageMult": 10,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Haimakinese · leicht (8–12) <em class=\"nr-ref\">(NoReturn 2E, S. 204)</em></p>"
+   "description": "<p>Haimakinese · leicht (8–12) <em class=\"nr-ref\">(NoReturn 2E, S. 204)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -4313,7 +4578,10 @@
    "damageMult": 120,
    "allZones": true,
    "pierce": "all",
-   "description": "<p>Haimakinese · ultimativ (23–25) <em class=\"nr-ref\">(NoReturn 2E, S. 204)</em></p>"
+   "description": "<p>Haimakinese · ultimativ (23–25) <em class=\"nr-ref\">(NoReturn 2E, S. 204)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -4364,7 +4632,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Haimakinese · leicht (8–12) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 204)</em></p>"
+   "description": "<p>Haimakinese · leicht (8–12) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 204)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -4415,7 +4686,13 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Haimakinese · mittel (11–15) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 204)</em></p>"
+   "description": "<p>Haimakinese · mittel (11–15) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 204)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": [
+    "nahkampf",
+    "waffenkampf"
+   ]
   },
   "effects": [],
   "folder": null,
@@ -4466,7 +4743,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Haimakinese · schwer (15–19) · Haltung 4 <em class=\"nr-ref\">(NoReturn 2E, S. 204)</em></p>"
+   "description": "<p>Haimakinese · schwer (15–19) · Haltung 4 <em class=\"nr-ref\">(NoReturn 2E, S. 204)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -4517,7 +4797,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Haimakinese · schwer (15–19) <em class=\"nr-ref\">(NoReturn 2E, S. 204)</em></p>"
+   "description": "<p>Haimakinese · schwer (15–19) <em class=\"nr-ref\">(NoReturn 2E, S. 204)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -4568,7 +4851,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Haimakinese · schwer (15–19) <em class=\"nr-ref\">(NoReturn 2E, S. 204)</em></p>"
+   "description": "<p>Haimakinese · schwer (15–19) <em class=\"nr-ref\">(NoReturn 2E, S. 204)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -4631,7 +4917,10 @@
      "zones": "all",
      "pierce": "all"
     }
-   }
+   },
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -4682,7 +4971,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Haimakinese · sehr schwer (19–22) · Haltung 3 <em class=\"nr-ref\">(NoReturn 2E, S. 204)</em></p>"
+   "description": "<p>Haimakinese · sehr schwer (19–22) · Haltung 3 <em class=\"nr-ref\">(NoReturn 2E, S. 204)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -4733,7 +5025,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Haimakinese · mittel (11–15) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 204)</em></p>"
+   "description": "<p>Haimakinese · mittel (11–15) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 204)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -4784,7 +5079,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Haimakinese · leicht (8–12) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 204)</em></p>"
+   "description": "<p>Haimakinese · leicht (8–12) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 204)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -4847,7 +5145,10 @@
      "zones": "random",
      "pierce": ""
     }
-   }
+   },
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -4898,7 +5199,13 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Morphokinese · leicht (8–12) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 206)</em></p>"
+   "description": "<p>Morphokinese · leicht (8–12) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 206)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": [
+    "nahkampf",
+    "waffenkampf"
+   ]
   },
   "effects": [],
   "folder": null,
@@ -4949,7 +5256,10 @@
    "damageMult": 10,
    "allZones": true,
    "pierce": "",
-   "description": "<p>Morphokinese · schwer (15–19) <em class=\"nr-ref\">(NoReturn 2E, S. 206)</em></p>"
+   "description": "<p>Morphokinese · schwer (15–19) <em class=\"nr-ref\">(NoReturn 2E, S. 206)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -5000,7 +5310,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Morphokinese · leicht (8–12) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 206)</em></p>"
+   "description": "<p>Morphokinese · leicht (8–12) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 206)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -5051,7 +5364,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Morphokinese · mittel (11–15) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 206)</em></p>"
+   "description": "<p>Morphokinese · mittel (11–15) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 206)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -5102,7 +5418,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Morphokinese · mittel (11–15) · Haltung 3 <em class=\"nr-ref\">(NoReturn 2E, S. 206)</em></p>"
+   "description": "<p>Morphokinese · mittel (11–15) · Haltung 3 <em class=\"nr-ref\">(NoReturn 2E, S. 206)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -5153,7 +5472,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Morphokinese · schwer (15–19) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 206)</em></p>"
+   "description": "<p>Morphokinese · schwer (15–19) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 206)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -5204,7 +5526,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Morphokinese · schwer (15–19) <em class=\"nr-ref\">(NoReturn 2E, S. 206)</em></p>"
+   "description": "<p>Morphokinese · schwer (15–19) <em class=\"nr-ref\">(NoReturn 2E, S. 206)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -5255,7 +5580,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Morphokinese · sehr schwer (19–22) <em class=\"nr-ref\">(NoReturn 2E, S. 206)</em></p>"
+   "description": "<p>Morphokinese · sehr schwer (19–22) <em class=\"nr-ref\">(NoReturn 2E, S. 206)</em></p>",
+   "defense": "dodge",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -5306,7 +5634,13 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Morphokinese · mittel (11–15) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 206)</em></p>"
+   "description": "<p>Morphokinese · mittel (11–15) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 206)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": [
+    "nahkampf",
+    "waffenkampf"
+   ]
   },
   "effects": [],
   "folder": null,
@@ -5357,7 +5691,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Morphokinese · leicht (8–12) <em class=\"nr-ref\">(NoReturn 2E, S. 206)</em></p>"
+   "description": "<p>Morphokinese · leicht (8–12) <em class=\"nr-ref\">(NoReturn 2E, S. 206)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -5408,7 +5745,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Morphokinese · sehr schwer (19–22) <em class=\"nr-ref\">(NoReturn 2E, S. 206)</em></p>"
+   "description": "<p>Morphokinese · sehr schwer (19–22) <em class=\"nr-ref\">(NoReturn 2E, S. 206)</em></p>",
+   "defense": "dodge",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -5471,7 +5811,10 @@
      "zones": "random",
      "pierce": ""
     }
-   }
+   },
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -5522,7 +5865,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Morphokinese · mittel (11–15) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 206)</em></p>"
+   "description": "<p>Morphokinese · mittel (11–15) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 206)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -5573,7 +5919,12 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Morphokinese · schwer (15–19) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 206)</em></p>"
+   "description": "<p>Morphokinese · schwer (15–19) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 206)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": [
+    "schiessen"
+   ]
   },
   "effects": [],
   "folder": null,
@@ -5624,7 +5975,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Photokinese · schwer (15–19) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 208)</em></p>"
+   "description": "<p>Photokinese · schwer (15–19) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 208)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -5675,7 +6029,12 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Photokinese · mittel (11–15) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 208)</em></p>"
+   "description": "<p>Photokinese · mittel (11–15) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 208)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": [
+    "inspirieren"
+   ]
   },
   "effects": [],
   "folder": null,
@@ -5726,7 +6085,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Photokinese · leicht (8–12) <em class=\"nr-ref\">(NoReturn 2E, S. 208)</em></p>"
+   "description": "<p>Photokinese · leicht (8–12) <em class=\"nr-ref\">(NoReturn 2E, S. 208)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -5777,7 +6139,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Photokinese · ultimativ (23–25) <em class=\"nr-ref\">(NoReturn 2E, S. 208)</em></p>"
+   "description": "<p>Photokinese · ultimativ (23–25) <em class=\"nr-ref\">(NoReturn 2E, S. 208)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -5828,7 +6193,12 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Photokinese · schwer (15–19) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 208)</em></p>"
+   "description": "<p>Photokinese · schwer (15–19) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 208)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": [
+    "einschuechtern"
+   ]
   },
   "effects": [],
   "folder": null,
@@ -5879,7 +6249,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Photokinese · leicht (8–12) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 208)</em></p>"
+   "description": "<p>Photokinese · leicht (8–12) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 208)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -5930,7 +6303,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Photokinese · mittel (11–15) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 208)</em></p>"
+   "description": "<p>Photokinese · mittel (11–15) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 208)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -5981,7 +6357,10 @@
    "damageMult": 15,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Photokinese · mittel (11–15) <em class=\"nr-ref\">(NoReturn 2E, S. 208)</em></p>"
+   "description": "<p>Photokinese · mittel (11–15) <em class=\"nr-ref\">(NoReturn 2E, S. 208)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -6032,7 +6411,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Photokinese · leicht (8–12) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 208)</em></p>"
+   "description": "<p>Photokinese · leicht (8–12) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 208)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -6083,7 +6465,10 @@
    "damageMult": 10,
    "allZones": false,
    "pierce": "A",
-   "description": "<p>Photokinese · schwer (15–19) <em class=\"nr-ref\">(NoReturn 2E, S. 208)</em></p>"
+   "description": "<p>Photokinese · schwer (15–19) <em class=\"nr-ref\">(NoReturn 2E, S. 208)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -6134,7 +6519,10 @@
    "damageMult": 100,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Photokinese · sehr schwer (19–22) <em class=\"nr-ref\">(NoReturn 2E, S. 208)</em></p>"
+   "description": "<p>Photokinese · sehr schwer (19–22) <em class=\"nr-ref\">(NoReturn 2E, S. 208)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -6185,7 +6573,13 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Photokinese · sehr schwer (19–22) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 208)</em></p>"
+   "description": "<p>Photokinese · sehr schwer (19–22) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 208)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": [
+    "nahkampf",
+    "waffenkampf"
+   ]
   },
   "effects": [],
   "folder": null,
@@ -6236,7 +6630,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Photokinese · leicht (8–12) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 208)</em></p>"
+   "description": "<p>Photokinese · leicht (8–12) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 208)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -6287,7 +6684,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Photokinese · schwer (15–19) · Haltung 3 <em class=\"nr-ref\">(NoReturn 2E, S. 208)</em></p>"
+   "description": "<p>Photokinese · schwer (15–19) · Haltung 3 <em class=\"nr-ref\">(NoReturn 2E, S. 208)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -6338,7 +6738,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Photokinese · mittel (11–15) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 208)</em></p>"
+   "description": "<p>Photokinese · mittel (11–15) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 208)</em></p>",
+   "defense": "dodge",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -6389,7 +6792,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Psychokinese · schwer (15–19) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 209)</em></p>"
+   "description": "<p>Psychokinese · schwer (15–19) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 209)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -6440,7 +6846,10 @@
    "damageMult": 5,
    "allZones": false,
    "pierce": "all",
-   "description": "<p>Psychokinese · mittel (11–15) <em class=\"nr-ref\">(NoReturn 2E, S. 209)</em></p>"
+   "description": "<p>Psychokinese · mittel (11–15) <em class=\"nr-ref\">(NoReturn 2E, S. 209)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -6491,7 +6900,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Psychokinese · sehr schwer (19–22) <em class=\"nr-ref\">(NoReturn 2E, S. 209)</em></p>"
+   "description": "<p>Psychokinese · sehr schwer (19–22) <em class=\"nr-ref\">(NoReturn 2E, S. 209)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -6542,7 +6954,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Psychokinese · mittel (11–15) <em class=\"nr-ref\">(NoReturn 2E, S. 209)</em></p>"
+   "description": "<p>Psychokinese · mittel (11–15) <em class=\"nr-ref\">(NoReturn 2E, S. 209)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -6605,7 +7020,10 @@
      "zones": "random",
      "pierce": ""
     }
-   }
+   },
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -6656,7 +7074,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Psychokinese · leicht (8–12) · Haltung 3 <em class=\"nr-ref\">(NoReturn 2E, S. 209)</em></p>"
+   "description": "<p>Psychokinese · leicht (8–12) · Haltung 3 <em class=\"nr-ref\">(NoReturn 2E, S. 209)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -6719,7 +7140,10 @@
      "zones": "random",
      "pierce": ""
     }
-   }
+   },
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -6770,7 +7194,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Psychokinese · schwer (15–19) · Haltung 3 <em class=\"nr-ref\">(NoReturn 2E, S. 209)</em></p>"
+   "description": "<p>Psychokinese · schwer (15–19) · Haltung 3 <em class=\"nr-ref\">(NoReturn 2E, S. 209)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -6821,7 +7248,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Psychokinese · schwer (15–19) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 209)</em></p>"
+   "description": "<p>Psychokinese · schwer (15–19) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 209)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -6872,7 +7302,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Psychokinese · leicht (8–12) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 209)</em></p>"
+   "description": "<p>Psychokinese · leicht (8–12) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 209)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -6923,7 +7356,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Psychokinese · mittel (11–15) <em class=\"nr-ref\">(NoReturn 2E, S. 209)</em></p>"
+   "description": "<p>Psychokinese · mittel (11–15) <em class=\"nr-ref\">(NoReturn 2E, S. 209)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -6974,7 +7410,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Psychokinese · mittel (11–15) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 209)</em></p>"
+   "description": "<p>Psychokinese · mittel (11–15) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 209)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -7025,7 +7464,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Psychokinese · leicht (8–12) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 209)</em></p>"
+   "description": "<p>Psychokinese · leicht (8–12) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 209)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -7076,7 +7518,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Psychokinese · ultimativ (23–25) <em class=\"nr-ref\">(NoReturn 2E, S. 209)</em></p>"
+   "description": "<p>Psychokinese · ultimativ (23–25) <em class=\"nr-ref\">(NoReturn 2E, S. 209)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -7139,7 +7584,10 @@
      "zones": "random",
      "pierce": ""
     }
-   }
+   },
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -7190,7 +7638,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Pyrokinese · mittel (11–15) <em class=\"nr-ref\">(NoReturn 2E, S. 211)</em></p>"
+   "description": "<p>Pyrokinese · mittel (11–15) <em class=\"nr-ref\">(NoReturn 2E, S. 211)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -7253,7 +7704,10 @@
      "zones": "all",
      "pierce": "all"
     }
-   }
+   },
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -7304,7 +7758,12 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Pyrokinese · schwer (15–19) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 211)</em></p>"
+   "description": "<p>Pyrokinese · schwer (15–19) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 211)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": [
+    "schiessen"
+   ]
   },
   "effects": [],
   "folder": null,
@@ -7367,7 +7826,10 @@
      "zones": "random",
      "pierce": ""
     }
-   }
+   },
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -7418,7 +7880,10 @@
    "damageMult": 5,
    "allZones": true,
    "pierce": "",
-   "description": "<p>Pyrokinese · leicht (8–12) <em class=\"nr-ref\">(NoReturn 2E, S. 211)</em></p>"
+   "description": "<p>Pyrokinese · leicht (8–12) <em class=\"nr-ref\">(NoReturn 2E, S. 211)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -7481,7 +7946,10 @@
      "zones": "random",
      "pierce": ""
     }
-   }
+   },
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -7532,7 +8000,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Pyrokinese · schwer (15–19) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 211)</em></p>"
+   "description": "<p>Pyrokinese · schwer (15–19) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 211)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -7583,7 +8054,12 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Pyrokinese · leicht (8–12) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 211)</em></p>"
+   "description": "<p>Pyrokinese · leicht (8–12) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 211)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": [
+    "nahkampf"
+   ]
   },
   "effects": [],
   "folder": null,
@@ -7634,7 +8110,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Pyrokinese · leicht (8–12) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 211)</em></p>"
+   "description": "<p>Pyrokinese · leicht (8–12) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 211)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -7697,7 +8176,10 @@
      "zones": "all",
      "pierce": ""
     }
-   }
+   },
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -7748,7 +8230,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Pyrokinese · mittel (11–15) <em class=\"nr-ref\">(NoReturn 2E, S. 211)</em></p>"
+   "description": "<p>Pyrokinese · mittel (11–15) <em class=\"nr-ref\">(NoReturn 2E, S. 211)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -7799,7 +8284,10 @@
    "damageMult": 15,
    "allZones": true,
    "pierce": "",
-   "description": "<p>Pyrokinese · schwer (15–19) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 211)</em></p>"
+   "description": "<p>Pyrokinese · schwer (15–19) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 211)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -7850,7 +8338,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Pyrokinese · mittel (11–15) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 211)</em></p>"
+   "description": "<p>Pyrokinese · mittel (11–15) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 211)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -7913,7 +8404,10 @@
      "zones": "random",
      "pierce": ""
     }
-   }
+   },
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -7964,7 +8458,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Pyrokinese · schwer (15–19) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 211)</em></p>"
+   "description": "<p>Pyrokinese · schwer (15–19) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 211)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -8015,7 +8512,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Technokinese · mittel (11–15) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 212)</em></p>"
+   "description": "<p>Technokinese · mittel (11–15) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 212)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -8078,7 +8578,10 @@
      "zones": "random",
      "pierce": ""
     }
-   }
+   },
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -8129,7 +8632,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Technokinese · schwer (15–19) · Haltung 3 <em class=\"nr-ref\">(NoReturn 2E, S. 212)</em></p>"
+   "description": "<p>Technokinese · schwer (15–19) · Haltung 3 <em class=\"nr-ref\">(NoReturn 2E, S. 212)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -8180,7 +8686,12 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Technokinese · mittel (11–15) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 212)</em></p>"
+   "description": "<p>Technokinese · mittel (11–15) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 212)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": [
+    "computer"
+   ]
   },
   "effects": [],
   "folder": null,
@@ -8231,7 +8742,12 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Technokinese · mittel (11–15) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 212)</em></p>"
+   "description": "<p>Technokinese · mittel (11–15) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 212)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": [
+    "computer"
+   ]
   },
   "effects": [],
   "folder": null,
@@ -8282,7 +8798,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Technokinese · sehr schwer (19–22) <em class=\"nr-ref\">(NoReturn 2E, S. 212)</em></p>"
+   "description": "<p>Technokinese · sehr schwer (19–22) <em class=\"nr-ref\">(NoReturn 2E, S. 212)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -8333,7 +8852,12 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Technokinese · mittel (11–15) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 212)</em></p>"
+   "description": "<p>Technokinese · mittel (11–15) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 212)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": [
+    "computer"
+   ]
   },
   "effects": [],
   "folder": null,
@@ -8384,7 +8908,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Technokinese · schwer (15–19) · Haltung 3 <em class=\"nr-ref\">(NoReturn 2E, S. 212)</em></p>"
+   "description": "<p>Technokinese · schwer (15–19) · Haltung 3 <em class=\"nr-ref\">(NoReturn 2E, S. 212)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -8435,7 +8962,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Technokinese · ultimativ (23–25) <em class=\"nr-ref\">(NoReturn 2E, S. 212)</em></p>"
+   "description": "<p>Technokinese · ultimativ (23–25) <em class=\"nr-ref\">(NoReturn 2E, S. 212)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -8498,7 +9028,10 @@
      "zones": "random",
      "pierce": ""
     }
-   }
+   },
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -8549,7 +9082,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Technokinese · leicht (8–12) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 212)</em></p>"
+   "description": "<p>Technokinese · leicht (8–12) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 212)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -8600,7 +9136,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Technokinese · schwer (15–19) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 212)</em></p>"
+   "description": "<p>Technokinese · schwer (15–19) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 212)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -8651,7 +9190,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Technokinese · sehr schwer (19–22) <em class=\"nr-ref\">(NoReturn 2E, S. 212)</em></p>"
+   "description": "<p>Technokinese · sehr schwer (19–22) <em class=\"nr-ref\">(NoReturn 2E, S. 212)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -8702,7 +9244,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Technokinese · leicht (8–12) <em class=\"nr-ref\">(NoReturn 2E, S. 212)</em></p>"
+   "description": "<p>Technokinese · leicht (8–12) <em class=\"nr-ref\">(NoReturn 2E, S. 212)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -8753,7 +9298,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Technokinese · leicht (8–12) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 212)</em></p>"
+   "description": "<p>Technokinese · leicht (8–12) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 212)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -8804,7 +9352,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Telekinese · leicht (8–12) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 213)</em></p>"
+   "description": "<p>Telekinese · leicht (8–12) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 213)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -8855,7 +9406,10 @@
    "damageMult": 5,
    "allZones": true,
    "pierce": "",
-   "description": "<p>Telekinese · schwer (15–19) <em class=\"nr-ref\">(NoReturn 2E, S. 213)</em></p>"
+   "description": "<p>Telekinese · schwer (15–19) <em class=\"nr-ref\">(NoReturn 2E, S. 213)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -8906,7 +9460,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Telekinese · schwer (15–19) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 213)</em></p>"
+   "description": "<p>Telekinese · schwer (15–19) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 213)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -8957,7 +9514,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Telekinese · mittel (11–15) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 213)</em></p>"
+   "description": "<p>Telekinese · mittel (11–15) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 213)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -9008,7 +9568,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Telekinese · leicht (8–12) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 213)</em></p>"
+   "description": "<p>Telekinese · leicht (8–12) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 213)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -9059,7 +9622,12 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Telekinese · mittel (11–15) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 213)</em></p>"
+   "description": "<p>Telekinese · mittel (11–15) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 213)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": [
+    "attr.be"
+   ]
   },
   "effects": [],
   "folder": null,
@@ -9110,7 +9678,10 @@
    "damageMult": 30,
    "allZones": true,
    "pierce": "",
-   "description": "<p>Telekinese · sehr schwer (19–22) · Haltung 3 <em class=\"nr-ref\">(NoReturn 2E, S. 213)</em></p>"
+   "description": "<p>Telekinese · sehr schwer (19–22) · Haltung 3 <em class=\"nr-ref\">(NoReturn 2E, S. 213)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -9161,7 +9732,12 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Telekinese · mittel (11–15) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 213)</em></p>"
+   "description": "<p>Telekinese · mittel (11–15) · Haltung 2 <em class=\"nr-ref\">(NoReturn 2E, S. 213)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": [
+    "attr.st"
+   ]
   },
   "effects": [],
   "folder": null,
@@ -9212,7 +9788,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Telekinese · leicht (8–12) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 213)</em></p>"
+   "description": "<p>Telekinese · leicht (8–12) · Haltung 1 <em class=\"nr-ref\">(NoReturn 2E, S. 213)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -9263,7 +9842,10 @@
    "damageMult": 10,
    "allZones": false,
    "pierce": "A",
-   "description": "<p>Telekinese · mittel (11–15) <em class=\"nr-ref\">(NoReturn 2E, S. 213)</em></p>"
+   "description": "<p>Telekinese · mittel (11–15) <em class=\"nr-ref\">(NoReturn 2E, S. 213)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -9314,7 +9896,10 @@
    "damageMult": 10,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Telekinese · leicht (8–12) <em class=\"nr-ref\">(NoReturn 2E, S. 213)</em></p>"
+   "description": "<p>Telekinese · leicht (8–12) <em class=\"nr-ref\">(NoReturn 2E, S. 213)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -9365,7 +9950,10 @@
    "damageMult": 10,
    "allZones": true,
    "pierce": "",
-   "description": "<p>Telekinese · schwer (15–19) <em class=\"nr-ref\">(NoReturn 2E, S. 213)</em></p>"
+   "description": "<p>Telekinese · schwer (15–19) <em class=\"nr-ref\">(NoReturn 2E, S. 213)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -9416,7 +10004,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Telekinese · schwer (15–19) · Haltung 3 <em class=\"nr-ref\">(NoReturn 2E, S. 213)</em></p>"
+   "description": "<p>Telekinese · schwer (15–19) · Haltung 3 <em class=\"nr-ref\">(NoReturn 2E, S. 213)</em></p>",
+   "defense": "block",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -9467,7 +10058,10 @@
    "damageMult": 0,
    "allZones": false,
    "pierce": "",
-   "description": "<p>Telekinese · sehr schwer (19–22) <em class=\"nr-ref\">(NoReturn 2E, S. 213)</em></p>"
+   "description": "<p>Telekinese · sehr schwer (19–22) <em class=\"nr-ref\">(NoReturn 2E, S. 213)</em></p>",
+   "defense": "block",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,
@@ -9518,7 +10112,10 @@
    "damageMult": 100,
    "allZones": true,
    "pierce": "",
-   "description": "<p>Telekinese · ultimativ (23–25) <em class=\"nr-ref\">(NoReturn 2E, S. 213)</em></p>"
+   "description": "<p>Telekinese · ultimativ (23–25) <em class=\"nr-ref\">(NoReturn 2E, S. 213)</em></p>",
+   "defense": "",
+   "defenseBonus": "",
+   "boosts": []
   },
   "effects": [],
   "folder": null,

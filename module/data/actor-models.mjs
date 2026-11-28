@@ -66,6 +66,9 @@ function creatureSchema() {
     combat: new fields.SchemaField({
       defenses: int(0, { min: 0 }),
       psiCollected: int(0, { min: 0 }),
+      /** Zeitpool aus „Zeitloses Wissen“ (S. 200): verbleibende Einsätze und Anfangsgröße (= KS), wie Meditation */
+      zeitpool: int(0, { min: 0 }),
+      zeitpoolMax: int(0, { min: 0 }),
       overdrive: int(0, { min: 0 })
     }),
     alcohol: int(0, { min: 0 }),
@@ -220,6 +223,7 @@ export class CreatureData extends foundry.abstract.TypeDataModel {
     sys.adrenalinBonus = Math.min(5, sys.adrenalinMax);
     sys.meditationMax = Math.max(0, sys.special.meditation.value + (mods.meditation ?? 0));
     sys.meditationLeft = Math.max(0, sys.meditationMax - sys.special.meditation.used);
+    sys.zeitpoolBonus = Math.min(5, sys.combat.zeitpoolMax);
     sys.adrenalin = { value: sys.adrenalinLeft, max: sys.adrenalinMax };
 
     // Fertigkeiten

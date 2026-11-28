@@ -55,6 +55,12 @@
     <input type="checkbox" name="useMeditation">
   </div>
   {{/if}}
+  {{#if zeitpoolLeft}}
+  <div class="form-group">
+    <label>{{localize "NR.Psi.Zeitpool"}} (+{{zeitpoolBonus}}W, {{zeitpoolLeft}} {{localize "NR.Combat.Left"}})</label>
+    <input type="checkbox" name="useZeitpool">
+  </div>
+  {{/if}}
   {{#if allowPass}}
   <div class="form-group">
     <label data-tooltip="{{localize 'NR.Roll.PassHint'}}">{{localize "NR.Roll.Pass"}}</label>

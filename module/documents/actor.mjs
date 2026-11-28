@@ -93,10 +93,21 @@ export class NRActor extends foundry.documents.Actor {
   /* -------------------------------------------- */
 
   /** Maluswürfel für eine Probe. options.resist → keine Mali (Schadenswiderstand). */
-  getMalus({ resist = false, psi = false } = {}) {
+  getMalus({ resist = false, psi = false, boosted = [] } = {}) {
     if (resist || this.type === "vehicle") return 0;
     const m = this.system.malus;
-    return psi ? m.total - m.psiCollect : m.total;
+    const total = psi ? m.total - m.psiCollect : m.total;
+    return Math.max(0, total - this.holdExempt(boosted));
+  }
+
+  /**
+   * Haltungsmalus, der für die genannten Aktionen entfällt: gehaltene PSI-Apps, die genau diese Aktion boosten (S. 193).
+   * @param {string[]} tags  Fertigkeitsschlüssel, „attr.<kürzel>“ oder „psi“
+   */
+  holdExempt(tags = []) {
+    if (!tags.length) return 0;
+    return this.items.filter(i => i.type === "psiApp" && i.system.held && i.system.boosts?.some(b => tags.includes(b)))
+      .reduce((acc, i) => acc + this.system.psiHold(i), 0);
   }
 
   /** Verbrauche eine Nutzung Adrenalin (oder Meditation). */
@@ -109,6 +120,23 @@ export class NRActor extends foundry.documents.Actor {
     }
     if (sys.adrenalinLeft <= 0) return false;
     await this.update({ "system.special.adrenalin.used": sys.special.adrenalin.used + 1 });
+    return true;
+  }
+
+  /**
+   * Verbrauche einen Einsatz des Zeitpools („Zeitloses Wissen“, S. 200). Bei leerem Pool endet die gehaltene App.
+   * @returns {Promise<boolean>} false, wenn der Pool leer ist
+   */
+  async spendZeitpool() {
+    const left = this.system.combat.zeitpool;
+    if (left <= 0) return false;
+    await this.update({ "system.combat.zeitpool": left - 1 });
+    if (left - 1 <= 0) {
+      const held = this.items.filter(i => i.type === "psiApp" && i.system.held && i.name.toLowerCase().startsWith("zeitloses wissen"));
+      if (held.length) await this.updateEmbeddedDocuments("Item", held.map(i => ({ _id: i.id, "system.held": false })));
+      await this.update({ "system.combat.zeitpoolMax": 0 });
+      ui.notifications.info(game.i18n.format("NR.Psi.ZeitpoolEmpty", { name: this.name }));
+    }
     return true;
   }
 
@@ -167,7 +195,9 @@ export class NRActor extends foundry.documents.Actor {
       "system.special.meditation.used": 0,
       "system.regeneration.poolUsed": 0,
       "system.combat.defenses": 0,
-      "system.combat.psiCollected": 0
+      "system.combat.psiCollected": 0,
+      "system.combat.zeitpool": 0,
+      "system.combat.zeitpoolMax": 0
     });
     // Style-Skills mit begrenzten Einsätzen (außer „je Sitzung“) füllen sich bei der Rast wieder auf
     const refill = this.items.filter(i => i.type === "styleSkill" && i.system.uses.max > 0 && i.system.uses.value < i.system.uses.max
@@ -188,9 +218,9 @@ export class NRActor extends foundry.documents.Actor {
     skipDialog = false, resist = false, psi = false, extraBonus = 0, extraPoints = 0, altAttr = null,
     skillValue = null, untrained = false, flags = {}, extraHtml = "", skillKey = null, support = false } = {}) {
 
-    const malus = this.getMalus({ resist, psi });
+    const malus = this.getMalus({ resist, psi, boosted: [skillKey, attrKey && `attr.${attrKey}`].filter(Boolean) });
     const effects = skillStyleEffects(this, skillKey);
-    let opts = { bonusDice: extraBonus, malusDice: 0, points: extraPoints, mw, pass: false, useAdrenalin: false, useMeditation: false, disadvantages: 0, attr: attrKey, support, sideTask: false };
+    let opts = { bonusDice: extraBonus, malusDice: 0, points: extraPoints, mw, pass: false, useAdrenalin: false, useMeditation: false, useZeitpool: false, disadvantages: 0, attr: attrKey, support, sideTask: false };
     if (!skipDialog) {
       opts = await poolDialog({
         title: label, actor: this, dice, woundMalus: malus, mw, allowPass, resist,
@@ -249,6 +279,7 @@ export class NRActor extends foundry.documents.Actor {
       }
     }
     if (opts.useMeditation && await this.spendAdrenalin("meditation")) bonus += Math.min(5, this.system.meditationMax);
+    if (opts.useZeitpool && await this.spendZeitpool()) bonus += this.system.zeitpoolBonus;
 
     // Robotik-Overdrive (S. 217): gespeicherte Bonuspunkte auf die nächste Stärke-Aktion
     let overdrive = 0;

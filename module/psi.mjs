@@ -29,6 +29,23 @@ function metamorphoseKs(actor, app) {
   return active ? 1 : 0;
 }
 
+/**
+ * Booster-Syndrom (S. 149): Wesen mit der Abnormität innerhalb von 5 m verstärken die PSI-Apps anderer um +2 KS (nur die
+ * Wirkung, nicht den Zielbereich). Der Träger selbst ist nicht betroffen; mehrere Booster addieren sich nicht.
+ * @returns {{ks: number, names: string[]}}
+ */
+export function boosterAura(actor) {
+  const caster = actor.getActiveTokens?.()[0];
+  if (!caster || !canvas?.grid) return { ks: 0, names: [] };
+  const names = [];
+  for (const t of canvas.tokens.placeables) {
+    if (!t.actor || t.actor.uuid === actor.uuid || t.document.hidden) continue;
+    if (!t.actor.items.some(i => i.type === "abnormality" && i.name.toLowerCase().startsWith("booster-syndrom"))) continue;
+    try { if (canvas.grid.measurePath([caster.center, t.center]).distance <= 5) names.push(esc(t.name)); } catch (err) { /* ohne Messung kein Booster */ }
+  }
+  return { ks: names.length ? 2 : 0, names };
+}
+
 function powerFor(actor, app) {
   return actor.items.find(i => i.type === "psiPower" && i.system.key === app.system.power);
 }
@@ -47,15 +64,19 @@ export async function castPsiApp(actor, app) {
   const level = power.system.value;
   const collected = actor.system.combat.psiCollected;
   const s = app.system;
+  const isTimeless = app.name.toLowerCase().startsWith("zeitloses wissen");
+  const booster = boosterAura(actor);
 
   const content = await renderTemplate("systems/noreturn/templates/dialog/psi-dialog.hbs", {
     app, power, level, collected, min: s.min, max: s.max, diff: NR.psiDifficulties[s.difficulty]?.label,
     adrenalinLeft: actor.system.adrenalinLeft, adrenalinBonus: actor.system.adrenalinBonus,
     meditationLeft: actor.system.meditationLeft, meditationBonus: Math.min(5, actor.system.meditationMax),
+    zeitpoolLeft: isTimeless ? 0 : actor.system.combat.zeitpool, zeitpoolBonus: actor.system.zeitpoolBonus,
+    boosterNote: booster.names.length ? game.i18n.format("NR.Psi.BoosterAura", { names: booster.names.join(", "), ks: booster.ks }) : "",
     woundMalus: actor.getMalus({ psi: true }),
     defaultKs: collected > 0 ? 0 : 1,
     defaultProbe: Math.min(level, 3),
-    boosterKs: 0,
+    boosterKs: booster.ks,
     hold: actor.system.psiHold(app), memorum: actor.system.psiHold(app) < s.hold,
     multiTarget: actor.styleLevel("psionischeVielfaeltigkeit") > 0, metamorphose: metamorphoseKs(actor, app) > 0
   });
@@ -75,7 +96,8 @@ export async function castPsiApp(actor, app) {
           booster: Number(f.booster.value) || 0,
           extraTargets: Math.max(0, Number(f.extraTargets?.value) || 0),
           useAdrenalin: f.useAdrenalin?.checked ?? false,
-          useMeditation: f.useMeditation?.checked ?? false
+          useMeditation: f.useMeditation?.checked ?? false,
+          useZeitpool: f.useZeitpool?.checked ?? false
         };
       }
     }, { action: "cancel", label: game.i18n.localize("Cancel") }],
@@ -86,6 +108,7 @@ export async function castPsiApp(actor, app) {
         let pool = level;
         if (f.useAdrenalin?.checked) pool += actor.system.adrenalinBonus;
         if (f.useMeditation?.checked) pool += Math.min(5, actor.system.meditationMax);
+        if (f.useZeitpool?.checked) pool += actor.system.zeitpoolBonus;
         const ks = Number(f.ks?.value) || 0;
         const probe = Number(f.probe?.value) || 0;
         const comp = pool - ks - probe;
@@ -109,6 +132,7 @@ export async function castPsiApp(actor, app) {
   let pool = level;
   if (opts.useAdrenalin && await actor.spendAdrenalin()) pool += actor.system.adrenalinBonus;
   if (opts.useMeditation && await actor.spendAdrenalin("meditation")) pool += Math.min(5, actor.system.meditationMax);
+  if (opts.useZeitpool && await actor.spendZeitpool()) pool += actor.system.zeitpoolBonus;
   const comp = Math.max(0, pool - opts.ks - opts.probe);
   // Metamorphose: +1 KS für Apps der gewählten Kraft; Psionische Vielfältigkeit: −1 effektive KS je zusätzlichem Ziel
   const meta = metamorphoseKs(actor, app);
@@ -124,7 +148,9 @@ export async function castPsiApp(actor, app) {
 
   const updates = { "system.combat.psiCollected": 0 };
   await actor.update(updates);
-  if (success && s.hold > 0) await app.update({ "system.held": true });
+  // KS der letzten gelungenen Wirkung merken (Defensivaktion, Barrierenstärke)
+  if (success) await app.update({ "flags.noreturn.psiKs": ks, ...(s.hold > 0 ? { "system.held": true } : {}) });
+  if (success && isTimeless) await actor.update({ "system.combat.zeitpool": ks, "system.combat.zeitpoolMax": ks });
 
   let fail = null;
   const damageForFail = s.damageMult ? {
@@ -225,6 +251,49 @@ async function spawnPsiWeapons(actor, app, ks) {
 export async function removePsiWeapons(actor, appId) {
   const ids = actor?.items.filter(i => i.type === "weapon" && i.getFlag(SYSTEM_ID, PSI_WEAPON_FLAG) === appId).map(i => i.id) ?? [];
   if (ids.length) await actor.deleteEmbeddedDocuments("Item", ids);
+}
+
+/**
+ * Kategorie-B-Kraft (HMO, S. 215) ein- oder ausschalten. Gleichzeitig aktiv sind höchstens so viele Kräfte, wie der Wert in Wissen angibt.
+ */
+export async function togglePsiActive(actor, power) {
+  if (power.system.active) return power.update({ "system.active": false });
+  const active = actor.items.filter(i => i.type === "psiPower" && i.system.key === "kategorieB" && i.system.active).length;
+  const limit = actor.system.attr?.wi?.total ?? 0;
+  if (active >= limit) return ui.notifications.warn(game.i18n.format("NR.Psi.ActiveLimit", { n: limit }));
+  return power.update({ "system.active": true });
+}
+
+/**
+ * Blutpunkte-Einsatz einer Kategorie-B-Kraft: „Dunkler Balsam“ stellt Trefferpunkte wieder her (zuerst die am stärksten
+ * verletzten Zonen), „Brutale Ignoranz“ unterdrückt zehn Minuten lang den Schmerz (Schmerztoleranz 10, als Marker am Token).
+ */
+export async function useBloodPower(actor, power) {
+  const s = power.system;
+  if (!s.bloodAction) return null;
+  if (!s.active) return ui.notifications.warn(game.i18n.localize("NR.Psi.NotActive"));
+  if (actor.system.blood.value < s.bloodCost) return ui.notifications.warn(game.i18n.localize("NR.Psi.NoBlood"));
+  await actor.update({ "system.blood.value": actor.system.blood.value - s.bloodCost });
+  let text;
+  if (s.bloodAction === "heal") {
+    let left = s.bloodValue;
+    const updates = {};
+    const zones = Object.keys(NR.zones).map(z => ({ z, damage: actor.system.zones[z].damage })).filter(x => x.damage > 0).sort((a, b) => b.damage - a.damage);
+    for (const { z, damage } of zones) {
+      if (left <= 0) break;
+      const heal = Math.min(left, damage);
+      updates[`system.zones.${z}.damage`] = damage - heal;
+      left -= heal;
+    }
+    if (Object.keys(updates).length) await actor.update(updates);
+    text = game.i18n.format("NR.Psi.BloodHealed", { name: esc(actor.name), n: s.bloodValue - left, power: esc(power.name) });
+  } else {
+    await addTimedEffect(actor, { name: power.name, img: power.img, value: 10, unit: "minute", source: power.name, description: game.i18n.localize("NR.Psi.PainOffHint") });
+    text = game.i18n.format("NR.Psi.PainOff", { name: esc(actor.name), power: esc(power.name) });
+  }
+  const msgData = { speaker: ChatMessage.getSpeaker({ actor }), content: `<div class="nr-card"><p class="nr-hint"><i class="fa-solid fa-droplet"></i> ${text}</p></div>` };
+  applyChatMode(msgData);
+  return ChatMessage.create(msgData);
 }
 
 /** Alle gehaltenen PSI-Apps beenden (der Hook „updateItem“ entfernt erzeugte Waffen). */
