@@ -259,6 +259,8 @@ def powers():
 
 def apps(parsed_path):
     data = json.load(open(parsed_path, encoding="utf-8"))
+    # Nachträgliche Regelpflege (Zeitabläufe, korrigierte Effekttexte) je App: tools/data/psi_overrides.json
+    overrides = json.load(open(os.path.join(os.path.dirname(parsed_path), "psi_overrides.json"), encoding="utf-8"))
     out = []
     seen = set()
     for a in data:
@@ -267,17 +269,22 @@ def apps(parsed_path):
             continue
         seen.add(name)
         eff, extra = E[name]
+        ov = overrides.get(name, {})
+        eff = ov.get("effect", eff)
         key = POWER_KEYS[a["power"]]
         diff = DIFF_KEYS[a["diff"]]
         hold = extra.get("hold", a["hold"])
         defensive = a.get("defensive") or "Defensivaktion" in eff
         folder = POWERS[key][5]
-        out.append({"name": name, "type": "psiApp", "img": icon(folder, ""),
+        doc = {"name": name, "type": "psiApp", "img": icon(folder, ""),
                     "system": {"power": key, "difficulty": diff, "min": a["min"], "max": a["max"], "hold": hold, "held": False,
                                "defensive": bool(defensive), "actions": 1 if name in ("Teleport", "Zweite Chance") else 2,
                                "resist": extra.get("resist", ""), "effect": eff,
                                "weapon": {"name": "", "count": 0, "attackDice": "", "parryDice": "", "strength": True, "damage": "", "damageType": "wucht", "twoHanded": False, **extra.get("weapon", {})},
                                "damageMult": extra.get("damageMult", 0), "allZones": extra.get("allZones", False), "pierce": extra.get("pierce", ""),
-                               "description": p(f"{POWERS[key][0]} · {a['diff']} ({a['min']}–{a['max']})" + (f" · Haltung {hold}" if hold else ""), POWERS[key][4])}})
+                               "description": p(f"{POWERS[key][0]} · {a['diff']} ({a['min']}–{a['max']})" + (f" · Haltung {hold}" if hold else ""), POWERS[key][4])}}
+        if "duration" in ov:
+            doc["system"]["duration"] = ov["duration"]
+        out.append(doc)
     missing = sorted(set(E) - seen)
     return out, missing
