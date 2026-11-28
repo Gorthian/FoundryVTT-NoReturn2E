@@ -713,6 +713,47 @@
   }
  },
  {
+  "_id": "f7iCILieEuQ8CwPW",
+  "_key": "!items!f7iCILieEuQ8CwPW",
+  "name": "Wassertauglichkeit",
+  "type": "bioTrait",
+  "img": "icons/svg/pawprint.svg",
+  "system": {
+   "kind": "sichtbar",
+   "gp": 10,
+   "level": 1,
+   "maxLevel": 1,
+   "perLevel": false,
+   "covers": 0,
+   "conspicuity": "Kiemen (ca. 5 cm, Hals/Oberkörper)",
+   "charges": {
+    "value": 0,
+    "max": 0
+   },
+   "modifiers": [],
+   "grants": [],
+   "description": "<p>Amphibischer Körper: immun gegen Fress-Regen und die ätzende Wirkung von Meerwasser, Atmen unter Wasser (Kiemen). Voraussetzung für Schwimmflossen/-häute im Meerwasser; mit Erschütterungssinn Reichweite im Wasser Wahrnehmung × 10 m. GP nicht im 2E-Corebook angegeben (Wert abgeleitet). <em class=\"nr-ref\">(NoReturn 2E, S. 17)</em></p>"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 17500,
+  "ownership": {
+   "default": 0
+  },
+  "flags": {},
+  "_stats": {
+   "coreVersion": "14.368",
+   "systemId": "noreturn",
+   "systemVersion": "1.0.0",
+   "createdTime": 1795115309516,
+   "modifiedTime": 1795115309516,
+   "lastModifiedBy": null,
+   "compendiumSource": null,
+   "duplicateSource": null,
+   "exportSource": null
+  }
+ },
+ {
   "_id": "cR5nMCY4zZqmBjd6",
   "_key": "!items!cR5nMCY4zZqmBjd6",
   "name": "Zehengänger",

@@ -134,6 +134,7 @@ def bio_traits():
     B.append(bt("Schwimmflossen oder Schwimmhäute", vis, 5, "Je Stufe +10 Punkte auf Schwimmen.", 164, per=True, maxl=3, consp="Häute/Flossen"))
     B.append(bt("Selektive Entwicklung", vis, 5, "Nur Demigod: je 5 GP fünf Stufen ST/KO/BE frei auf Körperzonen verteilen. Max. 4×.", 164, per=True, maxl=4, consp="Unproportionierte Muskeln"))
     B.append(bt("Stachel(n)", vis, 10, "Verteidigend: Trifft dich ein waffenloser/körpereigener Nahkampfangriff, erleidet der Angreifer KO+15p. Schaden (Schadenskarte erscheint automatisch). Alternativ ein einzelner großer Stachel ST+30p.: dann die Waffe „Großer Stachel (körpereigen)“ aus dem Compendium Waffen hinzufügen – der Rückschaden entfällt.", 164, consp="Schwer zu verbergen"))
+    B.append(bt("Wassertauglichkeit", vis, 10, "Amphibischer Körper: immun gegen Fress-Regen und die ätzende Wirkung von Meerwasser, Atmen unter Wasser (Kiemen). Voraussetzung für Schwimmflossen/-häute im Meerwasser; mit Erschütterungssinn Reichweite im Wasser Wahrnehmung × 10 m. GP nicht im 2E-Corebook angegeben (Wert abgeleitet).", 17, consp="Kiemen (ca. 5 cm, Hals/Oberkörper)"))
     B.append(bt("Zehengänger", vis, 10, "Rennen +4.", 164, [mod("skills.rennen", 4)], consp="Deformierte Unterschenkel"))
     hid = "verborgen"
     B.append(bt("Adrenalinkammern", hid, 10, "Je Stufe Adrenalin +1. Max. 2.", 165, [mod("adrenalin", 1)], per=True, maxl=2))
