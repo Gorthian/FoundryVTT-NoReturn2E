@@ -378,7 +378,7 @@ export class NRActor extends foundry.documents.Actor {
   /** Initiativwurf (Mexican Standoff: Reaktion). */
   async rollInitiativePool() {
     const s = this.system.skillList.reaktion;
-    return rollPool({ actor: this, label: "Reaktion (Initiative)", dice: s.pool, malusDice: this.getMalus(), chat: false });
+    return rollPool({ actor: this, label: "Reaktion (Initiative)", dice: s.pool, malusDice: this.getMalus({ boosted: ["reaktion", this.system.skillList.reaktion?.attr && `attr.${this.system.skillList.reaktion.attr}`].filter(Boolean) }), chat: false });
   }
 
   /* -------------------------------------------- */

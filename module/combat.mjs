@@ -107,14 +107,16 @@ export async function attackWithWeapon(actor, weapon) {
   const ammoKinds = heavy ? ["granate", "rakete"] : sys.category === "projektil" ? ["projektil"] : sys.category === "spruehwaffe" ? ["liquid"] : ["patrone"];
   const ammoItems = actor.items.filter(i => i.type === "ammo" && i.system.quantity > 0 && ammoKinds.includes(i.system.ammoType));
 
+  const bestSkill = skillOptions.reduce((b, o) => actor.system.skillList[o.key].pool > actor.system.skillList[b.key].pool ? o : b, skillOptions[0]).key;
+  const bestAttr = actor.system.skillList[bestSkill]?.attr;
   const content = await renderTemplate("systems/noreturn/templates/dialog/attack-dialog.hbs", {
     weapon, melee, skill: actor.system.skillList[skillOptions[0].key], modes: modes.map(m => ({ key: m, label: NR.fireModes[m]?.label ?? m })),
     aiming: NR.aiming, zones: NR.zones, targets, distance, band, rangeBands: NR.rangeBands,
     hasRange: !melee && sys.range !== "none", ammoItems, hasAmmo: sys.hasAmmo, ammo: sys.ammo,
-    woundMalus: actor.getMalus(), adrenalinLeft: actor.system.adrenalinLeft, adrenalinBonus: actor.system.adrenalinBonus,
+    woundMalus: actor.getMalus({ boosted: [bestSkill, bestAttr && `attr.${bestAttr}`].filter(Boolean) }), adrenalinLeft: actor.system.adrenalinLeft, adrenalinBonus: actor.system.adrenalinBonus,
     meditationLeft: actor.system.meditationLeft, zeitpoolLeft: actor.system.combat.zeitpool, zeitpoolBonus: actor.system.zeitpoolBonus, recoilMastery: actor.styleLevel("recoilMastery") > 0, triggerFinger: actor.styleLevel("triggerFinger") > 0,
     skillOptions: skillOptions.map(o => ({ key: o.key, label: `${actor.system.skillList[o.key].label} (${actor.system.skillList[o.key].pool}W)${o.via ? ` – ${game.i18n.localize(`NR.Style.Via.${o.via}`)}` : ""}` })),
-    skillChoice: skillOptions.length > 1, bestSkill: skillOptions.reduce((b, o) => actor.system.skillList[o.key].pool > actor.system.skillList[b.key].pool ? o : b, skillOptions[0]).key,
+    skillChoice: skillOptions.length > 1, bestSkill,
     limbs: unarmed ? Object.entries(NR.strikeLimbs).map(([key, l]) => ({ key, label: l.label, selected: key === defaultLimb(weapon) })) : null,
     zpcAvailable, sollbruchAvailable: actor.styleLevel("sollbruchstelle") > 0 && targets.some(t => t.token?.actor?.type === "vehicle"),
     maxMulti: maxMultiAttacks(actor, weapon, { gunFuMelee: actor.styleLevel("gunFu") >= 2 }),
@@ -813,7 +815,7 @@ export class NRCombatant extends Combatant {
     const actor = this.actor;
     if (!actor || actor.type === "vehicle" || !actor.system.skillList) return super.getInitiativeRoll(formula);
     const pool = actor.system.skillList.reaktion.pool;
-    const f = buildFormula({ dice: pool, malusDice: actor.getMalus() }).formula;
+    const f = buildFormula({ dice: pool, malusDice: actor.getMalus({ boosted: ["reaktion", actor.system.skillList.reaktion?.attr && `attr.${actor.system.skillList.reaktion.attr}`].filter(Boolean) }) }).formula;
     return new Roll(f);
   }
 }
