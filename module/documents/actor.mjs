@@ -441,13 +441,13 @@ export class NRActor extends foundry.documents.Actor {
       actor: this, label: label ?? game.i18n.localize("NR.Chat.DamageResistance"), amount: effAmount, structure,
       rollTotal: roll.total, results: after, nonLethal: !!attack.nonLethal, nlAdded, usedAdrenalin,
       unconscious: this.system.unconscious, immobile: this.system.immobile, malus: this.system.malus.physical,
-      dead: after.some(r => r.lethal), continuous: !!attack.continuous, resistMalus
+      dead: this.system.lethalDestroyed, continuous: !!attack.continuous, resistMalus
     });
     const msgData = { speaker: ChatMessage.getSpeaker({ actor: this }), content, rolls: [roll], sound: CONFIG.sounds.dice };
     applyChatMode(msgData);
     await ChatMessage.create(msgData);
     // Bewusstlosigkeit (S. 99): bei jedem Schaden, solange der Malus die Konstitution erreicht
-    if (totalApplied > 0 && this.system.unconscious && !this.system.lethalDestroyed && !after.some(r => r.lethal)) await this.fallUnconscious();
+    if (totalApplied > 0 && this.system.unconscious && !this.system.lethalDestroyed) await this.fallUnconscious();
     return { roll, results: after, totalApplied };
   }
 
