@@ -353,6 +353,8 @@
       "FailApplied": {
         "self": "Automatisch angewandt: Der Wirker ist selbst Ziel von {app} (Schaden erlitten).",
         "stray": "Automatisch angewandt: {names} werden von der App auf KS 1 getroffen.",
+        "strayImmune": "{names}: immun bzw. resistent gegen die App auf KS 1, kein Schaden.",
+        "unavailable": "Nicht automatisch angewandt (keine Spielleitung aktiv): {names}. Schaden von Hand abhandeln.",
         "noTargets": "Keine weiteren Ziele in der Szene für „Weit gefehlt“.",
         "incapacitated": "Automatisch angewandt: handlungsunfähig für {n} Kampfrunden (Effekt am Token, App wirkt nicht).",
         "aware": "Automatisch angewandt: {n} Kampfrunden handlungsunfähig, nimmt aber alles wahr.",

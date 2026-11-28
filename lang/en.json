@@ -353,6 +353,8 @@
       "FailApplied": {
         "self": "Applied automatically: the caster is the target of {app} (damage taken).",
         "stray": "Applied automatically: {names} are hit by the app at PL 1.",
+        "strayImmune": "{names}: immune or resistant to the app at PL 1, no damage.",
+        "unavailable": "Not applied automatically (no GM active): {names}. Resolve the damage by hand.",
         "noTargets": "No other targets in the scene for “Missed by a mile”.",
         "incapacitated": "Applied automatically: incapacitated for {n} combat rounds (effect on the token, the app fails).",
         "aware": "Applied automatically: incapacitated for {n} rounds but aware of everything.",

@@ -232,10 +232,12 @@ async function releaseHeldApps(actor) {
   const held = actor.items.filter(i => i.type === "psiApp" && i.system.held);
   if (!held.length) return;
   await actor.updateEmbeddedDocuments("Item", held.map(i => ({ _id: i.id, "system.held": false })));
-  await ChatMessage.create({
+  const msgData = {
     speaker: ChatMessage.getSpeaker({ actor }),
     content: `<div class="nr-card"><p class="nr-hint"><i class="fa-solid fa-hourglass-end"></i> ${game.i18n.format("NR.Psi.HeldEnded", { name: esc(actor.name), apps: held.map(i => esc(i.name)).join(", ") })}</p></div>`
-  });
+  };
+  applyChatMode(msgData);
+  await ChatMessage.create(msgData);
 }
 
 /** Erzeugte Waffen verschwinden, wenn die App nicht mehr gehalten oder gelöscht wird. */
@@ -247,7 +249,7 @@ export function registerPsiHooks() {
   // Haltung endet bei Bewusstlosigkeit und PSI-Lähmung (S. 193, 196)
   Hooks.on("createActiveEffect", (effect, options, userId) => {
     const actor = effect.parent;
-    if (userId !== game.user.id || actor?.documentName !== "Actor") return;
+    if (userId !== game.user.id || actor?.documentName !== "Actor" || effect.disabled) return;
     if (!effect.statuses.has("nrUnconscious") && !effect.statuses.has("nrPsiLock")) return;
     releaseHeldApps(actor).catch(err => console.error("NoReturn 2E | PSI-Haltung beenden:", err));
   });
@@ -327,9 +329,9 @@ export async function applyPsiFail(actor, fail, { app = null, damage = null } = 
   const attack = { pierce: "", damageType: "psi", nonLethal: false, structure: false, continuous: false };
   const allZones = Object.keys(NR.zones);
   const hit = async (target, amount, zones, label, atk = attack) => {
-    if (!(amount > 0)) return;
-    if (target === actor) await actor.resistDamage({ amount, zones, attack: atk, label, skipDialog: true });
-    else await applyDamageTo(target.uuid, { amount, zones, attack: atk, label, skipDialog: true });
+    if (!(amount > 0)) return "applied";
+    if (target === actor) { await actor.resistDamage({ amount, zones, attack: atk, label, skipDialog: true }); return "applied"; }
+    return applyDamageTo(target.uuid, { amount, zones, attack: atk, label, skipDialog: true });
   };
   const label = L("NR.Psi.FailTable");
 
@@ -338,7 +340,9 @@ export async function applyPsiFail(actor, fail, { app = null, damage = null } = 
       switch (roll) {
         case 3: // Der eigene Arsch
           if (damage) {
-            await actor.resistDamage({ amount: damage.amount, zones: damage.zones ?? [(await rollHitZone()).zone], attack: damage.attack, label: damage.weaponName, skipDialog: true });
+            const mod = psiTargetModifier(actor, app?.system?.power, ks, damage.amount);
+            if (mod.blocked) { lines.push(F(mod.blocked === "immune" ? "NR.Psi.Immune" : "NR.Psi.Resisted", { name: esc(actor.name), app: esc(app?.name) })); break; }
+            await actor.resistDamage({ amount: mod.amount, zones: damage.zones ?? [(await rollHitZone()).zone], attack: damage.attack, label: damage.weaponName, skipDialog: true });
             lines.push(F("NR.Psi.FailApplied.self", { app: esc(app?.name) }));
           } else lines.push(F("NR.Psi.FailManual.self", { app: esc(app?.name ?? "") }));
           break;
@@ -347,9 +351,17 @@ export async function applyPsiFail(actor, fail, { app = null, damage = null } = 
           if (!targets.length) { lines.push(L("NR.Psi.FailApplied.noTargets")); break; }
           const names = targets.map(t => esc(t.name)).join(", ");
           if (damage) {
-            const amount = damage.amount / Math.max(1, ks);
-            for (const t of targets) await hit(t.actor, amount, damage.zones ?? [(await rollHitZone()).zone], damage.weaponName, damage.attack);
-            lines.push(F("NR.Psi.FailApplied.stray", { names }));
+            const perKs = damage.amount / Math.max(1, ks);
+            const done = [], skipped = [], unavailable = [];
+            for (const t of targets) {
+              const mod = psiTargetModifier(t.actor, app?.system?.power, 1, perKs);
+              if (mod.blocked) { skipped.push(esc(t.name)); continue; }
+              const res = await hit(t.actor, mod.amount, damage.zones ?? [(await rollHitZone()).zone], damage.weaponName, damage.attack);
+              (res === "unavailable" ? unavailable : done).push(esc(t.name));
+            }
+            if (done.length) lines.push(F("NR.Psi.FailApplied.stray", { names: done.join(", ") }));
+            if (skipped.length) lines.push(F("NR.Psi.FailApplied.strayImmune", { names: skipped.join(", ") }));
+            if (unavailable.length) lines.push(F("NR.Psi.FailApplied.unavailable", { names: unavailable.join(", ") }));
           } else lines.push(F("NR.Psi.FailManual.stray", { names, app: esc(app?.name ?? "") }));
           break;
         }
@@ -362,7 +374,11 @@ export async function applyPsiFail(actor, fail, { app = null, damage = null } = 
           lines.push(F("NR.Psi.FailApplied.aware", { n: ks }));
           break;
         case 7: {
-          const zones = pickRandom(allZones, 2);
+          const zones = [(await rollHitZone()).zone];
+          for (let i = 0; i < 20 && zones.length < 2; i++) {
+            const z = (await rollHitZone()).zone;
+            if (!zones.includes(z)) zones.push(z);
+          }
           await hit(actor, ks * 5, zones, L("NR.Psi.FailEffect.bam"));
           lines.push(F("NR.Psi.FailApplied.bam", { m: ks * 2 }));
           break;
@@ -390,8 +406,13 @@ export async function applyPsiFail(actor, fail, { app = null, damage = null } = 
             try { return canvas.grid.measurePath([caster.center, t.center]).distance <= radius; } catch (err) { return false; }
           }) : [];
           await hit(actor, ks * 30, allZones, L("NR.Psi.FailEffect.whiteLight"));
-          for (const t of near) await hit(t.actor, ks * 30, allZones, L("NR.Psi.FailEffect.whiteLight"));
-          lines.push(F("NR.Psi.FailApplied.whiteLight", { m: radius, names: near.length ? near.map(t => esc(t.name)).join(", ") : L("NR.Psi.FailApplied.nobody") }));
+          const done = [], unavailable = [];
+          for (const t of near) {
+            const res = await hit(t.actor, ks * 30, allZones, L("NR.Psi.FailEffect.whiteLight"));
+            (res === "unavailable" ? unavailable : done).push(esc(t.name));
+          }
+          lines.push(F("NR.Psi.FailApplied.whiteLight", { m: radius, names: done.length ? done.join(", ") : L("NR.Psi.FailApplied.nobody") }));
+          if (unavailable.length) lines.push(F("NR.Psi.FailApplied.unavailable", { names: unavailable.join(", ") }));
           break;
         }
         default: break; // 2 (Echo) ist bereits aufgelöst
@@ -430,6 +451,22 @@ export async function collectPower(actor) {
   return postPoolMessage(res);
 }
 
+/**
+ * Immunität und Resistenz eines Ziels gegen eine Kat.-A-App (S. 148–161): Psionische Abartigkeit/Transzendenz sind immun,
+ * PSI-Resistenz senkt die Kraftstufe um 2.
+ * @returns {{amount: number, blocked: "immune"|"resisted"|null}} angepasster Schaden und ggf. der Grund für vollständige Abwehr
+ */
+function psiTargetModifier(actor, power, ks, amount) {
+  if (power === "kategorieB") return { amount, blocked: null };
+  const has = prefix => actor.items.some(i => i.type === "abnormality" && i.name.toLowerCase().startsWith(prefix));
+  if (has("psionische abartigkeit") || has("psionische transzendenz")) return { amount: 0, blocked: "immune" };
+  if (has("psi-resistenz") && ks > 0) {
+    const reduced = Math.round(amount / ks * Math.max(0, ks - 2));
+    return { amount: reduced, blocked: reduced <= 0 ? "resisted" : null };
+  }
+  return { amount, blocked: null };
+}
+
 /** Schaden einer PSI-App auf ein Ziel anwenden (Button im Chat). */
 export async function applyPsiDamage(message, tokenUuid) {
   const payload = message.flags.noreturn?.psi?.damage;
@@ -438,23 +475,13 @@ export async function applyPsiDamage(message, tokenUuid) {
   const actor = tokenDoc?.actor;
   if (!actor) return;
   if (!actor.isOwner) return ui.notifications.warn(game.i18n.localize("NR.Notify.NotOwner"));
-  let amount = payload.amount;
-  // Kat. A (alle Kräfte außer Kategorie B): Psionische Abartigkeit/Transzendenz sind immun, PSI-Resistenz senkt die Kraftstufe um 2 (S. 148–161)
-  if (message.flags.noreturn?.psi?.power !== "kategorieB") {
-    const has = prefix => actor.items.some(i => i.type === "abnormality" && i.name.toLowerCase().startsWith(prefix));
-    if (has("psionische abartigkeit") || has("psionische transzendenz")) {
-      await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }), content: `<p class="nr-hint">${game.i18n.format("NR.Psi.Immune", { name: foundry.utils.escapeHTML(actor.name), app: foundry.utils.escapeHTML(payload.weaponName ?? "") })}</p>` });
-      return;
-    }
-    const ks = message.flags.noreturn?.psi?.ks;
-    if (has("psi-resistenz") && ks > 0) {
-      amount = Math.round(amount / ks * Math.max(0, ks - 2));
-      if (amount <= 0) {
-        await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }), content: `<p class="nr-hint">${game.i18n.format("NR.Psi.Resisted", { name: foundry.utils.escapeHTML(actor.name), app: foundry.utils.escapeHTML(payload.weaponName ?? "") })}</p>` });
-        return;
-      }
-    }
+  const mod = psiTargetModifier(actor, message.flags.noreturn?.psi?.power, message.flags.noreturn?.psi?.ks, payload.amount);
+  if (mod.blocked) {
+    const key = mod.blocked === "immune" ? "NR.Psi.Immune" : "NR.Psi.Resisted";
+    await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }), content: `<p class="nr-hint">${game.i18n.format(key, { name: esc(actor.name), app: esc(payload.weaponName ?? "") })}</p>` });
+    return;
   }
+  const amount = mod.amount;
   const zones = payload.zones ?? [(await rollHitZone()).zone];
   return actor.resistDamage({ amount, zones, attack: payload.attack, label: payload.weaponName });
 }
