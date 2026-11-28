@@ -84,6 +84,7 @@ def macro_docs():
         {"name": "Gefahr auslösen", "img": "icons/svg/biohazard.svg", "command": "game.noreturn.hazard();"},
         {"name": "Krankheit übertragen", "img": "icons/svg/poison.svg", "command": "game.noreturn.infectDialog();"},
         {"name": "Zeit vergeht (Strahlung, Krankheiten)", "img": "icons/svg/clockwork.svg", "command": "game.noreturn.elapsedDialog();"},
+        {"name": "Unterstützende Aktion", "img": "icons/svg/aura.svg", "command": "game.noreturn.supportAction();"},
     ]
     docs = []
     for i, m in enumerate(macros):

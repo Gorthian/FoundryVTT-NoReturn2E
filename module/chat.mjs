@@ -1,4 +1,4 @@
-import { defendAgainst, rollDamage, resistFromMessage } from "./combat.mjs";
+import { defendAgainst, rollDamage, resistFromMessage, applyCoupDeGrace } from "./combat.mjs";
 import { applyPsiDamage } from "./psi.mjs";
 import { rollPool } from "./dice/pool.mjs";
 import { NR } from "./config.mjs";
@@ -38,6 +38,8 @@ function prepareButtons(message, el) {
       const doc = uuid ? fromUuidSync(uuid) : null;
       const actor = doc?.actor ?? doc;
       allowed = game.user.isGM || !!actor?.isOwner;
+    } else if (action === "coup") {
+      allowed = game.user.isGM;
     } else if (action === "damageNoTarget") {
       const actor = f.attack?.actorUuid ? fromUuidSync(f.attack.actorUuid) : null;
       allowed = game.user.isGM || !!actor?.isOwner;
@@ -66,6 +68,8 @@ async function onAction(message, btn) {
       // Schaden ohne Ziel/Verteidigung (Objekte, vergessene Markierung, Flächenschaden): Treffer ohne Gute Treffer
       if (!f.attack) return;
       return rollDamage({ attack: f.attack, defender: null, goodHits: 0, blocked: false, hit: true });
+    case "coup":
+      return applyCoupDeGrace(btn.dataset.tokenUuid);
     case "clinch":
       return startClinch(f.defense);
     case "resist":

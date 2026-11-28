@@ -1,5 +1,5 @@
 import { NR } from "../config.mjs";
-import { rollPool, applyChatMode, buildFormula } from "../dice/pool.mjs";
+import { rollPool, postPoolMessage, applyChatMode, buildFormula } from "../dice/pool.mjs";
 import { poolDialog } from "../dice/roll-dialog.mjs";
 import { skillStyleEffects, styleDialogContent, LEG_ZONES } from "../styles.mjs";
 
@@ -185,15 +185,15 @@ export class NRActor extends foundry.documents.Actor {
    */
   async rollCheck({ label, dice, attrKey = null, subtitle = "", mw = 10, hazard = true, allowPass = true,
     skipDialog = false, resist = false, psi = false, extraBonus = 0, extraPoints = 0, altAttr = null,
-    skillValue = null, untrained = false, flags = {}, extraHtml = "", skillKey = null } = {}) {
+    skillValue = null, untrained = false, flags = {}, extraHtml = "", skillKey = null, support = false } = {}) {
 
     const malus = this.getMalus({ resist, psi });
     const effects = skillStyleEffects(this, skillKey);
-    let opts = { bonusDice: extraBonus, malusDice: 0, points: extraPoints, mw, pass: false, useAdrenalin: false, useMeditation: false, disadvantages: 0, attr: attrKey };
+    let opts = { bonusDice: extraBonus, malusDice: 0, points: extraPoints, mw, pass: false, useAdrenalin: false, useMeditation: false, disadvantages: 0, attr: attrKey, support, sideTask: false };
     if (!skipDialog) {
       opts = await poolDialog({
         title: label, actor: this, dice, woundMalus: malus, mw, allowPass, resist,
-        attrKey, altAttr, skillValue, untrained, extraBonus, extraPoints, extraContent: styleDialogContent(effects)
+        attrKey, altAttr, skillValue, untrained, extraBonus, extraPoints, extraContent: styleDialogContent(effects), support
       });
       if (!opts) return null;
     }
@@ -265,9 +265,29 @@ export class NRActor extends foundry.documents.Actor {
       styleNotes.push(game.i18n.format("NR.Style.TempBonus", { n: this.system.bonusDice }));
     }
     for (const n of styleNotes) extraHtml += `<p class="nr-good"><i class="fa-solid fa-star"></i> ${n}</p>`;
-    const malusTotal = (resist ? 0 : malus) + opts.malusDice + opts.disadvantages * 2 + physMalus;
+    // Zusatztätigkeit neben konzentrationsintensiver Handlung bzw. Rennen + andere Aktion: −2W (S. 88)
+    const sideMalus = opts.sideTask && !resist ? 2 : 0;
+    if (sideMalus) extraHtml += `<p class="nr-warn"><i class="fa-solid fa-people-carry-box"></i> ${game.i18n.localize("NR.Roll.SideTaskNote")}</p>`;
+    const malusTotal = (resist ? 0 : malus) + opts.malusDice + opts.disadvantages * 2 + physMalus + sideMalus;
     const leiden = attrUsed ? (this.system.attr[attrUsed]?.leiden ?? 0) : 0;
     const sub = subtitle || (attrUsed ? `${this.system.attr[attrUsed].abbr} ${this.system.attr[attrUsed].total}` : "");
+
+    // Unterstützende Aktion (S. 85): abgerundete Hälfte der Würfel; Ergebnis ≥ 10 wird addiert, darunter abgezogen
+    if (opts.support && !resist) {
+      const half = Math.max(1, Math.floor(Math.max(1, baseDice + bonus - malusTotal) / 2));
+      if (untrained) extraHtml += `<p class="nr-bad"><i class="fa-solid fa-triangle-exclamation"></i> ${game.i18n.localize("NR.Roll.SupportUntrained")}</p>`;
+      const res = await rollPool({
+        actor: this, label: `${game.i18n.localize("NR.Roll.SupportCard")}: ${label}`, subtitle: sub, dice: half,
+        points: opts.points, hazard, leiden, flags, extraHtml, chat: false
+      });
+      const value = res.total >= 10 ? res.total : -res.total;
+      const key = value > 0 ? "NR.Roll.SupportPlus" : "NR.Roll.SupportMinus";
+      res.options.extraHtml += `<p class="${value > 0 ? "nr-good" : "nr-bad"}"><i class="fa-solid fa-handshake-angle"></i> ${game.i18n.format(key, { n: Math.abs(value) })}</p>`;
+      res.options.flags = foundry.utils.mergeObject(flags, { noreturn: { support: value } }, { inplace: false });
+      res.supportValue = value;
+      res.message = await postPoolMessage(res);
+      return res;
+    }
     return rollPool({
       actor: this, label, subtitle: sub, dice: baseDice, bonusDice: bonus, malusDice: malusTotal,
       points: opts.points, mw: opts.mw, hazard, pass: opts.pass, leiden, flags, extraHtml,

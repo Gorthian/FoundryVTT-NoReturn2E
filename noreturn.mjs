@@ -17,6 +17,7 @@ import { registerStatusEffects, hazardDialog, applyHazard, setStatus } from "./m
 import { infect, advanceDisease, cure, infectDialog } from "./module/disease.mjs";
 import { applyElapsed, elapsedDialog, registerElapsedHook } from "./module/elapsed.mjs";
 import { rollPool, rollHitZone } from "./module/dice/pool.mjs";
+import { supportAction } from "./module/dice/support.mjs";
 import { castPsiApp, collectPower, rollPsiFail } from "./module/psi.mjs";
 import { NRCharacterGenerator, openCharacterGenerator } from "./module/apps/character-generator.mjs";
 import { registerNoticeSettings, showStartupNotice } from "./module/notice.mjs";
@@ -31,7 +32,7 @@ Hooks.once("init", () => {
 
   CONFIG.NR = NR;
   game.noreturn = {
-    config: NR, rollPool, rollHitZone, attackWithWeapon, manualDamageDialog, castPsiApp, collectPower, rollPsiFail,
+    config: NR, rollPool, rollHitZone, supportAction, attackWithWeapon, manualDamageDialog, castPsiApp, collectPower, rollPsiFail,
     useItem: useItemMacro, characterGenerator: openCharacterGenerator, NRCharacterGenerator,
     mannifest: { import: importMannifest, export: exportMannifest, promptImport },
     hazard: hazardDialog, applyHazard, setStatus,

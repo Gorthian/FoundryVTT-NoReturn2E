@@ -11,6 +11,8 @@
   <p class="nr-hint">{{localize "NR.Combat.NoTargets"}}</p>
   {{/if}}
 
+  <div class="form-group"><label data-tooltip="{{localize 'NR.Combat.CoupHint'}}">{{localize "NR.Combat.CoupDeGrace"}}</label><input type="checkbox" name="coup"></div>
+
   {{#if skillChoice}}
   <div class="form-group">
     <label>{{localize "NR.Style.AttackSkill"}}</label>
@@ -84,6 +86,7 @@
   <div class="form-group"><label>{{localize "NR.Roll.BonusDice"}}</label><input type="number" name="bonusDice" value="0"></div>
   <div class="form-group"><label>{{localize "NR.Roll.MalusDice"}}</label><input type="number" name="malusDice" value="0" min="0"></div>
   <div class="form-group"><label data-tooltip="{{localize 'NR.Roll.DisadvantageHint'}}">{{localize "NR.Roll.Disadvantages"}}</label><input type="number" name="disadvantages" value="0" min="0"></div>
+  <div class="form-group"><label data-tooltip="{{localize 'NR.Roll.SideTaskHint'}}">{{localize "NR.Roll.SideTask"}}</label><input type="checkbox" name="sideTask"></div>
   <div class="form-group"><label>{{localize "NR.Roll.Points"}}</label><input type="number" name="points" value="0"></div>
   {{#if adrenalinLeft}}<div class="form-group"><label>{{localize "NR.Roll.Adrenalin"}} (+{{adrenalinBonus}}W, {{adrenalinLeft}} {{localize "NR.Combat.Left"}})</label><input type="checkbox" name="useAdrenalin"></div>{{/if}}
   {{#if meditationLeft}}<div class="form-group"><label>{{localize "NR.Special.meditation"}}</label><input type="checkbox" name="useMeditation"></div>{{/if}}
