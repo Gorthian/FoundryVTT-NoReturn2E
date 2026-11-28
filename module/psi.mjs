@@ -41,7 +41,7 @@ export function boosterAura(actor) {
   for (const t of canvas.tokens.placeables) {
     if (!t.actor || t.actor.uuid === actor.uuid || t.document.hidden) continue;
     if (!t.actor.items.some(i => i.type === "abnormality" && i.name.toLowerCase().startsWith("booster-syndrom"))) continue;
-    try { if (canvas.grid.measurePath([caster.center, t.center]).distance <= 5) names.push(esc(t.name)); } catch (err) { /* ohne Messung kein Booster */ }
+    try { if (canvas.grid.measurePath([caster.center, t.center]).distance <= 5) names.push(t.name); } catch (err) { /* ohne Messung kein Booster */ }
   }
   return { ks: names.length ? 2 : 0, names };
 }
@@ -132,7 +132,7 @@ export async function castPsiApp(actor, app) {
   let pool = level;
   if (opts.useAdrenalin && await actor.spendAdrenalin()) pool += actor.system.adrenalinBonus;
   if (opts.useMeditation && await actor.spendAdrenalin("meditation")) pool += Math.min(5, actor.system.meditationMax);
-  if (opts.useZeitpool && await actor.spendZeitpool()) pool += actor.system.zeitpoolBonus;
+  if (opts.useZeitpool) pool += await actor.spendZeitpool();
   const comp = Math.max(0, pool - opts.ks - opts.probe);
   // Metamorphose: +1 KS für Apps der gewählten Kraft; Psionische Vielfältigkeit: −1 effektive KS je zusätzlichem Ziel
   const meta = metamorphoseKs(actor, app);
@@ -313,7 +313,10 @@ async function releaseHeldApps(actor) {
 export function registerPsiHooks() {
   Hooks.on("updateItem", (item, changed, options, userId) => {
     if (userId !== game.user.id || item.type !== "psiApp" || !item.actor) return;
-    if (foundry.utils.getProperty(changed, "system.held") === false) removePsiWeapons(item.actor, item.id).catch(err => console.error("NoReturn 2E | PSI-Waffen:", err));
+    if (foundry.utils.getProperty(changed, "system.held") === false) {
+      removePsiWeapons(item.actor, item.id).catch(err => console.error("NoReturn 2E | PSI-Waffen:", err));
+      resetZeitpool(item).catch(err => console.error("NoReturn 2E | Zeitpool:", err));
+    }
   });
   // Haltung endet bei Bewusstlosigkeit und PSI-Lähmung (S. 193, 196)
   Hooks.on("createActiveEffect", (effect, options, userId) => {
@@ -325,7 +328,15 @@ export function registerPsiHooks() {
   Hooks.on("deleteItem", (item, options, userId) => {
     if (userId !== game.user.id || item.type !== "psiApp" || !item.actor) return;
     removePsiWeapons(item.actor, item.id).catch(err => console.error("NoReturn 2E | PSI-Waffen:", err));
+    resetZeitpool(item).catch(err => console.error("NoReturn 2E | Zeitpool:", err));
   });
+}
+
+/** „Zeitloses Wissen“ endet (losgelassen oder gelöscht): der Zeitpool verfällt. */
+async function resetZeitpool(app) {
+  const actor = app.actor;
+  if (!app.name.toLowerCase().startsWith("zeitloses wissen") || !(actor.system.combat.zeitpool > 0 || actor.system.combat.zeitpoolMax > 0)) return;
+  await actor.update({ "system.combat.zeitpool": 0, "system.combat.zeitpoolMax": 0 });
 }
 
 async function enrich(html, doc) {

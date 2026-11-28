@@ -125,19 +125,22 @@ export class NRActor extends foundry.documents.Actor {
 
   /**
    * Verbrauche einen Einsatz des Zeitpools („Zeitloses Wissen“, S. 200). Bei leerem Pool endet die gehaltene App.
-   * @returns {Promise<boolean>} false, wenn der Pool leer ist
+   * @returns {Promise<number>} Bonuswürfel dieses Einsatzes (0, wenn der Pool leer ist)
    */
   async spendZeitpool() {
     const left = this.system.combat.zeitpool;
-    if (left <= 0) return false;
-    await this.update({ "system.combat.zeitpool": left - 1 });
-    if (left - 1 <= 0) {
-      const held = this.items.filter(i => i.type === "psiApp" && i.system.held && i.name.toLowerCase().startsWith("zeitloses wissen"));
-      if (held.length) await this.updateEmbeddedDocuments("Item", held.map(i => ({ _id: i.id, "system.held": false })));
-      await this.update({ "system.combat.zeitpoolMax": 0 });
-      ui.notifications.info(game.i18n.format("NR.Psi.ZeitpoolEmpty", { name: this.name }));
+    if (left <= 0) return 0;
+    const bonus = this.system.zeitpoolBonus;
+    if (left - 1 > 0) {
+      await this.update({ "system.combat.zeitpool": left - 1 });
+      return bonus;
     }
-    return true;
+    // Pool erschöpft: Pool zurücksetzen und die gehaltene App beenden (der Hook in psi.mjs setzt den Pool ebenfalls zurück)
+    await this.update({ "system.combat.zeitpool": 0, "system.combat.zeitpoolMax": 0 });
+    const held = this.items.filter(i => i.type === "psiApp" && i.system.held && i.name.toLowerCase().startsWith("zeitloses wissen"));
+    if (held.length) await this.updateEmbeddedDocuments("Item", held.map(i => ({ _id: i.id, "system.held": false })));
+    ui.notifications.info(game.i18n.format("NR.Psi.ZeitpoolEmpty", { name: this.name }));
+    return bonus;
   }
 
   /**
@@ -279,7 +282,7 @@ export class NRActor extends foundry.documents.Actor {
       }
     }
     if (opts.useMeditation && await this.spendAdrenalin("meditation")) bonus += Math.min(5, this.system.meditationMax);
-    if (opts.useZeitpool && await this.spendZeitpool()) bonus += this.system.zeitpoolBonus;
+    if (opts.useZeitpool) bonus += await this.spendZeitpool();
 
     // Robotik-Overdrive (S. 217): gespeicherte Bonuspunkte auf die nächste Stärke-Aktion
     let overdrive = 0;

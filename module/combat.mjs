@@ -200,7 +200,7 @@ export async function attackWithWeapon(actor, weapon) {
   if (opts.triggerFinger && opts.mode === "HM") bonus += 2;
   if (opts.useAdrenalin && opts.multi === 1 && await actor.spendAdrenalin()) bonus += actor.system.adrenalinBonus;
   if (opts.useMeditation && opts.multi === 1 && await actor.spendAdrenalin("meditation")) bonus += Math.min(5, actor.system.meditationMax);
-  if (opts.useZeitpool && opts.multi === 1 && await actor.spendZeitpool()) bonus += actor.system.zeitpoolBonus;
+  if (opts.useZeitpool && opts.multi === 1) bonus += await actor.spendZeitpool();
 
   let aimMalus = 0;
   if (!mode?.noAim) aimMalus = melee ? NR.aiming[opts.aim].melee : NR.aiming[opts.aim].ranged;
@@ -243,7 +243,7 @@ export async function attackWithWeapon(actor, weapon) {
   // Zusatztätigkeit neben konzentrationsintensiver Handlung bzw. Rennen + andere Aktion: −2W (S. 88)
   const sideMalus = opts.sideTask ? 2 : 0;
   if (sideMalus) styleNotes.push(game.i18n.localize("NR.Roll.SideTaskNote"));
-  const malus = actor.getMalus({ boosted: [skillKey] }) + opts.malusDice + opts.disadvantages * 2 + sideMalus + aimMalus + recoilMalus + strengthMalusDice + physMalus - skillBonusExtra;
+  const malus = actor.getMalus({ boosted: [skillKey, skill?.attr && `attr.${skill.attr}`].filter(Boolean) }) + opts.malusDice + opts.disadvantages * 2 + sideMalus + aimMalus + recoilMalus + strengthMalusDice + physMalus - skillBonusExtra;
   // Schadenswürfel aus Style-Skills (Bonuswürfel auf die Schadensprobe, nie Hazard-Di)
   let styleDamageDice = styleDice(actor, "damage", groups);
   // Ringen 3: Im Clinch +2W auf Nahkampf und Schaden gegen den Clinch-Partner
@@ -528,7 +528,7 @@ export async function defendAgainst(message, tokenUuid, none = false, index = 1)
     // Steigender Malus je weiterer Defensivaktion – ohne 1-Würfel-Regel
     const physMalus = skillKey ? actor.physicalMalus(actor.system.skillList[skillKey]?.attr) : 0;
     if (physMalus) styleNotes.push(game.i18n.format("NR.Style.PhysicalMalus", { n: physMalus }));
-    const malus = actor.getMalus({ boosted: [skillKey, type === "psi" ? "psi" : null].filter(Boolean) }) + opts.malusDice + actionMalus + extraMalus + physMalus;
+    const malus = actor.getMalus({ boosted: [skillKey, skillKey && actor.system.skillList[skillKey]?.attr && `attr.${actor.system.skillList[skillKey].attr}`, type === "psi" ? "psi" : null].filter(Boolean) }) + opts.malusDice + actionMalus + extraMalus + physMalus;
     const effective = dice + bonus - malus;
     if (!freeRide) await actor.update({ "system.combat.defenses": count + 1 });
     if (effective < 1) {
