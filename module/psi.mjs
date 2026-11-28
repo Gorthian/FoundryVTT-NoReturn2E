@@ -247,7 +247,7 @@ export function registerPsiHooks() {
   // Haltung endet bei Bewusstlosigkeit und PSI-Lähmung (S. 193, 196)
   Hooks.on("createActiveEffect", (effect, options, userId) => {
     const actor = effect.parent;
-    if (userId !== game.user.id || !(actor instanceof Actor)) return;
+    if (userId !== game.user.id || actor?.documentName !== "Actor") return;
     if (!effect.statuses.has("nrUnconscious") && !effect.statuses.has("nrPsiLock")) return;
     releaseHeldApps(actor).catch(err => console.error("NoReturn 2E | PSI-Haltung beenden:", err));
   });
@@ -306,7 +306,8 @@ function pickRandom(list, n) {
 
 /** Tokens der aktuellen Szene mit Kreatur-Actor, außer dem Wirker. */
 function otherTokens(actor) {
-  return (canvas?.tokens?.placeables ?? []).filter(t => t.actor && t.actor.type !== "vehicle" && t.actor.id !== actor.id && !t.document.hidden);
+  return (canvas?.tokens?.placeables ?? []).filter(t => t.actor && t.actor.type !== "vehicle" && t.actor.uuid !== actor.uuid && !t.document.hidden)
+    .filter((t, i, all) => all.findIndex(o => o.actor.uuid === t.actor.uuid) === i);
 }
 
 /**
@@ -325,10 +326,10 @@ export async function applyPsiFail(actor, fail, { app = null, damage = null } = 
   const ks = fail.ks;
   const attack = { pierce: "", damageType: "psi", nonLethal: false, structure: false, continuous: false };
   const allZones = Object.keys(NR.zones);
-  const hit = async (target, amount, zones, label) => {
+  const hit = async (target, amount, zones, label, atk = attack) => {
     if (!(amount > 0)) return;
-    if (target === actor) await actor.resistDamage({ amount, zones, attack, label, skipDialog: true });
-    else await applyDamageTo(target.uuid, { amount, zones, attack, label });
+    if (target === actor) await actor.resistDamage({ amount, zones, attack: atk, label, skipDialog: true });
+    else await applyDamageTo(target.uuid, { amount, zones, attack: atk, label, skipDialog: true });
   };
   const label = L("NR.Psi.FailTable");
 
@@ -347,7 +348,7 @@ export async function applyPsiFail(actor, fail, { app = null, damage = null } = 
           const names = targets.map(t => esc(t.name)).join(", ");
           if (damage) {
             const amount = damage.amount / Math.max(1, ks);
-            for (const t of targets) await hit(t.actor, amount, damage.zones ?? [(await rollHitZone()).zone], damage.weaponName);
+            for (const t of targets) await hit(t.actor, amount, damage.zones ?? [(await rollHitZone()).zone], damage.weaponName, damage.attack);
             lines.push(F("NR.Psi.FailApplied.stray", { names }));
           } else lines.push(F("NR.Psi.FailManual.stray", { names, app: esc(app?.name ?? "") }));
           break;
@@ -406,6 +407,8 @@ export async function applyPsiFail(actor, fail, { app = null, damage = null } = 
  * Kraft sammeln (S. 194): Willenskraft gegen MW 20 (+10 je bereits gesammelter KS).
  */
 export async function collectPower(actor) {
+  if (actor.statuses?.has("nrPsiLock")) return ui.notifications.warn(game.i18n.localize("NR.Psi.Locked"));
+  if (actor.statuses?.has("nrIncapacitated") || actor.statuses?.has("nrUnconscious")) return ui.notifications.warn(game.i18n.localize("NR.Psi.Incapacitated"));
   const collected = actor.system.combat.psiCollected;
   const concentration = actor.items.some(i => i.type === "advantage" && i.name.toLowerCase().startsWith("konzentration"));
   const mw = 20 + collected * 10 - (concentration ? 5 : 0);

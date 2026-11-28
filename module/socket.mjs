@@ -26,7 +26,7 @@ export async function applyDamageTo(targetUuid, payload) {
   const actor = doc?.actor ?? doc;
   if (!actor) return "unavailable";
   if (actor.isOwner) {
-    await actor.resistDamage({ amount: payload.amount, zones: payload.zones, attack: payload.attack, label: payload.label });
+    await actor.resistDamage({ amount: payload.amount, zones: payload.zones, attack: payload.attack, label: payload.label, skipDialog: !!payload.skipDialog });
     return "applied";
   }
   const gm = executingGM();
