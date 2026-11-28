@@ -147,12 +147,15 @@ export async function attackWithWeapon(actor, weapon) {
           skillKey: f.skillKey?.value ?? "",
           limb: f.limb?.value ?? "fist",
           zpc: f.zpc?.checked ?? false,
-          sollbruch: f.sollbruch?.checked ?? false
+          sollbruch: f.sollbruch?.checked ?? false,
+          sideTask: f.sideTask?.checked ?? false,
+          coup: f.coup?.checked ?? false
         };
       }
     }, { action: "cancel", label: game.i18n.localize("Cancel") }]
   }).then(r => (r === "cancel" ? null : r)).catch(() => null);
   if (!opts) return null;
+  if (opts.coup) return coupDeGrace(actor, weapon, targets);
 
   // Fertigkeit (Escrima/Sado/Gun-Fu können sie austauschen) und Angriffskontext
   const skillKey = skillOptions.some(o => o.key === opts.skillKey) ? opts.skillKey : skillOptions[0].key;
@@ -233,7 +236,10 @@ export async function attackWithWeapon(actor, weapon) {
 
   const physMalus = actor.physicalMalus(skill.attr);
   if (physMalus) styleNotes.push(game.i18n.format("NR.Style.PhysicalMalus", { n: physMalus }));
-  const malus = actor.getMalus() + opts.malusDice + opts.disadvantages * 2 + aimMalus + recoilMalus + strengthMalusDice + physMalus - skillBonusExtra;
+  // Zusatztätigkeit neben konzentrationsintensiver Handlung bzw. Rennen + andere Aktion: −2W (S. 88)
+  const sideMalus = opts.sideTask ? 2 : 0;
+  if (sideMalus) styleNotes.push(game.i18n.localize("NR.Roll.SideTaskNote"));
+  const malus = actor.getMalus() + opts.malusDice + opts.disadvantages * 2 + sideMalus + aimMalus + recoilMalus + strengthMalusDice + physMalus - skillBonusExtra;
   // Schadenswürfel aus Style-Skills (Bonuswürfel auf die Schadensprobe, nie Hazard-Di)
   let styleDamageDice = styleDice(actor, "damage", groups);
   // Ringen 3: Im Clinch +2W auf Nahkampf und Schaden gegen den Clinch-Partner
@@ -313,6 +319,45 @@ export async function attackWithWeapon(actor, weapon) {
   result.options.flags = { noreturn: { attack: attackData } };
   result.message = await postPoolMessage(result, { template: "systems/noreturn/templates/chat/roll-card.hbs" });
   return result;
+}
+
+/**
+ * Coup de Grace (S. 90): Ein offensichtlich wehrloses Ziel wird ohne Probe ausgeschaltet.
+ * Die SL entscheidet, ob es zutrifft (Regeneration/Sonderfähigkeiten) und wie viele Chaospoints entstehen.
+ */
+async function coupDeGrace(actor, weapon, targets) {
+  if (!targets.length) {
+    ui.notifications.warn(game.i18n.localize("NR.Combat.CoupNoTarget"));
+    return null;
+  }
+  const sys = weapon.system;
+  if (sys.hasAmmo) {
+    if (sys.ammo.value < 1) {
+      ui.notifications.warn(game.i18n.format("NR.Combat.NoAmmo", { name: weapon.name }));
+      return null;
+    }
+    await weapon.update({ "system.ammo.value": sys.ammo.value - 1 });
+  }
+  const t = s => foundry.utils.escapeHTML(String(s));
+  const rows = targets.map(tg => `<div class="nr-target"><span class="nr-target-name"><i class="fa-solid fa-skull"></i> ${t(game.i18n.format("NR.Combat.CoupText", { name: tg.name }))}</span>`
+    + `<button type="button" data-nr-action="coup" data-token-uuid="${t(tg.uuid)}"><i class="fa-solid fa-skull-crossbones"></i> ${game.i18n.localize("NR.Combat.CoupApply")}</button></div>`).join("");
+  const msgData = {
+    speaker: ChatMessage.getSpeaker({ actor }),
+    content: `<div class="nr-card"><header class="nr-card-head"><h3>${game.i18n.localize("NR.Combat.CoupTitle")}: ${t(weapon.name)}</h3></header>`
+      + `<div class="nr-targets">${rows}</div><p class="nr-warn"><i class="fa-solid fa-biohazard"></i> ${game.i18n.localize("NR.Combat.CoupChaos")}</p></div>`,
+    flags: { noreturn: { coup: true } }
+  };
+  applyChatMode(msgData);
+  return ChatMessage.create(msgData);
+}
+
+/** Ziel nach einem Coup de Grace ausschalten (nur SL, vom Chat-Button aufgerufen). */
+export async function applyCoupDeGrace(tokenUuid) {
+  const doc = await fromUuid(tokenUuid);
+  const actor = doc?.actor ?? doc;
+  if (!actor || !game.user.isGM) return;
+  await actor.toggleStatusEffect(CONFIG.specialStatusEffects?.DEFEATED ?? "dead", { active: true, overlay: true });
+  ui.notifications.info(game.i18n.format("NR.Combat.CoupApplied", { name: actor.name }));
 }
 
 function pierceMax(...values) {

@@ -7,7 +7,7 @@ const { renderTemplate } = foundry.applications.handlebars;
  * @returns {Promise<object|null>}
  */
 export async function poolDialog({ title, actor, dice, woundMalus = 0, mw = 10, allowPass = true, resist = false,
-  attrKey = null, altAttr = null, skillValue = null, untrained = false, extraBonus = 0, extraPoints = 0, extraContent = "" }) {
+  attrKey = null, altAttr = null, skillValue = null, untrained = false, extraBonus = 0, extraPoints = 0, extraContent = "", support = false }) {
 
   const sys = actor?.system ?? {};
   const attrChoices = (attrKey && altAttr) ? {
@@ -19,7 +19,7 @@ export async function poolDialog({ title, actor, dice, woundMalus = 0, mw = 10, 
     dice, woundMalus, resist, mw, difficulties: NR.difficulties, customMw: !(mw in NR.difficulties),
     adrenalinLeft: sys.adrenalinLeft ?? 0, adrenalinBonus: sys.adrenalinBonus ?? 0,
     meditationLeft: sys.meditationLeft ?? 0, meditationBonus: Math.min(5, sys.meditationMax ?? 0),
-    allowPass, attrChoices, attrKey, extraBonus, extraPoints, extraContent,
+    allowPass, attrChoices, attrKey, extraBonus, extraPoints, extraContent, support,
     malusDetail: sys.malus ? buildMalusDetail(sys.malus) : ""
   });
 
@@ -46,6 +46,8 @@ export async function poolDialog({ title, actor, dice, woundMalus = 0, mw = 10, 
           useAdrenalin: f.useAdrenalin?.checked ?? false,
           useMeditation: f.useMeditation?.checked ?? false,
           pass: f.pass?.checked ?? false,
+          support: f.support?.checked ?? false,
+          sideTask: f.sideTask?.checked ?? false,
           attr: f.attr?.value ?? attrKey,
           // Zusatzfelder aus Style-Skills (z. B. Fast Talk, Trusty Engineer)
           styleFields: Object.fromEntries([...button.form.querySelectorAll("[data-style-field]")].map(el => [el.name, Number(el.value) || 0])),
