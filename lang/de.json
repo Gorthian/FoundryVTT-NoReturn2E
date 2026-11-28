@@ -339,6 +339,35 @@
       "Abnormal": "Du kannst kein PSI wirken (Psionische Abartigkeit).",
       "Immune": "{name} ist gegen {app} immun (Psionische Abartigkeit/Transzendenz).",
       "Resisted": "{name} widersteht {app} dank PSI-Resistenz vollständig.",
+      "Locked": "PSI-Sperre: Du kannst derzeit keine PSI-Apps wirken.",
+      "Incapacitated": "Handlungsunfähig oder bewusstlos: PSI-Apps sind nicht möglich.",
+      "HeldEnded": "{name}: Gehaltene Apps enden ({apps}).",
+      "FailEffect": {
+        "dream": "Fremde Welt (Tagtraum)",
+        "paralysis": "Lähmende Gedanken",
+        "bam": "BÄM",
+        "psiLock": "Psionische Lähmung",
+        "pain": "Schmerz",
+        "whiteLight": "Weißes Licht"
+      },
+      "FailApplied": {
+        "self": "Automatisch angewandt: Der Wirker ist selbst Ziel von {app} (Schaden erlitten).",
+        "stray": "Automatisch angewandt: {names} werden von der App auf KS 1 getroffen.",
+        "noTargets": "Keine weiteren Ziele in der Szene für „Weit gefehlt“.",
+        "incapacitated": "Automatisch angewandt: handlungsunfähig für {n} Kampfrunden (Effekt am Token, App wirkt nicht).",
+        "aware": "Automatisch angewandt: {n} Kampfrunden handlungsunfähig, nimmt aber alles wahr.",
+        "bam": "Automatisch angewandt: Schaden an zwei zufälligen Zonen. Die SL lässt den Wirker {m} m wegschleudern.",
+        "psiLock": "Automatisch angewandt: {n} Kampfrunden keine PSI-Kräfte, gehaltene Apps enden.",
+        "pain": "Automatisch angewandt: Schaden am Kopf.",
+        "psyche": "Automatisch angewandt: −{n} Psyche.",
+        "organism": "Automatisch angewandt: −{n} Organismus.",
+        "whiteLight": "Automatisch angewandt: Schaden an allen Zonen für den Wirker und alles im Radius von {m} m ({names}).",
+        "nobody": "niemand"
+      },
+      "FailManual": {
+        "self": "Der Wirker ist selbst Ziel von {app}: Wirkung von Hand abhandeln (die App verursacht keinen automatisch berechenbaren Schaden).",
+        "stray": "{names} sind auf KS 1 von {app} betroffen: Wirkung von Hand abhandeln."
+      },
       "TooMany": "Zu viele Würfel verteilt (Pool {pool}).",
       "Summary": "Pool {pool}: KS {ks} · Probe {probe}W · Kompensation {comp} → Zielbereich {min}–{max}",
       "Pool": "Pool",
@@ -1814,6 +1843,8 @@
       "nrRadiation": "Verstrahlt",
       "nrDisease": "Erkrankt",
       "nrUnconscious": "Bewusstlos",
+      "nrIncapacitated": "Handlungsunfähig",
+      "nrPsiLock": "PSI-Sperre",
       "nrContinuous": "Andauernder Schaden"
     },
     "Hazard": {

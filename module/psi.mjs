@@ -1,7 +1,7 @@
 import { NR } from "./config.mjs";
 import { rollPool, applyChatMode, diceSummary, postPoolMessage, rollHitZone } from "./dice/pool.mjs";
-import { appTiming, appEffectSpec, durationText, evalFormula } from "./timed.mjs";
-import { applyBuffTo } from "./socket.mjs";
+import { appTiming, appEffectSpec, durationText, evalFormula, addTimedEffect } from "./timed.mjs";
+import { applyBuffTo, applyDamageTo } from "./socket.mjs";
 
 const SYSTEM_ID = "noreturn";
 
@@ -42,6 +42,8 @@ export async function castPsiApp(actor, app) {
   if (actor.items.some(i => i.type === "abnormality" && i.name.toLowerCase().startsWith("psionische abartigkeit"))) {
     return ui.notifications.warn(game.i18n.localize("NR.Psi.Abnormal"));
   }
+  if (actor.statuses?.has("nrPsiLock")) return ui.notifications.warn(game.i18n.localize("NR.Psi.Locked"));
+  if (actor.statuses?.has("nrIncapacitated") || actor.statuses?.has("nrUnconscious")) return ui.notifications.warn(game.i18n.localize("NR.Psi.Incapacitated"));
   const level = power.system.value;
   const collected = actor.system.combat.psiCollected;
   const s = app.system;
@@ -125,7 +127,15 @@ export async function castPsiApp(actor, app) {
   if (success && s.hold > 0) await app.update({ "system.held": true });
 
   let fail = null;
-  if (!success) fail = await rollPsiFail(ks, { post: false });
+  const damageForFail = s.damageMult ? {
+    amount: ks * s.damageMult, zones: s.allZones ? Object.keys(NR.zones) : null,
+    attack: { pierce: s.pierce || "", damageType: "psi", nonLethal: false, structure: false, continuous: false }, weaponName: app.name
+  } : null;
+
+  if (!success) {
+    fail = await rollPsiFail(ks, { post: false });
+    fail.lines = await applyPsiFail(actor, fail, { app, damage: damageForFail });
+  }
 
   let effectHtml = success ? resolveKsText(s.effect || "", ks) : "";
   const timing = success ? appTiming(app, ks) : null;
@@ -217,11 +227,29 @@ export async function removePsiWeapons(actor, appId) {
   if (ids.length) await actor.deleteEmbeddedDocuments("Item", ids);
 }
 
+/** Alle gehaltenen PSI-Apps beenden (der Hook „updateItem“ entfernt erzeugte Waffen). */
+async function releaseHeldApps(actor) {
+  const held = actor.items.filter(i => i.type === "psiApp" && i.system.held);
+  if (!held.length) return;
+  await actor.updateEmbeddedDocuments("Item", held.map(i => ({ _id: i.id, "system.held": false })));
+  await ChatMessage.create({
+    speaker: ChatMessage.getSpeaker({ actor }),
+    content: `<div class="nr-card"><p class="nr-hint"><i class="fa-solid fa-hourglass-end"></i> ${game.i18n.format("NR.Psi.HeldEnded", { name: esc(actor.name), apps: held.map(i => esc(i.name)).join(", ") })}</p></div>`
+  });
+}
+
 /** Erzeugte Waffen verschwinden, wenn die App nicht mehr gehalten oder gelöscht wird. */
 export function registerPsiHooks() {
   Hooks.on("updateItem", (item, changed, options, userId) => {
     if (userId !== game.user.id || item.type !== "psiApp" || !item.actor) return;
     if (foundry.utils.getProperty(changed, "system.held") === false) removePsiWeapons(item.actor, item.id).catch(err => console.error("NoReturn 2E | PSI-Waffen:", err));
+  });
+  // Haltung endet bei Bewusstlosigkeit und PSI-Lähmung (S. 193, 196)
+  Hooks.on("createActiveEffect", (effect, options, userId) => {
+    const actor = effect.parent;
+    if (userId !== game.user.id || !(actor instanceof Actor)) return;
+    if (!effect.statuses.has("nrUnconscious") && !effect.statuses.has("nrPsiLock")) return;
+    releaseHeldApps(actor).catch(err => console.error("NoReturn 2E | PSI-Haltung beenden:", err));
   });
   Hooks.on("deleteItem", (item, options, userId) => {
     if (userId !== game.user.id || item.type !== "psiApp" || !item.actor) return;
@@ -238,17 +266,22 @@ async function enrich(html, doc) {
  * Würfle auf der PSI-Fehlschlagtabelle (S. 196).
  * @returns {{results: {roll: number, text: string}[], rolls: Roll[]}}
  */
-export async function rollPsiFail(ks, { post = true, actor = null, depth = 0 } = {}) {
+export async function rollPsiFail(ks, { post = true, actor = null, depth = 0, overload = false } = {}) {
   const rolls = [];
   const results = [];
-  const r = await new Roll("2d6").evaluate();
+  let r = await new Roll("2d6").evaluate();
   rolls.push(r);
+  // Overload (S. 196): „Der eigene Arsch“ und „Weit gefehlt“ setzen eine App voraus – neu würfeln
+  while (overload && (r.total === 3 || r.total === 4)) {
+    r = await new Roll("2d6").evaluate();
+    rolls.push(r);
+  }
   const text = NR.psiFailTable[r.total]
     .replace("{ks2}", ks * 2).replace("{ks5}", ks * 5).replace("{ks10}", ks * 10).replace("{ks30}", ks * 30).replaceAll("{ks}", ks);
   results.push({ roll: r.total, text });
   if (r.total === 2 && depth < 3) {
     for (let i = 0; i < ks; i++) {
-      const sub = await rollPsiFail(ks, { post: false, depth: depth + 1 });
+      const sub = await rollPsiFail(ks, { post: false, depth: depth + 1, overload });
       rolls.push(...sub.rolls);
       results.push(...sub.results.map(x => ({ ...x, echo: true })));
     }
@@ -259,6 +292,114 @@ export async function rollPsiFail(ks, { post = true, actor = null, depth = 0 } =
     await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }), content, rolls });
   }
   return out;
+}
+
+const esc = text => foundry.utils.escapeHTML(String(text ?? ""));
+
+/** Zufällige Auswahl von bis zu n Elementen ohne Zurücklegen. */
+function pickRandom(list, n) {
+  const pool = [...list];
+  const out = [];
+  while (pool.length && out.length < n) out.push(pool.splice(Math.floor(Math.random() * pool.length), 1)[0]);
+  return out;
+}
+
+/** Tokens der aktuellen Szene mit Kreatur-Actor, außer dem Wirker. */
+function otherTokens(actor) {
+  return (canvas?.tokens?.placeables ?? []).filter(t => t.actor && t.actor.type !== "vehicle" && t.actor.id !== actor.id && !t.document.hidden);
+}
+
+/**
+ * Folgen der PSI-Fehlschlagtabelle (S. 196) am Wirker (und, wo das Ergebnis es verlangt, an weiteren Tokens) anwenden.
+ * Schaden läuft über den normalen Schadenswiderstand ohne Dialog; was sich nicht automatisieren lässt, erscheint als Hinweis.
+ * @param {Actor} actor   Wirker
+ * @param {{results: {roll: number}[], ks: number}} fail  Ergebnis von rollPsiFail
+ * @param {{app?: Item, damage?: object}} [ctx]  gewirkte App und ihr Schaden (für „Der eigene Arsch“/„Weit gefehlt“)
+ * @returns {Promise<string[]>} Zeilen (HTML) für die Chatkarte
+ */
+export async function applyPsiFail(actor, fail, { app = null, damage = null } = {}) {
+  if (!actor || !fail?.results?.length) return [];
+  const L = key => game.i18n.localize(key);
+  const F = (key, data) => game.i18n.format(key, data);
+  const lines = [];
+  const ks = fail.ks;
+  const attack = { pierce: "", damageType: "psi", nonLethal: false, structure: false, continuous: false };
+  const allZones = Object.keys(NR.zones);
+  const hit = async (target, amount, zones, label) => {
+    if (!(amount > 0)) return;
+    if (target === actor) await actor.resistDamage({ amount, zones, attack, label, skipDialog: true });
+    else await applyDamageTo(target.uuid, { amount, zones, attack, label });
+  };
+  const label = L("NR.Psi.FailTable");
+
+  for (const { roll } of fail.results) {
+    try {
+      switch (roll) {
+        case 3: // Der eigene Arsch
+          if (damage) {
+            await actor.resistDamage({ amount: damage.amount, zones: damage.zones ?? [(await rollHitZone()).zone], attack: damage.attack, label: damage.weaponName, skipDialog: true });
+            lines.push(F("NR.Psi.FailApplied.self", { app: esc(app?.name) }));
+          } else lines.push(F("NR.Psi.FailManual.self", { app: esc(app?.name ?? "") }));
+          break;
+        case 4: { // Weit gefehlt
+          const targets = pickRandom(otherTokens(actor), ks);
+          if (!targets.length) { lines.push(L("NR.Psi.FailApplied.noTargets")); break; }
+          const names = targets.map(t => esc(t.name)).join(", ");
+          if (damage) {
+            const amount = damage.amount / Math.max(1, ks);
+            for (const t of targets) await hit(t.actor, amount, damage.zones ?? [(await rollHitZone()).zone], damage.weaponName);
+            lines.push(F("NR.Psi.FailApplied.stray", { names }));
+          } else lines.push(F("NR.Psi.FailManual.stray", { names, app: esc(app?.name ?? "") }));
+          break;
+        }
+        case 5:
+          await addTimedEffect(actor, { name: L("NR.Psi.FailEffect.dream"), img: "icons/svg/daze.svg", value: ks * 2, unit: "round", statuses: ["nrIncapacitated"], source: label });
+          lines.push(F("NR.Psi.FailApplied.incapacitated", { n: ks * 2 }));
+          break;
+        case 6:
+          await addTimedEffect(actor, { name: L("NR.Psi.FailEffect.paralysis"), img: "icons/svg/paralysis.svg", value: ks, unit: "round", statuses: ["nrIncapacitated"], source: label });
+          lines.push(F("NR.Psi.FailApplied.aware", { n: ks }));
+          break;
+        case 7: {
+          const zones = pickRandom(allZones, 2);
+          await hit(actor, ks * 5, zones, L("NR.Psi.FailEffect.bam"));
+          lines.push(F("NR.Psi.FailApplied.bam", { m: ks * 2 }));
+          break;
+        }
+        case 8:
+          await addTimedEffect(actor, { name: L("NR.Psi.FailEffect.psiLock"), img: "icons/svg/silenced.svg", value: ks, unit: "round", statuses: ["nrPsiLock"], source: label });
+          lines.push(F("NR.Psi.FailApplied.psiLock", { n: ks }));
+          break;
+        case 9:
+          await hit(actor, ks * 10, ["12"], L("NR.Psi.FailEffect.pain"));
+          lines.push(L("NR.Psi.FailApplied.pain"));
+          break;
+        case 10:
+          await actor.update({ "system.psyche.loss": actor.system.psyche.loss + ks });
+          lines.push(F("NR.Psi.FailApplied.psyche", { n: ks }));
+          break;
+        case 11:
+          await actor.update({ "system.organismus.loss": actor.system.organismus.loss + ks });
+          lines.push(F("NR.Psi.FailApplied.organism", { n: ks }));
+          break;
+        case 12: {
+          const radius = ks * 2;
+          const caster = actor.getActiveTokens?.()[0];
+          const near = caster ? otherTokens(actor).filter(t => {
+            try { return canvas.grid.measurePath([caster.center, t.center]).distance <= radius; } catch (err) { return false; }
+          }) : [];
+          await hit(actor, ks * 30, allZones, L("NR.Psi.FailEffect.whiteLight"));
+          for (const t of near) await hit(t.actor, ks * 30, allZones, L("NR.Psi.FailEffect.whiteLight"));
+          lines.push(F("NR.Psi.FailApplied.whiteLight", { m: radius, names: near.length ? near.map(t => esc(t.name)).join(", ") : L("NR.Psi.FailApplied.nobody") }));
+          break;
+        }
+        default: break; // 2 (Echo) ist bereits aufgelöst
+      }
+    } catch (err) {
+      console.error("NoReturn 2E | PSI-Fehlschlag anwenden:", err);
+    }
+  }
+  return lines;
 }
 
 /**
@@ -278,7 +419,8 @@ export async function collectPower(actor) {
     res.options.extraHtml = `<p class="nr-good">${game.i18n.format("NR.Psi.Collected", { ks: collected + 1 })}</p>`;
   } else {
     await actor.update({ "system.combat.psiCollected": 0 });
-    const fail = collected > 0 ? await rollPsiFail(collected, { post: false }) : null;
+    const fail = collected > 0 ? await rollPsiFail(collected, { post: false, overload: true }) : null;
+    if (fail) fail.lines = await applyPsiFail(actor, fail, {});
     res.options.extraHtml = `<p class="nr-bad">${game.i18n.localize("NR.Psi.Overload")}</p>` +
       (fail ? await renderTemplate("systems/noreturn/templates/chat/psi-fail.hbs", fail) : "");
   }

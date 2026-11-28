@@ -339,6 +339,35 @@
       "Abnormal": "You cannot cast PSI (Psionic Aberration).",
       "Immune": "{name} is immune to {app} (Psionic Aberration/Transcendence).",
       "Resisted": "{name} fully resists {app} thanks to PSI resistance.",
+      "Locked": "PSI lock: you cannot cast PSI apps right now.",
+      "Incapacitated": "Incapacitated or unconscious: PSI apps are not possible.",
+      "HeldEnded": "{name}: held apps end ({apps}).",
+      "FailEffect": {
+        "dream": "Alien World (daydream)",
+        "paralysis": "Paralysing Thoughts",
+        "bam": "BAM",
+        "psiLock": "Psionic Paralysis",
+        "pain": "Pain",
+        "whiteLight": "White Light"
+      },
+      "FailApplied": {
+        "self": "Applied automatically: the caster is the target of {app} (damage taken).",
+        "stray": "Applied automatically: {names} are hit by the app at PL 1.",
+        "noTargets": "No other targets in the scene for “Missed by a mile”.",
+        "incapacitated": "Applied automatically: incapacitated for {n} combat rounds (effect on the token, the app fails).",
+        "aware": "Applied automatically: incapacitated for {n} rounds but aware of everything.",
+        "bam": "Applied automatically: damage to two random zones. The GM throws the caster {m} m.",
+        "psiLock": "Applied automatically: no PSI powers for {n} rounds, held apps end.",
+        "pain": "Applied automatically: damage to the head.",
+        "psyche": "Applied automatically: −{n} Psyche.",
+        "organism": "Applied automatically: −{n} Organism.",
+        "whiteLight": "Applied automatically: damage to all zones for the caster and everything within {m} m ({names}).",
+        "nobody": "nobody"
+      },
+      "FailManual": {
+        "self": "The caster is the target of {app}: resolve the effect by hand (the app has no automatically computable damage).",
+        "stray": "{names} are affected by {app} at PL 1: resolve the effect by hand."
+      },
       "TooMany": "Too many dice assigned (pool {pool}).",
       "Summary": "Pool {pool}: PL {ks} · check {probe}d · compensation {comp} → target range {min}–{max}",
       "Pool": "Pool",
@@ -1814,6 +1843,8 @@
       "nrRadiation": "Irradiated",
       "nrDisease": "Diseased",
       "nrUnconscious": "Unconscious",
+      "nrIncapacitated": "Incapacitated",
+      "nrPsiLock": "PSI lock",
       "nrContinuous": "Continuous damage"
     },
     "Hazard": {
