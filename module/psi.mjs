@@ -201,7 +201,7 @@ async function spawnPsiWeapons(actor, app, ks) {
       damage: { strength: !!w.strength, points },
       description: `<p>${foundry.utils.escapeHTML(app.name)} (KS ${ks})</p>`
     },
-    flags: { [SYSTEM_ID]: { [PSI_WEAPON_FLAG]: app.id } }
+    flags: { [SYSTEM_ID]: { [PSI_WEAPON_FLAG]: app.id, noSync: true } }
   }));
   const created = await actor.createEmbeddedDocuments("Item", data, { nrSkipGrants: true });
   const parts = [`${created.length}× ${foundry.utils.escapeHTML(name)}`];
