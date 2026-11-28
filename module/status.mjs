@@ -22,7 +22,8 @@ const STATUS_DEFS = [
   { id: "nrTemp6", img: `${ICON}fire.svg`, malus: 6 },
   { id: "nrRadiation", img: `${ICON}radiation.svg` },
   { id: "nrDisease", img: `${ICON}biohazard.svg` },
-  { id: "nrContinuous", img: `${ICON}acid.svg` }
+  { id: "nrContinuous", img: `${ICON}acid.svg` },
+  { id: "nrUnconscious", img: `${ICON}unconscious.svg` }
 ];
 
 /**

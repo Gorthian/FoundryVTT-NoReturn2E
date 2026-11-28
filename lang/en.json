@@ -248,6 +248,7 @@
       "MultiAttack": "Multi-attack",
       "MultiHint": "One roll counts for several attacks, no adrenaline.",
       "NoTargets": "No targets – damage can still be rolled.",
+      "StandoffHint": "Mexican Standoff: the Reaction initiative may only be used once per scene – do not repeat it for further fights in the same scene.",
       "CoupDeGrace": "Coup de grace (defenseless target)",
       "CoupHint": "Target is obviously defenseless (no regeneration/special abilities): no roll, the target is taken out. Generates Chaos points – GM decides.",
       "CoupTitle": "Coup de grace",
@@ -274,6 +275,11 @@
       "Block": "Block"
     },
     "Damage": {
+      "UnconsciousName": "Unconscious",
+      "UnconsciousText": "{name} is unconscious: {n} {unit} (2d6 = {n}).",
+      "UnconsciousMin": "minutes",
+      "UnconsciousRounds": "combat rounds (regeneration)",
+      "UnconsciousHint": "Medicine (DC 15) wakes them earlier. Any further damage triggers unconsciousness again while the penalty reaches Constitution.",
       "Manual": "Take damage",
       "Resist": "Roll resistance",
       "Amount": "Damage",
@@ -1795,6 +1801,7 @@
       "nrTemp6": "Extreme temperature −6D",
       "nrRadiation": "Irradiated",
       "nrDisease": "Diseased",
+      "nrUnconscious": "Unconscious",
       "nrContinuous": "Continuous damage"
     },
     "Hazard": {

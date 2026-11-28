@@ -130,7 +130,7 @@ export async function addTimedEffect(actor, spec) {
   };
   const data = {
     name: spec.name, img: spec.img ?? "icons/svg/clockwork.svg", description: spec.description ?? "",
-    changes: spec.changes ?? [], flags: { [SYSTEM_ID]: { timed } }
+    changes: spec.changes ?? [], statuses: spec.statuses ?? [], flags: { [SYSTEM_ID]: { timed } }
   };
   const v14 = game.release?.generation >= 14;
   const withDuration = seconds == null ? data : { ...data, duration: v14 ? { value: seconds, units: "seconds" } : { seconds } };
