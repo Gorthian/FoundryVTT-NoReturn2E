@@ -447,7 +447,7 @@ export class NRActor extends foundry.documents.Actor {
     applyChatMode(msgData);
     await ChatMessage.create(msgData);
     // Bewusstlosigkeit (S. 99): bei jedem Schaden, solange der Malus die Konstitution erreicht
-    if (totalApplied > 0 && this.system.unconscious && !after.some(r => r.lethal)) await this.fallUnconscious();
+    if (totalApplied > 0 && this.system.unconscious && !this.system.lethalDestroyed && !after.some(r => r.lethal)) await this.fallUnconscious();
     return { roll, results: after, totalApplied };
   }
 
